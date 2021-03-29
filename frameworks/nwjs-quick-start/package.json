@@ -1,0 +1,17 @@
+{
+  "name": "nwjs-quick-start",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "nw .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "SAP",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "node-rfc": "^2.4.0",
+    "nw": "^0.52.1"
+  }
+}

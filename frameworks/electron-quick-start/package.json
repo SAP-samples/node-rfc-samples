@@ -1,0 +1,23 @@
+{
+  "name": "electron-quick-start",
+  "version": "0.1.0",
+  "description": "Electron with node-rfc",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "SAP",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "electron": "^10.4.2",
+    "node-rfc": "^2.4.0"
+  }
+}
