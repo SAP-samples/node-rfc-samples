@@ -1,0 +1,700 @@
+CH AUFK:
+  title: Order Number
+CH BALHDR:
+  title: 'Application log: log number'
+CH BALM:
+  title: 'Application log: Internal message serial number'
+CH EKKO:
+  title: Purchasing Document Number
+CH EKPO:
+  title: Agreement Item
+CH MARM:
+  title: Unit of Measure for Display
+CH PABHD:
+  title: JIT Call Number
+CH PKPS:
+  title: Identification Number
+CH PLAF:
+  title: Planned order number
+CH RESB:
+  title: Number of reservation/dependent requirements
+CH V_KNA1WETT:
+  title: Competitor
+CT /BEV2/ED901:
+  title: Excise Duty Type
+CT ADRC:
+  title: Address Number (Business Address Services)
+CT CPABPRF:
+  title: JIT call profile
+CT CSKS:
+  title: Cost center
+CT DD02L:
+  title: Table Name
+CT DD03L:
+  title: Local field name
+CT EKKO:
+  title: Purchasing document number
+CT EKPO:
+  title: Item in purchasing document
+CT FSH_COLLECTIONS:
+  title: Fashion Collection
+CT FSH_SEASONS:
+  title: Season Year
+CT FSH_THEMES:
+  title: Fashion Theme
+CT KNA1:
+  title: Customer Number
+CT MARA:
+  title: Material Number
+CT MCH1:
+  title: Batch number
+CT MKAL:
+  title: Version identification
+CT PKHD:
+  title: Control cycle number (kanban)
+CT PKPS:
+  title: Kanban ID number
+CT PSO04:
+  title: Revnue Type
+CT PVBE:
+  title: Production Supply Area
+CT SGT_COVS_T:
+  title: Segmentation Strategy
+CT T001L:
+  title: Storage location
+CT T001W:
+  title: Plant
+CT T005:
+  title: Country Key
+CT T005S:
+  title: Region (State, Province, County)
+CT T006:
+  title: Units of Measurement of Various Types
+CT T006I:
+  title: ISO codes for measurement units
+CT T024D:
+  title: MRP controller
+CT T024E:
+  title: Purchasing organization
+CT T100A:
+  title: Message Class
+CT T300:
+  title: Warehouse Number
+CT T30A:
+  title: Picking area
+CT TAMPSP:
+  title: Blocked manufacturer/part combinations
+CT TBDLS:
+  title: Logical system
+CT TBRG:
+  title: Authorization Group
+CT TPK01:
+  title: Control key of the control cycle
+CT TPK02:
+  title: Control key of the control cycle
+CT TPK03:
+  title: Control key of the control cycle
+CT TPKBP:
+  title: Kanban calculation profile
+CT TPKSF:
+  title: Status sequence - Kanban
+CT TSADV:
+  title: Version Name for Internal Addresses (Bus. Addr. Services)
+CT TSP03:
+  title: 'Spool: Name of output device'
+CT VBUK:
+  title: Sales and distribution document number
+CT VBUP:
+  title: Item number of the SD document
+FV ATTYP:
+  title: Material Category
+FV BAPIFLAG:
+  title: Switch to Simulation Session for Write BAPIs
+FV BAPIOPTION:
+  title: Selection operator OPTION for range tables
+FV BAPISIGN:
+  title: Inclusion/exclusion criterion SIGN for range tables
+FV BAPIUPDATE:
+  title: Updated information in related user data field
+FV ESOKZ:
+  title: Purchasing info record category
+FV KCART:
+  title: 'Ind.: Whether and How a Kanban Control Cycle is Calculated'
+FV LCM_STATUS:
+  title: Lifecycle Status of Control Cycle
+FV LVS_BERKZ:
+  title: Material Staging Indicator for Production Supply
+FV PKBST:
+  title: Kanban status
+FV PKDRS:
+  title: Kanban Card Print Control
+FV PKLOG:
+  title: Logic for Setting Kanban to Empty
+FV RKSTA:
+  title: Control Cycle Category
+FV XFELD:
+  title: Deletion Indicator for a Kanban
+SH /BEV2/EDMATNR_SH_E:
+  title: Excise Duty Material for Description
+SH AD_PLKSA:
+  title: Hierarchical Task List Selection
+SH CITYA:
+  title: City Code for City/Street File
+SH CLCITYNAME:
+  title: City
+SH CLSTRTNAME:
+  title: Street
+SH CSH_TVTW:
+  title: Distribution Channel
+SH C_T001:
+  title: Company Code
+SH EANE_RFQ_QUOTE_H:
+  title: 'Material for International Article Numbers: Vendor-Specific'
+SH FM_KREDI_FMPSOIS:
+  title: Proceed Initially According to Creditor Sub-Ledger Account
+SH FSHH_MATNR:
+  title: Material with Fashion Fields
+SH FSHH_MG_ATTRIBUTE1:
+  title: 'Fashion Information Field: 1'
+SH FSHH_MG_ATTRIBUTE2:
+  title: 'Fashion Information Field: 2'
+SH FSHH_MG_ATTRIBUTE3:
+  title: 'Fashion Information Field: 3'
+SH HV_PKHD:
+  title: Control cycle number
+SH H_T001W:
+  title: Plant
+SH H_T001W_C:
+  title: Plant
+SH H_T002:
+  title: Language Key
+SH H_T006:
+  title: Base Unit of Measure
+SH H_T006I:
+  title: ISO code for unit of measurement
+SH H_T023:
+  title: Material Group
+SH H_T024E:
+  title: Purchasing organization
+SH H_T134:
+  title: Material type
+SH H_T300:
+  title: Warehouse Number / Warehouse Complex
+SH H_T301:
+  title: Storage Type
+SH H_T302:
+  title: Storage Section
+SH H_T416:
+  title: BOM Usage
+SH H_TCA01:
+  title: Task List Type
+SH H_TCF12:
+  title: Grouping key 1 for production resources/tools
+SH H_TVKO:
+  title: Sales Organization
+SH KRED:
+  elementaryHelps:
+    - SH KREDA:
+        title: Vendors (General)
+    - SH KREDI:
+        title: Vendors by Country/Company Code
+    - SH KREDK:
+        title: Vendors by Company Code
+    - SH KREDL:
+        title: Vendors by Country
+    - SH KREDP:
+        title: Vendors by Personnel Number
+    - SH KREDT:
+        title: Vendors by Tax Information
+    - SH KREDY:
+        title: Vendors by Address Attributes (Fuzzy Search)
+    - SH KREDX:
+        title: Vendors by Address Attributes
+    - SH FM_KREDI_FMPSOIS:
+        title: Proceed Initially According to Creditor Sub-Ledger Account
+    - SH KREDC:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Vendors by Class
+    - SH KREDE:
+        title: 'Vendors: Purchasing'
+    - SH KREDM_E:
+        title: Vendors by Material
+    - SH KREDW:
+        title: Vendors with Plant Reference
+    - SH KRED_ES_SIMPLE:
+        title: Simple Search for Vendor using Search Engine
+    - SH KRED_ES_ADVANCED:
+        title: Advanced Search for Vendor using Search Engine
+    - SH RELIFNRCN:
+        title: Vendor by Real Estate Contract
+  title: Vendor's account number
+SH KREDA:
+  title: Vendors (General)
+SH KREDC:
+  title: Vendors by Class
+SH KREDE:
+  title: 'Vendors: Purchasing'
+SH KREDI:
+  title: Vendors by Country/Company Code
+SH KREDK:
+  title: Vendors by Company Code
+SH KREDL:
+  title: Vendors by Country
+SH KREDM_E:
+  title: Vendors by Material
+SH KREDP:
+  title: Vendors by Personnel Number
+SH KREDT:
+  title: Vendors by Tax Information
+SH KREDW:
+  title: Vendors with Plant Reference
+SH KREDX:
+  title: Vendors by Address Attributes
+SH KREDY:
+  title: Vendors by Address Attributes (Fuzzy Search)
+SH KRED_C:
+  elementaryHelps:
+    - SH KREDA:
+        title: Vendors (General)
+    - SH KREDI:
+        title: Vendors by Country/Company Code
+    - SH KREDK:
+        title: Vendors by Company Code
+    - SH KREDL:
+        title: Vendors by Country
+    - SH KREDP:
+        title: Vendors by Personnel Number
+    - SH KREDT:
+        title: Vendors by Tax Information
+    - SH KREDY:
+        title: Vendors by Address Attributes (Fuzzy Search)
+    - SH KREDX:
+        title: Vendors by Address Attributes
+    - SH FM_KREDI_FMPSOIS:
+        title: Proceed Initially According to Creditor Sub-Ledger Account
+    - SH KREDC:
+        title: Vendors by Class
+    - SH KREDE:
+        title: 'Vendors: Purchasing'
+    - SH KREDM_E:
+        title: Vendors by Material
+    - SH KREDW:
+        title: Vendors with Plant Reference
+    - SH KRED_ES_SIMPLE:
+        title: Simple Search for Vendor using Search Engine
+    - SH KRED_ES_ADVANCED:
+        title: Advanced Search for Vendor using Search Engine
+    - SH RELIFNRCN:
+        title: Vendor by Real Estate Contract
+  title: Vendor's account number
+SH KRED_ES_ADVANCED:
+  title: Advanced Search for Vendor using Search Engine
+SH KRED_ES_SIMPLE:
+  title: Simple Search for Vendor using Search Engine
+SH LAG1:
+  elementaryHelps:
+    - SH LAG1E:
+        title: Empty storage bins
+    - SH LAG1M:
+        title: Storage bins for material
+  title: Storage Bin
+SH LAG1E:
+  title: Empty storage bins
+SH LAG1M:
+  title: Storage bins for material
+SH L_LAGP:
+  title: Storage Bin
+SH MAT0M:
+  title: Material Number/Material Description
+SH MAT1:
+  elementaryHelps:
+    - SH MAT0M:
+        title: Material Number/Material Description
+    - SH MAT1A:
+        title: Material by old material number
+    - SH MAT1B:
+        title: Material by bill of material
+    - SH MAT1C:
+        title: Material transferred from CAD system
+    - SH MAT1E:
+        title: Competitive product by competitor
+    - SH MAT1F_E:
+        title: Production Resources/Tools by Description/PRT Grouping
+    - SH MAT1H:
+        title: Sales material by general product hierarchy
+    - SH MAT1I:
+        title: Material by vendor's material number
+    - SH MAT1J:
+        title: Material by material category
+    - SH MAT1K:
+        title: Materials for class
+    - SH MAT1L:
+        title: Material by material group
+    - SH MAT1N:
+        title: Material by EAN (International Article Number)
+    - SH MAT1O:
+        title: Materials by several classes
+    - SH MAT1P:
+        title: Material by product hierarchy
+    - SH MAT1R:
+        title: Material by task list
+    - SH MAT1S:
+        title: Sales material by description
+    - SH MAT1T_E:
+        title: Material by Material Type
+    - SH MAT1V:
+        title: Material by Supply Area
+    - SH MAT1W_E:
+        title: Plant Material by Description
+    - SH FSHH_MATNR:
+        title: Material with Fashion Fields
+    - SH SGT_MATNR_S_E:
+        title: Material with Segmentation
+    - SH WRF_MAT_CHAR_VAL:
+        title: Material by Characteristic Value
+    - SH MAT1MPN:
+        title: Search Help for Manufacturer Part Number
+    - SH MAT2MPN:
+        title: Search Help for Manufacturer Part Number with AMPL
+    - SH MAT1_TREX_SIMPLE:
+        title: Quick Search for Material Using Search Engine
+    - SH MAT1_TREX_ADVANCED:
+        title: Advanced Search for Material Using Search Engine
+    - SH EANE_RFQ_QUOTE_H:
+        title: 'Material for International Article Numbers: Vendor-Specific'
+    - SH /BEV2/EDMATNR_SH_E:
+        title: Excise Duty Material for Description
+    - SH MAT1_ESH_SIMPLE_E_E:
+        title: Simple Search Help for Material (via Enterprise Search)
+    - SH MAT1_ESH_TREX_BASIC_E:
+        title: Advanced Search for Material using Search Engine
+  title: Material Number
+SH MAT1A:
+  title: Material by old material number
+SH MAT1B:
+  title: Material by bill of material
+SH MAT1C:
+  title: Material transferred from CAD system
+SH MAT1E:
+  title: Competitive product by competitor
+SH MAT1F_E:
+  title: Production Resources/Tools by Description/PRT Grouping
+SH MAT1H:
+  title: Sales material by general product hierarchy
+SH MAT1I:
+  title: Material by vendor's material number
+SH MAT1J:
+  title: Material by material category
+SH MAT1K:
+  title: Materials for class
+SH MAT1L:
+  title: Material by material group
+SH MAT1MPN:
+  title: Search Help for Manufacturer Part Number
+SH MAT1N:
+  title: Material by EAN (International Article Number)
+SH MAT1O:
+  title: Materials by several classes
+SH MAT1P:
+  title: Material by product hierarchy
+SH MAT1R:
+  title: Material by task list
+SH MAT1S:
+  title: Sales material by description
+SH MAT1T_E:
+  title: Material by Material Type
+SH MAT1V:
+  title: Material by Supply Area
+SH MAT1W_E:
+  title: Plant Material by Description
+SH MAT1_ESH_SIMPLE_E_E:
+  title: Simple Search Help for Material (via Enterprise Search)
+SH MAT1_ESH_TREX_BASIC_E:
+  title: Advanced Search for Material using Search Engine
+SH MAT1_S_MPN:
+  elementaryHelps:
+    - SH MAT0M:
+        title: Material Number/Material Description
+    - SH MAT1A:
+        title: Material by old material number
+    - SH MAT1B:
+        title: Material by bill of material
+    - SH MAT1C:
+        title: Material transferred from CAD system
+    - SH MAT1E:
+        title: Competitive product by competitor
+    - SH MAT1F_E:
+        title: Production Resources/Tools by Description/PRT Grouping
+    - SH MAT1H:
+        title: Sales material by general product hierarchy
+    - SH MAT1I:
+        title: Material by vendor's material number
+    - SH MAT1J:
+        title: Material by material category
+    - SH MAT1K:
+        title: Materials for class
+    - SH MAT1L:
+        title: Material by material group
+    - SH MAT1N:
+        title: Material by EAN (International Article Number)
+    - SH MAT1O:
+        title: Materials by several classes
+    - SH MAT1P:
+        title: Material by product hierarchy
+    - SH MAT1R:
+        title: Material by task list
+    - SH MAT1S:
+        title: Sales material by description
+    - SH MAT1T_E:
+        title: Material by Material Type
+    - SH MAT1V:
+        title: Material by Supply Area
+    - SH MAT1W_E:
+        title: Plant Material by Description
+    - SH FSHH_MATNR:
+        title: Material with Fashion Fields
+    - SH SGT_MATNR_S_E:
+        title: Material with Segmentation
+    - SH WRF_MAT_CHAR_VAL:
+        title: Material by Characteristic Value
+    - SH MAT1MPN:
+        title: Search Help for Manufacturer Part Number
+    - SH MAT2MPN:
+        title: Search Help for Manufacturer Part Number with AMPL
+  title: Number of firm's own (internal) inventory-managed material
+SH MAT1_TREX_ADVANCED:
+  title: Advanced Search for Material Using Search Engine
+SH MAT1_TREX_SIMPLE:
+  title: Quick Search for Material Using Search Engine
+SH MAT2MPN:
+  title: Search Help for Manufacturer Part Number with AMPL
+SH MEIN:
+  elementaryHelps:
+    - SH MEINL:
+        title: Info Records for Vendor
+    - SH MEINM:
+        title: Info Records per Material
+    - SH MEINN:
+        title: Info Records per Material Group (Non-Stock Material)
+    - SH MEINP:
+        title: Info Records for External Processing
+  title: Number of purchasing info record
+SH MEINL:
+  title: Info Records for Vendor
+SH MEINM:
+  title: Info Records per Material
+SH MEINN:
+  title: Info Records per Material Group (Non-Stock Material)
+SH MEINP:
+  title: Info Records for External Processing
+SH PLKS:
+  elementaryHelps:
+    - SH PLKSA:
+        title: Task list selection
+    - SH PLKSB:
+        title: Master Recipe
+    - SH PLKSC:
+        title: Search using material
+    - SH PLKSI:
+        title: General maintenance task list
+    - SH PLKSL:
+        title: Rate routings
+    - SH PLKSM:
+        title: Reference rate routing
+    - SH PLKSN:
+        title: Routings
+    - SH PLKSQ:
+        title: Inspection plans
+    - SH PLKSS:
+        title: Reference operation sets
+    - SH PLKSD:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Search Help via Classification
+    - SH AD_PLKSA:
+        title: Hierarchical Task List Selection
+  title: Key for Task List Group
+SH PLKSA:
+  title: Task list selection
+SH PLKSB:
+  title: Master Recipe
+SH PLKSC:
+  title: Search using material
+SH PLKSD:
+  title: Search Help via Classification
+SH PLKSI:
+  title: General maintenance task list
+SH PLKSL:
+  title: Rate routings
+SH PLKSM:
+  title: Reference rate routing
+SH PLKSN:
+  title: Routings
+SH PLKSQ:
+  title: Inspection plans
+SH PLKSS:
+  title: Reference operation sets
+SH PL_PI0:
+  title: Identification number of packing instruction
+SH PRODH:
+  title: Product hierarchy
+SH RECNCN:
+  elementaryHelps:
+    - SH RECNCNA:
+        title: All Contracts
+    - SH RECNCNB:
+        title: Active Contracts
+    - SH RECNCNC:
+        title: Non-Active Contracts
+    - SH RECNCND:
+        title: Contracts by Partner with Address
+    - SH RECNCNP:
+        title: Contracts by Partner Without Address
+    - SH RECNCNE:
+        title: Contracts by Rental Object
+    - SH RECNCNK:
+        title: Contracts by Adjustment Rules
+    - SH RECNCNI:
+        title: Contracts by Resubmit Date
+    - SH RECNCNH:
+        title: Contracts by Building
+    - SH RECNCNG:
+        title: Contracts by Property
+    - SH RECNCNF:
+        title: Contracts by Business Entity
+    - SH RECNCNOA:
+        title: Contracts Using Assignments
+    - SH RECNCNINV:
+        title: Contracts for Invoice Numbers
+    - SH RECNCNSE1:
+        title: Simple Search for Contract
+    - SH RECNCNSE2:
+        title: Advanced Search for Contract
+  title: Contract Number
+SH RECNCNA:
+  title: All Contracts
+SH RECNCNB:
+  title: Active Contracts
+SH RECNCNC:
+  title: Non-Active Contracts
+SH RECNCND:
+  title: Contracts by Partner with Address
+SH RECNCNE:
+  title: Contracts by Rental Object
+SH RECNCNF:
+  title: Contracts by Business Entity
+SH RECNCNG:
+  title: Contracts by Property
+SH RECNCNH:
+  title: Contracts by Building
+SH RECNCNI:
+  title: Contracts by Resubmit Date
+SH RECNCNINV:
+  title: Contracts for Invoice Numbers
+SH RECNCNK:
+  title: Contracts by Adjustment Rules
+SH RECNCNOA:
+  title: Contracts Using Assignments
+SH RECNCNP:
+  title: Contracts by Partner Without Address
+SH RECNCNSE1:
+  title: Simple Search for Contract
+SH RECNCNSE2:
+  title: Advanced Search for Contract
+SH RECNCONTRACTTYPE:
+  title: Contract Type
+SH RELIFNRCN:
+  title: Vendor by Real Estate Contract
+SH SGT_CSGR:
+  title: Segmentation Structure
+SH SGT_MATNR_S_E:
+  title: Material with Segmentation
+SH SH_T001W_EXT:
+  title: Input Help for Plants for Cross-System Flow of Goods
+SH SH_T001W_EXTS:
+  elementaryHelps:
+    - SH H_T001W:
+        title: Possible Entries for Plants
+    - SH SH_T001W_EXT:
+        title: Input Help for Plants for Cross-System Flow of Goods
+  title: Plant (Own or External)
+SH STRTA:
+  title: Street Number for City/Street File
+SH S_MAT1:
+  elementaryHelps:
+    - SH MAT0M:
+        title: Material Number/Material Description
+    - SH MAT1A:
+        title: Material by old material number
+    - SH MAT1B:
+        title: Material by bill of material
+    - SH MAT1C:
+        title: Material transferred from CAD system
+    - SH MAT1E:
+        title: Competitive product by competitor
+    - SH MAT1F_E:
+        title: Production Resources/Tools by Description/PRT Grouping
+    - SH MAT1H:
+        title: Sales material by general product hierarchy
+    - SH MAT1I:
+        title: Material by vendor's material number
+    - SH MAT1J:
+        title: Material by material category
+    - SH MAT1K:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Materials for class
+    - SH MAT1L:
+        title: Material by material group
+    - SH MAT1N:
+        title: Material by EAN (International Article Number)
+    - SH MAT1O:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Materials by several classes
+    - SH MAT1P:
+        title: Material by product hierarchy
+    - SH MAT1R:
+        title: Material by task list
+    - SH MAT1S:
+        title: Sales material by description
+    - SH MAT1T_E:
+        title: Material by Material Type
+    - SH MAT1V:
+        title: Material by Supply Area
+    - SH MAT1W_E:
+        title: Plant Material by Description
+    - SH FSHH_MATNR:
+        title: Material with Fashion Fields
+    - SH SGT_MATNR_S_E:
+        title: Material with Segmentation
+    - SH WRF_MAT_CHAR_VAL:
+        title: Material by Characteristic Value
+    - SH MAT1MPN:
+        title: Search Help for Manufacturer Part Number
+    - SH MAT2MPN:
+        title: Search Help for Manufacturer Part Number with AMPL
+    - SH MAT1_TREX_SIMPLE:
+        title: Quick Search for Material Using Search Engine
+    - SH MAT1_TREX_ADVANCED:
+        title: Advanced Search for Material Using Search Engine
+    - SH EANE_RFQ_QUOTE_H:
+        title: 'Material for International Article Numbers: Vendor-Specific'
+    - SH /BEV2/EDMATNR_SH_E:
+        title: Excise Duty Material for Description
+    - SH MAT1_ESH_SIMPLE_E_E:
+        title: Simple Search Help for Material (via Enterprise Search)
+    - SH MAT1_ESH_TREX_BASIC_E:
+        title: Advanced Search for Material using Search Engine
+  title: Material Number
+SH S_T001W:
+  title: From plant
+SH WRF_MATNR_CHAR1:
+  title: Characteristic Value for Colors of Variants
+SH WRF_MATNR_CHAR2:
+  title: Characteristic Value for Main Sizes of Variants
+SH WRF_MATNR_CHAR3:
+  title: Characteristic Value for Second Size for Variants
+SH WRF_MAT_CHAR_VAL:
+  title: Material by Characteristic Value

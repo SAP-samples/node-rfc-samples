@@ -1,4 +1,4 @@
-## NW.js with node-rfc
+# NW.js with node-rfc
 
 Minimal NW.js example, based on the [NW.js Quick Start](https://github.com/nwjs/nw.js/).
 
@@ -14,4 +14,4 @@ npm install
 npm start
 ```
 
-![](NWjs.png)
+![screenshot](NWjs.png)

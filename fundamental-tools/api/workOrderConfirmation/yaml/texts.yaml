@@ -1,0 +1,782 @@
+Accounting Indicator:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:CALC_MOTIVE}'
+  en: Accounting Indicator
+  short:
+    en:
+      FIELDTEXT: Accounting Indicator
+      REPTEXT: AInd
+      SCRTEXT_L: Accounting Indicator
+      SCRTEXT_M: AcctIndicator
+      SCRTEXT_S: AcctIndic
+Activity Number:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:OPERATION}'
+  en: Activity Number
+  short:
+    en:
+      FIELDTEXT: Activity Number
+      REPTEXT: Act
+      SCRTEXT_L: Activity
+      SCRTEXT_M: Activity
+      SCRTEXT_S: Activity
+Activity Type for Confirmation:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:ACT_TYPE}'
+  en: Activity Type for Confirmation
+  short:
+    en:
+      FIELDTEXT: Activity Type for Confirmation
+      REPTEXT: ActTyp
+      SCRTEXT_L: Activity Type
+      SCRTEXT_M: Activity Type
+      SCRTEXT_S: Acty Type
+Actual Duration for Confirmation:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:ACTUAL_DUR}'
+  en: Actual Duration for Confirmation
+  short:
+    en:
+      FIELDTEXT: Actual Duration for Confirmation
+      REPTEXT: ActDur.
+      SCRTEXT_L: Actual Duration
+      SCRTEXT_M: Actual Duration
+      SCRTEXT_S: ActDuratn
+Actual Work:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:ACT_WORK_2}'
+  en: Actual Work
+  short:
+    en:
+      FIELDTEXT: Actual Work
+      REPTEXT: Act. Work
+      SCRTEXT_L: Actual Work
+      SCRTEXT_M: Actual Work
+      SCRTEXT_S: Act. Work
+Actual work:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:ACT_WORK}'
+  en: Actual work
+  short:
+    en:
+      FIELDTEXT: Actual work
+      REPTEXT: Act.work
+      SCRTEXT_L: Actual work
+      SCRTEXT_M: Actual work
+      SCRTEXT_S: Act. work
+'Application log: Internal message serial number':
+  _id: '{t:BAPIRET2,f:LOG_MSG_NO}'
+  en: 'Application log: Internal message serial number'
+  short:
+    en:
+      FIELDTEXT: 'Application log: Internal message serial number'
+      REPTEXT: Msg.no
+      SCRTEXT_L: Message serial no.
+      SCRTEXT_M: Message no.
+      SCRTEXT_S: Msg. no.
+'Application log: log number':
+  _id: '{t:BAPIRET2,f:LOG_NO}'
+  en: 'Application log: log number'
+  short:
+    en:
+      FIELDTEXT: 'Application log: log number'
+      REPTEXT: Log number
+      SCRTEXT_L: Log number
+      SCRTEXT_M: Log number
+      SCRTEXT_S: Log no.
+BAPI Structure for Confirmation in PM/CS:
+  _id: '{r:BAPI_ALM_GET_PROP,p:TIMETICKETS}'
+  en: BAPI Structure for Confirmation in PM/CS
+Capacity category:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:CAPA_CATEGORY}'
+  en: Capacity category
+  short:
+    en:
+      FIELDTEXT: Capacity category
+      REPTEXT: Cat
+      SCRTEXT_L: Capacity category
+      SCRTEXT_M: Capacity cat.
+      SCRTEXT_S: Category
+Clear Open Reservations:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:CLEAR_RES}'
+  en: Clear Open Reservations
+  short:
+    en:
+      FIELDTEXT: Clear Open Reservations
+      REPTEXT: COR
+      SCRTEXT_L: Clear Open Reservs.
+      SCRTEXT_M: Clear Open Res.
+      SCRTEXT_S: Clear Res.
+Completion confirmation number for the operation:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:CONF_NO}'
+  en: Completion confirmation number for the operation
+  short:
+    en:
+      FIELDTEXT: Completion confirmation number for the operation
+      REPTEXT: Confirm.
+      SCRTEXT_L: Confirmation
+      SCRTEXT_M: Confirmation
+      SCRTEXT_S: Confirm.
+Confirmation:
+  _id: '{r:BAPI_ALM_CONF_CANCEL,p:CONFIRMATION}'
+  en: Confirmation
+Confirmation Text:
+  _id: '{r:BAPI_ALM_CONF_CANCEL,p:CONFTEXT}'
+  en: Confirmation Text
+Confirmation counter:
+  _id: '{r:BAPI_ALM_CONF_CANCEL,p:CONFIRMATIONCOUNTER}'
+  en: Confirmation counter
+Confirmation counter for cancellation record:
+  _id: '{r:BAPI_ALM_CONF_CANCEL,p:CREATED_CONF_COUNT}'
+  en: Confirmation counter for cancellation record
+Confirmation of cancellation record:
+  _id: '{r:BAPI_ALM_CONF_CANCEL,p:CREATED_CONF_NO}'
+  en: Confirmation of cancellation record
+Confirmation text:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:CONF_TEXT}'
+  en: Confirmation text
+  short:
+    en:
+      FIELDTEXT: Confirmation text
+      REPTEXT: Confirmation text
+      SCRTEXT_L: Confirmation text
+      SCRTEXT_M: Confirm. text
+      SCRTEXT_S: Conf. text
+Confirmations for completed orders:
+  _id: '{r:BAPI_ALM_CONF_GETLIST,p:COMPLETED}'
+  en: Confirmations for completed orders
+Confirmations for orders "in process":
+  _id: '{r:BAPI_ALM_CONF_GETLIST,p:IN_PROCESS}'
+  en: Confirmations for orders "in process"
+Confirmations to be selected:
+  _id: '{r:BAPI_ALM_CONF_GETLIST,p:CONF_RANGE}'
+  en: Confirmations to be selected
+Confirmed Finish Date of Execution:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:EXEC_FIN_DATE}'
+  en: Confirmed Finish Date of Execution
+  short:
+    en:
+      FIELDTEXT: Confirmed Finish Date of Execution
+      REPTEXT: Finish Exec.
+      SCRTEXT_L: Execution Finish
+      SCRTEXT_M: Finish Execut.
+      SCRTEXT_S: FinExecut.
+Confirmed Start Date of Execution:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:EXEC_START_DATE}'
+  en: Confirmed Start Date of Execution
+  short:
+    en:
+      FIELDTEXT: Confirmed Start Date of Execution
+      REPTEXT: Start Exec.
+      SCRTEXT_L: Start of Execution
+      SCRTEXT_M: Start Execution
+      SCRTEXT_S: Start Ex.
+Confirmed Time for 'Finish Execution':
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:EXEC_FIN_TIME}'
+  en: Confirmed Time for 'Finish Execution'
+  short:
+    en:
+      FIELDTEXT: Confirmed Time for 'Finish Execution'
+      REPTEXT: Finish Exec.
+      SCRTEXT_L: Actual Finish (Time)
+      SCRTEXT_M: Act.Fin. (Time)
+      SCRTEXT_S: Act. Fin.
+Confirmed Time for 'Start Execution':
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:EXEC_START_TIME}'
+  en: Confirmed Time for 'Start Execution'
+  short:
+    en:
+      FIELDTEXT: Confirmed Time for 'Start Execution'
+      REPTEXT: Start Exec.
+      SCRTEXT_L: Actual start (time)
+      SCRTEXT_M: Act. Start Time
+      SCRTEXT_S: Act. start
+Distance between Marker and Start Point:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:MARKER_DISTANCE_START_POINT}'
+  en: Distance between Marker and Start Point
+  short:
+    en:
+      FIELDTEXT: Distance between Marker and Start Point
+      REPTEXT: Dist.S.Mkr
+      SCRTEXT_L: Dist.Start Mkr
+      SCRTEXT_M: Dist.St.M.
+      SCRTEXT_S: Dist.
+End Point:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:END_POINT}'
+  en: End Point
+  short:
+    en:
+      FIELDTEXT: End Point
+      REPTEXT: End Point
+      SCRTEXT_L: End Point
+      SCRTEXT_M: End Point
+      SCRTEXT_S: End Pt
+External creator of confirmation:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:EX_CREATED_BY}'
+  en: External creator of confirmation
+  short:
+    en:
+      FIELDTEXT: External creator of confirmation
+      REPTEXT: Created by
+      SCRTEXT_L: Created by
+      SCRTEXT_M: Created by
+      SCRTEXT_S: Created by
+External date of entry for confirmation:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:EX_CREATED_DATE}'
+  en: External date of entry for confirmation
+  short:
+    en:
+      FIELDTEXT: External date of entry for confirmation
+      REPTEXT: Created
+      SCRTEXT_L: Created on
+      SCRTEXT_M: Created on
+      SCRTEXT_S: Created
+External key of a confirmation (for example from PDC system):
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:EX_IDENT}'
+  en: External key of a confirmation (for example from PDC system)
+  short:
+    en:
+      FIELDTEXT: External key of a confirmation (for example from PDC system)
+      REPTEXT: External key
+      SCRTEXT_L: External key
+      SCRTEXT_M: External key
+      SCRTEXT_S: Ext. key
+External time of entry for confirmation:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:EX_CREATED_TIME}'
+  en: External time of entry for confirmation
+  short:
+    en:
+      FIELDTEXT: External time of entry for confirmation
+      REPTEXT: Time
+      SCRTEXT_L: Time
+      SCRTEXT_M: Time
+      SCRTEXT_S: Time
+Field in parameter:
+  _id: '{t:BAPIRET2,f:FIELD}'
+  en: Field in parameter
+  short:
+    en:
+      FIELDTEXT: Field in parameter
+      REPTEXT: Fld.
+      SCRTEXT_L: Field name
+      SCRTEXT_M: Field name
+      SCRTEXT_S: Field
+Forecast End Time of Operation from Confirmation:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:FCST_FIN_TIME}'
+  en: Forecast End Time of Operation from Confirmation
+  short:
+    en:
+      FIELDTEXT: Forecast End Time of Operation from Confirmation
+      REPTEXT: FcstFin.
+      SCRTEXT_L: Forecast End (Time)
+      SCRTEXT_M: Forecast finish
+      SCRTEXT_S: FcstFin.
+Forecast finish date of operation from confirmation:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:FCST_FIN_DATE}'
+  en: Forecast finish date of operation from confirmation
+  short:
+    en:
+      FIELDTEXT: Forecast finish date of operation from confirmation
+      REPTEXT: FcstFin.
+      SCRTEXT_L: Forecast finish date
+      SCRTEXT_M: Forecast finish
+      SCRTEXT_S: FcstFinish
+ISO code for unit of measurement:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:UN_WORK_ISO}'
+  en: ISO code for unit of measurement
+  short:
+    en:
+      FIELDTEXT: ISO code for unit of measurement
+      REPTEXT: ISO
+      SCRTEXT_L: ISO code
+      SCRTEXT_M: ISO code
+      SCRTEXT_S: ISO code
+Inclusion/exclusion criterion SIGN for range tables:
+  _id: '{t:BAPI_PP_CONFRANGE,f:SIGN}'
+  en: Inclusion/exclusion criterion SIGN for range tables
+  short:
+    en:
+      FIELDTEXT: Inclusion/exclusion criterion SIGN for range tables
+      REPTEXT: Inclusion/exclusion criterion SIGN for range tables
+      SCRTEXT_L: Inclusive/exclusive
+      SCRTEXT_M: Inclusive/exclusive
+      SCRTEXT_S: Incl/excl
+'Ind.: Incorrect data in error pool':
+  _id: '{r:BAPI_ALM_CONF_CREATE,p:POST_WRONG_ENTRIES}'
+  en: 'Ind.: Incorrect data in error pool'
+'Indicator: Entry blocked':
+  _id: '{t:BAPI_ALM_RETURN,f:FLG_LOCKED}'
+  en: 'Indicator: Entry blocked'
+  short:
+    en:
+      FIELDTEXT: 'Indicator: Entry blocked'
+      REPTEXT: B
+      SCRTEXT_L: Record blocked
+      SCRTEXT_M: Blocked
+      SCRTEXT_S: Blocked
+'Indicator: No Remaining Work Expected':
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:COMPLETE}'
+  en: 'Indicator: No Remaining Work Expected'
+  short:
+    en:
+      FIELDTEXT: 'Indicator: No Remaining Work Expected'
+      REPTEXT: C
+      SCRTEXT_L: No Remaining Work
+      SCRTEXT_M: No Remain. Work
+      SCRTEXT_S: Completed
+'Indicator: Order is locked':
+  _id: '{r:BAPI_ALM_CONF_CANCEL,p:LOCKED}'
+  en: 'Indicator: Order is locked'
+Indicators - Suggest Confirmation Data in PM/CS:
+  _id: '{r:BAPI_ALM_GET_PROP,p:PROPOSAL}'
+  en: Indicators - Suggest Confirmation Data in PM/CS
+Keys of Selected Confirmations:
+  _id: '{r:BAPI_ALM_CONF_GETLIST,p:CONFIRMATIONS}'
+  en: Keys of Selected Confirmations
+Length:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:LINEAR_LENGTH}'
+  en: Length
+  short:
+    en:
+      FIELDTEXT: Length
+      REPTEXT: Length
+      SCRTEXT_L: Length
+      SCRTEXT_M: Length
+      SCRTEXT_S: Length
+Length Spec for Distance between Marker and End Point:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:MARKER_DISTANCE_END_POINT}'
+  en: Length Spec for Distance between Marker and End Point
+  short:
+    en:
+      FIELDTEXT: Length Spec for Distance between Marker and End Point
+      REPTEXT: Dist.End M
+      SCRTEXT_L: Dist End Marker
+      SCRTEXT_M: Dist.E.Mkr
+      SCRTEXT_S: Dist.
+Lines in parameter:
+  _id: '{t:BAPIRET2,f:ROW}'
+  en: Lines in parameter
+  short:
+    en:
+      FIELDTEXT: Lines in parameter
+      REPTEXT: Lines in parameter
+      SCRTEXT_L: Lines in parameter
+      SCRTEXT_M: Parameter line
+      SCRTEXT_S: Line
+Logical system from which message originates:
+  _id: '{t:BAPIRET2,f:SYSTEM}'
+  en: Logical system from which message originates
+  short:
+    en:
+      FIELDTEXT: Logical system from which message originates
+      REPTEXT: System from which message comes
+      SCRTEXT_L: Logical system (source of message)
+      SCRTEXT_M: Logical system
+      SCRTEXT_S: System
+Marker for End Point:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:MARKER_END_POINT}'
+  en: Marker for End Point
+  short:
+    en:
+      FIELDTEXT: Marker for End Point
+      REPTEXT: End Marker
+      SCRTEXT_L: End Marker
+      SCRTEXT_M: End Marker
+      SCRTEXT_S: E.Mark
+Marker for Start Point:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:MARKER_START_POINT}'
+  en: Marker for Start Point
+  short:
+    en:
+      FIELDTEXT: Marker for Start Point
+      REPTEXT: St. Marker
+      SCRTEXT_L: Start Marker
+      SCRTEXT_M: St.Marker
+      SCRTEXT_S: S.Mark
+Message Class:
+  _id: '{t:BAPIRET2,f:ID}'
+  en: Message Class
+  short:
+    en:
+      FIELDTEXT: Message Class
+      REPTEXT: Message ID
+      SCRTEXT_L: Message Class
+      SCRTEXT_M: Message Class
+      SCRTEXT_S: Message ID
+Message Number:
+  _id: '{t:BAPIRET2,f:NUMBER}'
+  en: Message Number
+  short:
+    en:
+      FIELDTEXT: Message Number
+      REPTEXT: Msg.no.
+      SCRTEXT_L: Message number
+      SCRTEXT_M: Message number
+      SCRTEXT_S: Message no
+Message Text:
+  _id: '{t:BAPIRET2,f:MESSAGE}'
+  en: Message Text
+  short:
+    en:
+      FIELDTEXT: Message Text
+      SCRTEXT_L: Message text
+      SCRTEXT_M: Message text
+      SCRTEXT_S: Message
+Message Variable:
+  _id: '{t:BAPIRET2,f:MESSAGE_V1}'
+  en: Message Variable
+  short:
+    en:
+      FIELDTEXT: Message Variable
+      REPTEXT: Message Variable
+      SCRTEXT_L: Message Variable
+      SCRTEXT_M: Message Variable
+      SCRTEXT_S: Msg. Var.
+'Message type: S Success, E Error, W Warning, I Info, A Abort':
+  _id: '{t:BAPIRET2,f:TYPE}'
+  en: 'Message type: S Success, E Error, W Warning, I Info, A Abort'
+  short:
+    en:
+      FIELDTEXT: 'Message type: S Success, E Error, W Warning, I Info, A Abort'
+      REPTEXT: MsgType
+      SCRTEXT_L: Message type
+      SCRTEXT_M: Message type
+      SCRTEXT_S: Msg type
+Operation:
+  _id: '{r:BAPI_ALM_CONF_GETLIST,p:OPERATION}'
+  en: Operation
+Order Number:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:ORDERID}'
+  en: Order Number
+  short:
+    en:
+      FIELDTEXT: Order Number
+      REPTEXT: Order
+      SCRTEXT_L: Order
+      SCRTEXT_M: Order
+      SCRTEXT_S: Order
+Orders to be selected:
+  _id: '{r:BAPI_ALM_CONF_GETLIST,p:ORDER_RANGE}'
+  en: Orders to be selected
+Parameter Name:
+  _id: '{t:BAPIRET2,f:PARAMETER}'
+  en: Parameter Name
+  short:
+    en:
+      FIELDTEXT: Parameter Name
+      REPTEXT: Param. Name
+      SCRTEXT_L: Parameter Name
+      SCRTEXT_M: Parameter Name
+      SCRTEXT_S: Parameters
+Partial/Final Confirmation:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:FIN_CONF}'
+  en: Partial/Final Confirmation
+  short:
+    en:
+      FIELDTEXT: Partial/Final Confirmation
+      REPTEXT: F
+      SCRTEXT_L: Final Confirmation
+      SCRTEXT_M: Final Confirmtn
+      SCRTEXT_S: FinalConf
+Personnel number:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:PERS_NO}'
+  en: Personnel number
+  short:
+    en:
+      FIELDTEXT: Personnel number
+      REPTEXT: Pers. No.
+      SCRTEXT_L: Personnel number
+      SCRTEXT_M: Personnel no.
+      SCRTEXT_S: Pers.No.
+Plant:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:PLANT}'
+  en: Plant
+  short:
+    en:
+      FIELDTEXT: Plant
+      REPTEXT: Plnt
+      SCRTEXT_L: Plant
+      SCRTEXT_M: Plant
+      SCRTEXT_S: Plant
+Posting Date:
+  _id: '{r:BAPI_ALM_CONF_CANCEL,p:POSTGDATE}'
+  en: Posting Date
+Propose activities:
+  _id: '{t:BAPI_ALM_CONF_PROP,f:ACTIVITY}'
+  en: Propose activities
+  short:
+    en:
+      FIELDTEXT: Propose activities
+      REPTEXT: Actvts
+      SCRTEXT_L: Propose activities
+      SCRTEXT_M: Propose activ.
+      SCRTEXT_S: ProposeAct
+Propose dates:
+  _id: '{t:BAPI_ALM_CONF_PROP,f:DATE_AND_TIME}'
+  en: Propose dates
+  short:
+    en:
+      FIELDTEXT: Propose dates
+      REPTEXT: Date
+      SCRTEXT_L: Propose dates
+      SCRTEXT_M: Propose dates
+      SCRTEXT_S: PrpseDates
+Reason for Variance:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:DEV_REASON}'
+  en: Reason for Variance
+  short:
+    en:
+      FIELDTEXT: Reason for Variance
+      REPTEXT: Cause
+      SCRTEXT_L: Reason for Variance
+      SCRTEXT_M: Reason
+      SCRTEXT_S: Cause
+Remaining Work:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:REM_WORK_2}'
+  en: Remaining Work
+  short:
+    en:
+      FIELDTEXT: Remaining Work
+      REPTEXT: Rem. Work
+      SCRTEXT_L: Remaining Work
+      SCRTEXT_M: Remaining Work
+      SCRTEXT_S: Rem. Work
+Remaining work:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:REM_WORK}'
+  en: Remaining work
+  short:
+    en:
+      FIELDTEXT: Remaining work
+      REPTEXT: RemainWrk
+      SCRTEXT_L: Remaining work
+      SCRTEXT_M: Remaining work
+      SCRTEXT_S: RemainWrk
+Return Information for APIs:
+  _id: '{r:BAPI_ALM_GET_PROP,p:DETAIL_RETURN}'
+  en: Return Information for APIs
+Return Parameter:
+  _id: '{r:BAPI_ALM_CONF_CANCEL,p:RETURN}'
+  en: Return Parameter
+Return parameter for confirmation table:
+  _id: '{r:BAPI_ALM_CONF_CREATE,p:DETAIL_RETURN}'
+  en: Return parameter for confirmation table
+Selection operator OPTION for range tables:
+  _id: '{t:BAPI_PP_CONFRANGE,f:OPTION}'
+  en: Selection operator OPTION for range tables
+  short:
+    en:
+      FIELDTEXT: Selection operator OPTION for range tables
+      REPTEXT: Selection operator OPTION for range tables
+      SCRTEXT_L: Selection operator OPTION
+      SCRTEXT_M: Selection op. OPTION
+      SCRTEXT_S: Option
+Split number:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:SPLIT}'
+  en: Split number
+  short:
+    en:
+      FIELDTEXT: Split number
+      REPTEXT: Spl
+      SCRTEXT_L: Split number
+      SCRTEXT_M: Split number
+      SCRTEXT_S: Split
+Start Point:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:START_POINT}'
+  en: Start Point
+  short:
+    en:
+      FIELDTEXT: Start Point
+      REPTEXT: Start Point
+      SCRTEXT_L: Start Point
+      SCRTEXT_M: Start Point
+      SCRTEXT_S: St Pt
+Suboperation:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:SUB_OPER}'
+  en: Suboperation
+  short:
+    en:
+      FIELDTEXT: Suboperation
+      REPTEXT: SOp
+      SCRTEXT_L: Suboperation
+      SCRTEXT_M: Suboperation
+      SCRTEXT_S: Subop.
+Table of confirmations:
+  _id: '{r:BAPI_ALM_CONF_CREATE,p:TIMETICKETS}'
+  en: Table of confirmations
+Test is active:
+  _id: '{r:BAPI_ALM_CONF_CREATE,p:TESTRUN}'
+  en: Test is active
+Time Recording ID Number:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:TIMEID_NO}'
+  en: Time Recording ID Number
+  short:
+    en:
+      FIELDTEXT: Time Recording ID Number
+      REPTEXT: TR ID no
+      SCRTEXT_L: Time ID number
+      SCRTEXT_M: Time rec.ID no.
+      SCRTEXT_S: TR ID no
+Type of First Offset:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:FIRST_OFFSET_TYPE_CODE}'
+  en: Type of First Offset
+  short:
+    en:
+      FIELDTEXT: Type of First Offset
+      REPTEXT: Type of First Offset
+      SCRTEXT_L: Type of First Offset
+      SCRTEXT_M: Type Offset 1
+      SCRTEXT_S: Type Off.1
+Type of Second Offset:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:SECOND_OFFSET_TYPE_CODE}'
+  en: Type of Second Offset
+  short:
+    en:
+      FIELDTEXT: Type of Second Offset
+      REPTEXT: Type of Second Offset
+      SCRTEXT_L: Type of Second Offset
+      SCRTEXT_M: Type Offset 2
+      SCRTEXT_S: Type Off.2
+Unit for actual duration:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:UN_ACT_DUR}'
+  en: Unit for actual duration
+  short:
+    en:
+      FIELDTEXT: Unit for actual duration
+      REPTEXT: Un.
+      SCRTEXT_L: Unit for actual dur.
+      SCRTEXT_M: Un/actual dur.
+      SCRTEXT_S: Un/actual
+Unit for the Distance from Marker:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:MARKER_DISTANCE_UNIT}'
+  en: Unit for the Distance from Marker
+  short:
+    en:
+      FIELDTEXT: Unit for the Distance from Marker
+      REPTEXT: UoM
+      SCRTEXT_L: Marker Distance Unit
+      SCRTEXT_M: UoM
+      SCRTEXT_S: UoM
+Unit for the Distance from Marker in ISO Code:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:MARKER_DISTANCE_UNIT_ISO}'
+  en: Unit for the Distance from Marker in ISO Code
+  short:
+    en:
+      FIELDTEXT: Unit for the Distance from Marker in ISO Code
+      REPTEXT: UoM ISO
+      SCRTEXT_L: UoM ISO
+      SCRTEXT_M: UoM ISO
+      SCRTEXT_S: UoM ISO
+Unit for work:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:UN_WORK}'
+  en: Unit for work
+  short:
+    en:
+      FIELDTEXT: Unit for work
+      REPTEXT: Un.
+      SCRTEXT_L: Unit for work
+      SCRTEXT_M: Unit for work
+      SCRTEXT_S: Work unit
+Unit of Measurement for Linear Data:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:LINEAR_UNIT}'
+  en: Unit of Measurement for Linear Data
+  short:
+    en:
+      FIELDTEXT: Unit of Measurement for Linear Data
+      REPTEXT: UoM
+      SCRTEXT_L: Unit of Measure
+      SCRTEXT_M: UoM
+      SCRTEXT_S: UoM
+Unit of Measurement for Linear Data in ISO Code:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:LINEAR_UNIT_ISO}'
+  en: Unit of Measurement for Linear Data in ISO Code
+  short:
+    en:
+      FIELDTEXT: Unit of Measurement for Linear Data in ISO Code
+      REPTEXT: UoM ISO
+      SCRTEXT_L: UoM ISO
+      SCRTEXT_M: UoM ISO
+      SCRTEXT_S: UoM ISO
+Unit of Measurement for Offset 1:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:FIRST_OFFSET_UNIT}'
+  en: Unit of Measurement for Offset 1
+  short:
+    en:
+      FIELDTEXT: Unit of Measurement for Offset 1
+      REPTEXT: UoM
+      SCRTEXT_L: UoM for Offset 1
+      SCRTEXT_M: UoM Offset 1
+      SCRTEXT_S: UoM Off.1
+Unit of Measurement for Offset 1 in ISO Code:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:FIRST_OFFSET_UNIT_ISO}'
+  en: Unit of Measurement for Offset 1 in ISO Code
+  short:
+    en:
+      FIELDTEXT: Unit of Measurement for Offset 1 in ISO Code
+      REPTEXT: UoM Offset1 ISO
+      SCRTEXT_L: UoM for Offset1 ISO
+      SCRTEXT_M: UoM Offset1 ISO
+      SCRTEXT_S: UoM O1 ISO
+Unit of Measurement for Offset 2:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:SECOND_OFFSET_UNIT}'
+  en: Unit of Measurement for Offset 2
+  short:
+    en:
+      FIELDTEXT: Unit of Measurement for Offset 2
+      REPTEXT: UoM
+      SCRTEXT_L: UoM for Offset 2
+      SCRTEXT_M: UoM Offset 2
+      SCRTEXT_S: UoM Off.2
+Unit of Measurement for Offset 2 in ISO Code:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:SECOND_OFFSET_UNIT_ISO}'
+  en: Unit of Measurement for Offset 2 in ISO Code
+  short:
+    en:
+      FIELDTEXT: Unit of Measurement for Offset 2 in ISO Code
+      REPTEXT: UoM Offset2 ISO
+      SCRTEXT_L: UoM for Offset2 ISO
+      SCRTEXT_M: UoM Offset2 ISO
+      SCRTEXT_S: UoM O2 ISO
+Unit of measure for remaining work:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:UN_REM_WRK}'
+  en: Unit of measure for remaining work
+  short:
+    en:
+      FIELDTEXT: Unit of measure for remaining work
+      REPTEXT: Un.
+      SCRTEXT_L: Unit remaining work
+      SCRTEXT_M: Unit rem. work
+      SCRTEXT_S: UnRemWork
+Value of Offset 1:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:FIRST_OFFSET_VALUE}'
+  en: Value of Offset 1
+  short:
+    en:
+      FIELDTEXT: Value of Offset 1
+      REPTEXT: Value of Offset 1
+      SCRTEXT_L: Value of Offset 1
+      SCRTEXT_M: Offset 1
+      SCRTEXT_S: Offs 1
+Value of Offset 2:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:SECOND_OFFSET_VALUE}'
+  en: Value of Offset 2
+  short:
+    en:
+      FIELDTEXT: Value of Offset 2
+      REPTEXT: Value of Offset 2
+      SCRTEXT_L: Value of Offset 2
+      SCRTEXT_M: Offset 2
+      SCRTEXT_S: Offs 2
+Wage type:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:WAGETYPE}'
+  en: Wage type
+  short:
+    en:
+      FIELDTEXT: Wage type
+      REPTEXT: WageTy
+      SCRTEXT_L: Wage type
+      SCRTEXT_M: Wage type
+      SCRTEXT_S: Wage type
+Work center:
+  _id: '{t:BAPI_ALM_TIMECONFIRMATION,f:WORK_CNTR}'
+  en: Work center
+  short:
+    en:
+      FIELDTEXT: Work center
+      REPTEXT: Work ctr
+      SCRTEXT_L: Work center
+      SCRTEXT_M: Work center
+      SCRTEXT_S: Work ctr

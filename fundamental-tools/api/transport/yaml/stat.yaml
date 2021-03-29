@@ -1,0 +1,23 @@
+BAPI_CTREQUEST_CREATE:
+  exception: 0
+  struct: 4
+  table: 2
+  var: 4
+BAPI_CTREQUEST_CREATE_TASKS:
+  exception: 0
+  struct: 1
+  table: 2
+  var: 1
+CTS_API_CREATE_CHANGE_REQUEST:
+  exception: 0
+  struct: 0
+  table: 0
+  var: 7
+total:
+  alpha: 1
+  descriptors: 20
+  fields: 13
+  helps: 21
+  parameters: 21
+  rfms: 3
+  texts: 42

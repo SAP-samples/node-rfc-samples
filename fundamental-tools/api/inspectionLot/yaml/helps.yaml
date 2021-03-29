@@ -1,0 +1,1151 @@
+CH ANLA:
+  title: Asset Subnumber
+CH ANLH:
+  title: Main Asset Number
+CH AUFK:
+  title: Order Number for Recording Appraisal Costs
+CH BALHDR:
+  title: 'Application log: log number'
+CH BALM:
+  title: 'Application log: Internal message serial number'
+CH EKKO:
+  title: Purchasing Document Number
+CH EKPO:
+  title: Item Number of Purchasing Document
+CH LAGP:
+  title: Storage Bin
+CH MCH1:
+  title: Batch Number
+CH PRPS:
+  title: Work Breakdown Structure Element (WBS Element)
+CH QAPP:
+  title: Inspection Point Number
+CH QASH:
+  title: Control Chart Number in QM
+CH QASV:
+  title: Number of the Partial Sample
+CH QPAM:
+  title: Selected Set of the Usage Decision
+CH VBUK:
+  title: Sales Order Number
+CH VBUP:
+  title: Delivery Item
+CT CEPC:
+  title: Profit Center
+CT CSKS:
+  title: Cost Center
+CT DD03L:
+  title: Local field name
+CT MARA:
+  title: Material Number
+CT PSO04:
+  title: Revnue Type
+CT QISUB:
+  title: Subsystem Identifier for QM Subsystem Interface
+CT QPCD:
+  title: Code
+CT QPGR:
+  title: Code Group of the Usage Decision
+CT QPSH:
+  title: Control Chart Type
+CT SAFK:
+  title: Order number
+CT T005:
+  title: Country Key
+CT T006:
+  title: Units of Measurement of Various Types
+CT T006I:
+  title: ISO codes for measurement units
+CT T009:
+  title: Fiscal Year Variant
+CT T100A:
+  title: Message Class
+CT T148:
+  title: Special Stock Indicator
+CT T300:
+  title: Warehouse Number
+CT TB003:
+  title: 'Business Partner: Role'
+CT TBDLS:
+  title: Logical system
+CT TBRG:
+  title: Authorization Group
+CT TCURC:
+  title: Currency Key
+CT TGSB:
+  title: Business area
+CT TJ02:
+  title: System status
+CT TJ20:
+  title: Status profile
+CT TJ30:
+  title: User Status
+CT TJ48:
+  title: Selection ID
+CT TQ07:
+  title: Dependent follow-up function
+CT TQ15:
+  title: Catalog type
+CT TQ17:
+  title: Defect Class
+CT TQ73:
+  title: Origin of Results Data
+CT TQ76:
+  title: Status of the result record for results recording
+CT TQ78:
+  title: Characteristic Filter (Processing Mode) for Inspection Chars
+CT TQ79:
+  title: Name of inspection point/user fields combination
+CT TQ90:
+  title: 'QM handheld: Application'
+CT TSTC:
+  title: Transaction code
+FV ESOKZ:
+  title: Purchasing info record category
+FV QAMBTYPE:
+  title: Type of Reference Between Inspection Lot and Material Doc.
+FV QATTRIBUT:
+  title: Attribute of the Results Record (Valid, Invalid,...)
+FV QBEWERTUNG:
+  title: Code Valuation
+FV QCHAR_TYPE:
+  title: Characteristic Type
+FV QDOKUKZ:
+  title: Documentation Required for Inspection Results
+FV QEEBEWERTG:
+  title: Inspection Result Valuation
+FV QEIFANVERF:
+  title: Fraction Calculation
+FV QEIFBEWART:
+  title: Valuation Type for Sample for QM Subsystems
+FV QKZ:
+  title: Single Results
+FV QKZQALSKNT:
+  title: 'Account Assignment Key: Inspection Lot'
+FV QKZRAST:
+  title: 'Indicator: Sampling Procedure for Inspection Points'
+FV QKZUMFS:
+  title: Partial Samples Possible
+FV QKZUSRAKT:
+  title: Field Active
+FV QMODUS_UD:
+  title: Usage Decision Mmode (UD Origin)
+FV QPPKTTYP:
+  title: Inspection Point Type
+FV QPUMFKZ:
+  title: Inspection Scope
+FV QRZWANG:
+  title: Required Confirmation for Inspection Characteristic
+FV SAP_BOOL:
+  title: Set Status of Conditional Characteristics to Active
+FV SIG_IL_USA:
+  title: Digital Signature for Insp. Lot when Usage Decision Made
+FV XFELD:
+  title: Batch management requirement indicator
+SH /BEV2/EDMATNR_SH_E:
+  title: Excise Duty Material for Description
+SH AD_PLKSA:
+  title: Hierarchical Task List Selection
+SH BP_BUPAG:
+  title: Partners by Different Attributes
+SH BP_ERP_TREX_ADVANCED:
+  title: Advanced Search for Business Partner Using Search Engine
+SH BP_ERP_TREX_SIMPLE:
+  title: Quick Search for Business Partner Using Search Engine
+SH BUHI_TREE_SEARCH_TERM3:
+  title: Partner in Group Hierarchy
+SH BUPA:
+  elementaryHelps:
+    - SH BUPAA:
+        title: Partners by address
+    - SH BUPAP:
+        title: Partners, General
+    - SH BUPAR:
+        title: Partners by BP Role
+    - SH BUPAY:
+        title: Partners by Address (Rough Search)
+    - SH BU_ADR:
+        title: Partner by Address (Mass Search)
+    - SH BUPAA_VERS:
+        title: Partners by Address Versions
+    - SH BP_BUPAG:
+        title: Partners by Different Attributes
+    - SH BP_ERP_TREX_SIMPLE:
+        title: Quick Search for Business Partner Using Search Engine
+    - SH BP_ERP_TREX_ADVANCED:
+        title: Advanced Search for Business Partner Using Search Engine
+    - SH BUPAB:
+        title: Partners by bank details
+    - SH BUPAI:
+        title: Partners by Identification Number
+    - SH BUPAU:
+        title: Partner According to User
+    - SH BUPAV:
+        title: Partner According to Internet User
+    - SH BU_NSO:
+        title: Search Help for Unsaved Objects
+    - SH BUPAGUID:
+        title: Partner by Technical GUID
+    - SH BUHI_TREE_SEARCH_TERM3:
+        title: Partner in Group Hierarchy
+    - SH BUPARLTYP:
+        title: Partners by Relationship
+    - SH FSBP_BP_IDNUM:
+        title: Search for Partner Using Other ID Numbers
+    - SH FSBP_BUPAG:
+        title: Partner by Various Attributes
+    - SH FSBP_ALIAS:
+        title: Partner According to Alias
+  title: Business Partner Number
+SH BUPAA:
+  title: Partners by address
+SH BUPAA_VERS:
+  title: Partners by Address Versions
+SH BUPAB:
+  title: Partners by bank details
+SH BUPAGUID:
+  title: Partner by Technical GUID
+SH BUPAI:
+  title: Partners by Identification Number
+SH BUPAP:
+  title: Partners, General
+SH BUPAR:
+  title: Partners by BP Role
+SH BUPARLTYP:
+  title: Partners by Relationship
+SH BUPAU:
+  title: Partner According to User
+SH BUPAV:
+  title: Partner According to Internet User
+SH BUPAY:
+  title: Partners by Address (Rough Search)
+SH BU_ADR:
+  title: Partner by Address (Mass Search)
+SH BU_NSO:
+  title: Search Help for Unsaved Objects
+SH CN_LDST_PS_PR:
+  title: WBS Element, Short Text
+SH CSH_TKA01:
+  title: Controlling Area
+SH CSH_TSPA:
+  title: Division
+SH CSH_TVTW:
+  title: Distribution Channel
+SH C_KUNNR:
+  elementaryHelps:
+    - SH DEBIA:
+        title: Customers (general)
+    - SH DEBID:
+        title: Customers (by company code)
+    - SH DEBIE:
+        title: Customers by country/company code
+    - SH DEBIL:
+        title: Customers by country
+    - SH DEBIP:
+        title: Customers by personnel number
+    - SH DEBIT:
+        title: Customers by Tax Information
+    - SH DEBIX:
+        title: Customers by Address Attributes
+    - SH DEBIY:
+        title: Customers by Address Attributes (Fuzzy Search)
+    - SH FM_DEBI_FMPSOIS:
+        title: Proceed Initially According to Customer Sub-Ledger Account
+    - SH JVH_VPTNR:
+        title: JV partner in coding block
+    - SH DEBIK:
+        title: Customers per account group
+    - SH DEBIM:
+        title: Customers With Lease-Out
+    - SH DEBIS:
+        title: Customers per sales group
+    - SH DEBIW:
+        title: Customers with plant reference
+    - SH DEBIZ:
+        title: Customers for Head Offices
+    - SH DEBIC:
+        title: Customers (by class)
+    - SH DEBI_ES_SIMPLE:
+        title: Simple Search for Customers using Search Engine
+    - SH DEBI_ES_ADVANCED:
+        title: Advanced Search for Customers using Search Engine
+    - SH REKUNNRCN:
+        title: Customer By Real Estate Contract
+    - SH REKUNNR_VIRAINV:
+        title: Customer for Invoice Number (Real Estate)
+  title: Customer Number
+SH C_T001:
+  title: Company Code
+SH DEBI:
+  elementaryHelps:
+    - SH DEBIA:
+        title: Customers (general)
+    - SH DEBID:
+        title: Customers (by company code)
+    - SH DEBIE:
+        title: Customers by country/company code
+    - SH DEBIL:
+        title: Customers by country
+    - SH DEBIP:
+        title: Customers by personnel number
+    - SH DEBIT:
+        title: Customers by Tax Information
+    - SH DEBIX:
+        title: Customers by Address Attributes
+    - SH DEBIY:
+        title: Customers by Address Attributes (Fuzzy Search)
+    - SH FM_DEBI_FMPSOIS:
+        title: Proceed Initially According to Customer Sub-Ledger Account
+    - SH JVH_VPTNR:
+        title: JV partner in coding block
+    - SH DEBIK:
+        title: Customers per account group
+    - SH DEBIM:
+        title: Customers With Lease-Out
+    - SH DEBIS:
+        title: Customers per sales group
+    - SH DEBIW:
+        title: Customers with plant reference
+    - SH DEBIZ:
+        title: Customers for Head Offices
+    - SH DEBIC:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Customers (by class)
+    - SH DEBI_ES_SIMPLE:
+        title: Simple Search for Customers using Search Engine
+    - SH DEBI_ES_ADVANCED:
+        title: Advanced Search for Customers using Search Engine
+    - SH REKUNNRCN:
+        title: Customer By Real Estate Contract
+    - SH REKUNNR_VIRAINV:
+        title: Customer for Invoice Number (Real Estate)
+  title: Customer (Ship-To Party)
+SH DEBIA:
+  title: Customers (general)
+SH DEBIC:
+  title: Customers (by class)
+SH DEBID:
+  title: Customers (by company code)
+SH DEBIE:
+  title: Customers by country/company code
+SH DEBIK:
+  title: Customers per account group
+SH DEBIL:
+  title: Customers by country
+SH DEBIM:
+  title: Customers With Lease-Out
+SH DEBIP:
+  title: Customers by personnel number
+SH DEBIS:
+  title: Customers per sales group
+SH DEBIT:
+  title: Customers by Tax Information
+SH DEBIW:
+  title: Customers with plant reference
+SH DEBIX:
+  title: Customers by Address Attributes
+SH DEBIY:
+  title: Customers by Address Attributes (Fuzzy Search)
+SH DEBIZ:
+  title: Customers for Head Offices
+SH DEBI_ES_ADVANCED:
+  title: Advanced Search for Customers using Search Engine
+SH DEBI_ES_SIMPLE:
+  title: Simple Search for Customers using Search Engine
+SH EANE_RFQ_QUOTE_H:
+  title: 'Material for International Article Numbers: Vendor-Specific'
+SH FM_DEBI_FMPSOIS:
+  title: Proceed Initially According to Customer Sub-Ledger Account
+SH FM_KREDI_FMPSOIS:
+  title: Proceed Initially According to Creditor Sub-Ledger Account
+SH FSBP_ALIAS:
+  title: Partner According to Alias
+SH FSBP_BP_IDNUM:
+  title: Search for Partner Using Other ID Numbers
+SH FSBP_BUPAG:
+  title: Partner by Various Attributes
+SH FSHH_MATNR:
+  title: Material with Fashion Fields
+SH FSH_VMVL:
+  title: Outbound Deliveries Per Seasons
+SH H_MKAL:
+  title: Production Version
+SH H_T001L:
+  title: Storage location
+SH H_T001W:
+  title: Plant
+SH H_T002:
+  title: Language Key
+SH H_T004:
+  title: Chart of Accounts
+SH H_T006:
+  title: Base Unit of Measure for the Inspection Lot
+SH H_T006I:
+  title: ISO code for unit of measurement
+SH H_T024A:
+  title: Responsible planner group/department
+SH H_T024E:
+  title: Purchasing organization
+SH H_T077D:
+  title: Customer Account Group
+SH H_T148:
+  title: Special Stock Indicator
+SH H_T300:
+  title: Warehouse Number / Warehouse Complex
+SH H_T301:
+  title: Storage Type
+SH H_T411:
+  title: Recipe usage
+SH H_T412:
+  title: Recipe status
+SH H_T8JF:
+  title: Equity group
+SH H_T8JO:
+  title: JV partner
+SH H_T8JV:
+  title: Joint venture
+SH H_TCA01:
+  title: Task List Type
+SH H_TGSB:
+  title: Business Area
+SH H_TJ02:
+  title: System status
+SH H_TJ20:
+  title: Status Profile
+SH H_TJ30:
+  title: User Status
+SH H_TPZ3:
+  title: Business Partner Role Category
+SH H_TQ07:
+  title: Follow-Up Action
+SH H_TQ15:
+  title: Catalog
+SH H_TQ76:
+  title: Specification Record Status
+SH H_TQ79:
+  title: Identification for the Inspection Point Field Combination
+SH H_TVBUR:
+  title: Sales office
+SH H_TVBVK:
+  title: Sales group
+SH H_TVKO:
+  title: Sales Organization
+SH H_TXT04:
+  title: Individual status of an object (short form)
+SH IAOM_CPROJECTS:
+  title: Internal Orders Created from cProjects
+SH IAOM_CPROJECTS_WBS:
+  title: WBS Elements with Assigned cProjects Project Elements
+SH IAOM_CRM:
+  title: Internal Orders Created from CRM Service
+SH IAOM_OM:
+  title: CO  Production Orders Created from OM
+SH JVH_ORDEI:
+  title: Joint Venture
+SH JVH_PRPMG:
+  title: Joint Venture
+SH JVH_VPTNR:
+  title: JV partner in coding block
+SH KRED:
+  elementaryHelps:
+    - SH KREDA:
+        title: Vendors (General)
+    - SH KREDI:
+        title: Vendors by Country/Company Code
+    - SH KREDK:
+        title: Vendors by Company Code
+    - SH KREDL:
+        title: Vendors by Country
+    - SH KREDP:
+        title: Vendors by Personnel Number
+    - SH KREDT:
+        title: Vendors by Tax Information
+    - SH KREDY:
+        title: Vendors by Address Attributes (Fuzzy Search)
+    - SH KREDX:
+        title: Vendors by Address Attributes
+    - SH FM_KREDI_FMPSOIS:
+        title: Proceed Initially According to Creditor Sub-Ledger Account
+    - SH KREDC:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Vendors by Class
+    - SH KREDE:
+        title: 'Vendors: Purchasing'
+    - SH KREDM_E:
+        title: Vendors by Material
+    - SH KREDW:
+        title: Vendors with Plant Reference
+    - SH KRED_ES_SIMPLE:
+        title: Simple Search for Vendor using Search Engine
+    - SH KRED_ES_ADVANCED:
+        title: Advanced Search for Vendor using Search Engine
+    - SH RELIFNRCN:
+        title: Vendor by Real Estate Contract
+  title: Vendor's account number
+SH KREDA:
+  title: Vendors (General)
+SH KREDC:
+  title: Vendors by Class
+SH KREDE:
+  title: 'Vendors: Purchasing'
+SH KREDI:
+  title: Vendors by Country/Company Code
+SH KREDK:
+  title: Vendors by Company Code
+SH KREDL:
+  title: Vendors by Country
+SH KREDM_E:
+  title: Vendors by Material
+SH KREDP:
+  title: Vendors by Personnel Number
+SH KREDT:
+  title: Vendors by Tax Information
+SH KREDW:
+  title: Vendors with Plant Reference
+SH KREDX:
+  title: Vendors by Address Attributes
+SH KREDY:
+  title: Vendors by Address Attributes (Fuzzy Search)
+SH KRED_C:
+  elementaryHelps:
+    - SH KREDA:
+        title: Vendors (General)
+    - SH KREDI:
+        title: Vendors by Country/Company Code
+    - SH KREDK:
+        title: Vendors by Company Code
+    - SH KREDL:
+        title: Vendors by Country
+    - SH KREDP:
+        title: Vendors by Personnel Number
+    - SH KREDT:
+        title: Vendors by Tax Information
+    - SH KREDY:
+        title: Vendors by Address Attributes (Fuzzy Search)
+    - SH KREDX:
+        title: Vendors by Address Attributes
+    - SH FM_KREDI_FMPSOIS:
+        title: Proceed Initially According to Creditor Sub-Ledger Account
+    - SH KREDC:
+        title: Vendors by Class
+    - SH KREDE:
+        title: 'Vendors: Purchasing'
+    - SH KREDM_E:
+        title: Vendors by Material
+    - SH KREDW:
+        title: Vendors with Plant Reference
+    - SH KRED_ES_SIMPLE:
+        title: Simple Search for Vendor using Search Engine
+    - SH KRED_ES_ADVANCED:
+        title: Advanced Search for Vendor using Search Engine
+    - SH RELIFNRCN:
+        title: Vendor by Real Estate Contract
+  title: Account Number of Vendor or Creditor
+SH KRED_ES_ADVANCED:
+  title: Advanced Search for Vendor using Search Engine
+SH KRED_ES_SIMPLE:
+  title: Simple Search for Vendor using Search Engine
+SH MAT0M:
+  title: Material Number/Material Description
+SH MAT1:
+  elementaryHelps:
+    - SH MAT0M:
+        title: Material Number/Material Description
+    - SH MAT1A:
+        title: Material by old material number
+    - SH MAT1B:
+        title: Material by bill of material
+    - SH MAT1C:
+        title: Material transferred from CAD system
+    - SH MAT1E:
+        title: Competitive product by competitor
+    - SH MAT1F_E:
+        title: Production Resources/Tools by Description/PRT Grouping
+    - SH MAT1H:
+        title: Sales material by general product hierarchy
+    - SH MAT1I:
+        title: Material by vendor's material number
+    - SH MAT1J:
+        title: Material by material category
+    - SH MAT1K:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Materials for class
+    - SH MAT1L:
+        title: Material by material group
+    - SH MAT1N:
+        title: Material by EAN (International Article Number)
+    - SH MAT1O:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Materials by several classes
+    - SH MAT1P:
+        title: Material by product hierarchy
+    - SH MAT1R:
+        title: Material by task list
+    - SH MAT1S:
+        title: Sales material by description
+    - SH MAT1T_E:
+        title: Material by Material Type
+    - SH MAT1V:
+        title: Material by Supply Area
+    - SH MAT1W_E:
+        title: Plant Material by Description
+    - SH FSHH_MATNR:
+        title: Material with Fashion Fields
+    - SH SGT_MATNR_S_E:
+        title: Material with Segmentation
+    - SH WRF_MAT_CHAR_VAL:
+        title: Material by Characteristic Value
+    - SH MAT1MPN:
+        title: Search Help for Manufacturer Part Number
+    - SH MAT2MPN:
+        title: Search Help for Manufacturer Part Number with AMPL
+    - SH MAT1_TREX_SIMPLE:
+        title: Quick Search for Material Using Search Engine
+    - SH MAT1_TREX_ADVANCED:
+        title: Advanced Search for Material Using Search Engine
+    - SH EANE_RFQ_QUOTE_H:
+        title: 'Material for International Article Numbers: Vendor-Specific'
+    - SH /BEV2/EDMATNR_SH_E:
+        title: Excise Duty Material for Description
+    - SH MAT1_ESH_SIMPLE_E_E:
+        title: Simple Search Help for Material (via Enterprise Search)
+    - SH MAT1_ESH_TREX_BASIC_E:
+        title: Advanced Search for Material using Search Engine
+  title: Material Number
+SH MAT1A:
+  title: Material by old material number
+SH MAT1B:
+  title: Material by bill of material
+SH MAT1C:
+  title: Material transferred from CAD system
+SH MAT1E:
+  title: Competitive product by competitor
+SH MAT1F_E:
+  title: Production Resources/Tools by Description/PRT Grouping
+SH MAT1H:
+  title: Sales material by general product hierarchy
+SH MAT1I:
+  title: Material by vendor's material number
+SH MAT1J:
+  title: Material by material category
+SH MAT1K:
+  title: Materials for class
+SH MAT1L:
+  title: Material by material group
+SH MAT1MPN:
+  title: Search Help for Manufacturer Part Number
+SH MAT1N:
+  title: Material by EAN (International Article Number)
+SH MAT1O:
+  title: Materials by several classes
+SH MAT1P:
+  title: Material by product hierarchy
+SH MAT1R:
+  title: Material by task list
+SH MAT1S:
+  title: Sales material by description
+SH MAT1T_E:
+  title: Material by Material Type
+SH MAT1V:
+  title: Material by Supply Area
+SH MAT1W_E:
+  title: Plant Material by Description
+SH MAT1_ESH_SIMPLE_E_E:
+  title: Simple Search Help for Material (via Enterprise Search)
+SH MAT1_ESH_TREX_BASIC_E:
+  title: Advanced Search for Material using Search Engine
+SH MAT1_TREX_ADVANCED:
+  title: Advanced Search for Material Using Search Engine
+SH MAT1_TREX_SIMPLE:
+  title: Quick Search for Material Using Search Engine
+SH MAT2MPN:
+  title: Search Help for Manufacturer Part Number with AMPL
+SH MCME:
+  elementaryHelps:
+    - SH MCMEA:
+        title: General rental units
+    - SH MCMEB:
+        title: Rental units by building
+    - SH MCMEC:
+        title: Rental units by property
+    - SH MCMED:
+        title: Rental units in a business entity
+    - SH MCMEG:
+        title: Rental Units for Building/Municipality
+    - SH MCMEH:
+        title: Rental Units for Property/Municipality
+    - SH MCMEE:
+        title: Selection via address
+    - SH MCMEP:
+        title: Rental Units for Functional Location
+    - SH MCMEO:
+        title: Rental Units to Order (Direct Allocation)
+    - SH MCMES:
+        title: Rental Units with Separate Ownership
+  title: Number of Rental Unit
+SH MCMEA:
+  title: General rental units
+SH MCMEB:
+  title: Rental units by building
+SH MCMEC:
+  title: Rental units by property
+SH MCMED:
+  title: Rental units in a business entity
+SH MCMEE:
+  title: Selection via address
+SH MCMEG:
+  title: Rental Units for Building/Municipality
+SH MCMEH:
+  title: Rental Units for Property/Municipality
+SH MCMEO:
+  title: Rental Units to Order (Direct Allocation)
+SH MCMEP:
+  title: Rental Units for Functional Location
+SH MCMES:
+  title: Rental Units with Separate Ownership
+SH MCWE:
+  elementaryHelps:
+    - SH MCWEA:
+        title: Business entities
+    - SH MCWEE:
+        title: Selection via address
+    - SH MCWEP:
+        title: Selection via Functional Location
+    - SH MCWEO:
+        title: Selection via Order (Direct Allocation)
+  title: Business Entity Number
+SH MCWEA:
+  title: Business entities
+SH MCWEE:
+  title: Selection via address
+SH MCWEO:
+  title: Selection via Order (Direct Allocation)
+SH MCWEP:
+  title: Selection via Functional Location
+SH MEIN:
+  elementaryHelps:
+    - SH MEINL:
+        title: Info Records for Vendor
+    - SH MEINM:
+        title: Info Records per Material
+    - SH MEINN:
+        title: Info Records per Material Group (Non-Stock Material)
+    - SH MEINP:
+        title: Info Records for External Processing
+  title: Number of purchasing info record
+SH MEINL:
+  title: Info Records for Vendor
+SH MEINM:
+  title: Info Records per Material
+SH MEINN:
+  title: Info Records per Material Group (Non-Stock Material)
+SH MEINP:
+  title: Info Records for External Processing
+SH MRAE:
+  elementaryHelps:
+    - SH MRAEA:
+        title: All collective lease-outs
+    - SH MRAEB:
+        title: Collective lease-outs with active lease-outs
+    - SH MRAEC:
+        title: Collective lease-outs with inactive lease-outs
+  title: Contract No. of Collective Lease-Outs
+SH MRAEA:
+  title: All collective lease-outs
+SH MRAEB:
+  title: Collective lease-outs with active lease-outs
+SH MRAEC:
+  title: Collective lease-outs with inactive lease-outs
+SH MRTA:
+  elementaryHelps:
+    - SH MRTAA:
+        title: All lease-outs
+    - SH MRTAB:
+        title: Active lease-outs
+    - SH MRTAC:
+        title: Inactive lease-outs
+    - SH MRTAE:
+        title: Collective Lease-Out Selection
+    - SH MRTAF:
+        title: Selection via rental unit
+    - SH MRTAM:
+        title: Selection via master tenant
+    - SH MRTAN:
+        title: Selection via master tenant with address
+    - SH MRTAP:
+        title: Selection via any partner
+    - SH MRTAQ:
+        title: Selection via any partner with address
+  title: Lease-Out Number
+SH MRTAA:
+  title: All lease-outs
+SH MRTAB:
+  title: Active lease-outs
+SH MRTAC:
+  title: Inactive lease-outs
+SH MRTAE:
+  title: Collective Lease-Out Selection
+SH MRTAF:
+  title: Selection via rental unit
+SH MRTAM:
+  title: Selection via master tenant
+SH MRTAN:
+  title: Selection via master tenant with address
+SH MRTAP:
+  title: Selection via any partner
+SH MRTAQ:
+  title: Selection via any partner with address
+SH ORDBI:
+  title: Process Orders Using Info System
+SH ORDE:
+  elementaryHelps:
+    - SH ORDEA:
+        title: Search by controlling area / processing group
+    - SH ORDEB:
+        title: Search by controlling area / order type
+    - SH ORDER_SES_QUICK:
+        title: Simple Search for Orders
+    - SH ORDER_SES_ADVANCED:
+        title: Advanced Search for Orders
+    - SH ORDEC:
+        title: Prod. Orders for Original Order (Trigger Point Function)
+    - SH ORDED:
+        title: Production Orders per MRP Scheduler
+    - SH ORDEE:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Production orders using the info system
+    - SH ORDEF:
+        title: Production Orders for Production Supervisor
+    - SH ORDEK:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Search using classification data
+    - SH ORDEL:
+        title: PM orders using order list
+    - SH ORDEQ:
+        title: Service orders using order list
+    - SH ORDER_REAL_ESTATE:
+        title: Orders for Real Estate Object
+    - SH ORDES:
+        title: Process orders for original order (trigger point function)
+    - SH ORDET:
+        title: Process Orders for MRP Controller
+    - SH ORDBI:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Process Orders Using Info System
+    - SH ORDEU:
+        title: Process Orders for Production Supervisor
+    - SH IAOM_CPROJECTS:
+        title: Internal Orders Created from cProjects
+    - SH IAOM_CRM:
+        title: Internal Orders Created from CRM Service
+    - SH IAOM_OM:
+        title: CO  Production Orders Created from OM
+    - SH JVH_ORDEI:
+        title: Joint Venture
+  title: Order Number
+SH ORDEA:
+  title: Search by controlling area / processing group
+SH ORDEB:
+  title: Search by controlling area / order type
+SH ORDEC:
+  title: Prod. Orders for Original Order (Trigger Point Function)
+SH ORDED:
+  title: Production Orders per MRP Scheduler
+SH ORDEE:
+  title: Production orders using the info system
+SH ORDEF:
+  title: Production Orders for Production Supervisor
+SH ORDEK:
+  title: Search using classification data
+SH ORDEL:
+  title: PM orders using order list
+SH ORDEQ:
+  title: Service orders using order list
+SH ORDER_REAL_ESTATE:
+  title: Orders for Real Estate Object
+SH ORDER_SES_ADVANCED:
+  title: Advanced Search for Orders
+SH ORDER_SES_QUICK:
+  title: Simple Search for Orders
+SH ORDES:
+  title: Process orders for original order (trigger point function)
+SH ORDET:
+  title: Process Orders for MRP Controller
+SH ORDEU:
+  title: Process Orders for Production Supervisor
+SH PLKS:
+  elementaryHelps:
+    - SH PLKSA:
+        title: Task list selection
+    - SH PLKSB:
+        title: Master Recipe
+    - SH PLKSC:
+        title: Search using material
+    - SH PLKSI:
+        title: General maintenance task list
+    - SH PLKSL:
+        title: Rate routings
+    - SH PLKSM:
+        title: Reference rate routing
+    - SH PLKSN:
+        title: Routings
+    - SH PLKSQ:
+        title: Inspection plans
+    - SH PLKSS:
+        title: Reference operation sets
+    - SH PLKSD:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Search Help via Classification
+    - SH AD_PLKSA:
+        title: Hierarchical Task List Selection
+  title: Key for Task List Group
+SH PLKSA:
+  title: Task list selection
+SH PLKSB:
+  title: Master Recipe
+SH PLKSC:
+  title: Search using material
+SH PLKSD:
+  title: Search Help via Classification
+SH PLKSI:
+  title: General maintenance task list
+SH PLKSL:
+  title: Rate routings
+SH PLKSM:
+  title: Reference rate routing
+SH PLKSN:
+  title: Routings
+SH PLKSQ:
+  title: Inspection plans
+SH PLKSS:
+  title: Reference operation sets
+SH PRPM:
+  elementaryHelps:
+    - SH PRPMP:
+        title: 'WBS element: Project definition and description'
+    - SH PRPMK:
+        title: 'WBS element: short identification'
+    - SH PRPMZ:
+        title: 'WBS element: persons responsible'
+    - SH PRPMA:
+        title: 'WBS: Account assignment elements'
+    - SH PRPMB:
+        title: 'WBS: Billing elements'
+    - SH PRPMC:
+        blacklist:
+          search: Screen output without connection to user.
+        title: 'WBS element: Find using classification'
+    - SH CN_LDST_PS_PR:
+        title: WBS Element, Short Text
+    - SH IAOM_CPROJECTS_WBS:
+        title: WBS Elements with Assigned cProjects Project Elements
+    - SH JVH_PRPMG:
+        title: Joint Venture
+  title: Work breakdown structure element (WBS element)
+SH PRPMA:
+  title: 'WBS: Account assignment elements'
+SH PRPMB:
+  title: 'WBS: Billing elements'
+SH PRPMC:
+  title: 'WBS element: Find using classification'
+SH PRPMK:
+  title: 'WBS element: short identification'
+SH PRPMP:
+  title: 'WBS element: Project definition and description'
+SH PRPMZ:
+  title: 'WBS element: persons responsible'
+SH QALS:
+  elementaryHelps:
+    - SH QALSM:
+        title: Material
+    - SH QALSK:
+        title: Vendor
+    - SH QALSD:
+        title: Customers
+    - SH QALSV:
+        title: Goods Movement
+    - SH QALSA:
+        title: Orders
+    - SH QALSS:
+        title: Delivery
+    - SH QALST:
+        title: Inspection Lot Short Text
+    - SH QALSARC:
+        title: Inspection Lot Using Archive
+    - SH QALSL:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Detailed Selection
+  title: Inspection Lot Number
+SH QALSA:
+  title: Orders
+SH QALSARC:
+  title: Inspection Lot Using Archive
+SH QALSD:
+  title: Customers
+SH QALSK:
+  title: Vendor
+SH QALSL:
+  title: Detailed Selection
+SH QALSM:
+  title: Material
+SH QALSS:
+  title: Delivery
+SH QALST:
+  title: Inspection Lot Short Text
+SH QALSV:
+  title: Goods Movement
+SH QMTB:
+  elementaryHelps:
+    - SH QMTBS:
+        title: Inspection Method for Search Field
+    - SH QMTBC:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Inspection Method for Class
+    - SH QMTB_TREX_SIMPLE:
+        title: Quick Search for Inspection Method Via Search Engine
+    - SH QMTB_TREX_ADVANCED:
+        title: Advanced Search for Inspection Method Via Search Engine
+    - SH QMTB_ES_SIMPLE:
+        title: Simple Search for Inspection Method using Search Engine
+    - SH QMTB_ES_ADVANCED:
+        title: Advanced Search for Inspection Method using Search Engine
+  title: Inspection Method
+SH QMTBC:
+  title: Inspection Method for Class
+SH QMTBS:
+  title: Inspection Method for Search Field
+SH QMTB_ES_ADVANCED:
+  title: Advanced Search for Inspection Method using Search Engine
+SH QMTB_ES_SIMPLE:
+  title: Simple Search for Inspection Method using Search Engine
+SH QMTB_TREX_ADVANCED:
+  title: Advanced Search for Inspection Method Via Search Engine
+SH QMTB_TREX_SIMPLE:
+  title: Quick Search for Inspection Method Via Search Engine
+SH RECNCN:
+  elementaryHelps:
+    - SH RECNCNA:
+        title: All Contracts
+    - SH RECNCNB:
+        title: Active Contracts
+    - SH RECNCNC:
+        title: Non-Active Contracts
+    - SH RECNCND:
+        title: Contracts by Partner with Address
+    - SH RECNCNP:
+        title: Contracts by Partner Without Address
+    - SH RECNCNE:
+        title: Contracts by Rental Object
+    - SH RECNCNK:
+        title: Contracts by Adjustment Rules
+    - SH RECNCNI:
+        title: Contracts by Resubmit Date
+    - SH RECNCNH:
+        title: Contracts by Building
+    - SH RECNCNG:
+        title: Contracts by Property
+    - SH RECNCNF:
+        title: Contracts by Business Entity
+    - SH RECNCNOA:
+        title: Contracts Using Assignments
+    - SH RECNCNINV:
+        title: Contracts for Invoice Numbers
+    - SH RECNCNSE1:
+        title: Simple Search for Contract
+    - SH RECNCNSE2:
+        title: Advanced Search for Contract
+  title: Contract Number
+SH RECNCNA:
+  title: All Contracts
+SH RECNCNB:
+  title: Active Contracts
+SH RECNCNC:
+  title: Non-Active Contracts
+SH RECNCND:
+  title: Contracts by Partner with Address
+SH RECNCNE:
+  title: Contracts by Rental Object
+SH RECNCNF:
+  title: Contracts by Business Entity
+SH RECNCNG:
+  title: Contracts by Property
+SH RECNCNH:
+  title: Contracts by Building
+SH RECNCNI:
+  title: Contracts by Resubmit Date
+SH RECNCNINV:
+  title: Contracts for Invoice Numbers
+SH RECNCNK:
+  title: Contracts by Adjustment Rules
+SH RECNCNOA:
+  title: Contracts Using Assignments
+SH RECNCNP:
+  title: Contracts by Partner Without Address
+SH RECNCNSE1:
+  title: Simple Search for Contract
+SH RECNCNSE2:
+  title: Advanced Search for Contract
+SH RECNCONTRACTTYPE:
+  title: Contract Type
+SH RECNTYPE:
+  title: External Real Estate contract type
+SH REKUNNRCN:
+  title: Customer By Real Estate Contract
+SH REKUNNR_VIRAINV:
+  title: Customer for Invoice Number (Real Estate)
+SH RELIFNRCN:
+  title: Vendor by Real Estate Contract
+SH RERAINVNO:
+  title: Invoice Number
+SH SGT_MATNR_S_E:
+  title: Material with Segmentation
+SH SH_T001W_EXT:
+  title: Input Help for Plants for Cross-System Flow of Goods
+SH SH_T001W_EXTS:
+  elementaryHelps:
+    - SH H_T001W:
+        title: Possible Entries for Plants
+    - SH SH_T001W_EXT:
+        title: Input Help for Plants for Cross-System Flow of Goods
+  title: Plant (Own or External)
+SH VMVL:
+  elementaryHelps:
+    - SH VMVLA:
+        title: 'Outbound Delivery: Not Posted for Goods Issue'
+    - SH VMVLB:
+        title: 'Outbound Deliveries: Not Picked'
+    - SH VMVLD:
+        title: Credit-Checked Outbound Deliveries (blocked/released)
+    - SH VMVLI:
+        title: External Deliveries with External Identification
+    - SH VMVLF:
+        title: Completed Deliveries
+    - SH FSH_VMVL:
+        title: Outbound Deliveries Per Seasons
+    - SH WRF_OUTBOUND_DELIVERY_MAT_CHAR:
+        title: Outbound Delivery by Material Characteristic Values
+  title: Delivery
+SH VMVLA:
+  title: 'Outbound Delivery: Not Posted for Goods Issue'
+SH VMVLB:
+  title: 'Outbound Deliveries: Not Picked'
+SH VMVLD:
+  title: Credit-Checked Outbound Deliveries (blocked/released)
+SH VMVLF:
+  title: Completed Deliveries
+SH VMVLI:
+  title: External Deliveries with External Identification
+SH WRF_MAT_CHAR_VAL:
+  title: Material by Characteristic Value
+SH WRF_OUTBOUND_DELIVERY_MAT_CHAR:
+  title: Outbound Delivery by Material Characteristic Values

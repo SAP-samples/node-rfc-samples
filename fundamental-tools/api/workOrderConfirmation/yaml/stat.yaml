@@ -1,0 +1,28 @@
+BAPI_ALM_CONF_CANCEL:
+  exception: 0
+  struct: 1
+  table: 0
+  var: 7
+BAPI_ALM_CONF_CREATE:
+  exception: 0
+  struct: 1
+  table: 2
+  var: 2
+BAPI_ALM_CONF_GETLIST:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 4
+BAPI_ALM_GET_PROP:
+  exception: 0
+  struct: 2
+  table: 2
+  var: 0
+total:
+  alpha: 3
+  descriptors: 33
+  fields: 9
+  helps: 33
+  parameters: 25
+  rfms: 4
+  texts: 93

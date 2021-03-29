@@ -1,0 +1,23 @@
+BAPI_WHSE_TO_CREATE_STOCK:
+  exception: 0
+  struct: 0
+  table: 3
+  var: 9
+BAPI_WHSE_TO_GET_DETAIL:
+  exception: 0
+  struct: 0
+  table: 4
+  var: 3
+BAPI_WHSE_TO_GET_LIST:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 6
+total:
+  alpha: 9
+  descriptors: 230
+  fields: 14
+  helps: 241
+  parameters: 29
+  rfms: 3
+  texts: 248

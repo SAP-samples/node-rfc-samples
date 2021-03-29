@@ -1,0 +1,13 @@
+BAPI_ACC_DOCUMENT_POST:
+  exception: 0
+  struct: 3
+  table: 14
+  var: 3
+total:
+  alpha: 13
+  descriptors: 424
+  fields: 17
+  helps: 454
+  parameters: 20
+  rfms: 1
+  texts: 323

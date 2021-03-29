@@ -1,0 +1,499 @@
+CH ANLA:
+  title: Asset Subnumber
+CH AUFK:
+  title: Order Number
+CH BALHDR:
+  title: 'Application log: log number'
+CH BALM:
+  title: 'Application log: Internal message serial number'
+CH QMEL:
+  title: Notification No
+CH QMFE:
+  title: Item Number in Item Record
+CH QMMA:
+  title: Sequential Task Number
+CH QMSM:
+  title: Sequential Task Number
+CH QMUR:
+  title: Sequential Number for Cause
+CT ADRC:
+  title: Address Number (Business Address Services)
+CT DD02L:
+  title: Table Name
+CT DD03L:
+  title: Local field name
+CT EAML_D_OFFSET_TC:
+  title: Type of First Offset
+CT IFLOALT:
+  title: Labeling system for functional locations
+CT KLAH:
+  title: Internal class number
+CT MARA:
+  title: Assembly
+CT ONR00:
+  title: Object number
+CT QMEL:
+  title: Quality notification no.
+CT QMFE:
+  title: Serial number item
+CT QPCD:
+  title: Activity Code
+CT QPGR:
+  title: Code Group - Activities
+CT T001W:
+  title: Plant
+CT T006:
+  title: Units of Measurement of Various Types
+CT T006I:
+  title: ISO codes for measurement units
+CT T024I:
+  title: Maintenance planner group
+CT T100A:
+  title: Message Class
+CT T370S:
+  title: Functional location structure indicator
+CT TBDLS:
+  title: Logical system
+CT TCLA:
+  title: Class type
+CT TJ03:
+  title: Object Category
+CT TOJTB:
+  title: Object Type
+CT TPAR:
+  title: Partner Function
+CT TQ15:
+  title: Catalog type
+CT TQ80:
+  title: Notification Type
+CT TTZZ:
+  title: Time zone
+FV BAPIOPTION:
+  title: Selection operator OPTION for range tables
+FV BAPISIGN:
+  title: Inclusion/exclusion criterion SIGN for range tables
+FV BAPIUPDATE:
+  title: Updated information in related user data field
+FV ILOM_ALKEY:
+  title: Labeling system for functional locations
+FV ILOM_OWNER:
+  title: Object reference indicator
+FV INHER:
+  title: Data origin indicator
+FV KREUZ:
+  title: User Status Active
+FV QKZ:
+  title: Notification Has Status "Completed"
+FV XFELD:
+  title: Checkbox
+SH AANL:
+  elementaryHelps:
+    - SH AANLA:
+        title: Names and classes
+    - SH AANLC:
+        title: Cost center
+    - SH AANLI:
+        title: Inventory number
+    - SH AANLM:
+        title: Investment Orders
+    - SH AANLP:
+        title: Investment Projects
+    - SH AANLR:
+        title: Group assets
+    - SH AANLF:
+        title: Fund, Functional Area
+    - SH FAA_SH_SES_QUICK:
+        title: Simple Search for Asset
+    - SH FAA_SH_SES_ADVANCED:
+        title: Advanced Search for Asset
+  title: Main Asset Number
+SH AANLA:
+  title: Names and classes
+SH AANLC:
+  title: Cost center
+SH AANLF:
+  title: Fund, Functional Area
+SH AANLI:
+  title: Inventory number
+SH AANLM:
+  title: Investment Orders
+SH AANLP:
+  title: Investment Projects
+SH AANLR:
+  title: Group assets
+SH CLCITYNAME:
+  title: City
+SH CLSTRTNAME:
+  title: Street
+SH C_T001:
+  title: Company Code
+SH DEBI:
+  elementaryHelps:
+    - SH DEBIA:
+        title: Customers (general)
+    - SH DEBID:
+        title: Customers (by company code)
+    - SH DEBIE:
+        title: Customers by country/company code
+    - SH DEBIL:
+        title: Customers by country
+    - SH DEBIP:
+        title: Customers by personnel number
+    - SH DEBIT:
+        title: Customers by Tax Information
+    - SH DEBIX:
+        title: Customers by Address Attributes
+    - SH DEBIY:
+        title: Customers by Address Attributes (Fuzzy Search)
+    - SH FM_DEBI_FMPSOIS:
+        title: Proceed Initially According to Customer Sub-Ledger Account
+    - SH JVH_VPTNR:
+        title: JV partner in coding block
+    - SH DEBIK:
+        title: Customers per account group
+    - SH DEBIM:
+        title: Customers With Lease-Out
+    - SH DEBIS:
+        title: Customers per sales group
+    - SH DEBIW:
+        title: Customers with plant reference
+    - SH DEBIZ:
+        title: Customers for Head Offices
+    - SH DEBIC:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Customers (by class)
+    - SH DEBI_ES_SIMPLE:
+        title: Simple Search for Customers using Search Engine
+    - SH DEBI_ES_ADVANCED:
+        title: Advanced Search for Customers using Search Engine
+    - SH REKUNNRCN:
+        title: Customer By Real Estate Contract
+    - SH REKUNNR_VIRAINV:
+        title: Customer for Invoice Number (Real Estate)
+  title: Customer Number
+SH DEBIA:
+  title: Customers (general)
+SH DEBIC:
+  title: Customers (by class)
+SH DEBID:
+  title: Customers (by company code)
+SH DEBIE:
+  title: Customers by country/company code
+SH DEBIK:
+  title: Customers per account group
+SH DEBIL:
+  title: Customers by country
+SH DEBIM:
+  title: Customers With Lease-Out
+SH DEBIP:
+  title: Customers by personnel number
+SH DEBIS:
+  title: Customers per sales group
+SH DEBIT:
+  title: Customers by Tax Information
+SH DEBIW:
+  title: Customers with plant reference
+SH DEBIX:
+  title: Customers by Address Attributes
+SH DEBIY:
+  title: Customers by Address Attributes (Fuzzy Search)
+SH DEBIZ:
+  title: Customers for Head Offices
+SH DEBI_ES_ADVANCED:
+  title: Advanced Search for Customers using Search Engine
+SH DEBI_ES_SIMPLE:
+  title: Simple Search for Customers using Search Engine
+SH EAML_H_T006:
+  title: Unit of Measurement for Linear Data
+SH EAML_H_T006_OFFSET:
+  title: Unit of Measurement for Offset 1
+SH EAML_SH_LINEAR_POINT:
+  title: Start Point
+SH EAML_SH_MARKER:
+  title: Marker for Start Point
+SH EQUI:
+  elementaryHelps:
+    - SH EQUIC:
+        title: Equipment by cost center
+    - SH EQUIR:
+        title: Address selection (service)
+    - SH EQUIA:
+        title: Equipment by asset number
+    - SH EQUID:
+        title: Equipment by customer (operator)
+    - SH EQUIF:
+        title: Equipment by technical ID number
+    - SH EQUIO:
+        title: Material Serial Numbers
+    - SH EQUIT:
+        title: Equipment by short text
+    - SH EQUIW:
+        title: Equipment by PRT group
+    - SH EQUIL:
+        title: Equipment by equipment list
+    - SH EQUIM:
+        title: Equipment by serial number list
+    - SH EQUIN:
+        title: Equipment by equipment list (service)
+    - SH EQUIP:
+        title: Equipment by functional location structure
+    - SH EQUIS:
+        title: Equipment by equipment structure
+    - SH EQUIU:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Classification
+    - SH EQUIZ:
+        title: Equipment by Fleet Identification Data
+    - SH EQUI_TREX_SIMPLE:
+        title: Quick Search for Equipment via Search Engine
+    - SH EQUI_TREX_ADVANCED:
+        title: Advanced Search for Equipment via Search Engine
+    - SH EQUI_ES_SIMPLE_E:
+        title: Simple Search for Equipment (Enterprise Search)
+    - SH EQUI_ES_ADVANCED_E:
+        title: Advanced Search for Equipment (Enterprise Search)
+  title: Equipment Number
+SH EQUIA:
+  title: Equipment by asset number
+SH EQUIC:
+  title: Equipment by cost center
+SH EQUID:
+  title: Equipment by customer (operator)
+SH EQUIF:
+  title: Equipment by technical ID number
+SH EQUIL:
+  title: Equipment by equipment list
+SH EQUIM:
+  title: Equipment by serial number list
+SH EQUIN:
+  title: Equipment by equipment list (service)
+SH EQUIO:
+  title: Material Serial Numbers
+SH EQUIP:
+  title: Equipment by functional location structure
+SH EQUIR:
+  title: Address selection (service)
+SH EQUIS:
+  title: Equipment by equipment structure
+SH EQUIT:
+  title: Equipment by short text
+SH EQUIU:
+  title: Classification
+SH EQUIW:
+  title: Equipment by PRT group
+SH EQUIZ:
+  title: Equipment by Fleet Identification Data
+SH EQUI_ES_ADVANCED_E:
+  title: Advanced Search for Equipment (Enterprise Search)
+SH EQUI_ES_SIMPLE_E:
+  title: Simple Search for Equipment (Enterprise Search)
+SH EQUI_TREX_ADVANCED:
+  title: Advanced Search for Equipment via Search Engine
+SH EQUI_TREX_SIMPLE:
+  title: Quick Search for Equipment via Search Engine
+SH FAA_SH_SES_ADVANCED:
+  title: Advanced Search for Asset
+SH FAA_SH_SES_QUICK:
+  title: Simple Search for Asset
+SH FM_DEBI_FMPSOIS:
+  title: Proceed Initially According to Customer Sub-Ledger Account
+SH HRPADUN_KOSTWO2:
+  title: Organizational unit via Personnel Area (NPO)
+SH H_T001W:
+  title: Maintenance plant
+SH H_T002:
+  title: Language Key
+SH H_T006:
+  title: Unit for the Distance from Marker
+SH H_T357:
+  title: Plant section
+SH H_T370F:
+  title: Functional location category
+SH H_T370S:
+  title: Functional location structure indicator
+SH H_T499S:
+  title: Location of maintenance object
+SH H_TCF12:
+  title: Grouping key 1 for production resources/tools
+SH H_TPAR:
+  title: Partner Function
+SH H_TQ15:
+  title: Catalog Type - Activities
+SH IFLM:
+  elementaryHelps:
+    - SH IFLMA:
+        title: Asset
+    - SH IFLMC:
+        title: Cost center
+    - SH IFLMH:
+        title: Uppermost FunctLocs by StructIndicator
+    - SH IFLMI:
+        title: Uppermost FunctLocs by category
+    - SH IFLMK:
+        title: Uppermost FunctLocations by company area
+    - SH IFLML:
+        title: Uppermost FunctLocations by location
+    - SH IFLMP:
+        title: Location list
+    - SH IFLMR:
+        title: Address
+    - SH IFLMT:
+        title: Text (= Description)
+    - SH IFLMQ:
+        title: Functional location list (service)
+    - SH IFLMS:
+        title: Structural display
+    - SH IFLMU:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Classification
+    - SH IFLSA:
+        title: Asset
+    - SH IFLSC:
+        title: Cost center
+    - SH IFLSH:
+        title: Uppermost locations by structure indicator
+    - SH IFLSI:
+        title: Uppermost locations by category
+    - SH IFLSK:
+        title: Uppermost locations by company area
+    - SH IFLSL:
+        title: Uppermost FunctLocations by location
+    - SH IFLSP:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Location list
+    - SH IFLSR:
+        title: Address
+    - SH IFLST:
+        title: Text (= Description)
+    - SH IFLSQ:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Location list (service)
+    - SH IFLSS:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Structural display
+    - SH IFLSU:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Classification
+    - SH IFLSW:
+        title: Historical labels
+    - SH IFLS_REAL_ESTATE:
+        title: Real Estate Object
+    - SH IFL_ES_SIMPLE:
+        title: Simple Search for Functional Locations (Enterprise Search)
+    - SH IFL_ES_ADVANCED:
+        title: Advanced Search for Functional Locations (Enterprise Search)
+    - SH IFLM_REAL_ESTATE:
+        title: Real Estate Object
+    - SH IFL_TREX_SIMPLE:
+        title: Quick Search of Functional Location via Search Engine
+    - SH IFL_TREX_ADVANCED:
+        title: Advanced Search of Functional Location via Search Engine
+  title: Functional Location
+SH IFLMA:
+  title: Asset
+SH IFLMC:
+  title: Cost center
+SH IFLMH:
+  title: Uppermost FunctLocs by StructIndicator
+SH IFLMI:
+  title: Uppermost FunctLocs by category
+SH IFLMK:
+  title: Uppermost FunctLocations by company area
+SH IFLML:
+  title: Uppermost FunctLocations by location
+SH IFLMP:
+  title: Location list
+SH IFLMQ:
+  title: Functional location list (service)
+SH IFLMR:
+  title: Address
+SH IFLMS:
+  title: Structural display
+SH IFLMT:
+  title: Text (= Description)
+SH IFLMU:
+  title: Classification
+SH IFLM_REAL_ESTATE:
+  title: Real Estate Object
+SH IFLSA:
+  title: Asset
+SH IFLSC:
+  title: Cost center
+SH IFLSH:
+  title: Uppermost locations by structure indicator
+SH IFLSI:
+  title: Uppermost locations by category
+SH IFLSK:
+  title: Uppermost locations by company area
+SH IFLSL:
+  title: Uppermost FunctLocations by location
+SH IFLSP:
+  title: Location list
+SH IFLSQ:
+  title: Location list (service)
+SH IFLSR:
+  title: Address
+SH IFLSS:
+  title: Structural display
+SH IFLST:
+  title: Text (= Description)
+SH IFLSU:
+  title: Classification
+SH IFLSW:
+  title: Historical labels
+SH IFLS_REAL_ESTATE:
+  title: Real Estate Object
+SH IFL_ES_ADVANCED:
+  title: Advanced Search for Functional Locations (Enterprise Search)
+SH IFL_ES_SIMPLE:
+  title: Simple Search for Functional Locations (Enterprise Search)
+SH IFL_TREX_ADVANCED:
+  title: Advanced Search of Functional Location via Search Engine
+SH IFL_TREX_SIMPLE:
+  title: Quick Search of Functional Location via Search Engine
+SH JVH_KOSTG:
+  title: Joint venture
+SH JVH_VPTNR:
+  title: JV partner in coding block
+SH KOST:
+  elementaryHelps:
+    - SH KOSTN:
+        title: Cost center
+    - SH KOSTS:
+        title: Cost center name
+    - SH KOSTN_SES_QUICK:
+        title: Simple Search for Cost Centers
+    - SH KOSTN_SES_ADVANCED:
+        title: Extended Search Cost Centers
+    - SH KOSTH:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Standard Hierarchy
+    - SH HRPADUN_KOSTWO2:
+        title: Organizational unit via Personnel Area (NPO)
+    - SH JVH_KOSTG:
+        title: Joint venture
+  title: Cost Center
+SH KOSTH:
+  title: Standard Hierarchy
+SH KOSTN:
+  title: Cost center
+SH KOSTN_SES_ADVANCED:
+  title: Extended Search Cost Centers
+SH KOSTN_SES_QUICK:
+  title: Simple Search for Cost Centers
+SH KOSTS:
+  title: Cost center name
+SH REKUNNRCN:
+  title: Customer By Real Estate Contract
+SH REKUNNR_VIRAINV:
+  title: Customer for Invoice Number (Real Estate)
+SH VTTZZ:
+  title: Time Zone for Partner

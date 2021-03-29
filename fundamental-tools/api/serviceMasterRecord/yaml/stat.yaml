@@ -1,0 +1,28 @@
+BAPI_SERVICE_CHANGE:
+  exception: 0
+  struct: 4
+  table: 5
+  var: 2
+BAPI_SERVICE_CREATE:
+  exception: 0
+  struct: 4
+  table: 5
+  var: 3
+BAPI_SERVICE_GET_DETAIL:
+  exception: 0
+  struct: 1
+  table: 2
+  var: 2
+BAPI_SERVICE_GET_LIST:
+  exception: 0
+  struct: 0
+  table: 7
+  var: 0
+total:
+  alpha: 4
+  descriptors: 47
+  fields: 16
+  helps: 49
+  parameters: 35
+  rfms: 4
+  texts: 82

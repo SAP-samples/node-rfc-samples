@@ -1,0 +1,53 @@
+BAPI_BUSPARTNER_CHANGE:
+  exception: 0
+  struct: 22
+  table: 46
+  var: 10
+BAPI_BUSPARTNER_CREATE:
+  exception: 0
+  struct: 16
+  table: 25
+  var: 14
+BAPI_BUSPARTNER_GETDETAIL:
+  exception: 0
+  struct: 11
+  table: 15
+  var: 4
+BAPI_BUSPARTNER_GETLIST:
+  exception: 0
+  struct: 0
+  table: 11
+  var: 2
+BAPI_BUSPARTNER_GETLISTCUST:
+  exception: 0
+  struct: 0
+  table: 12
+  var: 2
+BAPI_BUSPARTNER_GETLISTEMPL:
+  exception: 0
+  struct: 0
+  table: 9
+  var: 2
+BAPI_BUSPARTNER_GETLISTHOSP:
+  exception: 0
+  struct: 0
+  table: 10
+  var: 2
+BAPI_BUSPARTNER_GETLISTINSPROV:
+  exception: 0
+  struct: 0
+  table: 16
+  var: 2
+BAPI_BUSPARTNER_GETLISTPERSON:
+  exception: 0
+  struct: 0
+  table: 18
+  var: 2
+total:
+  alpha: 3
+  descriptors: 112
+  fields: 79
+  helps: 115
+  parameters: 251
+  rfms: 9
+  texts: 396

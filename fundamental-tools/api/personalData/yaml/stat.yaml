@@ -1,0 +1,53 @@
+BAPI_PERSDATA_CHANGE:
+  exception: 0
+  struct: 1
+  table: 0
+  var: 40
+BAPI_PERSDATA_CREATE:
+  exception: 0
+  struct: 1
+  table: 0
+  var: 43
+BAPI_PERSDATA_CREATESUCCESSOR:
+  exception: 0
+  struct: 1
+  table: 0
+  var: 43
+BAPI_PERSDATA_DELETE:
+  exception: 0
+  struct: 1
+  table: 0
+  var: 8
+BAPI_PERSDATA_DELIMIT:
+  exception: 0
+  struct: 2
+  table: 0
+  var: 9
+BAPI_PERSDATA_GETDETAIL:
+  exception: 0
+  struct: 1
+  table: 0
+  var: 48
+BAPI_PERSDATA_GETDETAILEDLIST:
+  exception: 0
+  struct: 1
+  table: 1
+  var: 3
+BAPI_PERSDATA_GETLIST:
+  exception: 0
+  struct: 1
+  table: 1
+  var: 3
+BAPI_PERSDATA_SIMULATECREATION:
+  exception: 0
+  struct: 1
+  table: 0
+  var: 43
+total:
+  alpha: 2
+  descriptors: 17
+  fields: 5
+  helps: 17
+  parameters: 243
+  rfms: 9
+  texts: 72

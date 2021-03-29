@@ -1,0 +1,38 @@
+BAPI_ALM_COMPONENT_GET_DETAIL:
+  exception: 0
+  struct: 1
+  table: 5
+  var: 5
+BAPI_ALM_OPERATION_GET_DETAIL:
+  exception: 0
+  struct: 1
+  table: 8
+  var: 3
+BAPI_ALM_ORDERHEAD_GET_LIST:
+  exception: 0
+  struct: 2
+  table: 4
+  var: 0
+BAPI_ALM_ORDEROPER_GET_LIST:
+  exception: 0
+  struct: 2
+  table: 4
+  var: 0
+BAPI_ALM_ORDER_GET_DETAIL:
+  exception: 0
+  struct: 3
+  table: 22
+  var: 1
+BAPI_ALM_ORDER_MAINTAIN:
+  exception: 0
+  struct: 0
+  table: 45
+  var: 1
+total:
+  alpha: 18
+  descriptors: 644
+  fields: 66
+  helps: 687
+  parameters: 107
+  rfms: 6
+  texts: 631

@@ -1,0 +1,303 @@
+CH BALHDR:
+  title: 'Application log: log number'
+CH BALM:
+  title: 'Application log: Internal message serial number'
+CH NC301P:
+  title: Data Collection Point for EDI Message Transmission
+CH NGPA:
+  title: 'IS-H: Person Number'
+CH NKTR:
+  title: Reference to Responsible Workers' Compensation Association
+CH USR02:
+  title: 'IS-H: Business Partner User'
+CT BPID003_E:
+  title: ID Number Category for Business Partner
+CT BUT000:
+  title: Business partners
+CT DD03L:
+  title: Local field name
+CT KNA1:
+  title: Customer Number
+CT NADR:
+  title: 'IS-H: Address number'
+CT NGPA:
+  title: 'IS-H: Business Partner'
+CT T000:
+  title: Client (key field in client-specific tables)
+CT T005:
+  title: 'IS-H: Country'
+CT T005S:
+  title: 'IS-H: Region (Federal State, Province, County)'
+CT T047A:
+  title: Dunning type
+CT T077D:
+  title: Account group
+CT T100A:
+  title: Message Class
+CT T535N:
+  title: Title/name prefix/name suffix
+CT TB001:
+  title: Business Partner Grouping
+CT TB037:
+  title: Authorization Group
+CT TB039A:
+  title: Identification Type
+CT TBDLS:
+  title: Logical system
+CT TCURC:
+  title: Currency Key
+CT TN01:
+  title: 'IS-H: Institution'
+CT TN12R:
+  title: 'IS-H: Rank for person'
+CT TN16:
+  title: 'IS-H: Insurance Contract Scheme'
+CT TN16C:
+  title: 'IS-H: Insurance Subgroup'
+CT TN17A:
+  title: 'IS-H: Form-of-address short text'
+CT TN17G:
+  title: 'RI: external sex ID'
+CT TN18:
+  title: 'IS-H: Type of Insurance Provider'
+CT TN18E:
+  title: 'IS-H: Hospital Type / Category'
+CT TNKFA:
+  title: 'IS-H: General specialty'
+CT TNWCH77:
+  title: 'IS-H CH: IV Procedures'
+CT TNWCH95:
+  title: Fee authorization
+CT TNWCHTM02:
+  title: 'IS-H CH: Qualitative Grade'
+CT TNWCHTM03: {}
+CT TSAC:
+  title: Communication Method (Business Address Services)
+CT TSKD:
+  title: Tax indicator
+CT TZUN:
+  title: Selection key for allocation number layout
+CT USR02:
+  title: User Name in User Master Record
+FV /ISHFR/ISH_HIST:
+  title: 'IS-H FR: Health Insurer Type'
+FV BAPIUPDATE:
+  title: Updated information in related user data field
+FV BU_TYPE:
+  title: Business Partner Category
+FV FALLART:
+  title: 'IS-H: Case Type'
+FV FATYP:
+  title: Category of Specialty Key
+FV GPREL:
+  title: 'IS-H: Business Partner - Relationship'
+FV ISH01:
+  title: 'IS-H: Determine IV Control Parameters Using Ins. Prov. Type'
+FV ISH_AKTTYP:
+  title: 'IS-H: Action Type'
+FV ISH_BAPIRETMAXTY:
+  title: 'IS-H: Most Severe Message Type Generated'
+FV ISH_INTERV:
+  title: 'IS-H: Interim Billing Interval (Weeks/Days/Quarter)'
+FV ISH_KTKEY:
+  title: 'IS-H: Internal Insurance Provider Category'
+FV ISH_KVGBO:
+  title: 'IS-H: Charge Catalog (PPA billing Germany)'
+FV ISH_ON_OFF:
+  title: 'IS-H FR: Complementary Insurance'
+FV ISH_OPTION:
+  title: 'IS-H: OPTION Parameter of Range Table'
+FV ISH_RDRUCK:
+  title: 'IS-H: Control for Invoice Print'
+FV ISH_SESIGN:
+  title: 'IS-H: SIGN Parameter of Range Table'
+FV ISH_SORT:
+  title: 'IS-H: Sort Rules for Billing'
+FV ISH_SPTYP:
+  title: 'IS-H: Specialist Type'
+FV ISH_STAG:
+  title: 'IS-H: Start Day for Interval'
+FV ISH_TAGE:
+  title: 'IS-H: Interim Billing After x Days as of Admission'
+FV KBVAB:
+  title: 'IS-H: Classification of Billing Type According to PPA-BDT'
+FV KUEVERS:
+  title: 'IS-H: Send IV Request Only if Diagnosis Is Maintained'
+FV MAFRI:
+  title: 'IS-H: Reminder Period for IV Request in Days'
+FV N_TRMODUS:
+  title: 'IS-H: Operat. Mode of IS-H Transaction (Normal/Stand-Alone)'
+FV S_OPTION:
+  title: Option (like RANGES table)
+FV VERFZUZ:
+  title: 'IS-H: Copayment Procedure for Billing'
+FV XFELD:
+  title: Checkbox
+FV XFLAG: {}
+SH BP_BUPAG:
+  title: Partners by Different Attributes
+SH BP_ERP_TREX_ADVANCED:
+  title: Advanced Search for Business Partner Using Search Engine
+SH BP_ERP_TREX_SIMPLE:
+  title: Quick Search for Business Partner Using Search Engine
+SH BUHI_HIERARCHY_TYPE:
+  title: Description of Hierarchy Category
+SH BUHI_TREE_SEARCH_TERM2:
+  title: Hierarchy Tree ID
+SH BUHI_TREE_SEARCH_TERM3:
+  title: Partner in Group Hierarchy
+SH BUPA:
+  elementaryHelps:
+    - SH BUPAA:
+        title: Partners by address
+    - SH BUPAP:
+        title: Partners, General
+    - SH BUPAR:
+        title: Partners by BP Role
+    - SH BUPAY:
+        title: Partners by Address (Rough Search)
+    - SH BU_ADR:
+        title: Partner by Address (Mass Search)
+    - SH BUPAA_VERS:
+        title: Partners by Address Versions
+    - SH BP_BUPAG:
+        title: Partners by Different Attributes
+    - SH BP_ERP_TREX_SIMPLE:
+        title: Quick Search for Business Partner Using Search Engine
+    - SH BP_ERP_TREX_ADVANCED:
+        title: Advanced Search for Business Partner Using Search Engine
+    - SH BUPAB:
+        title: Partners by bank details
+    - SH BUPAI:
+        title: Partners by Identification Number
+    - SH BUPAU:
+        title: Partner According to User
+    - SH BUPAV:
+        title: Partner According to Internet User
+    - SH BU_NSO:
+        title: Search Help for Unsaved Objects
+    - SH BUPAGUID:
+        title: Partner by Technical GUID
+    - SH BUHI_TREE_SEARCH_TERM3:
+        title: Partner in Group Hierarchy
+    - SH BUPARLTYP:
+        title: Partners by Relationship
+    - SH FSBP_BP_IDNUM:
+        title: Search for Partner Using Other ID Numbers
+    - SH FSBP_BUPAG:
+        title: Partner by Various Attributes
+    - SH FSBP_ALIAS:
+        title: Partner According to Alias
+  title: Business Partner Number
+SH BUPAA:
+  title: Partners by address
+SH BUPAA_VERS:
+  title: Partners by Address Versions
+SH BUPAB:
+  title: Partners by bank details
+SH BUPAGUID:
+  title: Partner by Technical GUID
+SH BUPAI:
+  title: Partners by Identification Number
+SH BUPAP:
+  title: Partners, General
+SH BUPAR:
+  title: Partners by BP Role
+SH BUPARLTYP:
+  title: Partners by Relationship
+SH BUPAU:
+  title: Partner According to User
+SH BUPAV:
+  title: Partner According to Internet User
+SH BUPAY:
+  title: Partners by Address (Rough Search)
+SH BU_ADR:
+  title: Partner by Address (Mass Search)
+SH BU_NSO:
+  title: Search Help for Unsaved Objects
+SH CITYA:
+  title: City Code for City/Street File
+SH CLCITYNAME:
+  title: City
+SH CLSTRTNAME:
+  title: Street
+SH C_SAKNR:
+  elementaryHelps:
+    - SH GL_ACCT_CA_NO:
+        title: G/L account no. in chart of accounts
+    - SH GL_ACCT_CA_TEXT:
+        title: G/L account description in chart of accounts
+    - SH GL_ACCT_CA_FLAGS:
+        title: G/L account with delete/lock flag in chart of accounts
+    - SH GL_ACCT_CA_KEY:
+        title: Key words
+    - SH GL_ACCT_CC_NO:
+        title: G/L account number in company code
+    - SH GL_ACCT_CC_TEXT:
+        title: G/L account description in company code
+    - SH GL_ACCT_CC_FLAGS:
+        title: G/L account with delete/lock flag in company code
+    - SH GL_ACCT_CC_ALTERNATIV_NO:
+        title: Alternative account number
+  title: G/L Account Number
+SH C_T001:
+  title: Company Code
+SH F4_INTCA:
+  title: Country ISO code
+SH FSBP_ALIAS:
+  title: Partner According to Alias
+SH FSBP_BP_IDNUM:
+  title: Search for Partner Using Other ID Numbers
+SH FSBP_BUPAG:
+  title: Partner by Various Attributes
+SH GL_ACCT_CA_FLAGS:
+  title: G/L account with delete/lock flag in chart of accounts
+SH GL_ACCT_CA_KEY:
+  title: Key words
+SH GL_ACCT_CA_NO:
+  title: G/L account no. in chart of accounts
+SH GL_ACCT_CA_TEXT:
+  title: G/L account description in chart of accounts
+SH GL_ACCT_CC_ALTERNATIV_NO:
+  title: Alternative account number
+SH GL_ACCT_CC_FLAGS:
+  title: G/L account with delete/lock flag in company code
+SH GL_ACCT_CC_NO:
+  title: G/L account number in company code
+SH GL_ACCT_CC_TEXT:
+  title: G/L account description in company code
+SH H_T000:
+  title: Client
+SH H_T002:
+  title: Language Key
+SH H_T004:
+  title: Chart of Accounts
+SH H_T005_LAND:
+  title: Country Key
+SH H_TN01:
+  title: Institution
+SH H_TN18:
+  title: 'IS-H: Insurance Provider Type (e.g. Private, Statutory)'
+SH H_TNKFA:
+  title: Specialty
+SH SAKO:
+  elementaryHelps:
+    - SH GL_ACCT_CA_NO:
+        title: G/L account no. in chart of accounts
+    - SH GL_ACCT_CA_TEXT:
+        title: G/L account description in chart of accounts
+    - SH GL_ACCT_CA_FLAGS:
+        title: G/L account with delete/lock flag in chart of accounts
+    - SH GL_ACCT_CA_KEY:
+        title: Key words
+    - SH GL_ACCT_CC_NO:
+        title: G/L account number in company code
+    - SH GL_ACCT_CC_TEXT:
+        title: G/L account description in company code
+    - SH GL_ACCT_CC_FLAGS:
+        title: G/L account with delete/lock flag in company code
+    - SH GL_ACCT_CC_ALTERNATIV_NO:
+        title: Alternative account number
+  title: Reconciliation Account in General Ledger
+SH STRTA:
+  title: Street Number for City/Street File

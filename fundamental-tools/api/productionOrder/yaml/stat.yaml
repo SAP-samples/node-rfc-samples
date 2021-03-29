@@ -1,0 +1,103 @@
+BAPI_PRODORD_CHANGE:
+  exception: 0
+  struct: 4
+  table: 0
+  var: 3
+BAPI_PRODORD_CHECK_MAT_AVAIL:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 4
+BAPI_PRODORD_CLOSE:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 2
+BAPI_PRODORD_COMPLETE_TECH:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 3
+BAPI_PRODORD_COSTING:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 2
+BAPI_PRODORD_CREATE:
+  exception: 0
+  struct: 2
+  table: 0
+  var: 2
+BAPI_PRODORD_CREATE_CAP_REQ:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 2
+BAPI_PRODORD_CREATE_FROM_PLORD:
+  exception: 0
+  struct: 1
+  table: 0
+  var: 5
+BAPI_PRODORD_CREATE_FROM_REF:
+  exception: 0
+  struct: 2
+  table: 0
+  var: 2
+BAPI_PRODORD_EXIST_CHECK:
+  exception: 0
+  struct: 1
+  table: 0
+  var: 1
+BAPI_PRODORD_GET_DETAIL:
+  exception: 0
+  struct: 2
+  table: 8
+  var: 2
+BAPI_PRODORD_GET_LIST:
+  exception: 0
+  struct: 1
+  table: 13
+  var: 1
+BAPI_PRODORD_RELEASE:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 3
+BAPI_PRODORD_REVOKEUSERSTATUS:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 4
+BAPI_PRODORD_SCHEDULE:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 23
+BAPI_PRODORD_SETUSERSTATUS:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 4
+BAPI_PRODORD_SET_DELETION_FLAG:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 2
+BAPI_PRODORD_SET_DEL_INDICATOR:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 2
+BAPI_PRODORD_WM_MAT_STAGING:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 2
+total:
+  alpha: 8
+  descriptors: 313
+  fields: 34
+  helps: 335
+  parameters: 151
+  rfms: 19
+  texts: 276

@@ -1,0 +1,57 @@
+CH BALHDR:
+  title: 'Application log: log number'
+CH BALM:
+  title: 'Application log: Internal message serial number'
+CT DD03L:
+  title: Local field name
+CT E070:
+  title: Request/Task
+CT T100A:
+  title: Message Class
+CT TBDLS:
+  title: Logical system
+CT USR02:
+  title: User Name in User Master Record
+CT WBOATTR:
+  title: Request attribute
+FV FLAG:
+  title: General Flag
+FV TRFUNCTION:
+  title: Type of request/task
+FV TRSTATUS:
+  title: Status of request/task
+SH CTS_EXT_PS:
+  title: External Project System
+SH TCE_CONSOLIDATION_TARGETS:
+  title: Consolidation Targets for the Current System
+SH TCE_NEW_TRANSPORT_TARGETS:
+  title: Selection of a Transport Target
+SH TCE_OLD_TRANSPORT_TARGETS:
+  title: Selection of a Transport Target
+SH TCE_SYSTEMS:
+  title: Active Systems
+SH TCE_TARGET_SAP:
+  title: Only the Standard Transport Target SAP
+SH TCE_TRANSPORT_LAYERS:
+  title: Transport Layer in ABAP Workbench
+SH TCE_TRANSPORT_TARGET:
+  elementaryHelps:
+    - SH TCE_SYSTEMS:
+        title: Active Systems
+    - SH TCE_CONSOLIDATION_TARGETS:
+        title: Consolidation Targets for the Current System
+    - SH TCE_NEW_TRANSPORT_TARGETS:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Selection of a Transport Target
+    - SH TCE_TARGET_SAP:
+        title: Only the Standard Transport Target SAP
+    - SH TCE_OLD_TRANSPORT_TARGETS:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Selection of a Transport Target
+  title: Transport Target of Request
+SH USCOMPANY_ADDR:
+  title: Company address, cross-system key
+SH USER_ADDR:
+  title: Owner of a Request or Task

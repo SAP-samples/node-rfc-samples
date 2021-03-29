@@ -1,0 +1,34 @@
+CH BALHDR:
+  title: 'Application log: log number'
+CH BALM:
+  title: 'Application log: Internal message serial number'
+CT T005:
+  title: Country of Birth
+CT T005S:
+  title: State
+CT T100A:
+  title: Message Class
+CT T502T:
+  title: Marital status key
+CT T516T:
+  title: Religious denomination key
+CT T522G:
+  title: Form-of-Address Key
+CT T535N:
+  title: Title/name prefix/name suffix
+FV CHAR1_X:
+  title: 'Flag: Only Update on GBDAT'
+FV GESCH:
+  title: Gender Key
+FV P014_ZSART:
+  title: Type of name affix
+FV X:
+  title: COMMIT control at BAPI interface
+SH H_T002:
+  title: Language Key
+SH H_T502T:
+  title: Marital Status Key
+SH H_T516T:
+  title: Religious Denomination Key
+SH H_T535N:
+  title: Title

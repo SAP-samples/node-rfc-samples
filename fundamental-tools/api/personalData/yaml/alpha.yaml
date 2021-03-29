@@ -1,0 +1,10 @@
+all:
+  - ISOLA
+  - PDATE
+rfm:
+  BAPI_PERSDATA_CHANGE:
+    DATEOFBIRTH:
+      GBDAT: PDATE
+    LANGUAGE:
+      SPRSL: ISOLA
+size: 2

@@ -1,0 +1,38 @@
+BAPI_KANBAN_CHANGE:
+  exception: 0
+  struct: 2
+  table: 3
+  var: 4
+BAPI_KANBAN_CHANGESTATUS1:
+  exception: 0
+  struct: 4
+  table: 1
+  var: 4
+BAPI_KANBAN_GETLIST:
+  exception: 0
+  struct: 1
+  table: 7
+  var: 1
+BAPI_KANBAN_GETLISTFORSUPPLIE1:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 1
+BAPI_KANBAN_GETLIST_ALL:
+  exception: 0
+  struct: 5
+  table: 30
+  var: 2
+BAPI_KANBAN_SETINPROCESS:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 1
+total:
+  alpha: 9
+  descriptors: 181
+  fields: 47
+  helps: 191
+  parameters: 74
+  rfms: 6
+  texts: 196

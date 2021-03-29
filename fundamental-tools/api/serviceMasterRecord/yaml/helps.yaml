@@ -1,0 +1,124 @@
+CH BALHDR:
+  title: 'Application log: log number'
+CH BALM:
+  title: 'Application log: Internal message serial number'
+CH ESLA:
+  title: Short Description of Service Type
+CT ASMD:
+  title: Activity number
+CT DD02L:
+  title: Table Name
+CT DD03L:
+  title: Local field name
+CT KLAH:
+  title: Internal class number
+CT MARA:
+  title: Material group reference material
+CT T006:
+  title: Units of Measurement of Various Types
+CT T006I:
+  title: ISO codes for measurement units
+CT T023:
+  title: Material class
+CT T025:
+  title: Valuation class
+CT T100A:
+  title: Message Class
+CT T141:
+  title: Material status from MM/PP view
+CT T362:
+  title: Service Category
+CT T512W:
+  title: Wage type
+CT TBDLS:
+  title: Logical system
+CT TMKM1:
+  title: Tax indicator for material (Purchasing)
+CT TNTP:
+  title: Number category of International Article Number (EAN)
+CT TTXID:
+  title: STXD text ID
+FV BAPIOPTION:
+  title: Selection operator OPTION for range tables
+FV BAPISIGN:
+  title: Inclusion/exclusion criterion SIGN for range tables
+FV BAPIUPDATE:
+  title: Updated information in related user data field
+FV SELKZ:
+  title: Selection
+SH ASMD:
+  elementaryHelps:
+    - SH ASMDH:
+        title: Service by Hierarchy and Wage Type
+    - SH ASMDS:
+        title: Standard Service Catalog
+    - SH ASMDT:
+        title: Service by Short Text
+    - SH ASMDU:
+        blacklist:
+          search: Screen output without connection to user.
+        title: Classification
+    - SH ASMD_ES_SIMPLE:
+        title: Simple Search for Service Master using Search Engine
+    - SH ASMD_ES_ADVANCED:
+        title: Advanced Search for Service Master using Search Engine
+  title: Activity Number
+SH ASMDH:
+  title: Service by Hierarchy and Wage Type
+SH ASMDS:
+  title: Standard Service Catalog
+SH ASMDT:
+  title: Service by Short Text
+SH ASMDU:
+  title: Classification
+SH ASMD_ES_ADVANCED:
+  title: Advanced Search for Service Master using Search Engine
+SH ASMD_ES_SIMPLE:
+  title: Simple Search for Service Master using Search Engine
+SH CSH_TSPA:
+  title: Division
+SH C_SPART:
+  title: Division
+SH H_T002:
+  title: Language help (added)
+SH H_T006:
+  title: Base Unit of Measure
+SH H_T006I:
+  title: Base unit of measure in ISO code
+SH H_T023:
+  title: Material Group
+SH H_T025:
+  title: Valuation Class
+SH H_T141:
+  title: General Purchasing Status for Service
+SH H_TCLA:
+  title: Class Type
+SH H_TNTP:
+  title: Category of International Article Number (EAN)
+SH H_TSAB:
+  title: Department number
+SH SRV_SERVICETYPE:
+  title: Short Description of Service Type
+SH S_WBWG:
+  elementaryHelps:
+    - SH WBWGA:
+        title: Find by descriptions
+    - SH WBWGB:
+        title: Find by department
+    - SH WBWGC:
+        title: Find by division
+    - SH WBWGD:
+        title: Find by reference and value-only material
+    - SH WBWGE:
+        title: Find via keywords
+  title: Material Group
+SH WBWGA:
+  title: Find by descriptions
+SH WBWGB:
+  title: Find by department
+SH WBWGC:
+  title: Find by division
+SH WBWGD:
+  title: Find by reference and value-only material
+SH WBWGE:
+  title: Find via keywords

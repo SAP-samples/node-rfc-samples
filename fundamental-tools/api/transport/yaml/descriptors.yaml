@@ -1,0 +1,4231 @@
+CH BALHDR:
+  displayFields: []
+  valueFields:
+    - ACTFLAG: ''
+      ADMINFIELD: '0'
+      AMPMFORMAT: ''
+      ANONYMOUS: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: E
+      CONROUT: ''
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DBPOSITION: '0000'
+      DDLANGUAGE: ''
+      DDTEXT: ''
+      DECIMALS: '000000'
+      DEFFDNAME: LOG NUMBER
+      DEPTH: '00'
+      DOMGLOBAL: ''
+      DOMMASTER: ''
+      DOMNAME: BALOGNR
+      DOMNAME3L: BALOGNR
+      DTELGLOBAL: ''
+      DTELMASTER: D
+      ENTITYTAB: BALHDR
+      EXCLASS: '0'
+      FIELDNAME: LOGNUMBER
+      GROUPNAME: ''
+      HEADLEN: '20'
+      INTLEN: '000040'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGFLAG: ''
+      LANGUFLAG: ''
+      LENG: '000020'
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MANDATORY: ''
+      MASK: '  CHARE'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOHISTORY: ''
+      NOTNULL: X
+      OUTPUTLEN: '000020'
+      OUTPUTSTYLE: '00'
+      POSITION: '0002'
+      PRECFIELD: ''
+      PROXYTYPE: ''
+      REFFIELD: ''
+      REFTABLE: ''
+      REFTYPE: ''
+      REPTEXT: ''
+      RESERVEDOM: ''
+      RESERVEDTE: ''
+      ROLLNAME: BALOGNR
+      ROUTPUTLEN: '000000'
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: ''
+      SCRTEXT_M: ''
+      SCRTEXT_S: ''
+      SHLPFIELD: ''
+      SHLPNAME: ''
+      SHLPORIGIN: ''
+      SIGNFLAG: ''
+      STREAMORLOC: ''
+      STRORLOCPOS: '00'
+      TABLETYPE: ''
+      TABNAME: BALHDR
+      VALEXI: ''
+CH BALM:
+  displayFields: []
+  valueFields:
+    - ACTFLAG: ''
+      ADMINFIELD: '0'
+      AMPMFORMAT: ''
+      ANONYMOUS: ''
+      BIDICTRLC: ''
+      CHECKTABLE: BALHDR
+      COMPTYPE: E
+      CONROUT: ''
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DBPOSITION: '0000'
+      DDLANGUAGE: ''
+      DDTEXT: ''
+      DECIMALS: '000000'
+      DEFFDNAME: LOG NUMBER
+      DEPTH: '00'
+      DOMGLOBAL: ''
+      DOMMASTER: ''
+      DOMNAME: BALOGNR
+      DOMNAME3L: BALOGNR
+      DTELGLOBAL: ''
+      DTELMASTER: D
+      ENTITYTAB: BALHDR
+      EXCLASS: '0'
+      FIELDNAME: LOGNUMBER
+      GROUPNAME: ''
+      HEADLEN: '20'
+      INTLEN: '000040'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGFLAG: ''
+      LANGUFLAG: ''
+      LENG: '000020'
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MANDATORY: ''
+      MASK: '  CHARE'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOHISTORY: ''
+      NOTNULL: X
+      OUTPUTLEN: '000020'
+      OUTPUTSTYLE: '00'
+      POSITION: '0002'
+      PRECFIELD: ''
+      PROXYTYPE: ''
+      REFFIELD: ''
+      REFTABLE: ''
+      REFTYPE: ''
+      REPTEXT: ''
+      RESERVEDOM: ''
+      RESERVEDTE: ''
+      ROLLNAME: BALOGNR
+      ROUTPUTLEN: '000000'
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: ''
+      SCRTEXT_M: ''
+      SCRTEXT_S: ''
+      SHLPFIELD: ''
+      SHLPNAME: ''
+      SHLPORIGIN: P
+      SIGNFLAG: ''
+      STREAMORLOC: ''
+      STRORLOCPOS: '00'
+      TABLETYPE: ''
+      TABNAME: BALM
+      VALEXI: ''
+    - ACTFLAG: ''
+      ADMINFIELD: '0'
+      AMPMFORMAT: ''
+      ANONYMOUS: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: E
+      CONROUT: ''
+      CONVEXIT: ''
+      DATATYPE: NUMC
+      DBPOSITION: '0000'
+      DDLANGUAGE: ''
+      DDTEXT: ''
+      DECIMALS: '000000'
+      DEFFDNAME: MESSAGE NUMBER
+      DEPTH: '00'
+      DOMGLOBAL: ''
+      DOMMASTER: ''
+      DOMNAME: BALMNR
+      DOMNAME3L: BALMNR
+      DTELGLOBAL: ''
+      DTELMASTER: D
+      ENTITYTAB: BALM
+      EXCLASS: '0'
+      FIELDNAME: MSGNUMBER
+      GROUPNAME: ''
+      HEADLEN: '06'
+      INTLEN: '000012'
+      INTTYPE: 'N'
+      KEYFLAG: X
+      LANGFLAG: ''
+      LANGUFLAG: ''
+      LENG: '000006'
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MANDATORY: ''
+      MASK: '  NUMCE'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOHISTORY: ''
+      NOTNULL: X
+      OUTPUTLEN: '000006'
+      OUTPUTSTYLE: '00'
+      POSITION: '0003'
+      PRECFIELD: ''
+      PROXYTYPE: ''
+      REFFIELD: ''
+      REFTABLE: ''
+      REFTYPE: ''
+      REPTEXT: ''
+      RESERVEDOM: ''
+      RESERVEDTE: ''
+      ROLLNAME: BALMNR
+      ROUTPUTLEN: '000000'
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: ''
+      SCRTEXT_M: ''
+      SCRTEXT_S: ''
+      SHLPFIELD: ''
+      SHLPNAME: ''
+      SHLPORIGIN: ''
+      SIGNFLAG: ''
+      STREAMORLOC: ''
+      STRORLOCPOS: '00'
+      TABLETYPE: ''
+      TABNAME: BALM
+      VALEXI: ''
+CT DD03L:
+  displayFields: []
+  valueFields:
+    - ACTFLAG: ''
+      ADMINFIELD: '0'
+      AMPMFORMAT: ''
+      ANONYMOUS: ''
+      BIDICTRLC: ''
+      CHECKTABLE: DD02L
+      COMPTYPE: E
+      CONROUT: ''
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DBPOSITION: '0000'
+      DDLANGUAGE: ''
+      DDTEXT: ''
+      DECIMALS: '000000'
+      DEFFDNAME: TABNAME
+      DEPTH: '00'
+      DOMGLOBAL: ''
+      DOMMASTER: ''
+      DOMNAME: AS4TAB
+      DOMNAME3L: AS4TAB
+      DTELGLOBAL: ''
+      DTELMASTER: D
+      ENTITYTAB: DD02L
+      EXCLASS: '0'
+      FIELDNAME: TABNAME
+      GROUPNAME: ''
+      HEADLEN: '30'
+      INTLEN: '000060'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGFLAG: ''
+      LANGUFLAG: ''
+      LENG: '000030'
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MANDATORY: ''
+      MASK: '  CHARE'
+      MASKLEN: '0000'
+      MEMORYID: DTB
+      NOHISTORY: ''
+      NOTNULL: X
+      OUTPUTLEN: '000030'
+      OUTPUTSTYLE: '00'
+      POSITION: '0001'
+      PRECFIELD: ''
+      PROXYTYPE: ''
+      REFFIELD: ''
+      REFTABLE: ''
+      REFTYPE: ''
+      REPTEXT: ''
+      RESERVEDOM: ''
+      RESERVEDTE: ''
+      ROLLNAME: TABNAME
+      ROUTPUTLEN: '000000'
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: ''
+      SCRTEXT_M: ''
+      SCRTEXT_S: ''
+      SHLPFIELD: ''
+      SHLPNAME: ''
+      SHLPORIGIN: P
+      SIGNFLAG: ''
+      STREAMORLOC: ''
+      STRORLOCPOS: '00'
+      TABLETYPE: ''
+      TABNAME: DD03L
+      VALEXI: ''
+    - ACTFLAG: ''
+      ADMINFIELD: '0'
+      AMPMFORMAT: ''
+      ANONYMOUS: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: E
+      CONROUT: ''
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DBPOSITION: '0000'
+      DDLANGUAGE: ''
+      DDTEXT: ''
+      DECIMALS: '000000'
+      DEFFDNAME: ''
+      DEPTH: '00'
+      DOMGLOBAL: ''
+      DOMMASTER: ''
+      DOMNAME: FDNAME
+      DOMNAME3L: FDNAME
+      DTELGLOBAL: ''
+      DTELMASTER: D
+      ENTITYTAB: DD03L
+      EXCLASS: '0'
+      FIELDNAME: FIELDNAME
+      GROUPNAME: ''
+      HEADLEN: '10'
+      INTLEN: '000060'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGFLAG: ''
+      LANGUFLAG: ''
+      LENG: '000030'
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MANDATORY: ''
+      MASK: '  CHARE'
+      MASKLEN: '0000'
+      MEMORYID: DFD
+      NOHISTORY: ''
+      NOTNULL: X
+      OUTPUTLEN: '000030'
+      OUTPUTSTYLE: '00'
+      POSITION: '0002'
+      PRECFIELD: ''
+      PROXYTYPE: ''
+      REFFIELD: ''
+      REFTABLE: ''
+      REFTYPE: ''
+      REPTEXT: ''
+      RESERVEDOM: ''
+      RESERVEDTE: ''
+      ROLLNAME: FIELDNAME
+      ROUTPUTLEN: '000000'
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '18'
+      SCRTEXT_L: ''
+      SCRTEXT_M: ''
+      SCRTEXT_S: ''
+      SHLPFIELD: ''
+      SHLPNAME: ''
+      SHLPORIGIN: ''
+      SIGNFLAG: ''
+      STREAMORLOC: ''
+      STRORLOCPOS: '00'
+      TABLETYPE: ''
+      TABNAME: DD03L
+      VALEXI: ''
+    - ACTFLAG: ''
+      ADMINFIELD: '0'
+      AMPMFORMAT: ''
+      ANONYMOUS: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: E
+      CONROUT: ''
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DBPOSITION: '0000'
+      DDLANGUAGE: ''
+      DDTEXT: ''
+      DECIMALS: '000000'
+      DEFFDNAME: ''
+      DEPTH: '00'
+      DOMGLOBAL: ''
+      DOMMASTER: ''
+      DOMNAME: AS4LOCAL
+      DOMNAME3L: AS4LOCAL
+      DTELGLOBAL: ''
+      DTELMASTER: D
+      ENTITYTAB: ''
+      EXCLASS: '0'
+      FIELDNAME: AS4LOCAL
+      GROUPNAME: ''
+      HEADLEN: '02'
+      INTLEN: '000002'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGFLAG: ''
+      LANGUFLAG: ''
+      LENG: '000001'
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MANDATORY: ''
+      MASK: '  CHARE'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOHISTORY: ''
+      NOTNULL: X
+      OUTPUTLEN: '000001'
+      OUTPUTSTYLE: '00'
+      POSITION: '0003'
+      PRECFIELD: ''
+      PROXYTYPE: ''
+      REFFIELD: ''
+      REFTABLE: ''
+      REFTYPE: ''
+      REPTEXT: ''
+      RESERVEDOM: ''
+      RESERVEDTE: ''
+      ROLLNAME: AS4LOCAL
+      ROUTPUTLEN: '000000'
+      SCRLEN1: '00'
+      SCRLEN2: '18'
+      SCRLEN3: '18'
+      SCRTEXT_L: ''
+      SCRTEXT_M: ''
+      SCRTEXT_S: ''
+      SHLPFIELD: ''
+      SHLPNAME: ''
+      SHLPORIGIN: F
+      SIGNFLAG: ''
+      STREAMORLOC: ''
+      STRORLOCPOS: '00'
+      TABLETYPE: ''
+      TABNAME: DD03L
+      VALEXI: X
+    - ACTFLAG: ''
+      ADMINFIELD: '0'
+      AMPMFORMAT: ''
+      ANONYMOUS: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: E
+      CONROUT: ''
+      CONVEXIT: ''
+      DATATYPE: NUMC
+      DBPOSITION: '0000'
+      DDLANGUAGE: ''
+      DDTEXT: ''
+      DECIMALS: '000000'
+      DEFFDNAME: ''
+      DEPTH: '00'
+      DOMGLOBAL: ''
+      DOMMASTER: ''
+      DOMNAME: AS4VERS
+      DOMNAME3L: AS4VERS
+      DTELGLOBAL: ''
+      DTELMASTER: D
+      ENTITYTAB: ''
+      EXCLASS: '0'
+      FIELDNAME: AS4VERS
+      GROUPNAME: ''
+      HEADLEN: '04'
+      INTLEN: '000008'
+      INTTYPE: 'N'
+      KEYFLAG: X
+      LANGFLAG: ''
+      LANGUFLAG: ''
+      LENG: '000004'
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MANDATORY: ''
+      MASK: '  NUMCE'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOHISTORY: ''
+      NOTNULL: X
+      OUTPUTLEN: '000004'
+      OUTPUTSTYLE: '00'
+      POSITION: '0004'
+      PRECFIELD: ''
+      PROXYTYPE: ''
+      REFFIELD: ''
+      REFTABLE: ''
+      REFTYPE: ''
+      REPTEXT: ''
+      RESERVEDOM: ''
+      RESERVEDTE: ''
+      ROLLNAME: AS4VERS
+      ROUTPUTLEN: '000000'
+      SCRLEN1: '00'
+      SCRLEN2: '18'
+      SCRLEN3: '18'
+      SCRTEXT_L: ''
+      SCRTEXT_M: ''
+      SCRTEXT_S: ''
+      SHLPFIELD: ''
+      SHLPNAME: ''
+      SHLPORIGIN: ''
+      SIGNFLAG: ''
+      STREAMORLOC: ''
+      STRORLOCPOS: '00'
+      TABLETYPE: ''
+      TABNAME: DD03L
+      VALEXI: ''
+    - ACTFLAG: ''
+      ADMINFIELD: '0'
+      AMPMFORMAT: ''
+      ANONYMOUS: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: E
+      CONROUT: ''
+      CONVEXIT: ''
+      DATATYPE: NUMC
+      DBPOSITION: '0000'
+      DDLANGUAGE: ''
+      DDTEXT: ''
+      DECIMALS: '000000'
+      DEFFDNAME: ''
+      DEPTH: '00'
+      DOMGLOBAL: ''
+      DOMMASTER: ''
+      DOMNAME: AS4POS
+      DOMNAME3L: AS4POS
+      DTELGLOBAL: ''
+      DTELMASTER: D
+      ENTITYTAB: ''
+      EXCLASS: '0'
+      FIELDNAME: POSITION
+      GROUPNAME: ''
+      HEADLEN: '06'
+      INTLEN: '000008'
+      INTTYPE: 'N'
+      KEYFLAG: X
+      LANGFLAG: ''
+      LANGUFLAG: ''
+      LENG: '000004'
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MANDATORY: ''
+      MASK: '  NUMCE'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOHISTORY: ''
+      NOTNULL: X
+      OUTPUTLEN: '000004'
+      OUTPUTSTYLE: '00'
+      POSITION: '0005'
+      PRECFIELD: ''
+      PROXYTYPE: ''
+      REFFIELD: ''
+      REFTABLE: ''
+      REFTYPE: ''
+      REPTEXT: ''
+      RESERVEDOM: ''
+      RESERVEDTE: ''
+      ROLLNAME: TABFDPOS
+      ROUTPUTLEN: '000000'
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: ''
+      SCRTEXT_M: ''
+      SCRTEXT_S: ''
+      SHLPFIELD: ''
+      SHLPNAME: ''
+      SHLPORIGIN: ''
+      SIGNFLAG: ''
+      STREAMORLOC: ''
+      STRORLOCPOS: '00'
+      TABLETYPE: ''
+      TABNAME: DD03L
+      VALEXI: ''
+CT E070:
+  displayFields: []
+  valueFields:
+    - ACTFLAG: ''
+      ADMINFIELD: '0'
+      AMPMFORMAT: ''
+      ANONYMOUS: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: E
+      CONROUT: ''
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DBPOSITION: '0000'
+      DDLANGUAGE: ''
+      DDTEXT: ''
+      DECIMALS: '000000'
+      DEFFDNAME: AUFTRAGS-NUMMER
+      DEPTH: '00'
+      DOMGLOBAL: ''
+      DOMMASTER: ''
+      DOMNAME: TRKORR
+      DOMNAME3L: TRKORR
+      DTELGLOBAL: ''
+      DTELMASTER: D
+      ENTITYTAB: E070
+      EXCLASS: '0'
+      FIELDNAME: TRKORR
+      GROUPNAME: ''
+      HEADLEN: '15'
+      INTLEN: '000040'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGFLAG: ''
+      LANGUFLAG: ''
+      LENG: '000020'
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MANDATORY: ''
+      MASK: '  CHARE'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOHISTORY: ''
+      NOTNULL: X
+      OUTPUTLEN: '000020'
+      OUTPUTSTYLE: '00'
+      POSITION: '0001'
+      PRECFIELD: ''
+      PROXYTYPE: ''
+      REFFIELD: ''
+      REFTABLE: ''
+      REFTYPE: ''
+      REPTEXT: ''
+      RESERVEDOM: ''
+      RESERVEDTE: ''
+      ROLLNAME: TRKORR
+      ROUTPUTLEN: '000000'
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: ''
+      SCRTEXT_M: ''
+      SCRTEXT_S: ''
+      SHLPFIELD: ''
+      SHLPNAME: ''
+      SHLPORIGIN: ''
+      SIGNFLAG: ''
+      STREAMORLOC: ''
+      STRORLOCPOS: '00'
+      TABLETYPE: ''
+      TABNAME: E070
+      VALEXI: ''
+CT T100A:
+  displayFields: []
+  valueFields:
+    - ACTFLAG: ''
+      ADMINFIELD: '0'
+      AMPMFORMAT: ''
+      ANONYMOUS: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: E
+      CONROUT: ''
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DBPOSITION: '0000'
+      DDLANGUAGE: ''
+      DDTEXT: ''
+      DECIMALS: '000000'
+      DEFFDNAME: ''
+      DEPTH: '00'
+      DOMGLOBAL: ''
+      DOMMASTER: ''
+      DOMNAME: ARBGB
+      DOMNAME3L: ARBGB
+      DTELGLOBAL: ''
+      DTELMASTER: D
+      ENTITYTAB: T100A
+      EXCLASS: '0'
+      FIELDNAME: ARBGB
+      GROUPNAME: ''
+      HEADLEN: '05'
+      INTLEN: '000040'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGFLAG: ''
+      LANGUFLAG: ''
+      LENG: '000020'
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MANDATORY: ''
+      MASK: '  CHARE'
+      MASKLEN: '0000'
+      MEMORYID: MAG
+      NOHISTORY: ''
+      NOTNULL: X
+      OUTPUTLEN: '000020'
+      OUTPUTSTYLE: '00'
+      POSITION: '0001'
+      PRECFIELD: ''
+      PROXYTYPE: ''
+      REFFIELD: ''
+      REFTABLE: ''
+      REFTYPE: ''
+      REPTEXT: ''
+      RESERVEDOM: ''
+      RESERVEDTE: ''
+      ROLLNAME: ARBGB
+      ROUTPUTLEN: '000000'
+      SCRLEN1: '10'
+      SCRLEN2: '13'
+      SCRLEN3: '18'
+      SCRTEXT_L: ''
+      SCRTEXT_M: ''
+      SCRTEXT_S: ''
+      SHLPFIELD: ''
+      SHLPNAME: ''
+      SHLPORIGIN: ''
+      SIGNFLAG: ''
+      STREAMORLOC: ''
+      STRORLOCPOS: '00'
+      TABLETYPE: ''
+      TABNAME: T100A
+      VALEXI: ''
+CT TBDLS:
+  displayFields: []
+  valueFields:
+    - ACTFLAG: ''
+      ADMINFIELD: '0'
+      AMPMFORMAT: ''
+      ANONYMOUS: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: E
+      CONROUT: ''
+      CONVEXIT: ALPHA
+      DATATYPE: CHAR
+      DBPOSITION: '0000'
+      DDLANGUAGE: ''
+      DDTEXT: ''
+      DECIMALS: '000000'
+      DEFFDNAME: LOG_SYSTEM
+      DEPTH: '00'
+      DOMGLOBAL: ''
+      DOMMASTER: D
+      DOMNAME: LOGSYS
+      DOMNAME3L: LOGSYS
+      DTELGLOBAL: ''
+      DTELMASTER: D
+      ENTITYTAB: TBDLS
+      EXCLASS: '0'
+      FIELDNAME: LOGSYS
+      GROUPNAME: ''
+      HEADLEN: '10'
+      INTLEN: '000020'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGFLAG: ''
+      LANGUFLAG: ''
+      LENG: '000010'
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MANDATORY: ''
+      MASK: '  CHARE'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOHISTORY: ''
+      NOTNULL: X
+      OUTPUTLEN: '000010'
+      OUTPUTSTYLE: '00'
+      POSITION: '0001'
+      PRECFIELD: ''
+      PROXYTYPE: ''
+      REFFIELD: ''
+      REFTABLE: ''
+      REFTYPE: ''
+      REPTEXT: ''
+      RESERVEDOM: ''
+      RESERVEDTE: ''
+      ROLLNAME: LOGSYS
+      ROUTPUTLEN: '000000'
+      SCRLEN1: '09'
+      SCRLEN2: '16'
+      SCRLEN3: '16'
+      SCRTEXT_L: ''
+      SCRTEXT_M: ''
+      SCRTEXT_S: ''
+      SHLPFIELD: ''
+      SHLPNAME: ''
+      SHLPORIGIN: ''
+      SIGNFLAG: ''
+      STREAMORLOC: ''
+      STRORLOCPOS: '00'
+      TABLETYPE: ''
+      TABNAME: TBDLS
+      VALEXI: ''
+CT USR02:
+  displayFields: []
+  valueFields:
+    - ACTFLAG: ''
+      ADMINFIELD: '0'
+      AMPMFORMAT: ''
+      ANONYMOUS: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: E
+      CONROUT: ''
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DBPOSITION: '0000'
+      DDLANGUAGE: ''
+      DDTEXT: ''
+      DECIMALS: '000000'
+      DEFFDNAME: ''
+      DEPTH: '00'
+      DOMGLOBAL: ''
+      DOMMASTER: D
+      DOMNAME: XUBNAME
+      DOMNAME3L: XUBNAME
+      DTELGLOBAL: ''
+      DTELMASTER: D
+      ENTITYTAB: USR02
+      EXCLASS: '0'
+      FIELDNAME: BNAME
+      GROUPNAME: ''
+      HEADLEN: '12'
+      INTLEN: '000024'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGFLAG: ''
+      LANGUFLAG: ''
+      LENG: '000012'
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MANDATORY: ''
+      MASK: '  CHARE'
+      MASKLEN: '0000'
+      MEMORYID: XUS
+      NOHISTORY: ''
+      NOTNULL: X
+      OUTPUTLEN: '000012'
+      OUTPUTSTYLE: '00'
+      POSITION: '0002'
+      PRECFIELD: ''
+      PROXYTYPE: ''
+      REFFIELD: ''
+      REFTABLE: ''
+      REFTYPE: ''
+      REPTEXT: ''
+      RESERVEDOM: ''
+      RESERVEDTE: ''
+      ROLLNAME: XUBNAME
+      ROUTPUTLEN: '000000'
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: ''
+      SCRTEXT_M: ''
+      SCRTEXT_S: ''
+      SHLPFIELD: ''
+      SHLPNAME: ''
+      SHLPORIGIN: ''
+      SIGNFLAG: ''
+      STREAMORLOC: ''
+      STRORLOCPOS: '00'
+      TABLETYPE: ''
+      TABNAME: USR02
+      VALEXI: ''
+CT WBOATTR:
+  displayFields: []
+  valueFields:
+    - ACTFLAG: ''
+      ADMINFIELD: '0'
+      AMPMFORMAT: ''
+      ANONYMOUS: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: E
+      CONROUT: ''
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DBPOSITION: '0000'
+      DDLANGUAGE: ''
+      DDTEXT: ''
+      DECIMALS: '000000'
+      DEFFDNAME: AUFTRAGSATTRIBUT
+      DEPTH: '00'
+      DOMGLOBAL: ''
+      DOMMASTER: ''
+      DOMNAME: TRATTR
+      DOMNAME3L: TRATTR
+      DTELGLOBAL: ''
+      DTELMASTER: D
+      ENTITYTAB: WBOATTR
+      EXCLASS: '0'
+      FIELDNAME: ATTR
+      GROUPNAME: ''
+      HEADLEN: '00'
+      INTLEN: '000060'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGFLAG: ''
+      LANGUFLAG: ''
+      LENG: '000030'
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MANDATORY: ''
+      MASK: '  CHARE'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOHISTORY: ''
+      NOTNULL: X
+      OUTPUTLEN: '000030'
+      OUTPUTSTYLE: '00'
+      POSITION: '0001'
+      PRECFIELD: ''
+      PROXYTYPE: ''
+      REFFIELD: ''
+      REFTABLE: ''
+      REFTYPE: ''
+      REPTEXT: ''
+      RESERVEDOM: ''
+      RESERVEDTE: ''
+      ROLLNAME: TRATTR
+      ROUTPUTLEN: '000000'
+      SCRLEN1: '10'
+      SCRLEN2: '00'
+      SCRLEN3: '15'
+      SCRTEXT_L: ''
+      SCRTEXT_M: ''
+      SCRTEXT_S: ''
+      SHLPFIELD: ''
+      SHLPNAME: ''
+      SHLPORIGIN: ''
+      SIGNFLAG: ''
+      STREAMORLOC: ''
+      STRORLOCPOS: '00'
+      TABLETYPE: ''
+      TABNAME: WBOATTR
+      VALEXI: ''
+FV FLAG:
+  count: 2
+  valueInputType: binary
+  values:
+    '': Flag is Not Set
+    X: Flag set. Event has occurred.
+FV TRFUNCTION:
+  count: 16
+  valueInputType: list
+  values:
+    C: Relocation of Objects Without Package Change
+    D: Piece List for Support Package
+    E: Relocation of complete package
+    F: Piece List
+    G: Piece List for CTS Project
+    K: Workbench Request
+    L: Deletion transport
+    M: Client Transport Request
+    O: Relocation of Objects with Package Change
+    P: Piece List for Upgrade
+    Q: Customizing Task
+    R: Repair
+    S: Development/Correction
+    T: Transport of Copies
+    W: Customizing Request
+    X: Unclassified Task
+FV TRSTATUS:
+  count: 5
+  valueInputType: list
+  values:
+    D: Modifiable
+    L: Modifiable, Protected
+    'N': Released (with Import Protection for Repaired Objects)
+    O: Release Started
+    R: Released
+SH CTS_EXT_PS:
+  resultDescriptor:
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: TEXT32
+      DYNPFLD: X
+      F4AVAILABL: X
+      FIELDNAME: EXTERNALPS
+      FIELDTEXT: External Project System
+      GENKEY: ''
+      HEADLEN: '00'
+      INTLEN: '000064'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGU: E
+      LENG: '000032'
+      LFIELDNAME: ''
+      LOGFLAG: ''
+      LOWERCASE: X
+      LTRFLDDIS: ''
+      MAC: X
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000000'
+      OUTPUTLEN: '000032'
+      OUTPUTSTYLE: '00'
+      POSITION: '0001'
+      PRECFIELD: TR_EXTPS
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: ''
+      ROLLNAME: TR_EXTPS
+      SCRLEN1: '00'
+      SCRLEN2: '00'
+      SCRLEN3: '20'
+      SCRTEXT_L: Project System
+      SCRTEXT_M: ''
+      SCRTEXT_S: ''
+      SIGN: ''
+      TABNAME: CTS_EXT_PS
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: AS4TEXT
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: DESCRIPTN
+      FIELDTEXT: Short Description of Repository Objects
+      GENKEY: ''
+      HEADLEN: '20'
+      INTLEN: '000120'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGU: E
+      LENG: '000060'
+      LFIELDNAME: ''
+      LOGFLAG: ''
+      LOWERCASE: X
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000064'
+      OUTPUTLEN: '000060'
+      OUTPUTSTYLE: '00'
+      POSITION: '0002'
+      PRECFIELD: AS4TEXT
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Short Description
+      ROLLNAME: AS4TEXT
+      SCRLEN1: '10'
+      SCRLEN2: '18'
+      SCRLEN3: '18'
+      SCRTEXT_L: Short Description
+      SCRTEXT_M: Short Description
+      SCRTEXT_S: Short Text
+      SIGN: ''
+      TABNAME: CTS_EXT_PT
+      VALEXI: ''
+  resultLine:
+    - FIELDNAME: EXTERNALPS
+      FIELDVAL: SAP_IMG_PS
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: CTS_EXT_PS
+    - FIELDNAME: DESCRIPTN
+      FIELDVAL: IMG Project System
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: CTS_EXT_PS
+  selectionDescriptor:
+    ALLOUTPUTS:
+      - DESCRIPTN
+      - EXTERNALPS
+    FIELDDESCR:
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: TEXT32
+        DYNPFLD: X
+        F4AVAILABL: X
+        FIELDNAME: EXTERNALPS
+        FIELDTEXT: External Project System
+        GENKEY: ''
+        HEADLEN: 0
+        INTLEN: 64
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 32
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: X
+        LTRFLDDIS: ''
+        MAC: X
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 0
+        OUTPUTLEN: 32
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 1
+        PRECFIELD: TR_EXTPS
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: ''
+        ROLLNAME: TR_EXTPS
+        SCRLEN1: 0
+        SCRLEN2: 0
+        SCRLEN3: 20
+        SCRTEXT_L: Project System
+        SCRTEXT_M: ''
+        SCRTEXT_S: ''
+        SHLPLISPOS: '01'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '00'
+        SIGN: ''
+        TABNAME: CTS_EXT_PS
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+        shlpId: SH CTS_EXT_PS
+        valueInputType: list
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: AS4TEXT
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: DESCRIPTN
+        FIELDTEXT: Short Description of Repository Objects
+        GENKEY: ''
+        HEADLEN: 20
+        INTLEN: 120
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 60
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: X
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 64
+        OUTPUTLEN: 60
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 2
+        PRECFIELD: AS4TEXT
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Short Description
+        ROLLNAME: AS4TEXT
+        SCRLEN1: 10
+        SCRLEN2: 18
+        SCRLEN3: 18
+        SCRTEXT_L: Short Description
+        SCRTEXT_M: Short Description
+        SCRTEXT_S: Short Text
+        SHLPLISPOS: '02'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '00'
+        SIGN: ''
+        TABNAME: CTS_EXT_PT
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+    INTDESCR:
+      AUTOSUGGEST: ''
+      DDLANGUAGE: E
+      DDTEXT: External Project Systems
+      DIALOGINFO: X
+      DIALOGTYPE: D
+      F4STATE: ''
+      FIELDNAME: ''
+      FUZZY_SEARCH: ''
+      FUZZY_SIMILARITY: '0.0'
+      HANDLE: 0
+      HISTORY: ''
+      HOTKEY: ''
+      ISSIMPLE: X
+      SELMETHOD: CTS_EXT_PS
+      SELMEXIT: ''
+      SELMTYPE: X
+      TABNAME: ''
+      TEXTTAB: CTS_EXT_PT
+      TITLE: ''
+    SCRLENMAX: 20
+    SHLPOUTPUT: DESCRIPTN
+SH TCE_CONSOLIDATION_TARGETS:
+  resultDescriptor:
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: TR_TARGET
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: TR_TARGET
+      FIELDTEXT: Consolidation target
+      GENKEY: ''
+      HEADLEN: '15'
+      INTLEN: '000020'
+      INTTYPE: C
+      KEYFLAG: ''
+      LANGU: E
+      LENG: '000010'
+      LFIELDNAME: ''
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000000'
+      OUTPUTLEN: '000010'
+      OUTPUTSTYLE: '00'
+      POSITION: '0001'
+      PRECFIELD: CONSTARGET
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Transport targ.
+      ROLLNAME: CONSTARGET
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '15'
+      SCRTEXT_L: Transport targ.
+      SCRTEXT_M: Transport targ.
+      SCRTEXT_S: Target
+      SIGN: ''
+      TABNAME: ''
+      VALEXI: ''
+  resultLine:
+    - FIELDNAME: TR_TARGET
+      FIELDVAL: CL5
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: TCE_CONSOLIDATION_TARGETS
+  selectionDescriptor:
+    ALLOUTPUTS:
+      - TR_TARGET
+    FIELDDESCR:
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: TR_TARGET
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: TR_TARGET
+        FIELDTEXT: Consolidation target
+        GENKEY: ''
+        HEADLEN: 15
+        INTLEN: 20
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 10
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: ''
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 0
+        OUTPUTLEN: 10
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 1
+        PRECFIELD: CONSTARGET
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Transport targ.
+        ROLLNAME: CONSTARGET
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 15
+        SCRTEXT_L: Transport targ.
+        SCRTEXT_M: Transport targ.
+        SCRTEXT_S: Target
+        SHLPLISPOS: '01'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '01'
+        SIGN: ''
+        TABNAME: ''
+        TOPSHLPFLD: TR_TARGET
+        TOPSHLPNAM: TCE_TRANSPORT_TARGET
+        VALEXI: ''
+    INTDESCR:
+      AUTOSUGGEST: ''
+      DDLANGUAGE: E
+      DDTEXT: Consolidation Targets for the Current System
+      DIALOGINFO: X
+      DIALOGTYPE: D
+      F4STATE: ''
+      FIELDNAME: ''
+      FUZZY_SEARCH: ''
+      FUZZY_SIMILARITY: '0.0'
+      HANDLE: 0
+      HISTORY: ''
+      HOTKEY: ''
+      ISSIMPLE: X
+      SELMETHOD: ''
+      SELMEXIT: TR_CONS_TARGETS_F4_EXIT
+      SELMTYPE: F
+      TABNAME: ''
+      TEXTTAB: ''
+      TITLE: ''
+    SCRLENMAX: 15
+    SHLPOUTPUT: TR_TARGET
+SH TCE_NEW_TRANSPORT_TARGETS:
+  blacklist: search
+  resultDescriptor:
+    abapMsgClass: ''
+    abapMsgNumber: ''
+    abapMsgType: ''
+    abapMsgV1: ''
+    abapMsgV2: ''
+    abapMsgV3: ''
+    abapMsgV4: ''
+    code: 3
+    codeString: RFC_ABAP_RUNTIME_FAILURE
+    group: 2
+    key: DYNPRO_SEND_IN_BACKGROUND
+    message: Screen output without connection to user.
+    name: ABAPError
+  selectionDescriptor:
+    ALLOUTPUTS:
+      - TRFUNCTION
+      - TR_TARGET
+    FIELDDESCR:
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: TR_TARGET
+        DYNPFLD: X
+        F4AVAILABL: X
+        FIELDNAME: TR_TARGET
+        FIELDTEXT: Transport Target of Request
+        GENKEY: ''
+        HEADLEN: 30
+        INTLEN: 20
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 10
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: ''
+        LTRFLDDIS: ''
+        MAC: X
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 0
+        OUTPUTLEN: 10
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 1
+        PRECFIELD: TR_TARGET
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Transport Target
+        ROLLNAME: TR_TARGET
+        SCRLEN1: 10
+        SCRLEN2: 20
+        SCRLEN3: 30
+        SCRTEXT_L: Transport Target
+        SCRTEXT_M: Transport Target
+        SCRTEXT_S: Target
+        SHLPLISPOS: '01'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '01'
+        SIGN: ''
+        TABNAME: ''
+        TOPSHLPFLD: TR_TARGET
+        TOPSHLPNAM: TCE_TRANSPORT_TARGET
+        VALEXI: ''
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: TRFUNCTION
+        DYNPFLD: X
+        F4AVAILABL: X
+        FIELDNAME: TRFUNCTION
+        FIELDTEXT: Type of request/task
+        GENKEY: ''
+        HEADLEN: 0
+        INTLEN: 2
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 1
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: ''
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: '  X X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 0
+        OUTPUTLEN: 1
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 2
+        PRECFIELD: TRFUNCTION
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: ''
+        ROLLNAME: TRFUNCTION
+        SCRLEN1: 0
+        SCRLEN2: 20
+        SCRLEN3: 0
+        SCRTEXT_L: ''
+        SCRTEXT_M: Type
+        SCRTEXT_S: ''
+        SHLPLISPOS: '00'
+        SHLPOUTPUT: ''
+        SHLPSELPOS: '00'
+        SIGN: ''
+        TABNAME: ''
+        TOPSHLPFLD: TRFUNCTION
+        TOPSHLPNAM: TCE_TRANSPORT_TARGET
+        VALEXI: X
+    INTDESCR:
+      AUTOSUGGEST: ''
+      DDLANGUAGE: E
+      DDTEXT: Selection of a Transport Target
+      DIALOGINFO: X
+      DIALOGTYPE: D
+      F4STATE: ''
+      FIELDNAME: ''
+      FUZZY_SEARCH: ''
+      FUZZY_SIMILARITY: '0.0'
+      HANDLE: 0
+      HISTORY: ''
+      HOTKEY: ''
+      ISSIMPLE: X
+      SELMETHOD: ''
+      SELMEXIT: TR_NEW_TARGET_F4_EXIT
+      SELMTYPE: F
+      TABNAME: ''
+      TEXTTAB: ''
+      TITLE: ''
+    SCRLENMAX: 30
+    SHLPOUTPUT: TR_TARGET
+SH TCE_OLD_TRANSPORT_TARGETS:
+  blacklist: search
+  resultDescriptor:
+    abapMsgClass: ''
+    abapMsgNumber: ''
+    abapMsgType: ''
+    abapMsgV1: ''
+    abapMsgV2: ''
+    abapMsgV3: ''
+    abapMsgV4: ''
+    code: 3
+    codeString: RFC_ABAP_RUNTIME_FAILURE
+    group: 2
+    key: DYNPRO_SEND_IN_BACKGROUND
+    message: Screen output without connection to user.
+    name: ABAPError
+  selectionDescriptor:
+    ALLOUTPUTS:
+      - TR_TARGET
+    FIELDDESCR:
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: TR_TARGET
+        DYNPFLD: X
+        F4AVAILABL: X
+        FIELDNAME: TR_TARGET
+        FIELDTEXT: Transport Target of Request
+        GENKEY: ''
+        HEADLEN: 30
+        INTLEN: 20
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 10
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: ''
+        LTRFLDDIS: ''
+        MAC: X
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 0
+        OUTPUTLEN: 10
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 1
+        PRECFIELD: TR_TARGET
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Transport Target
+        ROLLNAME: TR_TARGET
+        SCRLEN1: 10
+        SCRLEN2: 20
+        SCRLEN3: 30
+        SCRTEXT_L: Transport Target
+        SCRTEXT_M: Transport Target
+        SCRTEXT_S: Target
+        SHLPLISPOS: '01'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '01'
+        SIGN: ''
+        TABNAME: ''
+        TOPSHLPFLD: TR_TARGET
+        TOPSHLPNAM: TCE_TRANSPORT_TARGET
+        VALEXI: ''
+    INTDESCR:
+      AUTOSUGGEST: ''
+      DDLANGUAGE: E
+      DDTEXT: Selection of a Transport Target
+      DIALOGINFO: X
+      DIALOGTYPE: D
+      F4STATE: ''
+      FIELDNAME: ''
+      FUZZY_SEARCH: ''
+      FUZZY_SIMILARITY: '0.0'
+      HANDLE: 0
+      HISTORY: ''
+      HOTKEY: ''
+      ISSIMPLE: X
+      SELMETHOD: ''
+      SELMEXIT: TR_OLD_TARGET_F4_EXIT
+      SELMTYPE: F
+      TABNAME: ''
+      TEXTTAB: ''
+      TITLE: ''
+    SCRLENMAX: 30
+    SHLPOUTPUT: TR_TARGET
+SH TCE_SYSTEMS:
+  resultDescriptor:
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: SYSNAME
+      DYNPFLD: X
+      F4AVAILABL: X
+      FIELDNAME: SYSNAME
+      FIELDTEXT: Name of SAP System in (Active) Transport Configuration
+      GENKEY: ''
+      HEADLEN: '15'
+      INTLEN: '000020'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGU: E
+      LENG: '000010'
+      LFIELDNAME: ''
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MAC: X
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000000'
+      OUTPUTLEN: '000010'
+      OUTPUTSTYLE: '00'
+      POSITION: '0002'
+      PRECFIELD: SYSNAME
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: System Name
+      ROLLNAME: SYSNAME
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: System Name
+      SCRTEXT_M: System Name
+      SCRTEXT_S: Name
+      SIGN: ''
+      TABNAME: VTCESYST
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: DDTEXT
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: DDTEXT
+      FIELDTEXT: Explanatory Short Text
+      GENKEY: ''
+      HEADLEN: '60'
+      INTLEN: '000120'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGU: E
+      LENG: '000060'
+      LFIELDNAME: ''
+      LOGFLAG: ''
+      LOWERCASE: X
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000020'
+      OUTPUTLEN: '000060'
+      OUTPUTSTYLE: '00'
+      POSITION: '0001'
+      PRECFIELD: DDTEXT
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Short text
+      ROLLNAME: DDTEXT
+      SCRLEN1: '00'
+      SCRLEN2: '18'
+      SCRLEN3: '18'
+      SCRTEXT_L: Short text
+      SCRTEXT_M: Short text
+      SCRTEXT_S: ''
+      SIGN: ''
+      TABNAME: ''
+      VALEXI: ''
+  resultLine:
+    - FIELDNAME: SYSNAME
+      FIELDVAL: CL5
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: TCE_SYSTEMS
+    - FIELDNAME: DDTEXT
+      FIELDVAL: ''
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: TCE_SYSTEMS
+  selectionDescriptor:
+    ALLOUTPUTS:
+      - DDTEXT
+      - SYSNAME
+    FIELDDESCR:
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: DDTEXT
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: DDTEXT
+        FIELDTEXT: Explanatory Short Text
+        GENKEY: ''
+        HEADLEN: 60
+        INTLEN: 120
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 60
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: X
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 20
+        OUTPUTLEN: 60
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 1
+        PRECFIELD: DDTEXT
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Short text
+        ROLLNAME: DDTEXT
+        SCRLEN1: 0
+        SCRLEN2: 18
+        SCRLEN3: 18
+        SCRTEXT_L: Short text
+        SCRTEXT_M: Short text
+        SCRTEXT_S: ''
+        SHLPLISPOS: '02'
+        SHLPOUTPUT: ''
+        SHLPSELPOS: '00'
+        SIGN: ''
+        TABNAME: ''
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: SYSNAME
+        DYNPFLD: X
+        F4AVAILABL: X
+        FIELDNAME: SYSNAME
+        FIELDTEXT: Name of SAP System in (Active) Transport Configuration
+        GENKEY: ''
+        HEADLEN: 15
+        INTLEN: 20
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 10
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: ''
+        LTRFLDDIS: ''
+        MAC: X
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 0
+        OUTPUTLEN: 10
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 2
+        PRECFIELD: SYSNAME
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: System Name
+        ROLLNAME: SYSNAME
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 20
+        SCRTEXT_L: System Name
+        SCRTEXT_M: System Name
+        SCRTEXT_S: Name
+        SHLPLISPOS: '01'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '01'
+        SIGN: ''
+        TABNAME: VTCESYST
+        TOPSHLPFLD: TR_TARGET
+        TOPSHLPNAM: TCE_TRANSPORT_TARGET
+        VALEXI: ''
+        shlpId: SH TCE_SYSTEMS
+        valueInputType: list
+    INTDESCR:
+      AUTOSUGGEST: ''
+      DDLANGUAGE: E
+      DDTEXT: Active Systems
+      DIALOGINFO: X
+      DIALOGTYPE: D
+      F4STATE: ''
+      FIELDNAME: ''
+      FUZZY_SEARCH: ''
+      FUZZY_SIMILARITY: '0.0'
+      HANDLE: 0
+      HISTORY: ''
+      HOTKEY: ''
+      ISSIMPLE: X
+      SELMETHOD: VTCESYST
+      SELMEXIT: TR_SYSTEMS_F4_EXIT
+      SELMTYPE: V
+      TABNAME: ''
+      TEXTTAB: ''
+      TITLE: ''
+    SCRLENMAX: 20
+    SHLPOUTPUT: SYSNAME
+SH TCE_TARGET_SAP:
+  resultDescriptor:
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: TR_TARGET
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: TR_TARGET
+      FIELDTEXT: Consolidation target
+      GENKEY: ''
+      HEADLEN: '15'
+      INTLEN: '000020'
+      INTTYPE: C
+      KEYFLAG: ''
+      LANGU: E
+      LENG: '000010'
+      LFIELDNAME: ''
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000000'
+      OUTPUTLEN: '000010'
+      OUTPUTSTYLE: '00'
+      POSITION: '0001'
+      PRECFIELD: CONSTARGET
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Transport targ.
+      ROLLNAME: CONSTARGET
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '15'
+      SCRTEXT_L: Transport targ.
+      SCRTEXT_M: Transport targ.
+      SCRTEXT_S: Target
+      SIGN: ''
+      TABNAME: ''
+      VALEXI: ''
+  resultLine:
+    - FIELDNAME: TR_TARGET
+      FIELDVAL: SAP
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: TCE_TARGET_SAP
+  selectionDescriptor:
+    ALLOUTPUTS:
+      - TR_TARGET
+    FIELDDESCR:
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: TR_TARGET
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: TR_TARGET
+        FIELDTEXT: Consolidation target
+        GENKEY: ''
+        HEADLEN: 15
+        INTLEN: 20
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 10
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: ''
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 0
+        OUTPUTLEN: 10
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 1
+        PRECFIELD: CONSTARGET
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Transport targ.
+        ROLLNAME: CONSTARGET
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 15
+        SCRTEXT_L: Transport targ.
+        SCRTEXT_M: Transport targ.
+        SCRTEXT_S: Target
+        SHLPLISPOS: '01'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '01'
+        SIGN: ''
+        TABNAME: ''
+        TOPSHLPFLD: TR_TARGET
+        TOPSHLPNAM: TCE_TRANSPORT_TARGET
+        VALEXI: ''
+    INTDESCR:
+      AUTOSUGGEST: ''
+      DDLANGUAGE: E
+      DDTEXT: Only the Standard Transport Target SAP
+      DIALOGINFO: X
+      DIALOGTYPE: D
+      F4STATE: ''
+      FIELDNAME: ''
+      FUZZY_SEARCH: ''
+      FUZZY_SIMILARITY: '0.0'
+      HANDLE: 0
+      HISTORY: ''
+      HOTKEY: ''
+      ISSIMPLE: X
+      SELMETHOD: ''
+      SELMEXIT: TR_TARGET_SAP_F4_EXIT
+      SELMTYPE: F
+      TABNAME: ''
+      TEXTTAB: ''
+      TITLE: ''
+    SCRLENMAX: 15
+    SHLPOUTPUT: TR_TARGET
+SH TCE_TRANSPORT_LAYERS:
+  resultDescriptor:
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: DEVLAYER
+      DYNPFLD: X
+      F4AVAILABL: X
+      FIELDNAME: TRANSLAYER
+      FIELDTEXT: Transport Layer in ABAP Workbench
+      GENKEY: ''
+      HEADLEN: '15'
+      INTLEN: '000008'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGU: E
+      LENG: '000004'
+      LFIELDNAME: ''
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MAC: X
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000000'
+      OUTPUTLEN: '000004'
+      OUTPUTSTYLE: '00'
+      POSITION: '0003'
+      PRECFIELD: DEVLAYER
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Transport Layer
+      ROLLNAME: DEVLAYER
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: Transport Layer
+      SCRTEXT_M: Transport Layer
+      SCRTEXT_S: Layer
+      SIGN: ''
+      TABNAME: VTCETRAL
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: TR_TARGET
+      DYNPFLD: X
+      F4AVAILABL: X
+      FIELDNAME: CONSYS
+      FIELDTEXT: Transport Target of Request
+      GENKEY: ''
+      HEADLEN: '30'
+      INTLEN: '000020'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGU: E
+      LENG: '000010'
+      LFIELDNAME: ''
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MAC: X
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000008'
+      OUTPUTLEN: '000010'
+      OUTPUTSTYLE: '00'
+      POSITION: '0001'
+      PRECFIELD: TR_TARGET
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Transport Target
+      ROLLNAME: TR_TARGET
+      SCRLEN1: '10'
+      SCRLEN2: '20'
+      SCRLEN3: '30'
+      SCRTEXT_L: Transport Target
+      SCRTEXT_M: Transport Target
+      SCRTEXT_S: Target
+      SIGN: ''
+      TABNAME: ''
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: DDTEXT
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: CTEXT
+      FIELDTEXT: Explanatory Short Text
+      GENKEY: ''
+      HEADLEN: '60'
+      INTLEN: '000120'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGU: E
+      LENG: '000060'
+      LFIELDNAME: ''
+      LOGFLAG: ''
+      LOWERCASE: X
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000028'
+      OUTPUTLEN: '000060'
+      OUTPUTSTYLE: '00'
+      POSITION: '0002'
+      PRECFIELD: DDTEXT
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Short text
+      ROLLNAME: DDTEXT
+      SCRLEN1: '00'
+      SCRLEN2: '18'
+      SCRLEN3: '18'
+      SCRTEXT_L: Short text
+      SCRTEXT_M: Short text
+      SCRTEXT_S: ''
+      SIGN: ''
+      TABNAME: ''
+      VALEXI: ''
+  resultLine:
+    - FIELDNAME: TRANSLAYER
+      FIELDVAL: SAP
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: TCE_TRANSPORT_LAYERS
+    - FIELDNAME: CONSYS
+      FIELDVAL: ''
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: TCE_TRANSPORT_LAYERS
+    - FIELDNAME: CTEXT
+      FIELDVAL: ''
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: TCE_TRANSPORT_LAYERS
+  selectionDescriptor:
+    ALLOUTPUTS:
+      - CONSYS
+      - CTEXT
+      - TRANSLAYER
+    FIELDDESCR:
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: TR_TARGET
+        DYNPFLD: X
+        F4AVAILABL: X
+        FIELDNAME: CONSYS
+        FIELDTEXT: Transport Target of Request
+        GENKEY: ''
+        HEADLEN: 30
+        INTLEN: 20
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 10
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: ''
+        LTRFLDDIS: ''
+        MAC: X
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 8
+        OUTPUTLEN: 10
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 1
+        PRECFIELD: TR_TARGET
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Transport Target
+        ROLLNAME: TR_TARGET
+        SCRLEN1: 10
+        SCRLEN2: 20
+        SCRLEN3: 30
+        SCRTEXT_L: Transport Target
+        SCRTEXT_M: Transport Target
+        SCRTEXT_S: Target
+        SHLPLISPOS: '02'
+        SHLPOUTPUT: ''
+        SHLPSELPOS: '00'
+        SIGN: ''
+        TABNAME: ''
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: DDTEXT
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: CTEXT
+        FIELDTEXT: Explanatory Short Text
+        GENKEY: ''
+        HEADLEN: 60
+        INTLEN: 120
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 60
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: X
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 28
+        OUTPUTLEN: 60
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 2
+        PRECFIELD: DDTEXT
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Short text
+        ROLLNAME: DDTEXT
+        SCRLEN1: 0
+        SCRLEN2: 18
+        SCRLEN3: 18
+        SCRTEXT_L: Short text
+        SCRTEXT_M: Short text
+        SCRTEXT_S: ''
+        SHLPLISPOS: '03'
+        SHLPOUTPUT: ''
+        SHLPSELPOS: '00'
+        SIGN: ''
+        TABNAME: ''
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: DEVLAYER
+        DYNPFLD: X
+        F4AVAILABL: X
+        FIELDNAME: TRANSLAYER
+        FIELDTEXT: Transport Layer in ABAP Workbench
+        GENKEY: ''
+        HEADLEN: 15
+        INTLEN: 8
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 4
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: ''
+        LTRFLDDIS: ''
+        MAC: X
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 0
+        OUTPUTLEN: 4
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 3
+        PRECFIELD: DEVLAYER
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Transport Layer
+        ROLLNAME: DEVLAYER
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 20
+        SCRTEXT_L: Transport Layer
+        SCRTEXT_M: Transport Layer
+        SCRTEXT_S: Layer
+        SHLPLISPOS: '01'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '01'
+        SIGN: ''
+        TABNAME: VTCETRAL
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+        shlpId: SH TCE_TRANSPORT_LAYERS
+        valueInputType: list
+    INTDESCR:
+      AUTOSUGGEST: ''
+      DDLANGUAGE: E
+      DDTEXT: Active Transport Layers
+      DIALOGINFO: X
+      DIALOGTYPE: D
+      F4STATE: ''
+      FIELDNAME: ''
+      FUZZY_SEARCH: ''
+      FUZZY_SIMILARITY: '0.0'
+      HANDLE: 0
+      HISTORY: ''
+      HOTKEY: ''
+      ISSIMPLE: X
+      SELMETHOD: VTCETRAL
+      SELMEXIT: TR_LAYERS_F4_EXIT
+      SELMTYPE: V
+      TABNAME: ''
+      TEXTTAB: ''
+      TITLE: ''
+    SCRLENMAX: 30
+    SHLPOUTPUT: TRANSLAYER
+SH USCOMPANY_ADDR:
+  resultDescriptor:
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: E
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: USCOMP
+      DYNPFLD: X
+      F4AVAILABL: X
+      FIELDNAME: COMPANY
+      FIELDTEXT: Company address, cross-system key
+      GENKEY: ''
+      HEADLEN: '36'
+      INTLEN: '000084'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGU: E
+      LENG: '000042'
+      LFIELDNAME: COMPANY
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: ''
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000006'
+      OUTPUTLEN: '000042'
+      OUTPUTSTYLE: '00'
+      POSITION: '0001'
+      PRECFIELD: V_USCOMPA
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Company in user's address
+      ROLLNAME: USCOMP
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: Company
+      SCRTEXT_M: Company
+      SCRTEXT_S: Company
+      SIGN: ''
+      TABNAME: V_USCOMPA
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: E
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: TEXT40
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: NAME1
+      FIELDTEXT: Name 1
+      GENKEY: ''
+      HEADLEN: '40'
+      INTLEN: '000080'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGU: E
+      LENG: '000040'
+      LFIELDNAME: NAME1
+      LOGFLAG: X
+      LOWERCASE: X
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: ''
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000090'
+      OUTPUTLEN: '000040'
+      OUTPUTSTYLE: '00'
+      POSITION: '0002'
+      PRECFIELD: V_USCOMPA
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Name
+      ROLLNAME: AD_NAME1
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: Name
+      SCRTEXT_M: Name
+      SCRTEXT_S: Name
+      SIGN: ''
+      TABNAME: V_USCOMPA
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: E
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: TEXT40
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: NAME2
+      FIELDTEXT: Name 2
+      GENKEY: ''
+      HEADLEN: '40'
+      INTLEN: '000080'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGU: E
+      LENG: '000040'
+      LFIELDNAME: NAME2
+      LOGFLAG: X
+      LOWERCASE: X
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: ''
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000170'
+      OUTPUTLEN: '000040'
+      OUTPUTSTYLE: '00'
+      POSITION: '0003'
+      PRECFIELD: V_USCOMPA
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Name 2
+      ROLLNAME: AD_NAME2
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: Name 2
+      SCRTEXT_M: Name 2
+      SCRTEXT_S: Name 2
+      SIGN: ''
+      TABNAME: V_USCOMPA
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: E
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: TEXT40
+      DYNPFLD: X
+      F4AVAILABL: X
+      FIELDNAME: CITY1
+      FIELDTEXT: City
+      GENKEY: ''
+      HEADLEN: '40'
+      INTLEN: '000080'
+      INTTYPE: C
+      KEYFLAG: X
+      LANGU: E
+      LENG: '000040'
+      LFIELDNAME: CITY1
+      LOGFLAG: X
+      LOWERCASE: X
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: ''
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000250'
+      OUTPUTLEN: '000040'
+      OUTPUTSTYLE: '00'
+      POSITION: '0004'
+      PRECFIELD: V_USCOMPA
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: City
+      ROLLNAME: AD_CITY1
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: City
+      SCRTEXT_M: City
+      SCRTEXT_S: City
+      SIGN: ''
+      TABNAME: V_USCOMPA
+      VALEXI: ''
+  resultLine:
+    - FIELDNAME: COMPANY
+      FIELDVAL: SAP AG
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: USCOMPANY_ADDR
+    - FIELDNAME: NAME1
+      FIELDVAL: SAP AG
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: USCOMPANY_ADDR
+    - FIELDNAME: NAME2
+      FIELDVAL: ''
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: USCOMPANY_ADDR
+    - FIELDNAME: CITY1
+      FIELDVAL: ''
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: USCOMPANY_ADDR
+  selectionDescriptor:
+    ALLOUTPUTS:
+      - CITY1
+      - COMPANY
+      - NAME1
+      - NAME2
+    FIELDDESCR:
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: E
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: USCOMP
+        DYNPFLD: X
+        F4AVAILABL: X
+        FIELDNAME: COMPANY
+        FIELDTEXT: Company address, cross-system key
+        GENKEY: ''
+        HEADLEN: 36
+        INTLEN: 84
+        INTTYPE: C
+        KEYFLAG: X
+        LANGU: E
+        LENG: 42
+        LFIELDNAME: COMPANY
+        LOGFLAG: ''
+        LOWERCASE: ''
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: ''
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 6
+        OUTPUTLEN: 42
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 1
+        PRECFIELD: V_USCOMPA
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Company in user's address
+        ROLLNAME: USCOMP
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 20
+        SCRTEXT_L: Company
+        SCRTEXT_M: Company
+        SCRTEXT_S: Company
+        SHLPLISPOS: '01'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '00'
+        SIGN: ''
+        TABNAME: V_USCOMPA
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: E
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: TEXT40
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: NAME1
+        FIELDTEXT: Name 1
+        GENKEY: ''
+        HEADLEN: 40
+        INTLEN: 80
+        INTTYPE: C
+        KEYFLAG: X
+        LANGU: E
+        LENG: 40
+        LFIELDNAME: NAME1
+        LOGFLAG: X
+        LOWERCASE: X
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: ''
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 90
+        OUTPUTLEN: 40
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 2
+        PRECFIELD: V_USCOMPA
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Name
+        ROLLNAME: AD_NAME1
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 20
+        SCRTEXT_L: Name
+        SCRTEXT_M: Name
+        SCRTEXT_S: Name
+        SHLPLISPOS: '02'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '00'
+        SIGN: ''
+        TABNAME: V_USCOMPA
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: E
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: TEXT40
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: NAME2
+        FIELDTEXT: Name 2
+        GENKEY: ''
+        HEADLEN: 40
+        INTLEN: 80
+        INTTYPE: C
+        KEYFLAG: X
+        LANGU: E
+        LENG: 40
+        LFIELDNAME: NAME2
+        LOGFLAG: X
+        LOWERCASE: X
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: ''
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 170
+        OUTPUTLEN: 40
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 3
+        PRECFIELD: V_USCOMPA
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Name 2
+        ROLLNAME: AD_NAME2
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 20
+        SCRTEXT_L: Name 2
+        SCRTEXT_M: Name 2
+        SCRTEXT_S: Name 2
+        SHLPLISPOS: '03'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '00'
+        SIGN: ''
+        TABNAME: V_USCOMPA
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: E
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: TEXT40
+        DYNPFLD: X
+        F4AVAILABL: X
+        FIELDNAME: CITY1
+        FIELDTEXT: City
+        GENKEY: ''
+        HEADLEN: 40
+        INTLEN: 80
+        INTTYPE: C
+        KEYFLAG: X
+        LANGU: E
+        LENG: 40
+        LFIELDNAME: CITY1
+        LOGFLAG: X
+        LOWERCASE: X
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: ''
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 250
+        OUTPUTLEN: 40
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 4
+        PRECFIELD: V_USCOMPA
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: City
+        ROLLNAME: AD_CITY1
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 20
+        SCRTEXT_L: City
+        SCRTEXT_M: City
+        SCRTEXT_S: City
+        SHLPLISPOS: '04'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '00'
+        SIGN: ''
+        TABNAME: V_USCOMPA
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+    INTDESCR:
+      AUTOSUGGEST: ''
+      DDLANGUAGE: E
+      DDTEXT: Search Help for Company Addresses (User Administration)
+      DIALOGINFO: X
+      DIALOGTYPE: D
+      F4STATE: ''
+      FIELDNAME: ''
+      FUZZY_SEARCH: ''
+      FUZZY_SIMILARITY: '0.0'
+      HANDLE: 0
+      HISTORY: ''
+      HOTKEY: ''
+      ISSIMPLE: X
+      SELMETHOD: V_USCOMPA
+      SELMEXIT: ''
+      SELMTYPE: V
+      TABNAME: ''
+      TEXTTAB: ''
+      TITLE: ''
+    SCRLENMAX: 20
+    SHLPOUTPUT: CITY1
+SH USER_ADDR:
+  resultDescriptor:
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: XUBNAME
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: BNAME
+      FIELDTEXT: User Name in User Master Record
+      GENKEY: ''
+      HEADLEN: '12'
+      INTLEN: '000024'
+      INTTYPE: C
+      KEYFLAG: ''
+      LANGU: E
+      LENG: '000012'
+      LFIELDNAME: ''
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: XUS
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000006'
+      OUTPUTLEN: '000012'
+      OUTPUTSTYLE: '00'
+      POSITION: '0001'
+      PRECFIELD: XUBNAME
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: User Name
+      ROLLNAME: XUBNAME
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: User
+      SCRTEXT_M: User
+      SCRTEXT_S: User
+      SIGN: ''
+      TABNAME: USER_ADDR
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: TEXT10
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: BUILDING
+      FIELDTEXT: Building (number or code)
+      GENKEY: ''
+      HEADLEN: '10'
+      INTLEN: '000020'
+      INTTYPE: C
+      KEYFLAG: ''
+      LANGU: E
+      LENG: '000010'
+      LFIELDNAME: ''
+      LOGFLAG: X
+      LOWERCASE: X
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000386'
+      OUTPUTLEN: '000010'
+      OUTPUTSTYLE: '00'
+      POSITION: '0004'
+      PRECFIELD: AD_BLDNG_P
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Buildings
+      ROLLNAME: AD_BLDNG_P
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: Building code
+      SCRTEXT_M: Building code
+      SCRTEXT_S: Buildings
+      SIGN: ''
+      TABNAME: USER_ADDR
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: USCOMP
+      DYNPFLD: X
+      F4AVAILABL: X
+      FIELDNAME: COMPANY
+      FIELDTEXT: Company address, cross-system key
+      GENKEY: ''
+      HEADLEN: '36'
+      INTLEN: '000084'
+      INTTYPE: C
+      KEYFLAG: ''
+      LANGU: E
+      LENG: '000042'
+      LFIELDNAME: ''
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MAC: X
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000906'
+      OUTPUTLEN: '000042'
+      OUTPUTSTYLE: '00'
+      POSITION: '0012'
+      PRECFIELD: USCOMP
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Company in user's address
+      ROLLNAME: USCOMP
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: Company
+      SCRTEXT_M: Company
+      SCRTEXT_S: Company
+      SIGN: ''
+      TABNAME: USER_ADDR
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: TEXT40
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: DEPARTMENT
+      FIELDTEXT: Department
+      GENKEY: ''
+      HEADLEN: '40'
+      INTLEN: '000080'
+      INTTYPE: C
+      KEYFLAG: ''
+      LANGU: E
+      LENG: '000040'
+      LFIELDNAME: ''
+      LOGFLAG: X
+      LOWERCASE: X
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000426'
+      OUTPUTLEN: '000040'
+      OUTPUTSTYLE: '00'
+      POSITION: '0006'
+      PRECFIELD: AD_DPRTMNT
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Department
+      ROLLNAME: AD_DPRTMNT
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: Department
+      SCRTEXT_M: Department
+      SCRTEXT_S: Department
+      SIGN: ''
+      TABNAME: USER_ADDR
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: TEXT10
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: INHOUSE_ML
+      FIELDTEXT: Internal Mail Postal Code
+      GENKEY: ''
+      HEADLEN: '10'
+      INTLEN: '000020'
+      INTTYPE: C
+      KEYFLAG: ''
+      LANGU: E
+      LENG: '000010'
+      LFIELDNAME: ''
+      LOGFLAG: X
+      LOWERCASE: X
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000506'
+      OUTPUTLEN: '000010'
+      OUTPUTSTYLE: '00'
+      POSITION: '0007'
+      PRECFIELD: AD_IH_MAIL
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Internal
+      ROLLNAME: AD_IH_MAIL
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: Internal mail
+      SCRTEXT_M: Internal mail
+      SCRTEXT_S: Internal
+      SIGN: ''
+      TABNAME: USER_ADDR
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: CHAR8
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: KOSTL
+      FIELDTEXT: Cost center
+      GENKEY: ''
+      HEADLEN: '08'
+      INTLEN: '000016'
+      INTTYPE: C
+      KEYFLAG: ''
+      LANGU: E
+      LENG: '000008'
+      LFIELDNAME: ''
+      LOGFLAG: X
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000370'
+      OUTPUTLEN: '000008'
+      OUTPUTSTYLE: '00'
+      POSITION: '0003'
+      PRECFIELD: XUKOSTL
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Cost ctr
+      ROLLNAME: XUKOSTL
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: Cost center
+      SCRTEXT_M: Cost center
+      SCRTEXT_S: Cost ctr
+      SIGN: ''
+      TABNAME: USER_ADDR
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: CHAR25
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: MC_CITY1
+      FIELDTEXT: City name in Uppercase for Search Help
+      GENKEY: ''
+      HEADLEN: '25'
+      INTLEN: '000050'
+      INTTYPE: C
+      KEYFLAG: ''
+      LANGU: E
+      LENG: '000025'
+      LFIELDNAME: ''
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000856'
+      OUTPUTLEN: '000025'
+      OUTPUTSTYLE: '00'
+      POSITION: '0011'
+      PRECFIELD: AD_MC_CITY
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: City
+      ROLLNAME: AD_MC_CITY
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: City
+      SCRTEXT_M: City
+      SCRTEXT_S: City
+      SIGN: ''
+      TABNAME: USER_ADDR
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: CHAR25
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: MC_NAME1
+      FIELDTEXT: Name (Field NAME1) in Uppercase for Search Help
+      GENKEY: ''
+      HEADLEN: '25'
+      INTLEN: '000050'
+      INTTYPE: C
+      KEYFLAG: ''
+      LANGU: E
+      LENG: '000025'
+      LFIELDNAME: ''
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000806'
+      OUTPUTLEN: '000025'
+      OUTPUTSTYLE: '00'
+      POSITION: '0010'
+      PRECFIELD: AD_MC_NAME
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Name
+      ROLLNAME: AD_MC_NAME
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: Company name
+      SCRTEXT_M: Name
+      SCRTEXT_S: Name
+      SIGN: ''
+      TABNAME: USER_ADDR
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: CHAR25
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: MC_NAMEFIR
+      FIELDTEXT: First Name in Uppercase for Search Help
+      GENKEY: ''
+      HEADLEN: '25'
+      INTLEN: '000050'
+      INTTYPE: C
+      KEYFLAG: ''
+      LANGU: E
+      LENG: '000025'
+      LFIELDNAME: ''
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000706'
+      OUTPUTLEN: '000025'
+      OUTPUTSTYLE: '00'
+      POSITION: '0008'
+      PRECFIELD: AD_MC_NMFI
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: First name
+      ROLLNAME: AD_MC_NMFI
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: First name
+      SCRTEXT_M: First name
+      SCRTEXT_S: First name
+      SIGN: ''
+      TABNAME: USER_ADDR
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: CHAR25
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: MC_NAMELAS
+      FIELDTEXT: Last Name in Uppercase for Search Help
+      GENKEY: ''
+      HEADLEN: '25'
+      INTLEN: '000050'
+      INTTYPE: C
+      KEYFLAG: ''
+      LANGU: E
+      LENG: '000025'
+      LFIELDNAME: ''
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000756'
+      OUTPUTLEN: '000025'
+      OUTPUTSTYLE: '00'
+      POSITION: '0009'
+      PRECFIELD: AD_MC_NMLA
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Last name
+      ROLLNAME: AD_MC_NMLA
+      SCRLEN1: '10'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: Last name
+      SCRTEXT_M: Last name
+      SCRTEXT_S: Last name
+      SIGN: ''
+      TABNAME: USER_ADDR
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: TEXT10
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: ROOMNUMBER
+      FIELDTEXT: Room or Appartment Number
+      GENKEY: ''
+      HEADLEN: '10'
+      INTLEN: '000020'
+      INTTYPE: C
+      KEYFLAG: ''
+      LANGU: E
+      LENG: '000010'
+      LFIELDNAME: ''
+      LOGFLAG: X
+      LOWERCASE: X
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000406'
+      OUTPUTLEN: '000010'
+      OUTPUTSTYLE: '00'
+      POSITION: '0005'
+      PRECFIELD: AD_ROOMNUM
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Room No.
+      ROLLNAME: AD_ROOMNUM
+      SCRLEN1: '09'
+      SCRLEN2: '15'
+      SCRLEN3: '20'
+      SCRTEXT_L: Room Number
+      SCRTEXT_M: Room Number
+      SCRTEXT_S: Room
+      SIGN: ''
+      TABNAME: USER_ADDR
+      VALEXI: ''
+    - AMPMFORMAT: ''
+      AUTHORID: ''
+      BIDICTRLC: ''
+      CHECKTABLE: ''
+      COMPTYPE: D
+      CONVEXIT: ''
+      DATATYPE: CHAR
+      DECIMALS: '000000'
+      DOMNAME: CHAR10
+      DYNPFLD: X
+      F4AVAILABL: ''
+      FIELDNAME: TEL_EXTENS
+      FIELDTEXT: 'First Telephone No.: Extension'
+      GENKEY: ''
+      HEADLEN: '11'
+      INTLEN: '000020'
+      INTTYPE: C
+      KEYFLAG: ''
+      LANGU: E
+      LENG: '000010'
+      LFIELDNAME: ''
+      LOGFLAG: ''
+      LOWERCASE: ''
+      LTRFLDDIS: ''
+      MAC: ''
+      MASK: '  X'
+      MASKLEN: '0000'
+      MEMORYID: ''
+      NOAUTHCH: ''
+      NOFORKEY: ''
+      NOHISTORY: ''
+      OFFSET: '000350'
+      OUTPUTLEN: '000010'
+      OUTPUTSTYLE: '00'
+      POSITION: '0002'
+      PRECFIELD: AD_TLXTNS1
+      REFFIELD: ''
+      REFTABLE: ''
+      REPTEXT: Extension
+      ROLLNAME: AD_TLXTNS1
+      SCRLEN1: '10'
+      SCRLEN2: '12'
+      SCRLEN3: '20'
+      SCRTEXT_L: Extension
+      SCRTEXT_M: Extension
+      SCRTEXT_S: Extension
+      SIGN: ''
+      TABNAME: USER_ADDR
+      VALEXI: ''
+  resultLine:
+    - FIELDNAME: BNAME
+      FIELDVAL: ADMIN_ESH
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: USER_ADDR
+    - FIELDNAME: MC_NAMELAS
+      FIELDVAL: ADMIN
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: USER_ADDR
+    - FIELDNAME: MC_NAMEFIR
+      FIELDVAL: ''
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: USER_ADDR
+    - FIELDNAME: DEPARTMENT
+      FIELDVAL: ''
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: USER_ADDR
+    - FIELDNAME: BUILDING
+      FIELDVAL: ''
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: USER_ADDR
+    - FIELDNAME: ROOMNUMBER
+      FIELDVAL: ''
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: USER_ADDR
+    - FIELDNAME: TEL_EXTENS
+      FIELDVAL: ''
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: USER_ADDR
+    - FIELDNAME: KOSTL
+      FIELDVAL: ''
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: USER_ADDR
+    - FIELDNAME: INHOUSE_ML
+      FIELDVAL: ''
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: USER_ADDR
+    - FIELDNAME: MC_NAME1
+      FIELDVAL: SAP AG
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: USER_ADDR
+    - FIELDNAME: MC_CITY1
+      FIELDVAL: ''
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: USER_ADDR
+    - FIELDNAME: COMPANY
+      FIELDVAL: SAP AG
+      RECORDPOS: '0001'
+      RETFIELD: ''
+      SHLPNAME: USER_ADDR
+  selectionDescriptor:
+    ALLOUTPUTS:
+      - BNAME
+      - BUILDING
+      - COMPANY
+      - DEPARTMENT
+      - INHOUSE_ML
+      - KOSTL
+      - MC_CITY1
+      - MC_NAME1
+      - MC_NAMEFIR
+      - MC_NAMELAS
+      - ROOMNUMBER
+      - TEL_EXTENS
+    FIELDDESCR:
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: XUBNAME
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: BNAME
+        FIELDTEXT: User Name in User Master Record
+        GENKEY: ''
+        HEADLEN: 12
+        INTLEN: 24
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 12
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: ''
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: XUS
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 6
+        OUTPUTLEN: 12
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 1
+        PRECFIELD: XUBNAME
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: User Name
+        ROLLNAME: XUBNAME
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 20
+        SCRTEXT_L: User
+        SCRTEXT_M: User
+        SCRTEXT_S: User
+        SHLPLISPOS: '01'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '01'
+        SIGN: ''
+        TABNAME: USER_ADDR
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+        shlpId: CT USR02
+        valueInputType: list
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: CHAR10
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: TEL_EXTENS
+        FIELDTEXT: 'First Telephone No.: Extension'
+        GENKEY: ''
+        HEADLEN: 11
+        INTLEN: 20
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 10
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: ''
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 350
+        OUTPUTLEN: 10
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 2
+        PRECFIELD: AD_TLXTNS1
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Extension
+        ROLLNAME: AD_TLXTNS1
+        SCRLEN1: 10
+        SCRLEN2: 12
+        SCRLEN3: 20
+        SCRTEXT_L: Extension
+        SCRTEXT_M: Extension
+        SCRTEXT_S: Extension
+        SHLPLISPOS: '07'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '07'
+        SIGN: ''
+        TABNAME: USER_ADDR
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: CHAR8
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: KOSTL
+        FIELDTEXT: Cost center
+        GENKEY: ''
+        HEADLEN: 8
+        INTLEN: 16
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 8
+        LFIELDNAME: ''
+        LOGFLAG: X
+        LOWERCASE: ''
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 370
+        OUTPUTLEN: 8
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 3
+        PRECFIELD: XUKOSTL
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Cost ctr
+        ROLLNAME: XUKOSTL
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 20
+        SCRTEXT_L: Cost center
+        SCRTEXT_M: Cost center
+        SCRTEXT_S: Cost ctr
+        SHLPLISPOS: '08'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '08'
+        SIGN: ''
+        TABNAME: USER_ADDR
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: TEXT10
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: BUILDING
+        FIELDTEXT: Building (number or code)
+        GENKEY: ''
+        HEADLEN: 10
+        INTLEN: 20
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 10
+        LFIELDNAME: ''
+        LOGFLAG: X
+        LOWERCASE: X
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 386
+        OUTPUTLEN: 10
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 4
+        PRECFIELD: AD_BLDNG_P
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Buildings
+        ROLLNAME: AD_BLDNG_P
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 20
+        SCRTEXT_L: Building code
+        SCRTEXT_M: Building code
+        SCRTEXT_S: Buildings
+        SHLPLISPOS: '05'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '05'
+        SIGN: ''
+        TABNAME: USER_ADDR
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: TEXT10
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: ROOMNUMBER
+        FIELDTEXT: Room or Appartment Number
+        GENKEY: ''
+        HEADLEN: 10
+        INTLEN: 20
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 10
+        LFIELDNAME: ''
+        LOGFLAG: X
+        LOWERCASE: X
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 406
+        OUTPUTLEN: 10
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 5
+        PRECFIELD: AD_ROOMNUM
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Room No.
+        ROLLNAME: AD_ROOMNUM
+        SCRLEN1: 9
+        SCRLEN2: 15
+        SCRLEN3: 20
+        SCRTEXT_L: Room Number
+        SCRTEXT_M: Room Number
+        SCRTEXT_S: Room
+        SHLPLISPOS: '06'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '06'
+        SIGN: ''
+        TABNAME: USER_ADDR
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: TEXT40
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: DEPARTMENT
+        FIELDTEXT: Department
+        GENKEY: ''
+        HEADLEN: 40
+        INTLEN: 80
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 40
+        LFIELDNAME: ''
+        LOGFLAG: X
+        LOWERCASE: X
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 426
+        OUTPUTLEN: 40
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 6
+        PRECFIELD: AD_DPRTMNT
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Department
+        ROLLNAME: AD_DPRTMNT
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 20
+        SCRTEXT_L: Department
+        SCRTEXT_M: Department
+        SCRTEXT_S: Department
+        SHLPLISPOS: '04'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '04'
+        SIGN: ''
+        TABNAME: USER_ADDR
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: TEXT10
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: INHOUSE_ML
+        FIELDTEXT: Internal Mail Postal Code
+        GENKEY: ''
+        HEADLEN: 10
+        INTLEN: 20
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 10
+        LFIELDNAME: ''
+        LOGFLAG: X
+        LOWERCASE: X
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 506
+        OUTPUTLEN: 10
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 7
+        PRECFIELD: AD_IH_MAIL
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Internal
+        ROLLNAME: AD_IH_MAIL
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 20
+        SCRTEXT_L: Internal mail
+        SCRTEXT_M: Internal mail
+        SCRTEXT_S: Internal
+        SHLPLISPOS: '09'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '09'
+        SIGN: ''
+        TABNAME: USER_ADDR
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: CHAR25
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: MC_NAMEFIR
+        FIELDTEXT: First Name in Uppercase for Search Help
+        GENKEY: ''
+        HEADLEN: 25
+        INTLEN: 50
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 25
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: ''
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 706
+        OUTPUTLEN: 25
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 8
+        PRECFIELD: AD_MC_NMFI
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: First name
+        ROLLNAME: AD_MC_NMFI
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 20
+        SCRTEXT_L: First name
+        SCRTEXT_M: First name
+        SCRTEXT_S: First name
+        SHLPLISPOS: '03'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '03'
+        SIGN: ''
+        TABNAME: USER_ADDR
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: CHAR25
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: MC_NAMELAS
+        FIELDTEXT: Last Name in Uppercase for Search Help
+        GENKEY: ''
+        HEADLEN: 25
+        INTLEN: 50
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 25
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: ''
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 756
+        OUTPUTLEN: 25
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 9
+        PRECFIELD: AD_MC_NMLA
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Last name
+        ROLLNAME: AD_MC_NMLA
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 20
+        SCRTEXT_L: Last name
+        SCRTEXT_M: Last name
+        SCRTEXT_S: Last name
+        SHLPLISPOS: '02'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '02'
+        SIGN: ''
+        TABNAME: USER_ADDR
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: CHAR25
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: MC_NAME1
+        FIELDTEXT: Name (Field NAME1) in Uppercase for Search Help
+        GENKEY: ''
+        HEADLEN: 25
+        INTLEN: 50
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 25
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: ''
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 806
+        OUTPUTLEN: 25
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 10
+        PRECFIELD: AD_MC_NAME
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Name
+        ROLLNAME: AD_MC_NAME
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 20
+        SCRTEXT_L: Company name
+        SCRTEXT_M: Name
+        SCRTEXT_S: Name
+        SHLPLISPOS: '11'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '11'
+        SIGN: ''
+        TABNAME: USER_ADDR
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: CHAR25
+        DYNPFLD: X
+        F4AVAILABL: ''
+        FIELDNAME: MC_CITY1
+        FIELDTEXT: City name in Uppercase for Search Help
+        GENKEY: ''
+        HEADLEN: 25
+        INTLEN: 50
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 25
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: ''
+        LTRFLDDIS: ''
+        MAC: ''
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 856
+        OUTPUTLEN: 25
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 11
+        PRECFIELD: AD_MC_CITY
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: City
+        ROLLNAME: AD_MC_CITY
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 20
+        SCRTEXT_L: City
+        SCRTEXT_M: City
+        SCRTEXT_S: City
+        SHLPLISPOS: '12'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '12'
+        SIGN: ''
+        TABNAME: USER_ADDR
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+      - AMPMFORMAT: ''
+        AUTHORID: ''
+        BIDICTRLC: ''
+        CHECKTABLE: ''
+        COMPTYPE: D
+        CONVEXIT: ''
+        DATATYPE: CHAR
+        DECIMALS: 0
+        DEFAULTVAL: ''
+        DOMNAME: USCOMP
+        DYNPFLD: X
+        F4AVAILABL: X
+        FIELDNAME: COMPANY
+        FIELDTEXT: Company address, cross-system key
+        GENKEY: ''
+        HEADLEN: 36
+        INTLEN: 84
+        INTTYPE: C
+        KEYFLAG: ''
+        LANGU: E
+        LENG: 42
+        LFIELDNAME: ''
+        LOGFLAG: ''
+        LOWERCASE: ''
+        LTRFLDDIS: ''
+        MAC: X
+        MASK: '  X'
+        MASKLEN: '0000'
+        MEMORYID: ''
+        NOAUTHCH: ''
+        NOFORKEY: ''
+        NOHISTORY: ''
+        OFFSET: 906
+        OUTPUTLEN: 42
+        OUTPUTSTYLE: '00'
+        PARTXT: ''
+        PARVA: ''
+        POSITION: 12
+        PRECFIELD: USCOMP
+        REFFIELD: ''
+        REFTABLE: ''
+        REPTEXT: Company in user's address
+        ROLLNAME: USCOMP
+        SCRLEN1: 10
+        SCRLEN2: 15
+        SCRLEN3: 20
+        SCRTEXT_L: Company
+        SCRTEXT_M: Company
+        SCRTEXT_S: Company
+        SHLPLISPOS: '10'
+        SHLPOUTPUT: X
+        SHLPSELPOS: '10'
+        SIGN: ''
+        TABNAME: USER_ADDR
+        TOPSHLPFLD: ''
+        TOPSHLPNAM: ''
+        VALEXI: ''
+        shlpId: SH USCOMPANY_ADDR
+        valueInputType: list
+    INTDESCR:
+      AUTOSUGGEST: ''
+      DDLANGUAGE: E
+      DDTEXT: Users by Address Data
+      DIALOGINFO: X
+      DIALOGTYPE: C
+      F4STATE: ''
+      FIELDNAME: ''
+      FUZZY_SEARCH: ''
+      FUZZY_SIMILARITY: '0.0'
+      HANDLE: 0
+      HISTORY: ''
+      HOTKEY: ''
+      ISSIMPLE: X
+      SELMETHOD: USER_ADDR
+      SELMEXIT: F4IF_USER_ADDR_SUID_EXIT
+      SELMTYPE: V
+      TABNAME: ''
+      TEXTTAB: ''
+      TITLE: ''
+    SCRLENMAX: 20
+    SHLPOUTPUT: BNAME

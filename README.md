@@ -7,7 +7,11 @@ This repository provides small sets of configuration & code relating to various 
 - [electron](./frameworks/electron-quick-start)
 - [NW.js](./frameworks/nwjs-quick-start)
 
-### electron
+## fundamental-tools
+
+- [Configuration](./fundamental-tools/config)
+- [api](./fundamental-tools/api)
+
 ## How to obtain support
 
 [Create an issue](https://github.com/SAP-samples/node-rfc-samples/issues) in this repository if you find a bug or have questions about the content.

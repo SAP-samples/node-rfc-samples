@@ -1,0 +1,98 @@
+BAPI_ALM_NOTIF_CHANGEUSRSTAT:
+  exception: 0
+  struct: 1
+  table: 1
+  var: 5
+BAPI_ALM_NOTIF_CLOSE:
+  exception: 0
+  struct: 1
+  table: 1
+  var: 4
+BAPI_ALM_NOTIF_CREATE:
+  exception: 0
+  struct: 4
+  table: 10
+  var: 6
+BAPI_ALM_NOTIF_DATA_ADD:
+  exception: 0
+  struct: 5
+  table: 10
+  var: 3
+BAPI_ALM_NOTIF_DATA_DELETE:
+  exception: 0
+  struct: 0
+  table: 6
+  var: 2
+BAPI_ALM_NOTIF_DATA_MODIFY:
+  exception: 0
+  struct: 3
+  table: 13
+  var: 2
+BAPI_ALM_NOTIF_GET_DETAIL:
+  exception: 0
+  struct: 2
+  table: 8
+  var: 1
+BAPI_ALM_NOTIF_LIST_EQUI:
+  exception: 0
+  struct: 1
+  table: 1
+  var: 9
+BAPI_ALM_NOTIF_LIST_FUNCLOC:
+  exception: 0
+  struct: 1
+  table: 1
+  var: 11
+BAPI_ALM_NOTIF_LIST_PARTNER:
+  exception: 0
+  struct: 1
+  table: 1
+  var: 5
+BAPI_ALM_NOTIF_LIST_PLANGROUP:
+  exception: 0
+  struct: 1
+  table: 1
+  var: 7
+BAPI_ALM_NOTIF_LIST_SORTFIELD:
+  exception: 0
+  struct: 2
+  table: 1
+  var: 5
+BAPI_ALM_NOTIF_POSTPONE:
+  exception: 0
+  struct: 0
+  table: 1
+  var: 6
+BAPI_ALM_NOTIF_PUTINPROGRESS:
+  exception: 0
+  struct: 0
+  table: 1
+  var: 6
+BAPI_ALM_NOTIF_SAVE:
+  exception: 0
+  struct: 1
+  table: 1
+  var: 2
+BAPI_ALM_NOTIF_TASK_COMPLETE:
+  exception: 0
+  struct: 0
+  table: 1
+  var: 10
+BAPI_ALM_NOTIF_TASK_RELEASE:
+  exception: 0
+  struct: 0
+  table: 1
+  var: 7
+BAPI_ALM_NOTIF_TASK_SUCCESS:
+  exception: 0
+  struct: 0
+  table: 1
+  var: 7
+total:
+  alpha: 8
+  descriptors: 148
+  fields: 49
+  helps: 153
+  parameters: 181
+  rfms: 18
+  texts: 205

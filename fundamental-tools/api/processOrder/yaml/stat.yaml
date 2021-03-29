@@ -1,0 +1,103 @@
+BAPI_PROCORD_CHANGE:
+  exception: 0
+  struct: 4
+  table: 0
+  var: 3
+BAPI_PROCORD_CHECK_MAT_AVAIL:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 4
+BAPI_PROCORD_CLOSE:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 2
+BAPI_PROCORD_COMPLETE_TECH:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 3
+BAPI_PROCORD_COSTING:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 2
+BAPI_PROCORD_CREATE:
+  exception: 0
+  struct: 2
+  table: 0
+  var: 2
+BAPI_PROCORD_CREATE_CAP_REQ:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 2
+BAPI_PROCORD_CREATE_FROM_PLORD:
+  exception: 0
+  struct: 1
+  table: 0
+  var: 5
+BAPI_PROCORD_CREATE_FROM_REF:
+  exception: 0
+  struct: 2
+  table: 0
+  var: 2
+BAPI_PROCORD_EXIST_CHECK:
+  exception: 0
+  struct: 1
+  table: 0
+  var: 1
+BAPI_PROCORD_GET_DETAIL:
+  exception: 0
+  struct: 2
+  table: 7
+  var: 2
+BAPI_PROCORD_GET_LIST:
+  exception: 0
+  struct: 1
+  table: 13
+  var: 1
+BAPI_PROCORD_RELEASE:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 3
+BAPI_PROCORD_REVOKEUSERSTATUS:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 4
+BAPI_PROCORD_SCHEDULE:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 23
+BAPI_PROCORD_SETUSERSTATUS:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 4
+BAPI_PROCORD_SET_DELETION_FLAG:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 2
+BAPI_PROCORD_SET_DEL_INDICATOR:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 2
+BAPI_PROCORD_WM_MAT_STAGING:
+  exception: 0
+  struct: 1
+  table: 3
+  var: 2
+total:
+  alpha: 8
+  descriptors: 312
+  fields: 33
+  helps: 334
+  parameters: 150
+  rfms: 19
+  texts: 270

@@ -1,0 +1,43 @@
+BAPISDORDER_GETDETAILEDLIST:
+  exception: 0
+  struct: 1
+  table: 29
+  var: 2
+BAPI_SALESORDER_CHANGE:
+  exception: 0
+  struct: 3
+  table: 21
+  var: 5
+BAPI_SALESORDER_CONFIRMDELVRY:
+  exception: 0
+  struct: 0
+  table: 4
+  var: 1
+BAPI_SALESORDER_CREATEFROMDAT2:
+  exception: 0
+  struct: 4
+  table: 21
+  var: 7
+BAPI_SALESORDER_GETLIST:
+  exception: 0
+  struct: 2
+  table: 3
+  var: 9
+BAPI_SALESORDER_GETSTATUS:
+  exception: 0
+  struct: 1
+  table: 1
+  var: 1
+BAPI_SALESORDER_SIMULATE:
+  exception: 0
+  struct: 5
+  table: 17
+  var: 2
+total:
+  alpha: 17
+  descriptors: 753
+  fields: 78
+  helps: 787
+  parameters: 139
+  rfms: 7
+  texts: 1229

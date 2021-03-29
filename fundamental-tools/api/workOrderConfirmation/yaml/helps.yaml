@@ -1,0 +1,66 @@
+CH AFRU:
+  title: Completion confirmation number for the operation
+CH AUFK:
+  title: Order Number
+CH BALHDR:
+  title: 'Application log: log number'
+CH BALM:
+  title: 'Application log: Internal message serial number'
+CT BALHDR:
+  title: 'Application log: log number (no. range obj.  APPL_LOG)'
+CT BALM:
+  title: 'Application log: Serial number'
+CT CSLA:
+  title: Activity type
+CT DD03L:
+  title: Local field name
+CT EAML_D_OFFSET_TC:
+  title: Type of First Offset
+CT T006:
+  title: Units of Measurement of Various Types
+CT T006I:
+  title: ISO codes for measurement units
+CT T100A:
+  title: Message Class
+CT TBDLS:
+  title: Logical system
+CT TBMOT:
+  title: Accounting indicator
+CT TC26:
+  title: Capacity category
+CT TRUG:
+  title: Reason for Variance
+CT TSADV:
+  title: Version Name for Internal Addresses (Bus. Addr. Services)
+FV AUERU_VS:
+  title: Partial/Final Confirmation
+FV BAPIFLAG:
+  title: Switch to Simulation Session for Write BAPIs
+FV BAPIOPTION:
+  title: Selection operator OPTION for range tables
+FV BAPISIGN:
+  title: Inclusion/exclusion criterion SIGN for range tables
+FV RU_INS_ERR:
+  title: 'Key: Insert Confirmation with Errors'
+FV XFELD:
+  title: 'Indicator: Entry blocked'
+SH CLCITYNAME:
+  title: City
+SH CSH_TC26:
+  title: Capacity category
+SH EAML_H_T006:
+  title: Unit of Measurement for Linear Data
+SH EAML_H_T006_OFFSET:
+  title: Unit of Measurement for Offset 1
+SH EAML_SH_LINEAR_POINT:
+  title: Start Point
+SH EAML_SH_MARKER:
+  title: Marker for Start Point
+SH H_T001W:
+  title: Plant
+SH H_T001W_C:
+  title: Plant
+SH H_T006:
+  title: Unit for work
+SH H_T006I:
+  title: ISO code for unit of measurement

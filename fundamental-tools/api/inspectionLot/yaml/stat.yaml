@@ -1,0 +1,93 @@
+BAPI_INSPCHAR_GETREQUIREMENTS:
+  exception: 0
+  struct: 2
+  table: 0
+  var: 3
+BAPI_INSPCHAR_GETRESULT:
+  exception: 0
+  struct: 3
+  table: 1
+  var: 4
+BAPI_INSPCHAR_SETRESULT:
+  exception: 0
+  struct: 3
+  table: 1
+  var: 4
+BAPI_INSPLOT_GETDETAIL:
+  exception: 0
+  struct: 8
+  table: 3
+  var: 1
+BAPI_INSPLOT_GETLIST:
+  exception: 0
+  struct: 2
+  table: 1
+  var: 21
+BAPI_INSPLOT_GETOPERATIONS:
+  exception: 0
+  struct: 1
+  table: 1
+  var: 1
+BAPI_INSPLOT_GETSTATUS:
+  exception: 0
+  struct: 2
+  table: 2
+  var: 1
+BAPI_INSPLOT_SETUSAGEDECISION:
+  exception: 0
+  struct: 5
+  table: 2
+  var: 1
+BAPI_INSPOPER_ACKNOWLEDGE:
+  exception: 0
+  struct: 1
+  table: 1
+  var: 1
+BAPI_INSPOPER_GETCHAR:
+  exception: 0
+  struct: 2
+  table: 1
+  var: 7
+BAPI_INSPOPER_GETDETAIL:
+  exception: 0
+  struct: 3
+  table: 5
+  var: 16
+BAPI_INSPOPER_GETLIST:
+  exception: 0
+  struct: 2
+  table: 2
+  var: 2
+BAPI_INSPOPER_RECORDRESULTS:
+  exception: 0
+  struct: 2
+  table: 4
+  var: 3
+BAPI_INSPPOINT_CHANGE:
+  exception: 0
+  struct: 2
+  table: 0
+  var: 3
+BAPI_INSPPOINT_CREATEFROMDATA:
+  exception: 0
+  struct: 2
+  table: 0
+  var: 3
+BAPI_INSPPOINT_GETLIST:
+  exception: 0
+  struct: 1
+  table: 1
+  var: 4
+BAPI_INSPPOINT_GETREQUIREMENTS:
+  exception: 0
+  struct: 2
+  table: 0
+  var: 3
+total:
+  alpha: 10
+  descriptors: 305
+  fields: 29
+  helps: 324
+  parameters: 146
+  rfms: 17
+  texts: 340

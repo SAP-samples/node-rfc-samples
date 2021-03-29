@@ -1,0 +1,38 @@
+BAPI_PLANNEDORDER_CHANGE:
+  exception: 0
+  struct: 7
+  table: 4
+  var: 1
+BAPI_PLANNEDORDER_CREATE:
+  exception: 0
+  struct: 6
+  table: 5
+  var: 1
+BAPI_PLANNEDORDER_DELETE:
+  exception: 0
+  struct: 1
+  table: 0
+  var: 3
+BAPI_PLANNEDORDER_EXIST_CHECK:
+  exception: 0
+  struct: 1
+  table: 0
+  var: 1
+BAPI_PLANNEDORDER_GET_DETAIL:
+  exception: 0
+  struct: 5
+  table: 5
+  var: 1
+BAPI_PLANNEDORDER_GET_DET_LIST:
+  exception: 0
+  struct: 2
+  table: 1
+  var: 0
+total:
+  alpha: 8
+  descriptors: 212
+  fields: 12
+  helps: 222
+  parameters: 44
+  rfms: 6
+  texts: 209
