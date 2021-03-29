@@ -1,0 +1,24 @@
+<!-- SH H_TCF10 Control Key for Management of Production Resources/Tools : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.STEUF" shlp.bind="{type: 'CT', id: 'TCF10'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Control Key for Management of Production Resources/Tools"></ui-combo>
+<ui-checkbox value.bind="searchParamLow.XTERM" label="Indicator: schedule production resources/tools"></ui-checkbox>
+<ui-checkbox value.bind="searchParamLow.XKALK" label="Indicator: Production resources/tools costing"></ui-checkbox>
+<ui-input bind="searchParamLow.STFTXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Text for the production resources/tools control key"></ui-input>
+<ui-checkbox value.bind="searchParamLow.XRUECK" label="Indicator: confirm production resources/tools"></ui-checkbox>
+<ui-combo bind="searchParamLow.XDRUCK" shlp.bind="{type: 'FV', id: 'XFLAG'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Indicator: Print production resources/tools"></ui-combo>
+<ui-checkbox value.bind="searchParamLow.XEXPAND" label="Indicator: Expand production resources/tools"></ui-checkbox>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="STEUF" data-abap.bind="{type:'CHAR', length:'4'}" label="Control Key for Management of Production Resources/Tools"></ui-dg-column>
+   <ui-dg-column sortable field="XTERM" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: schedule production resources/tools"></ui-dg-column>
+   <ui-dg-column sortable field="XKALK" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Production resources/tools costing"></ui-dg-column>
+   <ui-dg-column sortable field="XRUECK" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: confirm production resources/tools"></ui-dg-column>
+   <ui-dg-column sortable field="XDRUCK" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Print production resources/tools"></ui-dg-column>
+   <ui-dg-column sortable field="XEXPAND" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Expand production resources/tools"></ui-dg-column>
+   <ui-dg-column sortable field="STFTXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Text for the production resources/tools control key"></ui-dg-column>
+</ui-datagrid>

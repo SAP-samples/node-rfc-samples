@@ -1,0 +1,13 @@
+<!-- SH H_TQ79 Identification for the Inspection Point Field Combination : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.SLWBEZ" shlp.bind="{type: 'CT', id: 'TQ79'}" data-abap.bind="{type:'CHAR', mid:'QBK', length:'3'}"
+          label="Identification for the Inspection Point Field Combination"></ui-combo>
+<ui-input bind="searchParamLow.KURZTEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Short Text"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SLWBEZ" data-abap.bind="{type:'CHAR', mid:'QBK', length:'3'}" label="Identification for the Inspection Point Field Combination"></ui-dg-column>
+   <ui-dg-column sortable field="KURZTEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Short Text"></ui-dg-column>
+</ui-datagrid>

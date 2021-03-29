@@ -1,7 +1,7 @@
 //
-// BAPI_PERSDATA_DELIMIT var: 9  struct: 2  table: 0  exception: 0
+// BAPI_PERSDATA_DELIMIT exception: 0  struct: 2  table: 0  var: 9
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore
@@ -10,13 +10,13 @@ const parameters = {
 // IMPORT PARAMETERS
 
 DELIMIT_DATE       :           "", // DATS (8) Delimitation date
-EMPLOYEENUMBER     :           "", // NUMC (8) no text (en) SU3=PER
-LOCKINDICATOR      :           "", // CHAR (1) no text (en)
-OBJECTID           :           "", // CHAR (2) no text (en) SU3=OPS
-RECORDNUMBER       :           "", // NUMC (3) no text (en)
-SUBTYPE            :           "", // CHAR (4) no text (en) SU3=SUB
-VALIDITYBEGIN      :           "", // DATS (8) no text (en)
-VALIDITYEND        :           "", // DATS (8) no text (en)
+EMPLOYEENUMBER     :           "", // NUMC (8) no text (undefined) SU3=PER
+LOCKINDICATOR      :           "", // CHAR (1) no text (undefined)
+OBJECTID           :           "", // CHAR (2) no text (undefined) SU3=OPS
+RECORDNUMBER       :           "", // NUMC (3) no text (undefined)
+SUBTYPE            :           "", // CHAR (4) no text (undefined) SU3=SUB
+VALIDITYBEGIN      :           "", // DATS (8) no text (undefined)
+VALIDITYEND        :           "", // DATS (8) no text (undefined)
 // NOCOMMIT        :           "", // CHAR (1) COMMIT control at BAPI interface
 
 // EXPORT PARAMETERS

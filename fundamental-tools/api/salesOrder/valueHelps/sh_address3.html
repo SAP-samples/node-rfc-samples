@@ -1,0 +1,33 @@
+<!-- SH ADDRESS3 Search Help for Contact Partner Addresses (Workplace Addr.) : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.PERSNUMBER" shlp.bind="{type: 'SH', id: 'ADDRESS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'CDT', length:'10'}"
+          label="Person number"></ui-combo>
+<ui-input bind="searchParamLow.MC_NAMEFIR" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="First Name in Uppercase for Search Help"></ui-input>
+<ui-input bind="searchParamLow.MC_NAMELAS" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="Last Name in Uppercase for Search Help"></ui-input>
+<ui-checkbox value.bind="searchParamLow.COMP_PERS" label="Flag: Person in company (C) or private (P) address"></ui-checkbox>
+<ui-combo bind="searchParamLow.ADDRNUMBER" shlp.bind="{type: 'CT', id: 'ADRC'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ADR', length:'10'}"
+          label="Address number"></ui-combo>
+<ui-input bind="searchParamLow.NAME_FIRST" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="First name"></ui-input>
+<ui-input bind="searchParamLow.NAME_LAST" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Last name"></ui-input>
+<ui-input bind="searchParamLow.NAME1" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Name 1"></ui-input>
+<ui-input bind="searchParamLow.MC_NAME1" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="Name (Field NAME1) in Uppercase for Search Help"></ui-input>
+<ui-input bind="searchParamLow.MC_STREET" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="Street Name in Uppercase for Search Help"></ui-input>
+<ui-input bind="searchParamLow.MC_CITY1" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="City name in Uppercase for Search Help"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="NAME_FIRST" data-abap.bind="{type:'CHAR', length:'40'}" label="First name"></ui-dg-column>
+   <ui-dg-column sortable field="NAME_LAST" data-abap.bind="{type:'CHAR', length:'40'}" label="Last name"></ui-dg-column>
+   <ui-dg-column sortable field="NAME1" data-abap.bind="{type:'CHAR', length:'40'}" label="Name 1"></ui-dg-column>
+   <ui-dg-column sortable field="MC_STREET" data-abap.bind="{type:'CHAR', length:'25'}" label="Street Name in Uppercase for Search Help"></ui-dg-column>
+   <ui-dg-column sortable field="MC_CITY1" data-abap.bind="{type:'CHAR', length:'25'}" label="City name in Uppercase for Search Help"></ui-dg-column>
+</ui-datagrid>

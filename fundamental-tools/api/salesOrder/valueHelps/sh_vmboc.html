@@ -1,0 +1,29 @@
+<!-- SH VMBOC Rebate agreements by status : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.BOSTA" shlp.bind="{type: 'FV', id: 'BOSTA'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Status of the agreement"></ui-combo>
+<ui-date date.bind="searchParamLow.KODATBI"  label="Validity end date of the condition record"></ui-date>
+<ui-date date.bind="searchParamLow.KODATAB"  label="Validity start date of the condition record"></ui-date>
+<ui-combo bind="searchParamLow.BONEM" shlp.bind="{type: 'SH', id: 'MEBO_DEBI'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VBE', length:'10'}"
+          label="Rebate recipient"></ui-combo>
+<ui-combo bind="searchParamLow.VKORG" shlp.bind="{type: 'SH', id: 'H_TVKO'}" data-abap.bind="{type:'CHAR', mid:'VKO', length:'4'}"
+          label="Sales Organization"></ui-combo>
+<ui-combo bind="searchParamLow.VTWEG" shlp.bind="{type: 'SH', id: 'H_TVKOV'}" data-abap.bind="{type:'CHAR', mid:'VTW', length:'2'}"
+          label="Distribution Channel"></ui-combo>
+<ui-combo bind="searchParamLow.SPART" shlp.bind="{type: 'SH', id: 'H_TVTA'}" data-abap.bind="{type:'CHAR', mid:'SPA', length:'2'}"
+          label="Division"></ui-combo>
+<ui-combo bind="searchParamLow.KNUMA" shlp.bind="{type: 'SH', id: 'VMBO'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Agreement (various conditions grouped together)"></ui-combo>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="BOSTA" data-abap.bind="{type:'CHAR', length:'1'}" label="Status of the agreement"></ui-dg-column>
+   <ui-dg-column sortable field="KODATBI" data-abap.bind="{type:'DATS'}" label="Validity end date of the condition record"></ui-dg-column>
+   <ui-dg-column sortable field="KODATAB" data-abap.bind="{type:'DATS'}" label="Validity start date of the condition record"></ui-dg-column>
+   <ui-dg-column sortable field="BONEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VBE', length:'10'}" label="Rebate recipient"></ui-dg-column>
+   <ui-dg-column sortable field="VKORG" data-abap.bind="{type:'CHAR', mid:'VKO', length:'4'}" label="Sales Organization"></ui-dg-column>
+   <ui-dg-column sortable field="VTWEG" data-abap.bind="{type:'CHAR', mid:'VTW', length:'2'}" label="Distribution Channel"></ui-dg-column>
+   <ui-dg-column sortable field="SPART" data-abap.bind="{type:'CHAR', mid:'SPA', length:'2'}" label="Division"></ui-dg-column>
+   <ui-dg-column sortable field="KNUMA" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" label="Agreement (various conditions grouped together)"></ui-dg-column>
+</ui-datagrid>

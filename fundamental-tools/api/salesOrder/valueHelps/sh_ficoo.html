@@ -1,0 +1,30 @@
+<!-- SH FICOO Search via customer : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.SPONSOR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}"
+          label="Customer account number for fund"></ui-input>
+<ui-input bind="searchParamLow.SORTL" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Sort field"></ui-input>
+<ui-input bind="searchParamLow.BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}"
+          label="Company Code"></ui-input>
+<ui-input bind="searchParamLow.FIKRS" data-abap.bind="{type:'CHAR', mid:'FIK', length:'4'}"
+          label="Financial Management Area"></ui-input>
+<ui-input bind="searchParamLow.SPRAS" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+          label="Language Key"></ui-input>
+<ui-input bind="searchParamLow.BEZEICH" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Name"></ui-input>
+<ui-input bind="searchParamLow.FINCODE" data-abap.bind="{type:'CHAR', mid:'FIC', length:'10'}"
+          label="Fund"></ui-input>
+<ui-input bind="searchParamLow.MCTXT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Search Term for Matchcode Search"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="FIKRS" data-abap.bind="{type:'CHAR', mid:'FIK', length:'4'}" label="Financial Management Area"></ui-dg-column>
+   <ui-dg-column sortable field="SPRAS" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}" label="Language Key"></ui-dg-column>
+   <ui-dg-column sortable field="FINCODE" data-abap.bind="{type:'CHAR', mid:'FIC', length:'10'}" label="Fund"></ui-dg-column>
+   <ui-dg-column sortable field="BEZEICH" data-abap.bind="{type:'CHAR', length:'20'}" label="Name"></ui-dg-column>
+   <ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+   <ui-dg-column sortable field="SPONSOR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}" label="Customer account number for fund"></ui-dg-column>
+   <ui-dg-column sortable field="SORTL" data-abap.bind="{type:'CHAR', length:'10'}" label="Sort field"></ui-dg-column>
+</ui-datagrid>

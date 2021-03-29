@@ -1,0 +1,13 @@
+<!-- SH H_TTXOB Texts: application object : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.TDOBJECT" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Texts: application object"></ui-input>
+<ui-input bind="searchParamLow.TDTEXT" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Short text"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TDOBJECT" data-abap.bind="{type:'CHAR', length:'10'}" label="Texts: application object"></ui-dg-column>
+   <ui-dg-column sortable field="TDTEXT" data-abap.bind="{type:'CHAR', length:'30'}" label="Short text"></ui-dg-column>
+</ui-datagrid>

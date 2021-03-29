@@ -1,0 +1,171 @@
+<!--
+BAPI_CTREQUEST_CREATE exception: 0  struct: 4  table: 2  var: 4
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-combo bind="AUTHOR" shlp.bind="{type: 'SH', id: 'USER_ADDR'}" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Author of request to be created"></ui-combo>
+
+<ui-input bind="TEXT" data-abap.bind="{type:'CHAR', length:'60'}"
+          label="Short text for the request to be created"></ui-input>
+
+<ui-combo bind="REQUEST_TYPE" shlp.bind="{type: 'FV', id: 'TRFUNCTION'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="W = Customizing request, otherwise Workbench request"></ui-combo>
+
+<!-- Parameter: PROJECT structure: BAPISCTS03  Project assignment for the request -->
+
+<ui-combo bind="PROJECT.PROJECTTYP" shlp.bind="{type: 'SH', id: 'CTS_EXT_PS'}" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External Project System"></ui-combo>
+
+<ui-input bind="PROJECT.PROJECT_NR" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Project ID"></ui-input>
+
+<!-- Parameter: TRANSLAYER structure: BAPISCTS02  Transport layer of request -->
+
+<ui-checkbox value.bind="TRANSLAYER.LAYER_SET" label="General Flag"></ui-checkbox>
+
+<ui-combo bind="TRANSLAYER.LAYER" shlp.bind="{type: 'SH', id: 'TCE_TRANSPORT_LAYERS'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Transport Layer in ABAP Workbench"></ui-combo>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: TASK_LIST structure: BAPISCTS07  List of header information for the tasks -->
+
+<ui-datagrid data.bind="TASK_LIST" title="List of header information for the tasks"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TASKID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'E070'}" label="Request/Task"></ui-dg-column>
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'TRFUNCTION'}" label="Type of request/task"></ui-dg-column>
+   <ui-dg-column sortable field="STATUS" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'TRSTATUS'}" label="Status of request/task"></ui-dg-column>
+   <ui-dg-column sortable field="AUTHOR" data-abap.bind="{type:'CHAR', length:'12'}" shlp.bind="{type: 'SH', id: 'USER_ADDR'}" label="Owner of a Request or Task"></ui-dg-column>
+   <ui-dg-column sortable field="TEXT" data-abap.bind="{type:'CHAR', length:'60'}" label="Short Description of Repository Objects"></ui-dg-column>
+   <ui-dg-column sortable field="CHANGEDATE" data-abap.bind="{type:'DATS'}" label="Last Changed On"></ui-dg-column>
+   <ui-dg-column sortable field="CHANGETIME" data-abap.bind="{type:'TIMS'}" label="Last changed at"></ui-dg-column>
+   <ui-dg-column sortable field="REQUESTID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'E070'}" label="Request/Task"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="TASK_LIST.TASKID" shlp.bind="{type: 'CT', id: 'E070'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Request/Task"></ui-combo>
+
+<ui-combo bind="TASK_LIST.TYPE" shlp.bind="{type: 'FV', id: 'TRFUNCTION'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Type of request/task"></ui-combo>
+
+<ui-combo bind="TASK_LIST.STATUS" shlp.bind="{type: 'FV', id: 'TRSTATUS'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Status of request/task"></ui-combo>
+
+<ui-combo bind="TASK_LIST.AUTHOR" shlp.bind="{type: 'SH', id: 'USER_ADDR'}" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Owner of a Request or Task"></ui-combo>
+
+<ui-input bind="TASK_LIST.TEXT" data-abap.bind="{type:'CHAR', length:'60'}"
+          label="Short Description of Repository Objects"></ui-input>
+
+<ui-date date.bind="TASK_LIST.CHANGEDATE"  label="Last Changed On"></ui-date>
+
+<ui-time time.bind="TASK_LIST.CHANGETIME"  label="Last changed at"></ui-time>
+
+<ui-combo bind="TASK_LIST.REQUESTID" shlp.bind="{type: 'CT', id: 'E070'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Request/Task"></ui-combo>
+
+<!-- Parameter: AUTHORLIST structure: BAPISCTS12  List of task authors and task types -->
+
+<ui-datagrid data.bind="AUTHORLIST" title="List of task authors and task types"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TASK_OWNER" data-abap.bind="{type:'CHAR', length:'12'}" shlp.bind="{type: 'SH', id: 'USER_ADDR'}" label="Owner of a Request or Task"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="AUTHORLIST.TASK_OWNER" shlp.bind="{type: 'SH', id: 'USER_ADDR'}" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Owner of a Request or Task"></ui-combo>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<ui-combo bind="REQUESTID" shlp.bind="{type: 'CT', id: 'E070'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Number of the created request"></ui-combo>
+
+<!-- Parameter: HEADER structure: BAPISCTS06  Header information for request -->
+
+<ui-combo bind="HEADER.REQUESTID" shlp.bind="{type: 'CT', id: 'E070'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Request/Task"></ui-combo>
+
+<ui-combo bind="HEADER.TYPE" shlp.bind="{type: 'FV', id: 'TRFUNCTION'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Type of request/task"></ui-combo>
+
+<ui-combo bind="HEADER.STATUS" shlp.bind="{type: 'FV', id: 'TRSTATUS'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Status of request/task"></ui-combo>
+
+<ui-combo bind="HEADER.AUTHOR" shlp.bind="{type: 'SH', id: 'USER_ADDR'}" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Owner of a Request or Task"></ui-combo>
+
+<ui-input bind="HEADER.TEXT" data-abap.bind="{type:'CHAR', length:'60'}"
+          label="Short Description of Repository Objects"></ui-input>
+
+<ui-input bind="HEADER.SRC_CLIENT" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Source client of request"></ui-input>
+
+<ui-date date.bind="HEADER.CHANGEDATE"  label="Last Changed On"></ui-date>
+
+<ui-time time.bind="HEADER.CHANGETIME"  label="Last changed at"></ui-time>
+
+<ui-combo bind="HEADER.TARGET" shlp.bind="{type: 'SH', id: 'TCE_TRANSPORT_TARGET'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Transport Target of Request"></ui-combo>
+
+<ui-combo bind="HEADER.PROJECTTYP" shlp.bind="{type: 'CT', id: 'WBOATTR'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Request attribute"></ui-combo>
+
+<ui-input bind="HEADER.PROJECT_NR" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Attribute value"></ui-input>
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return structure of the errors -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>

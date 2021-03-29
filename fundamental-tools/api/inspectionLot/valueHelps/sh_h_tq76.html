@@ -1,0 +1,13 @@
+<!-- SH H_TQ76 Specification Record Status : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.STATUS" shlp.bind="{type: 'CT', id: 'TQ76'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Results Record Status"></ui-combo>
+<ui-input bind="searchParamLow.KURZTEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Short Text"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="STATUS" data-abap.bind="{type:'CHAR', length:'1'}" label="Results Record Status"></ui-dg-column>
+   <ui-dg-column sortable field="KURZTEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Short Text"></ui-dg-column>
+</ui-datagrid>

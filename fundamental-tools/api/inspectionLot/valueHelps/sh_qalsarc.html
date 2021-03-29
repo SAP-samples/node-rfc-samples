@@ -1,0 +1,15 @@
+<!-- SH QALSARC Inspection Lot Using Archive : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.PRUEFLOS" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-input>
+<ui-date date.bind="searchParamLow.ENSTEHDAT"  label="Date of Lot Creation"></ui-date>
+<ui-input bind="searchParamLow.FIELDCATALOG" data-abap.bind="{type:'CHAR', length:'15'}"
+          label="Archive Information System Field Catalog"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="PRUEFLOS" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}" label="Inspection Lot Number"></ui-dg-column>
+   <ui-dg-column sortable field="ENSTEHDAT" data-abap.bind="{type:'DATS'}" label="Date of Lot Creation"></ui-dg-column>
+   <ui-dg-column sortable field="FIELDCATALOG" data-abap.bind="{type:'CHAR', length:'15'}" label="Archive Information System Field Catalog"></ui-dg-column>
+</ui-datagrid>

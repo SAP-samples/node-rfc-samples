@@ -1,0 +1,25 @@
+<!-- SH CSH_TKA01 Controlling Area : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.KOKRS" shlp.bind="{type: 'SH', id: 'CSH_TKA01'}" data-abap.bind="{type:'CHAR', mid:'CAC', length:'4'}"
+          label="Controlling Area"></ui-combo>
+<ui-input bind="searchParamLow.BEZEI" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="Name of the controlling area"></ui-input>
+<ui-combo bind="searchParamLow.WAERS" shlp.bind="{type: 'CT', id: 'TCURC'}" data-abap.bind="{type:'CUKY', mid:'FWS', length:'5'}"
+          label="Currency Key"></ui-combo>
+<ui-combo bind="searchParamLow.KTOPL" shlp.bind="{type: 'SH', id: 'H_T004'}" data-abap.bind="{type:'CHAR', mid:'KPL', length:'4'}"
+          label="Chart of Accounts"></ui-combo>
+<ui-combo bind="searchParamLow.LMONA" shlp.bind="{type: 'CT', id: 'T009'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Fiscal Year Variant"></ui-combo>
+<ui-input bind="searchParamLow.KHINR" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Standard Hierarchy for Cost Centers"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="KOKRS" data-abap.bind="{type:'CHAR', mid:'CAC', length:'4'}" label="Controlling Area"></ui-dg-column>
+   <ui-dg-column sortable field="BEZEI" data-abap.bind="{type:'CHAR', length:'25'}" label="Name of the controlling area"></ui-dg-column>
+   <ui-dg-column sortable field="WAERS" data-abap.bind="{type:'CUKY', mid:'FWS', length:'5'}" label="Currency Key"></ui-dg-column>
+   <ui-dg-column sortable field="KTOPL" data-abap.bind="{type:'CHAR', mid:'KPL', length:'4'}" label="Chart of Accounts"></ui-dg-column>
+   <ui-dg-column sortable field="LMONA" data-abap.bind="{type:'CHAR', length:'2'}" label="Fiscal Year Variant"></ui-dg-column>
+   <ui-dg-column sortable field="KHINR" data-abap.bind="{type:'CHAR', length:'12'}" label="Standard Hierarchy for Cost Centers"></ui-dg-column>
+</ui-datagrid>

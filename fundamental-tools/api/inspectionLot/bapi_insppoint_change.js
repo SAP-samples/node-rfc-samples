@@ -1,7 +1,7 @@
 //
-// BAPI_INSPPOINT_CHANGE var: 3  struct: 2  table: 0  exception: 0
+// BAPI_INSPPOINT_CHANGE exception: 0  struct: 2  table: 0  var: 3
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore
@@ -9,9 +9,9 @@ const parameters = {
 
 // IMPORT PARAMETERS
 
-INSPLOT      :           "", // NUMC (12) no text (en) SU3=QLS
-INSPOPER     :           "", // CHAR (4) ALPHA=NUMCV no text (en)
-INSPPOINT    :           "", // NUMC (6) no text (en)
+INSPLOT      :           "", // NUMC (12) no text (undefined) SU3=QLS
+INSPOPER     :           "", // CHAR (4) ALPHA=NUMCV no text (undefined)
+INSPPOINT    :           "", // NUMC (6) no text (undefined)
 DATA         :           {}, // BAPI2045L4 Inspection point data
 
 // EXPORT PARAMETERS

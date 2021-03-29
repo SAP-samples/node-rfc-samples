@@ -1,0 +1,32 @@
+<!-- SH VMVLF Completed Deliveries : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.VSTEL" data-abap.bind="{type:'CHAR', mid:'VST', length:'4'}"
+          label="Shipping Point/Receiving Point"></ui-input>
+<ui-input bind="searchParamLow.KUNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Ship-To Party"></ui-input>
+<ui-date date.bind="searchParamLow.WADAT_IST"  label="Actual Goods Movement Date"></ui-date>
+<ui-date date.bind="searchParamLow.LFDAT"  label="Delivery Date"></ui-date>
+<ui-input bind="searchParamLow.VBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}"
+          label="Delivery"></ui-input>
+<ui-input bind="searchParamLow.NAME_WE" data-abap.bind="{type:'CHAR', length:'35'}"
+          label="Name of the ship-to party"></ui-input>
+<ui-input bind="searchParamLow.ORT01_WE" data-abap.bind="{type:'CHAR', length:'35'}"
+          label="Location of the ship-to party"></ui-input>
+<ui-input bind="searchParamLow.LFART" data-abap.bind="{type:'CHAR', mid:'ALT', length:'4'}"
+          label="Delivery Type"></ui-input>
+<ui-input bind="searchParamLow.PO_RELATED" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Only Display Deliveries with Purchase Order Reference"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="KUNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" label="Ship-To Party"></ui-dg-column>
+   <ui-dg-column sortable field="LFART" data-abap.bind="{type:'CHAR', mid:'ALT', length:'4'}" label="Delivery Type"></ui-dg-column>
+   <ui-dg-column sortable field="LFDAT" data-abap.bind="{type:'DATS'}" label="Delivery Date"></ui-dg-column>
+   <ui-dg-column sortable field="NAME_WE" data-abap.bind="{type:'CHAR', length:'35'}" label="Name of the ship-to party"></ui-dg-column>
+   <ui-dg-column sortable field="ORT01_WE" data-abap.bind="{type:'CHAR', length:'35'}" label="Location of the ship-to party"></ui-dg-column>
+   <ui-dg-column sortable field="PO_RELATED" data-abap.bind="{type:'CHAR', length:'1'}" label="Only Display Deliveries with Purchase Order Reference"></ui-dg-column>
+   <ui-dg-column sortable field="VBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}" label="Delivery"></ui-dg-column>
+   <ui-dg-column sortable field="VSTEL" data-abap.bind="{type:'CHAR', mid:'VST', length:'4'}" label="Shipping Point/Receiving Point"></ui-dg-column>
+   <ui-dg-column sortable field="WADAT_IST" data-abap.bind="{type:'DATS', mid:'WDTI'}" label="Actual Goods Movement Date"></ui-dg-column>
+</ui-datagrid>

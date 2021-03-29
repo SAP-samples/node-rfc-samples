@@ -1,0 +1,16 @@
+<!-- SH H_T691A Credit management: Risk category : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.CTLPC" shlp.bind="{type: 'CT', id: 'T691A'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Credit management: Risk category"></ui-combo>
+<ui-combo bind="searchParamLow.KKBER" shlp.bind="{type: 'SH', id: 'H_T014'}" data-abap.bind="{type:'CHAR', mid:'KKB', length:'4'}"
+          label="Credit control area"></ui-combo>
+<ui-input bind="searchParamLow.RTEXT" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Name of the risk class"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="KKBER" data-abap.bind="{type:'CHAR', mid:'KKB', length:'4'}" label="Credit control area"></ui-dg-column>
+   <ui-dg-column sortable field="CTLPC" data-abap.bind="{type:'CHAR', length:'3'}" label="Credit management: Risk category"></ui-dg-column>
+   <ui-dg-column sortable field="RTEXT" data-abap.bind="{type:'CHAR', length:'30'}" label="Name of the risk class"></ui-dg-column>
+</ui-datagrid>

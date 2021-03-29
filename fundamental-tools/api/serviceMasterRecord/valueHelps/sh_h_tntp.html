@@ -1,0 +1,13 @@
+<!-- SH H_TNTP Category of International Article Number (EAN) : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.NUMTP" shlp.bind="{type: 'CT', id: 'TNTP'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Category of International Article Number (EAN)"></ui-combo>
+<ui-input bind="searchParamLow.NTBEZ" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Description of number category"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="NUMTP" data-abap.bind="{type:'CHAR', length:'2'}" label="Category of International Article Number (EAN)"></ui-dg-column>
+   <ui-dg-column sortable field="NTBEZ" data-abap.bind="{type:'CHAR', length:'40'}" label="Description of number category"></ui-dg-column>
+</ui-datagrid>

@@ -1,0 +1,67 @@
+<!--
+BAPI_PERSDATA_DELETE exception: 0  struct: 1  table: 0  var: 8
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-input bind="EMPLOYEENUMBER" data-abap.bind="{type:'NUMC', mid:'PER', length:'8'}"
+          label="Personnel number"></ui-input>
+
+<ui-input bind="LOCKINDICATOR" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Lock indicator for HR master record"></ui-input>
+
+<ui-input bind="OBJECTID" data-abap.bind="{type:'CHAR', mid:'OPS', length:'2'}"
+          label="Object identification"></ui-input>
+
+<ui-input bind="RECORDNUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Number of Infotype Record"></ui-input>
+
+<ui-input bind="SUBTYPE" data-abap.bind="{type:'CHAR', mid:'SUB', length:'4'}"
+          label="Subtype"></ui-input>
+
+<ui-date date.bind="VALIDITYBEGIN"  label="Valid from date"></ui-date>
+
+<ui-date date.bind="VALIDITYEND"  label="Valid To Date"></ui-date>
+
+<ui-checkbox value.bind="NOCOMMIT" label="COMMIT control at BAPI interface"></ui-checkbox>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRETURN1  Structure for return code -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>

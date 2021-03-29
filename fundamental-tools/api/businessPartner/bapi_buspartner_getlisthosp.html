@@ -1,0 +1,351 @@
+<!--
+BAPI_BUSPARTNER_GETLISTHOSP exception: 0  struct: 0  table: 10  var: 2
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-input bind="MAXCNT" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Read Maximum Number of Business Partners from Database"></ui-input>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: BUSPARTNER_DATA structure: BAPI1309BPARTNERHITS  Hit List of Determined Business Partners -->
+
+<ui-datagrid data.bind="BUSPARTNER_DATA" title="Hit List of Determined Business Partners"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="BPARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CT', id: 'NGPA'}" label="IS-H: Business Partner"></ui-dg-column>
+   <ui-dg-column sortable field="LAST_NAME_BP" data-abap.bind="{type:'CHAR', mid:'NA1', length:'35'}" label="IS-H: Last Name/ 1st Name"></ui-dg-column>
+   <ui-dg-column sortable field="FRST_NAME_BP" data-abap.bind="{type:'CHAR', length:'35'}" label="First Name / Second Name"></ui-dg-column>
+   <ui-dg-column sortable field="SHORT_NAME_BP" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Short Name of Business Partner"></ui-dg-column>
+   <ui-dg-column sortable field="SEX_EXT" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'CT', id: 'TN17G'}" label="IS-H: Sex Indicator - User-Specific"></ui-dg-column>
+   <ui-dg-column sortable field="PERS_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="IS-H: Text Designating the EMPLOYEE Function"></ui-dg-column>
+   <ui-dg-column sortable field="INSURPROV_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="IS-H: Text Designating the INSURANCE PROVIDER Function"></ui-dg-column>
+   <ui-dg-column sortable field="CUST_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="Text Designating the CUSTOMER Function"></ui-dg-column>
+   <ui-dg-column sortable field="EMPL_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="IS-H: Text Designating the EMPLOYER Function"></ui-dg-column>
+   <ui-dg-column sortable field="HOSP_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="IS-H: Text Designating the HOSPITAL Function"></ui-dg-column>
+   <ui-dg-column sortable field="PCODE" data-abap.bind="{type:'CHAR', length:'10'}" label="IS-H: Postal Code of Business Partner"></ui-dg-column>
+   <ui-dg-column sortable field="CITY" data-abap.bind="{type:'CHAR', length:'40'}" label="IS-H: City"></ui-dg-column>
+   <ui-dg-column sortable field="PARTNER_NO" data-abap.bind="{type:'CHAR', length:'15'}" label="IS-H: External Partner Number"></ui-dg-column>
+   <ui-dg-column sortable field="COMP_CODE" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" shlp.bind="{type: 'SH', id: 'C_T001'}" label="Company Code"></ui-dg-column>
+   <ui-dg-column sortable field="PARTNER_GUID" data-abap.bind="{type:'RAW', length:'16'}" label="IS-H: GUID of Business Partner"></ui-dg-column>
+   <ui-dg-column sortable field="ZSR_NUM" data-abap.bind="{type:'CHAR', length:'10'}" label="No field text"></ui-dg-column>
+   <ui-dg-column sortable field="FEE_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="IS-H: Text Indicating the Function FEE RECIPIENT"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="BUSPARTNER_DATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="BUSPARTNER_DATA.BPARTNER" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Business Partner"></ui-combo>
+
+<ui-input bind="BUSPARTNER_DATA.LAST_NAME_BP" data-abap.bind="{type:'CHAR', mid:'NA1', length:'35'}"
+          label="IS-H: Last Name/ 1st Name"></ui-input>
+
+<ui-input bind="BUSPARTNER_DATA.FRST_NAME_BP" data-abap.bind="{type:'CHAR', length:'35'}"
+          label="First Name / Second Name"></ui-input>
+
+<ui-input bind="BUSPARTNER_DATA.SHORT_NAME_BP" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Short Name of Business Partner"></ui-input>
+
+<ui-combo bind="BUSPARTNER_DATA.SEX_EXT" shlp.bind="{type: 'CT', id: 'TN17G'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Sex Indicator - User-Specific"></ui-combo>
+
+<ui-input bind="BUSPARTNER_DATA.PERS_IND" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Text Designating the EMPLOYEE Function"></ui-input>
+
+<ui-input bind="BUSPARTNER_DATA.INSURPROV_IND" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Text Designating the INSURANCE PROVIDER Function"></ui-input>
+
+<ui-input bind="BUSPARTNER_DATA.CUST_IND" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Text Designating the CUSTOMER Function"></ui-input>
+
+<ui-input bind="BUSPARTNER_DATA.EMPL_IND" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Text Designating the EMPLOYER Function"></ui-input>
+
+<ui-input bind="BUSPARTNER_DATA.HOSP_IND" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Text Designating the HOSPITAL Function"></ui-input>
+
+<ui-input bind="BUSPARTNER_DATA.PCODE" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Postal Code of Business Partner"></ui-input>
+
+<ui-input bind="BUSPARTNER_DATA.CITY" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="IS-H: City"></ui-input>
+
+<ui-input bind="BUSPARTNER_DATA.PARTNER_NO" data-abap.bind="{type:'CHAR', length:'15'}"
+          label="IS-H: External Partner Number"></ui-input>
+
+<ui-combo bind="BUSPARTNER_DATA.COMP_CODE" shlp.bind="{type: 'SH', id: 'C_T001'}" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}"
+          label="Company Code"></ui-combo>
+
+<ui-text bind="BUSPARTNER_DATA.PARTNER_GUID" data-abap.bind="{type:'RAW', length:'16'}"
+         label="IS-H: GUID of Business Partner"></ui-text>
+
+<ui-input bind="BUSPARTNER_DATA.ZSR_NUM" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="No field text"></ui-input>
+
+<ui-input bind="BUSPARTNER_DATA.FEE_IND" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Text Indicating the Function FEE RECIPIENT"></ui-input>
+
+<!-- Parameter: FILTER_BUSPARTNER structure: BAPI1309RNGBUSPART  Filter for Business Partner -->
+
+<ui-datagrid data.bind="FILTER_BUSPARTNER" title="Filter for Business Partner"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" label="Sign (like RANGES table)"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'S_OPTION'}" label="Option (like RANGES table)"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CT', id: 'NGPA'}" label="IS-H: Business Partner"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CT', id: 'NGPA'}" label="IS-H: Business Partner"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="FILTER_BUSPARTNER.SIGN" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Sign (like RANGES table)"></ui-input>
+
+<ui-combo bind="FILTER_BUSPARTNER.OPTION" shlp.bind="{type: 'FV', id: 'S_OPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Option (like RANGES table)"></ui-combo>
+
+<ui-combo bind="FILTER_BUSPARTNER.LOW" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Business Partner"></ui-combo>
+
+<ui-combo bind="FILTER_BUSPARTNER.HIGH" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Business Partner"></ui-combo>
+
+<!-- Parameter: FILTER_CITY structure: BAPI1309RNGCITY  Filter for City -->
+
+<ui-datagrid data.bind="FILTER_CITY" title="Filter for City"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" label="Sign (like RANGES table)"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'S_OPTION'}" label="Option (like RANGES table)"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'CHAR', length:'40'}" label="IS-H: City"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'CHAR', length:'40'}" label="IS-H: City"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="FILTER_CITY.SIGN" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Sign (like RANGES table)"></ui-input>
+
+<ui-combo bind="FILTER_CITY.OPTION" shlp.bind="{type: 'FV', id: 'S_OPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Option (like RANGES table)"></ui-combo>
+
+<ui-input bind="FILTER_CITY.LOW" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="IS-H: City"></ui-input>
+
+<ui-input bind="FILTER_CITY.HIGH" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="IS-H: City"></ui-input>
+
+<!-- Parameter: FILTER_FIRSTNAME structure: BAPI1309RNGFNAME  Filter for 1st / 2nd Name -->
+
+<ui-datagrid data.bind="FILTER_FIRSTNAME" title="Filter for 1st / 2nd Name"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" label="Sign (like RANGES table)"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'S_OPTION'}" label="Option (like RANGES table)"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'CHAR', length:'35'}" label="First Name / Second Name"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'CHAR', length:'35'}" label="First Name / Second Name"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="FILTER_FIRSTNAME.SIGN" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Sign (like RANGES table)"></ui-input>
+
+<ui-combo bind="FILTER_FIRSTNAME.OPTION" shlp.bind="{type: 'FV', id: 'S_OPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Option (like RANGES table)"></ui-combo>
+
+<ui-input bind="FILTER_FIRSTNAME.LOW" data-abap.bind="{type:'CHAR', length:'35'}"
+          label="First Name / Second Name"></ui-input>
+
+<ui-input bind="FILTER_FIRSTNAME.HIGH" data-abap.bind="{type:'CHAR', length:'35'}"
+          label="First Name / Second Name"></ui-input>
+
+<!-- Parameter: FILTER_LASTNAME structure: BAPI1309RNGLNAME  Filter for Last Name -->
+
+<ui-datagrid data.bind="FILTER_LASTNAME" title="Filter for Last Name"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" label="Sign (like RANGES table)"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'S_OPTION'}" label="Option (like RANGES table)"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'CHAR', mid:'NA1', length:'35'}" label="IS-H: Last Name/ 1st Name"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'CHAR', mid:'NA1', length:'35'}" label="IS-H: Last Name/ 1st Name"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="FILTER_LASTNAME.SIGN" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Sign (like RANGES table)"></ui-input>
+
+<ui-combo bind="FILTER_LASTNAME.OPTION" shlp.bind="{type: 'FV', id: 'S_OPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Option (like RANGES table)"></ui-combo>
+
+<ui-input bind="FILTER_LASTNAME.LOW" data-abap.bind="{type:'CHAR', mid:'NA1', length:'35'}"
+          label="IS-H: Last Name/ 1st Name"></ui-input>
+
+<ui-input bind="FILTER_LASTNAME.HIGH" data-abap.bind="{type:'CHAR', mid:'NA1', length:'35'}"
+          label="IS-H: Last Name/ 1st Name"></ui-input>
+
+<!-- Parameter: FILTER_PARTNER_GUID structure: BAPI1309RNGPARTNER_GUID  Filter for GUID -->
+
+<ui-datagrid data.bind="FILTER_PARTNER_GUID" title="Filter for GUID"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" label="Sign (like RANGES table)"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'S_OPTION'}" label="Option (like RANGES table)"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'RAW', length:'16'}" label="IS-H: GUID of Business Partner"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'RAW', length:'16'}" label="IS-H: GUID of Business Partner"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="FILTER_PARTNER_GUID.SIGN" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Sign (like RANGES table)"></ui-input>
+
+<ui-combo bind="FILTER_PARTNER_GUID.OPTION" shlp.bind="{type: 'FV', id: 'S_OPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Option (like RANGES table)"></ui-combo>
+
+<ui-text bind="FILTER_PARTNER_GUID.LOW" data-abap.bind="{type:'RAW', length:'16'}"
+         label="IS-H: GUID of Business Partner"></ui-text>
+
+<ui-text bind="FILTER_PARTNER_GUID.HIGH" data-abap.bind="{type:'RAW', length:'16'}"
+         label="IS-H: GUID of Business Partner"></ui-text>
+
+<!-- Parameter: FILTER_PARTNER_NO structure: BAPI1309RNGPARTNER_NO  Filter for External Partner Number -->
+
+<ui-datagrid data.bind="FILTER_PARTNER_NO" title="Filter for External Partner Number"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" label="Sign (like RANGES table)"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'S_OPTION'}" label="Option (like RANGES table)"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'CHAR', length:'15'}" label="IS-H: External Partner Number"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'CHAR', length:'15'}" label="IS-H: External Partner Number"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="FILTER_PARTNER_NO.SIGN" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Sign (like RANGES table)"></ui-input>
+
+<ui-combo bind="FILTER_PARTNER_NO.OPTION" shlp.bind="{type: 'FV', id: 'S_OPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Option (like RANGES table)"></ui-combo>
+
+<ui-input bind="FILTER_PARTNER_NO.LOW" data-abap.bind="{type:'CHAR', length:'15'}"
+          label="IS-H: External Partner Number"></ui-input>
+
+<ui-input bind="FILTER_PARTNER_NO.HIGH" data-abap.bind="{type:'CHAR', length:'15'}"
+          label="IS-H: External Partner Number"></ui-input>
+
+<!-- Parameter: FILTER_PCODE structure: BAPI1309RNGPCODE  Filter for Postal Code -->
+
+<ui-datagrid data.bind="FILTER_PCODE" title="Filter for Postal Code"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" label="Sign (like RANGES table)"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'S_OPTION'}" label="Option (like RANGES table)"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'CHAR', length:'10'}" label="IS-H: Postal Code of Business Partner"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'CHAR', length:'10'}" label="IS-H: Postal Code of Business Partner"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="FILTER_PCODE.SIGN" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Sign (like RANGES table)"></ui-input>
+
+<ui-combo bind="FILTER_PCODE.OPTION" shlp.bind="{type: 'FV', id: 'S_OPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Option (like RANGES table)"></ui-combo>
+
+<ui-input bind="FILTER_PCODE.LOW" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Postal Code of Business Partner"></ui-input>
+
+<ui-input bind="FILTER_PCODE.HIGH" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Postal Code of Business Partner"></ui-input>
+
+<!-- Parameter: FILTER_SHORTNAME structure: BAPI1309RNGSNAME  Filter for Short Name -->
+
+<ui-datagrid data.bind="FILTER_SHORTNAME" title="Filter for Short Name"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" label="Sign (like RANGES table)"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'S_OPTION'}" label="Option (like RANGES table)"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Short Name of Business Partner"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Short Name of Business Partner"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="FILTER_SHORTNAME.SIGN" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Sign (like RANGES table)"></ui-input>
+
+<ui-combo bind="FILTER_SHORTNAME.OPTION" shlp.bind="{type: 'FV', id: 'S_OPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Option (like RANGES table)"></ui-combo>
+
+<ui-input bind="FILTER_SHORTNAME.LOW" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Short Name of Business Partner"></ui-input>
+
+<ui-input bind="FILTER_SHORTNAME.HIGH" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Short Name of Business Partner"></ui-input>
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Parameters -->
+
+<ui-datagrid data.bind="RETURN" title="Return Parameters"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-dg-column>
+   <ui-dg-column sortable field="ID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'T100A'}" label="Message Class"></ui-dg-column>
+   <ui-dg-column sortable field="NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Message Number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}" label="Message Text"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_NO" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CH', id: 'BALHDR'}" label="Application log: log number"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_MSG_NO" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'BALM'}" label="Application log: Internal message serial number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}" label="Parameter Name"></ui-dg-column>
+   <ui-dg-column sortable field="ROW" data-abap.bind="{type:'INT4', length:'+10'}" label="Lines in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="FIELD" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD03L'}" label="Field in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="SYSTEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'TBDLS'}" label="Logical system from which message originates"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<ui-combo bind="WORST_RETURNED_MSGTY" shlp.bind="{type: 'FV', id: 'ISH_BAPIRETMAXTY'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Most Severe Message Type Generated"></ui-combo>

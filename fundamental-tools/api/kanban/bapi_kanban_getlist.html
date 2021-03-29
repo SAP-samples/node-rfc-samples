@@ -1,0 +1,213 @@
+<!--
+BAPI_KANBAN_GETLIST exception: 0  struct: 1  table: 7  var: 1
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-input bind="MAXROWS" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Maximum Number of Data Records Read"></ui-input>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: KANBANLIST structure: BAPI1075_LIST  List of Kanbans -->
+
+<ui-datagrid data.bind="KANBANLIST" title="List of Kanbans"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="KANBAN_ID" data-abap.bind="{type:'NUMC', length:'10'}" shlp.bind="{type: 'CH', id: 'PKPS'}" label="Identification Number"></ui-dg-column>
+   <ui-dg-column sortable field="KANBANCONTROLCYCLE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PKNUM', length:'7'}" shlp.bind="{type: 'SH', id: 'HV_PKHD'}" label="Control cycle number"></ui-dg-column>
+   <ui-dg-column sortable field="KANBAN_NO" data-abap.bind="{type:'NUMC', length:'3'}" label="Kanban item number / control cycle item"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="KANBANLIST.KANBAN_ID" shlp.bind="{type: 'CH', id: 'PKPS'}" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Identification Number"></ui-combo>
+
+<ui-combo bind="KANBANLIST.KANBANCONTROLCYCLE" shlp.bind="{type: 'SH', id: 'HV_PKHD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PKNUM', length:'7'}"
+          label="Control cycle number"></ui-combo>
+
+<ui-input bind="KANBANLIST.KANBAN_NO" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Kanban item number / control cycle item"></ui-input>
+
+<!-- Parameter: KANBANCONTROLCYCLERANGE structure: BAPI1172_PKNUM_RANGE  Selection Table for Control Cycle Number -->
+
+<ui-datagrid data.bind="KANBANCONTROLCYCLERANGE" title="Selection Table for Control Cycle Number"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="CTRLCYC_NO_LOW" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PKNUM', length:'7'}" shlp.bind="{type: 'SH', id: 'HV_PKHD'}" label="Control cycle number"></ui-dg-column>
+   <ui-dg-column sortable field="CTRLCYC_NO_HIGH" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PKNUM', length:'7'}" shlp.bind="{type: 'SH', id: 'HV_PKHD'}" label="Control cycle number"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="KANBANCONTROLCYCLERANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="KANBANCONTROLCYCLERANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="KANBANCONTROLCYCLERANGE.CTRLCYC_NO_LOW" shlp.bind="{type: 'SH', id: 'HV_PKHD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PKNUM', length:'7'}"
+          label="Control cycle number"></ui-combo>
+
+<ui-combo bind="KANBANCONTROLCYCLERANGE.CTRLCYC_NO_HIGH" shlp.bind="{type: 'SH', id: 'HV_PKHD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PKNUM', length:'7'}"
+          label="Control cycle number"></ui-combo>
+
+<!-- Parameter: KANBANIDRANGE structure: BAPI1075_PKKEY_RANGE  Selection Table for Kanban Identification Number -->
+
+<ui-datagrid data.bind="KANBANIDRANGE" title="Selection Table for Kanban Identification Number"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="KANBAN_ID_LOW" data-abap.bind="{type:'NUMC', length:'10'}" shlp.bind="{type: 'CH', id: 'PKPS'}" label="Identification Number"></ui-dg-column>
+   <ui-dg-column sortable field="KANBAN_ID_HIGH" data-abap.bind="{type:'NUMC', length:'10'}" shlp.bind="{type: 'CH', id: 'PKPS'}" label="Identification Number"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="KANBANIDRANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="KANBANIDRANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="KANBANIDRANGE.KANBAN_ID_LOW" shlp.bind="{type: 'CH', id: 'PKPS'}" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Identification Number"></ui-combo>
+
+<ui-combo bind="KANBANIDRANGE.KANBAN_ID_HIGH" shlp.bind="{type: 'CH', id: 'PKPS'}" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Identification Number"></ui-combo>
+
+<!-- Parameter: KANBANNUMBERRANGE structure: BAPI1075_PKPOS_RANGE  Selection Table for Kanban Number -->
+
+<ui-datagrid data.bind="KANBANNUMBERRANGE" title="Selection Table for Kanban Number"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="KANBAN_NO_LOW" data-abap.bind="{type:'NUMC', length:'3'}" label="Kanban item number / control cycle item"></ui-dg-column>
+   <ui-dg-column sortable field="KANBAN_NO_HIGH" data-abap.bind="{type:'NUMC', length:'3'}" label="Kanban item number / control cycle item"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="KANBANNUMBERRANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="KANBANNUMBERRANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-input bind="KANBANNUMBERRANGE.KANBAN_NO_LOW" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Kanban item number / control cycle item"></ui-input>
+
+<ui-input bind="KANBANNUMBERRANGE.KANBAN_NO_HIGH" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Kanban item number / control cycle item"></ui-input>
+
+<!-- Parameter: STATUSDATERANGE structure: BAPI1075_SAEDT_RANGE  Selection Table for Date of Status Change -->
+
+<ui-datagrid data.bind="STATUSDATERANGE" title="Selection Table for Date of Status Change"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="STATUSDATE_LOW" data-abap.bind="{type:'DATS'}" label="Date of last change"></ui-dg-column>
+   <ui-dg-column sortable field="STATUSDATE_HIGH" data-abap.bind="{type:'DATS'}" label="Date of last change"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="STATUSDATERANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="STATUSDATERANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-date date.bind="STATUSDATERANGE.STATUSDATE_LOW"  label="Date of last change"></ui-date>
+
+<ui-date date.bind="STATUSDATERANGE.STATUSDATE_HIGH"  label="Date of last change"></ui-date>
+
+<!-- Parameter: STATUSRANGE structure: BAPI1075_PKBST_RANGE  Selection table for the Status of a Kanban -->
+
+<ui-datagrid data.bind="STATUSRANGE" title="Selection table for the Status of a Kanban"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="STATUS_LOW" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'PKBST'}" label="Kanban status"></ui-dg-column>
+   <ui-dg-column sortable field="STATUS_HIGH" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'PKBST'}" label="Kanban status"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="STATUSRANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="STATUSRANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="STATUSRANGE.STATUS_LOW" shlp.bind="{type: 'FV', id: 'PKBST'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Kanban status"></ui-combo>
+
+<ui-combo bind="STATUSRANGE.STATUS_HIGH" shlp.bind="{type: 'FV', id: 'PKBST'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Kanban status"></ui-combo>
+
+<!-- Parameter: STATUSTIMERANGE structure: BAPI1075_SAEUZ_RANGE  Selection Table for the Time of Status Change -->
+
+<ui-datagrid data.bind="STATUSTIMERANGE" title="Selection Table for the Time of Status Change"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="STATUSTIME_LOW" data-abap.bind="{type:'TIMS'}" label="Time of the last status change"></ui-dg-column>
+   <ui-dg-column sortable field="STATUSTIME_HIGH" data-abap.bind="{type:'TIMS'}" label="Time of the last status change"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="STATUSTIMERANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="STATUSTIMERANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-time time.bind="STATUSTIMERANGE.STATUSTIME_LOW"  label="Time of the last status change"></ui-time>
+
+<ui-time time.bind="STATUSTIMERANGE.STATUSTIME_HIGH"  label="Time of the last status change"></ui-time>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRET2  Message if Function not Possible -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>

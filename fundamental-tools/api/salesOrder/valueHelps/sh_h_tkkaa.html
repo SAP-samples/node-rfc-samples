@@ -1,0 +1,17 @@
+<!-- SH H_TKKAA Results Analysis Key : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.ABGSL" shlp.bind="{type: 'CT', id: 'TKKAA'}" data-abap.bind="{type:'CHAR', mid:'ACS', length:'6'}"
+          label="Results Analysis Key"></ui-combo>
+<ui-checkbox value.bind="searchParamLow.SLERG" label="Results Analysis Key for Results Analysis"></ui-checkbox>
+<ui-checkbox value.bind="searchParamLow.SLAIB" label="Results Analysis Key for Asset Under Construction"></ui-checkbox>
+<ui-input bind="searchParamLow.TEXTA" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Character Field for Text Table"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ABGSL" data-abap.bind="{type:'CHAR', mid:'ACS', length:'6'}" label="Results Analysis Key"></ui-dg-column>
+   <ui-dg-column sortable field="SLERG" data-abap.bind="{type:'CHAR', length:'1'}" label="Results Analysis Key for Results Analysis"></ui-dg-column>
+   <ui-dg-column sortable field="SLAIB" data-abap.bind="{type:'CHAR', length:'1'}" label="Results Analysis Key for Asset Under Construction"></ui-dg-column>
+   <ui-dg-column sortable field="TEXTA" data-abap.bind="{type:'CHAR', length:'40'}" label="Character Field for Text Table"></ui-dg-column>
+</ui-datagrid>

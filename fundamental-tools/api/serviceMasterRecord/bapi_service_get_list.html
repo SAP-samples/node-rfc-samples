@@ -1,0 +1,225 @@
+<!--
+BAPI_SERVICE_GET_LIST exception: 0  struct: 0  table: 7  var: 0
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRET2  System Messages for Selection -->
+
+<ui-datagrid data.bind="RETURN" title="System Messages for Selection"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-dg-column>
+   <ui-dg-column sortable field="ID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'T100A'}" label="Message Class"></ui-dg-column>
+   <ui-dg-column sortable field="NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Message Number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}" label="Message Text"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_NO" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CH', id: 'BALHDR'}" label="Application log: log number"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_MSG_NO" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'BALM'}" label="Application log: Internal message serial number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}" label="Parameter Name"></ui-dg-column>
+   <ui-dg-column sortable field="ROW" data-abap.bind="{type:'INT4', length:'+10'}" label="Lines in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="FIELD" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD03L'}" label="Field in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="SYSTEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'TBDLS'}" label="Logical system from which message originates"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>
+
+<!-- Parameter: SERVICELIST structure: BAPISRVLST  List of Service Master Records Found -->
+
+<ui-datagrid data.bind="SERVICELIST" title="List of Service Master Records Found"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SERVICE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}" shlp.bind="{type: 'CT', id: 'ASMD'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="MATL_GROUP" data-abap.bind="{type:'CHAR', mid:'MKL', length:'9'}" shlp.bind="{type: 'SH', id: 'S_WBWG'}" label="Material Group"></ui-dg-column>
+   <ui-dg-column sortable field="SERV_CAT" data-abap.bind="{type:'CHAR', mid:'ASY', length:'4'}" shlp.bind="{type: 'CT', id: 'T362'}" label="Service Category"></ui-dg-column>
+   <ui-dg-column sortable field="SHORT_TEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Service Short Text"></ui-dg-column>
+   <ui-dg-column sortable field="SERV_TYPE" data-abap.bind="{type:'CHAR', mid:'LBR', length:'3'}" label="Short Description of Service Type"></ui-dg-column>
+   <ui-dg-column sortable field="EDITION" data-abap.bind="{type:'NUMC', mid:'AGB', length:'4'}" label="Edition of Service Type"></ui-dg-column>
+   <ui-dg-column sortable field="SSC_ITEM" data-abap.bind="{type:'CHAR', length:'18'}" label="Standard Service Catalog Item"></ui-dg-column>
+   <ui-dg-column sortable field="BASE_UOM" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Base Unit of Measure"></ui-dg-column>
+   <ui-dg-column sortable field="BASE_UOM_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="Base unit of measure in ISO code"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="SERVICELIST.SERVICE" shlp.bind="{type: 'CT', id: 'ASMD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}"
+          label="Activity Number"></ui-combo>
+
+<ui-combo bind="SERVICELIST.MATL_GROUP" shlp.bind="{type: 'SH', id: 'S_WBWG'}" data-abap.bind="{type:'CHAR', mid:'MKL', length:'9'}"
+          label="Material Group"></ui-combo>
+
+<ui-combo bind="SERVICELIST.SERV_CAT" shlp.bind="{type: 'CT', id: 'T362'}" data-abap.bind="{type:'CHAR', mid:'ASY', length:'4'}"
+          label="Service Category"></ui-combo>
+
+<ui-input bind="SERVICELIST.SHORT_TEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Service Short Text"></ui-input>
+
+<ui-input bind="SERVICELIST.SERV_TYPE" data-abap.bind="{type:'CHAR', mid:'LBR', length:'3'}"
+          label="Short Description of Service Type"></ui-input>
+
+<ui-input bind="SERVICELIST.EDITION" data-abap.bind="{type:'NUMC', mid:'AGB', length:'4'}"
+          label="Edition of Service Type"></ui-input>
+
+<ui-input bind="SERVICELIST.SSC_ITEM" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="Standard Service Catalog Item"></ui-input>
+
+<ui-combo bind="SERVICELIST.BASE_UOM" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Base Unit of Measure"></ui-combo>
+
+<ui-combo bind="SERVICELIST.BASE_UOM_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Base unit of measure in ISO code"></ui-combo>
+
+<!-- Parameter: SERVICESELECTION structure: BAPIASNRAN  Number of Service Master Record -->
+
+<ui-datagrid data.bind="SERVICESELECTION" title="Number of Service Master Record"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="SERVICE_LOW" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'18'}" shlp.bind="{type: 'CT', id: 'ASMD'}" label="Service number from"></ui-dg-column>
+   <ui-dg-column sortable field="SERVICE_HIGH" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'18'}" shlp.bind="{type: 'CT', id: 'ASMD'}" label="Service number to"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="SERVICESELECTION.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="SERVICESELECTION.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="SERVICESELECTION.SERVICE_LOW" shlp.bind="{type: 'CT', id: 'ASMD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'18'}"
+          label="Service number from"></ui-combo>
+
+<ui-combo bind="SERVICESELECTION.SERVICE_HIGH" shlp.bind="{type: 'CT', id: 'ASMD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'18'}"
+          label="Service number to"></ui-combo>
+
+<!-- Parameter: SRVGROUPSELECTION structure: BAPIMTKRAN  Material/Service Group -->
+
+<ui-datagrid data.bind="SRVGROUPSELECTION" title="Material/Service Group"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="MATL_GROUP_LOW" data-abap.bind="{type:'CHAR', length:'9'}" shlp.bind="{type: 'CT', id: 'T023'}" label="Material/service group from"></ui-dg-column>
+   <ui-dg-column sortable field="MATL_GROUP_HIGH" data-abap.bind="{type:'CHAR', length:'9'}" shlp.bind="{type: 'CT', id: 'T023'}" label="Material/service group to"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="SRVGROUPSELECTION.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="SRVGROUPSELECTION.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="SRVGROUPSELECTION.MATL_GROUP_LOW" shlp.bind="{type: 'CT', id: 'T023'}" data-abap.bind="{type:'CHAR', length:'9'}"
+          label="Material/service group from"></ui-combo>
+
+<ui-combo bind="SRVGROUPSELECTION.MATL_GROUP_HIGH" shlp.bind="{type: 'CT', id: 'T023'}" data-abap.bind="{type:'CHAR', length:'9'}"
+          label="Material/service group to"></ui-combo>
+
+<!-- Parameter: SRVSHORTTEXTSELECTION structure: BAPIASKRAN  Service Short Text -->
+
+<ui-datagrid data.bind="SRVSHORTTEXTSELECTION" title="Service Short Text"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="SHORT_TEXT_LOW" data-abap.bind="{type:'CHAR', length:'40'}" label="Service short text (short description) from"></ui-dg-column>
+   <ui-dg-column sortable field="SHORT_TEXT_HIGH" data-abap.bind="{type:'CHAR', length:'40'}" label="Service short text (short description) to"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="SRVSHORTTEXTSELECTION.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="SRVSHORTTEXTSELECTION.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-input bind="SRVSHORTTEXTSELECTION.SHORT_TEXT_LOW" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Service short text (short description) from"></ui-input>
+
+<ui-input bind="SRVSHORTTEXTSELECTION.SHORT_TEXT_HIGH" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Service short text (short description) to"></ui-input>
+
+<!-- Parameter: SRVSTLVSELECTION structure: BAPISTLRAN  Standard Service Catalog Number -->
+
+<ui-datagrid data.bind="SRVSTLVSELECTION" title="Standard Service Catalog Number"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="SSC_ITEM_LOW" data-abap.bind="{type:'CHAR', length:'18'}" label="Standard service specifications: Item from"></ui-dg-column>
+   <ui-dg-column sortable field="SSC_ITEM_HIGH" data-abap.bind="{type:'CHAR', length:'18'}" label="Standard service specifications: Item to"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="SRVSTLVSELECTION.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="SRVSTLVSELECTION.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-input bind="SRVSTLVSELECTION.SSC_ITEM_LOW" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="Standard service specifications: Item from"></ui-input>
+
+<ui-input bind="SRVSTLVSELECTION.SSC_ITEM_HIGH" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="Standard service specifications: Item to"></ui-input>
+
+<!-- Parameter: SRVTYPSELECTION structure: BAPIASTRAN  Service Category -->
+
+<ui-datagrid data.bind="SRVTYPSELECTION" title="Service Category"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="SERV_CAT_LOW" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'T362'}" label="Service category from"></ui-dg-column>
+   <ui-dg-column sortable field="SERV_CAT_HIGH" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'T362'}" label="Service category to"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="SRVTYPSELECTION.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="SRVTYPSELECTION.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="SRVTYPSELECTION.SERV_CAT_LOW" shlp.bind="{type: 'CT', id: 'T362'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Service category from"></ui-combo>
+
+<ui-combo bind="SRVTYPSELECTION.SERV_CAT_HIGH" shlp.bind="{type: 'CT', id: 'T362'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Service category to"></ui-combo>

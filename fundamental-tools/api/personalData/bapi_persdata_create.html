@@ -1,0 +1,165 @@
+<!--
+BAPI_PERSDATA_CREATE exception: 0  struct: 1  table: 0  var: 43
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<ui-input bind="EMPLOYEENUMBER" data-abap.bind="{type:'NUMC', mid:'PER', length:'8'}"
+          label="Personnel number"></ui-input>
+
+<ui-date date.bind="VALIDITYBEGIN"  label="Valid from date"></ui-date>
+
+<ui-date date.bind="VALIDITYEND"  label="Valid To Date"></ui-date>
+
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-combo bind="ACADEMICGRADE" shlp.bind="{type: 'SH', id: 'H_T535N'}" data-abap.bind="{type:'CHAR', length:'15'}"
+          label="Title"></ui-combo>
+
+<ui-combo bind="ARISTROCRATICTITLE" shlp.bind="{type: 'SH', id: 'H_T535N'}" data-abap.bind="{type:'CHAR', length:'15'}"
+          label="Other title"></ui-combo>
+
+<ui-input bind="BIRTHPLACE" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Birthplace"></ui-input>
+
+<ui-combo bind="COUNTRYOFBIRTH" shlp.bind="{type: 'CT', id: 'T005'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Country of Birth"></ui-combo>
+
+<ui-date date.bind="DATEOFBIRTH"  label="Date of birth"></ui-date>
+
+<ui-input bind="FIRSTNAME" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="First name"></ui-input>
+
+<ui-combo bind="FORMOFADDRESS" shlp.bind="{type: 'CT', id: 'T522G'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Form-of-address key"></ui-combo>
+
+<ui-input bind="FULLNAME" data-abap.bind="{type:'CHAR', length:'80'}"
+          label="Full employee name"></ui-input>
+
+<ui-combo bind="GENDER" shlp.bind="{type: 'FV', id: 'GESCH'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Gender key"></ui-combo>
+
+<ui-input bind="IDNUMBER" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Personnel ID number"></ui-input>
+
+<ui-input bind="INITIALS" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Employee's Initials"></ui-input>
+
+<ui-input bind="KNOWNAS" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Known As"></ui-input>
+
+<ui-combo bind="LANGUAGE" shlp.bind="{type: 'SH', id: 'H_T002'}" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+          label="Language key"></ui-combo>
+
+<ui-input bind="LANGUAGE_ISO" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Language according to ISO 639"></ui-input>
+
+<ui-input bind="LASTNAME" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Last name"></ui-input>
+
+<ui-combo bind="MARITALSTATUS" shlp.bind="{type: 'SH', id: 'H_T502T'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Marital status key"></ui-combo>
+
+<ui-date date.bind="MARITALSTATUSSINCE"  label="Valid from date of current marital status"></ui-date>
+
+<ui-input bind="MIDDLENAME" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Middle name"></ui-input>
+
+<ui-input bind="NAME_FORMAT_INDICATOR" data-abap.bind="{type:'NUMC', length:'2'}"
+          label="Name format indicator for employee in a list"></ui-input>
+
+<ui-input bind="NAMEATBIRTH" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Name at Birth"></ui-input>
+
+<ui-combo bind="NATIONALITY" shlp.bind="{type: 'CT', id: 'T005'}" data-abap.bind="{type:'CHAR', mid:'NAT', length:'3'}"
+          label="Nationality"></ui-combo>
+
+<ui-checkbox value.bind="NOCOMMIT" label="COMMIT control at BAPI interface"></ui-checkbox>
+
+<ui-input bind="NUMBEROFCHILDREN" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Number of children"></ui-input>
+
+<ui-combo bind="RELIGION" shlp.bind="{type: 'SH', id: 'H_T516T'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Religious denomination key"></ui-combo>
+
+<ui-combo bind="SECONDACADGRADE" shlp.bind="{type: 'SH', id: 'H_T535N'}" data-abap.bind="{type:'CHAR', length:'15'}"
+          label="Second title"></ui-combo>
+
+<ui-combo bind="SECONDARISTROTITLE" shlp.bind="{type: 'CT', id: 'T535N'}" data-abap.bind="{type:'CHAR', length:'15'}"
+          label="Other Title for Birth Name"></ui-combo>
+
+<ui-input bind="SECONDNAME" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Second name"></ui-input>
+
+<ui-combo bind="SECONDNAMEPREFIX" shlp.bind="{type: 'SH', id: 'H_T535N'}" data-abap.bind="{type:'CHAR', length:'15'}"
+          label="Second name prefix"></ui-combo>
+
+<ui-combo bind="SECONDNATIONALITY" shlp.bind="{type: 'CT', id: 'T005'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Second nationality"></ui-combo>
+
+<ui-combo bind="STATEOFBIRTH" shlp.bind="{type: 'CT', id: 'T005S'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="State"></ui-combo>
+
+<ui-combo bind="SURNAMEPREFIX" shlp.bind="{type: 'SH', id: 'H_T535N'}" data-abap.bind="{type:'CHAR', length:'15'}"
+          label="Name Prefix"></ui-combo>
+
+<ui-combo bind="THIRDNATIONALITY" shlp.bind="{type: 'CT', id: 'T005'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Third nationality"></ui-combo>
+
+<ui-checkbox value.bind="UPDATE_ONLY_GBDAT" label="Flag: Only Update on GBDAT"></ui-checkbox>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<ui-input bind="LOCKINDICATOR" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Lock indicator for HR master record"></ui-input>
+
+<ui-input bind="OBJECTID" data-abap.bind="{type:'CHAR', mid:'OPS', length:'2'}"
+          label="Object ID"></ui-input>
+
+<ui-input bind="RECORDNUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Number of Infotype Record"></ui-input>
+
+<ui-input bind="SUBTYPE" data-abap.bind="{type:'CHAR', mid:'SUB', length:'4'}"
+          label="Subtype"></ui-input>
+
+<!-- Parameter: RETURN structure: BAPIRETURN1  Structure for return code -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>

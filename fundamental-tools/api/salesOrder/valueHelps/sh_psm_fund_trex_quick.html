@@ -1,0 +1,39 @@
+<!-- SH PSM_FUND_TREX_QUICK Quick Search for Fund : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.S/RP/SEARCH_TERM" data-abap.bind="{type:'CHAR', length:'45'}"
+          label="Input Field for Full Text Search"></ui-input>
+<ui-input bind="searchParamLow.BUSINESS_OBJECT" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Business Object for Search Engine Service (SES)"></ui-input>
+<ui-input bind="searchParamLow.OBJECT_TYPE" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Type of Business Object"></ui-input>
+<ui-input bind="searchParamLow.EXTERNAL_KEY" data-abap.bind="{type:'CHAR', mid:'FIC', length:'10'}"
+          label="Fund"></ui-input>
+<ui-input bind="searchParamLow.FIKRS" data-abap.bind="{type:'CHAR', mid:'FIK', length:'4'}"
+          label="Financial Management Area"></ui-input>
+<ui-input bind="searchParamLow.TYPE" data-abap.bind="{type:'CHAR', length:'6'}"
+          label="FM Fund Type"></ui-input>
+<ui-date date.bind="searchParamLow.VALIDFROM_DATE"  label="FM: Valid from date"></ui-date>
+<ui-date date.bind="searchParamLow.VALIDUNTIL_DATE"  label="FM: Valid to date"></ui-date>
+<ui-date date.bind="searchParamLow.DATE_EXP"  label="Expiration Date"></ui-date>
+<ui-date date.bind="searchParamLow.DATE_CAN"  label="Reversal Date"></ui-date>
+<ui-input bind="searchParamLow.BEZEICH" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Name"></ui-input>
+<ui-input bind="searchParamLow.DESCRIPTION" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Description"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="S/RP/SEARCH_TERM" data-abap.bind="{type:'CHAR', length:'45'}" label="Input Field for Full Text Search"></ui-dg-column>
+   <ui-dg-column sortable field="BUSINESS_OBJECT" data-abap.bind="{type:'CHAR', length:'10'}" label="Business Object for Search Engine Service (SES)"></ui-dg-column>
+   <ui-dg-column sortable field="OBJECT_TYPE" data-abap.bind="{type:'CHAR', length:'10'}" label="Type of Business Object"></ui-dg-column>
+   <ui-dg-column sortable field="EXTERNAL_KEY" data-abap.bind="{type:'CHAR', mid:'FIC', length:'10'}" label="Fund"></ui-dg-column>
+   <ui-dg-column sortable field="FIKRS" data-abap.bind="{type:'CHAR', mid:'FIK', length:'4'}" label="Financial Management Area"></ui-dg-column>
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'6'}" label="FM Fund Type"></ui-dg-column>
+   <ui-dg-column sortable field="VALIDFROM_DATE" data-abap.bind="{type:'DATS', mid:'FM_DATAB'}" label="FM: Valid from date"></ui-dg-column>
+   <ui-dg-column sortable field="VALIDUNTIL_DATE" data-abap.bind="{type:'DATS', mid:'FM_DATBIS'}" label="FM: Valid to date"></ui-dg-column>
+   <ui-dg-column sortable field="DATE_EXP" data-abap.bind="{type:'DATS'}" label="Expiration Date"></ui-dg-column>
+   <ui-dg-column sortable field="DATE_CAN" data-abap.bind="{type:'DATS'}" label="Reversal Date"></ui-dg-column>
+   <ui-dg-column sortable field="BEZEICH" data-abap.bind="{type:'CHAR', length:'20'}" label="Name"></ui-dg-column>
+   <ui-dg-column sortable field="DESCRIPTION" data-abap.bind="{type:'CHAR', length:'40'}" label="Description"></ui-dg-column>
+</ui-datagrid>

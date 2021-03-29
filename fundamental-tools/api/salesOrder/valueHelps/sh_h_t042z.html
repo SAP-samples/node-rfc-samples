@@ -1,0 +1,18 @@
+<!-- SH H_T042Z Payment Method : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.LAND1" shlp.bind="{type: 'CT', id: 'T005'}" data-abap.bind="{type:'CHAR', mid:'LND', length:'3'}"
+          label="Country Key"></ui-combo>
+<ui-combo bind="searchParamLow.ZLSCH" shlp.bind="{type: 'CT', id: 'T042Z'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Payment Method"></ui-combo>
+<ui-input bind="searchParamLow.TEXT1" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Name of Payment Method in Language of the Country"></ui-input>
+<ui-input bind="searchParamLow.TEXT2" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Description of Payment Method in Logon Language"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="LAND1" data-abap.bind="{type:'CHAR', mid:'LND', length:'3'}" label="Country Key"></ui-dg-column>
+   <ui-dg-column sortable field="ZLSCH" data-abap.bind="{type:'CHAR', length:'1'}" label="Payment Method"></ui-dg-column>
+   <ui-dg-column sortable field="TEXT2" data-abap.bind="{type:'CHAR', length:'30'}" label="Description of Payment Method in Logon Language"></ui-dg-column>
+</ui-datagrid>

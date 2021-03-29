@@ -1,0 +1,553 @@
+<!--
+BAPI_PROCORD_GET_LIST exception: 0  struct: 1  table: 13  var: 1
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-checkbox value.bind="COLLECTIVE_ORDER" label="Display complete collective order"></ui-checkbox>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: MATERIAL_RANGE structure: BAPI_ORDER_MATERIAL_RANGE  Header Materials for Order Selection -->
+
+<ui-datagrid data.bind="MATERIAL_RANGE" title="Header Materials for Order Selection"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" shlp.bind="{type: 'SH', id: 'S_MAT1'}" label="Material Number"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" shlp.bind="{type: 'SH', id: 'S_MAT1'}" label="Material Number"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}" label="Long Material Number for HIGH Field"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH_GUID" data-abap.bind="{type:'CHAR', length:'32'}" label="External GUID for HIGH Field"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}" label="Version Number for HIGH Field"></ui-dg-column>
+   <ui-dg-column sortable field="LOW_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}" label="Long Material Number for LOW Field"></ui-dg-column>
+   <ui-dg-column sortable field="LOW_GUID" data-abap.bind="{type:'CHAR', length:'32'}" label="External GUID for LOW Field"></ui-dg-column>
+   <ui-dg-column sortable field="LOW_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}" label="Version Number for LOW Field"></ui-dg-column>
+   <ui-dg-column sortable field="LOW_LONG" data-abap.bind="{type:'CHAR', length:'40'}" label="Material Number (40 Characters, needed f. technical reasons)"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH_LONG" data-abap.bind="{type:'CHAR', length:'40'}" label="Material Number (40 Characters, needed f. technical reasons)"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="MATERIAL_RANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="MATERIAL_RANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="MATERIAL_RANGE.LOW" shlp.bind="{type: 'SH', id: 'S_MAT1'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+
+<ui-combo bind="MATERIAL_RANGE.HIGH" shlp.bind="{type: 'SH', id: 'S_MAT1'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+
+<ui-input bind="MATERIAL_RANGE.HIGH_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for HIGH Field"></ui-input>
+
+<ui-input bind="MATERIAL_RANGE.HIGH_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for HIGH Field"></ui-input>
+
+<ui-input bind="MATERIAL_RANGE.HIGH_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for HIGH Field"></ui-input>
+
+<ui-input bind="MATERIAL_RANGE.LOW_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for LOW Field"></ui-input>
+
+<ui-input bind="MATERIAL_RANGE.LOW_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for LOW Field"></ui-input>
+
+<ui-input bind="MATERIAL_RANGE.LOW_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for LOW Field"></ui-input>
+
+<ui-input bind="MATERIAL_RANGE.LOW_LONG" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material Number (40 Characters, needed f. technical reasons)"></ui-input>
+
+<ui-input bind="MATERIAL_RANGE.HIGH_LONG" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material Number (40 Characters, needed f. technical reasons)"></ui-input>
+
+<!-- Parameter: MRP_CNTRL_RANGE structure: BAPI_ORDER_MRP_CNTRL_RANGE  MRP Controllers for Order Selection -->
+
+<ui-datagrid data.bind="MRP_CNTRL_RANGE" title="MRP Controllers for Order Selection"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'CHAR', mid:'DGR', length:'3'}" shlp.bind="{type: 'CT', id: 'T024D'}" label="MRP controller for the order"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'CHAR', mid:'DGR', length:'3'}" shlp.bind="{type: 'CT', id: 'T024D'}" label="MRP controller for the order"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="MRP_CNTRL_RANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="MRP_CNTRL_RANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="MRP_CNTRL_RANGE.LOW" shlp.bind="{type: 'CT', id: 'T024D'}" data-abap.bind="{type:'CHAR', mid:'DGR', length:'3'}"
+          label="MRP controller for the order"></ui-combo>
+
+<ui-combo bind="MRP_CNTRL_RANGE.HIGH" shlp.bind="{type: 'CT', id: 'T024D'}" data-abap.bind="{type:'CHAR', mid:'DGR', length:'3'}"
+          label="MRP controller for the order"></ui-combo>
+
+<!-- Parameter: ORDER_HEADER structure: BAPI_ORDER_HEADER1  Order header data -->
+
+<ui-datagrid data.bind="ORDER_HEADER" title="Order header data"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ORDER_NUMBER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" shlp.bind="{type: 'CT', id: 'AUFK'}" label="Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="PRODUCTION_PLANT" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" label="Plant"></ui-dg-column>
+   <ui-dg-column sortable field="MRP_CONTROLLER" data-abap.bind="{type:'CHAR', mid:'DGR', length:'3'}" shlp.bind="{type: 'CT', id: 'T024D'}" label="MRP controller for the order"></ui-dg-column>
+   <ui-dg-column sortable field="PRODUCTION_SCHEDULER" data-abap.bind="{type:'CHAR', mid:'CFV', length:'3'}" shlp.bind="{type: 'CT', id: 'T024F'}" label="Production Supervisor"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" shlp.bind="{type: 'SH', id: 'S_MAT1'}" label="Material Number"></ui-dg-column>
+   <ui-dg-column sortable field="EXPL_DATE" data-abap.bind="{type:'DATS'}" label="Date of BOM Explosion/Routing Transfer"></ui-dg-column>
+   <ui-dg-column sortable field="ROUTING_NO" data-abap.bind="{type:'NUMC', length:'10'}" label="Routing number of operations in the order"></ui-dg-column>
+   <ui-dg-column sortable field="RESERVATION_NUMBER" data-abap.bind="{type:'NUMC', mid:'RES', length:'10'}" shlp.bind="{type: 'CT', id: 'RESB'}" label="Number of reservation/dependent requirements"></ui-dg-column>
+   <ui-dg-column sortable field="SCHED_RELEASE_DATE" data-abap.bind="{type:'DATS'}" label="Scheduled release date"></ui-dg-column>
+   <ui-dg-column sortable field="ACTUAL_RELEASE_DATE" data-abap.bind="{type:'DATS'}" label="Actual release date"></ui-dg-column>
+   <ui-dg-column sortable field="FINISH_DATE" data-abap.bind="{type:'DATS'}" label="Basic finish date"></ui-dg-column>
+   <ui-dg-column sortable field="START_DATE" data-abap.bind="{type:'DATS'}" label="Basic start date"></ui-dg-column>
+   <ui-dg-column sortable field="PRODUCTION_FINISH_DATE" data-abap.bind="{type:'DATS'}" label="Scheduled finish"></ui-dg-column>
+   <ui-dg-column sortable field="PRODUCTION_START_DATE" data-abap.bind="{type:'DATS'}" label="Scheduled start"></ui-dg-column>
+   <ui-dg-column sortable field="ACTUAL_START_DATE" data-abap.bind="{type:'DATS'}" label="Actual start date"></ui-dg-column>
+   <ui-dg-column sortable field="ACTUAL_FINISH_DATE" data-abap.bind="{type:'DATS'}" label="Actual finish date"></ui-dg-column>
+   <ui-dg-column sortable field="SCRAP" data-abap.bind="{type:'QUAN', unit:'UNIT', length:'10.3'}" label="Total scrap quantity in the order"></ui-dg-column>
+   <ui-dg-column sortable field="TARGET_QUANTITY" data-abap.bind="{type:'QUAN', unit:'UNIT', length:'10.3'}" label="Total order quantity"></ui-dg-column>
+   <ui-dg-column sortable field="UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Common unit of measure for all order items"></ui-dg-column>
+   <ui-dg-column sortable field="UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="PRIORITY" data-abap.bind="{type:'CHAR', length:'1'}" label="Order priority"></ui-dg-column>
+   <ui-dg-column sortable field="ORDER_TYPE" data-abap.bind="{type:'CHAR', mid:'AAT', length:'4'}" shlp.bind="{type: 'CT', id: 'T003O'}" label="Order Type"></ui-dg-column>
+   <ui-dg-column sortable field="ENTERED_BY" data-abap.bind="{type:'CHAR', length:'12'}" label="Entered by"></ui-dg-column>
+   <ui-dg-column sortable field="ENTER_DATE" data-abap.bind="{type:'DATS'}" label="Created on"></ui-dg-column>
+   <ui-dg-column sortable field="DELETION_FLAG" data-abap.bind="{type:'CHAR', length:'1'}" label="Deletion flag"></ui-dg-column>
+   <ui-dg-column sortable field="WBS_ELEMENT" data-abap.bind="{type:'NUMC', alpha:'ABPSP', length:'8'}" shlp.bind="{type: 'CT', id: 'PRPS'}" label="Work Breakdown Structure Element (WBS Element)"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_NO" data-abap.bind="{type:'NUMC', mid:'RCK', length:'10'}" label="Completion confirmation number for the operation"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_CNT" data-abap.bind="{type:'NUMC', length:'8'}" label="Internal counter"></ui-dg-column>
+   <ui-dg-column sortable field="INT_OBJ_NO" data-abap.bind="{type:'NUMC', mid:'CUX', length:'18'}" label="Configuration (internal object number)"></ui-dg-column>
+   <ui-dg-column sortable field="SCHED_FIN_TIME" data-abap.bind="{type:'TIMS'}" label="Scheduled Finish (Time)"></ui-dg-column>
+   <ui-dg-column sortable field="SCHED_START_TIME" data-abap.bind="{type:'TIMS'}" label="Scheduled Start (Time)"></ui-dg-column>
+   <ui-dg-column sortable field="COLLECTIVE_ORDER" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Order is part of collective order"></ui-dg-column>
+   <ui-dg-column sortable field="ORDER_SEQ_NO" data-abap.bind="{type:'NUMC', length:'14'}" label="Seq. number order"></ui-dg-column>
+   <ui-dg-column sortable field="FINISH_TIME" data-abap.bind="{type:'TIMS'}" label="Basic finish (time)"></ui-dg-column>
+   <ui-dg-column sortable field="START_TIME" data-abap.bind="{type:'TIMS'}" label="Basic Start (Time)"></ui-dg-column>
+   <ui-dg-column sortable field="ACTUAL_START_TIME" data-abap.bind="{type:'TIMS'}" label="Actual start time"></ui-dg-column>
+   <ui-dg-column sortable field="LEADING_ORDER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'12'}" shlp.bind="{type: 'CT', id: 'AUFK'}" label="Leading Order in Current Processing"></ui-dg-column>
+   <ui-dg-column sortable field="SALES_ORDER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}" shlp.bind="{type: 'CT', id: 'VBUK'}" label="Sales Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="SALES_ORDER_ITEM" data-abap.bind="{type:'NUMC', mid:'KPO', length:'6'}" label="Item number in Sales Order"></ui-dg-column>
+   <ui-dg-column sortable field="PROD_SCHED_PROFILE" data-abap.bind="{type:'CHAR', length:'6'}" shlp.bind="{type: 'CT', id: 'TCO43'}" label="Production Scheduling Profile"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_TEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Material Description"></ui-dg-column>
+   <ui-dg-column sortable field="SYSTEM_STATUS" data-abap.bind="{type:'CHAR', length:'40'}" label="System Status"></ui-dg-column>
+   <ui-dg-column sortable field="CONFIRMED_QUANTITY" data-abap.bind="{type:'QUAN', unit:'UNIT', length:'10.3'}" label="Committed Quantity for Order After ATP Check Components"></ui-dg-column>
+   <ui-dg-column sortable field="PLAN_PLANT" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" shlp.bind="{type: 'CT', id: 'T001W'}" label="Planning Plant"></ui-dg-column>
+   <ui-dg-column sortable field="BATCH" data-abap.bind="{type:'CHAR', mid:'CHA', length:'10'}" shlp.bind="{type: 'CT', id: 'MCH1'}" label="Batch Number"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}" label="Long Material Number for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}" label="External GUID for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}" label="Version Number for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="DATE_OF_EXPIRY" data-abap.bind="{type:'DATS'}" label="Best-Before Date (BBD)/ Shelf Life Expiration Date (SLED)"></ui-dg-column>
+   <ui-dg-column sortable field="DATE_OF_MANUFACTURE" data-abap.bind="{type:'DATS'}" label="Date of Manufacture"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}" label="Material Number (40 Characters, needed f. technical reasons)"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ORDER_HEADER.ORDER_NUMBER" shlp.bind="{type: 'CT', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<ui-combo bind="ORDER_HEADER.PRODUCTION_PLANT" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+
+<ui-combo bind="ORDER_HEADER.MRP_CONTROLLER" shlp.bind="{type: 'CT', id: 'T024D'}" data-abap.bind="{type:'CHAR', mid:'DGR', length:'3'}"
+          label="MRP controller for the order"></ui-combo>
+
+<ui-combo bind="ORDER_HEADER.PRODUCTION_SCHEDULER" shlp.bind="{type: 'CT', id: 'T024F'}" data-abap.bind="{type:'CHAR', mid:'CFV', length:'3'}"
+          label="Production Supervisor"></ui-combo>
+
+<ui-combo bind="ORDER_HEADER.MATERIAL" shlp.bind="{type: 'SH', id: 'S_MAT1'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+
+<ui-date date.bind="ORDER_HEADER.EXPL_DATE"  label="Date of BOM Explosion/Routing Transfer"></ui-date>
+
+<ui-input bind="ORDER_HEADER.ROUTING_NO" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Routing number of operations in the order"></ui-input>
+
+<ui-combo bind="ORDER_HEADER.RESERVATION_NUMBER" shlp.bind="{type: 'CT', id: 'RESB'}" data-abap.bind="{type:'NUMC', mid:'RES', length:'10'}"
+          label="Number of reservation/dependent requirements"></ui-combo>
+
+<ui-date date.bind="ORDER_HEADER.SCHED_RELEASE_DATE"  label="Scheduled release date"></ui-date>
+
+<ui-date date.bind="ORDER_HEADER.ACTUAL_RELEASE_DATE"  label="Actual release date"></ui-date>
+
+<ui-date date.bind="ORDER_HEADER.FINISH_DATE"  label="Basic finish date"></ui-date>
+
+<ui-date date.bind="ORDER_HEADER.START_DATE"  label="Basic start date"></ui-date>
+
+<ui-date date.bind="ORDER_HEADER.PRODUCTION_FINISH_DATE"  label="Scheduled finish"></ui-date>
+
+<ui-date date.bind="ORDER_HEADER.PRODUCTION_START_DATE"  label="Scheduled start"></ui-date>
+
+<ui-date date.bind="ORDER_HEADER.ACTUAL_START_DATE"  label="Actual start date"></ui-date>
+
+<ui-date date.bind="ORDER_HEADER.ACTUAL_FINISH_DATE"  label="Actual finish date"></ui-date>
+
+<ui-input bind="ORDER_HEADER.SCRAP" data-abap.bind="{type:'QUAN', unit:'UNIT', length:'10.3'}"
+          label="Total scrap quantity in the order"></ui-input>
+
+<ui-input bind="ORDER_HEADER.TARGET_QUANTITY" data-abap.bind="{type:'QUAN', unit:'UNIT', length:'10.3'}"
+          label="Total order quantity"></ui-input>
+
+<ui-combo bind="ORDER_HEADER.UNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Common unit of measure for all order items"></ui-combo>
+
+<ui-combo bind="ORDER_HEADER.UNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="ORDER_HEADER.PRIORITY" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Order priority"></ui-input>
+
+<ui-combo bind="ORDER_HEADER.ORDER_TYPE" shlp.bind="{type: 'CT', id: 'T003O'}" data-abap.bind="{type:'CHAR', mid:'AAT', length:'4'}"
+          label="Order Type"></ui-combo>
+
+<ui-input bind="ORDER_HEADER.ENTERED_BY" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Entered by"></ui-input>
+
+<ui-date date.bind="ORDER_HEADER.ENTER_DATE"  label="Created on"></ui-date>
+
+<ui-checkbox value.bind="ORDER_HEADER.DELETION_FLAG" label="Deletion flag"></ui-checkbox>
+
+<ui-combo bind="ORDER_HEADER.WBS_ELEMENT" shlp.bind="{type: 'CT', id: 'PRPS'}" data-abap.bind="{type:'NUMC', alpha:'ABPSP', length:'8'}"
+          label="Work Breakdown Structure Element (WBS Element)"></ui-combo>
+
+<ui-input bind="ORDER_HEADER.CONF_NO" data-abap.bind="{type:'NUMC', mid:'RCK', length:'10'}"
+          label="Completion confirmation number for the operation"></ui-input>
+
+<ui-input bind="ORDER_HEADER.CONF_CNT" data-abap.bind="{type:'NUMC', length:'8'}"
+          label="Internal counter"></ui-input>
+
+<ui-input bind="ORDER_HEADER.INT_OBJ_NO" data-abap.bind="{type:'NUMC', mid:'CUX', length:'18'}"
+          label="Configuration (internal object number)"></ui-input>
+
+<ui-time time.bind="ORDER_HEADER.SCHED_FIN_TIME"  label="Scheduled Finish (Time)"></ui-time>
+
+<ui-time time.bind="ORDER_HEADER.SCHED_START_TIME"  label="Scheduled Start (Time)"></ui-time>
+
+<ui-checkbox value.bind="ORDER_HEADER.COLLECTIVE_ORDER" label="Indicator: Order is part of collective order"></ui-checkbox>
+
+<ui-input bind="ORDER_HEADER.ORDER_SEQ_NO" data-abap.bind="{type:'NUMC', length:'14'}"
+          label="Seq. number order"></ui-input>
+
+<ui-time time.bind="ORDER_HEADER.FINISH_TIME"  label="Basic finish (time)"></ui-time>
+
+<ui-time time.bind="ORDER_HEADER.START_TIME"  label="Basic Start (Time)"></ui-time>
+
+<ui-time time.bind="ORDER_HEADER.ACTUAL_START_TIME"  label="Actual start time"></ui-time>
+
+<ui-combo bind="ORDER_HEADER.LEADING_ORDER" shlp.bind="{type: 'CT', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'12'}"
+          label="Leading Order in Current Processing"></ui-combo>
+
+<ui-combo bind="ORDER_HEADER.SALES_ORDER" shlp.bind="{type: 'CT', id: 'VBUK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}"
+          label="Sales Order Number"></ui-combo>
+
+<ui-input bind="ORDER_HEADER.SALES_ORDER_ITEM" data-abap.bind="{type:'NUMC', mid:'KPO', length:'6'}"
+          label="Item number in Sales Order"></ui-input>
+
+<ui-combo bind="ORDER_HEADER.PROD_SCHED_PROFILE" shlp.bind="{type: 'CT', id: 'TCO43'}" data-abap.bind="{type:'CHAR', length:'6'}"
+          label="Production Scheduling Profile"></ui-combo>
+
+<ui-input bind="ORDER_HEADER.MATERIAL_TEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material Description"></ui-input>
+
+<ui-input bind="ORDER_HEADER.SYSTEM_STATUS" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="System Status"></ui-input>
+
+<ui-input bind="ORDER_HEADER.CONFIRMED_QUANTITY" data-abap.bind="{type:'QUAN', unit:'UNIT', length:'10.3'}"
+          label="Committed Quantity for Order After ATP Check Components"></ui-input>
+
+<ui-combo bind="ORDER_HEADER.PLAN_PLANT" shlp.bind="{type: 'CT', id: 'T001W'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Planning Plant"></ui-combo>
+
+<ui-combo bind="ORDER_HEADER.BATCH" shlp.bind="{type: 'CT', id: 'MCH1'}" data-abap.bind="{type:'CHAR', mid:'CHA', length:'10'}"
+          label="Batch Number"></ui-combo>
+
+<ui-input bind="ORDER_HEADER.MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for MATERIAL Field"></ui-input>
+
+<ui-input bind="ORDER_HEADER.MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for MATERIAL Field"></ui-input>
+
+<ui-input bind="ORDER_HEADER.MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for MATERIAL Field"></ui-input>
+
+<ui-date date.bind="ORDER_HEADER.DATE_OF_EXPIRY"  label="Best-Before Date (BBD)/ Shelf Life Expiration Date (SLED)"></ui-date>
+
+<ui-date date.bind="ORDER_HEADER.DATE_OF_MANUFACTURE"  label="Date of Manufacture"></ui-date>
+
+<ui-input bind="ORDER_HEADER.MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material Number (40 Characters, needed f. technical reasons)"></ui-input>
+
+<!-- Parameter: ORDER_NUMBER_RANGE structure: BAPI_PI_ORDERRANGE  BAPI Interface Structure for Ranges of the Production Orders -->
+
+<ui-datagrid data.bind="ORDER_NUMBER_RANGE" title="BAPI Interface Structure for Ranges of the Production Orders"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" shlp.bind="{type: 'CT', id: 'AUFK'}" label="Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" shlp.bind="{type: 'CT', id: 'AUFK'}" label="Order Number"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="ORDER_NUMBER_RANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="ORDER_NUMBER_RANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="ORDER_NUMBER_RANGE.LOW" shlp.bind="{type: 'CT', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<ui-combo bind="ORDER_NUMBER_RANGE.HIGH" shlp.bind="{type: 'CT', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<!-- Parameter: ORDER_PRIO_RANGE structure: BAPI_ORDER_PRIO_RANGE  Order Priority for Order Selection -->
+
+<ui-datagrid data.bind="ORDER_PRIO_RANGE" title="Order Priority for Order Selection"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'CHAR', length:'1'}" label="Order priority"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'CHAR', length:'1'}" label="Order priority"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="ORDER_PRIO_RANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="ORDER_PRIO_RANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-input bind="ORDER_PRIO_RANGE.LOW" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Order priority"></ui-input>
+
+<ui-input bind="ORDER_PRIO_RANGE.HIGH" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Order priority"></ui-input>
+
+<!-- Parameter: ORDER_TYPE_RANGE structure: BAPI_ORDER_ORDER_TYPE_RANGE  Order Types for Order Selection -->
+
+<ui-datagrid data.bind="ORDER_TYPE_RANGE" title="Order Types for Order Selection"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'CHAR', mid:'AAT', length:'4'}" shlp.bind="{type: 'CT', id: 'T003O'}" label="Order Type"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'CHAR', mid:'AAT', length:'4'}" shlp.bind="{type: 'CT', id: 'T003O'}" label="Order Type"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="ORDER_TYPE_RANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="ORDER_TYPE_RANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="ORDER_TYPE_RANGE.LOW" shlp.bind="{type: 'CT', id: 'T003O'}" data-abap.bind="{type:'CHAR', mid:'AAT', length:'4'}"
+          label="Order Type"></ui-combo>
+
+<ui-combo bind="ORDER_TYPE_RANGE.HIGH" shlp.bind="{type: 'CT', id: 'T003O'}" data-abap.bind="{type:'CHAR', mid:'AAT', length:'4'}"
+          label="Order Type"></ui-combo>
+
+<!-- Parameter: PLANPLANT_RANGE structure: BAPI_ORDER_PLANPLANT_RANGE  Planning Plants for Order Selection -->
+
+<ui-datagrid data.bind="PLANPLANT_RANGE" title="Planning Plants for Order Selection"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" label="Plant"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" label="Plant"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="PLANPLANT_RANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="PLANPLANT_RANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="PLANPLANT_RANGE.LOW" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+
+<ui-combo bind="PLANPLANT_RANGE.HIGH" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+
+<!-- Parameter: PROD_SCHED_RANGE structure: BAPI_ORDER_PROD_SCHED_RANGE  Production Schedulers for Order Selection -->
+
+<ui-datagrid data.bind="PROD_SCHED_RANGE" title="Production Schedulers for Order Selection"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'CHAR', mid:'CFV', length:'3'}" shlp.bind="{type: 'CT', id: 'T024F'}" label="Production Supervisor"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'CHAR', mid:'CFV', length:'3'}" shlp.bind="{type: 'CT', id: 'T024F'}" label="Production Supervisor"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="PROD_SCHED_RANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="PROD_SCHED_RANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="PROD_SCHED_RANGE.LOW" shlp.bind="{type: 'CT', id: 'T024F'}" data-abap.bind="{type:'CHAR', mid:'CFV', length:'3'}"
+          label="Production Supervisor"></ui-combo>
+
+<ui-combo bind="PROD_SCHED_RANGE.HIGH" shlp.bind="{type: 'CT', id: 'T024F'}" data-abap.bind="{type:'CHAR', mid:'CFV', length:'3'}"
+          label="Production Supervisor"></ui-combo>
+
+<!-- Parameter: PRODPLANT_RANGE structure: BAPI_ORDER_PRODPLANT_RANGE  Production Plants for Order Selection -->
+
+<ui-datagrid data.bind="PRODPLANT_RANGE" title="Production Plants for Order Selection"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" label="Plant"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" label="Plant"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="PRODPLANT_RANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="PRODPLANT_RANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="PRODPLANT_RANGE.LOW" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+
+<ui-combo bind="PRODPLANT_RANGE.HIGH" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+
+<!-- Parameter: SALES_ORD_ITM_RANGE structure: BAPI_ORDER_SALES_ORD_ITM_RANGE  Sales Order Items for Order Selection -->
+
+<ui-datagrid data.bind="SALES_ORD_ITM_RANGE" title="Sales Order Items for Order Selection"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'NUMC', mid:'AUP', length:'6'}" shlp.bind="{type: 'CT', id: 'VBUP'}" label="Sales Order Item"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'NUMC', mid:'AUP', length:'6'}" shlp.bind="{type: 'CT', id: 'VBUP'}" label="Sales Order Item"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="SALES_ORD_ITM_RANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="SALES_ORD_ITM_RANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="SALES_ORD_ITM_RANGE.LOW" shlp.bind="{type: 'CT', id: 'VBUP'}" data-abap.bind="{type:'NUMC', mid:'AUP', length:'6'}"
+          label="Sales Order Item"></ui-combo>
+
+<ui-combo bind="SALES_ORD_ITM_RANGE.HIGH" shlp.bind="{type: 'CT', id: 'VBUP'}" data-abap.bind="{type:'NUMC', mid:'AUP', length:'6'}"
+          label="Sales Order Item"></ui-combo>
+
+<!-- Parameter: SALES_ORD_RANGE structure: BAPI_ORDER_SALES_ORD_RANGE  Sales Orders for Order Selection -->
+
+<ui-datagrid data.bind="SALES_ORD_RANGE" title="Sales Orders for Order Selection"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}" shlp.bind="{type: 'CT', id: 'VBUK'}" label="Sales Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}" shlp.bind="{type: 'CT', id: 'VBUK'}" label="Sales Order Number"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="SALES_ORD_RANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="SALES_ORD_RANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="SALES_ORD_RANGE.LOW" shlp.bind="{type: 'CT', id: 'VBUK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}"
+          label="Sales Order Number"></ui-combo>
+
+<ui-combo bind="SALES_ORD_RANGE.HIGH" shlp.bind="{type: 'CT', id: 'VBUK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}"
+          label="Sales Order Number"></ui-combo>
+
+<!-- Parameter: SEQ_NO_RANGE structure: BAPI_ORDER_SEQ_NO_RANGE  Sequence Numbers for Order Selection -->
+
+<ui-datagrid data.bind="SEQ_NO_RANGE" title="Sequence Numbers for Order Selection"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'NUMC', length:'14'}" label="Seq. number order"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'NUMC', length:'14'}" label="Seq. number order"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="SEQ_NO_RANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="SEQ_NO_RANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-input bind="SEQ_NO_RANGE.LOW" data-abap.bind="{type:'NUMC', length:'14'}"
+          label="Seq. number order"></ui-input>
+
+<ui-input bind="SEQ_NO_RANGE.HIGH" data-abap.bind="{type:'NUMC', length:'14'}"
+          label="Seq. number order"></ui-input>
+
+<!-- Parameter: WBS_ELEMENT_RANGE structure: BAPI_ORDER_WBS_ELEMENT_RANGE  WBS Elements for Order Selection -->
+
+<ui-datagrid data.bind="WBS_ELEMENT_RANGE" title="WBS Elements for Order Selection"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'NUMC', alpha:'ABPSP', length:'8'}" shlp.bind="{type: 'CT', id: 'PRPS'}" label="Work breakdown structure element (WBS element)"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'NUMC', alpha:'ABPSP', length:'8'}" shlp.bind="{type: 'CT', id: 'PRPS'}" label="Work breakdown structure element (WBS element)"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="WBS_ELEMENT_RANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="WBS_ELEMENT_RANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="WBS_ELEMENT_RANGE.LOW" shlp.bind="{type: 'CT', id: 'PRPS'}" data-abap.bind="{type:'NUMC', alpha:'ABPSP', length:'8'}"
+          label="Work breakdown structure element (WBS element)"></ui-combo>
+
+<ui-combo bind="WBS_ELEMENT_RANGE.HIGH" shlp.bind="{type: 'CT', id: 'PRPS'}" data-abap.bind="{type:'NUMC', alpha:'ABPSP', length:'8'}"
+          label="Work breakdown structure element (WBS element)"></ui-combo>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Parameters -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>

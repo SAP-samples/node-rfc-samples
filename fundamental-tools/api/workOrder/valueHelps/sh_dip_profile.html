@@ -1,0 +1,15 @@
+<!-- SH DIP_PROFILE Dynamic Item Processor Profile : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.DPUS" data-abap.bind="{type:'NUMC', length:'2'}"
+          label="Usage of the DI profile"></ui-input>
+<ui-combo bind="searchParamLow.PROFNR" shlp.bind="{type: 'SH', id: 'DIP_PROFILE'}" data-abap.bind="{type:'CHAR', mid:'AD0', length:'8'}"
+          label="Dynamic Item Processor Profile"></ui-combo>
+<ui-input bind="searchParamLow.TEXT" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Text Field"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="PROFNR" data-abap.bind="{type:'CHAR', mid:'AD0', length:'8'}" label="Dynamic Item Processor Profile"></ui-dg-column>
+   <ui-dg-column sortable field="TEXT" data-abap.bind="{type:'CHAR', length:'50'}" label="Text Field"></ui-dg-column>
+</ui-datagrid>

@@ -1,0 +1,27 @@
+<!-- SH VMVLB Outbound Deliveries: Not Picked : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.VBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}"
+          label="Delivery"></ui-input>
+<ui-input bind="searchParamLow.VSTEL" data-abap.bind="{type:'CHAR', mid:'VST', length:'4'}"
+          label="Shipping Point/Receiving Point"></ui-input>
+<ui-date date.bind="searchParamLow.KODAT"  label="Picking Date"></ui-date>
+<ui-input bind="searchParamLow.ROUTE" data-abap.bind="{type:'CHAR', length:'6'}"
+          label="Route"></ui-input>
+<ui-input bind="searchParamLow.LVSTK" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Overall status of warehouse management activities"></ui-input>
+<ui-input bind="searchParamLow.KOSTK" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Overall picking / putaway status"></ui-input>
+<ui-input bind="searchParamLow.KUNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Ship-To Party"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="VSTEL" data-abap.bind="{type:'CHAR', mid:'VST', length:'4'}" label="Shipping Point/Receiving Point"></ui-dg-column>
+   <ui-dg-column sortable field="VBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}" label="Delivery"></ui-dg-column>
+   <ui-dg-column sortable field="KUNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" label="Ship-To Party"></ui-dg-column>
+   <ui-dg-column sortable field="ROUTE" data-abap.bind="{type:'CHAR', length:'6'}" label="Route"></ui-dg-column>
+   <ui-dg-column sortable field="KODAT" data-abap.bind="{type:'DATS'}" label="Picking Date"></ui-dg-column>
+   <ui-dg-column sortable field="LVSTK" data-abap.bind="{type:'CHAR', length:'1'}" label="Overall status of warehouse management activities"></ui-dg-column>
+   <ui-dg-column sortable field="KOSTK" data-abap.bind="{type:'CHAR', length:'1'}" label="Overall picking / putaway status"></ui-dg-column>
+</ui-datagrid>

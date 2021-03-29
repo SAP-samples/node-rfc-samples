@@ -1,0 +1,27 @@
+<!-- SH MCEM Settlement Unit : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.BUKRS" shlp.bind="{type: 'SH', id: 'C_T001'}" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}"
+          label="Company Code"></ui-combo>
+<ui-combo bind="searchParamLow.SWENR" shlp.bind="{type: 'SH', id: 'MCWE'}" data-abap.bind="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}"
+          label="Business Entity Number"></ui-combo>
+<ui-combo bind="searchParamLow.SNKSL" shlp.bind="{type: 'CT', id: 'TIV05'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NKL', length:'4'}"
+          label="Service Charge Key"></ui-combo>
+<ui-combo bind="searchParamLow.SEMPSL" shlp.bind="{type: 'SH', id: 'MCEM'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EMP', length:'5'}"
+          label="Settlement Unit"></ui-combo>
+<ui-input bind="searchParamLow.XTEXTAE" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Name of settlement unit"></ui-input>
+<ui-input bind="searchParamLow.IMKEY" data-abap.bind="{type:'CHAR', alpha:'IMKEY', length:'8'}"
+          label="Internal Key for Real Estate Object"></ui-input>
+<ui-combo bind="searchParamLow.UEBERAE" shlp.bind="{type: 'SH', id: 'MCEMA'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Predistribution settlement unit indicator"></ui-combo>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+   <ui-dg-column sortable field="SWENR" data-abap.bind="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}" label="Business Entity Number"></ui-dg-column>
+   <ui-dg-column sortable field="SNKSL" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NKL', length:'4'}" label="Service Charge Key"></ui-dg-column>
+   <ui-dg-column sortable field="SEMPSL" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EMP', length:'5'}" label="Settlement Unit"></ui-dg-column>
+   <ui-dg-column sortable field="XTEXTAE" data-abap.bind="{type:'CHAR', length:'50'}" label="Name of settlement unit"></ui-dg-column>
+   <ui-dg-column sortable field="UEBERAE" data-abap.bind="{type:'CHAR', length:'1'}" label="Predistribution settlement unit indicator"></ui-dg-column>
+</ui-datagrid>

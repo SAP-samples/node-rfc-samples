@@ -1,0 +1,13 @@
+<!-- SH H_TCA54 Reference Date for Start of Production Resource/Tool Usage : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.BZOFF" shlp.bind="{type: 'CT', id: 'TCA54'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Key for reference dates used in offset scheduling"></ui-combo>
+<ui-input bind="searchParamLow.BZTXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Description of reference date key used in offset scheduling"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="BZOFF" data-abap.bind="{type:'CHAR', length:'2'}" label="Key for reference dates used in offset scheduling"></ui-dg-column>
+   <ui-dg-column sortable field="BZTXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Description of reference date key used in offset scheduling"></ui-dg-column>
+</ui-datagrid>

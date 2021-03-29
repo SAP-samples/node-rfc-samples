@@ -1,0 +1,300 @@
+<!--
+BAPI_INSPCHAR_GETREQUIREMENTS exception: 0  struct: 2  table: 0  var: 3
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-input bind="INSPCHAR" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Inspection lot characteristic number"></ui-input>
+
+<ui-combo bind="INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection lot number"></ui-combo>
+
+<ui-input bind="INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Inspection lot operation number"></ui-input>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: REQUIREMENTS structure: BAPI2045D1  Inspection characteristic specifications -->
+
+<ui-combo bind="REQUIREMENTS.INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Inspection Lot Operation Number"></ui-input>
+
+<ui-input bind="REQUIREMENTS.INSPCHAR" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Insp. Lot Charac. No."></ui-input>
+
+<ui-combo bind="REQUIREMENTS.STATUS" shlp.bind="{type: 'SH', id: 'H_TQ76'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Specification Record Status"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.CHAR_DESCR" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Short Text for the Inspection Characteristic"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.CHAR_TYPE" shlp.bind="{type: 'FV', id: 'QCHAR_TYPE'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Characteristic Type"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.CONFIRM_NO" data-abap.bind="{type:'NUMC', mid:'QRU', length:'8'}"
+          label="Confirmation Number for Inspection Characteristic"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.OBLIGATORY" shlp.bind="{type: 'FV', id: 'QRZWANG'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Required Confirmation for Inspection Characteristic"></ui-combo>
+
+<ui-checkbox value.bind="REQUIREMENTS.SINGLE_RES" label="Single Results"></ui-checkbox>
+
+<ui-checkbox value.bind="REQUIREMENTS.SAMPLE_RES" label="Sample Results"></ui-checkbox>
+
+<ui-checkbox value.bind="REQUIREMENTS.CHAR_RES" label="Characteristic Results"></ui-checkbox>
+
+<ui-combo bind="REQUIREMENTS.SAMPLES" shlp.bind="{type: 'FV', id: 'QKZUMFS'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Partial Samples Possible"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.SAMPLES_NO" data-abap.bind="{type:'CHAR', length:'5'}"
+          label="Number of Planned Partial Samples"></ui-input>
+
+<ui-input bind="REQUIREMENTS.SCOPE" data-abap.bind="{type:'NUMC', length:'7'}"
+          label="Sample Size to Be Inspected in QM Subsystem"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.SCOPE_IND" shlp.bind="{type: 'FV', id: 'QPUMFKZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Inspection Scope"></ui-combo>
+
+<ui-combo bind="REQUIREMENTS.DOCU_REQU" shlp.bind="{type: 'FV', id: 'QDOKUKZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Documentation Required for Inspection Results"></ui-combo>
+
+<ui-checkbox value.bind="REQUIREMENTS.SERIALREQU" label="Serial Number To Be Recorded in QM Subsystem"></ui-checkbox>
+
+<ui-combo bind="REQUIREMENTS.INSP_POINT" shlp.bind="{type: 'FV', id: 'QKZRAST'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Indicator: Sampling Procedure for Inspection Points"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.GRID" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Inspection Frequency (Only for Inspection with Insp. Points)"></ui-input>
+
+<ui-input bind="REQUIREMENTS.MSTR_CHAR" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Master Characteristic"></ui-input>
+
+<ui-input bind="REQUIREMENTS.VMSTR_CHAR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'6'}"
+          label="Version Number of the Master Inspection Characteristic"></ui-input>
+
+<ui-input bind="REQUIREMENTS.PMSTR_CHAR" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Plant for Master Inspection Characteristic"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.METHOD" shlp.bind="{type: 'SH', id: 'QMTB'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PMT', length:'8'}"
+          label="Inspection Method"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.METHOD_TXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Short Text for Inspection Method"></ui-input>
+
+<ui-input bind="REQUIREMENTS.VMETHOD" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'6'}"
+          label="Version Number of the Inspection Method"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.PMETHOD" shlp.bind="{type: 'SH', id: 'H_T001W'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Plant for Inspection Method"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.SMPL_QUANT" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Sample Unit of Measurement Factor for QM Subsystem"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.SMPL_UNIT" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Base Unit of Measure for the Inspection Lot"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.SMPL_UNITT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Short Text for Unit of Measure"></ui-input>
+
+<ui-input bind="REQUIREMENTS.SMPL_UNITC" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO Code for Unit of Measure"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.PHYS_SMPL" shlp.bind="{type: 'CH', id: 'QASV'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Number of the Partial Sample"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.CH_WGT_COD" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Characteristic Weighting"></ui-input>
+
+<ui-input bind="REQUIREMENTS.CH_WGT_FAC" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Characteristic Weighting Factor"></ui-input>
+
+<ui-input bind="REQUIREMENTS.CH_WGT_TXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Text for Characteristic Weighting"></ui-input>
+
+<ui-input bind="REQUIREMENTS.FORMULA" data-abap.bind="{type:'CHAR', length:'120'}"
+          label="Complete Formula for Linking Insp. Char. to QM Subsystems"></ui-input>
+
+<ui-input bind="REQUIREMENTS.INFOFIELD1" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Info Field 1 from the Characteristic"></ui-input>
+
+<ui-input bind="REQUIREMENTS.INFOFIELD2" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Info Field 2 from the Characteristic"></ui-input>
+
+<ui-input bind="REQUIREMENTS.INFOFIELD3" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Info Field 3 from the Characteristic"></ui-input>
+
+<ui-input bind="REQUIREMENTS.DEC_PLACES" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Number of Decimal Places"></ui-input>
+
+<ui-input bind="REQUIREMENTS.MEAS_UNIT" data-abap.bind="{type:'CHAR', length:'6'}"
+          label="Unit of Measurement (Internal Code)"></ui-input>
+
+<ui-input bind="REQUIREMENTS.MEAS_UNITT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Short Text for Unit of Measure"></ui-input>
+
+<ui-input bind="REQUIREMENTS.MEAS_UNITC" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO Code for Unit of Measure"></ui-input>
+
+<ui-input bind="REQUIREMENTS.TARGET_VAL" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Target Value"></ui-input>
+
+<ui-input bind="REQUIREMENTS.UP_TOL_LMT" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Upper Tolerance Limit"></ui-input>
+
+<ui-input bind="REQUIREMENTS.LW_TOL_LMT" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Lower Tolerance Limit"></ui-input>
+
+<ui-input bind="REQUIREMENTS.UP_LMT_1" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Limit 1 (Upper)"></ui-input>
+
+<ui-input bind="REQUIREMENTS.LW_LMT_1" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Limit 1 (Lower)"></ui-input>
+
+<ui-input bind="REQUIREMENTS.UP_LMT_2" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Limit 2 (Upper)"></ui-input>
+
+<ui-input bind="REQUIREMENTS.LW_LMT_2" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Limit 2 (Lower)"></ui-input>
+
+<ui-input bind="REQUIREMENTS.UP_PLS_LMT" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Plausibility Limit (Upper)"></ui-input>
+
+<ui-input bind="REQUIREMENTS.LW_PLS_LMT" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Plausibility Limit (Lower)"></ui-input>
+
+<ui-input bind="REQUIREMENTS.UP_CTRL_1" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Action Limit 1 (Upper)"></ui-input>
+
+<ui-input bind="REQUIREMENTS.LW_CTRL_1" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Lower Action Limit 1"></ui-input>
+
+<ui-input bind="REQUIREMENTS.UP_CTRL_2" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Action Limit 2 (Upper)"></ui-input>
+
+<ui-input bind="REQUIREMENTS.LW_CTRL_2" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Lower Action Limit 2"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.CC_NO" shlp.bind="{type: 'CH', id: 'QASH'}" data-abap.bind="{type:'NUMC', length:'12'}"
+          label="Control Chart Number in QM"></ui-combo>
+
+<ui-combo bind="REQUIREMENTS.CC_TYPE" shlp.bind="{type: 'CT', id: 'QPSH'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Control Chart Type"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.CC_TYPE_T" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Short Text for Control Chart Type"></ui-input>
+
+<ui-input bind="REQUIREMENTS.SEL_SET1" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Selected Set"></ui-input>
+
+<ui-input bind="REQUIREMENTS.PSEL_SET1" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Plant for Selected Set"></ui-input>
+
+<ui-input bind="REQUIREMENTS.CAT_TYPE1" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Catalog Type"></ui-input>
+
+<ui-input bind="REQUIREMENTS.SEL_SET2" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Selected Set"></ui-input>
+
+<ui-input bind="REQUIREMENTS.PSEL_SET2" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Plant for Selected Set"></ui-input>
+
+<ui-input bind="REQUIREMENTS.CAT_TYPE2" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Catalog Type"></ui-input>
+
+<ui-input bind="REQUIREMENTS.SEL_SET3" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Selected Set"></ui-input>
+
+<ui-input bind="REQUIREMENTS.PSEL_SET3" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Plant for Selected Set"></ui-input>
+
+<ui-input bind="REQUIREMENTS.CAT_TYPE3" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Catalog Type"></ui-input>
+
+<ui-input bind="REQUIREMENTS.SEL_SET4" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Selected Set"></ui-input>
+
+<ui-input bind="REQUIREMENTS.PSEL_SET4" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Plant for Selected Set"></ui-input>
+
+<ui-input bind="REQUIREMENTS.CAT_TYPE4" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Catalog Type"></ui-input>
+
+<ui-input bind="REQUIREMENTS.SEL_SET5" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Selected Set"></ui-input>
+
+<ui-input bind="REQUIREMENTS.PSEL_SET5" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Plant for Selected Set"></ui-input>
+
+<ui-input bind="REQUIREMENTS.CAT_TYPE5" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Catalog Type"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.VALN_TYPE" shlp.bind="{type: 'FV', id: 'QEIFBEWART'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Valuation Type for Sample for QM Subsystems"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.ACCEPT_NO" data-abap.bind="{type:'NUMC', length:'5'}"
+          label="Acceptance Number in Attrib. Insp. for QM Subsystems"></ui-input>
+
+<ui-input bind="REQUIREMENTS.REJECT_NO" data-abap.bind="{type:'NUMC', length:'5'}"
+          label="Rejection Number in Attributive Insp. for QM Subsystems"></ui-input>
+
+<ui-input bind="REQUIREMENTS.K_FACTOR" data-abap.bind="{type:'CHAR', length:'16'}"
+          label="K-Factor for a Variable Inspection"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.SHARE_CALC" shlp.bind="{type: 'FV', id: 'QEIFANVERF'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Fraction Calculation"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.CHARACTERISTIC_NAME" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'40'}"
+          label="Characteristic Description for Quality Data Exchange"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.RES_ORG" shlp.bind="{type: 'CT', id: 'TQ73'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Planned Results Data Origin"></ui-combo>
+
+<ui-checkbox value.bind="REQUIREMENTS.CLASSES" label="Classed Recording"></ui-checkbox>
+
+<ui-checkbox value.bind="REQUIREMENTS.NO_RECORDING" label="No Characteristic Recording"></ui-checkbox>
+
+<ui-input bind="REQUIREMENTS.INPPROC" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Parameters for Input Processing in QM Results Recording"></ui-input>
+
+<!-- Parameter: RETURN structure: BAPIRETURN1  Return parameter -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>

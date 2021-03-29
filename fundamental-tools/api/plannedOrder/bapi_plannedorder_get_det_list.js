@@ -1,7 +1,7 @@
 //
-// BAPI_PLANNEDORDER_GET_DET_LIST var: 0  struct: 2  table: 1  exception: 0
+// BAPI_PLANNEDORDER_GET_DET_LIST exception: 0  struct: 2  table: 1  var: 0
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore

@@ -1,0 +1,22 @@
+<!-- SH H_AGR_REL_CM Rebate Agreements for Campaign : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.KNUMA" shlp.bind="{type: 'CH', id: 'KONA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Agreement (various conditions grouped together)"></ui-combo>
+<ui-combo bind="searchParamLow.CMPGN_ID" shlp.bind="{type: 'SH', id: 'H_CMPGN_ID'}" data-abap.bind="{type:'CHAR', mid:'CMPGN_ID', length:'10'}"
+          label="Campaign ID"></ui-combo>
+<ui-input bind="searchParamLow.CMPGN_EXTID" data-abap.bind="{type:'CHAR', length:'24'}"
+          label="Campaign (External ID)"></ui-input>
+<ui-combo bind="searchParamLow.BONEM" shlp.bind="{type: 'SH', id: 'DEBI'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VBE', length:'10'}"
+          label="Rebate recipient"></ui-combo>
+<ui-combo bind="searchParamLow.BOSTA" shlp.bind="{type: 'FV', id: 'BOSTA'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Status of the agreement"></ui-combo>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CMPGN_ID" data-abap.bind="{type:'CHAR', mid:'CMPGN_ID', length:'10'}" label="Campaign ID"></ui-dg-column>
+   <ui-dg-column sortable field="CMPGN_EXTID" data-abap.bind="{type:'CHAR', length:'24'}" label="Campaign (External ID)"></ui-dg-column>
+   <ui-dg-column sortable field="BONEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VBE', length:'10'}" label="Rebate recipient"></ui-dg-column>
+   <ui-dg-column sortable field="BOSTA" data-abap.bind="{type:'CHAR', length:'1'}" label="Status of the agreement"></ui-dg-column>
+   <ui-dg-column sortable field="KNUMA" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" label="Agreement (various conditions grouped together)"></ui-dg-column>
+</ui-datagrid>

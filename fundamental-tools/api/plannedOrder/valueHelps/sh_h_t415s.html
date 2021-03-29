@@ -1,0 +1,30 @@
+<!-- SH H_T415S BOM status : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.STLST" shlp.bind="{type: 'CT', id: 'T415S'}" data-abap.bind="{type:'NUMC', length:'2'}"
+          label="BOM status"></ui-combo>
+<ui-checkbox value.bind="searchParamLow.KZBDP" label="Indicator: explosion in material requirements planning (MRP)"></ui-checkbox>
+<ui-checkbox value.bind="searchParamLow.KZPAF" label="Indicator: released for planned orders"></ui-checkbox>
+<ui-input bind="searchParamLow.STTXT" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="BOM status text"></ui-input>
+<ui-checkbox value.bind="searchParamLow.KZKLF" label="Indicator: released for costing"></ui-checkbox>
+<ui-checkbox value.bind="searchParamLow.KZAPF" label="Indicator: released for work scheduling"></ui-checkbox>
+<ui-checkbox value.bind="searchParamLow.KZAUF" label="Indicator: released for production orders"></ui-checkbox>
+<ui-checkbox value.bind="searchParamLow.KZSME" label="Indicator: collective issue allowed"></ui-checkbox>
+<ui-checkbox value.bind="searchParamLow.KZRVA" label="Indicator: sales order explosion"></ui-checkbox>
+<ui-combo bind="searchParamLow.KZAMS" shlp.bind="{type: 'SH', id: 'H_T458A'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="MRP exception message ID (T458A)"></ui-combo>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="STLST" data-abap.bind="{type:'NUMC', length:'2'}" label="BOM status"></ui-dg-column>
+   <ui-dg-column sortable field="KZBDP" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: explosion in material requirements planning (MRP)"></ui-dg-column>
+   <ui-dg-column sortable field="KZPAF" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: released for planned orders"></ui-dg-column>
+   <ui-dg-column sortable field="KZKLF" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: released for costing"></ui-dg-column>
+   <ui-dg-column sortable field="KZAPF" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: released for work scheduling"></ui-dg-column>
+   <ui-dg-column sortable field="KZAUF" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: released for production orders"></ui-dg-column>
+   <ui-dg-column sortable field="KZSME" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: collective issue allowed"></ui-dg-column>
+   <ui-dg-column sortable field="KZRVA" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: sales order explosion"></ui-dg-column>
+   <ui-dg-column sortable field="KZAMS" data-abap.bind="{type:'CHAR', length:'2'}" label="MRP exception message ID (T458A)"></ui-dg-column>
+   <ui-dg-column sortable field="STTXT" data-abap.bind="{type:'CHAR', length:'30'}" label="BOM status text"></ui-dg-column>
+</ui-datagrid>

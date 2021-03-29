@@ -1,7 +1,7 @@
 //
-// BAPI_SALESORDER_CREATEFROMDAT2 var: 7  struct: 4  table: 21  exception: 0
+// BAPI_SALESORDER_CREATEFROMDAT2 exception: 0  struct: 4  table: 21  var: 7
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore

@@ -1,7 +1,7 @@
 //
-// BAPI_EQUI_CHANGE var: 3  struct: 10  table: 2  exception: 0
+// BAPI_EQUI_CHANGE exception: 0  struct: 10  table: 2  var: 3
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore

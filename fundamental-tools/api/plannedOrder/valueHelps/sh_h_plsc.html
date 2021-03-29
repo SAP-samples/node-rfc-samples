@@ -1,0 +1,22 @@
+<!-- SH H_PLSC Planning Scenario of Long-Term Planning : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.PLSCN" shlp.bind="{type: 'SH', id: 'H_PLSC'}" data-abap.bind="{type:'NUMC', mid:'PLS', length:'3'}"
+          label="Planning Scenario of Long-Term Planning"></ui-combo>
+<ui-combo bind="searchParamLow.PSACT" shlp.bind="{type: 'FV', id: 'PSSTA'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Planning scenario status"></ui-combo>
+<ui-input bind="searchParamLow.PLSCT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Planning scenario description"></ui-input>
+<ui-date date.bind="searchParamLow.PDAT1"  label="Start of the planning period"></ui-date>
+<ui-date date.bind="searchParamLow.PDAT2"  label="End of planning period"></ui-date>
+<ui-checkbox value.bind="searchParamLow.SBFLG" label="Long-term plnng: depend.reqmts for reorder point materials"></ui-checkbox>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="PLSCN" data-abap.bind="{type:'NUMC', mid:'PLS', length:'3'}" label="Planning Scenario of Long-Term Planning"></ui-dg-column>
+   <ui-dg-column sortable field="PLSCT" data-abap.bind="{type:'CHAR', length:'40'}" label="Planning scenario description"></ui-dg-column>
+   <ui-dg-column sortable field="PDAT1" data-abap.bind="{type:'DATS'}" label="Start of the planning period"></ui-dg-column>
+   <ui-dg-column sortable field="PDAT2" data-abap.bind="{type:'DATS'}" label="End of planning period"></ui-dg-column>
+   <ui-dg-column sortable field="PSACT" data-abap.bind="{type:'CHAR', length:'1'}" label="Planning scenario status"></ui-dg-column>
+   <ui-dg-column sortable field="SBFLG" data-abap.bind="{type:'CHAR', length:'1'}" label="Long-term plnng: depend.reqmts for reorder point materials"></ui-dg-column>
+</ui-datagrid>

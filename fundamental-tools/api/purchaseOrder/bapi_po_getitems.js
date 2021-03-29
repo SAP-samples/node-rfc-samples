@@ -1,7 +1,7 @@
 //
-// BAPI_PO_GETITEMS var: 22  struct: 2  table: 3  exception: 0
+// BAPI_PO_GETITEMS exception: 0  struct: 2  table: 3  var: 22
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore
@@ -20,7 +20,7 @@ const parameters = {
 // MATERIAL               :           "", // CHAR (18) ALPHA=MATN1 Material SU3=MAT
 // MATERIAL_LONG          :           "", // CHAR (40) Material Number (40 Characters, Necessary for Technical Reasons)
 // PLANT                  :           "", // CHAR (4) Plant SU3=WRK
-// PREQ_NAME              :        SPACE, // CHAR (12) no text (en)
+// PREQ_NAME              :        SPACE, // CHAR (12) no text (undefined)
 // PUR_GROUP              :           "", // CHAR (3) Purchasing Group SU3=EKG
 // PUR_MAT                :        SPACE, // CHAR (18) ALPHA=MATN1 Material Number SU3=MAT
 // PUR_MAT_LONG           :        SPACE, // CHAR (40) Material Number (40 Characters, Technical Requirement)

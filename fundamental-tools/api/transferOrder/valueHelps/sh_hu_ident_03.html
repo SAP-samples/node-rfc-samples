@@ -1,0 +1,19 @@
+<!-- SH HU_IDENT_03 Identification by material and status : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.EXIDV" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'20'}"
+          label="External Handling Unit Identification"></ui-input>
+<ui-input bind="searchParamLow.VHILM" data-abap.bind="{type:'CHAR', alpha:'MATN1', length:'18'}"
+          label="Packaging Materials"></ui-input>
+<ui-combo bind="searchParamLow.VHART" shlp.bind="{type: 'SH', id: 'H_TVTY'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Packaging Material Type"></ui-combo>
+<ui-combo bind="searchParamLow.STATUS" shlp.bind="{type: 'FV', id: 'HU_STATUS'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Handling unit status"></ui-combo>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="EXIDV" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'20'}" label="External Handling Unit Identification"></ui-dg-column>
+   <ui-dg-column sortable field="VHILM" data-abap.bind="{type:'CHAR', alpha:'MATN1', length:'18'}" label="Packaging Materials"></ui-dg-column>
+   <ui-dg-column sortable field="STATUS" data-abap.bind="{type:'CHAR', length:'4'}" label="Handling unit status"></ui-dg-column>
+   <ui-dg-column sortable field="VHART" data-abap.bind="{type:'CHAR', length:'4'}" label="Packaging Material Type"></ui-dg-column>
+</ui-datagrid>

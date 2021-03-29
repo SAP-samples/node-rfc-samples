@@ -1,0 +1,13 @@
+<!-- SH VMVLI External Deliveries with External Identification : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.LIFEX" data-abap.bind="{type:'CHAR', length:'35'}"
+          label="External Delivery Note ID (Capital Letters)"></ui-input>
+<ui-input bind="searchParamLow.VBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}"
+          label="Delivery"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="LIFEX" data-abap.bind="{type:'CHAR', length:'35'}" label="External Delivery Note ID (Capital Letters)"></ui-dg-column>
+   <ui-dg-column sortable field="VBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}" label="Delivery"></ui-dg-column>
+</ui-datagrid>

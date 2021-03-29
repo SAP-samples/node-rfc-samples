@@ -1,0 +1,51 @@
+<!-- SH QMTB_TREX_ADVANCED Advanced Search for Inspection Method Via Search Engine : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.S/RP/SEARCH_TERM" data-abap.bind="{type:'CHAR', length:'45'}"
+          label="Input Field for Full Text Search"></ui-input>
+<ui-input bind="searchParamLow.S/RP/MODE_FUZZY" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Option Fuzzy Mode"></ui-input>
+<ui-input bind="searchParamLow.BUSINESS_OBJECT" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Business Object for Search Engine Service (SES)"></ui-input>
+<ui-input bind="searchParamLow.OBJECT_TYPE" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Type of Business Object"></ui-input>
+<ui-input bind="searchParamLow.PLANT" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant for Inspection Method"></ui-input>
+<ui-input bind="searchParamLow.METHOD" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PMT', length:'8'}"
+          label="Inspection Method"></ui-input>
+<ui-input bind="searchParamLow.VMETHOD" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'6'}"
+          label="Version Number of the Inspection Method"></ui-input>
+<ui-date date.bind="searchParamLow.VALID_FROM_DATE"  label="Valid-From Date"></ui-date>
+<ui-input bind="searchParamLow.SORT_FIELD" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Search Field"></ui-input>
+<ui-input bind="searchParamLow.INSPECTOR_QUALIF" data-abap.bind="{type:'CHAR', length:'5'}"
+          label="Inspector Qualification"></ui-input>
+<ui-input bind="searchParamLow.INFOFIELD1" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Text Line for Additional Information"></ui-input>
+<ui-input bind="searchParamLow.INFOFIELD2" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Text Line for Additional Information"></ui-input>
+<ui-input bind="searchParamLow.INFOFIELD3" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Text Line for Additional Information"></ui-input>
+<ui-input bind="searchParamLow.DESCRIPTION" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Short Text"></ui-input>
+<ui-input bind="searchParamLow.QMAST_AUTH" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Authorization Group QM Basic Data"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="S/RP/SEARCH_TERM" data-abap.bind="{type:'CHAR', length:'45'}" label="Input Field for Full Text Search"></ui-dg-column>
+   <ui-dg-column sortable field="S/RP/MODE_FUZZY" data-abap.bind="{type:'CHAR', length:'1'}" label="Option Fuzzy Mode"></ui-dg-column>
+   <ui-dg-column sortable field="BUSINESS_OBJECT" data-abap.bind="{type:'CHAR', length:'10'}" label="Business Object for Search Engine Service (SES)"></ui-dg-column>
+   <ui-dg-column sortable field="OBJECT_TYPE" data-abap.bind="{type:'CHAR', length:'10'}" label="Type of Business Object"></ui-dg-column>
+   <ui-dg-column sortable field="PLANT" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" label="Plant for Inspection Method"></ui-dg-column>
+   <ui-dg-column sortable field="METHOD" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PMT', length:'8'}" label="Inspection Method"></ui-dg-column>
+   <ui-dg-column sortable field="VMETHOD" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'6'}" label="Version Number of the Inspection Method"></ui-dg-column>
+   <ui-dg-column sortable field="VALID_FROM_DATE" data-abap.bind="{type:'DATS'}" label="Valid-From Date"></ui-dg-column>
+   <ui-dg-column sortable field="SORT_FIELD" data-abap.bind="{type:'CHAR', length:'40'}" label="Search Field"></ui-dg-column>
+   <ui-dg-column sortable field="INSPECTOR_QUALIF" data-abap.bind="{type:'CHAR', length:'5'}" label="Inspector Qualification"></ui-dg-column>
+   <ui-dg-column sortable field="INFOFIELD1" data-abap.bind="{type:'CHAR', length:'10'}" label="Text Line for Additional Information"></ui-dg-column>
+   <ui-dg-column sortable field="INFOFIELD2" data-abap.bind="{type:'CHAR', length:'20'}" label="Text Line for Additional Information"></ui-dg-column>
+   <ui-dg-column sortable field="INFOFIELD3" data-abap.bind="{type:'CHAR', length:'40'}" label="Text Line for Additional Information"></ui-dg-column>
+   <ui-dg-column sortable field="DESCRIPTION" data-abap.bind="{type:'CHAR', length:'40'}" label="Short Text"></ui-dg-column>
+   <ui-dg-column sortable field="QMAST_AUTH" data-abap.bind="{type:'CHAR', length:'8'}" label="Authorization Group QM Basic Data"></ui-dg-column>
+</ui-datagrid>

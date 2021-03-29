@@ -1,7 +1,7 @@
 //
-// BAPI_SALESORDER_SIMULATE var: 2  struct: 5  table: 17  exception: 0
+// BAPI_SALESORDER_SIMULATE exception: 0  struct: 5  table: 17  var: 2
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore
@@ -26,7 +26,7 @@ ORDER_PARTNERS         :           [], // BAPIPARTNR Partners
 // ORDER_CFGS_REF      :           [], // BAPICUCFG Configuration: Reference Data
 // ORDER_CFGS_VALUE    :           [], // BAPICUVAL Configuration: Characteristic Values
 // ORDER_CONDITION_EX  :           [], // BAPICOND Conditions Output
-// ORDER_INCOMPLETE    :           [], // BAPIINCOMP no text (en)
+// ORDER_INCOMPLETE    :           [], // BAPIINCOMP no text (undefined)
 // ORDER_ITEMS_OUT     :           [], // BAPIITEMEX Item Data Output
 // ORDER_SCHEDULE_EX   :           [], // BAPISDHEDU Schedule line data output
 // ORDER_SCHEDULE_IN   :           [], // BAPISCHDL Schedule Line Data Input

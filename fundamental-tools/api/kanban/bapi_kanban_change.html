@@ -1,0 +1,180 @@
+<!--
+BAPI_KANBAN_CHANGE exception: 0  struct: 2  table: 3  var: 4
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-combo bind="KANBAN_ID" shlp.bind="{type: 'CT', id: 'PKPS'}" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Identification Number"></ui-combo>
+
+<!-- Parameter: KANBAN_CHANGE structure: BAPI1075_KANBAN_CHANGE  Change Kanban -->
+
+<ui-combo bind="KANBAN_CHANGE.STATUS" shlp.bind="{type: 'FV', id: 'PKBST'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Kanban status"></ui-combo>
+
+<ui-input bind="KANBAN_CHANGE.ACTUAL_QTY" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Actual quantity"></ui-input>
+
+<ui-input bind="KANBAN_CHANGE.REQUESTED_QTY" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Quantity requested"></ui-input>
+
+<ui-input bind="KANBAN_CHANGE.PLANNEDRECEIPT" data-abap.bind="{type:'DEC', length:'15'}"
+          label="Planned Receipt"></ui-input>
+
+<ui-checkbox value.bind="KANBAN_CHANGE.DELETION_INDICATOR" label="Deletion Indicator for a Kanban"></ui-checkbox>
+
+<ui-checkbox value.bind="KANBAN_CHANGE.BLOCKING_INDICATOR" label="Blocking indicator for kanban container"></ui-checkbox>
+
+<ui-combo bind="KANBAN_CHANGE.BASE_UOM" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Base Unit of Measure"></ui-combo>
+
+<ui-combo bind="KANBAN_CHANGE.BASE_UOM_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<!-- Parameter: KANBAN_CHANGEX structure: BAPI1075_KANBAN_CHANGEX  Transfer Structure for Changing the Kanban -->
+
+<ui-checkbox value.bind="KANBAN_CHANGEX.STATUS" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="KANBAN_CHANGEX.ACTUAL_QTY" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="KANBAN_CHANGEX.REQUESTED_QTY" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="KANBAN_CHANGEX.PLANNEDRECEIPT" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="KANBAN_CHANGEX.DELETION_INDICATOR" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="KANBAN_CHANGEX.BLOCKING_INDICATOR" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="CONSIDER_TRIGGER_POINT" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Consideration of Trigger Point Logic"></ui-input>
+
+<ui-input bind="EXCLUDE_STATUS_RESTRICTION" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Exclude Authorization Check at Time of Kanban Status Change"></ui-input>
+
+<ui-checkbox value.bind="TESTRUN" label="Switch to Simulation Mode for Write BAPIs"></ui-checkbox>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Parameter(s) -->
+
+<ui-datagrid data.bind="RETURN" title="Return Parameter(s)"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-dg-column>
+   <ui-dg-column sortable field="ID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'T100A'}" label="Message Class"></ui-dg-column>
+   <ui-dg-column sortable field="NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Message Number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}" label="Message Text"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_NO" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CH', id: 'BALHDR'}" label="Application log: log number"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_MSG_NO" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'BALM'}" label="Application log: Internal message serial number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}" label="Parameter Name"></ui-dg-column>
+   <ui-dg-column sortable field="ROW" data-abap.bind="{type:'INT4', length:'+10'}" label="Lines in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="FIELD" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD03L'}" label="Field in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="SYSTEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'TBDLS'}" label="Logical system from which message originates"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>
+
+<!-- Parameter: EXTENSIONIN structure: BAPIPAREX  Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIONOUT -->
+
+<ui-datagrid data.bind="EXTENSIONIN" title="Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIONOUT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="STRUCTURE" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD02L'}" label="Structure name of  BAPI table extension"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="EXTENSIONIN.STRUCTURE" shlp.bind="{type: 'CT', id: 'DD02L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Structure name o API table extension"></ui-combo>
+
+<ui-input bind="EXTENSIONIN.VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSIONIN.VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSIONIN.VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSIONIN.VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<!-- Parameter: EXTENSIONOUT structure: BAPIPAREX  Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIONOUT -->
+
+<ui-datagrid data.bind="EXTENSIONOUT" title="Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIONOUT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="STRUCTURE" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD02L'}" label="Structure name of  BAPI table extension"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="EXTENSIONOUT.STRUCTURE" shlp.bind="{type: 'CT', id: 'DD02L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Structure name o API table extension"></ui-combo>
+
+<ui-input bind="EXTENSIONOUT.VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSIONOUT.VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSIONOUT.VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSIONOUT.VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>

@@ -1,0 +1,25 @@
+<!-- SH STDNN Standard networks by text, number, usage, planner, status : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.KTEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Task list description"></ui-input>
+<ui-combo bind="searchParamLow.PLNNR" shlp.bind="{type: 'SH', id: 'STDN'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PLN', length:'8'}"
+          label="Standard network number"></ui-combo>
+<ui-input bind="searchParamLow.PLNAL" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PAL', length:'2'}"
+          label="Alternative to a standard network"></ui-input>
+<ui-combo bind="searchParamLow.VAGRP" shlp.bind="{type: 'SH', id: 'H_T024A'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Responsible planner group/department"></ui-combo>
+<ui-combo bind="searchParamLow.VERWE" shlp.bind="{type: 'SH', id: 'H_T411'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Task list usage"></ui-combo>
+<ui-combo bind="searchParamLow.STATU" shlp.bind="{type: 'SH', id: 'H_T412'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Status"></ui-combo>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="PLNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PLN', length:'8'}" label="Standard network number"></ui-dg-column>
+   <ui-dg-column sortable field="PLNAL" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PAL', length:'2'}" label="Alternative to a standard network"></ui-dg-column>
+   <ui-dg-column sortable field="KTEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Task list description"></ui-dg-column>
+   <ui-dg-column sortable field="VAGRP" data-abap.bind="{type:'CHAR', length:'3'}" label="Responsible planner group/department"></ui-dg-column>
+   <ui-dg-column sortable field="VERWE" data-abap.bind="{type:'CHAR', length:'3'}" label="Task list usage"></ui-dg-column>
+   <ui-dg-column sortable field="STATU" data-abap.bind="{type:'CHAR', length:'3'}" label="Status"></ui-dg-column>
+</ui-datagrid>

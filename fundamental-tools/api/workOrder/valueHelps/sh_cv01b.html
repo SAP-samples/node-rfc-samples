@@ -1,0 +1,25 @@
+<!-- SH CV01B Document with BOM : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.DKTXT_UC" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="DMS: short texts in capital letters"></ui-input>
+<ui-combo bind="searchParamLow.DOKAR" shlp.bind="{type: 'SH', id: 'H_TDWA'}" data-abap.bind="{type:'CHAR', mid:'CV2', length:'3'}"
+          label="Document Type"></ui-combo>
+<ui-combo bind="searchParamLow.DOKNR" shlp.bind="{type: 'CH', id: 'DRAW'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'CV1', length:'25'}"
+          label="Document number"></ui-combo>
+<ui-input bind="searchParamLow.DOKVR" data-abap.bind="{type:'CHAR', mid:'CV3', length:'2'}"
+          label="Document version"></ui-input>
+<ui-input bind="searchParamLow.DOKTL" data-abap.bind="{type:'CHAR', mid:'CV4', length:'3'}"
+          label="Document part"></ui-input>
+<ui-combo bind="searchParamLow.LANGU" shlp.bind="{type: 'SH', id: 'H_T002'}" data-abap.bind="{type:'LANG', alpha:'ISOLA', length:'1'}"
+          label="Language"></ui-combo>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="DKTXT_UC" data-abap.bind="{type:'CHAR', length:'40'}" label="DMS: short texts in capital letters"></ui-dg-column>
+   <ui-dg-column sortable field="DOKNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'CV1', length:'25'}" label="Document number"></ui-dg-column>
+   <ui-dg-column sortable field="DOKAR" data-abap.bind="{type:'CHAR', mid:'CV2', length:'3'}" label="Document Type"></ui-dg-column>
+   <ui-dg-column sortable field="DOKTL" data-abap.bind="{type:'CHAR', mid:'CV4', length:'3'}" label="Document part"></ui-dg-column>
+   <ui-dg-column sortable field="DOKVR" data-abap.bind="{type:'CHAR', mid:'CV3', length:'2'}" label="Document version"></ui-dg-column>
+   <ui-dg-column sortable field="LANGU" data-abap.bind="{type:'LANG', alpha:'ISOLA', length:'1'}" label="Language"></ui-dg-column>
+</ui-datagrid>

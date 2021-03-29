@@ -1,0 +1,13 @@
+<!-- SH H_TC30 Work Center Category : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.VERWE" data-abap.bind="{type:'CHAR', mid:'CRA', length:'4'}"
+          label="Work Center Category"></ui-input>
+<ui-input bind="searchParamLow.KTEXT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Description of the work center category"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="VERWE" data-abap.bind="{type:'CHAR', mid:'CRA', length:'4'}" label="Work Center Category"></ui-dg-column>
+   <ui-dg-column sortable field="KTEXT" data-abap.bind="{type:'CHAR', length:'20'}" label="Description of the work center category"></ui-dg-column>
+</ui-datagrid>

@@ -1,0 +1,49 @@
+<!-- SH CV_TREX_ADVANCED Advanced Search for Document Using Search Engine : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.S/RP/SEARCH_TERM" data-abap.bind="{type:'CHAR', length:'45'}"
+          label="Input Field for Full Text Search"></ui-input>
+<ui-input bind="searchParamLow.S/RP/MODE_FUZZY" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Option Fuzzy Mode"></ui-input>
+<ui-input bind="searchParamLow.BUSINESS_OBJECT" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Business Object for Search Engine Service (SES)"></ui-input>
+<ui-input bind="searchParamLow.OBJECT_TYPE" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Type of Business Object"></ui-input>
+<ui-input bind="searchParamLow.EXTERNAL_KEY" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="Document Number"></ui-input>
+<ui-input bind="searchParamLow.DOCUMENT_TYPE" data-abap.bind="{type:'CHAR', mid:'CV2', length:'3'}"
+          label="Document Type"></ui-input>
+<ui-input bind="searchParamLow.DOCUMENT_PART" data-abap.bind="{type:'CHAR', mid:'CV4', length:'3'}"
+          label="Document part"></ui-input>
+<ui-input bind="searchParamLow.DOCUMENT_VERSION" data-abap.bind="{type:'CHAR', mid:'CV3', length:'2'}"
+          label="Document version"></ui-input>
+<ui-input bind="searchParamLow.DOCUMENT_STATUS" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Document Status"></ui-input>
+<ui-input bind="searchParamLow.DESCRIPTION" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Document description"></ui-input>
+<ui-input bind="searchParamLow.USERNAME" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Name of person responsible"></ui-input>
+<ui-input bind="searchParamLow.LAB_DESIGN" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Laboratory/design office"></ui-input>
+<ui-input bind="searchParamLow.ECNUMBER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Change Number"></ui-input>
+<ui-input bind="searchParamLow.OBJECTKEY" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Document management object key"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="S/RP/SEARCH_TERM" data-abap.bind="{type:'CHAR', length:'45'}" label="Input Field for Full Text Search"></ui-dg-column>
+   <ui-dg-column sortable field="S/RP/MODE_FUZZY" data-abap.bind="{type:'CHAR', length:'1'}" label="Option Fuzzy Mode"></ui-dg-column>
+   <ui-dg-column sortable field="BUSINESS_OBJECT" data-abap.bind="{type:'CHAR', length:'10'}" label="Business Object for Search Engine Service (SES)"></ui-dg-column>
+   <ui-dg-column sortable field="OBJECT_TYPE" data-abap.bind="{type:'CHAR', length:'10'}" label="Type of Business Object"></ui-dg-column>
+   <ui-dg-column sortable field="EXTERNAL_KEY" data-abap.bind="{type:'CHAR', length:'25'}" label="Document Number"></ui-dg-column>
+   <ui-dg-column sortable field="DOCUMENT_TYPE" data-abap.bind="{type:'CHAR', mid:'CV2', length:'3'}" label="Document Type"></ui-dg-column>
+   <ui-dg-column sortable field="DOCUMENT_PART" data-abap.bind="{type:'CHAR', mid:'CV4', length:'3'}" label="Document part"></ui-dg-column>
+   <ui-dg-column sortable field="DOCUMENT_VERSION" data-abap.bind="{type:'CHAR', mid:'CV3', length:'2'}" label="Document version"></ui-dg-column>
+   <ui-dg-column sortable field="DOCUMENT_STATUS" data-abap.bind="{type:'CHAR', length:'2'}" label="Document Status"></ui-dg-column>
+   <ui-dg-column sortable field="DESCRIPTION" data-abap.bind="{type:'CHAR', length:'40'}" label="Document description"></ui-dg-column>
+   <ui-dg-column sortable field="USERNAME" data-abap.bind="{type:'CHAR', length:'12'}" label="Name of person responsible"></ui-dg-column>
+   <ui-dg-column sortable field="LAB_DESIGN" data-abap.bind="{type:'CHAR', length:'3'}" label="Laboratory/design office"></ui-dg-column>
+   <ui-dg-column sortable field="ECNUMBER" data-abap.bind="{type:'CHAR', length:'12'}" label="Change Number"></ui-dg-column>
+   <ui-dg-column sortable field="OBJECTKEY" data-abap.bind="{type:'CHAR', length:'50'}" label="Document management object key"></ui-dg-column>
+</ui-datagrid>

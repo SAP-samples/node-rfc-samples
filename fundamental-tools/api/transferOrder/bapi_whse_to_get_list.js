@@ -1,7 +1,7 @@
 //
-// BAPI_WHSE_TO_GET_LIST var: 6  struct: 1  table: 3  exception: 0
+// BAPI_WHSE_TO_GET_LIST exception: 0  struct: 1  table: 3  var: 6
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore
@@ -15,7 +15,7 @@ WAREHOUSENUMBER    :           "", // CHAR (3) Warehouse number / warehouse comp
 // MATERIAL_LONG   :           "", // CHAR (40) Material Number (40 Characters, Compatibility Mode)
 // MAXROWS         :            0, // INT4 (10) Maximum Number of Lines of Hits
 // SRCSTORAGETYPE  :           "", // CHAR (3) Source storage type
-// MATERIAL_EVG    :           {}, // BAPIMGVMATNR no text (en)
+// MATERIAL_EVG    :           {}, // BAPIMGVMATNR no text (undefined)
 
 // TABLE PARAMETERS
 

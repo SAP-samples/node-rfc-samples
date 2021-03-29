@@ -1,0 +1,86 @@
+<!--
+BAPI_ALM_NOTIF_LIST_FUNCLOC exception: 0  struct: 1  table: 1  var: 11
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-checkbox value.bind="COMPLETE" label="Completed Notifications"></ui-checkbox>
+
+<ui-input bind="EXTERNAL_NUMBER" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Functional location label"></ui-input>
+
+<ui-combo bind="FUNCLOC" shlp.bind="{type: 'SH', id: 'IFLM'}" data-abap.bind="{type:'CHAR', alpha:'TPLNR', mid:'IFL', length:'30'}"
+          label="Equipment Number"></ui-combo>
+
+<ui-checkbox value.bind="IN_PROCESS" label="in process (notification or order)"></ui-checkbox>
+
+<ui-combo bind="LABEL_SYST" shlp.bind="{type: 'FV', id: 'ILOM_ALKEY'}" data-abap.bind="{type:'CHAR', mid:'ILOM_ALKEY', length:'1'}"
+          label="Labeling system for functional locations"></ui-combo>
+
+<ui-date date.bind="NOTIFICATION_DATE"  label="Notification Date"></ui-date>
+
+<ui-checkbox value.bind="OUTSTANDING" label="Outstanding (notification or order)"></ui-checkbox>
+
+<ui-input bind="PARTNER" data-abap.bind="{type:'NUMC', mid:'VPA', length:'10'}"
+          label="Partner"></ui-input>
+
+<ui-input bind="PARTNER_USER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'12'}"
+          label="Partner"></ui-input>
+
+<ui-combo bind="PARTNERFUNCTION" shlp.bind="{type: 'SH', id: 'H_TPAR'}" data-abap.bind="{type:'CHAR', alpha:'PARVW', mid:'PAR', length:'2'}"
+          label="Partner Function"></ui-combo>
+
+<ui-checkbox value.bind="POSTPONED" label="postponed (notification)"></ui-checkbox>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: NOTIFICATION structure: BAPI2080_1  Table of service notifications -->
+
+<ui-datagrid data.bind="NOTIFICATION" title="Table of service notifications"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="NOTIFDATE" data-abap.bind="{type:'DATS'}" label="Date of Notification"></ui-dg-column>
+</ui-datagrid>
+
+<ui-date date.bind="NOTIFICATION.NOTIFDATE"  label="Date of Notification"></ui-date>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRETURN  Return Parameters -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-input bind="RETURN.CODE" data-abap.bind="{type:'CHAR', length:'5'}"
+          label="Message code"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>

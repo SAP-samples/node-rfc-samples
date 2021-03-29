@@ -1,7 +1,7 @@
 //
-// /COE/RBP_PAM_SERVICE_ORD_GETL var: 1  struct: 2  table: 6  exception: 0
+// /COE/RBP_PAM_SERVICE_ORD_GETL exception: 0  struct: 2  table: 6  var: 1
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore
@@ -9,21 +9,21 @@ const parameters = {
 
 // IMPORT PARAMETERS
 
-// IV_TOTALS             :           "", // CHAR (1) no text (en)
-// IS_DISPLAY_PARAMETERS :           {}, // BAPI_ALM_LIST_NAVIGATION_IN no text (en)
-// IT_SORTORDER          :           [], // ABAP_SORTORDER_TAB no text (en)
+// IV_TOTALS             :           "", // CHAR (1) no text (undefined)
+// IS_DISPLAY_PARAMETERS :           {}, // BAPI_ALM_LIST_NAVIGATION_IN no text (undefined)
+// IT_SORTORDER          :           [], // ABAP_SORTORDER_TAB no text (undefined)
 
 // TABLE PARAMETERS
 
-// ET_RESULT             :           [], // BAPI_ALM_ORDER_LISTHEAD_RESULT no text (en)
-// ET_RETURN             :           [], // BAPIRET2 no text (en)
-// ET_TEMPLATE           :           [], // BAPI_ALM_ORDER_LISTHEAD_RANGES no text (en)
-// ET_TOTALS             :           [], // /COE/RBP_S_PAM_ORDER_LIST_TTLS no text (en)
-// IT_RANGES             :           [], // BAPI_ALM_ORDER_LISTHEAD_RANGES no text (en)
+// ET_RESULT             :           [], // BAPI_ALM_ORDER_LISTHEAD_RESULT no text (undefined)
+// ET_RETURN             :           [], // BAPIRET2 no text (undefined)
+// ET_TEMPLATE           :           [], // BAPI_ALM_ORDER_LISTHEAD_RANGES no text (undefined)
+// ET_TOTALS             :           [], // /COE/RBP_S_PAM_ORDER_LIST_TTLS no text (undefined)
+// IT_RANGES             :           [], // BAPI_ALM_ORDER_LISTHEAD_RANGES no text (undefined)
 
 // EXPORT PARAMETERS
 
-// ES_NAVIGATION_DATA    :           {}, // BAPI_ALM_LIST_NAVIGATION_RET no text (en)
+// ES_NAVIGATION_DATA    :           {}, // BAPI_ALM_LIST_NAVIGATION_RET no text (undefined)
 };
 
 const result = await client.call("/COE/RBP_PAM_SERVICE_ORD_GETL", parameters);

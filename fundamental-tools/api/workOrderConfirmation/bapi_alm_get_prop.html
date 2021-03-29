@@ -1,0 +1,375 @@
+<!--
+BAPI_ALM_GET_PROP exception: 0  struct: 2  table: 2  var: 0
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<!-- Parameter: PROPOSAL structure: BAPI_ALM_CONF_PROP  Indicators - Suggest Confirmation Data in PM/CS -->
+
+<ui-checkbox value.bind="PROPOSAL.ACTIVITY" label="Propose activities"></ui-checkbox>
+
+<ui-checkbox value.bind="PROPOSAL.DATE_AND_TIME" label="Propose dates"></ui-checkbox>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: TIMETICKETS structure: BAPI_ALM_TIMECONFIRMATION  BAPI Structure for Confirmation in PM/CS -->
+
+<ui-datagrid data.bind="TIMETICKETS" title="BAPI Structure for Confirmation in PM/CS"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CONF_NO" data-abap.bind="{type:'NUMC', mid:'RCK', length:'10'}" label="Completion confirmation number for the operation"></ui-dg-column>
+   <ui-dg-column sortable field="ORDERID" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" shlp.bind="{type: 'CH', id: 'AUFK'}" label="Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="OPERATION" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="SUB_OPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}" label="Suboperation"></ui-dg-column>
+   <ui-dg-column sortable field="CAPA_CATEGORY" data-abap.bind="{type:'CHAR', mid:'CAA', length:'3'}" shlp.bind="{type: 'SH', id: 'CSH_TC26'}" label="Capacity category"></ui-dg-column>
+   <ui-dg-column sortable field="SPLIT" data-abap.bind="{type:'INT1', length:'3'}" label="Split number"></ui-dg-column>
+   <ui-dg-column sortable field="FIN_CONF" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'AUERU_VS'}" label="Partial/Final Confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="COMPLETE" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: No Remaining Work Expected"></ui-dg-column>
+   <ui-dg-column sortable field="CLEAR_RES" data-abap.bind="{type:'CHAR', length:'1'}" label="Clear Open Reservations"></ui-dg-column>
+   <ui-dg-column sortable field="POSTG_DATE" data-abap.bind="{type:'DATS'}" label="Posting Date"></ui-dg-column>
+   <ui-dg-column sortable field="DEV_REASON" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'TRUG'}" label="Reason for Variance"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_TEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Confirmation text"></ui-dg-column>
+   <ui-dg-column sortable field="PLANT" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" shlp.bind="{type: 'SH', id: 'H_T001W'}" label="Plant"></ui-dg-column>
+   <ui-dg-column sortable field="WORK_CNTR" data-abap.bind="{type:'CHAR', mid:'AGR', length:'8'}" label="Work center"></ui-dg-column>
+   <ui-dg-column sortable field="ACT_WORK" data-abap.bind="{type:'QUAN', unit:'UN_WORK', length:'6.1'}" label="Actual work"></ui-dg-column>
+   <ui-dg-column sortable field="UN_WORK" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T006'}" label="Unit for work"></ui-dg-column>
+   <ui-dg-column sortable field="UN_WORK_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="REM_WORK" data-abap.bind="{type:'QUAN', unit:'UN_REM_WRK', length:'6.1'}" label="Remaining work"></ui-dg-column>
+   <ui-dg-column sortable field="UN_REM_WRK" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T006'}" label="Unit of measure for remaining work"></ui-dg-column>
+   <ui-dg-column sortable field="UN_REM_WRK_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="ACTUAL_DUR" data-abap.bind="{type:'QUAN', unit:'UN_ACT_DUR', length:'4.1'}" label="Actual Duration for Confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="UN_ACT_DUR" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T006'}" label="Unit for actual duration"></ui-dg-column>
+   <ui-dg-column sortable field="UN_ACT_DUR_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="EXEC_START_DATE" data-abap.bind="{type:'DATS'}" label="Confirmed Start Date of Execution"></ui-dg-column>
+   <ui-dg-column sortable field="EXEC_START_TIME" data-abap.bind="{type:'TIMS'}" label="Confirmed Time for 'Start Execution'"></ui-dg-column>
+   <ui-dg-column sortable field="EXEC_FIN_DATE" data-abap.bind="{type:'DATS', mid:'EDR'}" label="Confirmed Finish Date of Execution"></ui-dg-column>
+   <ui-dg-column sortable field="EXEC_FIN_TIME" data-abap.bind="{type:'TIMS', mid:'EZR'}" label="Confirmed Time for 'Finish Execution'"></ui-dg-column>
+   <ui-dg-column sortable field="FCST_FIN_DATE" data-abap.bind="{type:'DATS'}" label="Forecast finish date of operation from confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="FCST_FIN_TIME" data-abap.bind="{type:'TIMS'}" label="Forecast End Time of Operation from Confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="PERS_NO" data-abap.bind="{type:'NUMC', mid:'PER', length:'8'}" label="Personnel number"></ui-dg-column>
+   <ui-dg-column sortable field="TIMEID_NO" data-abap.bind="{type:'NUMC', length:'8'}" label="Time Recording ID Number"></ui-dg-column>
+   <ui-dg-column sortable field="ACT_TYPE" data-abap.bind="{type:'CHAR', length:'6'}" shlp.bind="{type: 'CT', id: 'CSLA'}" label="Activity Type for Confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="WAGETYPE" data-abap.bind="{type:'CHAR', length:'4'}" label="Wage type"></ui-dg-column>
+   <ui-dg-column sortable field="CALC_MOTIVE" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'TBMOT'}" label="Accounting Indicator"></ui-dg-column>
+   <ui-dg-column sortable field="EX_CREATED_BY" data-abap.bind="{type:'CHAR', length:'12'}" label="External creator of confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="EX_CREATED_DATE" data-abap.bind="{type:'DATS'}" label="External date of entry for confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="EX_CREATED_TIME" data-abap.bind="{type:'TIMS'}" label="External time of entry for confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="EX_IDENT" data-abap.bind="{type:'CHAR', length:'32'}" label="External key of a confirmation (for example from PDC system)"></ui-dg-column>
+   <ui-dg-column sortable field="ACT_WORK_2" data-abap.bind="{type:'QUAN', unit:'UN_WORK', length:'6.2'}" label="Actual Work"></ui-dg-column>
+   <ui-dg-column sortable field="REM_WORK_2" data-abap.bind="{type:'QUAN', unit:'UN_REM_WRK', length:'6.2'}" label="Remaining Work"></ui-dg-column>
+   <ui-dg-column sortable field="START_POINT" data-abap.bind="{type:'CHAR', length:'18'}" shlp.bind="{type: 'SH', id: 'EAML_SH_LINEAR_POINT'}" label="Start Point"></ui-dg-column>
+   <ui-dg-column sortable field="END_POINT" data-abap.bind="{type:'CHAR', length:'18'}" shlp.bind="{type: 'SH', id: 'EAML_SH_LINEAR_POINT'}" label="End Point"></ui-dg-column>
+   <ui-dg-column sortable field="LINEAR_LENGTH" data-abap.bind="{type:'CHAR', length:'18'}" label="Length"></ui-dg-column>
+   <ui-dg-column sortable field="LINEAR_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'SH', id: 'EAML_H_T006'}" label="Unit of Measurement for Linear Data"></ui-dg-column>
+   <ui-dg-column sortable field="LINEAR_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="Unit of Measurement for Linear Data in ISO Code"></ui-dg-column>
+   <ui-dg-column sortable field="FIRST_OFFSET_TYPE_CODE" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'EAML_D_OFFSET_TC'}" label="Type of First Offset"></ui-dg-column>
+   <ui-dg-column sortable field="FIRST_OFFSET_VALUE" data-abap.bind="{type:'CHAR', length:'18'}" label="Value of Offset 1"></ui-dg-column>
+   <ui-dg-column sortable field="FIRST_OFFSET_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'SH', id: 'EAML_H_T006_OFFSET'}" label="Unit of Measurement for Offset 1"></ui-dg-column>
+   <ui-dg-column sortable field="FIRST_OFFSET_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="Unit of Measurement for Offset 1 in ISO Code"></ui-dg-column>
+   <ui-dg-column sortable field="SECOND_OFFSET_TYPE_CODE" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'EAML_D_OFFSET_TC'}" label="Type of Second Offset"></ui-dg-column>
+   <ui-dg-column sortable field="SECOND_OFFSET_VALUE" data-abap.bind="{type:'CHAR', length:'18'}" label="Value of Offset 2"></ui-dg-column>
+   <ui-dg-column sortable field="SECOND_OFFSET_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'SH', id: 'EAML_H_T006_OFFSET'}" label="Unit of Measurement for Offset 2"></ui-dg-column>
+   <ui-dg-column sortable field="SECOND_OFFSET_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="Unit of Measurement for Offset 2 in ISO Code"></ui-dg-column>
+   <ui-dg-column sortable field="MARKER_START_POINT" data-abap.bind="{type:'CHAR', length:'18'}" shlp.bind="{type: 'SH', id: 'EAML_SH_MARKER'}" label="Marker for Start Point"></ui-dg-column>
+   <ui-dg-column sortable field="MARKER_DISTANCE_START_POINT" data-abap.bind="{type:'CHAR', length:'18'}" label="Distance between Marker and Start Point"></ui-dg-column>
+   <ui-dg-column sortable field="MARKER_END_POINT" data-abap.bind="{type:'CHAR', length:'18'}" shlp.bind="{type: 'SH', id: 'EAML_SH_MARKER'}" label="Marker for End Point"></ui-dg-column>
+   <ui-dg-column sortable field="MARKER_DISTANCE_END_POINT" data-abap.bind="{type:'CHAR', length:'18'}" label="Length Spec for Distance between Marker and End Point"></ui-dg-column>
+   <ui-dg-column sortable field="MARKER_DISTANCE_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T006'}" label="Unit for the Distance from Marker"></ui-dg-column>
+   <ui-dg-column sortable field="MARKER_DISTANCE_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="Unit for the Distance from Marker in ISO Code"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="TIMETICKETS.CONF_NO" data-abap.bind="{type:'NUMC', mid:'RCK', length:'10'}"
+          label="Completion confirmation number for the operation"></ui-input>
+
+<ui-combo bind="TIMETICKETS.ORDERID" shlp.bind="{type: 'CH', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<ui-input bind="TIMETICKETS.OPERATION" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Activity Number"></ui-input>
+
+<ui-input bind="TIMETICKETS.SUB_OPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Suboperation"></ui-input>
+
+<ui-combo bind="TIMETICKETS.CAPA_CATEGORY" shlp.bind="{type: 'SH', id: 'CSH_TC26'}" data-abap.bind="{type:'CHAR', mid:'CAA', length:'3'}"
+          label="Capacity category"></ui-combo>
+
+<ui-input bind="TIMETICKETS.SPLIT" data-abap.bind="{type:'INT1', length:'3'}"
+          label="Split number"></ui-input>
+
+<ui-combo bind="TIMETICKETS.FIN_CONF" shlp.bind="{type: 'FV', id: 'AUERU_VS'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Partial/Final Confirmation"></ui-combo>
+
+<ui-checkbox value.bind="TIMETICKETS.COMPLETE" label="Indicator: No Remaining Work Expected"></ui-checkbox>
+
+<ui-checkbox value.bind="TIMETICKETS.CLEAR_RES" label="Clear Open Reservations"></ui-checkbox>
+
+<ui-date date.bind="TIMETICKETS.POSTG_DATE"  label="Posting Date"></ui-date>
+
+<ui-combo bind="TIMETICKETS.DEV_REASON" shlp.bind="{type: 'CT', id: 'TRUG'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Reason for Variance"></ui-combo>
+
+<ui-input bind="TIMETICKETS.CONF_TEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Confirmation text"></ui-input>
+
+<ui-combo bind="TIMETICKETS.PLANT" shlp.bind="{type: 'SH', id: 'H_T001W'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+
+<ui-input bind="TIMETICKETS.WORK_CNTR" data-abap.bind="{type:'CHAR', mid:'AGR', length:'8'}"
+          label="Work center"></ui-input>
+
+<ui-input bind="TIMETICKETS.ACT_WORK" data-abap.bind="{type:'QUAN', unit:'UN_WORK', length:'6.1'}"
+          label="Actual work"></ui-input>
+
+<ui-combo bind="TIMETICKETS.UN_WORK" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit for work"></ui-combo>
+
+<ui-combo bind="TIMETICKETS.UN_WORK_ISO" shlp.bind="{type: 'SH', id: 'H_T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="TIMETICKETS.REM_WORK" data-abap.bind="{type:'QUAN', unit:'UN_REM_WRK', length:'6.1'}"
+          label="Remaining work"></ui-input>
+
+<ui-combo bind="TIMETICKETS.UN_REM_WRK" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit of measure for remaining work"></ui-combo>
+
+<ui-combo bind="TIMETICKETS.UN_REM_WRK_ISO" shlp.bind="{type: 'SH', id: 'H_T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="TIMETICKETS.ACTUAL_DUR" data-abap.bind="{type:'QUAN', unit:'UN_ACT_DUR', length:'4.1'}"
+          label="Actual Duration for Confirmation"></ui-input>
+
+<ui-combo bind="TIMETICKETS.UN_ACT_DUR" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit for actual duration"></ui-combo>
+
+<ui-combo bind="TIMETICKETS.UN_ACT_DUR_ISO" shlp.bind="{type: 'SH', id: 'H_T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-date date.bind="TIMETICKETS.EXEC_START_DATE"  label="Confirmed Start Date of Execution"></ui-date>
+
+<ui-time time.bind="TIMETICKETS.EXEC_START_TIME"  label="Confirmed Time for 'Start Execution'"></ui-time>
+
+<ui-date date.bind="TIMETICKETS.EXEC_FIN_DATE"  label="Confirmed Finish Date of Execution"></ui-date>
+
+<ui-time time.bind="TIMETICKETS.EXEC_FIN_TIME"  label="Confirmed Time for 'Finish Execution'"></ui-time>
+
+<ui-date date.bind="TIMETICKETS.FCST_FIN_DATE"  label="Forecast finish date of operation from confirmation"></ui-date>
+
+<ui-time time.bind="TIMETICKETS.FCST_FIN_TIME"  label="Forecast End Time of Operation from Confirmation"></ui-time>
+
+<ui-input bind="TIMETICKETS.PERS_NO" data-abap.bind="{type:'NUMC', mid:'PER', length:'8'}"
+          label="Personnel number"></ui-input>
+
+<ui-input bind="TIMETICKETS.TIMEID_NO" data-abap.bind="{type:'NUMC', length:'8'}"
+          label="Time Recording ID Number"></ui-input>
+
+<ui-combo bind="TIMETICKETS.ACT_TYPE" shlp.bind="{type: 'CT', id: 'CSLA'}" data-abap.bind="{type:'CHAR', length:'6'}"
+          label="Activity Type for Confirmation"></ui-combo>
+
+<ui-input bind="TIMETICKETS.WAGETYPE" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Wage type"></ui-input>
+
+<ui-combo bind="TIMETICKETS.CALC_MOTIVE" shlp.bind="{type: 'CT', id: 'TBMOT'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Accounting Indicator"></ui-combo>
+
+<ui-input bind="TIMETICKETS.EX_CREATED_BY" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="External creator of confirmation"></ui-input>
+
+<ui-date date.bind="TIMETICKETS.EX_CREATED_DATE"  label="External date of entry for confirmation"></ui-date>
+
+<ui-time time.bind="TIMETICKETS.EX_CREATED_TIME"  label="External time of entry for confirmation"></ui-time>
+
+<ui-input bind="TIMETICKETS.EX_IDENT" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External key of a confirmation (for example from PDC system)"></ui-input>
+
+<ui-input bind="TIMETICKETS.ACT_WORK_2" data-abap.bind="{type:'QUAN', unit:'UN_WORK', length:'6.2'}"
+          label="Actual Work"></ui-input>
+
+<ui-input bind="TIMETICKETS.REM_WORK_2" data-abap.bind="{type:'QUAN', unit:'UN_REM_WRK', length:'6.2'}"
+          label="Remaining Work"></ui-input>
+
+<ui-combo bind="TIMETICKETS.START_POINT" shlp.bind="{type: 'SH', id: 'EAML_SH_LINEAR_POINT'}" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="Start Point"></ui-combo>
+
+<ui-combo bind="TIMETICKETS.END_POINT" shlp.bind="{type: 'SH', id: 'EAML_SH_LINEAR_POINT'}" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="End Point"></ui-combo>
+
+<ui-input bind="TIMETICKETS.LINEAR_LENGTH" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="Length"></ui-input>
+
+<ui-combo bind="TIMETICKETS.LINEAR_UNIT" shlp.bind="{type: 'SH', id: 'EAML_H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit of Measurement for Linear Data"></ui-combo>
+
+<ui-combo bind="TIMETICKETS.LINEAR_UNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Unit of Measurement for Linear Data in ISO Code"></ui-combo>
+
+<ui-combo bind="TIMETICKETS.FIRST_OFFSET_TYPE_CODE" shlp.bind="{type: 'CT', id: 'EAML_D_OFFSET_TC'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Type of First Offset"></ui-combo>
+
+<ui-input bind="TIMETICKETS.FIRST_OFFSET_VALUE" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="Value of Offset 1"></ui-input>
+
+<ui-combo bind="TIMETICKETS.FIRST_OFFSET_UNIT" shlp.bind="{type: 'SH', id: 'EAML_H_T006_OFFSET'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit of Measurement for Offset 1"></ui-combo>
+
+<ui-combo bind="TIMETICKETS.FIRST_OFFSET_UNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Unit of Measurement for Offset 1 in ISO Code"></ui-combo>
+
+<ui-combo bind="TIMETICKETS.SECOND_OFFSET_TYPE_CODE" shlp.bind="{type: 'CT', id: 'EAML_D_OFFSET_TC'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Type of Second Offset"></ui-combo>
+
+<ui-input bind="TIMETICKETS.SECOND_OFFSET_VALUE" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="Value of Offset 2"></ui-input>
+
+<ui-combo bind="TIMETICKETS.SECOND_OFFSET_UNIT" shlp.bind="{type: 'SH', id: 'EAML_H_T006_OFFSET'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit of Measurement for Offset 2"></ui-combo>
+
+<ui-combo bind="TIMETICKETS.SECOND_OFFSET_UNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Unit of Measurement for Offset 2 in ISO Code"></ui-combo>
+
+<ui-combo bind="TIMETICKETS.MARKER_START_POINT" shlp.bind="{type: 'SH', id: 'EAML_SH_MARKER'}" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="Marker for Start Point"></ui-combo>
+
+<ui-input bind="TIMETICKETS.MARKER_DISTANCE_START_POINT" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="Distance between Marker and Start Point"></ui-input>
+
+<ui-combo bind="TIMETICKETS.MARKER_END_POINT" shlp.bind="{type: 'SH', id: 'EAML_SH_MARKER'}" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="Marker for End Point"></ui-combo>
+
+<ui-input bind="TIMETICKETS.MARKER_DISTANCE_END_POINT" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="Length Spec for Distance between Marker and End Point"></ui-input>
+
+<ui-combo bind="TIMETICKETS.MARKER_DISTANCE_UNIT" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit for the Distance from Marker"></ui-combo>
+
+<ui-combo bind="TIMETICKETS.MARKER_DISTANCE_UNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Unit for the Distance from Marker in ISO Code"></ui-combo>
+
+<!-- Parameter: DETAIL_RETURN structure: BAPI_ALM_RETURN  Return Information for APIs -->
+
+<ui-datagrid data.bind="DETAIL_RETURN" title="Return Information for APIs"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_ID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'T100A'}" label="Message Class"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Message Number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}" label="Message Text"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_NUMBER" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'BALHDR'}" label="Application log: log number"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_MSG_NO" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CT', id: 'BALM'}" label="Application log: Internal message serial number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}" label="Parameter Name"></ui-dg-column>
+   <ui-dg-column sortable field="ROW" data-abap.bind="{type:'INT4', length:'+10'}" label="Lines in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="FIELD" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD03L'}" label="Field in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="SYSTEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'TBDLS'}" label="Logical system from which message originates"></ui-dg-column>
+   <ui-dg-column sortable field="FLG_LOCKED" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Entry blocked"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_NO" data-abap.bind="{type:'NUMC', mid:'RCK', length:'10'}" label="Completion confirmation number for the operation"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_CNT" data-abap.bind="{type:'NUMC', mid:'RZL', length:'8'}" label="Confirmation counter"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="DETAIL_RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="DETAIL_RETURN.MESSAGE_ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="DETAIL_RETURN.MESSAGE_NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="DETAIL_RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="DETAIL_RETURN.LOG_NUMBER" shlp.bind="{type: 'CT', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="DETAIL_RETURN.LOG_MSG_NO" shlp.bind="{type: 'CT', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="DETAIL_RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="DETAIL_RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="DETAIL_RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="DETAIL_RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="DETAIL_RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="DETAIL_RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="DETAIL_RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="DETAIL_RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>
+
+<ui-checkbox value.bind="DETAIL_RETURN.FLG_LOCKED" label="Indicator: Entry blocked"></ui-checkbox>
+
+<ui-input bind="DETAIL_RETURN.CONF_NO" data-abap.bind="{type:'NUMC', mid:'RCK', length:'10'}"
+          label="Completion confirmation number for the operation"></ui-input>
+
+<ui-input bind="DETAIL_RETURN.CONF_CNT" data-abap.bind="{type:'NUMC', mid:'RZL', length:'8'}"
+          label="Confirmation counter"></ui-input>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Parameter -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>

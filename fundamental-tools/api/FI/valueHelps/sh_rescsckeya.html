@@ -1,0 +1,20 @@
+<!-- SH RESCSCKEYA Service Charge Key : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.SNKSL" shlp.bind="{type: 'SH', id: 'RESCSCKEY'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'RESCSCKEY', length:'4'}"
+          label="Service Charge Key"></ui-combo>
+<ui-combo bind="searchParamLow.SPRAS" shlp.bind="{type: 'SH', id: 'H_T002'}" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+          label="Language Key"></ui-combo>
+<ui-combo bind="searchParamLow.DIRECTCOSTID" shlp.bind="{type: 'FV', id: 'RERADIRECTCOSTID'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Indicator for Directly Posted Costs"></ui-combo>
+<ui-input bind="searchParamLow.XSCKEY" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Name of Service Charge Key"></ui-input>
+<ui-checkbox value.bind="searchParamLow.CUEXCLUDEASSIGN" label="No New Creation or Assignment"></ui-checkbox>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SNKSL" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'RESCSCKEY', length:'4'}" label="Service Charge Key"></ui-dg-column>
+   <ui-dg-column sortable field="XSCKEY" data-abap.bind="{type:'CHAR', length:'30'}" label="Name of Service Charge Key"></ui-dg-column>
+   <ui-dg-column sortable field="DIRECTCOSTID" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator for Directly Posted Costs"></ui-dg-column>
+   <ui-dg-column sortable field="CUEXCLUDEASSIGN" data-abap.bind="{type:'CHAR', length:'1'}" label="No New Creation or Assignment"></ui-dg-column>
+</ui-datagrid>

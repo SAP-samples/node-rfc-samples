@@ -1,0 +1,28 @@
+<!-- SH TOWNSHIPA Township code for Township : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.LANGU" data-abap.bind="{type:'LANG', alpha:'ISOLA', length:'1'}"
+          label="Language Key"></ui-input>
+<ui-input bind="searchParamLow.COUNTRY" data-abap.bind="{type:'CHAR', mid:'LND', length:'3'}"
+          label="Country Key"></ui-input>
+<ui-input bind="searchParamLow.REGION" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Region (State, Province, County)"></ui-input>
+<ui-input bind="searchParamLow.COUNTY_CODE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'8'}"
+          label="County code for county"></ui-input>
+<ui-input bind="searchParamLow.TOWNSHIP_CODE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'8'}"
+          label="Township code for Township"></ui-input>
+<ui-input bind="searchParamLow.MC_TOWNSHIP" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="Township name in upper case for search help"></ui-input>
+<ui-input bind="searchParamLow.MC_COUNTY" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="County name in upper case for search help"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="COUNTRY" data-abap.bind="{type:'CHAR', mid:'LND', length:'3'}" label="Country Key"></ui-dg-column>
+   <ui-dg-column sortable field="REGION" data-abap.bind="{type:'CHAR', length:'3'}" label="Region (State, Province, County)"></ui-dg-column>
+   <ui-dg-column sortable field="COUNTY_CODE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'8'}" label="County code for county"></ui-dg-column>
+   <ui-dg-column sortable field="TOWNSHIP_CODE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'8'}" label="Township code for Township"></ui-dg-column>
+   <ui-dg-column sortable field="MC_COUNTY" data-abap.bind="{type:'CHAR', length:'25'}" label="County name in upper case for search help"></ui-dg-column>
+   <ui-dg-column sortable field="MC_TOWNSHIP" data-abap.bind="{type:'CHAR', length:'25'}" label="Township name in upper case for search help"></ui-dg-column>
+   <ui-dg-column sortable field="LANGU" data-abap.bind="{type:'LANG', alpha:'ISOLA', length:'1'}" label="Language Key"></ui-dg-column>
+</ui-datagrid>

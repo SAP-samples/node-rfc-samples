@@ -1,0 +1,20 @@
+<!-- SH HU_IDENT_02 HU identification by creation : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.EXIDV" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'20'}"
+          label="External Handling Unit Identification"></ui-input>
+<ui-input bind="searchParamLow.ERNAM" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Name of Person who Created the Object"></ui-input>
+<ui-date date.bind="searchParamLow.ERDAT"  label="Date on Which Record Was Created"></ui-date>
+<ui-time time.bind="searchParamLow.ERUHR"  label="Entry time"></ui-time>
+<ui-input bind="searchParamLow.VHILM" data-abap.bind="{type:'CHAR', alpha:'MATN1', length:'18'}"
+          label="Packaging Materials"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="EXIDV" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'20'}" label="External Handling Unit Identification"></ui-dg-column>
+   <ui-dg-column sortable field="ERNAM" data-abap.bind="{type:'CHAR', length:'12'}" label="Name of Person who Created the Object"></ui-dg-column>
+   <ui-dg-column sortable field="ERDAT" data-abap.bind="{type:'DATS'}" label="Date on Which Record Was Created"></ui-dg-column>
+   <ui-dg-column sortable field="ERUHR" data-abap.bind="{type:'TIMS'}" label="Entry time"></ui-dg-column>
+   <ui-dg-column sortable field="VHILM" data-abap.bind="{type:'CHAR', alpha:'MATN1', length:'18'}" label="Packaging Materials"></ui-dg-column>
+</ui-datagrid>

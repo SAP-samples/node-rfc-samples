@@ -1,0 +1,498 @@
+<!--
+BAPI_INSPOPER_RECORDRESULTS exception: 0  struct: 2  table: 4  var: 3
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-combo bind="INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-input bind="INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Inspection Operation Number"></ui-input>
+
+<ui-combo bind="HANDHELD_APPLICATION" shlp.bind="{type: 'CT', id: 'TQ90'}" data-abap.bind="{type:'CHAR', length:'6'}"
+          label="QM Handheld: Application"></ui-combo>
+
+<!-- Parameter: INSPPOINTDATA structure: BAPI2045L4  Inspection Point Data -->
+
+<ui-combo bind="INSPPOINTDATA.INSPPOINT" shlp.bind="{type: 'CH', id: 'QAPP'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Inspection Point Number"></ui-combo>
+
+<ui-combo bind="INSPPOINTDATA.INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-input bind="INSPPOINTDATA.INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Inspection Lot Operation Number"></ui-input>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: CHAR_RESULTS structure: BAPI2045D2  Inspection Result - Characteristic Level -->
+
+<ui-datagrid data.bind="CHAR_RESULTS" title="Inspection Result - Characteristic Level"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="INSPLOT" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}" shlp.bind="{type: 'SH', id: 'QALS'}" label="Inspection Lot Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}" label="Inspection Lot Operation Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSPCHAR" data-abap.bind="{type:'NUMC', length:'4'}" label="Insp. Lot Charac. No."></ui-dg-column>
+   <ui-dg-column sortable field="CLOSED" data-abap.bind="{type:'CHAR', length:'1'}" label="Close Characteristic or Sample"></ui-dg-column>
+   <ui-dg-column sortable field="EVALUATED" data-abap.bind="{type:'CHAR', length:'1'}" label="Copy Valuation from External System"></ui-dg-column>
+   <ui-dg-column sortable field="CHAR_ATTR" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'QATTRIBUT'}" label="Attribute of the Results Record (Valid, Invalid,...)"></ui-dg-column>
+   <ui-dg-column sortable field="CHAR_INVAL" data-abap.bind="{type:'CHAR', length:'1'}" label="Invalid Result"></ui-dg-column>
+   <ui-dg-column sortable field="EVALUATION" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'QEEBEWERTG'}" label="Inspection Result Valuation"></ui-dg-column>
+   <ui-dg-column sortable field="ERR_CLASS" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'TQ17'}" label="Defect Class"></ui-dg-column>
+   <ui-dg-column sortable field="VALID_VALS" data-abap.bind="{type:'CHAR', length:'7'}" label="No. of Valid Values for Char. Results Upload to QM Subsys."></ui-dg-column>
+   <ui-dg-column sortable field="NONCONF" data-abap.bind="{type:'CHAR', length:'7'}" label="No. of Nonconforming Units for Char. Confirmation via QM-IDI"></ui-dg-column>
+   <ui-dg-column sortable field="DEFECTS" data-abap.bind="{type:'CHAR', length:'7'}" label="Number of Defects for Confirmation of Charac. via QM-IDI"></ui-dg-column>
+   <ui-dg-column sortable field="VALS_ABOVE" data-abap.bind="{type:'CHAR', length:'7'}" label="Number of Values Above the Tolerance Limit (Characteristic)"></ui-dg-column>
+   <ui-dg-column sortable field="VALS_BELOW" data-abap.bind="{type:'CHAR', length:'7'}" label="Number of Values Below the Tolerance Limit (Characteristic)"></ui-dg-column>
+   <ui-dg-column sortable field="MEAN_VALUE" data-abap.bind="{type:'CHAR', length:'22'}" label="Mean Value"></ui-dg-column>
+   <ui-dg-column sortable field="VARIANCE" data-abap.bind="{type:'CHAR', length:'22'}" label="Variance"></ui-dg-column>
+   <ui-dg-column sortable field="MAXIMUM" data-abap.bind="{type:'CHAR', length:'22'}" label="Maximum"></ui-dg-column>
+   <ui-dg-column sortable field="MINIMUM" data-abap.bind="{type:'CHAR', length:'22'}" label="Minimum"></ui-dg-column>
+   <ui-dg-column sortable field="START_DATE" data-abap.bind="{type:'DATS'}" label="Inspection Start Date (QM Subsystem Interface)"></ui-dg-column>
+   <ui-dg-column sortable field="START_TIME" data-abap.bind="{type:'TIMS'}" label="Inspection Start Time (QM Subsystem Interface)"></ui-dg-column>
+   <ui-dg-column sortable field="END_DATE" data-abap.bind="{type:'DATS'}" label="Inspection End Date (QM Subsystem Interface)"></ui-dg-column>
+   <ui-dg-column sortable field="END_TIME" data-abap.bind="{type:'TIMS'}" label="Inspection End Time (QM Subsystem Interface)"></ui-dg-column>
+   <ui-dg-column sortable field="INSPECTOR" data-abap.bind="{type:'CHAR', length:'20'}" label="Name of the Inspector"></ui-dg-column>
+   <ui-dg-column sortable field="RES_ORG" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'TQ73'}" label="Data Origin"></ui-dg-column>
+   <ui-dg-column sortable field="REMARK" data-abap.bind="{type:'CHAR', length:'40'}" label="Inspection Description for Single Value"></ui-dg-column>
+   <ui-dg-column sortable field="CODE1" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}" shlp.bind="{type: 'CT', id: 'QPCD'}" label="Code"></ui-dg-column>
+   <ui-dg-column sortable field="CODE_GRP1" data-abap.bind="{type:'CHAR', length:'8'}" label="Code Group"></ui-dg-column>
+   <ui-dg-column sortable field="CODE2" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}" shlp.bind="{type: 'CT', id: 'QPCD'}" label="Code"></ui-dg-column>
+   <ui-dg-column sortable field="CODE_GRP2" data-abap.bind="{type:'CHAR', length:'8'}" label="Code Group"></ui-dg-column>
+   <ui-dg-column sortable field="CODE3" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}" shlp.bind="{type: 'CT', id: 'QPCD'}" label="Code"></ui-dg-column>
+   <ui-dg-column sortable field="CODE_GRP3" data-abap.bind="{type:'CHAR', length:'8'}" label="Code Group"></ui-dg-column>
+   <ui-dg-column sortable field="CODE4" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}" shlp.bind="{type: 'CT', id: 'QPCD'}" label="Code"></ui-dg-column>
+   <ui-dg-column sortable field="CODE_GRP4" data-abap.bind="{type:'CHAR', length:'8'}" label="Code Group"></ui-dg-column>
+   <ui-dg-column sortable field="CODE5" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}" shlp.bind="{type: 'CT', id: 'QPCD'}" label="Code"></ui-dg-column>
+   <ui-dg-column sortable field="CODE_GRP5" data-abap.bind="{type:'CHAR', length:'8'}" label="Code Group"></ui-dg-column>
+   <ui-dg-column sortable field="ORIGINAL_INPUT" data-abap.bind="{type:'CHAR', length:'25'}" label="Original Value Before Input Processing"></ui-dg-column>
+   <ui-dg-column sortable field="INPPROC_READY" data-abap.bind="{type:'CHAR', length:'1'}" label="Input Processing Successfully Completed"></ui-dg-column>
+   <ui-dg-column sortable field="DIFF_DEC_PLACES" data-abap.bind="{type:'INT2', length:'5'}" label="Different Number of Decimal Places"></ui-dg-column>
+   <ui-dg-column sortable field="ADD_INFO1" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'18'}" label="General Information"></ui-dg-column>
+   <ui-dg-column sortable field="CONDITION_ACTIVE" data-abap.bind="{type:'CHAR', length:'1'}" label="Set Status of Conditional Characteristics to Active"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="CHAR_RESULTS.INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-input bind="CHAR_RESULTS.INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Inspection Lot Operation Number"></ui-input>
+
+<ui-input bind="CHAR_RESULTS.INSPCHAR" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Insp. Lot Charac. No."></ui-input>
+
+<ui-checkbox value.bind="CHAR_RESULTS.CLOSED" label="Close Characteristic or Sample"></ui-checkbox>
+
+<ui-checkbox value.bind="CHAR_RESULTS.EVALUATED" label="Copy Valuation from External System"></ui-checkbox>
+
+<ui-combo bind="CHAR_RESULTS.CHAR_ATTR" shlp.bind="{type: 'FV', id: 'QATTRIBUT'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Attribute of the Results Record (Valid, Invalid,...)"></ui-combo>
+
+<ui-input bind="CHAR_RESULTS.CHAR_INVAL" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Invalid Result"></ui-input>
+
+<ui-combo bind="CHAR_RESULTS.EVALUATION" shlp.bind="{type: 'FV', id: 'QEEBEWERTG'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Inspection Result Valuation"></ui-combo>
+
+<ui-combo bind="CHAR_RESULTS.ERR_CLASS" shlp.bind="{type: 'CT', id: 'TQ17'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Defect Class"></ui-combo>
+
+<ui-input bind="CHAR_RESULTS.VALID_VALS" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="No. of Valid Values for Char. Results Upload to QM Subsys."></ui-input>
+
+<ui-input bind="CHAR_RESULTS.NONCONF" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="No. of Nonconforming Units for Char. Confirmation via QM-IDI"></ui-input>
+
+<ui-input bind="CHAR_RESULTS.DEFECTS" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="Number of Defects for Confirmation of Charac. via QM-IDI"></ui-input>
+
+<ui-input bind="CHAR_RESULTS.VALS_ABOVE" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="Number of Values Above the Tolerance Limit (Characteristic)"></ui-input>
+
+<ui-input bind="CHAR_RESULTS.VALS_BELOW" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="Number of Values Below the Tolerance Limit (Characteristic)"></ui-input>
+
+<ui-input bind="CHAR_RESULTS.MEAN_VALUE" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Mean Value"></ui-input>
+
+<ui-input bind="CHAR_RESULTS.VARIANCE" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Variance"></ui-input>
+
+<ui-input bind="CHAR_RESULTS.MAXIMUM" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Maximum"></ui-input>
+
+<ui-input bind="CHAR_RESULTS.MINIMUM" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Minimum"></ui-input>
+
+<ui-date date.bind="CHAR_RESULTS.START_DATE"  label="Inspection Start Date (QM Subsystem Interface)"></ui-date>
+
+<ui-time time.bind="CHAR_RESULTS.START_TIME"  label="Inspection Start Time (QM Subsystem Interface)"></ui-time>
+
+<ui-date date.bind="CHAR_RESULTS.END_DATE"  label="Inspection End Date (QM Subsystem Interface)"></ui-date>
+
+<ui-time time.bind="CHAR_RESULTS.END_TIME"  label="Inspection End Time (QM Subsystem Interface)"></ui-time>
+
+<ui-input bind="CHAR_RESULTS.INSPECTOR" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Name of the Inspector"></ui-input>
+
+<ui-combo bind="CHAR_RESULTS.RES_ORG" shlp.bind="{type: 'CT', id: 'TQ73'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Data Origin"></ui-combo>
+
+<ui-input bind="CHAR_RESULTS.REMARK" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Inspection Description for Single Value"></ui-input>
+
+<ui-combo bind="CHAR_RESULTS.CODE1" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="CHAR_RESULTS.CODE_GRP1" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-combo bind="CHAR_RESULTS.CODE2" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="CHAR_RESULTS.CODE_GRP2" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-combo bind="CHAR_RESULTS.CODE3" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="CHAR_RESULTS.CODE_GRP3" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-combo bind="CHAR_RESULTS.CODE4" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="CHAR_RESULTS.CODE_GRP4" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-combo bind="CHAR_RESULTS.CODE5" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="CHAR_RESULTS.CODE_GRP5" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-input bind="CHAR_RESULTS.ORIGINAL_INPUT" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="Original Value Before Input Processing"></ui-input>
+
+<ui-checkbox value.bind="CHAR_RESULTS.INPPROC_READY" label="Input Processing Successfully Completed"></ui-checkbox>
+
+<ui-input bind="CHAR_RESULTS.DIFF_DEC_PLACES" data-abap.bind="{type:'INT2', length:'5'}"
+          label="Different Number of Decimal Places"></ui-input>
+
+<ui-input bind="CHAR_RESULTS.ADD_INFO1" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'18'}"
+          label="General Information"></ui-input>
+
+<ui-checkbox value.bind="CHAR_RESULTS.CONDITION_ACTIVE" label="Set Status of Conditional Characteristics to Active"></ui-checkbox>
+
+<!-- Parameter: RETURNTABLE structure: BAPIRET2  Error Messages -->
+
+<ui-datagrid data.bind="RETURNTABLE" title="Error Messages"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-dg-column>
+   <ui-dg-column sortable field="ID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'T100A'}" label="Message Class"></ui-dg-column>
+   <ui-dg-column sortable field="NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Message Number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}" label="Message Text"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_NO" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CH', id: 'BALHDR'}" label="Application log: log number"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_MSG_NO" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'BALM'}" label="Application log: Internal message serial number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}" label="Parameter Name"></ui-dg-column>
+   <ui-dg-column sortable field="ROW" data-abap.bind="{type:'INT4', length:'+10'}" label="Lines in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="FIELD" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD03L'}" label="Field in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="SYSTEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'TBDLS'}" label="Logical system from which message originates"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="RETURNTABLE.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURNTABLE.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURNTABLE.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURNTABLE.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURNTABLE.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURNTABLE.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURNTABLE.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURNTABLE.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURNTABLE.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURNTABLE.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURNTABLE.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURNTABLE.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURNTABLE.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURNTABLE.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>
+
+<!-- Parameter: SAMPLE_RESULTS structure: BAPI2045D3  Inspection Result: Sample Level -->
+
+<ui-datagrid data.bind="SAMPLE_RESULTS" title="Inspection Result: Sample Level"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="INSPLOT" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}" shlp.bind="{type: 'SH', id: 'QALS'}" label="Inspection Lot Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}" label="Inspection Lot Operation Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSPCHAR" data-abap.bind="{type:'NUMC', length:'4'}" label="Insp. Lot Charac. No."></ui-dg-column>
+   <ui-dg-column sortable field="INSPSAMPLE" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'QASV'}" label="Insp. Lot Sample"></ui-dg-column>
+   <ui-dg-column sortable field="LAST_SMPL" data-abap.bind="{type:'CHAR', length:'1'}" label="Last Original Value, Sample or Inspection Point"></ui-dg-column>
+   <ui-dg-column sortable field="CLOSED" data-abap.bind="{type:'CHAR', length:'1'}" label="Close Characteristic or Sample"></ui-dg-column>
+   <ui-dg-column sortable field="EVALUATED" data-abap.bind="{type:'CHAR', length:'1'}" label="Copy Valuation from External System"></ui-dg-column>
+   <ui-dg-column sortable field="SMPL_ATTR" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'QATTRIBUT'}" label="Attribute of the Results Record (Valid, Invalid,...)"></ui-dg-column>
+   <ui-dg-column sortable field="SMPL_INVAL" data-abap.bind="{type:'CHAR', length:'1'}" label="Invalid Result"></ui-dg-column>
+   <ui-dg-column sortable field="EVALUATION" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'QEEBEWERTG'}" label="Inspection Result Valuation"></ui-dg-column>
+   <ui-dg-column sortable field="ERR_CLASS" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'TQ17'}" label="Defect Class"></ui-dg-column>
+   <ui-dg-column sortable field="VALID_VALS" data-abap.bind="{type:'CHAR', length:'7'}" label="No. of Valid Values for Char. Results Upload to QM Subsys."></ui-dg-column>
+   <ui-dg-column sortable field="NONCONF" data-abap.bind="{type:'CHAR', length:'7'}" label="No. of Nonconforming Units for Char. Confirmation via QM-IDI"></ui-dg-column>
+   <ui-dg-column sortable field="DEFECTS" data-abap.bind="{type:'CHAR', length:'7'}" label="Number of Defects for Confirmation of Charac. via QM-IDI"></ui-dg-column>
+   <ui-dg-column sortable field="VALS_ABOVE" data-abap.bind="{type:'CHAR', length:'7'}" label="Number of Values Below the Tolerance Limit (Characteristic)"></ui-dg-column>
+   <ui-dg-column sortable field="VALS_BELOW" data-abap.bind="{type:'CHAR', length:'7'}" label="Number of Values Above the Tolerance Limit (Characteristic)"></ui-dg-column>
+   <ui-dg-column sortable field="MEAN_VALUE" data-abap.bind="{type:'CHAR', length:'22'}" label="Mean Value"></ui-dg-column>
+   <ui-dg-column sortable field="VARIANCE" data-abap.bind="{type:'CHAR', length:'22'}" label="Variance"></ui-dg-column>
+   <ui-dg-column sortable field="MAXIMUM" data-abap.bind="{type:'CHAR', length:'22'}" label="Mean Value"></ui-dg-column>
+   <ui-dg-column sortable field="MINIMUM" data-abap.bind="{type:'CHAR', length:'22'}" label="Mean Value"></ui-dg-column>
+   <ui-dg-column sortable field="START_DATE" data-abap.bind="{type:'DATS'}" label="Inspection Start Date (QM Subsystem Interface)"></ui-dg-column>
+   <ui-dg-column sortable field="START_TIME" data-abap.bind="{type:'TIMS'}" label="Inspection Start Time (QM Subsystem Interface)"></ui-dg-column>
+   <ui-dg-column sortable field="END_DATE" data-abap.bind="{type:'DATS'}" label="Inspection End Date (QM Subsystem Interface)"></ui-dg-column>
+   <ui-dg-column sortable field="END_TIME" data-abap.bind="{type:'TIMS'}" label="Inspection End Time (QM Subsystem Interface)"></ui-dg-column>
+   <ui-dg-column sortable field="INSPECTOR" data-abap.bind="{type:'CHAR', length:'20'}" label="Name of the Inspector"></ui-dg-column>
+   <ui-dg-column sortable field="RES_ORG" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'TQ73'}" label="Data Origin"></ui-dg-column>
+   <ui-dg-column sortable field="REMARK" data-abap.bind="{type:'CHAR', length:'40'}" label="Inspection Description for Single Value"></ui-dg-column>
+   <ui-dg-column sortable field="CODE1" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}" shlp.bind="{type: 'CT', id: 'QPCD'}" label="Code"></ui-dg-column>
+   <ui-dg-column sortable field="CODE_GRP1" data-abap.bind="{type:'CHAR', length:'8'}" label="Code Group"></ui-dg-column>
+   <ui-dg-column sortable field="CODE2" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}" shlp.bind="{type: 'CT', id: 'QPCD'}" label="Code"></ui-dg-column>
+   <ui-dg-column sortable field="CODE_GRP2" data-abap.bind="{type:'CHAR', length:'8'}" label="Code Group"></ui-dg-column>
+   <ui-dg-column sortable field="CODE3" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}" shlp.bind="{type: 'CT', id: 'QPCD'}" label="Code"></ui-dg-column>
+   <ui-dg-column sortable field="CODE_GRP3" data-abap.bind="{type:'CHAR', length:'8'}" label="Code Group"></ui-dg-column>
+   <ui-dg-column sortable field="CODE4" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}" shlp.bind="{type: 'CT', id: 'QPCD'}" label="Code"></ui-dg-column>
+   <ui-dg-column sortable field="CODE_GRP4" data-abap.bind="{type:'CHAR', length:'8'}" label="Code Group"></ui-dg-column>
+   <ui-dg-column sortable field="CODE5" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}" shlp.bind="{type: 'CT', id: 'QPCD'}" label="Code"></ui-dg-column>
+   <ui-dg-column sortable field="CODE_GRP5" data-abap.bind="{type:'CHAR', length:'8'}" label="Code Group"></ui-dg-column>
+   <ui-dg-column sortable field="ORIGINAL_INPUT" data-abap.bind="{type:'CHAR', length:'25'}" label="Original Value Before Input Processing"></ui-dg-column>
+   <ui-dg-column sortable field="INPPROC_READY" data-abap.bind="{type:'CHAR', length:'1'}" label="Input Processing Successfully Completed"></ui-dg-column>
+   <ui-dg-column sortable field="DIFF_DEC_PLACES" data-abap.bind="{type:'INT2', length:'5'}" label="Different Number of Decimal Places"></ui-dg-column>
+   <ui-dg-column sortable field="ADD_INFO1" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'18'}" label="General Information"></ui-dg-column>
+   <ui-dg-column sortable field="ADD_INFO2" data-abap.bind="{type:'CHAR', length:'4'}" label="Position on the Machine (QM Interface - Subsystem)"></ui-dg-column>
+   <ui-dg-column sortable field="CONDITION_ACTIVE" data-abap.bind="{type:'CHAR', length:'1'}" label="Set Status of Conditional Characteristics to Active"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="SAMPLE_RESULTS.INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULTS.INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Inspection Lot Operation Number"></ui-input>
+
+<ui-input bind="SAMPLE_RESULTS.INSPCHAR" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Insp. Lot Charac. No."></ui-input>
+
+<ui-combo bind="SAMPLE_RESULTS.INSPSAMPLE" shlp.bind="{type: 'CH', id: 'QASV'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Insp. Lot Sample"></ui-combo>
+
+<ui-checkbox value.bind="SAMPLE_RESULTS.LAST_SMPL" label="Last Original Value, Sample or Inspection Point"></ui-checkbox>
+
+<ui-checkbox value.bind="SAMPLE_RESULTS.CLOSED" label="Close Characteristic or Sample"></ui-checkbox>
+
+<ui-checkbox value.bind="SAMPLE_RESULTS.EVALUATED" label="Copy Valuation from External System"></ui-checkbox>
+
+<ui-combo bind="SAMPLE_RESULTS.SMPL_ATTR" shlp.bind="{type: 'FV', id: 'QATTRIBUT'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Attribute of the Results Record (Valid, Invalid,...)"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULTS.SMPL_INVAL" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Invalid Result"></ui-input>
+
+<ui-combo bind="SAMPLE_RESULTS.EVALUATION" shlp.bind="{type: 'FV', id: 'QEEBEWERTG'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Inspection Result Valuation"></ui-combo>
+
+<ui-combo bind="SAMPLE_RESULTS.ERR_CLASS" shlp.bind="{type: 'CT', id: 'TQ17'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Defect Class"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULTS.VALID_VALS" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="No. of Valid Values for Char. Results Upload to QM Subsys."></ui-input>
+
+<ui-input bind="SAMPLE_RESULTS.NONCONF" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="No. of Nonconforming Units for Char. Confirmation via QM-IDI"></ui-input>
+
+<ui-input bind="SAMPLE_RESULTS.DEFECTS" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="Number of Defects for Confirmation of Charac. via QM-IDI"></ui-input>
+
+<ui-input bind="SAMPLE_RESULTS.VALS_ABOVE" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="Number of Values Below the Tolerance Limit (Characteristic)"></ui-input>
+
+<ui-input bind="SAMPLE_RESULTS.VALS_BELOW" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="Number of Values Above the Tolerance Limit (Characteristic)"></ui-input>
+
+<ui-input bind="SAMPLE_RESULTS.MEAN_VALUE" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Mean Value"></ui-input>
+
+<ui-input bind="SAMPLE_RESULTS.VARIANCE" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Variance"></ui-input>
+
+<ui-input bind="SAMPLE_RESULTS.MAXIMUM" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Mean Value"></ui-input>
+
+<ui-input bind="SAMPLE_RESULTS.MINIMUM" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Mean Value"></ui-input>
+
+<ui-date date.bind="SAMPLE_RESULTS.START_DATE"  label="Inspection Start Date (QM Subsystem Interface)"></ui-date>
+
+<ui-time time.bind="SAMPLE_RESULTS.START_TIME"  label="Inspection Start Time (QM Subsystem Interface)"></ui-time>
+
+<ui-date date.bind="SAMPLE_RESULTS.END_DATE"  label="Inspection End Date (QM Subsystem Interface)"></ui-date>
+
+<ui-time time.bind="SAMPLE_RESULTS.END_TIME"  label="Inspection End Time (QM Subsystem Interface)"></ui-time>
+
+<ui-input bind="SAMPLE_RESULTS.INSPECTOR" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Name of the Inspector"></ui-input>
+
+<ui-combo bind="SAMPLE_RESULTS.RES_ORG" shlp.bind="{type: 'CT', id: 'TQ73'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Data Origin"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULTS.REMARK" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Inspection Description for Single Value"></ui-input>
+
+<ui-combo bind="SAMPLE_RESULTS.CODE1" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULTS.CODE_GRP1" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-combo bind="SAMPLE_RESULTS.CODE2" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULTS.CODE_GRP2" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-combo bind="SAMPLE_RESULTS.CODE3" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULTS.CODE_GRP3" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-combo bind="SAMPLE_RESULTS.CODE4" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULTS.CODE_GRP4" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-combo bind="SAMPLE_RESULTS.CODE5" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULTS.CODE_GRP5" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-input bind="SAMPLE_RESULTS.ORIGINAL_INPUT" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="Original Value Before Input Processing"></ui-input>
+
+<ui-checkbox value.bind="SAMPLE_RESULTS.INPPROC_READY" label="Input Processing Successfully Completed"></ui-checkbox>
+
+<ui-input bind="SAMPLE_RESULTS.DIFF_DEC_PLACES" data-abap.bind="{type:'INT2', length:'5'}"
+          label="Different Number of Decimal Places"></ui-input>
+
+<ui-input bind="SAMPLE_RESULTS.ADD_INFO1" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'18'}"
+          label="General Information"></ui-input>
+
+<ui-input bind="SAMPLE_RESULTS.ADD_INFO2" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Position on the Machine (QM Interface - Subsystem)"></ui-input>
+
+<ui-checkbox value.bind="SAMPLE_RESULTS.CONDITION_ACTIVE" label="Set Status of Conditional Characteristics to Active"></ui-checkbox>
+
+<!-- Parameter: SINGLE_RESULTS structure: BAPI2045D4  Insp. result-single value level -->
+
+<ui-datagrid data.bind="SINGLE_RESULTS" title="Insp. result-single value level"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="INSPCHAR" data-abap.bind="{type:'NUMC', length:'4'}" label="Insp. Lot Charac. No."></ui-dg-column>
+   <ui-dg-column sortable field="INSPLOT" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}" shlp.bind="{type: 'SH', id: 'QALS'}" label="Inspection Lot Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}" label="Inspection Lot Operation Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSPSAMPLE" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'QASV'}" label="Insp. Lot Sample"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="SINGLE_RESULTS.INSPCHAR" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Insp. Lot Charac. No."></ui-input>
+
+<ui-combo bind="SINGLE_RESULTS.INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-input bind="SINGLE_RESULTS.INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Inspection Lot Operation Number"></ui-input>
+
+<ui-combo bind="SINGLE_RESULTS.INSPSAMPLE" shlp.bind="{type: 'CH', id: 'QASV'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Insp. Lot Sample"></ui-combo>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Value -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>

@@ -1,0 +1,13 @@
+<!-- SH CSH_TC26 Capacity category : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.KAPAR" shlp.bind="{type: 'CT', id: 'TC26'}" data-abap.bind="{type:'CHAR', mid:'CAA', length:'3'}"
+          label="Capacity category"></ui-combo>
+<ui-input bind="searchParamLow.TXT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Description of the capacity category"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="KAPAR" data-abap.bind="{type:'CHAR', mid:'CAA', length:'3'}" label="Capacity category"></ui-dg-column>
+   <ui-dg-column sortable field="TXT" data-abap.bind="{type:'CHAR', length:'20'}" label="Description of the capacity category"></ui-dg-column>
+</ui-datagrid>

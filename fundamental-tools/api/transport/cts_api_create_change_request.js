@@ -1,7 +1,7 @@
 //
-// CTS_API_CREATE_CHANGE_REQUEST var: 7  struct: 0  table: 0  exception: 0
+// CTS_API_CREATE_CHANGE_REQUEST exception: 0  struct: 0  table: 0  var: 7
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore
@@ -9,10 +9,10 @@ const parameters = {
 
 // IMPORT PARAMETERS
 
-CATEGORY       :           "", // CHAR (1) no text (en)
-CLIENT         :           "", // CHAR (3) no text (en)
+CATEGORY       :           "", // CHAR (1) no text (undefined)
+CLIENT         :           "", // CHAR (3) no text (undefined)
 DESCRIPTION    :           "", // CHAR (60) Description
-OWNER          :           "", // CHAR (12) no text (en)
+OWNER          :           "", // CHAR (12) no text (undefined)
 
 // EXPORT PARAMETERS
 

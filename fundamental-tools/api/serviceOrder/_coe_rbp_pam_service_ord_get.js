@@ -1,7 +1,7 @@
 //
-// /COE/RBP_PAM_SERVICE_ORD_GET var: 6  struct: 2  table: 12  exception: 0
+// /COE/RBP_PAM_SERVICE_ORD_GET exception: 0  struct: 2  table: 12  var: 6
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore
@@ -9,29 +9,29 @@ const parameters = {
 
 // IMPORT PARAMETERS
 
-// IV_GET_DOCUMENT          :           "", // CHAR (1) no text (en)
-// IV_GET_NOTIFICATION      :           "", // CHAR (1) no text (en)
-// IV_GET_TASKLIST          :           "", // CHAR (1) no text (en)
-// IV_ORDERID               :           "", // CHAR (12) ALPHA=ALPHA no text (en) SU3=ANR
+// IV_GET_DOCUMENT          :           "", // CHAR (1) no text (undefined)
+// IV_GET_NOTIFICATION      :           "", // CHAR (1) no text (undefined)
+// IV_GET_TASKLIST          :           "", // CHAR (1) no text (undefined)
+// IV_ORDERID               :           "", // CHAR (12) ALPHA=ALPHA no text (undefined) SU3=ANR
 
 // EXPORT PARAMETERS
 
-// EV_COST_SUM              :        "0.0", // CURR (15) no text (en)
-// EV_NOTICE                :           "", // STRING no text (en)
-// ES_HEADER                :           {}, // BAPI_ALM_ORDER_HEADER_E no text (en)
-// ES_HEADER_NOTIFICATION   :           {}, // BAPI2080_NOTHDRE no text (en)
-// ET_COMPONENTS            :           [], // /COE/RBP_T_PAM_ORDER_COMP_GET no text (en)
-// ET_COSTS_DETAILS         :           [], // /COE/RBP_T_PAM_ORDER_COSTS no text (en)
-// ET_DOCUMENT              :           [], // /COE/RBP_T_PAM_DOCUMENT no text (en)
-// ET_NOTICE_NOTIFICATION   :           [], // /COE/RBP_T_PAM_NOTICE_LOG no text (en)
-// ET_OPERATIONS            :           [], // /COE/RBP_T_PAM_ORDER_OPER_GET no text (en)
-// ET_PARTNER               :           [], // /COE/RBP_T_PAM_ORDER_PARTNER no text (en)
-// ET_PERMIT                :           [], // BAPI_ALM_ORDER_PERMIT_READ_T no text (en)
-// ET_PERMIT_ISSUE          :           [], // BAPI_ALM_ORDER_PER_ISSUE_R_T no text (en)
-// ET_PERMIT_ISSUE_COMBINED :           [], // /COE/RBP_T_PAM_PERM_ISSUE_COMB no text (en)
-// ET_RELATIONS             :           [], // BAPI_ALM_ORDER_RELATION_ET no text (en)
-// ET_RETURN                :           [], // BAPIRETTAB no text (en)
-// ET_TASKLIST              :           [], // /COE/RBP_T_PAM_PMPLAN no text (en)
+// EV_COST_SUM              :        "0.0", // CURR (15) no text (undefined)
+// EV_NOTICE                :           "", // STRING no text (undefined)
+// ES_HEADER                :           {}, // BAPI_ALM_ORDER_HEADER_E no text (undefined)
+// ES_HEADER_NOTIFICATION   :           {}, // BAPI2080_NOTHDRE no text (undefined)
+// ET_COMPONENTS            :           [], // /COE/RBP_T_PAM_ORDER_COMP_GET no text (undefined)
+// ET_COSTS_DETAILS         :           [], // /COE/RBP_T_PAM_ORDER_COSTS no text (undefined)
+// ET_DOCUMENT              :           [], // /COE/RBP_T_PAM_DOCUMENT no text (undefined)
+// ET_NOTICE_NOTIFICATION   :           [], // /COE/RBP_T_PAM_NOTICE_LOG no text (undefined)
+// ET_OPERATIONS            :           [], // /COE/RBP_T_PAM_ORDER_OPER_GET no text (undefined)
+// ET_PARTNER               :           [], // /COE/RBP_T_PAM_ORDER_PARTNER no text (undefined)
+// ET_PERMIT                :           [], // BAPI_ALM_ORDER_PERMIT_READ_T no text (undefined)
+// ET_PERMIT_ISSUE          :           [], // BAPI_ALM_ORDER_PER_ISSUE_R_T no text (undefined)
+// ET_PERMIT_ISSUE_COMBINED :           [], // /COE/RBP_T_PAM_PERM_ISSUE_COMB no text (undefined)
+// ET_RELATIONS             :           [], // BAPI_ALM_ORDER_RELATION_ET no text (undefined)
+// ET_RETURN                :           [], // BAPIRETTAB no text (undefined)
+// ET_TASKLIST              :           [], // /COE/RBP_T_PAM_PMPLAN no text (undefined)
 };
 
 const result = await client.call("/COE/RBP_PAM_SERVICE_ORD_GET", parameters);

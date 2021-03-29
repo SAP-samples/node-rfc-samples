@@ -1,0 +1,19 @@
+<!-- SH HV_PKHD Control cycle number : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.PKNUM" shlp.bind="{type: 'CT', id: 'PKHD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PKNUM', length:'7'}"
+          label="Control cycle number"></ui-combo>
+<ui-combo bind="searchParamLow.MATNR" shlp.bind="{type: 'CT', id: 'MARA'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+<ui-combo bind="searchParamLow.WERKS" shlp.bind="{type: 'SH', id: 'H_T001W'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+<ui-combo bind="searchParamLow.PRVBE" shlp.bind="{type: 'CT', id: 'PVBE'}" data-abap.bind="{type:'CHAR', mid:'PVB', length:'10'}"
+          label="Production Supply Area"></ui-combo>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="PKNUM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PKNUM', length:'7'}" label="Control cycle number"></ui-dg-column>
+   <ui-dg-column sortable field="MATNR" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" label="Material Number"></ui-dg-column>
+   <ui-dg-column sortable field="WERKS" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" label="Plant"></ui-dg-column>
+   <ui-dg-column sortable field="PRVBE" data-abap.bind="{type:'CHAR', mid:'PVB', length:'10'}" label="Production Supply Area"></ui-dg-column>
+</ui-datagrid>

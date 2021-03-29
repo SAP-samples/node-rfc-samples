@@ -1,0 +1,23 @@
+<!-- SH WPCC Catalog for ID / Validity : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.WMINR" data-abap.bind="{type:'CHAR', mid:'WMI', length:'10'}"
+          label="Product catalog number"></ui-input>
+<ui-date date.bind="searchParamLow.ABDAT"  label="Product catalog valid from"></ui-date>
+<ui-date date.bind="searchParamLow.BISDAT"  label="Product catalog valid to"></ui-date>
+<ui-input bind="searchParamLow.CCODE" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Catalog code"></ui-input>
+<ui-input bind="searchParamLow.WMITX" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Product catalog name"></ui-input>
+<ui-input bind="searchParamLow.SPRAS" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+          label="Language Key"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CCODE" data-abap.bind="{type:'CHAR', length:'4'}" label="Catalog code"></ui-dg-column>
+   <ui-dg-column sortable field="WMINR" data-abap.bind="{type:'CHAR', mid:'WMI', length:'10'}" label="Product catalog number"></ui-dg-column>
+   <ui-dg-column sortable field="WMITX" data-abap.bind="{type:'CHAR', length:'40'}" label="Product catalog name"></ui-dg-column>
+   <ui-dg-column sortable field="SPRAS" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}" label="Language Key"></ui-dg-column>
+   <ui-dg-column sortable field="ABDAT" data-abap.bind="{type:'DATS'}" label="Product catalog valid from"></ui-dg-column>
+   <ui-dg-column sortable field="BISDAT" data-abap.bind="{type:'DATS'}" label="Product catalog valid to"></ui-dg-column>
+</ui-datagrid>

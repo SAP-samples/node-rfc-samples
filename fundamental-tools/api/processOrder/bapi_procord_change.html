@@ -1,0 +1,201 @@
+<!--
+BAPI_PROCORD_CHANGE exception: 0  struct: 4  table: 0  var: 3
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-combo bind="NUMBER" shlp.bind="{type: 'CH', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Process Order Number"></ui-combo>
+
+<!-- Parameter: ORDERDATA structure: BAPI_PI_ORDER_CHANGE  Transfer Structure for Changing Process Orders -->
+
+<ui-date date.bind="ORDERDATA.BASIC_START_DATE"  label="Basic start date"></ui-date>
+
+<ui-time time.bind="ORDERDATA.BASIC_START_TIME"  label="Basic Start (Time)"></ui-time>
+
+<ui-date date.bind="ORDERDATA.BASIC_END_DATE"  label="Basic finish date"></ui-date>
+
+<ui-time time.bind="ORDERDATA.BASIC_END_TIME"  label="Basic finish (time)"></ui-time>
+
+<ui-input bind="ORDERDATA.QUANTITY" data-abap.bind="{type:'QUAN', unit:'QUANTITY_UOM', length:'10.3'}"
+          label="Total order quantity"></ui-input>
+
+<ui-input bind="ORDERDATA.SCRAP_QUANTITY" data-abap.bind="{type:'QUAN', unit:'QUANTITY_UOM', length:'10.3'}"
+          label="Total scrap quantity in the order"></ui-input>
+
+<ui-combo bind="ORDERDATA.QUANTITY_UOM" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Common unit of measure for all order items"></ui-combo>
+
+<ui-combo bind="ORDERDATA.RECIPE_TYPE" shlp.bind="{type: 'SH', id: 'H_TCA01'}" data-abap.bind="{type:'CHAR', mid:'PTY', length:'1'}"
+          label="Task List Type"></ui-combo>
+
+<ui-combo bind="ORDERDATA.RECIPE_GROUP" shlp.bind="{type: 'SH', id: 'PLKS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PLN', length:'8'}"
+          label="Key for Task List Group"></ui-combo>
+
+<ui-input bind="ORDERDATA.RECIPE_COUNTER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PAL', length:'2'}"
+          label="Group Counter"></ui-input>
+
+<ui-combo bind="ORDERDATA.PROD_VERSION" shlp.bind="{type: 'CT', id: 'MKAL'}" data-abap.bind="{type:'CHAR', mid:'VER', length:'4'}"
+          label="Production Version"></ui-combo>
+
+<ui-date date.bind="ORDERDATA.EXPLOSION_DATE"  label="Date of BOM Explosion/Routing Transfer"></ui-date>
+
+<ui-input bind="ORDERDATA.ORDER_PRIORITY" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Order priority"></ui-input>
+
+<ui-combo bind="ORDERDATA.MRP_CONTROLLER" shlp.bind="{type: 'CT', id: 'T024D'}" data-abap.bind="{type:'CHAR', mid:'DGR', length:'3'}"
+          label="MRP controller for the order"></ui-combo>
+
+<ui-combo bind="ORDERDATA.EXPLODE_NEW" shlp.bind="{type: 'FV', id: 'XFLAG'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="New Input Values"></ui-combo>
+
+<ui-combo bind="ORDERDATA.BUSINESS_AREA" shlp.bind="{type: 'SH', id: 'H_TGSB'}" data-abap.bind="{type:'CHAR', mid:'GSB', length:'4'}"
+          label="Business Area"></ui-combo>
+
+<ui-combo bind="ORDERDATA.PROFIT_CENTER" shlp.bind="{type: 'SH', id: 'PRCTR_EMPTY'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PRC', length:'10'}"
+          label="Profit Center"></ui-combo>
+
+<ui-input bind="ORDERDATA.SEQUENCE_NUMBER" data-abap.bind="{type:'NUMC', length:'14'}"
+          label="Seq. number order"></ui-input>
+
+<ui-combo bind="ORDERDATA.STOCK_TYPE" shlp.bind="{type: 'FV', id: 'INSMK'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Stock Type"></ui-combo>
+
+<ui-input bind="ORDERDATA.GR_PROC_TIME" data-abap.bind="{type:'DEC', length:'3'}"
+          label="Goods receipt processing time in days"></ui-input>
+
+<ui-combo bind="ORDERDATA.STORAGE_LOCATION" shlp.bind="{type: 'CT', id: 'T001L'}" data-abap.bind="{type:'CHAR', mid:'LAG', length:'4'}"
+          label="Storage location"></ui-combo>
+
+<ui-combo bind="ORDERDATA.MRP_DISTR_KEY" shlp.bind="{type: 'CT', id: 'T437V'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="MRP Distribution Key"></ui-combo>
+
+<ui-input bind="ORDERDATA.GOODS_RECEPIENT" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Goods recipient"></ui-input>
+
+<ui-input bind="ORDERDATA.UNLOADING_POINT" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="Unloading Point"></ui-input>
+
+<ui-input bind="ORDERDATA.POSITION_NUMBER" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Order item number"></ui-input>
+
+<ui-input bind="ORDERDATA.ADDITIONAL_DAYS" data-abap.bind="{type:'DEC', length:'+4'}"
+          label="Additional Days"></ui-input>
+
+<ui-combo bind="ORDERDATA.STOCK_SEGMENT" shlp.bind="{type: 'SH', id: 'SGT_CAT_FIELD_POPUP'}" data-abap.bind="{type:'CHAR', mid:'SGT_S', length:'16'}"
+          label="Stock Segment"></ui-combo>
+
+<!-- Parameter: ORDERDATAX structure: BAPI_PI_ORDER_CHANGEX  Transfer Structure for Changing Process Orders -->
+
+<ui-checkbox value.bind="ORDERDATAX.BASIC_START_DATE" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.BASIC_END_DATE" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.QUANTITY" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.SCRAP_QUANTITY" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.QUANTITY_UOM" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.ROUTING" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.PROD_VERSION" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.EXPLOSION_DATE" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.ORDER_PRIORITY" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.MRP_CONTROLLER" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.BUSINESS_AREA" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.PROFIT_CENTER" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.SEQUENCE_NUMBER" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.STOCK_TYPE" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.GR_PROC_TIME" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.STORAGE_LOCATION" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.MRP_DISTR_KEY" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.GOODS_RECIPIENT" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.UNLOADING_POINT" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.ADDITIONAL_DAYS" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDERDATAX.STOCK_SEGMENT" label="Updated information in related user data field"></ui-checkbox>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<ui-input bind="MASTER_DATA_READ" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Indicator: Master Data Read"></ui-input>
+
+<ui-combo bind="ORDER_TYPE" shlp.bind="{type: 'CT', id: 'T003O'}" data-abap.bind="{type:'CHAR', mid:'AAT', length:'4'}"
+          label="Order Category"></ui-combo>
+
+<!-- Parameter: ORDER_STATUS structure: BAPI_ORDER_STATUS  Order Status Indicator -->
+
+<ui-checkbox value.bind="ORDER_STATUS.DELETED" label="Checkbox"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDER_STATUS.DELETE_INDICATOR" label="Checkbox"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDER_STATUS.CLOSED" label="Checkbox"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDER_STATUS.COMPLETED" label="Checkbox"></ui-checkbox>
+
+<ui-checkbox value.bind="ORDER_STATUS.LOCKED" label="Checkbox"></ui-checkbox>
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Parameters -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>

@@ -1,0 +1,16 @@
+<!-- SH H_T437P Planning identification 2 : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.WERKS" shlp.bind="{type: 'SH', id: 'H_T001W'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+<ui-combo bind="searchParamLow.PLAN_ID" shlp.bind="{type: 'CT', id: 'T437P'}" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Planning identification"></ui-combo>
+<ui-input bind="searchParamLow.PLID_TEXT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Planning identification text"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="WERKS" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" label="Plant"></ui-dg-column>
+   <ui-dg-column sortable field="PLAN_ID" data-abap.bind="{type:'CHAR', length:'8'}" label="Planning identification"></ui-dg-column>
+   <ui-dg-column sortable field="PLID_TEXT" data-abap.bind="{type:'CHAR', length:'20'}" label="Planning identification text"></ui-dg-column>
+</ui-datagrid>

@@ -1,0 +1,77 @@
+<!--
+BAPI_ALM_CONF_CANCEL exception: 0  struct: 1  table: 0  var: 7
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-input bind="CONFIRMATION" data-abap.bind="{type:'NUMC', mid:'RCK', length:'10'}"
+          label="Confirmation"></ui-input>
+
+<ui-input bind="CONFIRMATIONCOUNTER" data-abap.bind="{type:'NUMC', mid:'RZL', length:'8'}"
+          label="Confirmation counter"></ui-input>
+
+<ui-input bind="CONFTEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Confirmation Text"></ui-input>
+
+<ui-date date.bind="POSTGDATE"  label="Posting Date"></ui-date>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<ui-input bind="CREATED_CONF_COUNT" data-abap.bind="{type:'NUMC', mid:'RZL', length:'8'}"
+          label="Confirmation counter for cancellation record"></ui-input>
+
+<ui-input bind="CREATED_CONF_NO" data-abap.bind="{type:'NUMC', mid:'RCK', length:'10'}"
+          label="Confirmation of cancellation record"></ui-input>
+
+<ui-checkbox value.bind="LOCKED" label="Indicator: Order is locked"></ui-checkbox>
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Parameter -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>

@@ -1,0 +1,867 @@
+<!--
+BAPI_PLANNEDORDER_GET_DETAIL exception: 0  struct: 5  table: 5  var: 1
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-combo bind="PLANNEDORDER" shlp.bind="{type: 'CH', id: 'PLAF'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PAF', length:'10'}"
+          label="Planned order number"></ui-combo>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: CAPACITYDATA1 structure: BAPI_PLDORDCAPA_E1  Capacity data (detailed scheduling) -->
+
+<ui-datagrid data.bind="CAPACITYDATA1" title="Capacity data (detailed scheduling)"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SEQUENCE_NUM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'6'}" label="Sequence"></ui-dg-column>
+   <ui-dg-column sortable field="ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="SUB_ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}" label="Suboperation"></ui-dg-column>
+   <ui-dg-column sortable field="WORK_CNTR" data-abap.bind="{type:'CHAR', mid:'AGR', length:'8'}" label="Work center"></ui-dg-column>
+   <ui-dg-column sortable field="START_DATE" data-abap.bind="{type:'DATS'}" label="Latest start / date"></ui-dg-column>
+   <ui-dg-column sortable field="START_TIME" data-abap.bind="{type:'TIMS'}" label="Latest start / time"></ui-dg-column>
+   <ui-dg-column sortable field="FIN_DATE" data-abap.bind="{type:'DATS'}" label="Latest finish / date"></ui-dg-column>
+   <ui-dg-column sortable field="FIN_TIME" data-abap.bind="{type:'TIMS'}" label="Latest finish / time"></ui-dg-column>
+   <ui-dg-column sortable field="CAP_CAT" data-abap.bind="{type:'CHAR', mid:'CAA', length:'3'}" shlp.bind="{type: 'CT', id: 'TC26'}" label="Capacity category"></ui-dg-column>
+   <ui-dg-column sortable field="CAP_REQ" data-abap.bind="{type:'QUAN', unit:'DISPLAY_UOM', length:'5.2'}" label="Capacity requirements scheduled for the operation/activity"></ui-dg-column>
+   <ui-dg-column sortable field="DISPLAY_UOM" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Unit of of measure for displaying capacity requirements"></ui-dg-column>
+   <ui-dg-column sortable field="DESCRIPTION" data-abap.bind="{type:'CHAR', length:'40'}" label="Operation short text"></ui-dg-column>
+   <ui-dg-column sortable field="DISPLAY_UOM_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="CAPACITYDATA1.SEQUENCE_NUM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'6'}"
+          label="Sequence"></ui-input>
+
+<ui-input bind="CAPACITYDATA1.ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Activity Number"></ui-input>
+
+<ui-input bind="CAPACITYDATA1.SUB_ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Suboperation"></ui-input>
+
+<ui-input bind="CAPACITYDATA1.WORK_CNTR" data-abap.bind="{type:'CHAR', mid:'AGR', length:'8'}"
+          label="Work center"></ui-input>
+
+<ui-date date.bind="CAPACITYDATA1.START_DATE"  label="Latest start / date"></ui-date>
+
+<ui-time time.bind="CAPACITYDATA1.START_TIME"  label="Latest start / time"></ui-time>
+
+<ui-date date.bind="CAPACITYDATA1.FIN_DATE"  label="Latest finish / date"></ui-date>
+
+<ui-time time.bind="CAPACITYDATA1.FIN_TIME"  label="Latest finish / time"></ui-time>
+
+<ui-combo bind="CAPACITYDATA1.CAP_CAT" shlp.bind="{type: 'CT', id: 'TC26'}" data-abap.bind="{type:'CHAR', mid:'CAA', length:'3'}"
+          label="Capacity category"></ui-combo>
+
+<ui-input bind="CAPACITYDATA1.CAP_REQ" data-abap.bind="{type:'QUAN', unit:'DISPLAY_UOM', length:'5.2'}"
+          label="Capacity requirements scheduled for the operation/activity"></ui-input>
+
+<ui-combo bind="CAPACITYDATA1.DISPLAY_UOM" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit of of measure for displaying capacity requirements"></ui-combo>
+
+<ui-input bind="CAPACITYDATA1.DESCRIPTION" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Operation short text"></ui-input>
+
+<ui-combo bind="CAPACITYDATA1.DISPLAY_UOM_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<!-- Parameter: CAPACITYDATA2 structure: BAPI_PLDORDCAPA_E1  Capacity data (rate-based scheduling) -->
+
+<ui-datagrid data.bind="CAPACITYDATA2" title="Capacity data (rate-based scheduling)"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SEQUENCE_NUM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'6'}" label="Sequence"></ui-dg-column>
+   <ui-dg-column sortable field="ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="SUB_ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}" label="Suboperation"></ui-dg-column>
+   <ui-dg-column sortable field="WORK_CNTR" data-abap.bind="{type:'CHAR', mid:'AGR', length:'8'}" label="Work center"></ui-dg-column>
+   <ui-dg-column sortable field="START_DATE" data-abap.bind="{type:'DATS'}" label="Latest start / date"></ui-dg-column>
+   <ui-dg-column sortable field="START_TIME" data-abap.bind="{type:'TIMS'}" label="Latest start / time"></ui-dg-column>
+   <ui-dg-column sortable field="FIN_DATE" data-abap.bind="{type:'DATS'}" label="Latest finish / date"></ui-dg-column>
+   <ui-dg-column sortable field="FIN_TIME" data-abap.bind="{type:'TIMS'}" label="Latest finish / time"></ui-dg-column>
+   <ui-dg-column sortable field="CAP_CAT" data-abap.bind="{type:'CHAR', mid:'CAA', length:'3'}" shlp.bind="{type: 'CT', id: 'TC26'}" label="Capacity category"></ui-dg-column>
+   <ui-dg-column sortable field="CAP_REQ" data-abap.bind="{type:'QUAN', unit:'DISPLAY_UOM', length:'5.2'}" label="Capacity requirements scheduled for the operation/activity"></ui-dg-column>
+   <ui-dg-column sortable field="DISPLAY_UOM" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Unit of of measure for displaying capacity requirements"></ui-dg-column>
+   <ui-dg-column sortable field="DESCRIPTION" data-abap.bind="{type:'CHAR', length:'40'}" label="Operation short text"></ui-dg-column>
+   <ui-dg-column sortable field="DISPLAY_UOM_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="CAPACITYDATA2.SEQUENCE_NUM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'6'}"
+          label="Sequence"></ui-input>
+
+<ui-input bind="CAPACITYDATA2.ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Activity Number"></ui-input>
+
+<ui-input bind="CAPACITYDATA2.SUB_ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Suboperation"></ui-input>
+
+<ui-input bind="CAPACITYDATA2.WORK_CNTR" data-abap.bind="{type:'CHAR', mid:'AGR', length:'8'}"
+          label="Work center"></ui-input>
+
+<ui-date date.bind="CAPACITYDATA2.START_DATE"  label="Latest start / date"></ui-date>
+
+<ui-time time.bind="CAPACITYDATA2.START_TIME"  label="Latest start / time"></ui-time>
+
+<ui-date date.bind="CAPACITYDATA2.FIN_DATE"  label="Latest finish / date"></ui-date>
+
+<ui-time time.bind="CAPACITYDATA2.FIN_TIME"  label="Latest finish / time"></ui-time>
+
+<ui-combo bind="CAPACITYDATA2.CAP_CAT" shlp.bind="{type: 'CT', id: 'TC26'}" data-abap.bind="{type:'CHAR', mid:'CAA', length:'3'}"
+          label="Capacity category"></ui-combo>
+
+<ui-input bind="CAPACITYDATA2.CAP_REQ" data-abap.bind="{type:'QUAN', unit:'DISPLAY_UOM', length:'5.2'}"
+          label="Capacity requirements scheduled for the operation/activity"></ui-input>
+
+<ui-combo bind="CAPACITYDATA2.DISPLAY_UOM" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit of of measure for displaying capacity requirements"></ui-combo>
+
+<ui-input bind="CAPACITYDATA2.DESCRIPTION" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Operation short text"></ui-input>
+
+<ui-combo bind="CAPACITYDATA2.DISPLAY_UOM_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<!-- Parameter: CAPACITYDATA3 structure: BAPI_PLDORDCAPA_E1  Capacity data (rough-cut scheduling) -->
+
+<ui-datagrid data.bind="CAPACITYDATA3" title="Capacity data (rough-cut scheduling)"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SEQUENCE_NUM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'6'}" label="Sequence"></ui-dg-column>
+   <ui-dg-column sortable field="ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="SUB_ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}" label="Suboperation"></ui-dg-column>
+   <ui-dg-column sortable field="WORK_CNTR" data-abap.bind="{type:'CHAR', mid:'AGR', length:'8'}" label="Work center"></ui-dg-column>
+   <ui-dg-column sortable field="START_DATE" data-abap.bind="{type:'DATS'}" label="Latest start / date"></ui-dg-column>
+   <ui-dg-column sortable field="START_TIME" data-abap.bind="{type:'TIMS'}" label="Latest start / time"></ui-dg-column>
+   <ui-dg-column sortable field="FIN_DATE" data-abap.bind="{type:'DATS'}" label="Latest finish / date"></ui-dg-column>
+   <ui-dg-column sortable field="FIN_TIME" data-abap.bind="{type:'TIMS'}" label="Latest finish / time"></ui-dg-column>
+   <ui-dg-column sortable field="CAP_CAT" data-abap.bind="{type:'CHAR', mid:'CAA', length:'3'}" shlp.bind="{type: 'CT', id: 'TC26'}" label="Capacity category"></ui-dg-column>
+   <ui-dg-column sortable field="CAP_REQ" data-abap.bind="{type:'QUAN', unit:'DISPLAY_UOM', length:'5.2'}" label="Capacity requirements scheduled for the operation/activity"></ui-dg-column>
+   <ui-dg-column sortable field="DISPLAY_UOM" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Unit of of measure for displaying capacity requirements"></ui-dg-column>
+   <ui-dg-column sortable field="DESCRIPTION" data-abap.bind="{type:'CHAR', length:'40'}" label="Operation short text"></ui-dg-column>
+   <ui-dg-column sortable field="DISPLAY_UOM_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="CAPACITYDATA3.SEQUENCE_NUM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'6'}"
+          label="Sequence"></ui-input>
+
+<ui-input bind="CAPACITYDATA3.ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Activity Number"></ui-input>
+
+<ui-input bind="CAPACITYDATA3.SUB_ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Suboperation"></ui-input>
+
+<ui-input bind="CAPACITYDATA3.WORK_CNTR" data-abap.bind="{type:'CHAR', mid:'AGR', length:'8'}"
+          label="Work center"></ui-input>
+
+<ui-date date.bind="CAPACITYDATA3.START_DATE"  label="Latest start / date"></ui-date>
+
+<ui-time time.bind="CAPACITYDATA3.START_TIME"  label="Latest start / time"></ui-time>
+
+<ui-date date.bind="CAPACITYDATA3.FIN_DATE"  label="Latest finish / date"></ui-date>
+
+<ui-time time.bind="CAPACITYDATA3.FIN_TIME"  label="Latest finish / time"></ui-time>
+
+<ui-combo bind="CAPACITYDATA3.CAP_CAT" shlp.bind="{type: 'CT', id: 'TC26'}" data-abap.bind="{type:'CHAR', mid:'CAA', length:'3'}"
+          label="Capacity category"></ui-combo>
+
+<ui-input bind="CAPACITYDATA3.CAP_REQ" data-abap.bind="{type:'QUAN', unit:'DISPLAY_UOM', length:'5.2'}"
+          label="Capacity requirements scheduled for the operation/activity"></ui-input>
+
+<ui-combo bind="CAPACITYDATA3.DISPLAY_UOM" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit of of measure for displaying capacity requirements"></ui-combo>
+
+<ui-input bind="CAPACITYDATA3.DESCRIPTION" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Operation short text"></ui-input>
+
+<ui-combo bind="CAPACITYDATA3.DISPLAY_UOM_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<!-- Parameter: COMPONENTSDATA structure: BAPI_PLDORDCOMP_E1  Material component data -->
+
+<ui-datagrid data.bind="COMPONENTSDATA" title="Material component data"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ORDER_LVL" data-abap.bind="{type:'NUMC', length:'2'}" label="Order level"></ui-dg-column>
+   <ui-dg-column sortable field="ORDER_PATH" data-abap.bind="{type:'NUMC', length:'2'}" label="Order path"></ui-dg-column>
+   <ui-dg-column sortable field="SORT_STRING" data-abap.bind="{type:'CHAR', length:'10'}" label="Sort String"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" shlp.bind="{type: 'SH', id: 'S_MAT1'}" label="Material Number"></ui-dg-column>
+   <ui-dg-column sortable field="PLANT" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" label="Plant"></ui-dg-column>
+   <ui-dg-column sortable field="ITEM_CAT" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'CT', id: 'T418'}" label="Item category (bill of material)"></ui-dg-column>
+   <ui-dg-column sortable field="BOM_ITEM_NUMBER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}" label="BOM Item Number"></ui-dg-column>
+   <ui-dg-column sortable field="PHANT_ITEM" data-abap.bind="{type:'CHAR', length:'1'}" label="Phantom item indicator"></ui-dg-column>
+   <ui-dg-column sortable field="SPEC_STOCK" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'CT', id: 'T148'}" label="Special Stock Indicator"></ui-dg-column>
+   <ui-dg-column sortable field="REQ_QUAN" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}" label="Requirement Quantity"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_QUAN" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'12.3'}" label="Confirmed quantity for availability check in SKU"></ui-dg-column>
+   <ui-dg-column sortable field="BASE_UOM" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Base Unit of Measure"></ui-dg-column>
+   <ui-dg-column sortable field="ENTRY_QTY" data-abap.bind="{type:'QUAN', unit:'ENTRY_UOM', length:'+10.3'}" label="Requirement Quantity of Component"></ui-dg-column>
+   <ui-dg-column sortable field="ENTRY_UOM" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Unit of entry"></ui-dg-column>
+   <ui-dg-column sortable field="FIXED_QUAN" data-abap.bind="{type:'CHAR', length:'1'}" label="Quantity is fixed"></ui-dg-column>
+   <ui-dg-column sortable field="COMP_SCRAP" data-abap.bind="{type:'DEC', length:'4.2'}" label="Component scrap in percent"></ui-dg-column>
+   <ui-dg-column sortable field="REQ_DATE" data-abap.bind="{type:'DATS'}" label="Requirements date for the component"></ui-dg-column>
+   <ui-dg-column sortable field="LATEST_REQ_DATE" data-abap.bind="{type:'DATS'}" label="Latest requirements date"></ui-dg-column>
+   <ui-dg-column sortable field="DIST_KEY" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'T437V'}" label="Distribution key for component consumption"></ui-dg-column>
+   <ui-dg-column sortable field="REV_LEV" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'RVS', length:'2'}" label="Revision level"></ui-dg-column>
+   <ui-dg-column sortable field="VARSIZE_ITEM_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="Variable-sized item indicator"></ui-dg-column>
+   <ui-dg-column sortable field="VARSIZE_ITEM_NUM" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}" label="Number of variable-size items"></ui-dg-column>
+   <ui-dg-column sortable field="VARSIZE_ITEM_QTY" data-abap.bind="{type:'QUAN', unit:'ENTRY_UOM', length:'10.3'}" label="Quantity of variable-size item"></ui-dg-column>
+   <ui-dg-column sortable field="VARSIZE_ITEM_UOM" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Unit of measure for sizes 1 to 3"></ui-dg-column>
+   <ui-dg-column sortable field="VARSIZE_1" data-abap.bind="{type:'QUAN', unit:'VARSIZE_ITEM_UOM', length:'10.3'}" label="Size 1"></ui-dg-column>
+   <ui-dg-column sortable field="VARSIZE_2" data-abap.bind="{type:'QUAN', unit:'VARSIZE_ITEM_UOM', length:'10.3'}" label="Size 2"></ui-dg-column>
+   <ui-dg-column sortable field="VARSIZE_3" data-abap.bind="{type:'QUAN', unit:'VARSIZE_ITEM_UOM', length:'10.3'}" label="Size 3"></ui-dg-column>
+   <ui-dg-column sortable field="FORMULA_KEY" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'T418F'}" label="Formula key"></ui-dg-column>
+   <ui-dg-column sortable field="ISS_ST_LOC" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'T001L'}" label="Issue Storage Location"></ui-dg-column>
+   <ui-dg-column sortable field="FOLLOWUP_ITEM" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Follow-Up Item"></ui-dg-column>
+   <ui-dg-column sortable field="MRP_TYPE" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'T438A'}" label="MRP Type"></ui-dg-column>
+   <ui-dg-column sortable field="MATL_DESC" data-abap.bind="{type:'CHAR', length:'40'}" label="Material description"></ui-dg-column>
+   <ui-dg-column sortable field="PLAN_WO_FA_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: planning without final assembly"></ui-dg-column>
+   <ui-dg-column sortable field="CHANGE_NUM" data-abap.bind="{type:'CHAR', alpha:'AENNR', mid:'AEN', length:'12'}" shlp.bind="{type: 'CT', id: 'AENR'}" label="Change Number"></ui-dg-column>
+   <ui-dg-column sortable field="SUPPLYAREA" data-abap.bind="{type:'CHAR', mid:'PVB', length:'10'}" shlp.bind="{type: 'CT', id: 'PVBE'}" label="Production Supply Area"></ui-dg-column>
+   <ui-dg-column sortable field="REQ_TOTALING_TYP" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'AGGRQ'}" label="Requirements totaling type"></ui-dg-column>
+   <ui-dg-column sortable field="BASE_UOM_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="ENTRY_UOM_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="VARSIZE_ITEM_UOM_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}" label="Long Material Number for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}" label="External GUID for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}" label="Version Number for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="REQ_SEGMENT" data-abap.bind="{type:'CHAR', mid:'SGT_R', length:'16'}" shlp.bind="{type: 'SH', id: 'SGT_CAT_FIELD_POPUP'}" label="Requirement Segment"></ui-dg-column>
+   <ui-dg-column sortable field="STOCK_SEGMENT" data-abap.bind="{type:'CHAR', mid:'SGT_S', length:'16'}" shlp.bind="{type: 'SH', id: 'SGT_CAT_FIELD_POPUP'}" label="Stock Segment"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}" label="Material Number (40 Characters, needed f. technical reasons)"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="COMPONENTSDATA.ORDER_LVL" data-abap.bind="{type:'NUMC', length:'2'}"
+          label="Order level"></ui-input>
+
+<ui-input bind="COMPONENTSDATA.ORDER_PATH" data-abap.bind="{type:'NUMC', length:'2'}"
+          label="Order path"></ui-input>
+
+<ui-input bind="COMPONENTSDATA.SORT_STRING" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Sort String"></ui-input>
+
+<ui-combo bind="COMPONENTSDATA.MATERIAL" shlp.bind="{type: 'SH', id: 'S_MAT1'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+
+<ui-combo bind="COMPONENTSDATA.PLANT" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+
+<ui-combo bind="COMPONENTSDATA.ITEM_CAT" shlp.bind="{type: 'CT', id: 'T418'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Item category (bill of material)"></ui-combo>
+
+<ui-input bind="COMPONENTSDATA.BOM_ITEM_NUMBER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="BOM Item Number"></ui-input>
+
+<ui-checkbox value.bind="COMPONENTSDATA.PHANT_ITEM" label="Phantom item indicator"></ui-checkbox>
+
+<ui-combo bind="COMPONENTSDATA.SPEC_STOCK" shlp.bind="{type: 'CT', id: 'T148'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Special Stock Indicator"></ui-combo>
+
+<ui-input bind="COMPONENTSDATA.REQ_QUAN" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Requirement Quantity"></ui-input>
+
+<ui-input bind="COMPONENTSDATA.CONF_QUAN" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'12.3'}"
+          label="Confirmed quantity for availability check in SKU"></ui-input>
+
+<ui-combo bind="COMPONENTSDATA.BASE_UOM" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Base Unit of Measure"></ui-combo>
+
+<ui-input bind="COMPONENTSDATA.ENTRY_QTY" data-abap.bind="{type:'QUAN', unit:'ENTRY_UOM', length:'+10.3'}"
+          label="Requirement Quantity of Component"></ui-input>
+
+<ui-combo bind="COMPONENTSDATA.ENTRY_UOM" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit of entry"></ui-combo>
+
+<ui-checkbox value.bind="COMPONENTSDATA.FIXED_QUAN" label="Quantity is fixed"></ui-checkbox>
+
+<ui-input bind="COMPONENTSDATA.COMP_SCRAP" data-abap.bind="{type:'DEC', length:'4.2'}"
+          label="Component scrap in percent"></ui-input>
+
+<ui-date date.bind="COMPONENTSDATA.REQ_DATE"  label="Requirements date for the component"></ui-date>
+
+<ui-date date.bind="COMPONENTSDATA.LATEST_REQ_DATE"  label="Latest requirements date"></ui-date>
+
+<ui-combo bind="COMPONENTSDATA.DIST_KEY" shlp.bind="{type: 'CT', id: 'T437V'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Distribution key for component consumption"></ui-combo>
+
+<ui-input bind="COMPONENTSDATA.REV_LEV" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'RVS', length:'2'}"
+          label="Revision level"></ui-input>
+
+<ui-checkbox value.bind="COMPONENTSDATA.VARSIZE_ITEM_IND" label="Variable-sized item indicator"></ui-checkbox>
+
+<ui-input bind="COMPONENTSDATA.VARSIZE_ITEM_NUM" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Number of variable-size items"></ui-input>
+
+<ui-input bind="COMPONENTSDATA.VARSIZE_ITEM_QTY" data-abap.bind="{type:'QUAN', unit:'ENTRY_UOM', length:'10.3'}"
+          label="Quantity of variable-size item"></ui-input>
+
+<ui-combo bind="COMPONENTSDATA.VARSIZE_ITEM_UOM" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit of measure for sizes 1 to 3"></ui-combo>
+
+<ui-input bind="COMPONENTSDATA.VARSIZE_1" data-abap.bind="{type:'QUAN', unit:'VARSIZE_ITEM_UOM', length:'10.3'}"
+          label="Size 1"></ui-input>
+
+<ui-input bind="COMPONENTSDATA.VARSIZE_2" data-abap.bind="{type:'QUAN', unit:'VARSIZE_ITEM_UOM', length:'10.3'}"
+          label="Size 2"></ui-input>
+
+<ui-input bind="COMPONENTSDATA.VARSIZE_3" data-abap.bind="{type:'QUAN', unit:'VARSIZE_ITEM_UOM', length:'10.3'}"
+          label="Size 3"></ui-input>
+
+<ui-combo bind="COMPONENTSDATA.FORMULA_KEY" shlp.bind="{type: 'CT', id: 'T418F'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Formula key"></ui-combo>
+
+<ui-combo bind="COMPONENTSDATA.ISS_ST_LOC" shlp.bind="{type: 'CT', id: 'T001L'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Issue Storage Location"></ui-combo>
+
+<ui-checkbox value.bind="COMPONENTSDATA.FOLLOWUP_ITEM" label="Indicator: Follow-Up Item"></ui-checkbox>
+
+<ui-combo bind="COMPONENTSDATA.MRP_TYPE" shlp.bind="{type: 'CT', id: 'T438A'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="MRP Type"></ui-combo>
+
+<ui-input bind="COMPONENTSDATA.MATL_DESC" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material description"></ui-input>
+
+<ui-checkbox value.bind="COMPONENTSDATA.PLAN_WO_FA_IND" label="Indicator: planning without final assembly"></ui-checkbox>
+
+<ui-combo bind="COMPONENTSDATA.CHANGE_NUM" shlp.bind="{type: 'CT', id: 'AENR'}" data-abap.bind="{type:'CHAR', alpha:'AENNR', mid:'AEN', length:'12'}"
+          label="Change Number"></ui-combo>
+
+<ui-combo bind="COMPONENTSDATA.SUPPLYAREA" shlp.bind="{type: 'CT', id: 'PVBE'}" data-abap.bind="{type:'CHAR', mid:'PVB', length:'10'}"
+          label="Production Supply Area"></ui-combo>
+
+<ui-checkbox value.bind="COMPONENTSDATA.REQ_TOTALING_TYP" label="Requirements totaling type"></ui-checkbox>
+
+<ui-combo bind="COMPONENTSDATA.BASE_UOM_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-combo bind="COMPONENTSDATA.ENTRY_UOM_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-combo bind="COMPONENTSDATA.VARSIZE_ITEM_UOM_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="COMPONENTSDATA.MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for MATERIAL Field"></ui-input>
+
+<ui-input bind="COMPONENTSDATA.MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for MATERIAL Field"></ui-input>
+
+<ui-input bind="COMPONENTSDATA.MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for MATERIAL Field"></ui-input>
+
+<ui-combo bind="COMPONENTSDATA.REQ_SEGMENT" shlp.bind="{type: 'SH', id: 'SGT_CAT_FIELD_POPUP'}" data-abap.bind="{type:'CHAR', mid:'SGT_R', length:'16'}"
+          label="Requirement Segment"></ui-combo>
+
+<ui-combo bind="COMPONENTSDATA.STOCK_SEGMENT" shlp.bind="{type: 'SH', id: 'SGT_CAT_FIELD_POPUP'}" data-abap.bind="{type:'CHAR', mid:'SGT_S', length:'16'}"
+          label="Stock Segment"></ui-combo>
+
+<ui-input bind="COMPONENTSDATA.MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material Number (40 Characters, needed f. technical reasons)"></ui-input>
+
+<!-- Parameter: FSH_MARKERS structure: FSH_T_BNDL_RETURN  Fashion Marker and Bundle Details -->
+
+<ui-datagrid data.bind="FSH_MARKERS" title="Fashion Marker and Bundle Details"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="MARKER_ID" data-abap.bind="{type:'CHAR', length:'10'}" label="Marker ID for Planned Orders/Production Orders"></ui-dg-column>
+   <ui-dg-column sortable field="MARKER_NAME" data-abap.bind="{type:'CHAR', length:'30'}" label="30 Characters"></ui-dg-column>
+   <ui-dg-column sortable field="MARKER_NUMBER" data-abap.bind="{type:'NUMC', length:'2'}" label="Marker Number"></ui-dg-column>
+   <ui-dg-column sortable field="MARKER_SECTION" data-abap.bind="{type:'CHAR', length:'2'}" label="Marker Section"></ui-dg-column>
+   <ui-dg-column sortable field="BUNDLE_ID" data-abap.bind="{type:'NUMC', length:'8'}" label="Bundle ID for Order"></ui-dg-column>
+   <ui-dg-column sortable field="BUNDLE_QUANTITY" data-abap.bind="{type:'QUAN', unit:'MEINH', length:'10.3'}" label="Bundle Quantity"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="FSH_MARKERS.MARKER_ID" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Marker ID for Planned Orders/Production Orders"></ui-input>
+
+<ui-input bind="FSH_MARKERS.MARKER_NAME" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="30 Characters"></ui-input>
+
+<ui-input bind="FSH_MARKERS.MARKER_NUMBER" data-abap.bind="{type:'NUMC', length:'2'}"
+          label="Marker Number"></ui-input>
+
+<ui-input bind="FSH_MARKERS.MARKER_SECTION" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Marker Section"></ui-input>
+
+<ui-input bind="FSH_MARKERS.BUNDLE_ID" data-abap.bind="{type:'NUMC', length:'8'}"
+          label="Bundle ID for Order"></ui-input>
+
+<ui-input bind="FSH_MARKERS.BUNDLE_QUANTITY" data-abap.bind="{type:'QUAN', unit:'MEINH', length:'10.3'}"
+          label="Bundle Quantity"></ui-input>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: CAPACITYHEADERDATA1 structure: BAPI_KBKO  Capacity header data (detailed scheduling) -->
+
+<ui-combo bind="CAPACITYHEADERDATA1.CAP_REQ_RECORDID" shlp.bind="{type: 'CT', id: 'KBKO'}" data-abap.bind="{type:'NUMC', length:'12'}"
+          label="ID of the capacity requirements record"></ui-combo>
+
+<ui-input bind="CAPACITYHEADERDATA1.ROUTING_NO" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Routing number of operations in the order"></ui-input>
+
+<ui-combo bind="CAPACITYHEADERDATA1.TASK_LIST_TYPE" shlp.bind="{type: 'SH', id: 'H_TCA01'}" data-abap.bind="{type:'CHAR', mid:'PTY', length:'1'}"
+          label="Task List Type"></ui-combo>
+
+<ui-combo bind="CAPACITYHEADERDATA1.GROUP_KEY" shlp.bind="{type: 'SH', id: 'PLKS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PLN', length:'8'}"
+          label="Key for Task List Group"></ui-combo>
+
+<ui-input bind="CAPACITYHEADERDATA1.GROUP_COUNTER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PAL', length:'2'}"
+          label="Group Counter"></ui-input>
+
+<ui-date date.bind="CAPACITYHEADERDATA1.LAST_SCHED_DATE"  label="Date of the last scheduling"></ui-date>
+
+<ui-date date.bind="CAPACITYHEADERDATA1.PROD_FIN_DATE"  label="Scheduled finish"></ui-date>
+
+<ui-time time.bind="CAPACITYHEADERDATA1.EARLY_FIN_TIME"  label="Earliest scheduled finish: Execution (time)"></ui-time>
+
+<ui-date date.bind="CAPACITYHEADERDATA1.PROD_START_DATE"  label="Scheduled start"></ui-date>
+
+<ui-time time.bind="CAPACITYHEADERDATA1.EARLY_START_TIME"  label="Earliest scheduled start: Execution (time)"></ui-time>
+
+<ui-combo bind="CAPACITYHEADERDATA1.SCHED_TYPE" shlp.bind="{type: 'CT', id: 'T482'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Scheduling type"></ui-combo>
+
+<ui-checkbox value.bind="CAPACITYHEADERDATA1.BREAK_ALLOW_IND" label="Indicator:  Scheduling allowing for breaks"></ui-checkbox>
+
+<ui-combo bind="CAPACITYHEADERDATA1.SCHED_REDTN_IND" shlp.bind="{type: 'FV', id: 'REDKZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Reduction indicator for scheduling"></ui-combo>
+
+<ui-combo bind="CAPACITYHEADERDATA1.SCHEDULING_ERROR" shlp.bind="{type: 'FV', id: 'TRMER'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Scheduling error"></ui-combo>
+
+<ui-checkbox value.bind="CAPACITYHEADERDATA1.SCHED_SOURCE" label="Scheduling source"></ui-checkbox>
+
+<ui-date date.bind="CAPACITYHEADERDATA1.ROUTING_DATE"  label="Date for Routing Explosion"></ui-date>
+
+<!-- Parameter: CAPACITYHEADERDATA2 structure: BAPI_KBKO  Capacity header data (rate-based scheduling) -->
+
+<ui-combo bind="CAPACITYHEADERDATA2.CAP_REQ_RECORDID" shlp.bind="{type: 'CT', id: 'KBKO'}" data-abap.bind="{type:'NUMC', length:'12'}"
+          label="ID of the capacity requirements record"></ui-combo>
+
+<ui-input bind="CAPACITYHEADERDATA2.ROUTING_NO" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Routing number of operations in the order"></ui-input>
+
+<ui-combo bind="CAPACITYHEADERDATA2.TASK_LIST_TYPE" shlp.bind="{type: 'SH', id: 'H_TCA01'}" data-abap.bind="{type:'CHAR', mid:'PTY', length:'1'}"
+          label="Task List Type"></ui-combo>
+
+<ui-combo bind="CAPACITYHEADERDATA2.GROUP_KEY" shlp.bind="{type: 'SH', id: 'PLKS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PLN', length:'8'}"
+          label="Key for Task List Group"></ui-combo>
+
+<ui-input bind="CAPACITYHEADERDATA2.GROUP_COUNTER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PAL', length:'2'}"
+          label="Group Counter"></ui-input>
+
+<ui-date date.bind="CAPACITYHEADERDATA2.LAST_SCHED_DATE"  label="Date of the last scheduling"></ui-date>
+
+<ui-date date.bind="CAPACITYHEADERDATA2.PROD_FIN_DATE"  label="Scheduled finish"></ui-date>
+
+<ui-time time.bind="CAPACITYHEADERDATA2.EARLY_FIN_TIME"  label="Earliest scheduled finish: Execution (time)"></ui-time>
+
+<ui-date date.bind="CAPACITYHEADERDATA2.PROD_START_DATE"  label="Scheduled start"></ui-date>
+
+<ui-time time.bind="CAPACITYHEADERDATA2.EARLY_START_TIME"  label="Earliest scheduled start: Execution (time)"></ui-time>
+
+<ui-combo bind="CAPACITYHEADERDATA2.SCHED_TYPE" shlp.bind="{type: 'CT', id: 'T482'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Scheduling type"></ui-combo>
+
+<ui-checkbox value.bind="CAPACITYHEADERDATA2.BREAK_ALLOW_IND" label="Indicator:  Scheduling allowing for breaks"></ui-checkbox>
+
+<ui-combo bind="CAPACITYHEADERDATA2.SCHED_REDTN_IND" shlp.bind="{type: 'FV', id: 'REDKZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Reduction indicator for scheduling"></ui-combo>
+
+<ui-combo bind="CAPACITYHEADERDATA2.SCHEDULING_ERROR" shlp.bind="{type: 'FV', id: 'TRMER'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Scheduling error"></ui-combo>
+
+<ui-checkbox value.bind="CAPACITYHEADERDATA2.SCHED_SOURCE" label="Scheduling source"></ui-checkbox>
+
+<ui-date date.bind="CAPACITYHEADERDATA2.ROUTING_DATE"  label="Date for Routing Explosion"></ui-date>
+
+<!-- Parameter: CAPACITYHEADERDATA3 structure: BAPI_KBKO  Capacity header data (rough-cut scheduling) -->
+
+<ui-combo bind="CAPACITYHEADERDATA3.CAP_REQ_RECORDID" shlp.bind="{type: 'CT', id: 'KBKO'}" data-abap.bind="{type:'NUMC', length:'12'}"
+          label="ID of the capacity requirements record"></ui-combo>
+
+<ui-input bind="CAPACITYHEADERDATA3.ROUTING_NO" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Routing number of operations in the order"></ui-input>
+
+<ui-combo bind="CAPACITYHEADERDATA3.TASK_LIST_TYPE" shlp.bind="{type: 'SH', id: 'H_TCA01'}" data-abap.bind="{type:'CHAR', mid:'PTY', length:'1'}"
+          label="Task List Type"></ui-combo>
+
+<ui-combo bind="CAPACITYHEADERDATA3.GROUP_KEY" shlp.bind="{type: 'SH', id: 'PLKS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PLN', length:'8'}"
+          label="Key for Task List Group"></ui-combo>
+
+<ui-input bind="CAPACITYHEADERDATA3.GROUP_COUNTER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PAL', length:'2'}"
+          label="Group Counter"></ui-input>
+
+<ui-date date.bind="CAPACITYHEADERDATA3.LAST_SCHED_DATE"  label="Date of the last scheduling"></ui-date>
+
+<ui-date date.bind="CAPACITYHEADERDATA3.PROD_FIN_DATE"  label="Scheduled finish"></ui-date>
+
+<ui-time time.bind="CAPACITYHEADERDATA3.EARLY_FIN_TIME"  label="Earliest scheduled finish: Execution (time)"></ui-time>
+
+<ui-date date.bind="CAPACITYHEADERDATA3.PROD_START_DATE"  label="Scheduled start"></ui-date>
+
+<ui-time time.bind="CAPACITYHEADERDATA3.EARLY_START_TIME"  label="Earliest scheduled start: Execution (time)"></ui-time>
+
+<ui-combo bind="CAPACITYHEADERDATA3.SCHED_TYPE" shlp.bind="{type: 'CT', id: 'T482'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Scheduling type"></ui-combo>
+
+<ui-checkbox value.bind="CAPACITYHEADERDATA3.BREAK_ALLOW_IND" label="Indicator:  Scheduling allowing for breaks"></ui-checkbox>
+
+<ui-combo bind="CAPACITYHEADERDATA3.SCHED_REDTN_IND" shlp.bind="{type: 'FV', id: 'REDKZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Reduction indicator for scheduling"></ui-combo>
+
+<ui-combo bind="CAPACITYHEADERDATA3.SCHEDULING_ERROR" shlp.bind="{type: 'FV', id: 'TRMER'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Scheduling error"></ui-combo>
+
+<ui-checkbox value.bind="CAPACITYHEADERDATA3.SCHED_SOURCE" label="Scheduling source"></ui-checkbox>
+
+<ui-date date.bind="CAPACITYHEADERDATA3.ROUTING_DATE"  label="Date for Routing Explosion"></ui-date>
+
+<!-- Parameter: HEADERDATA structure: BAPIPLAF_E1  Header data -->
+
+<ui-combo bind="HEADERDATA.PLANNEDORDER_NUM" shlp.bind="{type: 'CT', id: 'PLAF'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PAF', length:'10'}"
+          label="Planned order number"></ui-combo>
+
+<ui-combo bind="HEADERDATA.MATERIAL" shlp.bind="{type: 'CT', id: 'MARA'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Planning material"></ui-combo>
+
+<ui-combo bind="HEADERDATA.PLAN_PLANT" shlp.bind="{type: 'SH', id: 'H_T001W'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Planning Plant"></ui-combo>
+
+<ui-combo bind="HEADERDATA.PROD_PLANT" shlp.bind="{type: 'SH', id: 'H_T001W'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Production plant in planned order"></ui-combo>
+
+<ui-combo bind="HEADERDATA.ORDER_TYPE" shlp.bind="{type: 'FV', id: 'PAART'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Order type"></ui-combo>
+
+<ui-combo bind="HEADERDATA.PROCUREMENT_TYPE" shlp.bind="{type: 'FV', id: 'BESKZ'}" data-abap.bind="{type:'CHAR', mid:'MBS', length:'1'}"
+          label="Procurement Type"></ui-combo>
+
+<ui-combo bind="HEADERDATA.SPECIALPROC_TYPE" shlp.bind="{type: 'FV', id: 'SOBES'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Special procurement type"></ui-combo>
+
+<ui-input bind="HEADERDATA.TOTAL_PLORD_QTY" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Total planned order quantity"></ui-input>
+
+<ui-input bind="HEADERDATA.FIXED_SCRAP_QTY" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Fixed quantity of scrap from production"></ui-input>
+
+<ui-input bind="HEADERDATA.REQ_QUAN" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Requirement Quantity"></ui-input>
+
+<ui-date date.bind="HEADERDATA.ORDER_START_DATE"  label="Order start date in planned order"></ui-date>
+
+<ui-date date.bind="HEADERDATA.ORDER_FIN_DATE"  label="Order finish date in the planned order"></ui-date>
+
+<ui-date date.bind="HEADERDATA.PLAN_OPEN_DATE"  label="Planned opening date in planned order"></ui-date>
+
+<ui-input bind="HEADERDATA.GR_PROC_TIME" data-abap.bind="{type:'DEC', length:'3'}"
+          label="Goods receipt processing time in days"></ui-input>
+
+<ui-combo bind="HEADERDATA.MRP_CONTROLLER" shlp.bind="{type: 'SH', id: 'H_T024D'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="MRP controller"></ui-combo>
+
+<ui-checkbox value.bind="HEADERDATA.CONVERSION_IND" label="Conversion indicator for planned order"></ui-checkbox>
+
+<ui-checkbox value.bind="HEADERDATA.FIRMING_IND" label="Firming indicator for planned order data"></ui-checkbox>
+
+<ui-checkbox value.bind="HEADERDATA.BOM_EXP_FIX_IND" label="Fixing indicator for BOM explosion"></ui-checkbox>
+
+<ui-combo bind="HEADERDATA.ACCTASSCAT" shlp.bind="{type: 'SH', id: 'H_T163K'}" data-abap.bind="{type:'CHAR', mid:'KNT', length:'1'}"
+          label="Account assignment category"></ui-combo>
+
+<ui-combo bind="HEADERDATA.SALES_ORD" shlp.bind="{type: 'CH', id: 'VBUK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}"
+          label="Sales Order Number"></ui-combo>
+
+<ui-input bind="HEADERDATA.S_ORD_ITEM" data-abap.bind="{type:'NUMC', mid:'KPO', length:'6'}"
+          label="Item number in Sales Order"></ui-input>
+
+<ui-input bind="HEADERDATA.SCHED_LINE" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Delivery schedule for sales order"></ui-input>
+
+<ui-combo bind="HEADERDATA.RESERV_NO" shlp.bind="{type: 'CT', id: 'RESB'}" data-abap.bind="{type:'NUMC', mid:'RES', length:'10'}"
+          label="Number of reservation/dependent requirements"></ui-combo>
+
+<ui-input bind="HEADERDATA.QUOTA_ARR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Number of quota arrangement"></ui-input>
+
+<ui-input bind="HEADERDATA.QUOTARRITM" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Quota arrangement item"></ui-input>
+
+<ui-combo bind="HEADERDATA.FIXED_VEND" shlp.bind="{type: 'SH', id: 'KRED'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Fixed vendor"></ui-combo>
+
+<ui-combo bind="HEADERDATA.AGREEMENT" shlp.bind="{type: 'CH', id: 'EKKO'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KTR', length:'10'}"
+          label="Number of principal purchase agreement"></ui-combo>
+
+<ui-combo bind="HEADERDATA.AGMT_ITEM" shlp.bind="{type: 'CH', id: 'EKPO'}" data-abap.bind="{type:'NUMC', length:'5'}"
+          label="Item number of principal purchase agreement"></ui-combo>
+
+<ui-combo bind="HEADERDATA.PURCH_ORG" shlp.bind="{type: 'SH', id: 'H_T024E'}" data-abap.bind="{type:'CHAR', mid:'EKO', length:'4'}"
+          label="Purchasing organization"></ui-combo>
+
+<ui-combo bind="HEADERDATA.STGE_LOC" shlp.bind="{type: 'SH', id: 'H_T001L'}" data-abap.bind="{type:'CHAR', mid:'LAG', length:'4'}"
+          label="Storage location"></ui-combo>
+
+<ui-combo bind="HEADERDATA.CONSUMPT" shlp.bind="{type: 'FV', id: 'KZVBR'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Consumption posting"></ui-combo>
+
+<ui-combo bind="HEADERDATA.SPEC_STOCK" shlp.bind="{type: 'CT', id: 'T148'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Special Stock Indicator"></ui-combo>
+
+<ui-combo bind="HEADERDATA.INT_PROJ_ITEM" shlp.bind="{type: 'CT', id: 'PRPS'}" data-abap.bind="{type:'NUMC', alpha:'ABPSP', length:'8'}"
+          label="WBS Element"></ui-combo>
+
+<ui-combo bind="HEADERDATA.BOMEXPL_NO" shlp.bind="{type: 'SH', id: 'H_SNUM'}" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="BOM explosion number"></ui-combo>
+
+<ui-date date.bind="HEADERDATA.BOMEXPL_DATE"  label="Explosion date"></ui-date>
+
+<ui-input bind="HEADERDATA.VALIDITY_OBJECT" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Parameter Variant/Standard Variant"></ui-input>
+
+<ui-combo bind="HEADERDATA.BOM_USAGE" shlp.bind="{type: 'CT', id: 'T416'}" data-abap.bind="{type:'CHAR', mid:'CSV', length:'1'}"
+          label="BOM Usage"></ui-combo>
+
+<ui-input bind="HEADERDATA.ALTERNATIVE_BOM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'2'}"
+          label="Alternative BOM"></ui-input>
+
+<ui-combo bind="HEADERDATA.BOM_STATUS" shlp.bind="{type: 'SH', id: 'H_T415S'}" data-abap.bind="{type:'NUMC', length:'2'}"
+          label="BOM status"></ui-combo>
+
+<ui-combo bind="HEADERDATA.CHANGE_NUMBER" shlp.bind="{type: 'CT', id: 'AENR'}" data-abap.bind="{type:'CHAR', alpha:'AENNR', mid:'AEN', length:'12'}"
+          label="Change Number"></ui-combo>
+
+<ui-input bind="HEADERDATA.SETRESERNO" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Settlement reservation number"></ui-input>
+
+<ui-input bind="HEADERDATA.SETTLITMNO" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Item number of the settlement reservation"></ui-input>
+
+<ui-combo bind="HEADERDATA.DIST_KEY" shlp.bind="{type: 'CT', id: 'T437V'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Distribution key for quantity produced"></ui-combo>
+
+<ui-combo bind="HEADERDATA.VERSION" shlp.bind="{type: 'SH', id: 'H_MKAL'}" data-abap.bind="{type:'CHAR', mid:'VER', length:'4'}"
+          label="Production Version"></ui-combo>
+
+<ui-combo bind="HEADERDATA.RUNSCHD_HD" shlp.bind="{type: 'CH', id: 'SAFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'12'}"
+          label="Run schedule header number"></ui-combo>
+
+<ui-combo bind="HEADERDATA.PROD_SCHEDULER" shlp.bind="{type: 'SH', id: 'H_T024F'}" data-abap.bind="{type:'CHAR', mid:'CFV', length:'3'}"
+          label="Production Supervisor"></ui-combo>
+
+<ui-date date.bind="HEADERDATA.PROD_START_DATE"  label="Start date for production"></ui-date>
+
+<ui-date date.bind="HEADERDATA.PROD_FINISH_DATE"  label="Finish date for production"></ui-date>
+
+<ui-combo bind="HEADERDATA.CAP_REQ_RECORDID" shlp.bind="{type: 'CT', id: 'KBKO'}" data-abap.bind="{type:'NUMC', length:'12'}"
+          label="ID of the capacity requirements record"></ui-combo>
+
+<ui-input bind="HEADERDATA.SCHEDULING_ID" data-abap.bind="{type:'NUMC', length:'15'}"
+          label="ID for a schedule record"></ui-input>
+
+<ui-checkbox value.bind="HEADERDATA.SCHEDULING_IND" label="Scheduling indicator"></ui-checkbox>
+
+<ui-combo bind="HEADERDATA.SCHEDULING_ERROR" shlp.bind="{type: 'FV', id: 'TRMER'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Scheduling error"></ui-combo>
+
+<ui-checkbox value.bind="HEADERDATA.PRODUCTION_NOTE" label="Production note in the planned order"></ui-checkbox>
+
+<ui-checkbox value.bind="HEADERDATA.BACKFLUSH_IND" label="Indicator: Backflushing for order"></ui-checkbox>
+
+<ui-combo bind="HEADERDATA.BASE_UOM" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Base Unit of Measure"></ui-combo>
+
+<ui-input bind="HEADERDATA.CONFIGURATION" data-abap.bind="{type:'NUMC', mid:'CUX', length:'18'}"
+          label="Configuration (internal object number)"></ui-input>
+
+<ui-input bind="HEADERDATA.REVISION_LEVEL" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'RVS', length:'2'}"
+          label="Revision level"></ui-input>
+
+<ui-input bind="HEADERDATA.REDUCED_QTY" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Reduced quantity in the planned order"></ui-input>
+
+<ui-combo bind="HEADERDATA.SCHED_RATE_INDEX" shlp.bind="{type: 'CT', id: 'KBKO'}" data-abap.bind="{type:'NUMC', length:'12'}"
+          label="Index for the results of scheduling production rates"></ui-combo>
+
+<ui-combo bind="HEADERDATA.ROUGH_SCHEDINDEXLT_INDEX" shlp.bind="{type: 'CT', id: 'KBKO'}" data-abap.bind="{type:'NUMC', length:'12'}"
+          label="Index for rough scheduling results"></ui-combo>
+
+<ui-combo bind="HEADERDATA.SCHED_ERROR_PR" shlp.bind="{type: 'FV', id: 'TRMER'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Scheduling error in scheduling production rates"></ui-combo>
+
+<ui-combo bind="HEADERDATA.SCHED_ERROR_RS" shlp.bind="{type: 'FV', id: 'TRMER'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Scheduling error in rough scheduling"></ui-combo>
+
+<ui-combo bind="HEADERDATA.OBJECT_TYPE" shlp.bind="{type: 'FV', id: 'OBART'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Object type"></ui-combo>
+
+<ui-combo bind="HEADERDATA.PLNG_SCENARIO_LT" shlp.bind="{type: 'SH', id: 'H_PLSC'}" data-abap.bind="{type:'NUMC', mid:'PLS', length:'3'}"
+          label="Planning Scenario of Long-Term Planning"></ui-combo>
+
+<ui-combo bind="HEADERDATA.SIM_REQ_NO" shlp.bind="{type: 'CT', id: 'MDSM'}" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Simulation requirements number"></ui-combo>
+
+<ui-checkbox value.bind="HEADERDATA.KANBAN_INDICATOR" label="Kanban Indicator"></ui-checkbox>
+
+<ui-checkbox value.bind="HEADERDATA.DISP_CAP_IND" label="Indicator: capacity for planned order dispatched"></ui-checkbox>
+
+<ui-input bind="HEADERDATA.SEQ_NUMBER_ORDER" data-abap.bind="{type:'NUMC', length:'14'}"
+          label="Seq. number order"></ui-input>
+
+<ui-time time.bind="HEADERDATA.ORDER_STR_TIME"  label="Start Time of Planned Order"></ui-time>
+
+<ui-time time.bind="HEADERDATA.ORDER_FIN_TIME"  label="End Time of Planned Order"></ui-time>
+
+<ui-checkbox value.bind="HEADERDATA.ASS_ORD_IND" label="Indicator: for assembly order procedures"></ui-checkbox>
+
+<ui-checkbox value.bind="HEADERDATA.COLLORD_LEAD_IND" label="Ind.: Leading order in collective order is planned ordre"></ui-checkbox>
+
+<ui-combo bind="HEADERDATA.AVAILABLE_CONF" shlp.bind="{type: 'FV', id: 'MDPBV'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Planned order: confirmation of availability"></ui-combo>
+
+<ui-input bind="HEADERDATA.COMMIT_QTY" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Planned order: committed quantity"></ui-input>
+
+<ui-combo bind="HEADERDATA.PLORD_CTRL" shlp.bind="{type: 'CH', id: 'T46AC'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Action control: planned order processing"></ui-combo>
+
+<ui-combo bind="HEADERDATA.ACTION_PLND_ORD" shlp.bind="{type: 'CT', id: 'T46AS'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Action: planned order processing"></ui-combo>
+
+<ui-date date.bind="HEADERDATA.DATE_OF_ACTION"  label="Date of action: planned order"></ui-date>
+
+<ui-time time.bind="HEADERDATA.TIME_OF_ACTION"  label="Time of action: Planned order processing"></ui-time>
+
+<ui-date date.bind="HEADERDATA.TOTAL_COMMIT_DAT"  label="Total commitment date of plnd ord. after ATP check f.comps."></ui-date>
+
+<ui-checkbox value.bind="HEADERDATA.SCHED_PROD_DATES" label="Planned order: scheduling using production dates"></ui-checkbox>
+
+<ui-combo bind="HEADERDATA.LEAD_SCHED_LEVEL" shlp.bind="{type: 'FV', id: 'SCHED_TYPE'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Planned order: leading scheduling level (determines dates)"></ui-combo>
+
+<ui-checkbox value.bind="HEADERDATA.ATP_CHECK_TYPE" label="Indicator for type of availability check"></ui-checkbox>
+
+<ui-checkbox value.bind="HEADERDATA.PLN_WO_ASSEMBLY" label="Indicator: planning without final assembly"></ui-checkbox>
+
+<ui-input bind="HEADERDATA.REQ_PLAN_NO" data-abap.bind="{type:'CHAR', mid:'PBN', length:'10'}"
+          label="Requirements Plan Number"></ui-input>
+
+<ui-checkbox value.bind="HEADERDATA.REQ_TOTALING" label="Requirements totaling"></ui-checkbox>
+
+<ui-input bind="HEADERDATA.NUMERATOR" data-abap.bind="{type:'DEC', length:'5'}"
+          label="Numerator for Conversion to Base Units of Measure"></ui-input>
+
+<ui-input bind="HEADERDATA.DENOMINATR" data-abap.bind="{type:'DEC', length:'5'}"
+          label="Denominator for conversion to base units of measure"></ui-input>
+
+<ui-input bind="HEADERDATA.ENTRY_QNT" data-abap.bind="{type:'QUAN', unit:'UNIT_OF_ENTRY', length:'10.3'}"
+          label="Quantity in unit of entry"></ui-input>
+
+<ui-combo bind="HEADERDATA.UNIT_OF_ENTRY" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit of entry"></ui-combo>
+
+<ui-combo bind="HEADERDATA.REQ_RECORD_NO" shlp.bind="{type: 'CT', id: 'RQHD'}" data-abap.bind="{type:'NUMC', mid:'PLA', length:'10'}"
+          label="Requirements record number"></ui-combo>
+
+<ui-combo bind="HEADERDATA.SPEC_STVAL_IND" shlp.bind="{type: 'FV', id: 'KZBWS'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Valuation of Special Stock"></ui-combo>
+
+<ui-input bind="HEADERDATA.DELIV_QTY" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Quantity of Goods Received"></ui-input>
+
+<ui-input bind="HEADERDATA.WITHDR_QTY" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Issued Quantity"></ui-input>
+
+<ui-combo bind="HEADERDATA.OBJ_DEPEND_TREE" shlp.bind="{type: 'CT', id: 'M60I'}" data-abap.bind="{type:'NUMC', length:'17'}"
+          label="Internal number for edge of object dependencies tree"></ui-combo>
+
+<ui-checkbox value.bind="HEADERDATA.SC_VENDOR" label="Subcontracting vendor"></ui-checkbox>
+
+<ui-combo bind="HEADERDATA.DELIV_REC_VENDOR" shlp.bind="{type: 'CT', id: 'LFA1'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Vendor to be supplied/who is to receive delivery"></ui-combo>
+
+<ui-combo bind="HEADERDATA.MRP_AREA" shlp.bind="{type: 'CT', id: 'MDLV'}" data-abap.bind="{type:'CHAR', mid:'BERID', length:'10'}"
+          label="MRP Area"></ui-combo>
+
+<ui-combo bind="HEADERDATA.ISSUE_MRP_AREA" shlp.bind="{type: 'CT', id: 'MDLV'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Issuing MRP area when transferring stock"></ui-combo>
+
+<ui-combo bind="HEADERDATA.MPN_MATERIAL" shlp.bind="{type: 'CT', id: 'MARA'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'HTN', length:'18'}"
+          label="Material number corresponding to manufacturer part number"></ui-combo>
+
+<ui-input bind="HEADERDATA.REPETITIVE_IND" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Repetitive Manufacturing indicator"></ui-input>
+
+<ui-combo bind="HEADERDATA.BASE_UOM_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-combo bind="HEADERDATA.UNIT_OF_ENTRY_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="HEADERDATA.MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for MATERIAL Field"></ui-input>
+
+<ui-input bind="HEADERDATA.MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for MATERIAL Field"></ui-input>
+
+<ui-input bind="HEADERDATA.MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for MATERIAL Field"></ui-input>
+
+<ui-input bind="HEADERDATA.MPN_MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for MPN_MATERIAL Field"></ui-input>
+
+<ui-input bind="HEADERDATA.MPN_MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for MPN_MATERIAL Field"></ui-input>
+
+<ui-input bind="HEADERDATA.MPN_MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for MPN_MATERIAL Field"></ui-input>
+
+<ui-combo bind="HEADERDATA.SUPPL_STLOC" shlp.bind="{type: 'CT', id: 'T001L'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Issuing Storage Location for Stock Transport Order"></ui-combo>
+
+<ui-combo bind="HEADERDATA.STOCK_SEGMENT" shlp.bind="{type: 'SH', id: 'SGT_CAT_FIELD_POPUP'}" data-abap.bind="{type:'CHAR', mid:'SGT_S', length:'16'}"
+          label="Stock Segment"></ui-combo>
+
+<ui-input bind="HEADERDATA.MATERIAL_LONG" data-abap.bind="{type:'CHAR', mid:'MAT', length:'40'}"
+          label="Planning material"></ui-input>
+
+<ui-input bind="HEADERDATA.MPN_MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material number corresponding to MPN (technically required)"></ui-input>
+
+<!-- Parameter: RETURN structure: BAPIRETURN1  Confirmations -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>

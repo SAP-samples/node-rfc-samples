@@ -1,7 +1,7 @@
 //
-// /COE/RBP_PAM_SERVICE_ORD_CHANG var: 3  struct: 3  table: 9  exception: 0
+// /COE/RBP_PAM_SERVICE_ORD_CHANG exception: 0  struct: 3  table: 9  var: 3
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore
@@ -9,24 +9,24 @@ const parameters = {
 
 // IMPORT PARAMETERS
 
-// IV_NOTICE              :           "", // STRING no text (en)
-// IV_ORDERID             :           "", // CHAR (12) ALPHA=ALPHA no text (en) SU3=ANR
-// IV_USER_STATUS         :           "", // CHAR (4) no text (en)
-// IS_HEADER              :           {}, // BAPI_ALM_ORDER_HEADERS_I no text (en)
-// IS_HEADER_X            :           {}, // BAPI_ALM_ORDER_HEADERS_UP no text (en)
-// IS_REJECT_REASON       :           {}, // /COE/RBP_S_PAM_REJECT_REASON no text (en)
-// IT_COMPONENTS          :           [], // /COE/RBP_T_PAM_ORDER_COMP no text (en)
-// IT_COMPONENTS_X        :           [], // /COE/RBP_T_PAM_ORDER_COMPX no text (en)
-// IT_NOTICE_NOTIFICATION :           [], // RE_T_TEXTLINE no text (en)
-// IT_OPERATIONS          :           [], // /COE/RBP_T_PAM_ORDER_OPER no text (en)
-// IT_OPERATIONS_X        :           [], // /COE/RBP_T_PAM_ORDER_OPERX no text (en)
-// IT_PERMIT              :           [], // BAPI_ALM_ORDER_PERMIT_T no text (en)
-// IT_PERMIT_ISSUE        :           [], // BAPI_ALM_ORDER_PERMITISSUE_T no text (en)
-// IT_PERMIT_X            :           [], // BAPI_ALM_ORDER_PERMIT_UP_T no text (en)
+// IV_NOTICE              :           "", // STRING no text (undefined)
+// IV_ORDERID             :           "", // CHAR (12) ALPHA=ALPHA no text (undefined) SU3=ANR
+// IV_USER_STATUS         :           "", // CHAR (4) no text (undefined)
+// IS_HEADER              :           {}, // BAPI_ALM_ORDER_HEADERS_I no text (undefined)
+// IS_HEADER_X            :           {}, // BAPI_ALM_ORDER_HEADERS_UP no text (undefined)
+// IS_REJECT_REASON       :           {}, // /COE/RBP_S_PAM_REJECT_REASON no text (undefined)
+// IT_COMPONENTS          :           [], // /COE/RBP_T_PAM_ORDER_COMP no text (undefined)
+// IT_COMPONENTS_X        :           [], // /COE/RBP_T_PAM_ORDER_COMPX no text (undefined)
+// IT_NOTICE_NOTIFICATION :           [], // RE_T_TEXTLINE no text (undefined)
+// IT_OPERATIONS          :           [], // /COE/RBP_T_PAM_ORDER_OPER no text (undefined)
+// IT_OPERATIONS_X        :           [], // /COE/RBP_T_PAM_ORDER_OPERX no text (undefined)
+// IT_PERMIT              :           [], // BAPI_ALM_ORDER_PERMIT_T no text (undefined)
+// IT_PERMIT_ISSUE        :           [], // BAPI_ALM_ORDER_PERMITISSUE_T no text (undefined)
+// IT_PERMIT_X            :           [], // BAPI_ALM_ORDER_PERMIT_UP_T no text (undefined)
 
 // EXPORT PARAMETERS
 
-// ET_RETURN              :           [], // BAPIRETTAB no text (en)
+// ET_RETURN              :           [], // BAPIRETTAB no text (undefined)
 };
 
 const result = await client.call("/COE/RBP_PAM_SERVICE_ORD_CHANG", parameters);

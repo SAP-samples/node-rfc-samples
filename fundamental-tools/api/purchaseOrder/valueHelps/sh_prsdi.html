@@ -1,0 +1,22 @@
+<!-- SH PRSDI Simulation Version: Project Definition, Description : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.VSNMR" data-abap.bind="{type:'CHAR', mid:'VS2', length:'12'}"
+          label="Number or description of a version"></ui-input>
+<ui-combo bind="searchParamLow.VSKAT" shlp.bind="{type: 'FV', id: 'VSKAT'}" data-abap.bind="{type:'CHAR', mid:'VS1', length:'1'}"
+          label="Project version category: status/time-dependent"></ui-combo>
+<ui-input bind="searchParamLow.POST1" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="PS: Short description (1st text line)"></ui-input>
+<ui-input bind="searchParamLow.POSTU" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="PS: Short description (1st text line) in all caps"></ui-input>
+<ui-combo bind="searchParamLow.PSPID" shlp.bind="{type: 'SH', id: 'PRS'}" data-abap.bind="{type:'CHAR', alpha:'ABPSN', mid:'PSP', length:'24'}"
+          label="Project definition"></ui-combo>
+<ui-checkbox value.bind="searchParamLow.VSINACT" label="Version inactive indicator"></ui-checkbox>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="VSNMR" data-abap.bind="{type:'CHAR', mid:'VS2', length:'12'}" label="Number or description of a version"></ui-dg-column>
+   <ui-dg-column sortable field="POST1" data-abap.bind="{type:'CHAR', length:'40'}" label="PS: Short description (1st text line)"></ui-dg-column>
+   <ui-dg-column sortable field="PSPID" data-abap.bind="{type:'CHAR', alpha:'ABPSN', mid:'PSP', length:'24'}" label="Project definition"></ui-dg-column>
+   <ui-dg-column sortable field="VSINACT" data-abap.bind="{type:'CHAR', length:'1'}" label="Version inactive indicator"></ui-dg-column>
+</ui-datagrid>

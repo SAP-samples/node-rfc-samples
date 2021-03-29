@@ -1,0 +1,19 @@
+<!-- SH USCOMPANY_ADDR Company address, cross-system key : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.COMPANY" data-abap.bind="{type:'CHAR', length:'42'}"
+          label="Company address, cross-system key"></ui-input>
+<ui-input bind="searchParamLow.NAME1" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Name 1"></ui-input>
+<ui-input bind="searchParamLow.NAME2" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Name 2"></ui-input>
+<ui-input bind="searchParamLow.CITY1" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="City"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="COMPANY" data-abap.bind="{type:'CHAR', length:'42'}" label="Company address, cross-system key"></ui-dg-column>
+   <ui-dg-column sortable field="NAME1" data-abap.bind="{type:'CHAR', length:'40'}" label="Name 1"></ui-dg-column>
+   <ui-dg-column sortable field="NAME2" data-abap.bind="{type:'CHAR', length:'40'}" label="Name 2"></ui-dg-column>
+   <ui-dg-column sortable field="CITY1" data-abap.bind="{type:'CHAR', length:'40'}" label="City"></ui-dg-column>
+</ui-datagrid>

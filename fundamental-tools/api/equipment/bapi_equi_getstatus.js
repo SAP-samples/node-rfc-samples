@@ -1,7 +1,7 @@
 //
-// BAPI_EQUI_GETSTATUS var: 5  struct: 1  table: 2  exception: 0
+// BAPI_EQUI_GETSTATUS exception: 0  struct: 1  table: 2  var: 5
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore

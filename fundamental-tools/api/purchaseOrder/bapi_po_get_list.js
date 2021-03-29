@@ -1,7 +1,7 @@
 //
-// BAPI_PO_GET_LIST var: 3  struct: 0  table: 5  exception: 2
+// BAPI_PO_GET_LIST exception: 2  struct: 0  table: 5  var: 3
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore

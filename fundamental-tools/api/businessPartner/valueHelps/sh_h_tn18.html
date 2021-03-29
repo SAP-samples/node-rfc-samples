@@ -1,0 +1,16 @@
+<!-- SH H_TN18 IS-H: Insurance Provider Type (e.g. Private, Statutory) : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.KTART" shlp.bind="{type: 'CT', id: 'TN18'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="IS-H: Insurance Provider Type (e.g. Private, Statutory)"></ui-combo>
+<ui-input bind="searchParamLow.KATXT" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="IS-H: Text for Insurance Provider Type"></ui-input>
+<ui-input bind="searchParamLow.KUTXT" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Short Text for Insurance Provider Type"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="KTART" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}" label="IS-H: Insurance Provider Type (e.g. Private, Statutory)"></ui-dg-column>
+   <ui-dg-column sortable field="KATXT" data-abap.bind="{type:'CHAR', length:'30'}" label="IS-H: Text for Insurance Provider Type"></ui-dg-column>
+   <ui-dg-column sortable field="KUTXT" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Short Text for Insurance Provider Type"></ui-dg-column>
+</ui-datagrid>

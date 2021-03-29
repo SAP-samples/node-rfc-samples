@@ -1,0 +1,16 @@
+<!-- SH H_TSKD Alternative tax classification : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.TATYP" shlp.bind="{type: 'CH', id: 'T685A'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Tax category (sales tax, federal sales tax,...)"></ui-combo>
+<ui-combo bind="searchParamLow.TAXKD" shlp.bind="{type: 'CT', id: 'TSKD'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Tax classification for customer"></ui-combo>
+<ui-input bind="searchParamLow.VTEXT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Description"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TATYP" data-abap.bind="{type:'CHAR', length:'4'}" label="Tax category (sales tax, federal sales tax,...)"></ui-dg-column>
+   <ui-dg-column sortable field="TAXKD" data-abap.bind="{type:'CHAR', length:'1'}" label="Tax classification for customer"></ui-dg-column>
+   <ui-dg-column sortable field="VTEXT" data-abap.bind="{type:'CHAR', length:'20'}" label="Description"></ui-dg-column>
+</ui-datagrid>

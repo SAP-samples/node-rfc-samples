@@ -1,0 +1,16 @@
+<!-- SH QALST Inspection Lot Short Text : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.KTEXTLOS" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Short Text"></ui-input>
+<ui-combo bind="searchParamLow.WERK" shlp.bind="{type: 'SH', id: 'H_T001W'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+<ui-combo bind="searchParamLow.PRUEFLOS" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="KTEXTLOS" data-abap.bind="{type:'CHAR', length:'40'}" label="Short Text"></ui-dg-column>
+   <ui-dg-column sortable field="WERK" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" label="Plant"></ui-dg-column>
+   <ui-dg-column sortable field="PRUEFLOS" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}" label="Inspection Lot Number"></ui-dg-column>
+</ui-datagrid>

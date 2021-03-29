@@ -1,7 +1,7 @@
 //
-// /COE/RBP_PAM_SERV_ORD_CREAT_N var: 3  struct: 0  table: 1  exception: 0
+// /COE/RBP_PAM_SERV_ORD_CREAT_N exception: 0  struct: 0  table: 1  var: 3
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore
@@ -9,13 +9,13 @@ const parameters = {
 
 // IMPORT PARAMETERS
 
-IV_NOTIFNO       :           "", // CHAR (12) ALPHA=ALPHA no text (en) SU3=IQM
-IV_ORDER_TYPE    :           "", // CHAR (4) no text (en) SU3=AAT
+IV_NOTIFNO       :           "", // CHAR (12) ALPHA=ALPHA no text (undefined) SU3=IQM
+IV_ORDER_TYPE    :           "", // CHAR (4) no text (undefined) SU3=AAT
 
 // EXPORT PARAMETERS
 
-// EV_ORDERID    :           "", // CHAR (12) ALPHA=ALPHA no text (en) SU3=ANR
-// ET_RETURN     :           [], // BAPIRETTAB no text (en)
+// EV_ORDERID    :           "", // CHAR (12) ALPHA=ALPHA no text (undefined) SU3=ANR
+// ET_RETURN     :           [], // BAPIRETTAB no text (undefined)
 };
 
 const result = await client.call("/COE/RBP_PAM_SERV_ORD_CREAT_N", parameters);

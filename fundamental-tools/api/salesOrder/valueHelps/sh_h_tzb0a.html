@@ -1,0 +1,21 @@
+<!-- SH H_TZB0A Flow Type : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.RANTYP" shlp.bind="{type: 'FV', id: 'RANTYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Contract Type"></ui-combo>
+<ui-combo bind="searchParamLow.SBEWART" shlp.bind="{type: 'CT', id: 'TZB0A'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Flow Type"></ui-combo>
+<ui-input bind="searchParamLow.XBEWART" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Name of flow type"></ui-input>
+<ui-combo bind="searchParamLow.SBEWZITI" shlp.bind="{type: 'CT', id: 'TZB03'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Flow category"></ui-combo>
+<ui-checkbox value.bind="searchParamLow.SSOLHAB" label="Debit/credit indicator"></ui-checkbox>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="RANTYP" data-abap.bind="{type:'CHAR', length:'1'}" label="Contract Type"></ui-dg-column>
+   <ui-dg-column sortable field="SBEWART" data-abap.bind="{type:'CHAR', length:'4'}" label="Flow Type"></ui-dg-column>
+   <ui-dg-column sortable field="XBEWART" data-abap.bind="{type:'CHAR', length:'30'}" label="Name of flow type"></ui-dg-column>
+   <ui-dg-column sortable field="SBEWZITI" data-abap.bind="{type:'CHAR', length:'4'}" label="Flow category"></ui-dg-column>
+   <ui-dg-column sortable field="SSOLHAB" data-abap.bind="{type:'CHAR', length:'1'}" label="Debit/credit indicator"></ui-dg-column>
+</ui-datagrid>

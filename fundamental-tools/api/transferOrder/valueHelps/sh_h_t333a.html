@@ -1,0 +1,16 @@
+<!-- SH H_T333A Shipment Type : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.LGNUM" shlp.bind="{type: 'SH', id: 'H_T300'}" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}"
+          label="Warehouse Number / Warehouse Complex"></ui-combo>
+<ui-combo bind="searchParamLow.TRART" shlp.bind="{type: 'SH', id: 'H_T333A'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Shipment Type"></ui-combo>
+<ui-input bind="searchParamLow.TRATX" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Text for shipment type"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="LGNUM" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}" label="Warehouse Number / Warehouse Complex"></ui-dg-column>
+   <ui-dg-column sortable field="TRART" data-abap.bind="{type:'CHAR', length:'1'}" label="Shipment Type"></ui-dg-column>
+   <ui-dg-column sortable field="TRATX" data-abap.bind="{type:'CHAR', length:'12'}" label="Text for shipment type"></ui-dg-column>
+</ui-datagrid>

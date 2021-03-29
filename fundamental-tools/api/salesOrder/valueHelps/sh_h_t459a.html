@@ -1,0 +1,13 @@
+<!-- SH H_T459A Requirements type : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.BEDAE" shlp.bind="{type: 'CT', id: 'T459A'}" data-abap.bind="{type:'CHAR', mid:'BDA', length:'4'}"
+          label="Requirements type"></ui-combo>
+<ui-input bind="searchParamLow.BDTXT" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Requirements type short description"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="BEDAE" data-abap.bind="{type:'CHAR', mid:'BDA', length:'4'}" label="Requirements type"></ui-dg-column>
+   <ui-dg-column sortable field="BDTXT" data-abap.bind="{type:'CHAR', length:'30'}" label="Requirements type short description"></ui-dg-column>
+</ui-datagrid>

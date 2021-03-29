@@ -1,0 +1,35 @@
+<!-- SH VMVLD Credit-Checked Outbound Deliveries (blocked/released) : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.VBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}"
+          label="Delivery"></ui-input>
+<ui-input bind="searchParamLow.KKBER" data-abap.bind="{type:'CHAR', mid:'KKB', length:'4'}"
+          label="Credit control area"></ui-input>
+<ui-input bind="searchParamLow.CMGST" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Overall status of credit checks"></ui-input>
+<ui-input bind="searchParamLow.SBGRP" data-abap.bind="{type:'CHAR', mid:'KBG', length:'3'}"
+          label="Credit representative group for credit management"></ui-input>
+<ui-date date.bind="searchParamLow.CMNGV"  label="Next date"></ui-date>
+<ui-input bind="searchParamLow.KNKLI" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Customer's account number with credit limit reference"></ui-input>
+<ui-input bind="searchParamLow.CTLPC" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Credit management: Risk category"></ui-input>
+<ui-input bind="searchParamLow.GRUPP" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Customer Credit Group"></ui-input>
+<ui-date date.bind="searchParamLow.CMFRE"  label="Release date of the document determined by credit management"></ui-date>
+<ui-input bind="searchParamLow.VSTEL" data-abap.bind="{type:'CHAR', mid:'VST', length:'4'}"
+          label="Shipping Point/Receiving Point"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="VSTEL" data-abap.bind="{type:'CHAR', mid:'VST', length:'4'}" label="Shipping Point/Receiving Point"></ui-dg-column>
+   <ui-dg-column sortable field="VBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}" label="Delivery"></ui-dg-column>
+   <ui-dg-column sortable field="KNKLI" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" label="Customer's account number with credit limit reference"></ui-dg-column>
+   <ui-dg-column sortable field="KKBER" data-abap.bind="{type:'CHAR', mid:'KKB', length:'4'}" label="Credit control area"></ui-dg-column>
+   <ui-dg-column sortable field="CTLPC" data-abap.bind="{type:'CHAR', length:'3'}" label="Credit management: Risk category"></ui-dg-column>
+   <ui-dg-column sortable field="GRUPP" data-abap.bind="{type:'CHAR', length:'4'}" label="Customer Credit Group"></ui-dg-column>
+   <ui-dg-column sortable field="CMFRE" data-abap.bind="{type:'DATS'}" label="Release date of the document determined by credit management"></ui-dg-column>
+   <ui-dg-column sortable field="CMNGV" data-abap.bind="{type:'DATS'}" label="Next date"></ui-dg-column>
+   <ui-dg-column sortable field="SBGRP" data-abap.bind="{type:'CHAR', mid:'KBG', length:'3'}" label="Credit representative group for credit management"></ui-dg-column>
+   <ui-dg-column sortable field="CMGST" data-abap.bind="{type:'CHAR', length:'1'}" label="Overall status of credit checks"></ui-dg-column>
+</ui-datagrid>

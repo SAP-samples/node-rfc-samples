@@ -1,0 +1,132 @@
+<!--
+BAPI_ALM_CONF_GETLIST exception: 0  struct: 1  table: 3  var: 4
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-checkbox value.bind="COMPLETED" label="Confirmations for completed orders"></ui-checkbox>
+
+<ui-checkbox value.bind="IN_PROCESS" label="Confirmations for orders "in process""></ui-checkbox>
+
+<ui-input bind="OPERATION" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Operation"></ui-input>
+
+<ui-input bind="SUBOPERATION" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Suboperation"></ui-input>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: CONFIRMATIONS structure: BAPI_CONF_KEY  Keys of Selected Confirmations -->
+
+<ui-datagrid data.bind="CONFIRMATIONS" title="Keys of Selected Confirmations"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CONF_NO" data-abap.bind="{type:'NUMC', mid:'RCK', length:'10'}" label="Completion confirmation number for the operation"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_CNT" data-abap.bind="{type:'NUMC', mid:'RZL', length:'8'}" label="Confirmation counter"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="CONFIRMATIONS.CONF_NO" data-abap.bind="{type:'NUMC', mid:'RCK', length:'10'}"
+          label="Completion confirmation number for the operation"></ui-input>
+
+<ui-input bind="CONFIRMATIONS.CONF_CNT" data-abap.bind="{type:'NUMC', mid:'RZL', length:'8'}"
+          label="Confirmation counter"></ui-input>
+
+<!-- Parameter: CONF_RANGE structure: BAPI_PP_CONFRANGE  Confirmations to be selected -->
+
+<ui-datagrid data.bind="CONF_RANGE" title="Confirmations to be selected"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'NUMC', mid:'RCK', length:'10'}" shlp.bind="{type: 'CH', id: 'AFRU'}" label="Completion confirmation number for the operation"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'NUMC', mid:'RCK', length:'10'}" shlp.bind="{type: 'CH', id: 'AFRU'}" label="Completion confirmation number for the operation"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="CONF_RANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="CONF_RANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="CONF_RANGE.LOW" shlp.bind="{type: 'CH', id: 'AFRU'}" data-abap.bind="{type:'NUMC', mid:'RCK', length:'10'}"
+          label="Completion confirmation number for the operation"></ui-combo>
+
+<ui-combo bind="CONF_RANGE.HIGH" shlp.bind="{type: 'CH', id: 'AFRU'}" data-abap.bind="{type:'NUMC', mid:'RCK', length:'10'}"
+          label="Completion confirmation number for the operation"></ui-combo>
+
+<!-- Parameter: ORDER_RANGE structure: BAPI_PP_ORDERRANGE  Orders to be selected -->
+
+<ui-datagrid data.bind="ORDER_RANGE" title="Orders to be selected"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="LOW" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" shlp.bind="{type: 'CH', id: 'AUFK'}" label="Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="HIGH" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" shlp.bind="{type: 'CH', id: 'AUFK'}" label="Order Number"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="ORDER_RANGE.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="ORDER_RANGE.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="ORDER_RANGE.LOW" shlp.bind="{type: 'CH', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<ui-combo bind="ORDER_RANGE.HIGH" shlp.bind="{type: 'CH', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Parameter -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>

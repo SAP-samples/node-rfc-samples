@@ -1,0 +1,16 @@
+<!-- SH FMBPD_F Search Budget Period by fund : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.FIKRS" shlp.bind="{type: 'SH', id: 'FICO'}" data-abap.bind="{type:'CHAR', mid:'FIK', length:'4'}"
+          label="Financial Management Area"></ui-combo>
+<ui-combo bind="searchParamLow.FINCODE" shlp.bind="{type: 'SH', id: 'FICO'}" data-abap.bind="{type:'CHAR', mid:'FIC', length:'10'}"
+          label="Fund"></ui-combo>
+<ui-combo bind="searchParamLow.BUDGET_PD" shlp.bind="{type: 'SH', id: 'FMBPD_COL'}" data-abap.bind="{type:'CHAR', mid:'BUDPER', length:'10'}"
+          label="FM: Budget Period"></ui-combo>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="BUDGET_PD" data-abap.bind="{type:'CHAR', mid:'BUDPER', length:'10'}" label="FM: Budget Period"></ui-dg-column>
+   <ui-dg-column sortable field="FIKRS" data-abap.bind="{type:'CHAR', mid:'FIK', length:'4'}" label="Financial Management Area"></ui-dg-column>
+   <ui-dg-column sortable field="FINCODE" data-abap.bind="{type:'CHAR', mid:'FIC', length:'10'}" label="Fund"></ui-dg-column>
+</ui-datagrid>

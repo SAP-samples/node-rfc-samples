@@ -1,0 +1,968 @@
+<!--
+BAPI_WHSE_TO_GET_DETAIL exception: 0  struct: 0  table: 4  var: 3
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-input bind="TRANSFERORDERNO" data-abap.bind="{type:'NUMC', mid:'TAN', length:'10'}"
+          label="Transfer Order Number"></ui-input>
+
+<ui-combo bind="WHSENUMBER" shlp.bind="{type: 'CT', id: 'T300'}" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}"
+          label="Warehouse number / warehouse complex"></ui-combo>
+
+<ui-input bind="TRANSFERORDERITEM" data-abap.bind="{type:'NUMC', mid:'TAP', length:'4'}"
+          label="Transfer order item"></ui-input>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: EXTENSIONOUT structure: BAPIPAREX  Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIONOUT -->
+
+<ui-datagrid data.bind="EXTENSIONOUT" title="Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIONOUT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="STRUCTURE" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD02L'}" label="Structure name of  BAPI table extension"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="EXTENSIONOUT.STRUCTURE" shlp.bind="{type: 'CT', id: 'DD02L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Structure name o API table extension"></ui-combo>
+
+<ui-input bind="EXTENSIONOUT.VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSIONOUT.VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSIONOUT.VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSIONOUT.VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return parameter -->
+
+<ui-datagrid data.bind="RETURN" title="Return parameter"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-dg-column>
+   <ui-dg-column sortable field="ID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'T100A'}" label="Message Class"></ui-dg-column>
+   <ui-dg-column sortable field="NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Message Number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}" label="Message Text"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_NO" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CH', id: 'BALHDR'}" label="Application log: log number"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_MSG_NO" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'BALM'}" label="Application log: Internal message serial number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}" label="Parameter Name"></ui-dg-column>
+   <ui-dg-column sortable field="ROW" data-abap.bind="{type:'INT4', length:'+10'}" label="Lines in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="FIELD" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD03L'}" label="Field in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="SYSTEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'TBDLS'}" label="Logical system from which message originates"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>
+
+<!-- Parameter: TOHEADERDATA structure: BAPITOHEAD  BAPI Export Structure for TO Header / Table LTAK -->
+
+<ui-datagrid data.bind="TOHEADERDATA" title="BAPI Export Structure for TO Header / Table LTAK"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'CT', id: 'T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="WHSENUMBER" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}" shlp.bind="{type: 'CT', id: 'T300'}" label="Warehouse Number / Warehouse Complex"></ui-dg-column>
+   <ui-dg-column sortable field="TRANS_ORD" data-abap.bind="{type:'NUMC', mid:'TAN', length:'10'}" label="Transfer Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="MOVE_TYPE" data-abap.bind="{type:'CHAR', mid:'BWA', length:'3'}" shlp.bind="{type: 'CT', id: 'T156'}" label="Movement type (inventory management)"></ui-dg-column>
+   <ui-dg-column sortable field="WHSE_MVMT" data-abap.bind="{type:'NUMC', mid:'BWL', length:'3'}" shlp.bind="{type: 'CT', id: 'T333'}" label="Movement Type for Warehouse Management"></ui-dg-column>
+   <ui-dg-column sortable field="TR_PRIOR" data-abap.bind="{type:'CHAR', length:'1'}" label="Transfer Priority"></ui-dg-column>
+   <ui-dg-column sortable field="TRANS_TYPE" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'SH', id: 'H_T333A'}" label="Shipment Type"></ui-dg-column>
+   <ui-dg-column sortable field="TO_DATE" data-abap.bind="{type:'DATS'}" label="Creation Date of Transfer Order"></ui-dg-column>
+   <ui-dg-column sortable field="TO_TIME" data-abap.bind="{type:'TIMS'}" label="Creation time of transfer order"></ui-dg-column>
+   <ui-dg-column sortable field="TO_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="User Name"></ui-dg-column>
+   <ui-dg-column sortable field="GROUP" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'REFNR', length:'10'}" shlp.bind="{type: 'SH', id: 'H_LVS_REFNR'}" label="Group"></ui-dg-column>
+   <ui-dg-column sortable field="TRANS_REQ" data-abap.bind="{type:'NUMC', mid:'TBN', length:'10'}" shlp.bind="{type: 'CT', id: 'LTBK'}" label="Transfer Requirement Number"></ui-dg-column>
+   <ui-dg-column sortable field="POST_CHANG" data-abap.bind="{type:'NUMC', mid:'UBN', length:'10'}" label="Posting Change Number"></ui-dg-column>
+   <ui-dg-column sortable field="SD_DOC" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}" shlp.bind="{type: 'CT', id: 'VBUK'}" label="Sales and Distribution Document Number"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_DATE" data-abap.bind="{type:'DATS'}" label="Date of Confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="MAT_DOC" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'MBN', length:'10'}" label="Number of Material Document"></ui-dg-column>
+   <ui-dg-column sortable field="DOC_YEAR" data-abap.bind="{type:'NUMC', alpha:'GJAHR', mid:'MJA', length:'4'}" label="Material Document Year"></ui-dg-column>
+   <ui-dg-column sortable field="REGMT_TYPE" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'CT', id: 'T308'}" label="Requirement Type"></ui-dg-column>
+   <ui-dg-column sortable field="REGMT_NO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" label="Requirement Number"></ui-dg-column>
+   <ui-dg-column sortable field="PRINT_CODE" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'T329F'}" label="Indicator: form and sort code for printing transfer orders"></ui-dg-column>
+   <ui-dg-column sortable field="PRINT_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Transfer Order is Printed"></ui-dg-column>
+   <ui-dg-column sortable field="PART_SUPPLY" data-abap.bind="{type:'CHAR', length:'1'}" label="Ind.: partial supply for documents in multiple processing"></ui-dg-column>
+   <ui-dg-column sortable field="IND_IMMED" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'LTAK_KR2SO'}" label="Indicator: Call up R/2 immediately (RM posting)"></ui-dg-column>
+   <ui-dg-column sortable field="IND_ACCUM" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: R/2 control accumulated (RM posting)"></ui-dg-column>
+   <ui-dg-column sortable field="IND_DIFF" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Pass on diff. to R/2 immediately (RM posting)"></ui-dg-column>
+   <ui-dg-column sortable field="IND_PLND" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: preplanned transfer order"></ui-dg-column>
+   <ui-dg-column sortable field="DATE_PLND" data-abap.bind="{type:'DATS'}" label="Planned execution date for a transfer order"></ui-dg-column>
+   <ui-dg-column sortable field="RESERV_NO" data-abap.bind="{type:'NUMC', mid:'RES', length:'10'}" shlp.bind="{type: 'CT', id: 'RESB'}" label="Number of reservation/dependent requirements"></ui-dg-column>
+   <ui-dg-column sortable field="ADDIT_NO" data-abap.bind="{type:'CHAR', length:'20'}" label="Additional Reference Number for Transport"></ui-dg-column>
+   <ui-dg-column sortable field="REQ_TYPE" data-abap.bind="{type:'CHAR', mid:'BDA', length:'2'}" label="Requirement type"></ui-dg-column>
+   <ui-dg-column sortable field="KANBANCONTROLCYCLE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PKNUM', length:'7'}" shlp.bind="{type: 'CT', id: 'PKHD'}" label="Control cycle number"></ui-dg-column>
+   <ui-dg-column sortable field="KANBAN_NO" data-abap.bind="{type:'NUMC', length:'3'}" label="Kanban item number / control cycle item"></ui-dg-column>
+   <ui-dg-column sortable field="PERF_DATA" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'LVS_KZLEI'}" label="Indicator for performance data"></ui-dg-column>
+   <ui-dg-column sortable field="ACT_TIMETO" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'LVS_KISTZ'}" label="Indicator: Actual time required in TO"></ui-dg-column>
+   <ui-dg-column sortable field="REQACTDATA" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Input requirement for actual data"></ui-dg-column>
+   <ui-dg-column sortable field="PERSNO" data-abap.bind="{type:'NUMC', length:'8'}" label="Personnel Number of User"></ui-dg-column>
+   <ui-dg-column sortable field="PLAN_TIME" data-abap.bind="{type:'QUAN', unit:'TIMEUNIT', length:'+10.3'}" label="Planned Transfer Order Processing Time From WM"></ui-dg-column>
+   <ui-dg-column sortable field="PLAN_EXT" data-abap.bind="{type:'QUAN', unit:'TIMEUNIT', length:'+10.3'}" label="Planned Transfer Order Processing Time from External System"></ui-dg-column>
+   <ui-dg-column sortable field="ACTLTIME" data-abap.bind="{type:'QUAN', unit:'TIMEUNIT', length:'+10.3'}" label="Actual Time of the WM Transfer Order"></ui-dg-column>
+   <ui-dg-column sortable field="TIMEUNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Time unit for performance data"></ui-dg-column>
+   <ui-dg-column sortable field="TIMEUNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="HR_STATUS" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'LTAK_HRSTS'}" label="Transfer Order Human Resources (HR) Status"></ui-dg-column>
+   <ui-dg-column sortable field="START_DATE" data-abap.bind="{type:'DATS'}" label="Start Date of the Transfer Order"></ui-dg-column>
+   <ui-dg-column sortable field="END_DATE" data-abap.bind="{type:'DATS'}" label="Transfer Order End Date"></ui-dg-column>
+   <ui-dg-column sortable field="START_TIME" data-abap.bind="{type:'TIMS'}" label="Start time of the transfer order"></ui-dg-column>
+   <ui-dg-column sortable field="END_TIME" data-abap.bind="{type:'TIMS'}" label="Transfer Order End Time"></ui-dg-column>
+   <ui-dg-column sortable field="TO_TYPE2" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'LVS_2SKTAART'}" label="Transfer Order Type in 2-Step Picking"></ui-dg-column>
+   <ui-dg-column sortable field="LEAN_WM" data-abap.bind="{type:'CHAR', length:'1'}" label="Transfer order transfers no real storage bin stock"></ui-dg-column>
+   <ui-dg-column sortable field="DOOR" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T30B'}" label="Door for Warehouse Number"></ui-dg-column>
+   <ui-dg-column sortable field="STGINGAREA" data-abap.bind="{type:'CHAR', length:'10'}" shlp.bind="{type: 'CT', id: 'T30C'}" label="Staging Area for Warehouse Complex"></ui-dg-column>
+   <ui-dg-column sortable field="PACK_WM" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'LVS_KZVEP'}" label="Indicator: Connection to packaging in WM"></ui-dg-column>
+   <ui-dg-column sortable field="DEV_P_A" data-abap.bind="{type:'NUMC', length:'4'}" label="Threshold value of planned/actual time deviation as percent"></ui-dg-column>
+   <ui-dg-column sortable field="COMMENT" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'T339'}" label="TO processing comment (code)"></ui-dg-column>
+   <ui-dg-column sortable field="SPECIFIC" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'LTAK_SPEZI'}" label="Indicator special reference"></ui-dg-column>
+   <ui-dg-column sortable field="SD_DOC_CAT" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'VBTYP'}" label="SD document category"></ui-dg-column>
+   <ui-dg-column sortable field="QUEUE" data-abap.bind="{type:'CHAR', length:'10'}" shlp.bind="{type: 'CT', id: 'T346'}" label="Queue"></ui-dg-column>
+   <ui-dg-column sortable field="SEP_CONF" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Separate confirmation possible"></ui-dg-column>
+   <ui-dg-column sortable field="DLV_PRIO" data-abap.bind="{type:'NUMC', length:'2'}" shlp.bind="{type: 'CT', id: 'TPRIO'}" label="Transfer order priority"></ui-dg-column>
+   <ui-dg-column sortable field="PICK_CNFMD" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Material pick has been confirmed"></ui-dg-column>
+   <ui-dg-column sortable field="CONFIRM_HU" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'HUCON'}" label="Indicator, confirm HU"></ui-dg-column>
+   <ui-dg-column sortable field="NO_ITEM" data-abap.bind="{type:'NUMC', length:'4'}" label="Current number of items in TO"></ui-dg-column>
+   <ui-dg-column sortable field="SD_DOC_CAT_LONG" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'FV', id: 'VBTYPL_S4'}" label="Field is not supported – needed for technical reasons only"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="TOHEADERDATA.CLIENT" shlp.bind="{type: 'CT', id: 'T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="TOHEADERDATA.WHSENUMBER" shlp.bind="{type: 'CT', id: 'T300'}" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}"
+          label="Warehouse Number / Warehouse Complex"></ui-combo>
+
+<ui-input bind="TOHEADERDATA.TRANS_ORD" data-abap.bind="{type:'NUMC', mid:'TAN', length:'10'}"
+          label="Transfer Order Number"></ui-input>
+
+<ui-combo bind="TOHEADERDATA.MOVE_TYPE" shlp.bind="{type: 'CT', id: 'T156'}" data-abap.bind="{type:'CHAR', mid:'BWA', length:'3'}"
+          label="Movement type (inventory management)"></ui-combo>
+
+<ui-combo bind="TOHEADERDATA.WHSE_MVMT" shlp.bind="{type: 'CT', id: 'T333'}" data-abap.bind="{type:'NUMC', mid:'BWL', length:'3'}"
+          label="Movement Type for Warehouse Management"></ui-combo>
+
+<ui-input bind="TOHEADERDATA.TR_PRIOR" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Transfer Priority"></ui-input>
+
+<ui-combo bind="TOHEADERDATA.TRANS_TYPE" shlp.bind="{type: 'SH', id: 'H_T333A'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Shipment Type"></ui-combo>
+
+<ui-date date.bind="TOHEADERDATA.TO_DATE"  label="Creation Date of Transfer Order"></ui-date>
+
+<ui-time time.bind="TOHEADERDATA.TO_TIME"  label="Creation time of transfer order"></ui-time>
+
+<ui-input bind="TOHEADERDATA.TO_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="User Name"></ui-input>
+
+<ui-combo bind="TOHEADERDATA.GROUP" shlp.bind="{type: 'SH', id: 'H_LVS_REFNR'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'REFNR', length:'10'}"
+          label="Group"></ui-combo>
+
+<ui-combo bind="TOHEADERDATA.TRANS_REQ" shlp.bind="{type: 'CT', id: 'LTBK'}" data-abap.bind="{type:'NUMC', mid:'TBN', length:'10'}"
+          label="Transfer Requirement Number"></ui-combo>
+
+<ui-input bind="TOHEADERDATA.POST_CHANG" data-abap.bind="{type:'NUMC', mid:'UBN', length:'10'}"
+          label="Posting Change Number"></ui-input>
+
+<ui-combo bind="TOHEADERDATA.SD_DOC" shlp.bind="{type: 'CT', id: 'VBUK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}"
+          label="Sales and Distribution Document Number"></ui-combo>
+
+<ui-checkbox value.bind="TOHEADERDATA.CONF_IND" label="Indicator: Confirmation"></ui-checkbox>
+
+<ui-date date.bind="TOHEADERDATA.CONF_DATE"  label="Date of Confirmation"></ui-date>
+
+<ui-input bind="TOHEADERDATA.MAT_DOC" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'MBN', length:'10'}"
+          label="Number of Material Document"></ui-input>
+
+<ui-input bind="TOHEADERDATA.DOC_YEAR" data-abap.bind="{type:'NUMC', alpha:'GJAHR', mid:'MJA', length:'4'}"
+          label="Material Document Year"></ui-input>
+
+<ui-combo bind="TOHEADERDATA.REGMT_TYPE" shlp.bind="{type: 'CT', id: 'T308'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Requirement Type"></ui-combo>
+
+<ui-input bind="TOHEADERDATA.REGMT_NO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Requirement Number"></ui-input>
+
+<ui-combo bind="TOHEADERDATA.PRINT_CODE" shlp.bind="{type: 'CT', id: 'T329F'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Indicator: form and sort code for printing transfer orders"></ui-combo>
+
+<ui-checkbox value.bind="TOHEADERDATA.PRINT_IND" label="Indicator: Transfer Order is Printed"></ui-checkbox>
+
+<ui-checkbox value.bind="TOHEADERDATA.PART_SUPPLY" label="Ind.: partial supply for documents in multiple processing"></ui-checkbox>
+
+<ui-combo bind="TOHEADERDATA.IND_IMMED" shlp.bind="{type: 'FV', id: 'LTAK_KR2SO'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Indicator: Call up R/2 immediately (RM posting)"></ui-combo>
+
+<ui-checkbox value.bind="TOHEADERDATA.IND_ACCUM" label="Indicator: R/2 control accumulated (RM posting)"></ui-checkbox>
+
+<ui-checkbox value.bind="TOHEADERDATA.IND_DIFF" label="Indicator: Pass on diff. to R/2 immediately (RM posting)"></ui-checkbox>
+
+<ui-checkbox value.bind="TOHEADERDATA.IND_PLND" label="Indicator: preplanned transfer order"></ui-checkbox>
+
+<ui-date date.bind="TOHEADERDATA.DATE_PLND"  label="Planned execution date for a transfer order"></ui-date>
+
+<ui-combo bind="TOHEADERDATA.RESERV_NO" shlp.bind="{type: 'CT', id: 'RESB'}" data-abap.bind="{type:'NUMC', mid:'RES', length:'10'}"
+          label="Number of reservation/dependent requirements"></ui-combo>
+
+<ui-input bind="TOHEADERDATA.ADDIT_NO" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Additional Reference Number for Transport"></ui-input>
+
+<ui-input bind="TOHEADERDATA.REQ_TYPE" data-abap.bind="{type:'CHAR', mid:'BDA', length:'2'}"
+          label="Requirement type"></ui-input>
+
+<ui-combo bind="TOHEADERDATA.KANBANCONTROLCYCLE" shlp.bind="{type: 'CT', id: 'PKHD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PKNUM', length:'7'}"
+          label="Control cycle number"></ui-combo>
+
+<ui-input bind="TOHEADERDATA.KANBAN_NO" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Kanban item number / control cycle item"></ui-input>
+
+<ui-combo bind="TOHEADERDATA.PERF_DATA" shlp.bind="{type: 'FV', id: 'LVS_KZLEI'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Indicator for performance data"></ui-combo>
+
+<ui-combo bind="TOHEADERDATA.ACT_TIMETO" shlp.bind="{type: 'FV', id: 'LVS_KISTZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Indicator: Actual time required in TO"></ui-combo>
+
+<ui-checkbox value.bind="TOHEADERDATA.REQACTDATA" label="Indicator: Input requirement for actual data"></ui-checkbox>
+
+<ui-input bind="TOHEADERDATA.PERSNO" data-abap.bind="{type:'NUMC', length:'8'}"
+          label="Personnel Number of User"></ui-input>
+
+<ui-input bind="TOHEADERDATA.PLAN_TIME" data-abap.bind="{type:'QUAN', unit:'TIMEUNIT', length:'+10.3'}"
+          label="Planned Transfer Order Processing Time From WM"></ui-input>
+
+<ui-input bind="TOHEADERDATA.PLAN_EXT" data-abap.bind="{type:'QUAN', unit:'TIMEUNIT', length:'+10.3'}"
+          label="Planned Transfer Order Processing Time from External System"></ui-input>
+
+<ui-input bind="TOHEADERDATA.ACTLTIME" data-abap.bind="{type:'QUAN', unit:'TIMEUNIT', length:'+10.3'}"
+          label="Actual Time of the WM Transfer Order"></ui-input>
+
+<ui-combo bind="TOHEADERDATA.TIMEUNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Time unit for performance data"></ui-combo>
+
+<ui-combo bind="TOHEADERDATA.TIMEUNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-combo bind="TOHEADERDATA.HR_STATUS" shlp.bind="{type: 'FV', id: 'LTAK_HRSTS'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Transfer Order Human Resources (HR) Status"></ui-combo>
+
+<ui-date date.bind="TOHEADERDATA.START_DATE"  label="Start Date of the Transfer Order"></ui-date>
+
+<ui-date date.bind="TOHEADERDATA.END_DATE"  label="Transfer Order End Date"></ui-date>
+
+<ui-time time.bind="TOHEADERDATA.START_TIME"  label="Start time of the transfer order"></ui-time>
+
+<ui-time time.bind="TOHEADERDATA.END_TIME"  label="Transfer Order End Time"></ui-time>
+
+<ui-combo bind="TOHEADERDATA.TO_TYPE2" shlp.bind="{type: 'FV', id: 'LVS_2SKTAART'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Transfer Order Type in 2-Step Picking"></ui-combo>
+
+<ui-checkbox value.bind="TOHEADERDATA.LEAN_WM" label="Transfer order transfers no real storage bin stock"></ui-checkbox>
+
+<ui-combo bind="TOHEADERDATA.DOOR" shlp.bind="{type: 'CT', id: 'T30B'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Door for Warehouse Number"></ui-combo>
+
+<ui-combo bind="TOHEADERDATA.STGINGAREA" shlp.bind="{type: 'CT', id: 'T30C'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Staging Area for Warehouse Complex"></ui-combo>
+
+<ui-combo bind="TOHEADERDATA.PACK_WM" shlp.bind="{type: 'FV', id: 'LVS_KZVEP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Indicator: Connection to packaging in WM"></ui-combo>
+
+<ui-input bind="TOHEADERDATA.DEV_P_A" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Threshold value of planned/actual time deviation as percent"></ui-input>
+
+<ui-combo bind="TOHEADERDATA.COMMENT" shlp.bind="{type: 'CT', id: 'T339'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="TO processing comment (code)"></ui-combo>
+
+<ui-checkbox value.bind="TOHEADERDATA.SPECIFIC" label="Indicator special reference"></ui-checkbox>
+
+<ui-combo bind="TOHEADERDATA.SD_DOC_CAT" shlp.bind="{type: 'FV', id: 'VBTYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="SD document category"></ui-combo>
+
+<ui-combo bind="TOHEADERDATA.QUEUE" shlp.bind="{type: 'CT', id: 'T346'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Queue"></ui-combo>
+
+<ui-checkbox value.bind="TOHEADERDATA.SEP_CONF" label="Indicator: Separate confirmation possible"></ui-checkbox>
+
+<ui-combo bind="TOHEADERDATA.DLV_PRIO" shlp.bind="{type: 'CT', id: 'TPRIO'}" data-abap.bind="{type:'NUMC', length:'2'}"
+          label="Transfer order priority"></ui-combo>
+
+<ui-checkbox value.bind="TOHEADERDATA.PICK_CNFMD" label="Indicator: Material pick has been confirmed"></ui-checkbox>
+
+<ui-checkbox value.bind="TOHEADERDATA.CONFIRM_HU" label="Indicator, confirm HU"></ui-checkbox>
+
+<ui-input bind="TOHEADERDATA.NO_ITEM" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Current number of items in TO"></ui-input>
+
+<ui-combo bind="TOHEADERDATA.SD_DOC_CAT_LONG" shlp.bind="{type: 'FV', id: 'VBTYPL_S4'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Field is not supported – needed for technical reasons only"></ui-combo>
+
+<!-- Parameter: TOITEMDATA structure: BAPITOITEM  BAPI Export Structure for TO Item / Table LTAP -->
+
+<ui-datagrid data.bind="TOITEMDATA" title="BAPI Export Structure for TO Item / Table LTAP"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'CT', id: 'T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="WHSENUMBER" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}" shlp.bind="{type: 'CT', id: 'T300'}" label="Warehouse Number / Warehouse Complex"></ui-dg-column>
+   <ui-dg-column sortable field="TRANS_ORD" data-abap.bind="{type:'NUMC', mid:'TAN', length:'10'}" label="Transfer Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="TO_ITEM" data-abap.bind="{type:'NUMC', mid:'TAP', length:'4'}" label="Transfer order item"></ui-dg-column>
+   <ui-dg-column sortable field="TT_ITEM" data-abap.bind="{type:'NUMC', mid:'TBP', length:'4'}" label="Transfer Requirement Item"></ui-dg-column>
+   <ui-dg-column sortable field="ITM_NUMBER" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CT', id: 'VBUP'}" label="Item number of the SD document"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" shlp.bind="{type: 'SH', id: 'S_MAT1'}" label="Material Number"></ui-dg-column>
+   <ui-dg-column sortable field="PLANT" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" label="Plant"></ui-dg-column>
+   <ui-dg-column sortable field="BATCH" data-abap.bind="{type:'CHAR', mid:'CHA', length:'10'}" shlp.bind="{type: 'CT', id: 'MCH1'}" label="Batch Number"></ui-dg-column>
+   <ui-dg-column sortable field="STOCK_CAT" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BESTQ'}" label="Stock Category in the Warehouse Management System"></ui-dg-column>
+   <ui-dg-column sortable field="SPEC_STOCK" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'CT', id: 'T148'}" label="Special Stock Indicator"></ui-dg-column>
+   <ui-dg-column sortable field="SP_STCK_NO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'16'}" label="Special Stock Number"></ui-dg-column>
+   <ui-dg-column sortable field="HAZ_MAT_NO" data-abap.bind="{type:'CHAR', alpha:'MATN3', mid:'STO', length:'18'}" shlp.bind="{type: 'CT', id: 'MGEF'}" label="Hazardous material number"></ui-dg-column>
+   <ui-dg-column sortable field="BASE_UOM" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Base Unit of Measure"></ui-dg-column>
+   <ui-dg-column sortable field="BASE_UOM_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="ALT_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Alternative Unit of Measure for Stockkeeping Unit"></ui-dg-column>
+   <ui-dg-column sortable field="ALT_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="NUMERATOR" data-abap.bind="{type:'DEC', length:'5'}" label="Numerator for Conversion to Base Units of Measure"></ui-dg-column>
+   <ui-dg-column sortable field="DENOMINATR" data-abap.bind="{type:'DEC', length:'5'}" label="Denominator for conversion to base units of measure"></ui-dg-column>
+   <ui-dg-column sortable field="UNITTYPE_1" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T307'}" label="Storage Unit Type"></ui-dg-column>
+   <ui-dg-column sortable field="PREALLSTCK" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: pre-allocated stock"></ui-dg-column>
+   <ui-dg-column sortable field="CURR_NO" data-abap.bind="{type:'NUMC', length:'3'}" label="Sequence number"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_REQ" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: confirmation required"></ui-dg-column>
+   <ui-dg-column sortable field="ZEROSTKCHK" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Execute Zero Stock Check"></ui-dg-column>
+   <ui-dg-column sortable field="ZEROSTOCK" data-abap.bind="{type:'NUMC', length:'1'}" shlp.bind="{type: 'FV', id: 'LTAP_NULKO'}" label="Status of zero stock check in transfer order item"></ui-dg-column>
+   <ui-dg-column sortable field="INV_METHOD" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'LVS_KZINV'}" label="Inventory indicators"></ui-dg-column>
+   <ui-dg-column sortable field="INV_RECORD" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'IVN', length:'10'}" label="Number of system inventory record"></ui-dg-column>
+   <ui-dg-column sortable field="CONFIRM_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: confirmation complete"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_DATE" data-abap.bind="{type:'DATS'}" label="Date of confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_TIME" data-abap.bind="{type:'TIMS'}" label="Time of confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="TO_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="User name"></ui-dg-column>
+   <ui-dg-column sortable field="GROSS_WEIGHT" data-abap.bind="{type:'DEC', length:'10.3'}" label="Gross weight of transfer order item"></ui-dg-column>
+   <ui-dg-column sortable field="UNIT_OF_WT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Weight Unit"></ui-dg-column>
+   <ui-dg-column sortable field="UNIT_OF_WT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="MATDOC_ITM" data-abap.bind="{type:'NUMC', mid:'POS', length:'4'}" label="Item in Material Document"></ui-dg-column>
+   <ui-dg-column sortable field="GR_RCPT" data-abap.bind="{type:'CHAR', length:'12'}" label="Goods recipient"></ui-dg-column>
+   <ui-dg-column sortable field="UNLOAD_PT" data-abap.bind="{type:'CHAR', length:'25'}" label="Unloading Point"></ui-dg-column>
+   <ui-dg-column sortable field="WDATU" data-abap.bind="{type:'DATS'}" label="Date of Goods Receipt"></ui-dg-column>
+   <ui-dg-column sortable field="GR_NUMBER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" label="Goods Receipt Number"></ui-dg-column>
+   <ui-dg-column sortable field="GR_DATE" data-abap.bind="{type:'NUMC', length:'4'}" label="Goods receipt item"></ui-dg-column>
+   <ui-dg-column sortable field="CERT_NO" data-abap.bind="{type:'CHAR', length:'10'}" label="Certificate Number"></ui-dg-column>
+   <ui-dg-column sortable field="PRINTER" data-abap.bind="{type:'CHAR', alpha:'SPDEV', mid:'PRI', length:'4'}" shlp.bind="{type: 'CT', id: 'TSP03'}" label="Name of printer"></ui-dg-column>
+   <ui-dg-column sortable field="PROCESS" data-abap.bind="{type:'CHAR', length:'2'}" label="Transfer procedure"></ui-dg-column>
+   <ui-dg-column sortable field="SOURCE_TYPE" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T301'}" label="Source Storage Type"></ui-dg-column>
+   <ui-dg-column sortable field="SRCSTORSEC" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T302'}" label="Source storage section"></ui-dg-column>
+   <ui-dg-column sortable field="SOURCE_BIN" data-abap.bind="{type:'CHAR', length:'10'}" shlp.bind="{type: 'CT', id: 'LAGP'}" label="Source Storage Bin"></ui-dg-column>
+   <ui-dg-column sortable field="SRC_DYN_BIN" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: dynamic storage bin"></ui-dg-column>
+   <ui-dg-column sortable field="SRC_BIN_POS" data-abap.bind="{type:'CHAR', length:'2'}" label="Position in source storage bin"></ui-dg-column>
+   <ui-dg-column sortable field="ST_REM_SU" data-abap.bind="{type:'DEC', length:'8.3'}" label="Number of storage units to be transferred from bulk storage"></ui-dg-column>
+   <ui-dg-column sortable field="PAR_PALLET" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: partial pallet quantity exists"></ui-dg-column>
+   <ui-dg-column sortable field="SRCTGTQTYB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}" label="Source target quantity in stockkeeping unit"></ui-dg-column>
+   <ui-dg-column sortable field="SRC_A_QTYB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}" label="Source actual quantity in stockkeeping unit"></ui-dg-column>
+   <ui-dg-column sortable field="SRC_B_DIFB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'+10.3'}" label="Difference in source storage bin in stockkeeping unit"></ui-dg-column>
+   <ui-dg-column sortable field="SRCTGTQTYA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'10.3'}" label="Source target quantity in alternate unit"></ui-dg-column>
+   <ui-dg-column sortable field="SRC_A_QTYA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'10.3'}" label="Source actual quantity in alternative unit of measure"></ui-dg-column>
+   <ui-dg-column sortable field="SRC_B_DIFA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'+10.3'}" label="Difference in source storage bin in alternative unit"></ui-dg-column>
+   <ui-dg-column sortable field="QUANT" data-abap.bind="{type:'NUMC', mid:'LQN', length:'10'}" label="Quant"></ui-dg-column>
+   <ui-dg-column sortable field="SOURCEAPPC" data-abap.bind="{type:'CHAR', length:'1'}" label="Ind.: Pass on source item to APPC interface"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_TYPE" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T301'}" label="Destination Storage Type"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_SECT" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T302'}" label="Destination storage section"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_BIN" data-abap.bind="{type:'CHAR', length:'10'}" shlp.bind="{type: 'CT', id: 'LAGP'}" label="Destination Storage Bin"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_DYN_BIN" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: dynamic storage bin"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_BIN_POS" data-abap.bind="{type:'CHAR', length:'2'}" label="Position in destination storage bin"></ui-dg-column>
+   <ui-dg-column sortable field="SU_PL_STCK" data-abap.bind="{type:'DEC', length:'8.3'}" label="Number of storage units to be transferred to bulk storage"></ui-dg-column>
+   <ui-dg-column sortable field="PART_PALL" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: partial pallet quantity exists"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_TARGB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}" label="Destination target quantity in stockkeeping unit"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_ACTB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}" label="Destination actual quantity in stockkeeping unit"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_DIFB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'+10.3'}" label="Destination difference quantity in stockkeeping unit"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_TARGA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'10.3'}" label="Destination target quantity in alternative unit"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_ACTA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'10.3'}" label="Actual destination quantity in alternative unit"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_DIFA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'+10.3'}" label="Destination difference qty. in alternative unit"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_QUANT" data-abap.bind="{type:'NUMC', mid:'LQN', length:'10'}" label="Quant"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_APPC" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: pass on destination item to APPC interface"></ui-dg-column>
+   <ui-dg-column sortable field="RET_TYPE" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T301'}" label="Return storage type"></ui-dg-column>
+   <ui-dg-column sortable field="RET_AREA" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T302'}" label="Return storage area"></ui-dg-column>
+   <ui-dg-column sortable field="RET_BIN" data-abap.bind="{type:'CHAR', length:'10'}" shlp.bind="{type: 'CT', id: 'LAGP'}" label="Return storage bin"></ui-dg-column>
+   <ui-dg-column sortable field="RET_BIN_POS" data-abap.bind="{type:'CHAR', length:'2'}" label="Position in return storage bin"></ui-dg-column>
+   <ui-dg-column sortable field="RET_TARGB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}" label="Return target quantity in stockkeeping unit"></ui-dg-column>
+   <ui-dg-column sortable field="RET_ACTB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}" label="Actual returned quantity in stockkeeping unit"></ui-dg-column>
+   <ui-dg-column sortable field="RET_DIFB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'+10.3'}" label="Return difference quantity in stockkeeping unit"></ui-dg-column>
+   <ui-dg-column sortable field="RET_TARGA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'10.3'}" label="Return target quantity in alternative unit"></ui-dg-column>
+   <ui-dg-column sortable field="RET_ACTA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'10.3'}" label="Actual return quantity in alternate unit of measure"></ui-dg-column>
+   <ui-dg-column sortable field="RET_DIFA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'+10.3'}" label="Return difference quantity in alternative unit"></ui-dg-column>
+   <ui-dg-column sortable field="RET_QUANT" data-abap.bind="{type:'NUMC', mid:'LQN', length:'10'}" label="Quant"></ui-dg-column>
+   <ui-dg-column sortable field="RET_APPC" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: pass on return item to APPC interface"></ui-dg-column>
+   <ui-dg-column sortable field="DIF_TYPE" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T301'}" label="Difference storage type"></ui-dg-column>
+   <ui-dg-column sortable field="DIF_BIN" data-abap.bind="{type:'CHAR', length:'10'}" shlp.bind="{type: 'CT', id: 'LAGP'}" label="Difference storage bin"></ui-dg-column>
+   <ui-dg-column sortable field="DIF_QUANT" data-abap.bind="{type:'NUMC', length:'10'}" label="Difference quant"></ui-dg-column>
+   <ui-dg-column sortable field="DIF_QTYB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'+10.3'}" label="Quantity of difference posting in stockkeeping unit"></ui-dg-column>
+   <ui-dg-column sortable field="DIF_QTYA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'+10.3'}" label="Difference quantity in alternate unit of measure"></ui-dg-column>
+   <ui-dg-column sortable field="DIF_IND" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'CT', id: 'T336'}" label="Difference indicator"></ui-dg-column>
+   <ui-dg-column sortable field="MATL_DESC" data-abap.bind="{type:'CHAR', length:'40'}" label="Material description"></ui-dg-column>
+   <ui-dg-column sortable field="TO_IT_PRTD" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: transfer order item is printed"></ui-dg-column>
+   <ui-dg-column sortable field="SRC_SU" data-abap.bind="{type:'CHAR', alpha:'LENUM', mid:'LEN', length:'20'}" shlp.bind="{type: 'CT', id: 'LEIN'}" label="Source storage unit number"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_SU" data-abap.bind="{type:'CHAR', alpha:'LENUM', mid:'LEN', length:'20'}" shlp.bind="{type: 'CT', id: 'LEIN'}" label="Destination storage unit number"></ui-dg-column>
+   <ui-dg-column sortable field="DIF_SU" data-abap.bind="{type:'CHAR', alpha:'LENUM', mid:'LEN', length:'20'}" shlp.bind="{type: 'CT', id: 'LEIN'}" label="Number of storage unit for difference quantities"></ui-dg-column>
+   <ui-dg-column sortable field="SRC_SU_ST" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'LEIN_STATU'}" label="Status of source storage unit"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_SU_ST" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'LEIN_STATU'}" label="Status of destination storage unit"></ui-dg-column>
+   <ui-dg-column sortable field="SU_CONTNTS" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: print storage unit contents"></ui-dg-column>
+   <ui-dg-column sortable field="HOM_ST_UN" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: stock removal of a total, homogenous storage unit"></ui-dg-column>
+   <ui-dg-column sortable field="ITEM_CAT" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'LTAP_POSTY'}" label="Type of transfer order item"></ui-dg-column>
+   <ui-dg-column sortable field="ORIG_ITEM" data-abap.bind="{type:'NUMC', length:'4'}" label="TO item from which current TO item was generated"></ui-dg-column>
+   <ui-dg-column sortable field="SRC_TOTALS" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'T331BSUMME'}" label="Level of totals information SOURCE"></ui-dg-column>
+   <ui-dg-column sortable field="SRC_MIX_BAT" data-abap.bind="{type:'CHAR', length:'1'}" label="Blocks with mixed batches SOURCE"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_TOTALS" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'T331BSUMME'}" label="Level of totals information DEST."></ui-dg-column>
+   <ui-dg-column sortable field="DEST_MIC_BAT" data-abap.bind="{type:'CHAR', length:'1'}" label="Blocks with mixed batches DEST"></ui-dg-column>
+   <ui-dg-column sortable field="RES_ITEM" data-abap.bind="{type:'NUMC', mid:'RPO', length:'4'}" label="Item Number of Reservation / Dependent Requirements"></ui-dg-column>
+   <ui-dg-column sortable field="EXPIRYDATE" data-abap.bind="{type:'DATS'}" label="Shelf Life Expiration or Best-Before Date"></ui-dg-column>
+   <ui-dg-column sortable field="CAPAC_MAT" data-abap.bind="{type:'DEC', length:'10.3'}" label="Capacity usage of transferred material"></ui-dg-column>
+   <ui-dg-column sortable field="SRC_CAP_CHK" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'T331_KAPAP'}" label="Capacity check for source storage type"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_CAP_CHK" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'T331_KAPAP'}" label="Capacity check for destination storage type"></ui-dg-column>
+   <ui-dg-column sortable field="RET_CAP_CHK" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'T331_KAPAP'}" label="Capacity check return storage type"></ui-dg-column>
+   <ui-dg-column sortable field="SUBSYSTEM" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'LTAP_KZSUB'}" label="Indicator: pass on TO item to subsystem"></ui-dg-column>
+   <ui-dg-column sortable field="INSPLOT" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}" shlp.bind="{type: 'SH', id: 'QALS'}" label="Inspection Lot Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSPLOTX" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}" shlp.bind="{type: 'CT', id: 'QALS'}" label="Inspection Lot on Which the Usage Decision is Based"></ui-dg-column>
+   <ui-dg-column sortable field="INV_SAMP" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: transfer of insp.sample"></ui-dg-column>
+   <ui-dg-column sortable field="RES_TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Record type"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_BATCH" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Confirm Batch to PP"></ui-dg-column>
+   <ui-dg-column sortable field="PICK_AREA" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T30A'}" label="Picking Area"></ui-dg-column>
+   <ui-dg-column sortable field="STGE_LOC" data-abap.bind="{type:'CHAR', mid:'LAG', length:'4'}" shlp.bind="{type: 'CT', id: 'T001L'}" label="Storage location"></ui-dg-column>
+   <ui-dg-column sortable field="PLAN_TIME" data-abap.bind="{type:'QUAN', unit:'TIME_UNIT', length:'+10.3'}" label="Planned proc.time in transfer order item"></ui-dg-column>
+   <ui-dg-column sortable field="TIME_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Time unit for performance data"></ui-dg-column>
+   <ui-dg-column sortable field="TIME_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="REL_TWO" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'LVS_2SKREL'}" label="Relevance for 2-step picking"></ui-dg-column>
+   <ui-dg-column sortable field="VOLUME" data-abap.bind="{type:'QUAN', unit:'VOLUMEUNIT', length:'10.3'}" label="Volume"></ui-dg-column>
+   <ui-dg-column sortable field="VOLUMEUNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Volume unit"></ui-dg-column>
+   <ui-dg-column sortable field="VOLUMEUNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="INDINVMANG" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator Inventory Management active"></ui-dg-column>
+   <ui-dg-column sortable field="IM_RELEVANT" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'LVS_IMREL'}" label="Trigger posting in Inventory Management"></ui-dg-column>
+   <ui-dg-column sortable field="INGRED_QTY" data-abap.bind="{type:'QUAN', unit:'INGRED_UOM', length:'10.3'}" label="Transferred ingredient qty"></ui-dg-column>
+   <ui-dg-column sortable field="INGRED_UOM" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Active ingredient unit of measure"></ui-dg-column>
+   <ui-dg-column sortable field="INGRED_UOM_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_BIN_CHG" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'LVS_NPLEI'}" label="Dest.stor.bin changeable during confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="KANBAN_IND" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'KBNKZ'}" label="Kanban Indicator"></ui-dg-column>
+   <ui-dg-column sortable field="CANCEL_REQ" data-abap.bind="{type:'CHAR', length:'1'}" label="Cancellation req. for TO item (currently only from Kanban)"></ui-dg-column>
+   <ui-dg-column sortable field="SEP_CONF" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Separate confirmation possible"></ui-dg-column>
+   <ui-dg-column sortable field="MAT_PICK" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Material pick has been confirmed"></ui-dg-column>
+   <ui-dg-column sortable field="ECONF_DATE" data-abap.bind="{type:'DATS'}" label="Date of Pick Confirmation (First Step)"></ui-dg-column>
+   <ui-dg-column sortable field="ECONF_TIME" data-abap.bind="{type:'TIMS'}" label="Time of Pick Confirmation (First Step)"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="User Name in Pick Confirmation (First Step)"></ui-dg-column>
+   <ui-dg-column sortable field="FLG_LEAD_UNIT" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'KZFME'}" label="ID: Leading unit of measure for completing a transaction"></ui-dg-column>
+   <ui-dg-column sortable field="SUB_TWO_STEP" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'RL03TQUKNZ'}" label="Confirmation ind.: Two-step confirmation for external system"></ui-dg-column>
+   <ui-dg-column sortable field="HU_ITEM" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'LTAP_FHUTA'}" label="Flag: Transfer order item is HU TO item"></ui-dg-column>
+   <ui-dg-column sortable field="SRC_HU_NEST" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicates whether the source storage unit is a nested HU"></ui-dg-column>
+   <ui-dg-column sortable field="PACK_MAT" data-abap.bind="{type:'CHAR', alpha:'MATN1', length:'18'}" shlp.bind="{type: 'CT', id: 'MARA'}" label="Packaging Materials"></ui-dg-column>
+   <ui-dg-column sortable field="SRC_SU_HU" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Source SU is pseudo SU (only HUs)"></ui-dg-column>
+   <ui-dg-column sortable field="DEST_SU_HU" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Destination SU is pseudo SU (only HUs)"></ui-dg-column>
+   <ui-dg-column sortable field="SRC_SU_SER" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Source SU is a HU with serial numbers"></ui-dg-column>
+   <ui-dg-column sortable field="SRC_HU_PICK" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: source HU suggested as pick HU at confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="HU_EXID" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'20'}" shlp.bind="{type: 'SH', id: 'HU_IDENT_ALLG'}" label="External Handling Unit Identification"></ui-dg-column>
+   <ui-dg-column sortable field="NO_CONTROL" data-abap.bind="{type:'CHAR', length:'1'}" label="Flag: Do not update whse controlling during TO creation"></ui-dg-column>
+   <ui-dg-column sortable field="SU_NO_PICK" data-abap.bind="{type:'CHAR', length:'1'}" label="Flag: Do not transfer SU to pick point (for SU block stor.)"></ui-dg-column>
+   <ui-dg-column sortable field="TA_POS_HU" data-abap.bind="{type:'CHAR', length:'1'}" label="Assignment of TO item to handling unit is required"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}" label="Long Material Number for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}" label="External GUID for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}" label="Version Number for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="PACK_MAT_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}" label="Long Material Number for PACK_MAT Field"></ui-dg-column>
+   <ui-dg-column sortable field="PACK_MAT_GUID" data-abap.bind="{type:'CHAR', length:'32'}" label="External GUID for PACK_MAT Field"></ui-dg-column>
+   <ui-dg-column sortable field="PACK_MAT_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}" label="Version Number for PACK_MAT Field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}" label="Material Number (40 Characters, needed f. technical reasons)"></ui-dg-column>
+   <ui-dg-column sortable field="HAZ_MAT_NO_LONG" data-abap.bind="{type:'CHAR', length:'40'}" label="Hazardous Material Number (40 Chars, Technically Required)"></ui-dg-column>
+   <ui-dg-column sortable field="PACK_MAT_LONG" data-abap.bind="{type:'CHAR', length:'40'}" label="Packaging Materials"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="TOITEMDATA.CLIENT" shlp.bind="{type: 'CT', id: 'T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.WHSENUMBER" shlp.bind="{type: 'CT', id: 'T300'}" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}"
+          label="Warehouse Number / Warehouse Complex"></ui-combo>
+
+<ui-input bind="TOITEMDATA.TRANS_ORD" data-abap.bind="{type:'NUMC', mid:'TAN', length:'10'}"
+          label="Transfer Order Number"></ui-input>
+
+<ui-input bind="TOITEMDATA.TO_ITEM" data-abap.bind="{type:'NUMC', mid:'TAP', length:'4'}"
+          label="Transfer order item"></ui-input>
+
+<ui-input bind="TOITEMDATA.TT_ITEM" data-abap.bind="{type:'NUMC', mid:'TBP', length:'4'}"
+          label="Transfer Requirement Item"></ui-input>
+
+<ui-combo bind="TOITEMDATA.ITM_NUMBER" shlp.bind="{type: 'CT', id: 'VBUP'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Item number of the SD document"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.MATERIAL" shlp.bind="{type: 'SH', id: 'S_MAT1'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.PLANT" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.BATCH" shlp.bind="{type: 'CT', id: 'MCH1'}" data-abap.bind="{type:'CHAR', mid:'CHA', length:'10'}"
+          label="Batch Number"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.STOCK_CAT" shlp.bind="{type: 'FV', id: 'BESTQ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Stock Category in the Warehouse Management System"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.SPEC_STOCK" shlp.bind="{type: 'CT', id: 'T148'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Special Stock Indicator"></ui-combo>
+
+<ui-input bind="TOITEMDATA.SP_STCK_NO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'16'}"
+          label="Special Stock Number"></ui-input>
+
+<ui-combo bind="TOITEMDATA.HAZ_MAT_NO" shlp.bind="{type: 'CT', id: 'MGEF'}" data-abap.bind="{type:'CHAR', alpha:'MATN3', mid:'STO', length:'18'}"
+          label="Hazardous material number"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.BASE_UOM" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Base Unit of Measure"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.BASE_UOM_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.ALT_UNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Alternative Unit of Measure for Stockkeeping Unit"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.ALT_UNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="TOITEMDATA.NUMERATOR" data-abap.bind="{type:'DEC', length:'5'}"
+          label="Numerator for Conversion to Base Units of Measure"></ui-input>
+
+<ui-input bind="TOITEMDATA.DENOMINATR" data-abap.bind="{type:'DEC', length:'5'}"
+          label="Denominator for conversion to base units of measure"></ui-input>
+
+<ui-combo bind="TOITEMDATA.UNITTYPE_1" shlp.bind="{type: 'CT', id: 'T307'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Storage Unit Type"></ui-combo>
+
+<ui-checkbox value.bind="TOITEMDATA.PREALLSTCK" label="Indicator: pre-allocated stock"></ui-checkbox>
+
+<ui-input bind="TOITEMDATA.CURR_NO" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Sequence number"></ui-input>
+
+<ui-checkbox value.bind="TOITEMDATA.CONF_REQ" label="Indicator: confirmation required"></ui-checkbox>
+
+<ui-checkbox value.bind="TOITEMDATA.ZEROSTKCHK" label="Indicator: Execute Zero Stock Check"></ui-checkbox>
+
+<ui-combo bind="TOITEMDATA.ZEROSTOCK" shlp.bind="{type: 'FV', id: 'LTAP_NULKO'}" data-abap.bind="{type:'NUMC', length:'1'}"
+          label="Status of zero stock check in transfer order item"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.INV_METHOD" shlp.bind="{type: 'FV', id: 'LVS_KZINV'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Inventory indicators"></ui-combo>
+
+<ui-input bind="TOITEMDATA.INV_RECORD" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'IVN', length:'10'}"
+          label="Number of system inventory record"></ui-input>
+
+<ui-checkbox value.bind="TOITEMDATA.CONFIRM_IND" label="Indicator: confirmation complete"></ui-checkbox>
+
+<ui-date date.bind="TOITEMDATA.CONF_DATE"  label="Date of confirmation"></ui-date>
+
+<ui-time time.bind="TOITEMDATA.CONF_TIME"  label="Time of confirmation"></ui-time>
+
+<ui-input bind="TOITEMDATA.TO_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="User name"></ui-input>
+
+<ui-input bind="TOITEMDATA.GROSS_WEIGHT" data-abap.bind="{type:'DEC', length:'10.3'}"
+          label="Gross weight of transfer order item"></ui-input>
+
+<ui-combo bind="TOITEMDATA.UNIT_OF_WT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Weight Unit"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.UNIT_OF_WT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="TOITEMDATA.MATDOC_ITM" data-abap.bind="{type:'NUMC', mid:'POS', length:'4'}"
+          label="Item in Material Document"></ui-input>
+
+<ui-input bind="TOITEMDATA.GR_RCPT" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Goods recipient"></ui-input>
+
+<ui-input bind="TOITEMDATA.UNLOAD_PT" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="Unloading Point"></ui-input>
+
+<ui-date date.bind="TOITEMDATA.WDATU"  label="Date of Goods Receipt"></ui-date>
+
+<ui-input bind="TOITEMDATA.GR_NUMBER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Goods Receipt Number"></ui-input>
+
+<ui-input bind="TOITEMDATA.GR_DATE" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Goods receipt item"></ui-input>
+
+<ui-input bind="TOITEMDATA.CERT_NO" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Certificate Number"></ui-input>
+
+<ui-combo bind="TOITEMDATA.PRINTER" shlp.bind="{type: 'CT', id: 'TSP03'}" data-abap.bind="{type:'CHAR', alpha:'SPDEV', mid:'PRI', length:'4'}"
+          label="Name of printer"></ui-combo>
+
+<ui-input bind="TOITEMDATA.PROCESS" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Transfer procedure"></ui-input>
+
+<ui-combo bind="TOITEMDATA.SOURCE_TYPE" shlp.bind="{type: 'CT', id: 'T301'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Source Storage Type"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.SRCSTORSEC" shlp.bind="{type: 'CT', id: 'T302'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Source storage section"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.SOURCE_BIN" shlp.bind="{type: 'CT', id: 'LAGP'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Source Storage Bin"></ui-combo>
+
+<ui-checkbox value.bind="TOITEMDATA.SRC_DYN_BIN" label="Indicator: dynamic storage bin"></ui-checkbox>
+
+<ui-input bind="TOITEMDATA.SRC_BIN_POS" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Position in source storage bin"></ui-input>
+
+<ui-input bind="TOITEMDATA.ST_REM_SU" data-abap.bind="{type:'DEC', length:'8.3'}"
+          label="Number of storage units to be transferred from bulk storage"></ui-input>
+
+<ui-checkbox value.bind="TOITEMDATA.PAR_PALLET" label="Indicator: partial pallet quantity exists"></ui-checkbox>
+
+<ui-input bind="TOITEMDATA.SRCTGTQTYB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Source target quantity in stockkeeping unit"></ui-input>
+
+<ui-input bind="TOITEMDATA.SRC_A_QTYB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Source actual quantity in stockkeeping unit"></ui-input>
+
+<ui-input bind="TOITEMDATA.SRC_B_DIFB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'+10.3'}"
+          label="Difference in source storage bin in stockkeeping unit"></ui-input>
+
+<ui-input bind="TOITEMDATA.SRCTGTQTYA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'10.3'}"
+          label="Source target quantity in alternate unit"></ui-input>
+
+<ui-input bind="TOITEMDATA.SRC_A_QTYA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'10.3'}"
+          label="Source actual quantity in alternative unit of measure"></ui-input>
+
+<ui-input bind="TOITEMDATA.SRC_B_DIFA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'+10.3'}"
+          label="Difference in source storage bin in alternative unit"></ui-input>
+
+<ui-input bind="TOITEMDATA.QUANT" data-abap.bind="{type:'NUMC', mid:'LQN', length:'10'}"
+          label="Quant"></ui-input>
+
+<ui-checkbox value.bind="TOITEMDATA.SOURCEAPPC" label="Ind.: Pass on source item to APPC interface"></ui-checkbox>
+
+<ui-combo bind="TOITEMDATA.DEST_TYPE" shlp.bind="{type: 'CT', id: 'T301'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Destination Storage Type"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.DEST_SECT" shlp.bind="{type: 'CT', id: 'T302'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Destination storage section"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.DEST_BIN" shlp.bind="{type: 'CT', id: 'LAGP'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Destination Storage Bin"></ui-combo>
+
+<ui-checkbox value.bind="TOITEMDATA.DEST_DYN_BIN" label="Indicator: dynamic storage bin"></ui-checkbox>
+
+<ui-input bind="TOITEMDATA.DEST_BIN_POS" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Position in destination storage bin"></ui-input>
+
+<ui-input bind="TOITEMDATA.SU_PL_STCK" data-abap.bind="{type:'DEC', length:'8.3'}"
+          label="Number of storage units to be transferred to bulk storage"></ui-input>
+
+<ui-checkbox value.bind="TOITEMDATA.PART_PALL" label="Indicator: partial pallet quantity exists"></ui-checkbox>
+
+<ui-input bind="TOITEMDATA.DEST_TARGB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Destination target quantity in stockkeeping unit"></ui-input>
+
+<ui-input bind="TOITEMDATA.DEST_ACTB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Destination actual quantity in stockkeeping unit"></ui-input>
+
+<ui-input bind="TOITEMDATA.DEST_DIFB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'+10.3'}"
+          label="Destination difference quantity in stockkeeping unit"></ui-input>
+
+<ui-input bind="TOITEMDATA.DEST_TARGA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'10.3'}"
+          label="Destination target quantity in alternative unit"></ui-input>
+
+<ui-input bind="TOITEMDATA.DEST_ACTA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'10.3'}"
+          label="Actual destination quantity in alternative unit"></ui-input>
+
+<ui-input bind="TOITEMDATA.DEST_DIFA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'+10.3'}"
+          label="Destination difference qty. in alternative unit"></ui-input>
+
+<ui-input bind="TOITEMDATA.DEST_QUANT" data-abap.bind="{type:'NUMC', mid:'LQN', length:'10'}"
+          label="Quant"></ui-input>
+
+<ui-checkbox value.bind="TOITEMDATA.DEST_APPC" label="Indicator: pass on destination item to APPC interface"></ui-checkbox>
+
+<ui-combo bind="TOITEMDATA.RET_TYPE" shlp.bind="{type: 'CT', id: 'T301'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Return storage type"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.RET_AREA" shlp.bind="{type: 'CT', id: 'T302'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Return storage area"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.RET_BIN" shlp.bind="{type: 'CT', id: 'LAGP'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Return storage bin"></ui-combo>
+
+<ui-input bind="TOITEMDATA.RET_BIN_POS" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Position in return storage bin"></ui-input>
+
+<ui-input bind="TOITEMDATA.RET_TARGB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Return target quantity in stockkeeping unit"></ui-input>
+
+<ui-input bind="TOITEMDATA.RET_ACTB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Actual returned quantity in stockkeeping unit"></ui-input>
+
+<ui-input bind="TOITEMDATA.RET_DIFB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'+10.3'}"
+          label="Return difference quantity in stockkeeping unit"></ui-input>
+
+<ui-input bind="TOITEMDATA.RET_TARGA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'10.3'}"
+          label="Return target quantity in alternative unit"></ui-input>
+
+<ui-input bind="TOITEMDATA.RET_ACTA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'10.3'}"
+          label="Actual return quantity in alternate unit of measure"></ui-input>
+
+<ui-input bind="TOITEMDATA.RET_DIFA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'+10.3'}"
+          label="Return difference quantity in alternative unit"></ui-input>
+
+<ui-input bind="TOITEMDATA.RET_QUANT" data-abap.bind="{type:'NUMC', mid:'LQN', length:'10'}"
+          label="Quant"></ui-input>
+
+<ui-checkbox value.bind="TOITEMDATA.RET_APPC" label="Indicator: pass on return item to APPC interface"></ui-checkbox>
+
+<ui-combo bind="TOITEMDATA.DIF_TYPE" shlp.bind="{type: 'CT', id: 'T301'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Difference storage type"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.DIF_BIN" shlp.bind="{type: 'CT', id: 'LAGP'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Difference storage bin"></ui-combo>
+
+<ui-input bind="TOITEMDATA.DIF_QUANT" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Difference quant"></ui-input>
+
+<ui-input bind="TOITEMDATA.DIF_QTYB" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'+10.3'}"
+          label="Quantity of difference posting in stockkeeping unit"></ui-input>
+
+<ui-input bind="TOITEMDATA.DIF_QTYA" data-abap.bind="{type:'QUAN', unit:'ALT_UNIT', length:'+10.3'}"
+          label="Difference quantity in alternate unit of measure"></ui-input>
+
+<ui-combo bind="TOITEMDATA.DIF_IND" shlp.bind="{type: 'CT', id: 'T336'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Difference indicator"></ui-combo>
+
+<ui-input bind="TOITEMDATA.MATL_DESC" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material description"></ui-input>
+
+<ui-checkbox value.bind="TOITEMDATA.TO_IT_PRTD" label="Indicator: transfer order item is printed"></ui-checkbox>
+
+<ui-combo bind="TOITEMDATA.SRC_SU" shlp.bind="{type: 'CT', id: 'LEIN'}" data-abap.bind="{type:'CHAR', alpha:'LENUM', mid:'LEN', length:'20'}"
+          label="Source storage unit number"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.DEST_SU" shlp.bind="{type: 'CT', id: 'LEIN'}" data-abap.bind="{type:'CHAR', alpha:'LENUM', mid:'LEN', length:'20'}"
+          label="Destination storage unit number"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.DIF_SU" shlp.bind="{type: 'CT', id: 'LEIN'}" data-abap.bind="{type:'CHAR', alpha:'LENUM', mid:'LEN', length:'20'}"
+          label="Number of storage unit for difference quantities"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.SRC_SU_ST" shlp.bind="{type: 'FV', id: 'LEIN_STATU'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Status of source storage unit"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.DEST_SU_ST" shlp.bind="{type: 'FV', id: 'LEIN_STATU'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Status of destination storage unit"></ui-combo>
+
+<ui-checkbox value.bind="TOITEMDATA.SU_CONTNTS" label="Indicator: print storage unit contents"></ui-checkbox>
+
+<ui-checkbox value.bind="TOITEMDATA.HOM_ST_UN" label="Indicator: stock removal of a total, homogenous storage unit"></ui-checkbox>
+
+<ui-combo bind="TOITEMDATA.ITEM_CAT" shlp.bind="{type: 'FV', id: 'LTAP_POSTY'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Type of transfer order item"></ui-combo>
+
+<ui-input bind="TOITEMDATA.ORIG_ITEM" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="TO item from which current TO item was generated"></ui-input>
+
+<ui-combo bind="TOITEMDATA.SRC_TOTALS" shlp.bind="{type: 'FV', id: 'T331BSUMME'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Level of totals information SOURCE"></ui-combo>
+
+<ui-checkbox value.bind="TOITEMDATA.SRC_MIX_BAT" label="Blocks with mixed batches SOURCE"></ui-checkbox>
+
+<ui-combo bind="TOITEMDATA.DEST_TOTALS" shlp.bind="{type: 'FV', id: 'T331BSUMME'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Level of totals information DEST."></ui-combo>
+
+<ui-checkbox value.bind="TOITEMDATA.DEST_MIC_BAT" label="Blocks with mixed batches DEST"></ui-checkbox>
+
+<ui-input bind="TOITEMDATA.RES_ITEM" data-abap.bind="{type:'NUMC', mid:'RPO', length:'4'}"
+          label="Item Number of Reservation / Dependent Requirements"></ui-input>
+
+<ui-date date.bind="TOITEMDATA.EXPIRYDATE"  label="Shelf Life Expiration or Best-Before Date"></ui-date>
+
+<ui-input bind="TOITEMDATA.CAPAC_MAT" data-abap.bind="{type:'DEC', length:'10.3'}"
+          label="Capacity usage of transferred material"></ui-input>
+
+<ui-combo bind="TOITEMDATA.SRC_CAP_CHK" shlp.bind="{type: 'FV', id: 'T331_KAPAP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Capacity check for source storage type"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.DEST_CAP_CHK" shlp.bind="{type: 'FV', id: 'T331_KAPAP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Capacity check for destination storage type"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.RET_CAP_CHK" shlp.bind="{type: 'FV', id: 'T331_KAPAP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Capacity check return storage type"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.SUBSYSTEM" shlp.bind="{type: 'FV', id: 'LTAP_KZSUB'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Indicator: pass on TO item to subsystem"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.INSPLOTX" shlp.bind="{type: 'CT', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot on Which the Usage Decision is Based"></ui-combo>
+
+<ui-checkbox value.bind="TOITEMDATA.INV_SAMP" label="Indicator: transfer of insp.sample"></ui-checkbox>
+
+<ui-input bind="TOITEMDATA.RES_TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Record type"></ui-input>
+
+<ui-checkbox value.bind="TOITEMDATA.CONF_BATCH" label="Indicator: Confirm Batch to PP"></ui-checkbox>
+
+<ui-combo bind="TOITEMDATA.PICK_AREA" shlp.bind="{type: 'CT', id: 'T30A'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Picking Area"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.STGE_LOC" shlp.bind="{type: 'CT', id: 'T001L'}" data-abap.bind="{type:'CHAR', mid:'LAG', length:'4'}"
+          label="Storage location"></ui-combo>
+
+<ui-input bind="TOITEMDATA.PLAN_TIME" data-abap.bind="{type:'QUAN', unit:'TIME_UNIT', length:'+10.3'}"
+          label="Planned proc.time in transfer order item"></ui-input>
+
+<ui-combo bind="TOITEMDATA.TIME_UNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Time unit for performance data"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.TIME_UNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-checkbox value.bind="TOITEMDATA.REL_TWO" label="Relevance for 2-step picking"></ui-checkbox>
+
+<ui-input bind="TOITEMDATA.VOLUME" data-abap.bind="{type:'QUAN', unit:'VOLUMEUNIT', length:'10.3'}"
+          label="Volume"></ui-input>
+
+<ui-combo bind="TOITEMDATA.VOLUMEUNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Volume unit"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.VOLUMEUNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-checkbox value.bind="TOITEMDATA.INDINVMANG" label="Indicator Inventory Management active"></ui-checkbox>
+
+<ui-combo bind="TOITEMDATA.IM_RELEVANT" shlp.bind="{type: 'FV', id: 'LVS_IMREL'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Trigger posting in Inventory Management"></ui-combo>
+
+<ui-input bind="TOITEMDATA.INGRED_QTY" data-abap.bind="{type:'QUAN', unit:'INGRED_UOM', length:'10.3'}"
+          label="Transferred ingredient qty"></ui-input>
+
+<ui-combo bind="TOITEMDATA.INGRED_UOM" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Active ingredient unit of measure"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.INGRED_UOM_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-checkbox value.bind="TOITEMDATA.DEST_BIN_CHG" label="Dest.stor.bin changeable during confirmation"></ui-checkbox>
+
+<ui-checkbox value.bind="TOITEMDATA.KANBAN_IND" label="Kanban Indicator"></ui-checkbox>
+
+<ui-checkbox value.bind="TOITEMDATA.CANCEL_REQ" label="Cancellation req. for TO item (currently only from Kanban)"></ui-checkbox>
+
+<ui-checkbox value.bind="TOITEMDATA.SEP_CONF" label="Indicator: Separate confirmation possible"></ui-checkbox>
+
+<ui-checkbox value.bind="TOITEMDATA.MAT_PICK" label="Indicator: Material pick has been confirmed"></ui-checkbox>
+
+<ui-date date.bind="TOITEMDATA.ECONF_DATE"  label="Date of Pick Confirmation (First Step)"></ui-date>
+
+<ui-time time.bind="TOITEMDATA.ECONF_TIME"  label="Time of Pick Confirmation (First Step)"></ui-time>
+
+<ui-input bind="TOITEMDATA.CONF_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="User Name in Pick Confirmation (First Step)"></ui-input>
+
+<ui-combo bind="TOITEMDATA.FLG_LEAD_UNIT" shlp.bind="{type: 'FV', id: 'KZFME'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="ID: Leading unit of measure for completing a transaction"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.SUB_TWO_STEP" shlp.bind="{type: 'FV', id: 'RL03TQUKNZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Confirmation ind.: Two-step confirmation for external system"></ui-combo>
+
+<ui-combo bind="TOITEMDATA.HU_ITEM" shlp.bind="{type: 'FV', id: 'LTAP_FHUTA'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Flag: Transfer order item is HU TO item"></ui-combo>
+
+<ui-checkbox value.bind="TOITEMDATA.SRC_HU_NEST" label="Indicates whether the source storage unit is a nested HU"></ui-checkbox>
+
+<ui-combo bind="TOITEMDATA.PACK_MAT" shlp.bind="{type: 'CT', id: 'MARA'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', length:'18'}"
+          label="Packaging Materials"></ui-combo>
+
+<ui-checkbox value.bind="TOITEMDATA.SRC_SU_HU" label="Indicator: Source SU is pseudo SU (only HUs)"></ui-checkbox>
+
+<ui-checkbox value.bind="TOITEMDATA.DEST_SU_HU" label="Indicator: Destination SU is pseudo SU (only HUs)"></ui-checkbox>
+
+<ui-checkbox value.bind="TOITEMDATA.SRC_SU_SER" label="Indicator: Source SU is a HU with serial numbers"></ui-checkbox>
+
+<ui-checkbox value.bind="TOITEMDATA.SRC_HU_PICK" label="Indicator: source HU suggested as pick HU at confirmation"></ui-checkbox>
+
+<ui-combo bind="TOITEMDATA.HU_EXID" shlp.bind="{type: 'SH', id: 'HU_IDENT_ALLG'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'20'}"
+          label="External Handling Unit Identification"></ui-combo>
+
+<ui-checkbox value.bind="TOITEMDATA.NO_CONTROL" label="Flag: Do not update whse controlling during TO creation"></ui-checkbox>
+
+<ui-checkbox value.bind="TOITEMDATA.SU_NO_PICK" label="Flag: Do not transfer SU to pick point (for SU block stor.)"></ui-checkbox>
+
+<ui-checkbox value.bind="TOITEMDATA.TA_POS_HU" label="Assignment of TO item to handling unit is required"></ui-checkbox>
+
+<ui-input bind="TOITEMDATA.MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for MATERIAL Field"></ui-input>
+
+<ui-input bind="TOITEMDATA.MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for MATERIAL Field"></ui-input>
+
+<ui-input bind="TOITEMDATA.MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for MATERIAL Field"></ui-input>
+
+<ui-input bind="TOITEMDATA.PACK_MAT_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for PACK_MAT Field"></ui-input>
+
+<ui-input bind="TOITEMDATA.PACK_MAT_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for PACK_MAT Field"></ui-input>
+
+<ui-input bind="TOITEMDATA.PACK_MAT_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for PACK_MAT Field"></ui-input>
+
+<ui-input bind="TOITEMDATA.MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material Number (40 Characters, needed f. technical reasons)"></ui-input>
+
+<ui-input bind="TOITEMDATA.HAZ_MAT_NO_LONG" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Hazardous Material Number (40 Chars, Technically Required)"></ui-input>
+
+<ui-input bind="TOITEMDATA.PACK_MAT_LONG" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Packaging Materials"></ui-input>

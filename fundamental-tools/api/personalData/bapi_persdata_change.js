@@ -1,7 +1,7 @@
 //
-// BAPI_PERSDATA_CHANGE var: 40  struct: 1  table: 0  exception: 0
+// BAPI_PERSDATA_CHANGE exception: 0  struct: 1  table: 0  var: 40
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore
@@ -34,7 +34,7 @@ VALIDITYEND              :           "", // DATS (8) Valid To Date
 // MARITALSTATUS         :           "", // CHAR (1) Marital status key
 // MARITALSTATUSSINCE    :           "", // DATS (8) Valid from date of current marital status
 // MIDDLENAME            :           "", // CHAR (40) Middle name
-// NAME_FORMAT_INDICATOR :           "", // NUMC (2) no text (en)
+// NAME_FORMAT_INDICATOR :           "", // NUMC (2) no text (undefined)
 // NAMEATBIRTH           :           "", // CHAR (40) Name at Birth
 // NATIONALITY           :           "", // CHAR (3) Nationality SU3=NAT
 // NOCOMMIT              :           "", // CHAR (1) COMMIT control at BAPI interface

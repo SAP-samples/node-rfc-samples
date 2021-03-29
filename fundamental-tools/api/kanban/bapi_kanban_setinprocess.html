@@ -1,0 +1,96 @@
+<!--
+BAPI_KANBAN_SETINPROCESS exception: 0  struct: 1  table: 3  var: 1
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-input bind="EXCLUDE_STATUS_RESTRICTION" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Exclude Authorization Check at Time of Kanban Status Change"></ui-input>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: KANBANS structure: BAPI1075_1  Kanbans to Be Set to Status "In Process" -->
+
+<ui-datagrid data.bind="KANBANS" title="Kanbans to Be Set to Status "In Process""
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="KANBAN_ID" data-abap.bind="{type:'NUMC', length:'10'}" shlp.bind="{type: 'CH', id: 'PKPS'}" label="Identification Number"></ui-dg-column>
+   <ui-dg-column sortable field="STATUS" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'PKBST'}" label="Kanban status"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="KANBANS.KANBAN_ID" shlp.bind="{type: 'CH', id: 'PKPS'}" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Identification Number"></ui-combo>
+
+<ui-combo bind="KANBANS.STATUS" shlp.bind="{type: 'FV', id: 'PKBST'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Kanban status"></ui-combo>
+
+<!-- Parameter: KANBANS_NOT_UPDATED structure: BAPI1075_1  Kanbans that Were Not Set to Status "In Process" -->
+
+<ui-datagrid data.bind="KANBANS_NOT_UPDATED" title="Kanbans that Were Not Set to Status "In Process""
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="KANBAN_ID" data-abap.bind="{type:'NUMC', length:'10'}" shlp.bind="{type: 'CH', id: 'PKPS'}" label="Identification Number"></ui-dg-column>
+   <ui-dg-column sortable field="STATUS" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'PKBST'}" label="Kanban status"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="KANBANS_NOT_UPDATED.KANBAN_ID" shlp.bind="{type: 'CH', id: 'PKPS'}" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Identification Number"></ui-combo>
+
+<ui-combo bind="KANBANS_NOT_UPDATED.STATUS" shlp.bind="{type: 'FV', id: 'PKBST'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Kanban status"></ui-combo>
+
+<!-- Parameter: KANBANS_UPDATED structure: BAPI1075_1  Kanbans that Were Set to Status "In Process" -->
+
+<ui-datagrid data.bind="KANBANS_UPDATED" title="Kanbans that Were Set to Status "In Process""
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="KANBAN_ID" data-abap.bind="{type:'NUMC', length:'10'}" shlp.bind="{type: 'CH', id: 'PKPS'}" label="Identification Number"></ui-dg-column>
+   <ui-dg-column sortable field="STATUS" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'PKBST'}" label="Kanban status"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="KANBANS_UPDATED.KANBAN_ID" shlp.bind="{type: 'CH', id: 'PKPS'}" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Identification Number"></ui-combo>
+
+<ui-combo bind="KANBANS_UPDATED.STATUS" shlp.bind="{type: 'FV', id: 'PKBST'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Kanban status"></ui-combo>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRETURN  Return Code -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-input bind="RETURN.CODE" data-abap.bind="{type:'CHAR', length:'5'}"
+          label="Message code"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>

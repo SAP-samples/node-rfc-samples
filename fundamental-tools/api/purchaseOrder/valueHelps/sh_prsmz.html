@@ -1,0 +1,16 @@
+<!-- SH PRSMZ Project definition, persons responsible : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.VERNA" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="Name of responsible person (Project manager)"></ui-input>
+<ui-combo bind="searchParamLow.VERNR" shlp.bind="{type: 'SH', id: 'H_TCJ04'}" data-abap.bind="{type:'NUMC', length:'8'}"
+          label="Number of the responsible person (project manager)"></ui-combo>
+<ui-combo bind="searchParamLow.PSPID" shlp.bind="{type: 'SH', id: 'PRS'}" data-abap.bind="{type:'CHAR', alpha:'ABPSN', mid:'PSP', length:'24'}"
+          label="Project definition"></ui-combo>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="VERNA" data-abap.bind="{type:'CHAR', length:'25'}" label="Name of responsible person (Project manager)"></ui-dg-column>
+   <ui-dg-column sortable field="VERNR" data-abap.bind="{type:'NUMC', length:'8'}" label="Number of the responsible person (project manager)"></ui-dg-column>
+   <ui-dg-column sortable field="PSPID" data-abap.bind="{type:'CHAR', alpha:'ABPSN', mid:'PSP', length:'24'}" label="Project definition"></ui-dg-column>
+</ui-datagrid>

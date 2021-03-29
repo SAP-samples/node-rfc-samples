@@ -1,0 +1,66 @@
+<!--
+BAPI_INSPPOINT_CREATEFROMDATA exception: 0  struct: 2  table: 0  var: 3
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<!-- Parameter: DATA structure: BAPI2045L4  Data for inspection point -->
+
+<ui-combo bind="DATA.INSPPOINT" shlp.bind="{type: 'CH', id: 'QAPP'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Inspection Point Number"></ui-combo>
+
+<ui-combo bind="DATA.INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-input bind="DATA.INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Inspection Lot Operation Number"></ui-input>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<ui-combo bind="INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection lot number"></ui-combo>
+
+<ui-input bind="INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Inspection lot operation number"></ui-input>
+
+<ui-combo bind="INSPPOINT" shlp.bind="{type: 'CH', id: 'QAPP'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Inspection point"></ui-combo>
+
+<!-- Parameter: RETURN structure: BAPIRETURN1  Return value -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>

@@ -1,0 +1,19 @@
+<!-- SH H_T302 Storage Section : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.LGNUM" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}"
+          label="Warehouse Number / Warehouse Complex"></ui-input>
+<ui-input bind="searchParamLow.LGTYP" data-abap.bind="{type:'CHAR', mid:'LGT', length:'3'}"
+          label="Storage Type"></ui-input>
+<ui-input bind="searchParamLow.LGBER" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Storage Section"></ui-input>
+<ui-input bind="searchParamLow.LBERT" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="Name of storage area"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="LGNUM" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}" label="Warehouse Number / Warehouse Complex"></ui-dg-column>
+   <ui-dg-column sortable field="LGTYP" data-abap.bind="{type:'CHAR', mid:'LGT', length:'3'}" label="Storage Type"></ui-dg-column>
+   <ui-dg-column sortable field="LGBER" data-abap.bind="{type:'CHAR', length:'3'}" label="Storage Section"></ui-dg-column>
+   <ui-dg-column sortable field="LBERT" data-abap.bind="{type:'CHAR', length:'25'}" label="Name of storage area"></ui-dg-column>
+</ui-datagrid>

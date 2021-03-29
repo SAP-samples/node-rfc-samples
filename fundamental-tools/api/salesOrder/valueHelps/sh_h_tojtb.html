@@ -1,0 +1,13 @@
+<!-- SH H_TOJTB Object Type : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.OBJTYPE" shlp.bind="{type: 'CT', id: 'TOJTB'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Object type"></ui-combo>
+<ui-input bind="searchParamLow.SHORTTEXT" data-abap.bind="{type:'CHAR', length:'80'}"
+          label="Description"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="OBJTYPE" data-abap.bind="{type:'CHAR', length:'10'}" label="Object type"></ui-dg-column>
+   <ui-dg-column sortable field="SHORTTEXT" data-abap.bind="{type:'CHAR', length:'80'}" label="Description"></ui-dg-column>
+</ui-datagrid>

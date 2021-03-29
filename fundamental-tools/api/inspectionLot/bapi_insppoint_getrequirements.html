@@ -1,0 +1,175 @@
+<!--
+BAPI_INSPPOINT_GETREQUIREMENTS exception: 0  struct: 2  table: 0  var: 3
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-combo bind="INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection lot number"></ui-combo>
+
+<ui-input bind="INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Inspection lot operation number"></ui-input>
+
+<ui-combo bind="INSPPOINT" shlp.bind="{type: 'CH', id: 'QAPP'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Inspection point number"></ui-combo>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: REQUIREMENTS structure: BAPI2045D5  Inspection specifications: Inspection point -->
+
+<ui-combo bind="REQUIREMENTS.INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Inspection Lot Operation Number"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.INSPPOINT" shlp.bind="{type: 'CH', id: 'QAPP'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Inspection Point Number"></ui-combo>
+
+<ui-combo bind="REQUIREMENTS.CAT_TYPE" shlp.bind="{type: 'SH', id: 'H_TQ15'}" data-abap.bind="{type:'CHAR', mid:'QKT', length:'1'}"
+          label="Catalog"></ui-combo>
+
+<ui-combo bind="REQUIREMENTS.SEL_SET" shlp.bind="{type: 'CH', id: 'QPAM'}" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Selected Set for Inspection Point Valuation"></ui-combo>
+
+<ui-combo bind="REQUIREMENTS.PSEL_SET" shlp.bind="{type: 'SH', id: 'H_T001W'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Plant of Selected Set for Inspection Point Valuation"></ui-combo>
+
+<ui-combo bind="REQUIREMENTS.CODE_GRP_A" shlp.bind="{type: 'CT', id: 'QPGR'}" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group for Inspection Point Valuation"></ui-combo>
+
+<ui-combo bind="REQUIREMENTS.CODE_ACCEPT" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Code for Inspection Point Valuation"></ui-combo>
+
+<ui-combo bind="REQUIREMENTS.CODE_GRP_R" shlp.bind="{type: 'CT', id: 'QPGR'}" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group for Inspection Point Valuation"></ui-combo>
+
+<ui-combo bind="REQUIREMENTS.CODE_REJECT" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Code for Inspection Point Valuation"></ui-combo>
+
+<ui-checkbox value.bind="REQUIREMENTS.TIME_GRID" label="Interval = Time (Time-Related)"></ui-checkbox>
+
+<ui-checkbox value.bind="REQUIREMENTS.QUANT_GRID" label="Creation Cycle = Quantity  (Quantity-Reference)"></ui-checkbox>
+
+<ui-checkbox value.bind="REQUIREMENTS.FREE_GRID" label="Interval Without Reference to Time or Quantity"></ui-checkbox>
+
+<ui-combo bind="REQUIREMENTS.TIME_UNIT" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Time Unit"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.TIME_FAC" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Time Factor"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.QUANT_UNIT" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Grid Unit of Measure"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.QUANT_FAC" data-abap.bind="{type:'CHAR', length:'17'}"
+          label="Quantity Between Two Inspections"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.IDENT_KEY" shlp.bind="{type: 'SH', id: 'H_TQ79'}" data-abap.bind="{type:'CHAR', mid:'QBK', length:'3'}"
+          label="Identification for the Inspection Point Field Combination"></ui-combo>
+
+<ui-combo bind="REQUIREMENTS.IP_TYPE" shlp.bind="{type: 'FV', id: 'QPPKTTYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Inspection Point Type"></ui-combo>
+
+<ui-combo bind="REQUIREMENTS.EQUI_ORD" shlp.bind="{type: 'FV', id: 'QKZUSRAKT'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Field Active"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.EQUI_TXT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Keyword for User Field"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.F_LOC_ORD" shlp.bind="{type: 'FV', id: 'QKZUSRAKT'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Field Active"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.F_LOC_TXT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Keyword for User Field"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.SMPL_ORD" shlp.bind="{type: 'FV', id: 'QKZUSRAKT'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Field Active"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.SMPL_TXT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Keyword for User Field"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.USERC1_ORD" shlp.bind="{type: 'FV', id: 'QKZUSRAKT'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Field Active"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.USERC1_TXT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Keyword for User Field"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.USERC2_ORD" shlp.bind="{type: 'FV', id: 'QKZUSRAKT'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Field Active"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.USERC2_TXT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Keyword for User Field"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.USERN1_ORD" shlp.bind="{type: 'FV', id: 'QKZUSRAKT'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Field Active"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.USERN1_TXT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Keyword for User Field"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.USERN2_ORD" shlp.bind="{type: 'FV', id: 'QKZUSRAKT'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Field Active"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.USERN2_TXT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Keyword for User Field"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.USERD1_ORD" shlp.bind="{type: 'FV', id: 'QKZUSRAKT'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Field Active"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.USERD1_TXT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Keyword for User Field"></ui-input>
+
+<ui-combo bind="REQUIREMENTS.USERT1_ORD" shlp.bind="{type: 'FV', id: 'QKZUSRAKT'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Field Active"></ui-combo>
+
+<ui-input bind="REQUIREMENTS.USERT1_TXT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Keyword for User Field"></ui-input>
+
+<ui-checkbox value.bind="REQUIREMENTS.PARTLOTS" label="Partial Lot Assignment Required for an Insp. Point"></ui-checkbox>
+
+<ui-checkbox value.bind="REQUIREMENTS.BATCHES" label="Batch management requirement indicator"></ui-checkbox>
+
+<ui-checkbox value.bind="REQUIREMENTS.QUANTITIES" label="Quantities Must Be Assigned"></ui-checkbox>
+
+<ui-checkbox value.bind="REQUIREMENTS.QUANTONCE" label="Quantity Confirmation for Each Partial Lot"></ui-checkbox>
+
+<ui-checkbox value.bind="REQUIREMENTS.EVALUATION" label="Valuation Required"></ui-checkbox>
+
+<!-- Parameter: RETURN structure: BAPIRETURN1  Return value -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>

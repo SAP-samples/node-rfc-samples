@@ -1,0 +1,25 @@
+<!-- SH H_T460C Planned order profile : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.OBART" shlp.bind="{type: 'FV', id: 'OBART'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Object type"></ui-combo>
+<ui-combo bind="searchParamLow.PASCH" shlp.bind="{type: 'CT', id: 'T460C'}" data-abap.bind="{type:'CHAR', mid:'PASCH', length:'4'}"
+          label="Planned order profile"></ui-combo>
+<ui-combo bind="searchParamLow.PAART" shlp.bind="{type: 'FV', id: 'PAART'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Order type"></ui-combo>
+<ui-combo bind="searchParamLow.BESKZ" shlp.bind="{type: 'FV', id: 'BESKZ'}" data-abap.bind="{type:'CHAR', mid:'MBS', length:'1'}"
+          label="Procurement Type"></ui-combo>
+<ui-combo bind="searchParamLow.SOBES" shlp.bind="{type: 'FV', id: 'SOBES'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Special procurement type"></ui-combo>
+<ui-combo bind="searchParamLow.KNTTP" shlp.bind="{type: 'SH', id: 'H_T163K'}" data-abap.bind="{type:'CHAR', mid:'KNT', length:'1'}"
+          label="Account assignment category"></ui-combo>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="OBART" data-abap.bind="{type:'CHAR', length:'1'}" label="Object type"></ui-dg-column>
+   <ui-dg-column sortable field="PASCH" data-abap.bind="{type:'CHAR', mid:'PASCH', length:'4'}" label="Planned order profile"></ui-dg-column>
+   <ui-dg-column sortable field="PAART" data-abap.bind="{type:'CHAR', length:'4'}" label="Order type"></ui-dg-column>
+   <ui-dg-column sortable field="BESKZ" data-abap.bind="{type:'CHAR', mid:'MBS', length:'1'}" label="Procurement Type"></ui-dg-column>
+   <ui-dg-column sortable field="SOBES" data-abap.bind="{type:'CHAR', length:'1'}" label="Special procurement type"></ui-dg-column>
+   <ui-dg-column sortable field="KNTTP" data-abap.bind="{type:'CHAR', mid:'KNT', length:'1'}" label="Account assignment category"></ui-dg-column>
+</ui-datagrid>

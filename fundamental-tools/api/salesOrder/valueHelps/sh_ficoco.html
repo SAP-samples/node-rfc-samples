@@ -1,0 +1,21 @@
+<!-- SH FICOCO Search with Controlling Area : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.KOKRS" data-abap.bind="{type:'CHAR', mid:'CAC', length:'4'}"
+          label="Controlling Area"></ui-input>
+<ui-input bind="searchParamLow.FINCODE" data-abap.bind="{type:'CHAR', mid:'FIC', length:'10'}"
+          label="Fund"></ui-input>
+<ui-input bind="searchParamLow.BEZEICH" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Name"></ui-input>
+<ui-input bind="searchParamLow.BESCHR" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Description"></ui-input>
+<ui-input bind="searchParamLow.MCTXT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Search Term for Matchcode Search"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="KOKRS" data-abap.bind="{type:'CHAR', mid:'CAC', length:'4'}" label="Controlling Area"></ui-dg-column>
+   <ui-dg-column sortable field="FINCODE" data-abap.bind="{type:'CHAR', mid:'FIC', length:'10'}" label="Fund"></ui-dg-column>
+   <ui-dg-column sortable field="BEZEICH" data-abap.bind="{type:'CHAR', length:'20'}" label="Name"></ui-dg-column>
+   <ui-dg-column sortable field="BESCHR" data-abap.bind="{type:'CHAR', length:'40'}" label="Description"></ui-dg-column>
+</ui-datagrid>

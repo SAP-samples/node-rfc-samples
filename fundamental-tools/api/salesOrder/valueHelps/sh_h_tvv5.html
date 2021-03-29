@@ -1,0 +1,13 @@
+<!-- SH H_TVV5 Customer group 5 : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.KVGR5" shlp.bind="{type: 'CT', id: 'TVV5'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Customer group 5"></ui-combo>
+<ui-input bind="searchParamLow.BEZEI" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Description"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="KVGR5" data-abap.bind="{type:'CHAR', length:'3'}" label="Customer group 5"></ui-dg-column>
+   <ui-dg-column sortable field="BEZEI" data-abap.bind="{type:'CHAR', length:'20'}" label="Description"></ui-dg-column>
+</ui-datagrid>

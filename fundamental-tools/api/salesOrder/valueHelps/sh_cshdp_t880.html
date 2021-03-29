@@ -1,0 +1,19 @@
+<!-- SH CSHDP_T880 Company ID of trading partner : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.RCOMP" shlp.bind="{type: 'CT', id: 'T880'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'GCC', length:'6'}"
+          label="Company"></ui-combo>
+<ui-input bind="searchParamLow.NAME1" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Company name"></ui-input>
+<ui-combo bind="searchParamLow.CNTRY" shlp.bind="{type: 'CT', id: 'T005'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Country of Company"></ui-combo>
+<ui-combo bind="searchParamLow.CURR" shlp.bind="{type: 'CT', id: 'TCURC'}" data-abap.bind="{type:'CUKY', length:'5'}"
+          label="Local currency"></ui-combo>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="RCOMP" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'GCC', length:'6'}" label="Company"></ui-dg-column>
+   <ui-dg-column sortable field="NAME1" data-abap.bind="{type:'CHAR', length:'30'}" label="Company name"></ui-dg-column>
+   <ui-dg-column sortable field="CNTRY" data-abap.bind="{type:'CHAR', length:'3'}" label="Country of Company"></ui-dg-column>
+   <ui-dg-column sortable field="CURR" data-abap.bind="{type:'CUKY', length:'5'}" label="Local currency"></ui-dg-column>
+</ui-datagrid>

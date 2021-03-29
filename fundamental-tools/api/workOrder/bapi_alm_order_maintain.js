@@ -1,7 +1,7 @@
 //
-// BAPI_ALM_ORDER_MAINTAIN var: 1  struct: 0  table: 45  exception: 0
+// BAPI_ALM_ORDER_MAINTAIN exception: 0  struct: 0  table: 45  var: 1
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore
@@ -14,7 +14,7 @@ const parameters = {
 // TABLE PARAMETERS
 
 IT_METHODS                      :           [], // BAPI_ALM_ORDER_METHOD BAPI structure: Processing methods
-// ET_NOTIFICATION_NUMBERS      :           [], // BAPI_ALM_NOTIF_NUMBERS no text (en)
+// ET_NOTIFICATION_NUMBERS      :           [], // BAPI_ALM_NOTIF_NUMBERS no text (undefined)
 // ET_NUMBERS                   :           [], // BAPI_ALM_NUMBERS Return Structure with Transferred and Issued Order Numbers
 // EXTENSION_IN                 :           [], // BAPIPAREX Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIONOUT
 // IT_COMPONENT                 :           [], // BAPI_ALM_ORDER_COMPONENT PM/CS BAPI Order Components
@@ -43,14 +43,14 @@ IT_METHODS                      :           [], // BAPI_ALM_ORDER_METHOD BAPI st
 // IT_REFORDER_SERNO_OLIST_INS  :           [], // BAPI_REFORDER_SERNO_OLIST_I BAPI: Import Structure for Serial Number Object List
 // IT_RELATION                  :           [], // BAPI_ALM_ORDER_RELATION BAPI Structure for ALM Order Relationships
 // IT_RELATION_UP               :           [], // BAPI_ALM_ORDER_RELATION_UP BAPI Structure for ALM Order Relationships
-// IT_SERVICECONTRACTLIMITS     :           [], // BAPI_ALM_SRV_CONTRACT_LIMITS no text (en)
-// IT_SERVICECONTRACTLIMITS_UP  :           [], // BAPI_ALM_SRV_CONTRACT_LIMITS_U no text (en)
-// IT_SERVICELIMIT              :           [], // BAPI_ALM_SRV_LIMIT_DATA no text (en)
-// IT_SERVICELIMIT_UP           :           [], // BAPI_ALM_SRV_LIMIT_DATA_UP no text (en)
-// IT_SERVICELINES              :           [], // BAPI_ALM_SRV_SERVICE_LINE no text (en)
-// IT_SERVICELINES_UP           :           [], // BAPI_ALM_SRV_SERVICE_LINE_UP no text (en)
-// IT_SERVICEOUTLINE            :           [], // BAPI_ALM_SRV_OUTLINE no text (en)
-// IT_SERVICEOUTLINE_UP         :           [], // BAPI_ALM_SRV_OUTLINE_UP no text (en)
+// IT_SERVICECONTRACTLIMITS     :           [], // BAPI_ALM_SRV_CONTRACT_LIMITS no text (undefined)
+// IT_SERVICECONTRACTLIMITS_UP  :           [], // BAPI_ALM_SRV_CONTRACT_LIMITS_U no text (undefined)
+// IT_SERVICELIMIT              :           [], // BAPI_ALM_SRV_LIMIT_DATA no text (undefined)
+// IT_SERVICELIMIT_UP           :           [], // BAPI_ALM_SRV_LIMIT_DATA_UP no text (undefined)
+// IT_SERVICELINES              :           [], // BAPI_ALM_SRV_SERVICE_LINE no text (undefined)
+// IT_SERVICELINES_UP           :           [], // BAPI_ALM_SRV_SERVICE_LINE_UP no text (undefined)
+// IT_SERVICEOUTLINE            :           [], // BAPI_ALM_SRV_OUTLINE no text (undefined)
+// IT_SERVICEOUTLINE_UP         :           [], // BAPI_ALM_SRV_OUTLINE_UP no text (undefined)
 // IT_SRULE                     :           [], // BAPI_ALM_ORDER_SRULE PM/CS BAPI Settlement Rule
 // IT_SRULE_UP                  :           [], // BAPI_ALM_ORDER_SRULE_UP PM/CS BAPI Settlement Rule (Update Structure)
 // IT_TASKLISTS                 :           [], // BAPI_ALM_ORDER_TASKLISTS_I Parameter for Integrating Task Lists

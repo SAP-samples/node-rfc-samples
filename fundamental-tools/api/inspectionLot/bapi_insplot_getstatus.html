@@ -1,0 +1,108 @@
+<!--
+BAPI_INSPLOT_GETSTATUS exception: 0  struct: 2  table: 2  var: 1
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-combo bind="NUMBER" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot"></ui-combo>
+
+<!-- Parameter: LANGUAGE structure: BAPI2045LA  Language Key (Non-ISO and ISO) -->
+
+<ui-combo bind="LANGUAGE.LANGU" shlp.bind="{type: 'SH', id: 'H_T002'}" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+          label="Language Key"></ui-combo>
+
+<ui-input bind="LANGUAGE.LANGU_ISO" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="2-Character SAP Language Code"></ui-input>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: SYSTEM_STATUS structure: BAPI2045SS  Inspection Lot System Status -->
+
+<ui-datagrid data.bind="SYSTEM_STATUS" title="Inspection Lot System Status"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SYS_STATUS" data-abap.bind="{type:'CHAR', length:'5'}" shlp.bind="{type: 'SH', id: 'H_TJ02'}" label="System status"></ui-dg-column>
+   <ui-dg-column sortable field="SY_ST_TEXT" data-abap.bind="{type:'CHAR', length:'4'}" label="Individual status of an object (short form)"></ui-dg-column>
+   <ui-dg-column sortable field="SY_ST_DSCR" data-abap.bind="{type:'CHAR', length:'30'}" label="Object status"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="SYSTEM_STATUS.SYS_STATUS" shlp.bind="{type: 'SH', id: 'H_TJ02'}" data-abap.bind="{type:'CHAR', length:'5'}"
+          label="System status"></ui-combo>
+
+<ui-input bind="SYSTEM_STATUS.SY_ST_TEXT" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Individual status of an object (short form)"></ui-input>
+
+<ui-input bind="SYSTEM_STATUS.SY_ST_DSCR" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Object status"></ui-input>
+
+<!-- Parameter: USER_STATUS structure: BAPI2045US  User Status for the Inspection Lot -->
+
+<ui-datagrid data.bind="USER_STATUS" title="User Status for the Inspection Lot"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="STAT_PROF" data-abap.bind="{type:'CHAR', length:'8'}" shlp.bind="{type: 'SH', id: 'H_TJ20'}" label="Status Profile"></ui-dg-column>
+   <ui-dg-column sortable field="USR_STATUS" data-abap.bind="{type:'CHAR', length:'5'}" shlp.bind="{type: 'SH', id: 'H_TJ30'}" label="User Status"></ui-dg-column>
+   <ui-dg-column sortable field="US_ST_NUMB" data-abap.bind="{type:'NUMC', length:'2'}" label="Status Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="US_ST_TEXT" data-abap.bind="{type:'CHAR', length:'4'}" label="Individual status of an object (short form)"></ui-dg-column>
+   <ui-dg-column sortable field="US_ST_DSCR" data-abap.bind="{type:'CHAR', length:'30'}" label="Object status"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="USER_STATUS.STAT_PROF" shlp.bind="{type: 'SH', id: 'H_TJ20'}" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Status Profile"></ui-combo>
+
+<ui-combo bind="USER_STATUS.USR_STATUS" shlp.bind="{type: 'SH', id: 'H_TJ30'}" data-abap.bind="{type:'CHAR', length:'5'}"
+          label="User Status"></ui-combo>
+
+<ui-input bind="USER_STATUS.US_ST_NUMB" data-abap.bind="{type:'NUMC', length:'2'}"
+          label="Status Order Number"></ui-input>
+
+<ui-input bind="USER_STATUS.US_ST_TEXT" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Individual status of an object (short form)"></ui-input>
+
+<ui-input bind="USER_STATUS.US_ST_DSCR" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Object status"></ui-input>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRETURN1  Return Values -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>

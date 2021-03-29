@@ -1,0 +1,31 @@
+<!-- SH QMTBS Inspection Method for Search Field : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.KURZTEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Short Text"></ui-input>
+<ui-input bind="searchParamLow.QMASTMOD" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Activity for QM Master Data Authorizations"></ui-input>
+<ui-date date.bind="searchParamLow.DATUV"  label="Key Date"></ui-date>
+<ui-input bind="searchParamLow.ALLEVERS" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Select All Versions"></ui-input>
+<ui-input bind="searchParamLow.FREI" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Select Only Released Versions"></ui-input>
+<ui-input bind="searchParamLow.SORTFELD" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Search Field"></ui-input>
+<ui-combo bind="searchParamLow.WERKS" shlp.bind="{type: 'SH', id: 'H_T001W'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant for Inspection Method"></ui-combo>
+<ui-combo bind="searchParamLow.PMTNR" shlp.bind="{type: 'SH', id: 'QMTB'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PMT', length:'8'}"
+          label="Inspection Method"></ui-combo>
+<ui-input bind="searchParamLow.VERSION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'6'}"
+          label="Version Number of the Inspection Method"></ui-input>
+<ui-date date.bind="searchParamLow.GUELTIGAB"  label="Valid-From Date"></ui-date>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="WERKS" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" label="Plant for Inspection Method"></ui-dg-column>
+   <ui-dg-column sortable field="PMTNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PMT', length:'8'}" label="Inspection Method"></ui-dg-column>
+   <ui-dg-column sortable field="VERSION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'6'}" label="Version Number of the Inspection Method"></ui-dg-column>
+   <ui-dg-column sortable field="KURZTEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Short Text"></ui-dg-column>
+   <ui-dg-column sortable field="GUELTIGAB" data-abap.bind="{type:'DATS'}" label="Valid-From Date"></ui-dg-column>
+   <ui-dg-column sortable field="SORTFELD" data-abap.bind="{type:'CHAR', length:'40'}" label="Search Field"></ui-dg-column>
+</ui-datagrid>

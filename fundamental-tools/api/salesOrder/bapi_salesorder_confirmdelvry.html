@@ -1,0 +1,172 @@
+<!--
+BAPI_SALESORDER_CONFIRMDELVRY exception: 0  struct: 0  table: 4  var: 1
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-combo bind="SALESDOCUMENT" shlp.bind="{type: 'CT', id: 'VBUK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}"
+          label="Sales Document"></ui-combo>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: DLVITEM structure: BAPISDDLVITEM  BAPI: Delivery Confirmation -->
+
+<ui-datagrid data.bind="DLVITEM" title="BAPI: Delivery Confirmation"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ITM_NUMBER" data-abap.bind="{type:'NUMC', mid:'APO', length:'6'}" shlp.bind="{type: 'CT', id: 'VBUP'}" label="Sales Document Item"></ui-dg-column>
+   <ui-dg-column sortable field="DELIV_NUMB" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}" shlp.bind="{type: 'CT', id: 'VBUK'}" label="Delivery"></ui-dg-column>
+   <ui-dg-column sortable field="DELIV_ITEM" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CT', id: 'VBUP'}" label="Delivery Item"></ui-dg-column>
+   <ui-dg-column sortable field="DOCCATEGOR" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'VBTYP'}" label="Document category of subsequent document"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_SYSTEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'TBDLS'}" label="Logical system"></ui-dg-column>
+   <ui-dg-column sortable field="REDELIVER" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'SD_DELIVER'}" label="AIP: Deliver Order Item"></ui-dg-column>
+   <ui-dg-column sortable field="DELETEFLAG" data-abap.bind="{type:'CHAR', length:'1'}" label="Checkbox"></ui-dg-column>
+   <ui-dg-column sortable field="DATA_NUMBER" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CT', id: 'VBUP'}" label="Item number of the SD document"></ui-dg-column>
+   <ui-dg-column sortable field="DOCCATEGOR_LONG" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'FV', id: 'VBTYPL_S4'}" label="Field is not supported – needed for technical reasons only"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="DLVITEM.ITM_NUMBER" shlp.bind="{type: 'CT', id: 'VBUP'}" data-abap.bind="{type:'NUMC', mid:'APO', length:'6'}"
+          label="Sales Document Item"></ui-combo>
+
+<ui-combo bind="DLVITEM.DELIV_NUMB" shlp.bind="{type: 'CT', id: 'VBUK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}"
+          label="Delivery"></ui-combo>
+
+<ui-combo bind="DLVITEM.DELIV_ITEM" shlp.bind="{type: 'CT', id: 'VBUP'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Delivery Item"></ui-combo>
+
+<ui-combo bind="DLVITEM.DOCCATEGOR" shlp.bind="{type: 'FV', id: 'VBTYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Document category of subsequent document"></ui-combo>
+
+<ui-combo bind="DLVITEM.LOG_SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system"></ui-combo>
+
+<ui-combo bind="DLVITEM.REDELIVER" shlp.bind="{type: 'FV', id: 'SD_DELIVER'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="AIP: Deliver Order Item"></ui-combo>
+
+<ui-checkbox value.bind="DLVITEM.DELETEFLAG" label="Checkbox"></ui-checkbox>
+
+<ui-combo bind="DLVITEM.DATA_NUMBER" shlp.bind="{type: 'CT', id: 'VBUP'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Item number of the SD document"></ui-combo>
+
+<ui-combo bind="DLVITEM.DOCCATEGOR_LONG" shlp.bind="{type: 'FV', id: 'VBTYPL_S4'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Field is not supported – needed for technical reasons only"></ui-combo>
+
+<!-- Parameter: DLVITEMDATA structure: BAPISDDLVITEMDATA  BAPI: Delivery Confirmation Data -->
+
+<ui-datagrid data.bind="DLVITEMDATA" title="BAPI: Delivery Confirmation Data"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="DATA_NUMBER" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CT', id: 'VBUP'}" label="Item number of the SD document"></ui-dg-column>
+   <ui-dg-column sortable field="DLV_QTY" data-abap.bind="{type:'QUAN', unit:'DLV_UNIT', length:'10.3'}" label="Actual quantity delivered (in sales units)"></ui-dg-column>
+   <ui-dg-column sortable field="DLV_QTY_FLO" data-abap.bind="{type:'FLTP', length:'+1.15'}" label="Internal field/ Do not use     / LFIMG in float / MUM"></ui-dg-column>
+   <ui-dg-column sortable field="DLV_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Sales unit"></ui-dg-column>
+   <ui-dg-column sortable field="DLV_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="Sales unit in ISO code"></ui-dg-column>
+   <ui-dg-column sortable field="DLV_QTY_STOCK" data-abap.bind="{type:'QUAN', unit:'MEINS', length:'10.3'}" label="Actual quantity delivered in stockkeeping units"></ui-dg-column>
+   <ui-dg-column sortable field="DLV_QTY_ST_FLO" data-abap.bind="{type:'FLTP', length:'+1.15'}" label="Internal field/ Do not use     / LGMNG in float / MUM"></ui-dg-column>
+   <ui-dg-column sortable field="GOODSMVSTA" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'STATV'}" label="Goods movement status"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="DLVITEMDATA.DATA_NUMBER" shlp.bind="{type: 'CT', id: 'VBUP'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Item number of the SD document"></ui-combo>
+
+<ui-input bind="DLVITEMDATA.DLV_QTY" data-abap.bind="{type:'QUAN', unit:'DLV_UNIT', length:'10.3'}"
+          label="Actual quantity delivered (in sales units)"></ui-input>
+
+<ui-input bind="DLVITEMDATA.DLV_QTY_FLO" data-abap.bind="{type:'FLTP', length:'+1.15'}"
+          label="Internal field/ Do not use     / LFIMG in float / MUM"></ui-input>
+
+<ui-combo bind="DLVITEMDATA.DLV_UNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Sales unit"></ui-combo>
+
+<ui-combo bind="DLVITEMDATA.DLV_UNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Sales unit in ISO code"></ui-combo>
+
+<ui-input bind="DLVITEMDATA.DLV_QTY_STOCK" data-abap.bind="{type:'QUAN', unit:'MEINS', length:'10.3'}"
+          label="Actual quantity delivered in stockkeeping units"></ui-input>
+
+<ui-input bind="DLVITEMDATA.DLV_QTY_ST_FLO" data-abap.bind="{type:'FLTP', length:'+1.15'}"
+          label="Internal field/ Do not use     / LGMNG in float / MUM"></ui-input>
+
+<ui-combo bind="DLVITEMDATA.GOODSMVSTA" shlp.bind="{type: 'FV', id: 'STATV'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Goods movement status"></ui-combo>
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Parameter -->
+
+<ui-datagrid data.bind="RETURN" title="Return Parameter"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-dg-column>
+   <ui-dg-column sortable field="ID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'T100A'}" label="Message Class"></ui-dg-column>
+   <ui-dg-column sortable field="NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Message Number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}" label="Message Text"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_NO" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CH', id: 'BALHDR'}" label="Application log: log number"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_MSG_NO" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'BALM'}" label="Application log: Internal message serial number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}" label="Parameter Name"></ui-dg-column>
+   <ui-dg-column sortable field="ROW" data-abap.bind="{type:'INT4', length:'+10'}" label="Lines in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="FIELD" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD03L'}" label="Field in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="SYSTEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'TBDLS'}" label="Logical system from which message originates"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>
+
+<!-- Parameter: TOKENREFERENCE structure: CSL_TR_EXS  CSL: Data Element CSL_TR_EXT as Structure (BAPI Tab.Arg.) -->
+
+<ui-datagrid data.bind="TOKENREFERENCE" title="CSL: Data Element CSL_TR_EXT as Structure (BAPI Tab.Arg.)"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TR_EXT" data-abap.bind="{type:'CHAR', length:'255'}" label="CSL: CSL-External Representation of a Token Reference"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="TOKENREFERENCE.TR_EXT" data-abap.bind="{type:'CHAR', length:'255'}"
+          label="CSL: CSL-External Representation of a Token Reference"></ui-input>

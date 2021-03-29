@@ -1,0 +1,24 @@
+<!-- SH HU_IDENT_04 Identification by packing instructions : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.EXIDV" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'20'}"
+          label="External Handling Unit Identification"></ui-input>
+<ui-combo bind="searchParamLow.VHILM" shlp.bind="{type: 'CT', id: 'MARA'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', length:'18'}"
+          label="Packaging Materials"></ui-combo>
+<ui-combo bind="searchParamLow.PACKVORSCHR" shlp.bind="{type: 'SH', id: 'PL_PI1'}" data-abap.bind="{type:'CHAR', alpha:'VHUPI', length:'22'}"
+          label="Packing instruction"></ui-combo>
+<ui-combo bind="searchParamLow.PACKVORSCHR_ST" shlp.bind="{type: 'FV', id: 'PL_PACKSTATU'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Local packing status for a single HU (without sub HUs)"></ui-combo>
+<ui-checkbox value.bind="searchParamLow.LABELTYP" label="Indicator: do not print external shipping label"></ui-checkbox>
+<ui-input bind="searchParamLow.ZUL_AUFL" data-abap.bind="{type:'QUAN', unit:'GEWEI_MAX', length:'12.3'}"
+          label="Allowed load"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="EXIDV" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'20'}" label="External Handling Unit Identification"></ui-dg-column>
+   <ui-dg-column sortable field="VHILM" data-abap.bind="{type:'CHAR', alpha:'MATN1', length:'18'}" label="Packaging Materials"></ui-dg-column>
+   <ui-dg-column sortable field="PACKVORSCHR" data-abap.bind="{type:'CHAR', alpha:'VHUPI', length:'22'}" label="Packing instruction"></ui-dg-column>
+   <ui-dg-column sortable field="PACKVORSCHR_ST" data-abap.bind="{type:'CHAR', length:'1'}" label="Local packing status for a single HU (without sub HUs)"></ui-dg-column>
+   <ui-dg-column sortable field="LABELTYP" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: do not print external shipping label"></ui-dg-column>
+   <ui-dg-column sortable field="ZUL_AUFL" data-abap.bind="{type:'QUAN', unit:'GEWEI_MAX', length:'12.3'}" label="Allowed load"></ui-dg-column>
+</ui-datagrid>

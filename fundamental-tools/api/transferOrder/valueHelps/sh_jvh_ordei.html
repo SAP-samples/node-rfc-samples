@@ -1,0 +1,34 @@
+<!-- SH JVH_ORDEI Joint Venture : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.AUFNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-input>
+<ui-input bind="searchParamLow.KTEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Description"></ui-input>
+<ui-input bind="searchParamLow.BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}"
+          label="Company Code"></ui-input>
+<ui-input bind="searchParamLow.VNAME" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'JVV', length:'6'}"
+          label="Joint venture"></ui-input>
+<ui-input bind="searchParamLow.RECID" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'2'}"
+          label="Recovery Indicator"></ui-input>
+<ui-input bind="searchParamLow.ETYPE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="Equity type"></ui-input>
+<ui-input bind="searchParamLow.OTYPE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'4'}"
+          label="Joint Venture Order Type"></ui-input>
+<ui-input bind="searchParamLow.JV_JIBCL" data-abap.bind="{type:'CHAR', mid:'JIB', length:'3'}"
+          label="JIB/JIBE Class"></ui-input>
+<ui-input bind="searchParamLow.JV_JIBSA" data-abap.bind="{type:'CHAR', mid:'JBS', length:'5'}"
+          label="JIB/JIBE Subclass A"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+   <ui-dg-column sortable field="AUFNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" label="Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="KTEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Description"></ui-dg-column>
+   <ui-dg-column sortable field="VNAME" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'JVV', length:'6'}" label="Joint venture"></ui-dg-column>
+   <ui-dg-column sortable field="RECID" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'2'}" label="Recovery Indicator"></ui-dg-column>
+   <ui-dg-column sortable field="ETYPE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}" label="Equity type"></ui-dg-column>
+   <ui-dg-column sortable field="OTYPE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'4'}" label="Joint Venture Order Type"></ui-dg-column>
+   <ui-dg-column sortable field="JV_JIBCL" data-abap.bind="{type:'CHAR', mid:'JIB', length:'3'}" label="JIB/JIBE Class"></ui-dg-column>
+   <ui-dg-column sortable field="JV_JIBSA" data-abap.bind="{type:'CHAR', mid:'JBS', length:'5'}" label="JIB/JIBE Subclass A"></ui-dg-column>
+</ui-datagrid>

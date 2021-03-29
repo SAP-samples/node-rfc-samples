@@ -1,0 +1,13 @@
+<!-- SH H_T014 Credit control area : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.KKBER" shlp.bind="{type: 'CT', id: 'T014'}" data-abap.bind="{type:'CHAR', mid:'KKB', length:'4'}"
+          label="Credit control area"></ui-combo>
+<ui-input bind="searchParamLow.KKBTX" data-abap.bind="{type:'CHAR', length:'35'}"
+          label="Description of the credit control area"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="KKBER" data-abap.bind="{type:'CHAR', mid:'KKB', length:'4'}" label="Credit control area"></ui-dg-column>
+   <ui-dg-column sortable field="KKBTX" data-abap.bind="{type:'CHAR', length:'35'}" label="Description of the credit control area"></ui-dg-column>
+</ui-datagrid>

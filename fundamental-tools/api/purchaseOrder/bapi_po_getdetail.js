@@ -1,7 +1,7 @@
 //
-// BAPI_PO_GETDETAIL var: 11  struct: 2  table: 15  exception: 0
+// BAPI_PO_GETDETAIL exception: 0  struct: 2  table: 15  var: 11
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore

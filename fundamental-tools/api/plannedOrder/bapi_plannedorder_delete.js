@@ -1,7 +1,7 @@
 //
-// BAPI_PLANNEDORDER_DELETE var: 3  struct: 1  table: 0  exception: 0
+// BAPI_PLANNEDORDER_DELETE exception: 0  struct: 1  table: 0  var: 3
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore

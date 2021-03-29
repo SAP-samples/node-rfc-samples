@@ -1,0 +1,13 @@
+<!-- SH H_T435 Standard text key for production resources/tools : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.VLSCH" shlp.bind="{type: 'CT', id: 'T435'}" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="Standard text key"></ui-combo>
+<ui-input bind="searchParamLow.TXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Description of the standard text key"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="VLSCH" data-abap.bind="{type:'CHAR', length:'7'}" label="Standard text key"></ui-dg-column>
+   <ui-dg-column sortable field="TXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Description of the standard text key"></ui-dg-column>
+</ui-datagrid>

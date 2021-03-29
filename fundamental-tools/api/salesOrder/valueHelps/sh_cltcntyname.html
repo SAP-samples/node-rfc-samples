@@ -1,0 +1,25 @@
+<!-- SH CLTCNTYNAME County : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.LANGU" shlp.bind="{type: 'SH', id: 'H_T002'}" data-abap.bind="{type:'LANG', alpha:'ISOLA', length:'1'}"
+          label="Language Key"></ui-combo>
+<ui-combo bind="searchParamLow.COUNTRY" shlp.bind="{type: 'CT', id: 'T005'}" data-abap.bind="{type:'CHAR', mid:'LND', length:'3'}"
+          label="Country Key"></ui-combo>
+<ui-combo bind="searchParamLow.REGION" shlp.bind="{type: 'CT', id: 'T005S'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Region (State, Province, County)"></ui-combo>
+<ui-combo bind="searchParamLow.COUNTY_CODE" shlp.bind="{type: 'SH', id: 'COUNTYA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'8'}"
+          label="County code for county"></ui-combo>
+<ui-combo bind="searchParamLow.COUNTY" shlp.bind="{type: 'SH', id: 'CLTCNTYNAME'}" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="County"></ui-combo>
+<ui-input bind="searchParamLow.MC_COUNTY" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="County name in upper case for search help"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="MC_COUNTY" data-abap.bind="{type:'CHAR', length:'25'}" label="County name in upper case for search help"></ui-dg-column>
+   <ui-dg-column sortable field="REGION" data-abap.bind="{type:'CHAR', length:'3'}" label="Region (State, Province, County)"></ui-dg-column>
+   <ui-dg-column sortable field="COUNTRY" data-abap.bind="{type:'CHAR', mid:'LND', length:'3'}" label="Country Key"></ui-dg-column>
+   <ui-dg-column sortable field="COUNTY_CODE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'8'}" label="County code for county"></ui-dg-column>
+   <ui-dg-column sortable field="COUNTY" data-abap.bind="{type:'CHAR', length:'40'}" label="County"></ui-dg-column>
+   <ui-dg-column sortable field="LANGU" data-abap.bind="{type:'LANG', alpha:'ISOLA', length:'1'}" label="Language Key"></ui-dg-column>
+</ui-datagrid>

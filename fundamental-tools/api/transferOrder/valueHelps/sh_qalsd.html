@@ -1,0 +1,18 @@
+<!-- SH QALSD Customers : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.KUNNR" shlp.bind="{type: 'SH', id: 'DEBI'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Customer (Ship-To Party)"></ui-combo>
+<ui-combo bind="searchParamLow.MATNR" shlp.bind="{type: 'SH', id: 'MAT1'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+<ui-combo bind="searchParamLow.PRUEFLOS" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+<ui-date date.bind="searchParamLow.ENSTEHDAT"  label="Date of Lot Creation"></ui-date>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="KUNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" label="Customer (Ship-To Party)"></ui-dg-column>
+   <ui-dg-column sortable field="MATNR" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" label="Material Number"></ui-dg-column>
+   <ui-dg-column sortable field="PRUEFLOS" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}" label="Inspection Lot Number"></ui-dg-column>
+   <ui-dg-column sortable field="ENSTEHDAT" data-abap.bind="{type:'DATS'}" label="Date of Lot Creation"></ui-dg-column>
+</ui-datagrid>

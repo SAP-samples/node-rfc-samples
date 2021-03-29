@@ -1,0 +1,228 @@
+<!--
+BAPI_ALM_COMPONENT_GET_DETAIL exception: 0  struct: 1  table: 5  var: 5
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-input bind="IV_ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Operation Number"></ui-input>
+
+<ui-combo bind="IV_ORDERID" shlp.bind="{type: 'CH', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<ui-input bind="IV_RES_ITEM" data-abap.bind="{type:'NUMC', mid:'RPO', length:'4'}"
+          label="Item number of reservation / dependent requirements"></ui-input>
+
+<ui-combo bind="IV_RESERV_NO" shlp.bind="{type: 'CT', id: 'RESB'}" data-abap.bind="{type:'NUMC', mid:'RES', length:'10'}"
+          label="Number of Reservation / Dependent Requirement"></ui-combo>
+
+<ui-input bind="IV_RES_TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Record Type (General Components: ' ', Follow-Up Material: '1' )"></ui-input>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Parameters -->
+
+<ui-datagrid data.bind="RETURN" title="Return Parameters"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-dg-column>
+   <ui-dg-column sortable field="ID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'T100A'}" label="Message Class"></ui-dg-column>
+   <ui-dg-column sortable field="NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Message Number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}" label="Message Text"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_NO" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CH', id: 'BALHDR'}" label="Application log: log number"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_MSG_NO" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'BALM'}" label="Application log: Internal message serial number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}" label="Parameter Name"></ui-dg-column>
+   <ui-dg-column sortable field="ROW" data-abap.bind="{type:'INT4', length:'+10'}" label="Lines in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="FIELD" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD03L'}" label="Field in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="SYSTEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'TBDLS'}" label="Logical system from which message originates"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>
+
+<!-- Parameter: ET_TEXT structure: BAPI_ALM_TEXT  Text Header for ALM Order BAPIs -->
+
+<ui-datagrid data.bind="ET_TEXT" title="Text Header for ALM Order BAPIs"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ORDERID" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" shlp.bind="{type: 'CT', id: 'AUFK'}" label="Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="SUB_ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}" label="Suboperation"></ui-dg-column>
+   <ui-dg-column sortable field="RESERV_NO" data-abap.bind="{type:'NUMC', mid:'RES', length:'10'}" shlp.bind="{type: 'CT', id: 'RESB'}" label="Number of reservation/dependent requirements"></ui-dg-column>
+   <ui-dg-column sortable field="RES_ITEM" data-abap.bind="{type:'NUMC', mid:'RPO', length:'4'}" label="Item Number of Reservation / Dependent Requirements"></ui-dg-column>
+   <ui-dg-column sortable field="RES_TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Record type"></ui-dg-column>
+   <ui-dg-column sortable field="ITEM_NO_OF_PRODUCTION_RESOURCE" data-abap.bind="{type:'NUMC', length:'4'}" label="Item Number for Production Resource/Tool"></ui-dg-column>
+   <ui-dg-column sortable field="LANGU" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}" shlp.bind="{type: 'SH', id: 'H_T002'}" label="Language Key"></ui-dg-column>
+   <ui-dg-column sortable field="LANGU_ISO" data-abap.bind="{type:'CHAR', length:'2'}" label="2-Character SAP Language Code"></ui-dg-column>
+   <ui-dg-column sortable field="TEXTSTART" data-abap.bind="{type:'NUMC', length:'8'}" label="Cursor on the first line of a text"></ui-dg-column>
+   <ui-dg-column sortable field="TEXTEND" data-abap.bind="{type:'NUMC', length:'8'}" label="Cursor on the first line of a text"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ET_TEXT.ORDERID" shlp.bind="{type: 'CT', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<ui-input bind="ET_TEXT.ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Activity Number"></ui-input>
+
+<ui-input bind="ET_TEXT.SUB_ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Suboperation"></ui-input>
+
+<ui-combo bind="ET_TEXT.RESERV_NO" shlp.bind="{type: 'CT', id: 'RESB'}" data-abap.bind="{type:'NUMC', mid:'RES', length:'10'}"
+          label="Number of reservation/dependent requirements"></ui-combo>
+
+<ui-input bind="ET_TEXT.RES_ITEM" data-abap.bind="{type:'NUMC', mid:'RPO', length:'4'}"
+          label="Item Number of Reservation / Dependent Requirements"></ui-input>
+
+<ui-input bind="ET_TEXT.RES_TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Record type"></ui-input>
+
+<ui-input bind="ET_TEXT.ITEM_NO_OF_PRODUCTION_RESOURCE" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Item Number for Production Resource/Tool"></ui-input>
+
+<ui-combo bind="ET_TEXT.LANGU" shlp.bind="{type: 'SH', id: 'H_T002'}" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+          label="Language Key"></ui-combo>
+
+<ui-input bind="ET_TEXT.LANGU_ISO" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="2-Character SAP Language Code"></ui-input>
+
+<ui-input bind="ET_TEXT.TEXTSTART" data-abap.bind="{type:'NUMC', length:'8'}"
+          label="Cursor on the first line of a text"></ui-input>
+
+<ui-input bind="ET_TEXT.TEXTEND" data-abap.bind="{type:'NUMC', length:'8'}"
+          label="Cursor on the first line of a text"></ui-input>
+
+<!-- Parameter: ET_TEXT_LINES structure: BAPI_ALM_TEXT_LINES  SAPscript: Text Lines -->
+
+<ui-datagrid data.bind="ET_TEXT_LINES" title="SAPscript: Text Lines"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TDFORMAT" data-abap.bind="{type:'CHAR', length:'2'}" label="Tag column"></ui-dg-column>
+   <ui-dg-column sortable field="TDLINE" data-abap.bind="{type:'CHAR', length:'132'}" label="Text Line"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="ET_TEXT_LINES.TDFORMAT" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Tag column"></ui-input>
+
+<ui-input bind="ET_TEXT_LINES.TDLINE" data-abap.bind="{type:'CHAR', length:'132'}"
+          label="Text Line"></ui-input>
+
+<!-- Parameter: EXTENSION_IN structure: BAPIPAREX  Customer Enhancement In -->
+
+<ui-datagrid data.bind="EXTENSION_IN" title="Customer Enhancement In"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="STRUCTURE" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD02L'}" label="Structure name of  BAPI table extension"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="EXTENSION_IN.STRUCTURE" shlp.bind="{type: 'CT', id: 'DD02L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Structure name o API table extension"></ui-combo>
+
+<ui-input bind="EXTENSION_IN.VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_IN.VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_IN.VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_IN.VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<!-- Parameter: EXTENSION_OUT structure: BAPIPAREX  Customer Enhancement Out -->
+
+<ui-datagrid data.bind="EXTENSION_OUT" title="Customer Enhancement Out"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="STRUCTURE" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD02L'}" label="Structure name of  BAPI table extension"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="EXTENSION_OUT.STRUCTURE" shlp.bind="{type: 'CT', id: 'DD02L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Structure name o API table extension"></ui-combo>
+
+<ui-input bind="EXTENSION_OUT.VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_OUT.VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_OUT.VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_OUT.VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: ES_COMPONENT structure: BAPI_ALM_ORDER_COMPONENT_E  PM/CS BAPI Order Components (Export Structure) -->
+
+<ui-input bind="ES_COMPONENT.RES_ITEM" data-abap.bind="{type:'NUMC', mid:'RPO', length:'4'}"
+          label="Item Number of Reservation / Dependent Requirements"></ui-input>
+
+<ui-combo bind="ES_COMPONENT.RESERV_NO" shlp.bind="{type: 'CT', id: 'RESB'}" data-abap.bind="{type:'NUMC', mid:'RES', length:'10'}"
+          label="Number of reservation/dependent requirements"></ui-combo>
+
+<ui-input bind="ES_COMPONENT.RES_TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Record type"></ui-input>

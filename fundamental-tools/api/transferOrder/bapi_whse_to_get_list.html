@@ -1,0 +1,150 @@
+<!--
+BAPI_WHSE_TO_GET_LIST exception: 0  struct: 1  table: 3  var: 6
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-combo bind="WAREHOUSENUMBER" shlp.bind="{type: 'CT', id: 'T300'}" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}"
+          label="Warehouse number / warehouse complex"></ui-combo>
+
+<ui-checkbox value.bind="CONFIRMIND" label="Indicator: confirmation complete"></ui-checkbox>
+
+<ui-combo bind="MATERIAL" shlp.bind="{type: 'SH', id: 'S_MAT1'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+
+<ui-input bind="MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material Number (40 Characters, Compatibility Mode)"></ui-input>
+
+<ui-input bind="MAXROWS" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Maximum Number of Lines of Hits"></ui-input>
+
+<ui-combo bind="SRCSTORAGETYPE" shlp.bind="{type: 'CT', id: 'T301'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Source storage type"></ui-combo>
+
+<!-- Parameter: MATERIAL_EVG structure: BAPIMGVMATNR   -->
+
+<ui-input bind="MATERIAL_EVG.MATERIAL_EXT" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="External Long Material Number"></ui-input>
+
+<ui-input bind="MATERIAL_EVG.MATERIAL_VERS" data-abap.bind="{type:'CHAR', alpha:'MATNW', mid:'MATVERS', length:'10'}"
+          label="Material Version Number"></ui-input>
+
+<ui-input bind="MATERIAL_EVG.MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Material number (external GUID)"></ui-input>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return parameter -->
+
+<ui-datagrid data.bind="RETURN" title="Return parameter"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-dg-column>
+   <ui-dg-column sortable field="ID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'T100A'}" label="Message Class"></ui-dg-column>
+   <ui-dg-column sortable field="NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Message Number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}" label="Message Text"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_NO" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CH', id: 'BALHDR'}" label="Application log: log number"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_MSG_NO" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'BALM'}" label="Application log: Internal message serial number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}" label="Parameter Name"></ui-dg-column>
+   <ui-dg-column sortable field="ROW" data-abap.bind="{type:'INT4', length:'+10'}" label="Lines in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="FIELD" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD03L'}" label="Field in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="SYSTEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'TBDLS'}" label="Logical system from which message originates"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>
+
+<!-- Parameter: TRANSORDERKEY structure: BAPITRANSORDERKEY  BAPI Export Structure for Transfer Order (Key Fields) -->
+
+<ui-datagrid data.bind="TRANSORDERKEY" title="BAPI Export Structure for Transfer Order (Key Fields)"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'CT', id: 'T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="WHSENUMBER" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}" shlp.bind="{type: 'CT', id: 'T300'}" label="Warehouse Number / Warehouse Complex"></ui-dg-column>
+   <ui-dg-column sortable field="TRANS_ORD" data-abap.bind="{type:'NUMC', mid:'TAN', length:'10'}" label="Transfer Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="TO_ITEM" data-abap.bind="{type:'NUMC', mid:'TAP', length:'4'}" label="Transfer order item"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="TRANSORDERKEY.CLIENT" shlp.bind="{type: 'CT', id: 'T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="TRANSORDERKEY.WHSENUMBER" shlp.bind="{type: 'CT', id: 'T300'}" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}"
+          label="Warehouse Number / Warehouse Complex"></ui-combo>
+
+<ui-input bind="TRANSORDERKEY.TRANS_ORD" data-abap.bind="{type:'NUMC', mid:'TAN', length:'10'}"
+          label="Transfer Order Number"></ui-input>
+
+<ui-input bind="TRANSORDERKEY.TO_ITEM" data-abap.bind="{type:'NUMC', mid:'TAP', length:'4'}"
+          label="Transfer order item"></ui-input>
+
+<!-- Parameter: SOURCEBINSELECT structure: BAPI2018F  Import-Struktur F for Business Object WhseTransOrder -->
+
+<ui-datagrid data.bind="SOURCEBINSELECT" title="Import-Struktur F for Business Object WhseTransOrder"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SIGN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BAPISIGN'}" label="Inclusion/exclusion criterion SIGN for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="OPTION" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" label="Selection operator OPTION for range tables"></ui-dg-column>
+   <ui-dg-column sortable field="STGE_BIN_HIGH" data-abap.bind="{type:'CHAR', length:'10'}" shlp.bind="{type: 'CT', id: 'LAGP'}" label="Source Storage Bin"></ui-dg-column>
+   <ui-dg-column sortable field="STGE_BIN_LOW" data-abap.bind="{type:'CHAR', length:'10'}" shlp.bind="{type: 'CT', id: 'LAGP'}" label="Source Storage Bin"></ui-dg-column>
+</ui-datagrid>
+
+<ui-checkbox value.bind="SOURCEBINSELECT.SIGN" label="Inclusion/exclusion criterion SIGN for range tables"></ui-checkbox>
+
+<ui-combo bind="SOURCEBINSELECT.OPTION" shlp.bind="{type: 'FV', id: 'BAPIOPTION'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Selection operator OPTION for range tables"></ui-combo>
+
+<ui-combo bind="SOURCEBINSELECT.STGE_BIN_HIGH" shlp.bind="{type: 'CT', id: 'LAGP'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Source Storage Bin"></ui-combo>
+
+<ui-combo bind="SOURCEBINSELECT.STGE_BIN_LOW" shlp.bind="{type: 'CT', id: 'LAGP'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Source Storage Bin"></ui-combo>

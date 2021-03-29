@@ -1,0 +1,179 @@
+<!--
+BAPI_INSPLOT_GETLIST exception: 0  struct: 2  table: 1  var: 21
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-combo bind="BATCH" shlp.bind="{type: 'CH', id: 'MCH1'}" data-abap.bind="{type:'CHAR', mid:'CHA', length:'10'}"
+          label="Batch Number"></ui-combo>
+
+<ui-date date.bind="CREAT_DAT"  label="Start Date for Selection"></ui-date>
+
+<ui-combo bind="CUSTOMER" shlp.bind="{type: 'SH', id: 'DEBI'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Customer Number"></ui-combo>
+
+<ui-combo bind="DELIV_ITEM" shlp.bind="{type: 'CH', id: 'VBUP'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Delivery Item"></ui-combo>
+
+<ui-combo bind="DELIV_NUMB" shlp.bind="{type: 'CH', id: 'VBUK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}"
+          label="Delivery"></ui-combo>
+
+<ui-combo bind="MANUFACTURER" shlp.bind="{type: 'SH', id: 'KRED'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+          label="Manufacturer"></ui-combo>
+
+<ui-input bind="MAT_DOC" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'MBN', length:'10'}"
+          label="Material Document"></ui-input>
+
+<ui-input bind="MATDOC_ITM" data-abap.bind="{type:'NUMC', mid:'POS', length:'4'}"
+          label="Item in Material Document"></ui-input>
+
+<ui-combo bind="MATERIAL" shlp.bind="{type: 'CT', id: 'MARA'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+
+<ui-input bind="MAX_ROWS" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Upper Limit for Number of Inspection Lots"></ui-input>
+
+<ui-combo bind="ORDER" shlp.bind="{type: 'CH', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<ui-combo bind="PLANT" shlp.bind="{type: 'SH', id: 'H_T001W'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+
+<ui-combo bind="PO_ITEM" shlp.bind="{type: 'CH', id: 'EKPO'}" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}"
+          label="Item in Purchasing Document"></ui-combo>
+
+<ui-combo bind="PO_NUMBER" shlp.bind="{type: 'CH', id: 'EKKO'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+          label="Purchasing Document"></ui-combo>
+
+<ui-combo bind="RS_ORDER" shlp.bind="{type: 'CT', id: 'SAFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'12'}"
+          label="Production Version Number"></ui-combo>
+
+<ui-combo bind="SELECTION_ID" shlp.bind="{type: 'CT', id: 'TJ48'}" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="Status Selection Profile"></ui-combo>
+
+<ui-checkbox value.bind="STATUS_CREATED" label="Use Created Lots"></ui-checkbox>
+
+<ui-checkbox value.bind="STATUS_RELEASED" label="Use Released Lots"></ui-checkbox>
+
+<ui-checkbox value.bind="STATUS_UD" label="Use Lots with Usage Decision"></ui-checkbox>
+
+<ui-combo bind="VENDOR" shlp.bind="{type: 'SH', id: 'KRED'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+          label="Vendor Number"></ui-combo>
+
+<ui-combo bind="VERSION" shlp.bind="{type: 'SH', id: 'H_MKAL'}" data-abap.bind="{type:'CHAR', mid:'VER', length:'4'}"
+          label="Production Version"></ui-combo>
+
+<!-- Parameter: MATERIAL_EVG structure: BAPIMGVMATNR  Long Material Number -->
+
+<ui-input bind="MATERIAL_EVG.MATERIAL_EXT" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="External Long Material Number"></ui-input>
+
+<ui-input bind="MATERIAL_EVG.MATERIAL_VERS" data-abap.bind="{type:'CHAR', alpha:'MATNW', mid:'MATVERS', length:'10'}"
+          label="Material Version Number"></ui-input>
+
+<ui-input bind="MATERIAL_EVG.MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Material number (external GUID)"></ui-input>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: INSPLOT_LIST structure: BAPI2045L1  List of Inspection Lots -->
+
+<ui-datagrid data.bind="INSPLOT_LIST" title="List of Inspection Lots"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="BATCH" data-abap.bind="{type:'CHAR', mid:'CHA', length:'10'}" shlp.bind="{type: 'CH', id: 'MCH1'}" label="Batch Number"></ui-dg-column>
+   <ui-dg-column sortable field="CREAT_DAT" data-abap.bind="{type:'DATS'}" label="Date on Which the Data Record Was Created"></ui-dg-column>
+   <ui-dg-column sortable field="CUSTOMER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'SH', id: 'DEBI'}" label="Customer (Ship-To Party)"></ui-dg-column>
+   <ui-dg-column sortable field="DELIV_ITEM" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'VBUP'}" label="Delivery Item"></ui-dg-column>
+   <ui-dg-column sortable field="DELIV_NUMB" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}" shlp.bind="{type: 'CH', id: 'VBUK'}" label="Delivery"></ui-dg-column>
+   <ui-dg-column sortable field="MAT_DOC" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'MBN', length:'10'}" label="Number of Material Document"></ui-dg-column>
+   <ui-dg-column sortable field="MATDOC_ITM" data-abap.bind="{type:'NUMC', mid:'POS', length:'4'}" label="Item in Material Document"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" shlp.bind="{type: 'CT', id: 'MARA'}" label="Material Number"></ui-dg-column>
+   <ui-dg-column sortable field="ORDER_NO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" shlp.bind="{type: 'CH', id: 'AUFK'}" label="Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="PLANT" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" shlp.bind="{type: 'SH', id: 'H_T001W'}" label="Plant"></ui-dg-column>
+   <ui-dg-column sortable field="PO_ITEM" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}" shlp.bind="{type: 'CH', id: 'EKPO'}" label="Item Number of Purchasing Document"></ui-dg-column>
+   <ui-dg-column sortable field="PO_NUMBER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}" shlp.bind="{type: 'CH', id: 'EKKO'}" label="Purchasing Document Number"></ui-dg-column>
+   <ui-dg-column sortable field="VENDOR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}" shlp.bind="{type: 'SH', id: 'KRED'}" label="Vendor's account number"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="INSPLOT_LIST.BATCH" shlp.bind="{type: 'CH', id: 'MCH1'}" data-abap.bind="{type:'CHAR', mid:'CHA', length:'10'}"
+          label="Batch Number"></ui-combo>
+
+<ui-date date.bind="INSPLOT_LIST.CREAT_DAT"  label="Date on Which the Data Record Was Created"></ui-date>
+
+<ui-combo bind="INSPLOT_LIST.CUSTOMER" shlp.bind="{type: 'SH', id: 'DEBI'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Customer (Ship-To Party)"></ui-combo>
+
+<ui-combo bind="INSPLOT_LIST.DELIV_ITEM" shlp.bind="{type: 'CH', id: 'VBUP'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Delivery Item"></ui-combo>
+
+<ui-combo bind="INSPLOT_LIST.DELIV_NUMB" shlp.bind="{type: 'CH', id: 'VBUK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}"
+          label="Delivery"></ui-combo>
+
+<ui-input bind="INSPLOT_LIST.MAT_DOC" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'MBN', length:'10'}"
+          label="Number of Material Document"></ui-input>
+
+<ui-input bind="INSPLOT_LIST.MATDOC_ITM" data-abap.bind="{type:'NUMC', mid:'POS', length:'4'}"
+          label="Item in Material Document"></ui-input>
+
+<ui-combo bind="INSPLOT_LIST.MATERIAL" shlp.bind="{type: 'CT', id: 'MARA'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+
+<ui-combo bind="INSPLOT_LIST.ORDER_NO" shlp.bind="{type: 'CH', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<ui-combo bind="INSPLOT_LIST.PLANT" shlp.bind="{type: 'SH', id: 'H_T001W'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+
+<ui-combo bind="INSPLOT_LIST.PO_ITEM" shlp.bind="{type: 'CH', id: 'EKPO'}" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}"
+          label="Item Number of Purchasing Document"></ui-combo>
+
+<ui-combo bind="INSPLOT_LIST.PO_NUMBER" shlp.bind="{type: 'CH', id: 'EKKO'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+          label="Purchasing Document Number"></ui-combo>
+
+<ui-combo bind="INSPLOT_LIST.VENDOR" shlp.bind="{type: 'SH', id: 'KRED'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+          label="Vendor's account number"></ui-combo>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRETURN1  Return Value -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>

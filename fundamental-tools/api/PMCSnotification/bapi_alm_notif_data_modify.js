@@ -1,7 +1,7 @@
 //
-// BAPI_ALM_NOTIF_DATA_MODIFY var: 2  struct: 3  table: 13  exception: 0
+// BAPI_ALM_NOTIF_DATA_MODIFY exception: 0  struct: 3  table: 13  var: 2
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore

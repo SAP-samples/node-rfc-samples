@@ -1,0 +1,241 @@
+<!--
+BAPI_KANBAN_CHANGESTATUS1 exception: 0  struct: 4  table: 1  var: 4
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-combo bind="KANBANIDNUMBER" shlp.bind="{type: 'CH', id: 'PKPS'}" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Identification Number"></ui-combo>
+
+<ui-combo bind="BATCH" shlp.bind="{type: 'CT', id: 'MCH1'}" data-abap.bind="{type:'CHAR', mid:'CHA', length:'10'}"
+          label="Batch Number"></ui-combo>
+
+<ui-input bind="EXCLUDE_STATUS_RESTRICTION" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Exclude Authorization Check at Time of Kanban Status Change"></ui-input>
+
+<ui-combo bind="NEXTSTATUS" shlp.bind="{type: 'FV', id: 'PKBST'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Kanban status"></ui-combo>
+
+<!-- Parameter: ACTUALQUANTITY structure: BAPI1075_ACTUAL_QTY  Actual Quantity of a Kanban -->
+
+<ui-input bind="ACTUALQUANTITY.ACTUAL_QTY" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Actual quantity"></ui-input>
+
+<ui-combo bind="ACTUALQUANTITY.BASE_UOM" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Base Unit of Measure"></ui-combo>
+
+<ui-combo bind="ACTUALQUANTITY.BASE_UOM_ISO" shlp.bind="{type: 'SH', id: 'H_T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<!-- Parameter: DELIVERYNOTES structure: BAPI1075_4  Reference Document Number -->
+
+<ui-input bind="DELIVERYNOTES.DELIVERY_NOTE" data-abap.bind="{type:'CHAR', length:'16'}"
+          label="Number of External Delivery Note"></ui-input>
+
+<ui-input bind="DELIVERYNOTES.DELIVERY_NOTE_LONG" data-abap.bind="{type:'CHAR', length:'35'}"
+          label="Number of Extern. Delivery Note (Dependencies see Long Text)"></ui-input>
+
+<!-- Parameter: PHYSICALTIME structure: BAPI1075_PHYSTIME  Time of an Entry in the Kanban Process -->
+
+<ui-date date.bind="PHYSICALTIME.PHYSDATE"  label="Created on"></ui-date>
+
+<ui-time time.bind="PHYSICALTIME.PHYSTIME"  label="Created at"></ui-time>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: STATUSCHANGERESULT structure: BAPI1075_3  Result of a Kanban Status Change -->
+
+<ui-datagrid data.bind="STATUSCHANGERESULT" title="Result of a Kanban Status Change"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="KANBAN_ID" data-abap.bind="{type:'NUMC', length:'10'}" shlp.bind="{type: 'CH', id: 'PKPS'}" label="Identification Number"></ui-dg-column>
+   <ui-dg-column sortable field="CTRLCYC_NO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PKNUM', length:'7'}" shlp.bind="{type: 'SH', id: 'HV_PKHD'}" label="Control cycle number"></ui-dg-column>
+   <ui-dg-column sortable field="KANBAN_NO" data-abap.bind="{type:'NUMC', length:'3'}" label="Kanban item number / control cycle item"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" shlp.bind="{type: 'CT', id: 'MARA'}" label="Material Number"></ui-dg-column>
+   <ui-dg-column sortable field="PLANT" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" shlp.bind="{type: 'SH', id: 'H_T001W'}" label="Plant"></ui-dg-column>
+   <ui-dg-column sortable field="SUPPLYAREA" data-abap.bind="{type:'CHAR', mid:'PVB', length:'10'}" shlp.bind="{type: 'CT', id: 'PVBE'}" label="Production Supply Area"></ui-dg-column>
+   <ui-dg-column sortable field="STATUS" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'PKBST'}" label="Kanban status"></ui-dg-column>
+   <ui-dg-column sortable field="STATUSTEXT" data-abap.bind="{type:'CHAR', length:'6'}" label="Short text - container status Kanban"></ui-dg-column>
+   <ui-dg-column sortable field="KANBAN_QTY" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}" label="Kanban Quantity"></ui-dg-column>
+   <ui-dg-column sortable field="BASE_UOM" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T006'}" label="Base Unit of Measure"></ui-dg-column>
+   <ui-dg-column sortable field="BASE_UOM_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="STATUSDATE" data-abap.bind="{type:'DATS'}" label="Date of last change"></ui-dg-column>
+   <ui-dg-column sortable field="STATUSTIME" data-abap.bind="{type:'TIMS'}" label="Time of the last status change"></ui-dg-column>
+   <ui-dg-column sortable field="PLANNEDORDER_NUM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PAF', length:'10'}" shlp.bind="{type: 'CH', id: 'PLAF'}" label="Planned order number"></ui-dg-column>
+   <ui-dg-column sortable field="ORDERID" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" shlp.bind="{type: 'CH', id: 'AUFK'}" label="Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="PURCH_NO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}" shlp.bind="{type: 'CH', id: 'EKKO'}" label="Purchasing Document Number"></ui-dg-column>
+   <ui-dg-column sortable field="RESERV_NO" data-abap.bind="{type:'NUMC', mid:'RES', length:'10'}" shlp.bind="{type: 'CH', id: 'RESB'}" label="Number of reservation/dependent requirements"></ui-dg-column>
+   <ui-dg-column sortable field="SUMJITCALL" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PABNUM', length:'10'}" shlp.bind="{type: 'CH', id: 'PABHD'}" label="JIT Call Number"></ui-dg-column>
+   <ui-dg-column sortable field="SUMJITCALL_ITEM" data-abap.bind="{type:'NUMC', length:'4'}" label="JIT call item"></ui-dg-column>
+   <ui-dg-column sortable field="MAT_DOC" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'MBN', length:'10'}" label="Number of Material Document"></ui-dg-column>
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-dg-column>
+   <ui-dg-column sortable field="ID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'T100A'}" label="Message Class"></ui-dg-column>
+   <ui-dg-column sortable field="NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Message Number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}" label="Message Text"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}" label="Long Material Number for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}" label="External GUID for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}" label="Version Number for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="PACKINSTRID" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PIID', length:'20'}" shlp.bind="{type: 'SH', id: 'PL_PI0'}" label="Identification number of packing instruction"></ui-dg-column>
+   <ui-dg-column sortable field="NUMBER_LOADCARRIER" data-abap.bind="{type:'NUMC', length:'3'}" label="Number of Load Carriers"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}" label="Material Number (40 Characters, needed f. technical reasons)"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="STATUSCHANGERESULT.KANBAN_ID" shlp.bind="{type: 'CH', id: 'PKPS'}" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Identification Number"></ui-combo>
+
+<ui-combo bind="STATUSCHANGERESULT.CTRLCYC_NO" shlp.bind="{type: 'SH', id: 'HV_PKHD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PKNUM', length:'7'}"
+          label="Control cycle number"></ui-combo>
+
+<ui-input bind="STATUSCHANGERESULT.KANBAN_NO" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Kanban item number / control cycle item"></ui-input>
+
+<ui-combo bind="STATUSCHANGERESULT.MATERIAL" shlp.bind="{type: 'CT', id: 'MARA'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+
+<ui-combo bind="STATUSCHANGERESULT.PLANT" shlp.bind="{type: 'SH', id: 'H_T001W'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+
+<ui-combo bind="STATUSCHANGERESULT.SUPPLYAREA" shlp.bind="{type: 'CT', id: 'PVBE'}" data-abap.bind="{type:'CHAR', mid:'PVB', length:'10'}"
+          label="Production Supply Area"></ui-combo>
+
+<ui-combo bind="STATUSCHANGERESULT.STATUS" shlp.bind="{type: 'FV', id: 'PKBST'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Kanban status"></ui-combo>
+
+<ui-input bind="STATUSCHANGERESULT.STATUSTEXT" data-abap.bind="{type:'CHAR', length:'6'}"
+          label="Short text - container status Kanban"></ui-input>
+
+<ui-input bind="STATUSCHANGERESULT.KANBAN_QTY" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Kanban Quantity"></ui-input>
+
+<ui-combo bind="STATUSCHANGERESULT.BASE_UOM" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Base Unit of Measure"></ui-combo>
+
+<ui-combo bind="STATUSCHANGERESULT.BASE_UOM_ISO" shlp.bind="{type: 'SH', id: 'H_T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-date date.bind="STATUSCHANGERESULT.STATUSDATE"  label="Date of last change"></ui-date>
+
+<ui-time time.bind="STATUSCHANGERESULT.STATUSTIME"  label="Time of the last status change"></ui-time>
+
+<ui-combo bind="STATUSCHANGERESULT.PLANNEDORDER_NUM" shlp.bind="{type: 'CH', id: 'PLAF'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PAF', length:'10'}"
+          label="Planned order number"></ui-combo>
+
+<ui-combo bind="STATUSCHANGERESULT.ORDERID" shlp.bind="{type: 'CH', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<ui-combo bind="STATUSCHANGERESULT.PURCH_NO" shlp.bind="{type: 'CH', id: 'EKKO'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+          label="Purchasing Document Number"></ui-combo>
+
+<ui-combo bind="STATUSCHANGERESULT.RESERV_NO" shlp.bind="{type: 'CH', id: 'RESB'}" data-abap.bind="{type:'NUMC', mid:'RES', length:'10'}"
+          label="Number of reservation/dependent requirements"></ui-combo>
+
+<ui-combo bind="STATUSCHANGERESULT.SUMJITCALL" shlp.bind="{type: 'CH', id: 'PABHD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PABNUM', length:'10'}"
+          label="JIT Call Number"></ui-combo>
+
+<ui-input bind="STATUSCHANGERESULT.SUMJITCALL_ITEM" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="JIT call item"></ui-input>
+
+<ui-input bind="STATUSCHANGERESULT.MAT_DOC" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'MBN', length:'10'}"
+          label="Number of Material Document"></ui-input>
+
+<ui-input bind="STATUSCHANGERESULT.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="STATUSCHANGERESULT.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="STATUSCHANGERESULT.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="STATUSCHANGERESULT.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-input bind="STATUSCHANGERESULT.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="STATUSCHANGERESULT.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="STATUSCHANGERESULT.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="STATUSCHANGERESULT.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="STATUSCHANGERESULT.MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for MATERIAL Field"></ui-input>
+
+<ui-input bind="STATUSCHANGERESULT.MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for MATERIAL Field"></ui-input>
+
+<ui-input bind="STATUSCHANGERESULT.MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for MATERIAL Field"></ui-input>
+
+<ui-combo bind="STATUSCHANGERESULT.PACKINSTRID" shlp.bind="{type: 'SH', id: 'PL_PI0'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PIID', length:'20'}"
+          label="Identification number of packing instruction"></ui-combo>
+
+<ui-input bind="STATUSCHANGERESULT.NUMBER_LOADCARRIER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Number of Load Carriers"></ui-input>
+
+<ui-input bind="STATUSCHANGERESULT.MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material Number (40 Characters, needed f. technical reasons)"></ui-input>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRET2  Notification if Status Change not Possible -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>

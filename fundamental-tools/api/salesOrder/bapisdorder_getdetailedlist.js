@@ -1,7 +1,7 @@
 //
-// BAPISDORDER_GETDETAILEDLIST var: 2  struct: 1  table: 29  exception: 0
+// BAPISDORDER_GETDETAILEDLIST exception: 0  struct: 1  table: 29  var: 2
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore
@@ -10,14 +10,14 @@ const parameters = {
 // IMPORT PARAMETERS
 
 I_BAPI_VIEW                 :           {}, // ORDER_VIEW Bapi View for Data Reduction
-// I_MEMORY_READ            :           "", // CHAR (1) no text (en)
-// I_WITH_HEADER_CONDITIONS :        SPACE, // CHAR (1) no text (en)
+// I_MEMORY_READ            :           "", // CHAR (1) no text (undefined)
+// I_WITH_HEADER_CONDITIONS :        SPACE, // CHAR (1) no text (undefined)
 
 // TABLE PARAMETERS
 
 SALES_DOCUMENTS             :           [], // SALES_KEY Document Numbers to Be Selected
-// EXTENSIONOUT             :           [], // BAPIPAREX no text (en)
-// ORDER_ADDRESS_OUT        :           [], // BAPISDCOAD no text (en)
+// EXTENSIONOUT             :           [], // BAPIPAREX no text (undefined)
+// ORDER_ADDRESS_OUT        :           [], // BAPISDCOAD no text (undefined)
 // ORDER_BILLINGDATES_OUT   :           [], // BAPISDBPLD Billing Plan Deadlines for Document Numbers
 // ORDER_BILLINGPLANS_OUT   :           [], // BAPISDBPL Billing Plan for Document Numbers
 // ORDER_BUSINESS_OUT       :           [], // BAPISDBUSI Business Data for Document Numbers
@@ -27,11 +27,11 @@ SALES_DOCUMENTS             :           [], // SALES_KEY Document Numbers to Be 
 // ORDER_CFGS_CUPRTS_OUT    :           [], // BAPICUPRTM PartOf Data for Document Numbers
 // ORDER_CFGS_CUREFS_OUT    :           [], // BAPICUREFM Instance in the Configuration for Document Numbers
 // ORDER_CFGS_CUVALS_OUT    :           [], // BAPICUVALM Characteristic Value Assignment for Document Numbers
-// ORDER_CFGS_CUVKS_OUT     :           [], // BAPICUVKM no text (en)
-// ORDER_COND_HEAD          :           [], // BAPICONDHD no text (en)
-// ORDER_COND_ITEM          :           [], // BAPICONDIT no text (en)
-// ORDER_COND_QTY_SCALE     :           [], // BAPICONDQS no text (en)
-// ORDER_COND_VAL_SCALE     :           [], // BAPICONDVS no text (en)
+// ORDER_CFGS_CUVKS_OUT     :           [], // BAPICUVKM no text (undefined)
+// ORDER_COND_HEAD          :           [], // BAPICONDHD no text (undefined)
+// ORDER_COND_ITEM          :           [], // BAPICONDIT no text (undefined)
+// ORDER_COND_QTY_SCALE     :           [], // BAPICONDQS no text (undefined)
+// ORDER_COND_VAL_SCALE     :           [], // BAPICONDVS no text (undefined)
 // ORDER_CONDITIONS_OUT     :           [], // BAPISDCOND Order Conditions for Document Numbers
 // ORDER_CONTRACTS_OUT      :           [], // BAPISDCNTR Contract Data for Document Numbers
 // ORDER_CREDITCARDS_OUT    :           [], // BAPICCARDM Credit Cards for Document Numbers

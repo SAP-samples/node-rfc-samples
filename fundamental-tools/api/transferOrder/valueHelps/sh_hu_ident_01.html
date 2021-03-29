@@ -1,0 +1,19 @@
+<!-- SH HU_IDENT_01 Identification by object : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.EXIDV" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'20'}"
+          label="External Handling Unit Identification"></ui-input>
+<ui-input bind="searchParamLow.VHILM" data-abap.bind="{type:'CHAR', alpha:'MATN1', length:'18'}"
+          label="Packaging Materials"></ui-input>
+<ui-combo bind="searchParamLow.VPOBJ" shlp.bind="{type: 'FV', id: 'VPOBJ'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Packing Object"></ui-combo>
+<ui-input bind="searchParamLow.VPOBJKEY" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Key for Object to Which the Handling Unit is Assigned"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="EXIDV" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'20'}" label="External Handling Unit Identification"></ui-dg-column>
+   <ui-dg-column sortable field="VPOBJ" data-abap.bind="{type:'CHAR', length:'2'}" label="Packing Object"></ui-dg-column>
+   <ui-dg-column sortable field="VPOBJKEY" data-abap.bind="{type:'CHAR', length:'20'}" label="Key for Object to Which the Handling Unit is Assigned"></ui-dg-column>
+   <ui-dg-column sortable field="VHILM" data-abap.bind="{type:'CHAR', alpha:'MATN1', length:'18'}" label="Packaging Materials"></ui-dg-column>
+</ui-datagrid>

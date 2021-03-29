@@ -1,0 +1,322 @@
+<!--
+BAPI_INSPCHAR_GETRESULT exception: 0  struct: 3  table: 1  var: 4
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-input bind="INSPCHAR" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Inspection lot characteristic number"></ui-input>
+
+<ui-combo bind="INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot"></ui-combo>
+
+<ui-input bind="INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Inspection lot operation number"></ui-input>
+
+<ui-combo bind="INSPSAMPLE" shlp.bind="{type: 'CH', id: 'QASV'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Inspection lot sample number"></ui-combo>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: SINGLE_RESULTS structure: BAPI2045D4  Inspection results: Single value level -->
+
+<ui-datagrid data.bind="SINGLE_RESULTS" title="Inspection results: Single value level"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="INSPCHAR" data-abap.bind="{type:'NUMC', length:'4'}" label="Insp. Lot Charac. No."></ui-dg-column>
+   <ui-dg-column sortable field="INSPLOT" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}" shlp.bind="{type: 'SH', id: 'QALS'}" label="Inspection Lot Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}" label="Inspection Lot Operation Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSPSAMPLE" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'QASV'}" label="Insp. Lot Sample"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="SINGLE_RESULTS.INSPCHAR" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Insp. Lot Charac. No."></ui-input>
+
+<ui-combo bind="SINGLE_RESULTS.INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-input bind="SINGLE_RESULTS.INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Inspection Lot Operation Number"></ui-input>
+
+<ui-combo bind="SINGLE_RESULTS.INSPSAMPLE" shlp.bind="{type: 'CH', id: 'QASV'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Insp. Lot Sample"></ui-combo>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: CHAR_RESULT structure: BAPI2045D2  Inspection Result - Characteristic Level -->
+
+<ui-combo bind="CHAR_RESULT.INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-input bind="CHAR_RESULT.INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Inspection Lot Operation Number"></ui-input>
+
+<ui-input bind="CHAR_RESULT.INSPCHAR" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Insp. Lot Charac. No."></ui-input>
+
+<ui-checkbox value.bind="CHAR_RESULT.CLOSED" label="Close Characteristic or Sample"></ui-checkbox>
+
+<ui-checkbox value.bind="CHAR_RESULT.EVALUATED" label="Copy Valuation from External System"></ui-checkbox>
+
+<ui-combo bind="CHAR_RESULT.CHAR_ATTR" shlp.bind="{type: 'FV', id: 'QATTRIBUT'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Attribute of the Results Record (Valid, Invalid,...)"></ui-combo>
+
+<ui-input bind="CHAR_RESULT.CHAR_INVAL" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Invalid Result"></ui-input>
+
+<ui-combo bind="CHAR_RESULT.EVALUATION" shlp.bind="{type: 'FV', id: 'QEEBEWERTG'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Inspection Result Valuation"></ui-combo>
+
+<ui-combo bind="CHAR_RESULT.ERR_CLASS" shlp.bind="{type: 'CT', id: 'TQ17'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Defect Class"></ui-combo>
+
+<ui-input bind="CHAR_RESULT.VALID_VALS" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="No. of Valid Values for Char. Results Upload to QM Subsys."></ui-input>
+
+<ui-input bind="CHAR_RESULT.NONCONF" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="No. of Nonconforming Units for Char. Confirmation via QM-IDI"></ui-input>
+
+<ui-input bind="CHAR_RESULT.DEFECTS" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="Number of Defects for Confirmation of Charac. via QM-IDI"></ui-input>
+
+<ui-input bind="CHAR_RESULT.VALS_ABOVE" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="Number of Values Above the Tolerance Limit (Characteristic)"></ui-input>
+
+<ui-input bind="CHAR_RESULT.VALS_BELOW" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="Number of Values Below the Tolerance Limit (Characteristic)"></ui-input>
+
+<ui-input bind="CHAR_RESULT.MEAN_VALUE" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Mean Value"></ui-input>
+
+<ui-input bind="CHAR_RESULT.VARIANCE" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Variance"></ui-input>
+
+<ui-input bind="CHAR_RESULT.MAXIMUM" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Maximum"></ui-input>
+
+<ui-input bind="CHAR_RESULT.MINIMUM" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Minimum"></ui-input>
+
+<ui-date date.bind="CHAR_RESULT.START_DATE"  label="Inspection Start Date (QM Subsystem Interface)"></ui-date>
+
+<ui-time time.bind="CHAR_RESULT.START_TIME"  label="Inspection Start Time (QM Subsystem Interface)"></ui-time>
+
+<ui-date date.bind="CHAR_RESULT.END_DATE"  label="Inspection End Date (QM Subsystem Interface)"></ui-date>
+
+<ui-time time.bind="CHAR_RESULT.END_TIME"  label="Inspection End Time (QM Subsystem Interface)"></ui-time>
+
+<ui-input bind="CHAR_RESULT.INSPECTOR" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Name of the Inspector"></ui-input>
+
+<ui-combo bind="CHAR_RESULT.RES_ORG" shlp.bind="{type: 'CT', id: 'TQ73'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Data Origin"></ui-combo>
+
+<ui-input bind="CHAR_RESULT.REMARK" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Inspection Description for Single Value"></ui-input>
+
+<ui-combo bind="CHAR_RESULT.CODE1" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="CHAR_RESULT.CODE_GRP1" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-combo bind="CHAR_RESULT.CODE2" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="CHAR_RESULT.CODE_GRP2" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-combo bind="CHAR_RESULT.CODE3" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="CHAR_RESULT.CODE_GRP3" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-combo bind="CHAR_RESULT.CODE4" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="CHAR_RESULT.CODE_GRP4" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-combo bind="CHAR_RESULT.CODE5" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="CHAR_RESULT.CODE_GRP5" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-input bind="CHAR_RESULT.ORIGINAL_INPUT" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="Original Value Before Input Processing"></ui-input>
+
+<ui-checkbox value.bind="CHAR_RESULT.INPPROC_READY" label="Input Processing Successfully Completed"></ui-checkbox>
+
+<ui-input bind="CHAR_RESULT.DIFF_DEC_PLACES" data-abap.bind="{type:'INT2', length:'5'}"
+          label="Different Number of Decimal Places"></ui-input>
+
+<ui-input bind="CHAR_RESULT.ADD_INFO1" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'18'}"
+          label="General Information"></ui-input>
+
+<ui-checkbox value.bind="CHAR_RESULT.CONDITION_ACTIVE" label="Set Status of Conditional Characteristics to Active"></ui-checkbox>
+
+<!-- Parameter: RETURN structure: BAPIRETURN1  Return value -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<!-- Parameter: SAMPLE_RESULT structure: BAPI2045D3  Inspection Result - Sample Level -->
+
+<ui-combo bind="SAMPLE_RESULT.INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULT.INSPOPER" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Inspection Lot Operation Number"></ui-input>
+
+<ui-input bind="SAMPLE_RESULT.INSPCHAR" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Insp. Lot Charac. No."></ui-input>
+
+<ui-combo bind="SAMPLE_RESULT.INSPSAMPLE" shlp.bind="{type: 'CH', id: 'QASV'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Insp. Lot Sample"></ui-combo>
+
+<ui-checkbox value.bind="SAMPLE_RESULT.LAST_SMPL" label="Last Original Value, Sample or Inspection Point"></ui-checkbox>
+
+<ui-checkbox value.bind="SAMPLE_RESULT.CLOSED" label="Close Characteristic or Sample"></ui-checkbox>
+
+<ui-checkbox value.bind="SAMPLE_RESULT.EVALUATED" label="Copy Valuation from External System"></ui-checkbox>
+
+<ui-combo bind="SAMPLE_RESULT.SMPL_ATTR" shlp.bind="{type: 'FV', id: 'QATTRIBUT'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Attribute of the Results Record (Valid, Invalid,...)"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULT.SMPL_INVAL" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Invalid Result"></ui-input>
+
+<ui-combo bind="SAMPLE_RESULT.EVALUATION" shlp.bind="{type: 'FV', id: 'QEEBEWERTG'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Inspection Result Valuation"></ui-combo>
+
+<ui-combo bind="SAMPLE_RESULT.ERR_CLASS" shlp.bind="{type: 'CT', id: 'TQ17'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Defect Class"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULT.VALID_VALS" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="No. of Valid Values for Char. Results Upload to QM Subsys."></ui-input>
+
+<ui-input bind="SAMPLE_RESULT.NONCONF" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="No. of Nonconforming Units for Char. Confirmation via QM-IDI"></ui-input>
+
+<ui-input bind="SAMPLE_RESULT.DEFECTS" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="Number of Defects for Confirmation of Charac. via QM-IDI"></ui-input>
+
+<ui-input bind="SAMPLE_RESULT.VALS_ABOVE" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="Number of Values Below the Tolerance Limit (Characteristic)"></ui-input>
+
+<ui-input bind="SAMPLE_RESULT.VALS_BELOW" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="Number of Values Above the Tolerance Limit (Characteristic)"></ui-input>
+
+<ui-input bind="SAMPLE_RESULT.MEAN_VALUE" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Mean Value"></ui-input>
+
+<ui-input bind="SAMPLE_RESULT.VARIANCE" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Variance"></ui-input>
+
+<ui-input bind="SAMPLE_RESULT.MAXIMUM" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Mean Value"></ui-input>
+
+<ui-input bind="SAMPLE_RESULT.MINIMUM" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Mean Value"></ui-input>
+
+<ui-date date.bind="SAMPLE_RESULT.START_DATE"  label="Inspection Start Date (QM Subsystem Interface)"></ui-date>
+
+<ui-time time.bind="SAMPLE_RESULT.START_TIME"  label="Inspection Start Time (QM Subsystem Interface)"></ui-time>
+
+<ui-date date.bind="SAMPLE_RESULT.END_DATE"  label="Inspection End Date (QM Subsystem Interface)"></ui-date>
+
+<ui-time time.bind="SAMPLE_RESULT.END_TIME"  label="Inspection End Time (QM Subsystem Interface)"></ui-time>
+
+<ui-input bind="SAMPLE_RESULT.INSPECTOR" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Name of the Inspector"></ui-input>
+
+<ui-combo bind="SAMPLE_RESULT.RES_ORG" shlp.bind="{type: 'CT', id: 'TQ73'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Data Origin"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULT.REMARK" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Inspection Description for Single Value"></ui-input>
+
+<ui-combo bind="SAMPLE_RESULT.CODE1" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULT.CODE_GRP1" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-combo bind="SAMPLE_RESULT.CODE2" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULT.CODE_GRP2" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-combo bind="SAMPLE_RESULT.CODE3" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULT.CODE_GRP3" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-combo bind="SAMPLE_RESULT.CODE4" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULT.CODE_GRP4" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-combo bind="SAMPLE_RESULT.CODE5" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', mid:'QCODE', length:'4'}"
+          label="Code"></ui-combo>
+
+<ui-input bind="SAMPLE_RESULT.CODE_GRP5" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Code Group"></ui-input>
+
+<ui-input bind="SAMPLE_RESULT.ORIGINAL_INPUT" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="Original Value Before Input Processing"></ui-input>
+
+<ui-checkbox value.bind="SAMPLE_RESULT.INPPROC_READY" label="Input Processing Successfully Completed"></ui-checkbox>
+
+<ui-input bind="SAMPLE_RESULT.DIFF_DEC_PLACES" data-abap.bind="{type:'INT2', length:'5'}"
+          label="Different Number of Decimal Places"></ui-input>
+
+<ui-input bind="SAMPLE_RESULT.ADD_INFO1" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'18'}"
+          label="General Information"></ui-input>
+
+<ui-input bind="SAMPLE_RESULT.ADD_INFO2" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Position on the Machine (QM Interface - Subsystem)"></ui-input>
+
+<ui-checkbox value.bind="SAMPLE_RESULT.CONDITION_ACTIVE" label="Set Status of Conditional Characteristics to Active"></ui-checkbox>

@@ -1,0 +1,16 @@
+<!-- SH H_TTXID Text ID : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.TDOBJECT" shlp.bind="{type: 'SH', id: 'H_TTXOB'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Texts: application object"></ui-combo>
+<ui-combo bind="searchParamLow.TDID" shlp.bind="{type: 'CT', id: 'TTXID'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Text ID"></ui-combo>
+<ui-input bind="searchParamLow.TDTEXT" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Short text"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TDOBJECT" data-abap.bind="{type:'CHAR', length:'10'}" label="Texts: application object"></ui-dg-column>
+   <ui-dg-column sortable field="TDID" data-abap.bind="{type:'CHAR', length:'4'}" label="Text ID"></ui-dg-column>
+   <ui-dg-column sortable field="TDTEXT" data-abap.bind="{type:'CHAR', length:'30'}" label="Short text"></ui-dg-column>
+</ui-datagrid>

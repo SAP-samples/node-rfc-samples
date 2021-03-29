@@ -1,0 +1,34 @@
+<!-- SH FMBPD Search Budget Period by attributes : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.BUDGET_PD" shlp.bind="{type: 'SH', id: 'FMBPD_COL'}" data-abap.bind="{type:'CHAR', mid:'BUDPER', length:'10'}"
+          label="FM: Budget Period"></ui-combo>
+<ui-date date.bind="searchParamLow.DATAB"  label="FM: Budget Period Valid From date"></ui-date>
+<ui-input bind="searchParamLow.BUDGETPDTX" data-abap.bind="{type:'CHAR', length:'35'}"
+          label="FM: Budget Period Name"></ui-input>
+<ui-date date.bind="searchParamLow.DATBIS"  label="FM: Budget Period Valid To date"></ui-date>
+<ui-date date.bind="searchParamLow.DATE_EXP"  label="FM: Budget Period Expiration Date"></ui-date>
+<ui-date date.bind="searchParamLow.DATE_CAN"  label="FM: Budget Period Reversal Date"></ui-date>
+<ui-input bind="searchParamLow.AUTHGRP" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="FM: Budget Period authorization group"></ui-input>
+<ui-input bind="searchParamLow.CREATED_BY" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="FIFM: Created by"></ui-input>
+<ui-date date.bind="searchParamLow.CREATED_ON"  label="FIFM: Entry Date"></ui-date>
+<ui-input bind="searchParamLow.MODIFIED_BY" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="FIFM: Name of Last Person to Make a Change"></ui-input>
+<ui-date date.bind="searchParamLow.MODIFIED_ON"  label="FIFM: Changed on"></ui-date>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="BUDGET_PD" data-abap.bind="{type:'CHAR', mid:'BUDPER', length:'10'}" label="FM: Budget Period"></ui-dg-column>
+   <ui-dg-column sortable field="BUDGETPDTX" data-abap.bind="{type:'CHAR', length:'35'}" label="FM: Budget Period Name"></ui-dg-column>
+   <ui-dg-column sortable field="DATAB" data-abap.bind="{type:'DATS'}" label="FM: Budget Period Valid From date"></ui-dg-column>
+   <ui-dg-column sortable field="DATBIS" data-abap.bind="{type:'DATS'}" label="FM: Budget Period Valid To date"></ui-dg-column>
+   <ui-dg-column sortable field="DATE_EXP" data-abap.bind="{type:'DATS'}" label="FM: Budget Period Expiration Date"></ui-dg-column>
+   <ui-dg-column sortable field="DATE_CAN" data-abap.bind="{type:'DATS'}" label="FM: Budget Period Reversal Date"></ui-dg-column>
+   <ui-dg-column sortable field="AUTHGRP" data-abap.bind="{type:'CHAR', length:'10'}" label="FM: Budget Period authorization group"></ui-dg-column>
+   <ui-dg-column sortable field="CREATED_BY" data-abap.bind="{type:'CHAR', length:'12'}" label="FIFM: Created by"></ui-dg-column>
+   <ui-dg-column sortable field="CREATED_ON" data-abap.bind="{type:'DATS'}" label="FIFM: Entry Date"></ui-dg-column>
+   <ui-dg-column sortable field="MODIFIED_BY" data-abap.bind="{type:'CHAR', length:'12'}" label="FIFM: Name of Last Person to Make a Change"></ui-dg-column>
+   <ui-dg-column sortable field="MODIFIED_ON" data-abap.bind="{type:'DATS'}" label="FIFM: Changed on"></ui-dg-column>
+</ui-datagrid>

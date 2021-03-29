@@ -1,0 +1,53 @@
+<!-- SH DIR_ESO_DOKNR Advanced Search for Document Info Record (Enterprise Search) : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.S/RP/SEARCH_TERM" data-abap.bind="{type:'CHAR', length:'45'}"
+          label="Generic Search Term"></ui-input>
+<ui-input bind="searchParamLow.S/RP/MODE_FUZZY" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Option Fuzzy Mode"></ui-input>
+<ui-input bind="searchParamLow.OBJECT_TYPE_ID" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Object Type"></ui-input>
+<ui-input bind="searchParamLow.REQUEST" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Request Type ID"></ui-input>
+<ui-input bind="searchParamLow.DOKNR_EXT" data-abap.bind="{type:'CHAR', mid:'CV1', length:'25'}"
+          label="Document Number"></ui-input>
+<ui-input bind="searchParamLow.DOKNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'CV1', length:'25'}"
+          label="Document number"></ui-input>
+<ui-input bind="searchParamLow.DOKAR" data-abap.bind="{type:'CHAR', mid:'CV2', length:'3'}"
+          label="Document Type"></ui-input>
+<ui-input bind="searchParamLow.DOKVR" data-abap.bind="{type:'CHAR', mid:'CV3', length:'2'}"
+          label="Document version"></ui-input>
+<ui-input bind="searchParamLow.DOKTL" data-abap.bind="{type:'CHAR', mid:'CV4', length:'3'}"
+          label="Document part"></ui-input>
+<ui-input bind="searchParamLow.DOKST" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Document Status"></ui-input>
+<ui-input bind="searchParamLow.LABOR" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Laboratory/design office"></ui-input>
+<ui-input bind="searchParamLow.LOEDK" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Deletion indicator"></ui-input>
+<ui-input bind="searchParamLow.CREATED_BY" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Document Creator's Name"></ui-input>
+<ui-date date.bind="searchParamLow.CREATED_AT_DATE"  label="Date Document Was Created"></ui-date>
+<ui-input bind="searchParamLow.CHANGED_BY" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Last Changed by"></ui-input>
+<ui-date date.bind="searchParamLow.CHANGED_AT_DATE"  label="Last Changed On"></ui-date>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="S/RP/SEARCH_TERM" data-abap.bind="{type:'CHAR', length:'45'}" label="Generic Search Term"></ui-dg-column>
+   <ui-dg-column sortable field="S/RP/MODE_FUZZY" data-abap.bind="{type:'CHAR', length:'1'}" label="Option Fuzzy Mode"></ui-dg-column>
+   <ui-dg-column sortable field="OBJECT_TYPE_ID" data-abap.bind="{type:'CHAR', length:'20'}" label="Object Type"></ui-dg-column>
+   <ui-dg-column sortable field="REQUEST" data-abap.bind="{type:'CHAR', length:'32'}" label="Request Type ID"></ui-dg-column>
+   <ui-dg-column sortable field="DOKNR_EXT" data-abap.bind="{type:'CHAR', mid:'CV1', length:'25'}" label="Document Number"></ui-dg-column>
+   <ui-dg-column sortable field="DOKNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'CV1', length:'25'}" label="Document number"></ui-dg-column>
+   <ui-dg-column sortable field="DOKAR" data-abap.bind="{type:'CHAR', mid:'CV2', length:'3'}" label="Document Type"></ui-dg-column>
+   <ui-dg-column sortable field="DOKVR" data-abap.bind="{type:'CHAR', mid:'CV3', length:'2'}" label="Document version"></ui-dg-column>
+   <ui-dg-column sortable field="DOKTL" data-abap.bind="{type:'CHAR', mid:'CV4', length:'3'}" label="Document part"></ui-dg-column>
+   <ui-dg-column sortable field="DOKST" data-abap.bind="{type:'CHAR', length:'2'}" label="Document Status"></ui-dg-column>
+   <ui-dg-column sortable field="LABOR" data-abap.bind="{type:'CHAR', length:'3'}" label="Laboratory/design office"></ui-dg-column>
+   <ui-dg-column sortable field="LOEDK" data-abap.bind="{type:'CHAR', length:'1'}" label="Deletion indicator"></ui-dg-column>
+   <ui-dg-column sortable field="CREATED_BY" data-abap.bind="{type:'CHAR', length:'12'}" label="Document Creator's Name"></ui-dg-column>
+   <ui-dg-column sortable field="CREATED_AT_DATE" data-abap.bind="{type:'DATS'}" label="Date Document Was Created"></ui-dg-column>
+   <ui-dg-column sortable field="CHANGED_BY" data-abap.bind="{type:'CHAR', length:'12'}" label="Last Changed by"></ui-dg-column>
+   <ui-dg-column sortable field="CHANGED_AT_DATE" data-abap.bind="{type:'DATS'}" label="Last Changed On"></ui-dg-column>
+</ui-datagrid>

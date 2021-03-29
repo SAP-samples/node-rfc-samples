@@ -1,0 +1,30 @@
+<!-- SH PLKSB Master Recipe : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.PLNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PLN', length:'8'}"
+          label="Recipe group key"></ui-input>
+<ui-input bind="searchParamLow.PLNAL" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PAL', length:'2'}"
+          label="Recipe"></ui-input>
+<ui-combo bind="searchParamLow.WERKS" shlp.bind="{type: 'SH', id: 'H_T001W'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+<ui-date date.bind="searchParamLow.DATUV"  label="Valid-From Date"></ui-date>
+<ui-input bind="searchParamLow.KTEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Recipe description"></ui-input>
+<ui-combo bind="searchParamLow.VERWE" shlp.bind="{type: 'SH', id: 'H_T411'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Recipe usage"></ui-combo>
+<ui-combo bind="searchParamLow.VAGRP" shlp.bind="{type: 'SH', id: 'H_T024A'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Responsible planner group/department"></ui-combo>
+<ui-combo bind="searchParamLow.STATU" shlp.bind="{type: 'SH', id: 'H_T412'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Recipe status"></ui-combo>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="PLNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PLN', length:'8'}" label="Recipe group key"></ui-dg-column>
+   <ui-dg-column sortable field="PLNAL" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PAL', length:'2'}" label="Recipe"></ui-dg-column>
+   <ui-dg-column sortable field="WERKS" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" label="Plant"></ui-dg-column>
+   <ui-dg-column sortable field="DATUV" data-abap.bind="{type:'DATS'}" label="Valid-From Date"></ui-dg-column>
+   <ui-dg-column sortable field="KTEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Recipe description"></ui-dg-column>
+   <ui-dg-column sortable field="VERWE" data-abap.bind="{type:'CHAR', length:'3'}" label="Recipe usage"></ui-dg-column>
+   <ui-dg-column sortable field="VAGRP" data-abap.bind="{type:'CHAR', length:'3'}" label="Responsible planner group/department"></ui-dg-column>
+   <ui-dg-column sortable field="STATU" data-abap.bind="{type:'CHAR', length:'3'}" label="Recipe status"></ui-dg-column>
+</ui-datagrid>

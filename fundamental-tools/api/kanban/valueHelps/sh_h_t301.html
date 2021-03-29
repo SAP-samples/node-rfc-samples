@@ -1,0 +1,16 @@
+<!-- SH H_T301 Storage Type : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.LGNUM" shlp.bind="{type: 'SH', id: 'H_T300'}" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}"
+          label="Warehouse Number / Warehouse Complex"></ui-combo>
+<ui-combo bind="searchParamLow.LGTYP" shlp.bind="{type: 'SH', id: 'H_T301'}" data-abap.bind="{type:'CHAR', mid:'LGT', length:'3'}"
+          label="Storage Type"></ui-combo>
+<ui-input bind="searchParamLow.LTYPT" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="Name of storage type"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="LGNUM" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}" label="Warehouse Number / Warehouse Complex"></ui-dg-column>
+   <ui-dg-column sortable field="LGTYP" data-abap.bind="{type:'CHAR', mid:'LGT', length:'3'}" label="Storage Type"></ui-dg-column>
+   <ui-dg-column sortable field="LTYPT" data-abap.bind="{type:'CHAR', length:'25'}" label="Name of storage type"></ui-dg-column>
+</ui-datagrid>

@@ -1,0 +1,16 @@
+<!-- SH H_TCF02 Production resources/tools category : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.FHMAR" shlp.bind="{type: 'CT', id: 'TCF02'}" data-abap.bind="{type:'CHAR', alpha:'FHMAR', mid:'FHA', length:'1'}"
+          label="Production resources/tools category"></ui-combo>
+<ui-input bind="searchParamLow.FHMAR_EXT" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Production resource/tool category"></ui-input>
+<ui-input bind="searchParamLow.FAKTX" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Language-dependent description of the PRT category"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="FHMAR_EXT" data-abap.bind="{type:'CHAR', length:'1'}" label="Production resource/tool category"></ui-dg-column>
+   <ui-dg-column sortable field="FHMAR" data-abap.bind="{type:'CHAR', alpha:'FHMAR', mid:'FHA', length:'1'}" label="Production resources/tools category"></ui-dg-column>
+   <ui-dg-column sortable field="FAKTX" data-abap.bind="{type:'CHAR', length:'40'}" label="Language-dependent description of the PRT category"></ui-dg-column>
+</ui-datagrid>

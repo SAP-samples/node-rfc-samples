@@ -1,7 +1,7 @@
 //
-// BAPI_BUSPARTNER_GETLISTEMPL var: 2  struct: 0  table: 9  exception: 0
+// BAPI_BUSPARTNER_GETLISTEMPL exception: 0  struct: 0  table: 9  var: 2
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore

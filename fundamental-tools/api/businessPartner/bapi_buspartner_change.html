@@ -1,0 +1,2893 @@
+<!--
+BAPI_BUSPARTNER_CHANGE exception: 0  struct: 22  table: 46  var: 10
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-combo bind="BPARTNERID" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="Business Partner Number"></ui-combo>
+
+<ui-combo bind="CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-checkbox value.bind="ROLE_CUST" label="Checkbox: Change/Create Customer"></ui-checkbox>
+
+<ui-checkbox value.bind="ROLE_EMPL" label="Checkbox: Change/Create Employer"></ui-checkbox>
+
+<ui-checkbox value.bind="ROLE_FEE" label="Checkbox: Change/Create Fee Recipient"></ui-checkbox>
+
+<ui-checkbox value.bind="ROLE_HOSP" label="Checkbox: Change/Create Hospital"></ui-checkbox>
+
+<ui-checkbox value.bind="ROLE_INS" label="Checkbox: Change/Create Insurance Provider"></ui-checkbox>
+
+<ui-checkbox value.bind="ROLE_PERS" label="Checkbox: Change/Create Person (Physician/Employee)"></ui-checkbox>
+
+<ui-checkbox value.bind="TESTRUN" label="Test Mode (No Changes in Database)"></ui-checkbox>
+
+<!-- Parameter: ADDRESS_X structure: BAPINADDRX  Change Structure: Address General Business Partner -->
+
+<ui-combo bind="ADDRESS_X.ADDR_NO" shlp.bind="{type: 'CT', id: 'NADR'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="IS-H: Address Number"></ui-combo>
+
+<ui-combo bind="ADDRESS_X.COUNTRY" shlp.bind="{type: 'CT', id: 'T005'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="IS-H: Country"></ui-combo>
+
+<ui-checkbox value.bind="ADDRESS_X.COUNTRYX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="ADDRESS_X.COUNTRY_ISO" shlp.bind="{type: 'SH', id: 'F4_INTCA'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Country ISO code"></ui-combo>
+
+<ui-combo bind="ADDRESS_X.REGION" shlp.bind="{type: 'CT', id: 'T005S'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="IS-H: Region (Federal State, Province, County)"></ui-combo>
+
+<ui-checkbox value.bind="ADDRESS_X.REGIONX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.PCD" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Postal Code of City"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.PCDX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.CITY" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="IS-H: City"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.CITYX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.STD_CITY" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Standardized City Name"></ui-input>
+
+<ui-input bind="ADDRESS_X.DISTRICT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="IS-H: District"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.DISTRICTX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.STR_NO" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="IS-H: Street"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.STR_NOX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.STR_SUP" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="IS-H: Other Designation Qualifying the Address"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.STR_SUPX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.GEOGR_AREA" data-abap.bind="{type:'CHAR', length:'9'}"
+          label="IS-H: Geographical Area"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.GEOGR_AREAX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.POBOX_PCD" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Postal Code of P.O. Box"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.POBOX_PCDX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.POBOX" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Post Office Box"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.POBOXX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="ADDRESS_X.POB_COUNTRY" shlp.bind="{type: 'CT', id: 'T005'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Country of Post Office Box"></ui-combo>
+
+<ui-checkbox value.bind="ADDRESS_X.POB_COUNTRYX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="ADDRESS_X.POB_COUNTRY_ISO" shlp.bind="{type: 'SH', id: 'F4_INTCA'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Country ISO code"></ui-combo>
+
+<ui-input bind="ADDRESS_X.POBOX_CITY" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="IS-H: PO Box City"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.POBOX_CITYX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.COMPANY_PCD" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Postal Code of Company (for Major Accounts)"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.COMPANY_PCDX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ADDRESS_X.PHONESX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.FAXNO" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Fax Number"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.FAXNOX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.FAXEXTENSION" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Fax Number - Extension"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.FAXEXTENSIONX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.TELEXNO" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="IS-H: Telex Number"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.TELEXNOX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.BUILDING" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Block/House"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.BUILDINGX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.FLOOR" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Block/House Level"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.FLOORX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.UNIT" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Unit Number"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.UNITX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.E_MAIL" data-abap.bind="{type:'CHAR', alpha:'SXIDN', length:'241'}"
+          label="IS-H: Internet Mail (SMTP) Address"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.E_MAILX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.HOUSE_NO" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="House Number"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.HOUSE_NOX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="ADDRESS_X.STREET_LONG" shlp.bind="{type: 'SH', id: 'CLSTRTNAME'}" data-abap.bind="{type:'CHAR', length:'60'}"
+          label="Street"></ui-combo>
+
+<ui-checkbox value.bind="ADDRESS_X.STREET_LONGX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.STR_SUPPL1" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Supplement 2"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.STR_SUPPL1X" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="ADDRESS_X.C_O_NAME" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="c/o Name"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_X.C_O_NAMEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="ADDRESS_X.DEFLT_COMM" shlp.bind="{type: 'CT', id: 'TSAC'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Standard Communication Type"></ui-combo>
+
+<ui-checkbox value.bind="ADDRESS_X.DEFLT_COMMX" label="Updated information in related user data field"></ui-checkbox>
+
+<!-- Parameter: BPARTNER_X structure: BAPI1309BPARTINX  Change Structure: General Business Partner -->
+
+<ui-input bind="BPARTNER_X.INSTITUTE_IND" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="IS-H: Institute Indicator"></ui-input>
+
+<ui-checkbox value.bind="BPARTNER_X.INSTITUTE_INDX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="BPARTNER_X.LAST_NAME_BP" data-abap.bind="{type:'CHAR', mid:'NA1', length:'35'}"
+          label="IS-H: Last Name/ 1st Name"></ui-input>
+
+<ui-checkbox value.bind="BPARTNER_X.LAST_NAME_BPX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="BPARTNER_X.FRST_NAME_BP" data-abap.bind="{type:'CHAR', length:'35'}"
+          label="First Name / Second Name"></ui-input>
+
+<ui-checkbox value.bind="BPARTNER_X.FRST_NAME_BPX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="BPARTNER_X.THIRD_NAME_BP" data-abap.bind="{type:'CHAR', length:'35'}"
+          label="Third Name"></ui-input>
+
+<ui-checkbox value.bind="BPARTNER_X.THIRD_NAME_BPX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="BPARTNER_X.PERSON_FLAG" label="IS-H: Indicator for Natural Person (for Address Control)"></ui-checkbox>
+
+<ui-checkbox value.bind="BPARTNER_X.PERSON_FLAGX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="BPARTNER_X.LANGU" shlp.bind="{type: 'SH', id: 'H_T002'}" data-abap.bind="{type:'LANG', alpha:'ISOLA', length:'1'}"
+          label="IS-H: Language of Business Partner"></ui-combo>
+
+<ui-input bind="BPARTNER_X.LANGU_ISO" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="2-Character SAP Language Code"></ui-input>
+
+<ui-checkbox value.bind="BPARTNER_X.LANGUX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="BPARTNER_X.FORM_ADDRS" shlp.bind="{type: 'CT', id: 'TN17A'}" data-abap.bind="{type:'CHAR', length:'5'}"
+          label="IS-H: Form-of-Address ID"></ui-combo>
+
+<ui-checkbox value.bind="BPARTNER_X.FORM_ADDRSX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="BPARTNER_X.TITLE" shlp.bind="{type: 'CT', id: 'T535N'}" data-abap.bind="{type:'CHAR', length:'15'}"
+          label="IS-H: Title"></ui-combo>
+
+<ui-checkbox value.bind="BPARTNER_X.TITLEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="BPARTNER_X.AFFIX" shlp.bind="{type: 'CT', id: 'T535N'}" data-abap.bind="{type:'CHAR', length:'15'}"
+          label="IS-H: Name Affix"></ui-combo>
+
+<ui-checkbox value.bind="BPARTNER_X.AFFIXX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="BPARTNER_X.PREFIX" shlp.bind="{type: 'CT', id: 'T535N'}" data-abap.bind="{type:'CHAR', length:'15'}"
+          label="IS-H: Name Prefix"></ui-combo>
+
+<ui-checkbox value.bind="BPARTNER_X.PREFIXX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="BPARTNER_X.SEX" shlp.bind="{type: 'CT', id: 'TN17G'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Sex Indicator - User-Specific"></ui-combo>
+
+<ui-checkbox value.bind="BPARTNER_X.SEXX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="BPARTNER_X.COMMENT_BP" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="IS-H: Comment on Business Partner"></ui-input>
+
+<ui-checkbox value.bind="BPARTNER_X.COMMENT_BPX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="BPARTNER_X.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<ui-checkbox value.bind="BPARTNER_X.DELETION_INDX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-date date.bind="BPARTNER_X.BLOCK_FROM"  label="Blocking Date From (Entry Block)"></ui-date>
+
+<ui-checkbox value.bind="BPARTNER_X.BLOCK_FROMX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-date date.bind="BPARTNER_X.BLOCK_TO"  label="IS-H: Blocking Date To (Entry Block To)"></ui-date>
+
+<ui-checkbox value.bind="BPARTNER_X.BLOCK_TOX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="BPARTNER_X.BLCK_REAS" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Reason for Blocking"></ui-input>
+
+<ui-checkbox value.bind="BPARTNER_X.BLCK_REASX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="BPARTNER_X.PARTNER_NO" data-abap.bind="{type:'CHAR', length:'15'}"
+          label="IS-H: External Partner Number"></ui-input>
+
+<ui-checkbox value.bind="BPARTNER_X.PARTNER_NOX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="BPARTNER_X.TAX_NO_1" data-abap.bind="{type:'CHAR', length:'16'}"
+          label="Tax Number 1"></ui-input>
+
+<ui-checkbox value.bind="BPARTNER_X.TAX_NO_1X" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="BPARTNER_X.TITLE1" shlp.bind="{type: 'CT', id: 'T535N'}" data-abap.bind="{type:'CHAR', length:'15'}"
+          label="IS-H: Title"></ui-combo>
+
+<ui-checkbox value.bind="BPARTNER_X.TITLE1X" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="BPARTNER_X.SHORT_NAME_BP" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Short Name of Business Partner"></ui-input>
+
+<ui-checkbox value.bind="BPARTNER_X.SHORT_NAME_BPX" label="Updated information in related user data field"></ui-checkbox>
+
+<!-- Parameter: CUSTOMER_X structure: BAPI1309CUSTINX  Change Structure/Create Structure: Function "IS-H Customer" -->
+
+<ui-combo bind="CUSTOMER_X.REF_CUST" shlp.bind="{type: 'CT', id: 'KNA1'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}"
+          label="Customer Number of FI Customer"></ui-combo>
+
+<ui-checkbox value.bind="CUSTOMER_X.REF_CUSTX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="CUSTOMER_X.COMMENT_CUST" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="IS-H: Comment on Customer"></ui-input>
+
+<ui-checkbox value.bind="CUSTOMER_X.COMMENT_CUSTX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CUSTOMER_X.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<ui-checkbox value.bind="CUSTOMER_X.DELETION_INDX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="CUSTOMER_X.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-combo bind="CUSTOMER_X.COMP_CODE" shlp.bind="{type: 'SH', id: 'C_T001'}" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}"
+          label="Company Code"></ui-combo>
+
+<!-- Parameter: EMPLOYER_X structure: BAPI1309EMPLINX  Change Structure/Create Structure: Function "Employer" -->
+
+<ui-input bind="EMPLOYER_X.COMMENT_EMPL" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="IS-H: Comment on Employer"></ui-input>
+
+<ui-checkbox value.bind="EMPLOYER_X.COMMENT_EMPLX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EMPLOYER_X.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<ui-checkbox value.bind="EMPLOYER_X.DELETION_INDX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="EMPLOYER_X.ACCDNT_INS" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Reference to Responsible Workers' Compensation Association"></ui-combo>
+
+<ui-checkbox value.bind="EMPLOYER_X.ACCDNT_INSX" label="Updated information in related user data field"></ui-checkbox>
+
+<!-- Parameter: FEE_X structure: BAPI1309FEEINX  Change/Create Structure: Function "Fee Recipient" -->
+
+<ui-combo bind="FEE_X.PARTNER" shlp.bind="{type: 'CT', id: 'BUT000'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Person Number"></ui-combo>
+
+<ui-combo bind="FEE_X.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-combo bind="FEE_X.RANK" shlp.bind="{type: 'CT', id: 'TN12R'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="IS-H: Rank"></ui-combo>
+
+<ui-checkbox value.bind="FEE_X.RANKX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="FEE_X.FEE_AUTHORIZATION" shlp.bind="{type: 'CT', id: 'TNWCH95'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Fee Authorization"></ui-combo>
+
+<ui-checkbox value.bind="FEE_X.FEE_AUTHORIZATIONX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-date date.bind="FEE_X.BEGIN_FEE_AUTHORIZATION"  label="Start of Validity of Fee Authorization Assignment"></ui-date>
+
+<ui-checkbox value.bind="FEE_X.BEGIN_FEE_AUTHORIZATIONX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-date date.bind="FEE_X.END_FEE_AUTHORIZATION"  label="End of Validity of Fee Authorization Assignment"></ui-date>
+
+<ui-checkbox value.bind="FEE_X.END_FEE_AUTHORIZATIONX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-date date.bind="FEE_X.BEGIN_FEE_BLOCK"  label="Start Date of Fee Block"></ui-date>
+
+<ui-checkbox value.bind="FEE_X.BEGIN_FEE_BLOCKX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-date date.bind="FEE_X.END_FEE_BLOCK"  label="End Date of Fee Block"></ui-date>
+
+<ui-checkbox value.bind="FEE_X.END_FEE_BLOCKX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="FEE_X.EXT_PERSONNEL_NUMBER" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="External Personnel Number"></ui-input>
+
+<ui-checkbox value.bind="FEE_X.EXT_PERSONNEL_NUMBERX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="FEE_X.MAIN_VENDOR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'16'}"
+          label="Main Vendor"></ui-input>
+
+<ui-checkbox value.bind="FEE_X.MAIN_VENDORX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-date date.bind="FEE_X.ENTRYDATE"  label="Physician's Entry Date"></ui-date>
+
+<ui-checkbox value.bind="FEE_X.ENTRYDATEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-date date.bind="FEE_X.LEAVINGDATE"  label="Physician's Leaving Date"></ui-date>
+
+<ui-checkbox value.bind="FEE_X.LEAVINGDATEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="FEE_X.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<ui-checkbox value.bind="FEE_X.DELETION_INDX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="FEE_X.AHV_NUMBER" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="AHV Number"></ui-input>
+
+<ui-checkbox value.bind="FEE_X.AHV_NUMBERX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="FEE_X.USERFIELD1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="User Field 1"></ui-input>
+
+<ui-checkbox value.bind="FEE_X.USERFIELD1X" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="FEE_X.USERFIELD2" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="User Field 2"></ui-input>
+
+<ui-checkbox value.bind="FEE_X.USERFIELD2X" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="FEE_X.USERFIELD3" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="User Field 3"></ui-input>
+
+<ui-checkbox value.bind="FEE_X.USERFIELD3X" label="Updated information in related user data field"></ui-checkbox>
+
+<!-- Parameter: HOSPITAL_X structure: BAPI1309HOSPINX  Change Structure/Create Structure: Function "Hospital" -->
+
+<ui-input bind="HOSPITAL_X.COMMENT_HOSP" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="IS-H: Comment on Hospital"></ui-input>
+
+<ui-checkbox value.bind="HOSPITAL_X.COMMENT_HOSPX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="HOSPITAL_X.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<ui-checkbox value.bind="HOSPITAL_X.DELETION_INDX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="HOSPITAL_X.HOSPITAL_TYPE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'2'}"
+          label="IS-H: Hospital Type / Category"></ui-input>
+
+<ui-checkbox value.bind="HOSPITAL_X.HOSPITAL_TYPEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="HOSPITAL_X.SIRET" data-abap.bind="{type:'CHAR', length:'14'}"
+          label="SIRET Number"></ui-input>
+
+<ui-checkbox value.bind="HOSPITAL_X.SIRETX" label="Updated information in related user data field"></ui-checkbox>
+
+<!-- Parameter: INSPROVIDER_X structure: BAPI1309INSPROVINX  Change Structure/Create Structure: Function "Insurance Provider" -->
+
+<ui-combo bind="INSPROVIDER_X.IPTYPE" shlp.bind="{type: 'CT', id: 'TN18'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="IS-H: Insurance Provider Type (e.g. Private, Statutory)"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_X.IPTYPEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.IPT_CTRL" label="IS-H: Determine IV Control Parameters Using Ins. Prov. Type"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.IPT_CTRLX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_X.HD_OFFICE" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Key Identifying Insurance Provider's Head Office"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_X.HD_OFFICEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="INSPROVIDER_X.HI_COMPANY_NUMBER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'12'}"
+          label="IS-H: Number Identifying the Health Insurer"></ui-input>
+
+<ui-checkbox value.bind="INSPROVIDER_X.HI_COMPANY_NUMBERX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_X.RESPONSIBLE_PPA" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="IS-H: Responsible PPA (panel physician association)"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_X.RESPONSIBLE_PPAX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="INSPROVIDER_X.HICNO_HCSC" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="IS-H: Health Insurer Number as per Healthcare Smart Card"></ui-input>
+
+<ui-checkbox value.bind="INSPROVIDER_X.HICNO_HCSCX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="INSPROVIDER_X.COMMENT_IP" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="IS-H: Comment on Insurance Provider"></ui-input>
+
+<ui-checkbox value.bind="INSPROVIDER_X.COMMENT_IPX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="INSPROVIDER_X.CPERS_INPATIENT" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Contact Person, e.g. Inpatient"></ui-input>
+
+<ui-checkbox value.bind="INSPROVIDER_X.CPERS_INPATIENTX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="INSPROVIDER_X.CPERS_OUTPATIENT" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Contact Person, e.g. Outpatient"></ui-input>
+
+<ui-checkbox value.bind="INSPROVIDER_X.CPERS_OUTPATIENTX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.IV_PROCEDURE" label="IS-H: Insurance Verification Procedure 'X'=Yes, ' '=No"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.IV_PROCEDUREX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.MANUALLY_INVOICE_PROC" label="IS-H: Manual Invoice Processing is Allowed"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.MANUALLY_INVOICE_PROCX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.INVOICE_LIST" label="IS-H: Invoice List Output per IP at Invoice Print"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.INVOICE_LISTX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.INTERIM_BILL" label="IS-H: Ind. Specifying if Int. Bill. is to be Performed"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.INTERIM_BILLX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.INTBILL_WO_IVC" label="IS-H: Interim Billing for Svces w/o Confirmation of Coverage"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.INTBILL_WO_IVCX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.FINBILL_WO_IVC" label="IS-H: Final Billing for Svces w/o Confirmation of Coverage"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.FINBILL_WO_IVCX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.FINBILL_DIAG" label="IS-H: Final Billing only if Diagnosis Entered"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.FINBILL_DIAGX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.INTBILL_DAYS" label="IS-H: Interim Billing After x Days as of Admission"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.INTBILL_DAYSX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_X.INTBILL_INTERV" shlp.bind="{type: 'FV', id: 'ISH_INTERV'}" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="IS-H: Interim Billing Interval (Weeks/Days/Quarter)"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_X.INTBILL_INTERVX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_X.FINBILL_INTERV" shlp.bind="{type: 'FV', id: 'ISH_INTERV'}" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="IS-H: Final Billing Interval (Weekly, Every 2 Weeks,Monthly)"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_X.FINBILL_INTERVX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.IV_REMINDER" label="IS-H: Insurance Verification Reminder; 'X'=Yes ' '=No"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.IV_REMINDERX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.REMINDER_PERIOD" label="IS-H: Reminder Period for IV Request in Days"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.REMINDER_PERIODX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_X.IV_DISPATCH" shlp.bind="{type: 'FV', id: 'KUEVERS'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Send IV Request Only if Diagnosis Is Maintained"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_X.IV_DISPATCHX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.PRINT_DIAGN" label="IS-H: Print Diagnosis on IV Request (Yes/No)"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.PRINT_DIAGNX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.ADMISSION_NOTIFIC" label="IS-H: Admission Notif. to Be Printed in Standard Form Print"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.ADMISSION_NOTIFICX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.DISCHARGE_NOTIFIC" label="IS-H: Discharge Notification to Be Created"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.DISCHARGE_NOTIFICX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_X.EXTENSION_IVR" shlp.bind="{type: 'FV', id: 'ISH_INTERV'}" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="IS-H: Interval for Extending IV Requests"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_X.EXTENSION_IVRX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_X.PERIOD_IVR" shlp.bind="{type: 'FV', id: 'ISH_INTERV'}" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="IS-H: Interval for Creating IV Requests"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_X.PERIOD_IVRX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.COPAYMENT_OBL" label="IS-H: Insurance Provider Requires Copayment"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.COPAYMENT_OBLX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_X.COPAYMENT_PROC" shlp.bind="{type: 'FV', id: 'VERFZUZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Copayment Procedure for Billing"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_X.COPAYMENT_PROCX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_X.CURRENCY" shlp.bind="{type: 'CT', id: 'TCURC'}" data-abap.bind="{type:'CUKY', mid:'FWS', length:'5'}"
+          label="IS-H: Currency of Insurance Provider"></ui-combo>
+
+<ui-input bind="INSPROVIDER_X.CURRENCY_ISO" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO Currency Code"></ui-input>
+
+<ui-checkbox value.bind="INSPROVIDER_X.CURRENCYX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.DELETION_INDX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_X.TAX_CLASS" shlp.bind="{type: 'CT', id: 'TSKD'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Tax Classification of Insurance Provider"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_X.TAX_CLASSX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.HO_NOT_RELEVANT" label="IS-H:Head Office for HC Smart Card, not Relevant for Billing"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.HO_NOT_RELEVANTX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.CORRESP_TO_HO" label="IS-H: Head Office Valid for Forms"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.CORRESP_TO_HOX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="INSPROVIDER_X.SEARCHNAME" data-abap.bind="{type:'CHAR', length:'60'}"
+          label="IS-H: HI Search Name From Ins. Provider Master File (PPA)"></ui-input>
+
+<ui-checkbox value.bind="INSPROVIDER_X.SEARCHNAMEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_X.INVOICE_PRINT" shlp.bind="{type: 'FV', id: 'ISH_RDRUCK'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Control for Invoice Print"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_X.INVOICE_PRINTX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.ZERO_BILL" label="IS-H: Print Pro Forma Invoice"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.ZERO_BILLX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.SOCIAL_INS" label="IS-H: Indicator for Social Insurance"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.SOCIAL_INSX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_X.TIERS_PAY" shlp.bind="{type: 'FV', id: 'XFLAG'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="No field text"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_X.TIERS_PAYX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_X.IV_PROC" shlp.bind="{type: 'CT', id: 'TNWCH77'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="IS-H CH: IV procedure"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_X.IV_PROCX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="INSPROVIDER_X.IV_REJ_DEADLINE" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="IS-H CH: Rejection deadline for insurance verification"></ui-input>
+
+<ui-checkbox value.bind="INSPROVIDER_X.IV_REJ_DEADLINEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="INSPROVIDER_X.EANO" data-abap.bind="{type:'CHAR', length:'13'}"
+          label="IS-H CH: European Article Number (EAN)"></ui-input>
+
+<ui-checkbox value.bind="INSPROVIDER_X.EANOX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.PRIVATE_SIGN" label="Institution Is Private"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.PRIVATE_SIGNX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.COMPLEMENT_INS" label="IS-H FR: Complementary Insurance"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.COMPLEMENT_INSX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.INS_PROV_ELSASS" label="IS-H FR: Insurance Provider ALSACE"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.INS_PROV_ELSASSX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.LIM_PAYDIST_OVER_VTYP" label="IS-H FR: Limit for Payment Distribution by Contract Scheme"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.LIM_PAYDIST_OVER_VTYPX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.WITHOUT_FLAT_RATE" label="IS-H FR: Without Per Diem"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.WITHOUT_FLAT_RATEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_X.HEALTH_INS_SCHEME_TYP" shlp.bind="{type: 'FV', id: '/ISHFR/ISH_HIST'}" data-abap.bind="{type:'NUMC', length:'2'}"
+          label="IS-H FR: Health Insurer Type"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_X.HEALTH_INS_SCHEME_TYPX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_X.INSPROV_INSTITUX" label="Updated information in related user data field"></ui-checkbox>
+
+<!-- Parameter: PERSON_X structure: BAPI1309PERSINX  Change Structure/Create Structure: Function "Person" -->
+
+<ui-date date.bind="PERSON_X.DOB"  label="IS-H: Birthdate"></ui-date>
+
+<ui-checkbox value.bind="PERSON_X.DOBX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="PERSON_X.PHONE" data-abap.bind="{type:'CHAR', length:'16'}"
+          label="IS-H: Extension Number"></ui-input>
+
+<ui-checkbox value.bind="PERSON_X.PHONEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.EMPL_IND" label="Is-H: Person is Employee"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.EMPL_INDX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.HR_IND" label="IS-H: Personal Data Originates in HR System"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.HR_INDX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="PERSON_X.EX_PER_NO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="IS-H: External Personnel Number"></ui-input>
+
+<ui-checkbox value.bind="PERSON_X.EX_PER_NOX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.PHYS_IND" label="IS-H: Indicator that Person Is Physician"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.PHYS_INDX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="PERSON_X.PHYS_NO" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Identifier for a Physician"></ui-input>
+
+<ui-checkbox value.bind="PERSON_X.PHYS_NOX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.NURSE_IND" label="IS-H: Indicator that Person is Nurse"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.NURSE_INDX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.EXT_PHYS_IND" label="IS-H: Indicator that Person is External Physician"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.EXT_PHYS_INDX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.ACCRED_IND" label="IS-H: Physician Has External Accreditation"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.ACCRED_INDX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.ACCRED_ALLOW" label="IS-H: Indicator that physician has internal accreditation"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.ACCRED_ALLOWX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="PERSON_X.COMMENT_PER" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="IS-H: Comment on Person"></ui-input>
+
+<ui-checkbox value.bind="PERSON_X.COMMENT_PERX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.DELETION_INDX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="PERSON_X.SPEC_TYPE" shlp.bind="{type: 'FV', id: 'ISH_SPTYP'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'2'}"
+          label="IS-H: Specialist Type"></ui-combo>
+
+<ui-checkbox value.bind="PERSON_X.SPEC_TYPEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="PERSON_X.RANK" shlp.bind="{type: 'CT', id: 'TN12R'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="IS-H: Rank"></ui-combo>
+
+<ui-checkbox value.bind="PERSON_X.RANKX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-date date.bind="PERSON_X.RKDATE"  label="Start of Validity for Rank of a Person"></ui-date>
+
+<ui-checkbox value.bind="PERSON_X.RKDATEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.SPECIALTYX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.USERX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.QLDIX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.QTDIX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.KVPHYSNOX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.WORKNOX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="PERSON_X.FIXKVNO" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="No field text"></ui-input>
+
+<ui-checkbox value.bind="PERSON_X.FIXKVNOX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.VOLUNTEER" label="Indicates That Person Is Volunteer"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.VOLUNTEERX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_X.NASHOSP_X" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="PERSON_X.ZSR_NUM" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="No field text"></ui-input>
+
+<ui-checkbox value.bind="PERSON_X.ZSR_NUM_X" label="Updated information in related user data field"></ui-checkbox>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: ADD_PHONE_DDATA structure: BAPINADDR2  Deleted Telephone Numbers -->
+
+<ui-datagrid data.bind="ADD_PHONE_DDATA" title="Deleted Telephone Numbers"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ADDR_NO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'NADR'}" label="IS-H: Address Number"></ui-dg-column>
+   <ui-dg-column sortable field="SEQ_NO" data-abap.bind="{type:'NUMC', length:'3'}" label="IS-H: Sequence Number of Telephone Number"></ui-dg-column>
+   <ui-dg-column sortable field="PHONENO" data-abap.bind="{type:'CHAR', length:'30'}" label="IS-H: Telephone Number"></ui-dg-column>
+   <ui-dg-column sortable field="EXTENSION" data-abap.bind="{type:'CHAR', length:'10'}" label="Telephone Number - Extension"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ADD_PHONE_DDATA.ADDR_NO" shlp.bind="{type: 'CT', id: 'NADR'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="IS-H: Address Number"></ui-combo>
+
+<ui-input bind="ADD_PHONE_DDATA.SEQ_NO" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="IS-H: Sequence Number of Telephone Number"></ui-input>
+
+<ui-input bind="ADD_PHONE_DDATA.PHONENO" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="IS-H: Telephone Number"></ui-input>
+
+<ui-input bind="ADD_PHONE_DDATA.EXTENSION" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Telephone Number - Extension"></ui-input>
+
+<!-- Parameter: ADD_PHONE_IDATA structure: BAPINADDR2  Created Telephone Numbers -->
+
+<ui-datagrid data.bind="ADD_PHONE_IDATA" title="Created Telephone Numbers"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ADDR_NO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'NADR'}" label="IS-H: Address Number"></ui-dg-column>
+   <ui-dg-column sortable field="SEQ_NO" data-abap.bind="{type:'NUMC', length:'3'}" label="IS-H: Sequence Number of Telephone Number"></ui-dg-column>
+   <ui-dg-column sortable field="PHONENO" data-abap.bind="{type:'CHAR', length:'30'}" label="IS-H: Telephone Number"></ui-dg-column>
+   <ui-dg-column sortable field="EXTENSION" data-abap.bind="{type:'CHAR', length:'10'}" label="Telephone Number - Extension"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ADD_PHONE_IDATA.ADDR_NO" shlp.bind="{type: 'CT', id: 'NADR'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="IS-H: Address Number"></ui-combo>
+
+<ui-input bind="ADD_PHONE_IDATA.SEQ_NO" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="IS-H: Sequence Number of Telephone Number"></ui-input>
+
+<ui-input bind="ADD_PHONE_IDATA.PHONENO" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="IS-H: Telephone Number"></ui-input>
+
+<ui-input bind="ADD_PHONE_IDATA.EXTENSION" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Telephone Number - Extension"></ui-input>
+
+<!-- Parameter: ADD_PHONE_X structure: BAPI1309RNADR2X  Change Data: Telephone Numbers -->
+
+<ui-datagrid data.bind="ADD_PHONE_X" title="Change Data: Telephone Numbers"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ACTION" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" label="IS-H: Action Type"></ui-dg-column>
+   <ui-dg-column sortable field="PHONENO" data-abap.bind="{type:'CHAR', length:'30'}" label="IS-H: Telephone Number"></ui-dg-column>
+   <ui-dg-column sortable field="EXTENSION" data-abap.bind="{type:'CHAR', length:'10'}" label="Telephone Number - Extension"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ADD_PHONE_X.ACTION" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Action Type"></ui-combo>
+
+<ui-input bind="ADD_PHONE_X.PHONENO" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="IS-H: Telephone Number"></ui-input>
+
+<ui-input bind="ADD_PHONE_X.EXTENSION" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Telephone Number - Extension"></ui-input>
+
+<!-- Parameter: ASS_FEEB_DDATA structure: BAPI1309FEEB  Fee Recipient Fee Authorizations Deleted -->
+
+<ui-datagrid data.bind="ASS_FEEB_DDATA" title="Fee Recipient Fee Authorizations Deleted"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'CT', id: 'T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'BUT000'}" label="Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSTITUTION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}" shlp.bind="{type: 'CT', id: 'TN01'}" label="Institution"></ui-dg-column>
+   <ui-dg-column sortable field="FEE_AUTHORIZATION" data-abap.bind="{type:'CHAR', length:'10'}" shlp.bind="{type: 'CT', id: 'TNWCH95'}" label="Fee Authorization"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_FEEB_DDATA.CLIENT" shlp.bind="{type: 'CT', id: 'T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_FEEB_DDATA.PARTNER" shlp.bind="{type: 'CT', id: 'BUT000'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Person Number"></ui-combo>
+
+<ui-combo bind="ASS_FEEB_DDATA.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-combo bind="ASS_FEEB_DDATA.FEE_AUTHORIZATION" shlp.bind="{type: 'CT', id: 'TNWCH95'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Fee Authorization"></ui-combo>
+
+<ui-date date.bind="ASS_FEEB_DDATA.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="ASS_FEEB_DDATA.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<!-- Parameter: ASS_FEEB_IDATA structure: BAPI1309FEEB  Fee Recipient Fee Authorizations Created -->
+
+<ui-datagrid data.bind="ASS_FEEB_IDATA" title="Fee Recipient Fee Authorizations Created"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'CT', id: 'T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'BUT000'}" label="Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSTITUTION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}" shlp.bind="{type: 'CT', id: 'TN01'}" label="Institution"></ui-dg-column>
+   <ui-dg-column sortable field="FEE_AUTHORIZATION" data-abap.bind="{type:'CHAR', length:'10'}" shlp.bind="{type: 'CT', id: 'TNWCH95'}" label="Fee Authorization"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_FEEB_IDATA.CLIENT" shlp.bind="{type: 'CT', id: 'T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_FEEB_IDATA.PARTNER" shlp.bind="{type: 'CT', id: 'BUT000'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Person Number"></ui-combo>
+
+<ui-combo bind="ASS_FEEB_IDATA.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-combo bind="ASS_FEEB_IDATA.FEE_AUTHORIZATION" shlp.bind="{type: 'CT', id: 'TNWCH95'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Fee Authorization"></ui-combo>
+
+<ui-date date.bind="ASS_FEEB_IDATA.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="ASS_FEEB_IDATA.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<!-- Parameter: ASS_FEEB_UDATA structure: BAPI1309FEEB  Fee Recipient Fee Authorizations Changed -->
+
+<ui-datagrid data.bind="ASS_FEEB_UDATA" title="Fee Recipient Fee Authorizations Changed"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'CT', id: 'T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'BUT000'}" label="Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSTITUTION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}" shlp.bind="{type: 'CT', id: 'TN01'}" label="Institution"></ui-dg-column>
+   <ui-dg-column sortable field="FEE_AUTHORIZATION" data-abap.bind="{type:'CHAR', length:'10'}" shlp.bind="{type: 'CT', id: 'TNWCH95'}" label="Fee Authorization"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_FEEB_UDATA.CLIENT" shlp.bind="{type: 'CT', id: 'T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_FEEB_UDATA.PARTNER" shlp.bind="{type: 'CT', id: 'BUT000'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Person Number"></ui-combo>
+
+<ui-combo bind="ASS_FEEB_UDATA.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-combo bind="ASS_FEEB_UDATA.FEE_AUTHORIZATION" shlp.bind="{type: 'CT', id: 'TNWCH95'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Fee Authorization"></ui-combo>
+
+<ui-date date.bind="ASS_FEEB_UDATA.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="ASS_FEEB_UDATA.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<!-- Parameter: ASS_FEEB_X structure: BAPI1309FEEBX  Change Data: Fee Recipient Fee Authorizations -->
+
+<ui-datagrid data.bind="ASS_FEEB_X" title="Change Data: Fee Recipient Fee Authorizations"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'BUT000'}" label="Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSTITUTION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}" shlp.bind="{type: 'CT', id: 'TN01'}" label="Institution"></ui-dg-column>
+   <ui-dg-column sortable field="FEE_AUTHORIZATION" data-abap.bind="{type:'CHAR', length:'10'}" shlp.bind="{type: 'CT', id: 'TNWCH95'}" label="Fee Authorization"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATEX" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="ACTION" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" label="IS-H: Action Type"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_FEEB_X.PARTNER" shlp.bind="{type: 'CT', id: 'BUT000'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Person Number"></ui-combo>
+
+<ui-combo bind="ASS_FEEB_X.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-combo bind="ASS_FEEB_X.FEE_AUTHORIZATION" shlp.bind="{type: 'CT', id: 'TNWCH95'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Fee Authorization"></ui-combo>
+
+<ui-date date.bind="ASS_FEEB_X.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="ASS_FEEB_X.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<ui-checkbox value.bind="ASS_FEEB_X.ENDDATEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="ASS_FEEB_X.ACTION" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Action Type"></ui-combo>
+
+<!-- Parameter: ASS_FEEK_DDATA structure: BAPI1309FEEK  Fee Recipient Vendors Deleted -->
+
+<ui-datagrid data.bind="ASS_FEEK_DDATA" title="Fee Recipient Vendors Deleted"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'CT', id: 'T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'BUT000'}" label="Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSTITUTION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}" shlp.bind="{type: 'CT', id: 'TN01'}" label="Institution"></ui-dg-column>
+   <ui-dg-column sortable field="MAIN_VENDOR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'16'}" label="Main Vendor"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_FEEK_DDATA.CLIENT" shlp.bind="{type: 'CT', id: 'T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_FEEK_DDATA.PARTNER" shlp.bind="{type: 'CT', id: 'BUT000'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Person Number"></ui-combo>
+
+<ui-combo bind="ASS_FEEK_DDATA.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-input bind="ASS_FEEK_DDATA.MAIN_VENDOR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'16'}"
+          label="Main Vendor"></ui-input>
+
+<!-- Parameter: ASS_FEEK_IDATA structure: BAPI1309FEEK  Fee Recipient Vendors Created -->
+
+<ui-datagrid data.bind="ASS_FEEK_IDATA" title="Fee Recipient Vendors Created"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'CT', id: 'T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'BUT000'}" label="Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSTITUTION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}" shlp.bind="{type: 'CT', id: 'TN01'}" label="Institution"></ui-dg-column>
+   <ui-dg-column sortable field="MAIN_VENDOR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'16'}" label="Main Vendor"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_FEEK_IDATA.CLIENT" shlp.bind="{type: 'CT', id: 'T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_FEEK_IDATA.PARTNER" shlp.bind="{type: 'CT', id: 'BUT000'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Person Number"></ui-combo>
+
+<ui-combo bind="ASS_FEEK_IDATA.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-input bind="ASS_FEEK_IDATA.MAIN_VENDOR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'16'}"
+          label="Main Vendor"></ui-input>
+
+<!-- Parameter: ASS_FEEK_UDATA structure: BAPI1309FEEK  Fee Recipient Vendors Changed -->
+
+<ui-datagrid data.bind="ASS_FEEK_UDATA" title="Fee Recipient Vendors Changed"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'CT', id: 'T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'BUT000'}" label="Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSTITUTION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}" shlp.bind="{type: 'CT', id: 'TN01'}" label="Institution"></ui-dg-column>
+   <ui-dg-column sortable field="MAIN_VENDOR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'16'}" label="Main Vendor"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_FEEK_UDATA.CLIENT" shlp.bind="{type: 'CT', id: 'T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_FEEK_UDATA.PARTNER" shlp.bind="{type: 'CT', id: 'BUT000'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Person Number"></ui-combo>
+
+<ui-combo bind="ASS_FEEK_UDATA.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-input bind="ASS_FEEK_UDATA.MAIN_VENDOR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'16'}"
+          label="Main Vendor"></ui-input>
+
+<!-- Parameter: ASS_FEEK_X structure: BAPI1309FEEKX  Change Data: Fee Recipient Vendors -->
+
+<ui-datagrid data.bind="ASS_FEEK_X" title="Change Data: Fee Recipient Vendors"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'BUT000'}" label="Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSTITUTION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}" shlp.bind="{type: 'CT', id: 'TN01'}" label="Institution"></ui-dg-column>
+   <ui-dg-column sortable field="MAIN_VENDOR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'16'}" label="Main Vendor"></ui-dg-column>
+   <ui-dg-column sortable field="ACTION" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" label="IS-H: Action Type"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_FEEK_X.PARTNER" shlp.bind="{type: 'CT', id: 'BUT000'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Person Number"></ui-combo>
+
+<ui-combo bind="ASS_FEEK_X.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-input bind="ASS_FEEK_X.MAIN_VENDOR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'16'}"
+          label="Main Vendor"></ui-input>
+
+<ui-combo bind="ASS_FEEK_X.ACTION" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Action Type"></ui-combo>
+
+<!-- Parameter: ASS_FEER_DDATA structure: BAPI1309FEER  Fee Recipient Ranks Deleted -->
+
+<ui-datagrid data.bind="ASS_FEER_DDATA" title="Fee Recipient Ranks Deleted"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'CT', id: 'T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'BUT000'}" label="Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSTITUTION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}" shlp.bind="{type: 'CT', id: 'TN01'}" label="Institution"></ui-dg-column>
+   <ui-dg-column sortable field="RANK" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}" shlp.bind="{type: 'CT', id: 'TN12R'}" label="IS-H: Rank"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_FEER_DDATA.CLIENT" shlp.bind="{type: 'CT', id: 'T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_FEER_DDATA.PARTNER" shlp.bind="{type: 'CT', id: 'BUT000'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Person Number"></ui-combo>
+
+<ui-combo bind="ASS_FEER_DDATA.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-combo bind="ASS_FEER_DDATA.RANK" shlp.bind="{type: 'CT', id: 'TN12R'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="IS-H: Rank"></ui-combo>
+
+<ui-date date.bind="ASS_FEER_DDATA.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="ASS_FEER_DDATA.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<!-- Parameter: ASS_FEER_IDATA structure: BAPI1309FEER  Fee Recipient Ranks Created -->
+
+<ui-datagrid data.bind="ASS_FEER_IDATA" title="Fee Recipient Ranks Created"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'CT', id: 'T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'BUT000'}" label="Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSTITUTION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}" shlp.bind="{type: 'CT', id: 'TN01'}" label="Institution"></ui-dg-column>
+   <ui-dg-column sortable field="RANK" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}" shlp.bind="{type: 'CT', id: 'TN12R'}" label="IS-H: Rank"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_FEER_IDATA.CLIENT" shlp.bind="{type: 'CT', id: 'T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_FEER_IDATA.PARTNER" shlp.bind="{type: 'CT', id: 'BUT000'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Person Number"></ui-combo>
+
+<ui-combo bind="ASS_FEER_IDATA.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-combo bind="ASS_FEER_IDATA.RANK" shlp.bind="{type: 'CT', id: 'TN12R'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="IS-H: Rank"></ui-combo>
+
+<ui-date date.bind="ASS_FEER_IDATA.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="ASS_FEER_IDATA.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<!-- Parameter: ASS_FEER_UDATA structure: BAPI1309FEER  Fee Recipient Ranks Changed -->
+
+<ui-datagrid data.bind="ASS_FEER_UDATA" title="Fee Recipient Ranks Changed"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'CT', id: 'T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'BUT000'}" label="Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSTITUTION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}" shlp.bind="{type: 'CT', id: 'TN01'}" label="Institution"></ui-dg-column>
+   <ui-dg-column sortable field="RANK" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}" shlp.bind="{type: 'CT', id: 'TN12R'}" label="IS-H: Rank"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_FEER_UDATA.CLIENT" shlp.bind="{type: 'CT', id: 'T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_FEER_UDATA.PARTNER" shlp.bind="{type: 'CT', id: 'BUT000'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Person Number"></ui-combo>
+
+<ui-combo bind="ASS_FEER_UDATA.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-combo bind="ASS_FEER_UDATA.RANK" shlp.bind="{type: 'CT', id: 'TN12R'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="IS-H: Rank"></ui-combo>
+
+<ui-date date.bind="ASS_FEER_UDATA.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="ASS_FEER_UDATA.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<!-- Parameter: ASS_FEER_X structure: BAPI1309FEERX  Change Data: Fee Recipient Ranks -->
+
+<ui-datagrid data.bind="ASS_FEER_X" title="Change Data: Fee Recipient Ranks"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'BUT000'}" label="Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="INSTITUTION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}" shlp.bind="{type: 'CT', id: 'TN01'}" label="Institution"></ui-dg-column>
+   <ui-dg-column sortable field="RANK" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}" shlp.bind="{type: 'CT', id: 'TN12R'}" label="IS-H: Rank"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATEX" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="ACTION" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" label="IS-H: Action Type"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_FEER_X.PARTNER" shlp.bind="{type: 'CT', id: 'BUT000'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Person Number"></ui-combo>
+
+<ui-combo bind="ASS_FEER_X.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-combo bind="ASS_FEER_X.RANK" shlp.bind="{type: 'CT', id: 'TN12R'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="IS-H: Rank"></ui-combo>
+
+<ui-date date.bind="ASS_FEER_X.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="ASS_FEER_X.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<ui-checkbox value.bind="ASS_FEER_X.BEGDATEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="ASS_FEER_X.ACTION" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Action Type"></ui-combo>
+
+<!-- Parameter: ASS_INSPROVIDER_INSTITU_DDATA structure: BAPI1309INSPROV_INSTITU  Deleted Institution-Dependent Insurance Provider Data -->
+
+<ui-datagrid data.bind="ASS_INSPROVIDER_INSTITU_DDATA" title="Deleted Institution-Dependent Insurance Provider Data"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'CT', id: 'T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="INSTITUTION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}" shlp.bind="{type: 'CT', id: 'TN01'}" label="Institution"></ui-dg-column>
+   <ui-dg-column sortable field="COPAYMENT_PROC" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'VERFZUZ'}" label="IS-H: Copayment Procedure for Billing"></ui-dg-column>
+   <ui-dg-column sortable field="EFFECTIVE_DATE" data-abap.bind="{type:'DATS'}" label="Effective Date for Changeover of Copayment Procedure"></ui-dg-column>
+   <ui-dg-column sortable field="PREV_COPAYMENT_PROC" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'VERFZUZ'}" label="IS-H: Copayment Procedure Before Changeover"></ui-dg-column>
+   <ui-dg-column sortable field="CHANGE_UP_TO_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Change-to date (RNCUCURR1)"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Employee who Created Record"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date when Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Person who Last Changed Data"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date of Last Change"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time of Last Change"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_INSPROVIDER_INSTITU_DDATA.CLIENT" shlp.bind="{type: 'CT', id: 'T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_INSPROVIDER_INSTITU_DDATA.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-combo bind="ASS_INSPROVIDER_INSTITU_DDATA.COPAYMENT_PROC" shlp.bind="{type: 'FV', id: 'VERFZUZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Copayment Procedure for Billing"></ui-combo>
+
+<ui-date date.bind="ASS_INSPROVIDER_INSTITU_DDATA.EFFECTIVE_DATE"  label="Effective Date for Changeover of Copayment Procedure"></ui-date>
+
+<ui-combo bind="ASS_INSPROVIDER_INSTITU_DDATA.PREV_COPAYMENT_PROC" shlp.bind="{type: 'FV', id: 'VERFZUZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Copayment Procedure Before Changeover"></ui-combo>
+
+<ui-date date.bind="ASS_INSPROVIDER_INSTITU_DDATA.CHANGE_UP_TO_DATE"  label="IS-H: Change-to date (RNCUCURR1)"></ui-date>
+
+<ui-input bind="ASS_INSPROVIDER_INSTITU_DDATA.CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Employee who Created Record"></ui-input>
+
+<ui-date date.bind="ASS_INSPROVIDER_INSTITU_DDATA.CREATION_DATE"  label="IS-H: Date when Record Created"></ui-date>
+
+<ui-time time.bind="ASS_INSPROVIDER_INSTITU_DDATA.CREATION_TIME"  label="IS-H: Time Record Created"></ui-time>
+
+<ui-input bind="ASS_INSPROVIDER_INSTITU_DDATA.UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Person who Last Changed Data"></ui-input>
+
+<ui-date date.bind="ASS_INSPROVIDER_INSTITU_DDATA.UPDATE_DATE"  label="IS-H: Date of Last Change"></ui-date>
+
+<ui-time time.bind="ASS_INSPROVIDER_INSTITU_DDATA.UPDATE_TIME"  label="IS-H: Time of Last Change"></ui-time>
+
+<!-- Parameter: ASS_INSPROVIDER_INSTITU_IDATA structure: BAPI1309INSPROV_INSTITU  Created Institution-Dependent Insurance Provider Data -->
+
+<ui-datagrid data.bind="ASS_INSPROVIDER_INSTITU_IDATA" title="Created Institution-Dependent Insurance Provider Data"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'CT', id: 'T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="INSTITUTION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}" shlp.bind="{type: 'CT', id: 'TN01'}" label="Institution"></ui-dg-column>
+   <ui-dg-column sortable field="COPAYMENT_PROC" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'VERFZUZ'}" label="IS-H: Copayment Procedure for Billing"></ui-dg-column>
+   <ui-dg-column sortable field="EFFECTIVE_DATE" data-abap.bind="{type:'DATS'}" label="Effective Date for Changeover of Copayment Procedure"></ui-dg-column>
+   <ui-dg-column sortable field="PREV_COPAYMENT_PROC" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'VERFZUZ'}" label="IS-H: Copayment Procedure Before Changeover"></ui-dg-column>
+   <ui-dg-column sortable field="CHANGE_UP_TO_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Change-to date (RNCUCURR1)"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Employee who Created Record"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date when Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Person who Last Changed Data"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date of Last Change"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time of Last Change"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_INSPROVIDER_INSTITU_IDATA.CLIENT" shlp.bind="{type: 'CT', id: 'T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_INSPROVIDER_INSTITU_IDATA.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-combo bind="ASS_INSPROVIDER_INSTITU_IDATA.COPAYMENT_PROC" shlp.bind="{type: 'FV', id: 'VERFZUZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Copayment Procedure for Billing"></ui-combo>
+
+<ui-date date.bind="ASS_INSPROVIDER_INSTITU_IDATA.EFFECTIVE_DATE"  label="Effective Date for Changeover of Copayment Procedure"></ui-date>
+
+<ui-combo bind="ASS_INSPROVIDER_INSTITU_IDATA.PREV_COPAYMENT_PROC" shlp.bind="{type: 'FV', id: 'VERFZUZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Copayment Procedure Before Changeover"></ui-combo>
+
+<ui-date date.bind="ASS_INSPROVIDER_INSTITU_IDATA.CHANGE_UP_TO_DATE"  label="IS-H: Change-to date (RNCUCURR1)"></ui-date>
+
+<ui-input bind="ASS_INSPROVIDER_INSTITU_IDATA.CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Employee who Created Record"></ui-input>
+
+<ui-date date.bind="ASS_INSPROVIDER_INSTITU_IDATA.CREATION_DATE"  label="IS-H: Date when Record Created"></ui-date>
+
+<ui-time time.bind="ASS_INSPROVIDER_INSTITU_IDATA.CREATION_TIME"  label="IS-H: Time Record Created"></ui-time>
+
+<ui-input bind="ASS_INSPROVIDER_INSTITU_IDATA.UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Person who Last Changed Data"></ui-input>
+
+<ui-date date.bind="ASS_INSPROVIDER_INSTITU_IDATA.UPDATE_DATE"  label="IS-H: Date of Last Change"></ui-date>
+
+<ui-time time.bind="ASS_INSPROVIDER_INSTITU_IDATA.UPDATE_TIME"  label="IS-H: Time of Last Change"></ui-time>
+
+<!-- Parameter: ASS_INSPROVIDER_INSTITU_UDATA structure: BAPI1309INSPROV_INSTITU  Changed Institution-Dependent Insurance Provider Data -->
+
+<ui-datagrid data.bind="ASS_INSPROVIDER_INSTITU_UDATA" title="Changed Institution-Dependent Insurance Provider Data"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'CT', id: 'T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="INSTITUTION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}" shlp.bind="{type: 'CT', id: 'TN01'}" label="Institution"></ui-dg-column>
+   <ui-dg-column sortable field="COPAYMENT_PROC" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'VERFZUZ'}" label="IS-H: Copayment Procedure for Billing"></ui-dg-column>
+   <ui-dg-column sortable field="EFFECTIVE_DATE" data-abap.bind="{type:'DATS'}" label="Effective Date for Changeover of Copayment Procedure"></ui-dg-column>
+   <ui-dg-column sortable field="PREV_COPAYMENT_PROC" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'VERFZUZ'}" label="IS-H: Copayment Procedure Before Changeover"></ui-dg-column>
+   <ui-dg-column sortable field="CHANGE_UP_TO_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Change-to date (RNCUCURR1)"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Employee who Created Record"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date when Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Person who Last Changed Data"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date of Last Change"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time of Last Change"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_INSPROVIDER_INSTITU_UDATA.CLIENT" shlp.bind="{type: 'CT', id: 'T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_INSPROVIDER_INSTITU_UDATA.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-combo bind="ASS_INSPROVIDER_INSTITU_UDATA.COPAYMENT_PROC" shlp.bind="{type: 'FV', id: 'VERFZUZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Copayment Procedure for Billing"></ui-combo>
+
+<ui-date date.bind="ASS_INSPROVIDER_INSTITU_UDATA.EFFECTIVE_DATE"  label="Effective Date for Changeover of Copayment Procedure"></ui-date>
+
+<ui-combo bind="ASS_INSPROVIDER_INSTITU_UDATA.PREV_COPAYMENT_PROC" shlp.bind="{type: 'FV', id: 'VERFZUZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Copayment Procedure Before Changeover"></ui-combo>
+
+<ui-date date.bind="ASS_INSPROVIDER_INSTITU_UDATA.CHANGE_UP_TO_DATE"  label="IS-H: Change-to date (RNCUCURR1)"></ui-date>
+
+<ui-input bind="ASS_INSPROVIDER_INSTITU_UDATA.CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Employee who Created Record"></ui-input>
+
+<ui-date date.bind="ASS_INSPROVIDER_INSTITU_UDATA.CREATION_DATE"  label="IS-H: Date when Record Created"></ui-date>
+
+<ui-time time.bind="ASS_INSPROVIDER_INSTITU_UDATA.CREATION_TIME"  label="IS-H: Time Record Created"></ui-time>
+
+<ui-input bind="ASS_INSPROVIDER_INSTITU_UDATA.UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Person who Last Changed Data"></ui-input>
+
+<ui-date date.bind="ASS_INSPROVIDER_INSTITU_UDATA.UPDATE_DATE"  label="IS-H: Date of Last Change"></ui-date>
+
+<ui-time time.bind="ASS_INSPROVIDER_INSTITU_UDATA.UPDATE_TIME"  label="IS-H: Time of Last Change"></ui-time>
+
+<!-- Parameter: ASS_INSPROVIDER_INSTITU_X structure: BAPI1309INSPROV_INSTITU_X  Change Data: Institution-Dependent Insurance Provider Data -->
+
+<ui-datagrid data.bind="ASS_INSPROVIDER_INSTITU_X" title="Change Data: Institution-Dependent Insurance Provider Data"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ACTION" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" label="IS-H: Action Type"></ui-dg-column>
+   <ui-dg-column sortable field="INSTITUTION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}" shlp.bind="{type: 'CT', id: 'TN01'}" label="Institution"></ui-dg-column>
+   <ui-dg-column sortable field="COPAYMENT_PROC" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'VERFZUZ'}" label="IS-H: Copayment Procedure for Billing"></ui-dg-column>
+   <ui-dg-column sortable field="COPAYMENT_PROCX" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_INSPROVIDER_INSTITU_X.ACTION" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Action Type"></ui-combo>
+
+<ui-combo bind="ASS_INSPROVIDER_INSTITU_X.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-combo bind="ASS_INSPROVIDER_INSTITU_X.COPAYMENT_PROC" shlp.bind="{type: 'FV', id: 'VERFZUZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Copayment Procedure for Billing"></ui-combo>
+
+<ui-checkbox value.bind="ASS_INSPROVIDER_INSTITU_X.COPAYMENT_PROCX" label="Updated information in related user data field"></ui-checkbox>
+
+<!-- Parameter: ASS_PER_KVPHYSNO_DDATA structure: BAPI1309PERPHYSNO  Deleted Person-HI Physician Number Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_KVPHYSNO_DDATA" title="Deleted Person-HI Physician Number Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CH', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="KVPHYSNO" data-abap.bind="{type:'CHAR', length:'9'}" label="No field text"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_KVPHYSNO_DDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_KVPHYSNO_DDATA.PERSON" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-input bind="ASS_PER_KVPHYSNO_DDATA.KVPHYSNO" data-abap.bind="{type:'CHAR', length:'9'}"
+          label="No field text"></ui-input>
+
+<ui-date date.bind="ASS_PER_KVPHYSNO_DDATA.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="ASS_PER_KVPHYSNO_DDATA.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<!-- Parameter: ASS_PER_KVPHYSNO_IDATA structure: BAPI1309PERPHYSNO  Created Person-HI Physician Number Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_KVPHYSNO_IDATA" title="Created Person-HI Physician Number Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CH', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="KVPHYSNO" data-abap.bind="{type:'CHAR', length:'9'}" label="No field text"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_KVPHYSNO_IDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_KVPHYSNO_IDATA.PERSON" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-input bind="ASS_PER_KVPHYSNO_IDATA.KVPHYSNO" data-abap.bind="{type:'CHAR', length:'9'}"
+          label="No field text"></ui-input>
+
+<ui-date date.bind="ASS_PER_KVPHYSNO_IDATA.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="ASS_PER_KVPHYSNO_IDATA.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<!-- Parameter: ASS_PER_KVPHYSNO_UDATA structure: BAPI1309PERPHYSNO  Changed Person-HI Physician Number Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_KVPHYSNO_UDATA" title="Changed Person-HI Physician Number Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CH', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="KVPHYSNO" data-abap.bind="{type:'CHAR', length:'9'}" label="No field text"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_KVPHYSNO_UDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_KVPHYSNO_UDATA.PERSON" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-input bind="ASS_PER_KVPHYSNO_UDATA.KVPHYSNO" data-abap.bind="{type:'CHAR', length:'9'}"
+          label="No field text"></ui-input>
+
+<ui-date date.bind="ASS_PER_KVPHYSNO_UDATA.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="ASS_PER_KVPHYSNO_UDATA.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<!-- Parameter: ASS_PER_KVPHYSNO_X structure: BAPI1309PERPHYSNOX  Change Data: Change Structure for Person-HI Physician Number Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_KVPHYSNO_X" title="Change Data: Change Structure for Person-HI Physician Number Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ACTION" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" label="IS-H: Action Type"></ui-dg-column>
+   <ui-dg-column sortable field="KVPHYSNO" data-abap.bind="{type:'CHAR', length:'9'}" label="No field text"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATEX" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATEX" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_KVPHYSNO_X.ACTION" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Action Type"></ui-combo>
+
+<ui-input bind="ASS_PER_KVPHYSNO_X.KVPHYSNO" data-abap.bind="{type:'CHAR', length:'9'}"
+          label="No field text"></ui-input>
+
+<ui-date date.bind="ASS_PER_KVPHYSNO_X.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-checkbox value.bind="ASS_PER_KVPHYSNO_X.BEGDATEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-date date.bind="ASS_PER_KVPHYSNO_X.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<ui-checkbox value.bind="ASS_PER_KVPHYSNO_X.ENDDATEX" label="Updated information in related user data field"></ui-checkbox>
+
+<!-- Parameter: ASS_PER_NASHOSP_DDATA structure: /ISHFR/BAPI1309NASHOSP  BAPI: Assigned Hospitals -->
+
+<ui-datagrid data.bind="ASS_PER_NASHOSP_DDATA" title="BAPI: Assigned Hospitals"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CT', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="ASSIGNED_HOSPITAL" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'NGPA'}" label="Hospital Assigned"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_NASHOSP_DDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_NASHOSP_DDATA.PERSON" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-combo bind="ASS_PER_NASHOSP_DDATA.ASSIGNED_HOSPITAL" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Hospital Assigned"></ui-combo>
+
+<ui-date date.bind="ASS_PER_NASHOSP_DDATA.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="ASS_PER_NASHOSP_DDATA.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<!-- Parameter: ASS_PER_NASHOSP_IDATA structure: /ISHFR/BAPI1309NASHOSP  BAPI: Assigned Hospitals -->
+
+<ui-datagrid data.bind="ASS_PER_NASHOSP_IDATA" title="BAPI: Assigned Hospitals"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CT', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="ASSIGNED_HOSPITAL" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'NGPA'}" label="Hospital Assigned"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_NASHOSP_IDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_NASHOSP_IDATA.PERSON" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-combo bind="ASS_PER_NASHOSP_IDATA.ASSIGNED_HOSPITAL" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Hospital Assigned"></ui-combo>
+
+<ui-date date.bind="ASS_PER_NASHOSP_IDATA.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="ASS_PER_NASHOSP_IDATA.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<!-- Parameter: ASS_PER_NASHOSP_UDATA structure: /ISHFR/BAPI1309NASHOSP  BAPI: Assigned Hospitals -->
+
+<ui-datagrid data.bind="ASS_PER_NASHOSP_UDATA" title="BAPI: Assigned Hospitals"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CT', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="ASSIGNED_HOSPITAL" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'NGPA'}" label="Hospital Assigned"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_NASHOSP_UDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_NASHOSP_UDATA.PERSON" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-combo bind="ASS_PER_NASHOSP_UDATA.ASSIGNED_HOSPITAL" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Hospital Assigned"></ui-combo>
+
+<ui-date date.bind="ASS_PER_NASHOSP_UDATA.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="ASS_PER_NASHOSP_UDATA.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<!-- Parameter: ASS_PER_NASHOSP_X structure: /ISHFR/BAPI1309NASHOSPX  BAPI: Assigned Hospitals - Change Structure -->
+
+<ui-datagrid data.bind="ASS_PER_NASHOSP_X" title="BAPI: Assigned Hospitals - Change Structure"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CT', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="ASSIGNED_HOSPITAL" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'NGPA'}" label="Hospital Assigned"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATEX" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATEX" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="ACTION" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" label="IS-H: Action Type"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_NASHOSP_X.PERSON" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-combo bind="ASS_PER_NASHOSP_X.ASSIGNED_HOSPITAL" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Hospital Assigned"></ui-combo>
+
+<ui-date date.bind="ASS_PER_NASHOSP_X.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-checkbox value.bind="ASS_PER_NASHOSP_X.BEGDATEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-date date.bind="ASS_PER_NASHOSP_X.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<ui-checkbox value.bind="ASS_PER_NASHOSP_X.ENDDATEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="ASS_PER_NASHOSP_X.ACTION" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Action Type"></ui-combo>
+
+<!-- Parameter: ASS_PER_QLDI_DDATA structure: BAPI1309PERQLDI  Deleted Person-to-Qualitative Grade Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_QLDI_DDATA" title="Deleted Person-to-Qualitative Grade Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CH', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="QUAL_DIG" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'TNWCHTM02'}" label="IS-H CH: Qualitative Grade"></ui-dg-column>
+   <ui-dg-column sortable field="FROM_DATE" data-abap.bind="{type:'DATS'}" label="Start Date"></ui-dg-column>
+   <ui-dg-column sortable field="TO_DATE" data-abap.bind="{type:'DATS'}" label="End Date"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date when Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Employee who Created Record"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time when Data Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date of Last Change"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Person who Last Changed Data"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time Data Record was Last Changed"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_QLDI_DDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_QLDI_DDATA.PERSON" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-combo bind="ASS_PER_QLDI_DDATA.QUAL_DIG" shlp.bind="{type: 'CT', id: 'TNWCHTM02'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="IS-H CH: Qualitative Grade"></ui-combo>
+
+<ui-date date.bind="ASS_PER_QLDI_DDATA.FROM_DATE"  label="Start Date"></ui-date>
+
+<ui-date date.bind="ASS_PER_QLDI_DDATA.TO_DATE"  label="End Date"></ui-date>
+
+<ui-date date.bind="ASS_PER_QLDI_DDATA.CREATION_DATE"  label="IS-H: Date when Record Created"></ui-date>
+
+<ui-input bind="ASS_PER_QLDI_DDATA.CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Employee who Created Record"></ui-input>
+
+<ui-time time.bind="ASS_PER_QLDI_DDATA.CREATION_TIME"  label="IS-H: Time when Data Record Created"></ui-time>
+
+<ui-date date.bind="ASS_PER_QLDI_DDATA.UPDATE_DATE"  label="IS-H: Date of Last Change"></ui-date>
+
+<ui-input bind="ASS_PER_QLDI_DDATA.UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Person who Last Changed Data"></ui-input>
+
+<ui-time time.bind="ASS_PER_QLDI_DDATA.UPDATE_TIME"  label="IS-H: Time Data Record was Last Changed"></ui-time>
+
+<!-- Parameter: ASS_PER_QLDI_IDATA structure: BAPI1309PERQLDI  Created Person-to-Qualitative Grade Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_QLDI_IDATA" title="Created Person-to-Qualitative Grade Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CH', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="QUAL_DIG" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'TNWCHTM02'}" label="IS-H CH: Qualitative Grade"></ui-dg-column>
+   <ui-dg-column sortable field="FROM_DATE" data-abap.bind="{type:'DATS'}" label="Start Date"></ui-dg-column>
+   <ui-dg-column sortable field="TO_DATE" data-abap.bind="{type:'DATS'}" label="End Date"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date when Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Employee who Created Record"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time when Data Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date of Last Change"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Person who Last Changed Data"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time Data Record was Last Changed"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_QLDI_IDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_QLDI_IDATA.PERSON" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-combo bind="ASS_PER_QLDI_IDATA.QUAL_DIG" shlp.bind="{type: 'CT', id: 'TNWCHTM02'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="IS-H CH: Qualitative Grade"></ui-combo>
+
+<ui-date date.bind="ASS_PER_QLDI_IDATA.FROM_DATE"  label="Start Date"></ui-date>
+
+<ui-date date.bind="ASS_PER_QLDI_IDATA.TO_DATE"  label="End Date"></ui-date>
+
+<ui-date date.bind="ASS_PER_QLDI_IDATA.CREATION_DATE"  label="IS-H: Date when Record Created"></ui-date>
+
+<ui-input bind="ASS_PER_QLDI_IDATA.CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Employee who Created Record"></ui-input>
+
+<ui-time time.bind="ASS_PER_QLDI_IDATA.CREATION_TIME"  label="IS-H: Time when Data Record Created"></ui-time>
+
+<ui-date date.bind="ASS_PER_QLDI_IDATA.UPDATE_DATE"  label="IS-H: Date of Last Change"></ui-date>
+
+<ui-input bind="ASS_PER_QLDI_IDATA.UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Person who Last Changed Data"></ui-input>
+
+<ui-time time.bind="ASS_PER_QLDI_IDATA.UPDATE_TIME"  label="IS-H: Time Data Record was Last Changed"></ui-time>
+
+<!-- Parameter: ASS_PER_QLDI_UDATA structure: BAPI1309PERQLDI  Changed Person-to-Qualitative Grade Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_QLDI_UDATA" title="Changed Person-to-Qualitative Grade Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CH', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="QUAL_DIG" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'TNWCHTM02'}" label="IS-H CH: Qualitative Grade"></ui-dg-column>
+   <ui-dg-column sortable field="FROM_DATE" data-abap.bind="{type:'DATS'}" label="Start Date"></ui-dg-column>
+   <ui-dg-column sortable field="TO_DATE" data-abap.bind="{type:'DATS'}" label="End Date"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date when Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Employee who Created Record"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time when Data Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date of Last Change"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Person who Last Changed Data"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time Data Record was Last Changed"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_QLDI_UDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_QLDI_UDATA.PERSON" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-combo bind="ASS_PER_QLDI_UDATA.QUAL_DIG" shlp.bind="{type: 'CT', id: 'TNWCHTM02'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="IS-H CH: Qualitative Grade"></ui-combo>
+
+<ui-date date.bind="ASS_PER_QLDI_UDATA.FROM_DATE"  label="Start Date"></ui-date>
+
+<ui-date date.bind="ASS_PER_QLDI_UDATA.TO_DATE"  label="End Date"></ui-date>
+
+<ui-date date.bind="ASS_PER_QLDI_UDATA.CREATION_DATE"  label="IS-H: Date when Record Created"></ui-date>
+
+<ui-input bind="ASS_PER_QLDI_UDATA.CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Employee who Created Record"></ui-input>
+
+<ui-time time.bind="ASS_PER_QLDI_UDATA.CREATION_TIME"  label="IS-H: Time when Data Record Created"></ui-time>
+
+<ui-date date.bind="ASS_PER_QLDI_UDATA.UPDATE_DATE"  label="IS-H: Date of Last Change"></ui-date>
+
+<ui-input bind="ASS_PER_QLDI_UDATA.UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Person who Last Changed Data"></ui-input>
+
+<ui-time time.bind="ASS_PER_QLDI_UDATA.UPDATE_TIME"  label="IS-H: Time Data Record was Last Changed"></ui-time>
+
+<!-- Parameter: ASS_PER_QLDI_X structure: BAPI1309PERQLDIX  Change Data: Person-to-Qualitative Grade Asgmt -->
+
+<ui-datagrid data.bind="ASS_PER_QLDI_X" title="Change Data: Person-to-Qualitative Grade Asgmt"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CT', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="QUAL_DIG" data-abap.bind="{type:'CHAR', length:'4'}" label="IS-H CH: Qualitative Grade"></ui-dg-column>
+   <ui-dg-column sortable field="FROM_DATE" data-abap.bind="{type:'DATS'}" label="Start Date"></ui-dg-column>
+   <ui-dg-column sortable field="TO_DATE" data-abap.bind="{type:'DATS'}" label="End Date"></ui-dg-column>
+   <ui-dg-column sortable field="TO_DATEX" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="ACTION" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" label="IS-H: Action Type"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_QLDI_X.PERSON" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-input bind="ASS_PER_QLDI_X.QUAL_DIG" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="IS-H CH: Qualitative Grade"></ui-input>
+
+<ui-date date.bind="ASS_PER_QLDI_X.FROM_DATE"  label="Start Date"></ui-date>
+
+<ui-date date.bind="ASS_PER_QLDI_X.TO_DATE"  label="End Date"></ui-date>
+
+<ui-checkbox value.bind="ASS_PER_QLDI_X.TO_DATEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="ASS_PER_QLDI_X.ACTION" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Action Type"></ui-combo>
+
+<!-- Parameter: ASS_PER_QTDI_DDATA structure: BAPI1309PERQTDI  Deleted Person-to-Quantitative Grade Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_QTDI_DDATA" title="Deleted Person-to-Quantitative Grade Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CH', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="QUNT_DIG" data-abap.bind="{type:'CHAR', length:'5'}" shlp.bind="{type: 'CT', id: 'TNWCHTM03'}" label="No field text"></ui-dg-column>
+   <ui-dg-column sortable field="FROM_DATE" data-abap.bind="{type:'DATS'}" label="Start Date"></ui-dg-column>
+   <ui-dg-column sortable field="TO_DATE" data-abap.bind="{type:'DATS'}" label="End Date"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date when Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Employee who Created Record"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time when Data Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date of Last Change"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Person who Last Changed Data"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time Data Record was Last Changed"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_QTDI_DDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_QTDI_DDATA.PERSON" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-combo bind="ASS_PER_QTDI_DDATA.QUNT_DIG" shlp.bind="{type: 'CT', id: 'TNWCHTM03'}" data-abap.bind="{type:'CHAR', length:'5'}"
+          label="No field text"></ui-combo>
+
+<ui-date date.bind="ASS_PER_QTDI_DDATA.FROM_DATE"  label="Start Date"></ui-date>
+
+<ui-date date.bind="ASS_PER_QTDI_DDATA.TO_DATE"  label="End Date"></ui-date>
+
+<ui-date date.bind="ASS_PER_QTDI_DDATA.CREATION_DATE"  label="IS-H: Date when Record Created"></ui-date>
+
+<ui-input bind="ASS_PER_QTDI_DDATA.CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Employee who Created Record"></ui-input>
+
+<ui-time time.bind="ASS_PER_QTDI_DDATA.CREATION_TIME"  label="IS-H: Time when Data Record Created"></ui-time>
+
+<ui-date date.bind="ASS_PER_QTDI_DDATA.UPDATE_DATE"  label="IS-H: Date of Last Change"></ui-date>
+
+<ui-input bind="ASS_PER_QTDI_DDATA.UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Person who Last Changed Data"></ui-input>
+
+<ui-time time.bind="ASS_PER_QTDI_DDATA.UPDATE_TIME"  label="IS-H: Time Data Record was Last Changed"></ui-time>
+
+<!-- Parameter: ASS_PER_QTDI_IDATA structure: BAPI1309PERQTDI  Created Person-to-Quantitative Grade Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_QTDI_IDATA" title="Created Person-to-Quantitative Grade Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CH', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="QUNT_DIG" data-abap.bind="{type:'CHAR', length:'5'}" shlp.bind="{type: 'CT', id: 'TNWCHTM03'}" label="No field text"></ui-dg-column>
+   <ui-dg-column sortable field="FROM_DATE" data-abap.bind="{type:'DATS'}" label="Start Date"></ui-dg-column>
+   <ui-dg-column sortable field="TO_DATE" data-abap.bind="{type:'DATS'}" label="End Date"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date when Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Employee who Created Record"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time when Data Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date of Last Change"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Person who Last Changed Data"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time Data Record was Last Changed"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_QTDI_IDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_QTDI_IDATA.PERSON" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-combo bind="ASS_PER_QTDI_IDATA.QUNT_DIG" shlp.bind="{type: 'CT', id: 'TNWCHTM03'}" data-abap.bind="{type:'CHAR', length:'5'}"
+          label="No field text"></ui-combo>
+
+<ui-date date.bind="ASS_PER_QTDI_IDATA.FROM_DATE"  label="Start Date"></ui-date>
+
+<ui-date date.bind="ASS_PER_QTDI_IDATA.TO_DATE"  label="End Date"></ui-date>
+
+<ui-date date.bind="ASS_PER_QTDI_IDATA.CREATION_DATE"  label="IS-H: Date when Record Created"></ui-date>
+
+<ui-input bind="ASS_PER_QTDI_IDATA.CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Employee who Created Record"></ui-input>
+
+<ui-time time.bind="ASS_PER_QTDI_IDATA.CREATION_TIME"  label="IS-H: Time when Data Record Created"></ui-time>
+
+<ui-date date.bind="ASS_PER_QTDI_IDATA.UPDATE_DATE"  label="IS-H: Date of Last Change"></ui-date>
+
+<ui-input bind="ASS_PER_QTDI_IDATA.UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Person who Last Changed Data"></ui-input>
+
+<ui-time time.bind="ASS_PER_QTDI_IDATA.UPDATE_TIME"  label="IS-H: Time Data Record was Last Changed"></ui-time>
+
+<!-- Parameter: ASS_PER_QTDI_UDATA structure: BAPI1309PERQTDI  Changed Person-to-Quantitative Grade Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_QTDI_UDATA" title="Changed Person-to-Quantitative Grade Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CH', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="QUNT_DIG" data-abap.bind="{type:'CHAR', length:'5'}" shlp.bind="{type: 'CT', id: 'TNWCHTM03'}" label="No field text"></ui-dg-column>
+   <ui-dg-column sortable field="FROM_DATE" data-abap.bind="{type:'DATS'}" label="Start Date"></ui-dg-column>
+   <ui-dg-column sortable field="TO_DATE" data-abap.bind="{type:'DATS'}" label="End Date"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date when Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Employee who Created Record"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time when Data Record Created"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_DATE" data-abap.bind="{type:'DATS'}" label="IS-H: Date of Last Change"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}" label="IS-H: Name of Person who Last Changed Data"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_TIME" data-abap.bind="{type:'TIMS'}" label="IS-H: Time Data Record was Last Changed"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_QTDI_UDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_QTDI_UDATA.PERSON" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-combo bind="ASS_PER_QTDI_UDATA.QUNT_DIG" shlp.bind="{type: 'CT', id: 'TNWCHTM03'}" data-abap.bind="{type:'CHAR', length:'5'}"
+          label="No field text"></ui-combo>
+
+<ui-date date.bind="ASS_PER_QTDI_UDATA.FROM_DATE"  label="Start Date"></ui-date>
+
+<ui-date date.bind="ASS_PER_QTDI_UDATA.TO_DATE"  label="End Date"></ui-date>
+
+<ui-date date.bind="ASS_PER_QTDI_UDATA.CREATION_DATE"  label="IS-H: Date when Record Created"></ui-date>
+
+<ui-input bind="ASS_PER_QTDI_UDATA.CREATION_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Employee who Created Record"></ui-input>
+
+<ui-time time.bind="ASS_PER_QTDI_UDATA.CREATION_TIME"  label="IS-H: Time when Data Record Created"></ui-time>
+
+<ui-date date.bind="ASS_PER_QTDI_UDATA.UPDATE_DATE"  label="IS-H: Date of Last Change"></ui-date>
+
+<ui-input bind="ASS_PER_QTDI_UDATA.UPDATE_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Name of Person who Last Changed Data"></ui-input>
+
+<ui-time time.bind="ASS_PER_QTDI_UDATA.UPDATE_TIME"  label="IS-H: Time Data Record was Last Changed"></ui-time>
+
+<!-- Parameter: ASS_PER_QTDI_X structure: BAPI1309PERQTDIX  Change Data: Person-to-Quantitative Grade Asgmt -->
+
+<ui-datagrid data.bind="ASS_PER_QTDI_X" title="Change Data: Person-to-Quantitative Grade Asgmt"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CT', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="QUNT_DIG" data-abap.bind="{type:'CHAR', length:'5'}" label="No field text"></ui-dg-column>
+   <ui-dg-column sortable field="FROM_DATE" data-abap.bind="{type:'DATS'}" label="Start Date"></ui-dg-column>
+   <ui-dg-column sortable field="TO_DATE" data-abap.bind="{type:'DATS'}" label="End Date"></ui-dg-column>
+   <ui-dg-column sortable field="TO_DATEX" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="ACTION" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" label="IS-H: Action Type"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_QTDI_X.PERSON" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-input bind="ASS_PER_QTDI_X.QUNT_DIG" data-abap.bind="{type:'CHAR', length:'5'}"
+          label="No field text"></ui-input>
+
+<ui-date date.bind="ASS_PER_QTDI_X.FROM_DATE"  label="Start Date"></ui-date>
+
+<ui-date date.bind="ASS_PER_QTDI_X.TO_DATE"  label="End Date"></ui-date>
+
+<ui-checkbox value.bind="ASS_PER_QTDI_X.TO_DATEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-combo bind="ASS_PER_QTDI_X.ACTION" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Action Type"></ui-combo>
+
+<!-- Parameter: ASS_PER_SPEC_DDATA structure: BAPI1309PERSPEC  Deleted Person-to-Specialty Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_SPEC_DDATA" title="Deleted Person-to-Specialty Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CH', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="SPEC_CTGRY" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'FATYP'}" label="Category of Specialty Key"></ui-dg-column>
+   <ui-dg-column sortable field="SPECIALTY" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'4'}" shlp.bind="{type: 'SH', id: 'H_TNKFA'}" label="Specialty"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_SPEC_DDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_SPEC_DDATA.PERSON" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-combo bind="ASS_PER_SPEC_DDATA.SPEC_CTGRY" shlp.bind="{type: 'FV', id: 'FATYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Category of Specialty Key"></ui-combo>
+
+<ui-combo bind="ASS_PER_SPEC_DDATA.SPECIALTY" shlp.bind="{type: 'SH', id: 'H_TNKFA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'4'}"
+          label="Specialty"></ui-combo>
+
+<!-- Parameter: ASS_PER_SPEC_IDATA structure: BAPI1309PERSPEC  Created Person-to-Specialty Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_SPEC_IDATA" title="Created Person-to-Specialty Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CH', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="SPEC_CTGRY" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'FATYP'}" label="Category of Specialty Key"></ui-dg-column>
+   <ui-dg-column sortable field="SPECIALTY" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'4'}" shlp.bind="{type: 'SH', id: 'H_TNKFA'}" label="Specialty"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_SPEC_IDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_SPEC_IDATA.PERSON" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-combo bind="ASS_PER_SPEC_IDATA.SPEC_CTGRY" shlp.bind="{type: 'FV', id: 'FATYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Category of Specialty Key"></ui-combo>
+
+<ui-combo bind="ASS_PER_SPEC_IDATA.SPECIALTY" shlp.bind="{type: 'SH', id: 'H_TNKFA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'4'}"
+          label="Specialty"></ui-combo>
+
+<!-- Parameter: ASS_PER_SPEC_X structure: BAPI1309PERSPECX  Change Date: Person-to-Specialty Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_SPEC_X" title="Change Date: Person-to-Specialty Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ACTION" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" label="IS-H: Action Type"></ui-dg-column>
+   <ui-dg-column sortable field="SPECIALTY" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'4'}" shlp.bind="{type: 'CT', id: 'TNKFA'}" label="Specialty"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_SPEC_X.ACTION" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Action Type"></ui-combo>
+
+<ui-combo bind="ASS_PER_SPEC_X.SPECIALTY" shlp.bind="{type: 'CT', id: 'TNKFA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'4'}"
+          label="Specialty"></ui-combo>
+
+<!-- Parameter: ASS_PER_USR_DDATA structure: BAPI1309PERUSR  Deleted Person-to-User Name Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_USR_DDATA" title="Deleted Person-to-User Name Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="BPARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CH', id: 'NGPA'}" label="IS-H: Business Partner"></ui-dg-column>
+   <ui-dg-column sortable field="USER_NAME" data-abap.bind="{type:'CHAR', length:'12'}" shlp.bind="{type: 'CH', id: 'USR02'}" label="IS-H: Business Partner User"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_USR_DDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_USR_DDATA.BPARTNER" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Business Partner"></ui-combo>
+
+<ui-combo bind="ASS_PER_USR_DDATA.USER_NAME" shlp.bind="{type: 'CH', id: 'USR02'}" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Business Partner User"></ui-combo>
+
+<!-- Parameter: ASS_PER_USR_IDATA structure: BAPI1309PERUSR  Created Person-to-User Name Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_USR_IDATA" title="Created Person-to-User Name Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="BPARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CH', id: 'NGPA'}" label="IS-H: Business Partner"></ui-dg-column>
+   <ui-dg-column sortable field="USER_NAME" data-abap.bind="{type:'CHAR', length:'12'}" shlp.bind="{type: 'CH', id: 'USR02'}" label="IS-H: Business Partner User"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_USR_IDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_USR_IDATA.BPARTNER" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Business Partner"></ui-combo>
+
+<ui-combo bind="ASS_PER_USR_IDATA.USER_NAME" shlp.bind="{type: 'CH', id: 'USR02'}" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Business Partner User"></ui-combo>
+
+<!-- Parameter: ASS_PER_USR_X structure: BAPI1309PERUSRX  Change Data: Person-to-User Name Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_USR_X" title="Change Data: Person-to-User Name Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ACTION" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" label="IS-H: Action Type"></ui-dg-column>
+   <ui-dg-column sortable field="USER_NAME" data-abap.bind="{type:'CHAR', length:'12'}" shlp.bind="{type: 'CT', id: 'USR02'}" label="IS-H: Business Partner User"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_USR_X.ACTION" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Action Type"></ui-combo>
+
+<ui-combo bind="ASS_PER_USR_X.USER_NAME" shlp.bind="{type: 'CT', id: 'USR02'}" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Business Partner User"></ui-combo>
+
+<!-- Parameter: ASS_PER_WORKNO_DDATA structure: BAPI1309PERWORKNO  Deleted Person-Place of Work Number Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_WORKNO_DDATA" title="Deleted Person-Place of Work Number Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CH', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="WORKNO" data-abap.bind="{type:'CHAR', length:'9'}" label="No field text"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_WORKNO_DDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_WORKNO_DDATA.PERSON" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-input bind="ASS_PER_WORKNO_DDATA.WORKNO" data-abap.bind="{type:'CHAR', length:'9'}"
+          label="No field text"></ui-input>
+
+<ui-date date.bind="ASS_PER_WORKNO_DDATA.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="ASS_PER_WORKNO_DDATA.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<!-- Parameter: ASS_PER_WORKNO_IDATA structure: BAPI1309PERWORKNO  Created Person-Place of Work Number Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_WORKNO_IDATA" title="Created Person-Place of Work Number Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CH', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="WORKNO" data-abap.bind="{type:'CHAR', length:'9'}" label="No field text"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_WORKNO_IDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_WORKNO_IDATA.PERSON" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-input bind="ASS_PER_WORKNO_IDATA.WORKNO" data-abap.bind="{type:'CHAR', length:'9'}"
+          label="No field text"></ui-input>
+
+<ui-date date.bind="ASS_PER_WORKNO_IDATA.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="ASS_PER_WORKNO_IDATA.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<!-- Parameter: ASS_PER_WORKNO_UDATA structure: BAPI1309PERWORKNO  Changed Person-Place of Work Number Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_WORKNO_UDATA" title="Changed Person-Place of Work Number Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="CLIENT" data-abap.bind="{type:'CLNT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T000'}" label="Client"></ui-dg-column>
+   <ui-dg-column sortable field="PERSON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}" shlp.bind="{type: 'CH', id: 'NGPA'}" label="IS-H: Person Number"></ui-dg-column>
+   <ui-dg-column sortable field="WORKNO" data-abap.bind="{type:'CHAR', length:'9'}" label="No field text"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_WORKNO_UDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="ASS_PER_WORKNO_UDATA.PERSON" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-input bind="ASS_PER_WORKNO_UDATA.WORKNO" data-abap.bind="{type:'CHAR', length:'9'}"
+          label="No field text"></ui-input>
+
+<ui-date date.bind="ASS_PER_WORKNO_UDATA.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="ASS_PER_WORKNO_UDATA.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<!-- Parameter: ASS_PER_WORKNO_X structure: BAPI1309PERWORKNOX  Change Data: Person-Place of Work Number Assignment -->
+
+<ui-datagrid data.bind="ASS_PER_WORKNO_X" title="Change Data: Person-Place of Work Number Assignment"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ACTION" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" label="IS-H: Action Type"></ui-dg-column>
+   <ui-dg-column sortable field="WORKNO" data-abap.bind="{type:'CHAR', length:'9'}" label="No field text"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-From Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="BEGDATEX" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATE" data-abap.bind="{type:'DATS'}" label="IS-H: Valid-To Date of Record"></ui-dg-column>
+   <ui-dg-column sortable field="ENDDATEX" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ASS_PER_WORKNO_X.ACTION" shlp.bind="{type: 'FV', id: 'ISH_AKTTYP'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Action Type"></ui-combo>
+
+<ui-input bind="ASS_PER_WORKNO_X.WORKNO" data-abap.bind="{type:'CHAR', length:'9'}"
+          label="No field text"></ui-input>
+
+<ui-date date.bind="ASS_PER_WORKNO_X.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-checkbox value.bind="ASS_PER_WORKNO_X.BEGDATEX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-date date.bind="ASS_PER_WORKNO_X.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<ui-checkbox value.bind="ASS_PER_WORKNO_X.ENDDATEX" label="Updated information in related user data field"></ui-checkbox>
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Parameters -->
+
+<ui-datagrid data.bind="RETURN" title="Return Parameters"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-dg-column>
+   <ui-dg-column sortable field="ID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'T100A'}" label="Message Class"></ui-dg-column>
+   <ui-dg-column sortable field="NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Message Number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}" label="Message Text"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_NO" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CH', id: 'BALHDR'}" label="Application log: log number"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_MSG_NO" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'BALM'}" label="Application log: Internal message serial number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}" label="Parameter Name"></ui-dg-column>
+   <ui-dg-column sortable field="ROW" data-abap.bind="{type:'INT4', length:'+10'}" label="Lines in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="FIELD" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD03L'}" label="Field in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="SYSTEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'TBDLS'}" label="Logical system from which message originates"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<ui-combo bind="WORST_RETURNED_MSGTY" shlp.bind="{type: 'FV', id: 'ISH_BAPIRETMAXTY'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Most Severe Message Type Generated"></ui-combo>
+
+<!-- Parameter: ADDRESS_CDATA structure: BAPINADDR  Changed Address -->
+
+<ui-combo bind="ADDRESS_CDATA.ADDR_NO" shlp.bind="{type: 'CT', id: 'NADR'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="IS-H: Address Number"></ui-combo>
+
+<ui-combo bind="ADDRESS_CDATA.COUNTRY" shlp.bind="{type: 'CT', id: 'T005'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="IS-H: Country"></ui-combo>
+
+<ui-combo bind="ADDRESS_CDATA.COUNTRY_ISO" shlp.bind="{type: 'SH', id: 'F4_INTCA'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Country ISO code"></ui-combo>
+
+<ui-input bind="ADDRESS_CDATA.COUNTRY_TEXT" data-abap.bind="{type:'CHAR', length:'15'}"
+          label="Country Name"></ui-input>
+
+<ui-combo bind="ADDRESS_CDATA.REGION" shlp.bind="{type: 'CT', id: 'T005S'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="IS-H: Region (Federal State, Province, County)"></ui-combo>
+
+<ui-input bind="ADDRESS_CDATA.REGION_TEXT" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Description"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.PCD" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Postal Code of City"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.CITY" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="IS-H: City"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.STD_CITY" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Standardized City Name"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.DISTRICT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="IS-H: District"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.STD_DISTRICT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Standardized District"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.STR_NO" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="IS-H: Street"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.STD_STREET" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Standardized Street (40 Characters)"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.STR_SUP" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="IS-H: Other Designation Qualifying the Address"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.STD_STR_SUP" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="IS-H: Standardized Street Supplement"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.GEOGR_AREA" data-abap.bind="{type:'CHAR', length:'9'}"
+          label="IS-H: Geographical Area"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.GEOGR_AREA_TEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="IS-H: Name of Geographical Area"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.POBOX_PCD" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Postal Code of P.O. Box"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.POBOX" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Post Office Box"></ui-input>
+
+<ui-combo bind="ADDRESS_CDATA.POB_COUNTRY" shlp.bind="{type: 'CT', id: 'T005'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Country of Post Office Box"></ui-combo>
+
+<ui-combo bind="ADDRESS_CDATA.POB_COUNTRY_ISO" shlp.bind="{type: 'SH', id: 'F4_INTCA'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Country ISO code"></ui-combo>
+
+<ui-input bind="ADDRESS_CDATA.POB_COUNTRY_TXT" data-abap.bind="{type:'CHAR', length:'15'}"
+          label="Country Name"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.POBOX_CITY" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="IS-H: PO Box City"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.STD_POBOXCITY" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Standardized City Name of P.O. Box"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.COMPANY_PCD" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Postal Code of Company (for Major Accounts)"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.PHONENO" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="IS-H: Telephone Number"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.EXTENSION" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Telephone Number - Extension"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_CDATA.OTHER_PHONES" label="IS-H: Indicator that More Tel. Nos. Exist for Address"></ui-checkbox>
+
+<ui-input bind="ADDRESS_CDATA.FAXNO" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Fax Number"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.FAXEXTENSION" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Fax Number - Extension"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.TELEXNO" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="IS-H: Telex Number"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.BUILDING" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Block/House"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.FLOOR" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Block/House Level"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.UNIT" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="IS-H: Unit Number"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.ADDR_STRING" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="IS-H: Address"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.E_MAIL" data-abap.bind="{type:'CHAR', alpha:'SXIDN', length:'241'}"
+          label="IS-H: Internet Mail (SMTP) Address"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.HOUSE_NO" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="House Number"></ui-input>
+
+<ui-combo bind="ADDRESS_CDATA.STREET_LONG" shlp.bind="{type: 'SH', id: 'CLSTRTNAME'}" data-abap.bind="{type:'CHAR', length:'60'}"
+          label="Street"></ui-combo>
+
+<ui-input bind="ADDRESS_CDATA.STD_STREET_LONG" data-abap.bind="{type:'CHAR', length:'60'}"
+          label="Standardized Street"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.STR_SUPPL1" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Supplement 2"></ui-input>
+
+<ui-input bind="ADDRESS_CDATA.C_O_NAME" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="c/o Name"></ui-input>
+
+<ui-combo bind="ADDRESS_CDATA.DEFLT_COMM" shlp.bind="{type: 'CT', id: 'TSAC'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="IS-H: Standard Communication Type if ISH_BP_OM Active"></ui-combo>
+
+<ui-input bind="ADDRESS_CDATA.MOB_NMBR" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="IS-H: Cell Phone if ISH_BP_OM Active"></ui-input>
+
+<ui-checkbox value.bind="ADDRESS_CDATA.OTHER_MOBILES" label="IS-H: Indicator for Additional Cell Phones for Address"></ui-checkbox>
+
+<!-- Parameter: BPARTNER_CDATA structure: BAPI1309BPARTNER  Changed General Business Partner -->
+
+<ui-combo bind="BPARTNER_CDATA.BPARTNER" shlp.bind="{type: 'CT', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Business Partner"></ui-combo>
+
+<!-- Parameter: CUSTOMER_CDATA structure: BAPI1309CUSTOMER  Changed IS-H Customer -->
+
+<ui-combo bind="CUSTOMER_CDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="CUSTOMER_CDATA.CUSTOMER" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'DEB', length:'10'}"
+          label="IS-H: Customer (IS-H supplement)"></ui-combo>
+
+<ui-combo bind="CUSTOMER_CDATA.COMP_CODE" shlp.bind="{type: 'SH', id: 'C_T001'}" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}"
+          label="Company Code"></ui-combo>
+
+<ui-combo bind="CUSTOMER_CDATA.REF_CUST" shlp.bind="{type: 'CT', id: 'KNA1'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}"
+          label="Customer Number of FI Customer"></ui-combo>
+
+<ui-input bind="CUSTOMER_CDATA.COMMENT_CUST" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="IS-H: Comment on Customer"></ui-input>
+
+<ui-checkbox value.bind="CUSTOMER_CDATA.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<!-- Parameter: CUSTOMER_IDATA structure: BAPI1309CUSTOMER  Created IS-H Customer -->
+
+<ui-combo bind="CUSTOMER_IDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="CUSTOMER_IDATA.CUSTOMER" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'DEB', length:'10'}"
+          label="IS-H: Customer (IS-H supplement)"></ui-combo>
+
+<ui-combo bind="CUSTOMER_IDATA.COMP_CODE" shlp.bind="{type: 'SH', id: 'C_T001'}" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}"
+          label="Company Code"></ui-combo>
+
+<ui-combo bind="CUSTOMER_IDATA.REF_CUST" shlp.bind="{type: 'CT', id: 'KNA1'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}"
+          label="Customer Number of FI Customer"></ui-combo>
+
+<ui-input bind="CUSTOMER_IDATA.COMMENT_CUST" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="IS-H: Comment on Customer"></ui-input>
+
+<ui-checkbox value.bind="CUSTOMER_IDATA.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<!-- Parameter: EMPLOYER_CDATA structure: BAPI1309EMPLOYER  Changed Employer -->
+
+<ui-combo bind="EMPLOYER_CDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="EMPLOYER_CDATA.EMPLOYER" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ABG', length:'10'}"
+          label="IS-H: Employer"></ui-combo>
+
+<ui-input bind="EMPLOYER_CDATA.COMMENT_EMPL" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="IS-H: Comment on Employer"></ui-input>
+
+<ui-checkbox value.bind="EMPLOYER_CDATA.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<ui-combo bind="EMPLOYER_CDATA.ACCDNT_INS" shlp.bind="{type: 'CH', id: 'NKTR'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Reference to Responsible Workers' Compensation Association"></ui-combo>
+
+<!-- Parameter: EMPLOYER_IDATA structure: BAPI1309EMPLOYER  Created Employer -->
+
+<ui-combo bind="EMPLOYER_IDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="EMPLOYER_IDATA.EMPLOYER" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ABG', length:'10'}"
+          label="IS-H: Employer"></ui-combo>
+
+<ui-input bind="EMPLOYER_IDATA.COMMENT_EMPL" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="IS-H: Comment on Employer"></ui-input>
+
+<ui-checkbox value.bind="EMPLOYER_IDATA.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<ui-combo bind="EMPLOYER_IDATA.ACCDNT_INS" shlp.bind="{type: 'CH', id: 'NKTR'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Reference to Responsible Workers' Compensation Association"></ui-combo>
+
+<!-- Parameter: FEE_CDATA structure: BAPI1309FEE  Fee Recipient Changed -->
+
+<ui-combo bind="FEE_CDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="FEE_CDATA.PARTNER" shlp.bind="{type: 'CT', id: 'BUT000'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Person Number"></ui-combo>
+
+<ui-combo bind="FEE_CDATA.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-combo bind="FEE_CDATA.RANK" shlp.bind="{type: 'CT', id: 'TN12R'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="IS-H: Rank"></ui-combo>
+
+<ui-combo bind="FEE_CDATA.FEE_AUTHORIZATION" shlp.bind="{type: 'CT', id: 'TNWCH95'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Fee Authorization"></ui-combo>
+
+<ui-date date.bind="FEE_CDATA.BEGIN_FEE_AUTHORIZATION"  label="Start of Validity of Fee Authorization Assignment"></ui-date>
+
+<ui-date date.bind="FEE_CDATA.END_FEE_AUTHORIZATION"  label="End of Validity of Fee Authorization Assignment"></ui-date>
+
+<ui-date date.bind="FEE_CDATA.BEGIN_FEE_BLOCK"  label="Start Date of Fee Block"></ui-date>
+
+<ui-date date.bind="FEE_CDATA.END_FEE_BLOCK"  label="End Date of Fee Block"></ui-date>
+
+<ui-input bind="FEE_CDATA.EXT_PERSONNEL_NUMBER" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="External Personnel Number"></ui-input>
+
+<ui-input bind="FEE_CDATA.MAIN_VENDOR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'16'}"
+          label="Main Vendor"></ui-input>
+
+<ui-date date.bind="FEE_CDATA.ENTRYDATE"  label="Physician's Entry Date"></ui-date>
+
+<ui-date date.bind="FEE_CDATA.LEAVINGDATE"  label="Physician's Leaving Date"></ui-date>
+
+<ui-checkbox value.bind="FEE_CDATA.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<ui-input bind="FEE_CDATA.AHV_NUMBER" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="AHV Number"></ui-input>
+
+<ui-input bind="FEE_CDATA.USERFIELD1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="User Field 1"></ui-input>
+
+<ui-input bind="FEE_CDATA.USERFIELD2" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="User Field 2"></ui-input>
+
+<ui-input bind="FEE_CDATA.USERFIELD3" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="User Field 3"></ui-input>
+
+<!-- Parameter: FEE_IDATA structure: BAPI1309FEE  Fee Recipient Created -->
+
+<ui-combo bind="FEE_IDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="FEE_IDATA.PARTNER" shlp.bind="{type: 'CT', id: 'BUT000'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Person Number"></ui-combo>
+
+<ui-combo bind="FEE_IDATA.INSTITUTION" shlp.bind="{type: 'CT', id: 'TN01'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EIN', length:'4'}"
+          label="Institution"></ui-combo>
+
+<ui-combo bind="FEE_IDATA.RANK" shlp.bind="{type: 'CT', id: 'TN12R'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="IS-H: Rank"></ui-combo>
+
+<ui-combo bind="FEE_IDATA.FEE_AUTHORIZATION" shlp.bind="{type: 'CT', id: 'TNWCH95'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Fee Authorization"></ui-combo>
+
+<ui-date date.bind="FEE_IDATA.BEGIN_FEE_AUTHORIZATION"  label="Start of Validity of Fee Authorization Assignment"></ui-date>
+
+<ui-date date.bind="FEE_IDATA.END_FEE_AUTHORIZATION"  label="End of Validity of Fee Authorization Assignment"></ui-date>
+
+<ui-date date.bind="FEE_IDATA.BEGIN_FEE_BLOCK"  label="Start Date of Fee Block"></ui-date>
+
+<ui-date date.bind="FEE_IDATA.END_FEE_BLOCK"  label="End Date of Fee Block"></ui-date>
+
+<ui-input bind="FEE_IDATA.EXT_PERSONNEL_NUMBER" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="External Personnel Number"></ui-input>
+
+<ui-input bind="FEE_IDATA.MAIN_VENDOR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'16'}"
+          label="Main Vendor"></ui-input>
+
+<ui-date date.bind="FEE_IDATA.ENTRYDATE"  label="Physician's Entry Date"></ui-date>
+
+<ui-date date.bind="FEE_IDATA.LEAVINGDATE"  label="Physician's Leaving Date"></ui-date>
+
+<ui-checkbox value.bind="FEE_IDATA.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<ui-input bind="FEE_IDATA.AHV_NUMBER" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="AHV Number"></ui-input>
+
+<ui-input bind="FEE_IDATA.USERFIELD1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="User Field 1"></ui-input>
+
+<ui-input bind="FEE_IDATA.USERFIELD2" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="User Field 2"></ui-input>
+
+<ui-input bind="FEE_IDATA.USERFIELD3" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="User Field 3"></ui-input>
+
+<!-- Parameter: HOSPITAL_CDATA structure: BAPI1309HOSPITAL  Changed Hospital -->
+
+<ui-combo bind="HOSPITAL_CDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="HOSPITAL_CDATA.HOSPITAL" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KRH', length:'10'}"
+          label="IS-H: Identification of Hospital"></ui-combo>
+
+<ui-input bind="HOSPITAL_CDATA.COMMENT_HOSP" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="IS-H: Comment on Hospital"></ui-input>
+
+<ui-checkbox value.bind="HOSPITAL_CDATA.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<ui-combo bind="HOSPITAL_CDATA.HOSPITAL_TYPE" shlp.bind="{type: 'CT', id: 'TN18E'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'2'}"
+          label="IS-H: Hospital Type / Category"></ui-combo>
+
+<ui-input bind="HOSPITAL_CDATA.SIRET" data-abap.bind="{type:'CHAR', length:'14'}"
+          label="SIRET Number"></ui-input>
+
+<!-- Parameter: HOSPITAL_IDATA structure: BAPI1309HOSPITAL  Created Hospital -->
+
+<ui-combo bind="HOSPITAL_IDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="HOSPITAL_IDATA.HOSPITAL" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KRH', length:'10'}"
+          label="IS-H: Identification of Hospital"></ui-combo>
+
+<ui-input bind="HOSPITAL_IDATA.COMMENT_HOSP" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="IS-H: Comment on Hospital"></ui-input>
+
+<ui-checkbox value.bind="HOSPITAL_IDATA.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<ui-combo bind="HOSPITAL_IDATA.HOSPITAL_TYPE" shlp.bind="{type: 'CT', id: 'TN18E'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'2'}"
+          label="IS-H: Hospital Type / Category"></ui-combo>
+
+<ui-input bind="HOSPITAL_IDATA.SIRET" data-abap.bind="{type:'CHAR', length:'14'}"
+          label="SIRET Number"></ui-input>
+
+<!-- Parameter: INSPROVIDER_CDATA structure: BAPI1309INS_PROVIDER  Changed Insurance Provider -->
+
+<ui-combo bind="INSPROVIDER_CDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="INSPROVIDER_CDATA.INS_PROVIDER" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KOT', length:'10'}"
+          label="IS-H: Insurance Provider"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.GRP_IND" label="IS-H: Indicator Denoting Insurance Provider Group"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_CDATA.IPTYPE" shlp.bind="{type: 'SH', id: 'H_TN18'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="IS-H: Insurance Provider Type (e.g. Private, Statutory)"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.IPT_CTRL" label="IS-H: Determine IV Control Parameters Using Ins. Prov. Type"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_CDATA.HD_OFFICE" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Key Identifying Insurance Provider's Head Office"></ui-combo>
+
+<ui-input bind="INSPROVIDER_CDATA.HI_COMPANY_NUMBER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'12'}"
+          label="IS-H: Number Identifying the Health Insurer"></ui-input>
+
+<ui-combo bind="INSPROVIDER_CDATA.RESPONSIBLE_PPA" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="IS-H: Responsible PPA (panel physician association)"></ui-combo>
+
+<ui-input bind="INSPROVIDER_CDATA.HICNO_HCSC" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="IS-H: Health Insurer Number as per Healthcare Smart Card"></ui-input>
+
+<ui-input bind="INSPROVIDER_CDATA.COMMENT_IP" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="IS-H: Comment on Insurance Provider"></ui-input>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.LONG_TEXT" label="Indicator that Long Text Exists"></ui-checkbox>
+
+<ui-input bind="INSPROVIDER_CDATA.CPERS_INPATIENT" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Contact Person, e.g. Inpatient"></ui-input>
+
+<ui-input bind="INSPROVIDER_CDATA.CPERS_OUTPATIENT" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Contact Person, e.g. Outpatient"></ui-input>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.IV_PROCEDURE" label="IS-H: Insurance Verification Procedure 'X'=Yes, ' '=No"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.MANUALLY_INVOICE_PROC" label="IS-H: Manual Invoice Processing is Allowed"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.INVOICE_LIST" label="IS-H: Invoice List Output per IP at Invoice Print"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.INTERIM_BILL" label="IS-H: Ind. Specifying if Int. Bill. is to be Performed"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_CDATA.SORT_RULES" shlp.bind="{type: 'FV', id: 'ISH_SORT'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="IS-H: Sort Rules for Billing"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.INTBILL_WO_IVC" label="IS-H: Interim Billing for Svces w/o Confirmation of Coverage"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.FINBILL_WO_IVC" label="IS-H: Final Billing for Svces w/o Confirmation of Coverage"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.FINBILL_DIAG" label="IS-H: Final Billing only if Diagnosis Entered"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.SEP_INVOICE" label="IS-H: Separate Invoice for Companion"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.INTBILL_DAYS" label="IS-H: Interim Billing After x Days as of Admission"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_CDATA.INTBILL_INTERV" shlp.bind="{type: 'FV', id: 'ISH_INTERV'}" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="IS-H: Interim Billing Interval (Weeks/Days/Quarter)"></ui-combo>
+
+<ui-combo bind="INSPROVIDER_CDATA.FINBILL_INTERV" shlp.bind="{type: 'FV', id: 'ISH_INTERV'}" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="IS-H: Final Billing Interval (Weekly, Every 2 Weeks,Monthly)"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.IV_REMINDER" label="IS-H: Insurance Verification Reminder; 'X'=Yes ' '=No"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.REMINDER_PERIOD" label="IS-H: Reminder Period for IV Request in Days"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_CDATA.IV_DISPATCH" shlp.bind="{type: 'FV', id: 'KUEVERS'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Send IV Request Only if Diagnosis Is Maintained"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.PRINT_DIAGN" label="IS-H: Print Diagnosis on IV Request (Yes/No)"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.ADMISSION_NOTIFIC" label="IS-H: Admission Notif. to Be Printed in Standard Form Print"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.DISCHARGE_NOTIFIC" label="IS-H: Discharge Notification to Be Created"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_CDATA.EXTENSION_IVR" shlp.bind="{type: 'FV', id: 'ISH_INTERV'}" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="IS-H: Interval for Extending IV Requests"></ui-combo>
+
+<ui-combo bind="INSPROVIDER_CDATA.PERIOD_IVR" shlp.bind="{type: 'FV', id: 'ISH_INTERV'}" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="IS-H: Interval for Creating IV Requests"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.COPAYMENT_OBL" label="IS-H: Insurance Provider Requires Copayment"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_CDATA.COPAYMENT_PROC" shlp.bind="{type: 'FV', id: 'VERFZUZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Copayment Procedure for Billing"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.START_DAY" label="IS-H: Start Day for Interval"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_CDATA.CURRENCY" shlp.bind="{type: 'CT', id: 'TCURC'}" data-abap.bind="{type:'CUKY', mid:'FWS', length:'5'}"
+          label="IS-H: Currency of Insurance Provider"></ui-combo>
+
+<ui-input bind="INSPROVIDER_CDATA.CURRENCY_ISO" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO Currency Code"></ui-input>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_CDATA.TAX_CLASS" shlp.bind="{type: 'CT', id: 'TSKD'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Tax Classification of Insurance Provider"></ui-combo>
+
+<ui-combo bind="INSPROVIDER_CDATA.DATA_COLLECTION_POINT" shlp.bind="{type: 'CH', id: 'NC301P'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Data Collection Point for EDI Message Transmission"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.HO_NOT_RELEVANT" label="IS-H:Head Office for HC Smart Card, not Relevant for Billing"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.CORRESP_TO_HO" label="IS-H: Head Office Valid for Forms"></ui-checkbox>
+
+<ui-input bind="INSPROVIDER_CDATA.SEARCHNAME" data-abap.bind="{type:'CHAR', length:'60'}"
+          label="IS-H: HI Search Name From Ins. Provider Master File (PPA)"></ui-input>
+
+<ui-input bind="INSPROVIDER_CDATA.HIC_SNAME" data-abap.bind="{type:'CHAR', length:'60'}"
+          label="IS-H: Stnd. HI Search Name from Ins. Provider Master File"></ui-input>
+
+<ui-input bind="INSPROVIDER_CDATA.IV_REJ_DEADLINE" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="IS-H CH: Rejection deadline for insurance verification"></ui-input>
+
+<ui-combo bind="INSPROVIDER_CDATA.IV_PROC" shlp.bind="{type: 'CT', id: 'TNWCH77'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="IS-H CH: IV procedure"></ui-combo>
+
+<ui-input bind="INSPROVIDER_CDATA.EANO" data-abap.bind="{type:'CHAR', length:'13'}"
+          label="IS-H CH: European Article Number (EAN)"></ui-input>
+
+<ui-combo bind="INSPROVIDER_CDATA.INVOICE_PRINT" shlp.bind="{type: 'FV', id: 'ISH_RDRUCK'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Control for Invoice Print"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.ZERO_BILL" label="IS-H: Print Pro Forma Invoice"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_CDATA.TIERS_PAY" shlp.bind="{type: 'FV', id: 'XFLAG'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="No field text"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.SOCIAL_INS" label="IS-H: Indicator for Social Insurance"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.PRIVATE_SIGN" label="Institution Is Private"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.COMPLEMENT_INS" label="IS-H FR: Complementary Insurance"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.INS_PROV_ELSASS" label="IS-H FR: Insurance Provider ALSACE"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.LIM_PAYDIST_OVER_VTYP" label="IS-H FR: Limit for Payment Distribution by Contract Scheme"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.WITHOUT_FLAT_RATE" label="IS-H FR: Without Per Diem"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_CDATA.HEALTH_INS_SCHEME_TYP" shlp.bind="{type: 'FV', id: '/ISHFR/ISH_HIST'}" data-abap.bind="{type:'NUMC', length:'2'}"
+          label="IS-H FR: Health Insurer Type"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_CDATA.COUNCIL_GEN" label="IS-H FR: General Council"></ui-checkbox>
+
+<!-- Parameter: INSPROVIDER_IDATA structure: BAPI1309INS_PROVIDER  Created Insurance Provider -->
+
+<ui-combo bind="INSPROVIDER_IDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="INSPROVIDER_IDATA.INS_PROVIDER" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KOT', length:'10'}"
+          label="IS-H: Insurance Provider"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.GRP_IND" label="IS-H: Indicator Denoting Insurance Provider Group"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_IDATA.IPTYPE" shlp.bind="{type: 'SH', id: 'H_TN18'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="IS-H: Insurance Provider Type (e.g. Private, Statutory)"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.IPT_CTRL" label="IS-H: Determine IV Control Parameters Using Ins. Prov. Type"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_IDATA.HD_OFFICE" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Key Identifying Insurance Provider's Head Office"></ui-combo>
+
+<ui-input bind="INSPROVIDER_IDATA.HI_COMPANY_NUMBER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'12'}"
+          label="IS-H: Number Identifying the Health Insurer"></ui-input>
+
+<ui-combo bind="INSPROVIDER_IDATA.RESPONSIBLE_PPA" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="IS-H: Responsible PPA (panel physician association)"></ui-combo>
+
+<ui-input bind="INSPROVIDER_IDATA.HICNO_HCSC" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="IS-H: Health Insurer Number as per Healthcare Smart Card"></ui-input>
+
+<ui-input bind="INSPROVIDER_IDATA.COMMENT_IP" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="IS-H: Comment on Insurance Provider"></ui-input>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.LONG_TEXT" label="Indicator that Long Text Exists"></ui-checkbox>
+
+<ui-input bind="INSPROVIDER_IDATA.CPERS_INPATIENT" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Contact Person, e.g. Inpatient"></ui-input>
+
+<ui-input bind="INSPROVIDER_IDATA.CPERS_OUTPATIENT" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Contact Person, e.g. Outpatient"></ui-input>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.IV_PROCEDURE" label="IS-H: Insurance Verification Procedure 'X'=Yes, ' '=No"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.MANUALLY_INVOICE_PROC" label="IS-H: Manual Invoice Processing is Allowed"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.INVOICE_LIST" label="IS-H: Invoice List Output per IP at Invoice Print"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.INTERIM_BILL" label="IS-H: Ind. Specifying if Int. Bill. is to be Performed"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_IDATA.SORT_RULES" shlp.bind="{type: 'FV', id: 'ISH_SORT'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="IS-H: Sort Rules for Billing"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.INTBILL_WO_IVC" label="IS-H: Interim Billing for Svces w/o Confirmation of Coverage"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.FINBILL_WO_IVC" label="IS-H: Final Billing for Svces w/o Confirmation of Coverage"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.FINBILL_DIAG" label="IS-H: Final Billing only if Diagnosis Entered"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.SEP_INVOICE" label="IS-H: Separate Invoice for Companion"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.INTBILL_DAYS" label="IS-H: Interim Billing After x Days as of Admission"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_IDATA.INTBILL_INTERV" shlp.bind="{type: 'FV', id: 'ISH_INTERV'}" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="IS-H: Interim Billing Interval (Weeks/Days/Quarter)"></ui-combo>
+
+<ui-combo bind="INSPROVIDER_IDATA.FINBILL_INTERV" shlp.bind="{type: 'FV', id: 'ISH_INTERV'}" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="IS-H: Final Billing Interval (Weekly, Every 2 Weeks,Monthly)"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.IV_REMINDER" label="IS-H: Insurance Verification Reminder; 'X'=Yes ' '=No"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.REMINDER_PERIOD" label="IS-H: Reminder Period for IV Request in Days"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_IDATA.IV_DISPATCH" shlp.bind="{type: 'FV', id: 'KUEVERS'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Send IV Request Only if Diagnosis Is Maintained"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.PRINT_DIAGN" label="IS-H: Print Diagnosis on IV Request (Yes/No)"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.ADMISSION_NOTIFIC" label="IS-H: Admission Notif. to Be Printed in Standard Form Print"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.DISCHARGE_NOTIFIC" label="IS-H: Discharge Notification to Be Created"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_IDATA.EXTENSION_IVR" shlp.bind="{type: 'FV', id: 'ISH_INTERV'}" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="IS-H: Interval for Extending IV Requests"></ui-combo>
+
+<ui-combo bind="INSPROVIDER_IDATA.PERIOD_IVR" shlp.bind="{type: 'FV', id: 'ISH_INTERV'}" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="IS-H: Interval for Creating IV Requests"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.COPAYMENT_OBL" label="IS-H: Insurance Provider Requires Copayment"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_IDATA.COPAYMENT_PROC" shlp.bind="{type: 'FV', id: 'VERFZUZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Copayment Procedure for Billing"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.START_DAY" label="IS-H: Start Day for Interval"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_IDATA.CURRENCY" shlp.bind="{type: 'CT', id: 'TCURC'}" data-abap.bind="{type:'CUKY', mid:'FWS', length:'5'}"
+          label="IS-H: Currency of Insurance Provider"></ui-combo>
+
+<ui-input bind="INSPROVIDER_IDATA.CURRENCY_ISO" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO Currency Code"></ui-input>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_IDATA.TAX_CLASS" shlp.bind="{type: 'CT', id: 'TSKD'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Tax Classification of Insurance Provider"></ui-combo>
+
+<ui-combo bind="INSPROVIDER_IDATA.DATA_COLLECTION_POINT" shlp.bind="{type: 'CH', id: 'NC301P'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Data Collection Point for EDI Message Transmission"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.HO_NOT_RELEVANT" label="IS-H:Head Office for HC Smart Card, not Relevant for Billing"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.CORRESP_TO_HO" label="IS-H: Head Office Valid for Forms"></ui-checkbox>
+
+<ui-input bind="INSPROVIDER_IDATA.SEARCHNAME" data-abap.bind="{type:'CHAR', length:'60'}"
+          label="IS-H: HI Search Name From Ins. Provider Master File (PPA)"></ui-input>
+
+<ui-input bind="INSPROVIDER_IDATA.HIC_SNAME" data-abap.bind="{type:'CHAR', length:'60'}"
+          label="IS-H: Stnd. HI Search Name from Ins. Provider Master File"></ui-input>
+
+<ui-input bind="INSPROVIDER_IDATA.IV_REJ_DEADLINE" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="IS-H CH: Rejection deadline for insurance verification"></ui-input>
+
+<ui-combo bind="INSPROVIDER_IDATA.IV_PROC" shlp.bind="{type: 'CT', id: 'TNWCH77'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="IS-H CH: IV procedure"></ui-combo>
+
+<ui-input bind="INSPROVIDER_IDATA.EANO" data-abap.bind="{type:'CHAR', length:'13'}"
+          label="IS-H CH: European Article Number (EAN)"></ui-input>
+
+<ui-combo bind="INSPROVIDER_IDATA.INVOICE_PRINT" shlp.bind="{type: 'FV', id: 'ISH_RDRUCK'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="IS-H: Control for Invoice Print"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.ZERO_BILL" label="IS-H: Print Pro Forma Invoice"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_IDATA.TIERS_PAY" shlp.bind="{type: 'FV', id: 'XFLAG'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="No field text"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.SOCIAL_INS" label="IS-H: Indicator for Social Insurance"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.PRIVATE_SIGN" label="Institution Is Private"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.COMPLEMENT_INS" label="IS-H FR: Complementary Insurance"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.INS_PROV_ELSASS" label="IS-H FR: Insurance Provider ALSACE"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.LIM_PAYDIST_OVER_VTYP" label="IS-H FR: Limit for Payment Distribution by Contract Scheme"></ui-checkbox>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.WITHOUT_FLAT_RATE" label="IS-H FR: Without Per Diem"></ui-checkbox>
+
+<ui-combo bind="INSPROVIDER_IDATA.HEALTH_INS_SCHEME_TYP" shlp.bind="{type: 'FV', id: '/ISHFR/ISH_HIST'}" data-abap.bind="{type:'NUMC', length:'2'}"
+          label="IS-H FR: Health Insurer Type"></ui-combo>
+
+<ui-checkbox value.bind="INSPROVIDER_IDATA.COUNCIL_GEN" label="IS-H FR: General Council"></ui-checkbox>
+
+<!-- Parameter: PERSON_CDATA structure: BAPI1309PERSON  Changed Person -->
+
+<ui-combo bind="PERSON_CDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="PERSON_CDATA.PERSON" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-date date.bind="PERSON_CDATA.DOB"  label="IS-H: Birthdate"></ui-date>
+
+<ui-input bind="PERSON_CDATA.PHONE" data-abap.bind="{type:'CHAR', length:'16'}"
+          label="IS-H: Extension Number"></ui-input>
+
+<ui-checkbox value.bind="PERSON_CDATA.EMPL_IND" label="Is-H: Person is Employee"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_CDATA.HR_IND" label="IS-H: Personal Data Originates in HR System"></ui-checkbox>
+
+<ui-input bind="PERSON_CDATA.EX_PER_NO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="IS-H: External Personnel Number"></ui-input>
+
+<ui-checkbox value.bind="PERSON_CDATA.PHYS_IND" label="IS-H: Indicator that Person Is Physician"></ui-checkbox>
+
+<ui-input bind="PERSON_CDATA.PHYS_NO" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Identifier for a Physician"></ui-input>
+
+<ui-checkbox value.bind="PERSON_CDATA.NURSE_IND" label="IS-H: Indicator that Person is Nurse"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_CDATA.EXT_PHYS_IND" label="IS-H: Indicator that Person is External Physician"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_CDATA.ACCRED_IND" label="IS-H: Physician Has External Accreditation"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_CDATA.ACCRED_ALLOW" label="IS-H: Indicator that physician has internal accreditation"></ui-checkbox>
+
+<ui-input bind="PERSON_CDATA.COMMENT_PER" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="IS-H: Comment on Person"></ui-input>
+
+<ui-date date.bind="PERSON_CDATA.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="PERSON_CDATA.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<ui-checkbox value.bind="PERSON_CDATA.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<ui-combo bind="PERSON_CDATA.SPECIALTY" shlp.bind="{type: 'SH', id: 'H_TNKFA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'4'}"
+          label="Specialty"></ui-combo>
+
+<ui-combo bind="PERSON_CDATA.SPEC_TYPE" shlp.bind="{type: 'FV', id: 'ISH_SPTYP'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'2'}"
+          label="IS-H: Specialist Type"></ui-combo>
+
+<ui-combo bind="PERSON_CDATA.RANK" shlp.bind="{type: 'CT', id: 'TN12R'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="IS-H: Rank"></ui-combo>
+
+<ui-date date.bind="PERSON_CDATA.RKDATE"  label="Start of Validity for Rank of a Person"></ui-date>
+
+<ui-combo bind="PERSON_CDATA.OLD_RANK" shlp.bind="{type: 'CT', id: 'TN12R'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="IS-H: Prior Rank"></ui-combo>
+
+<ui-input bind="PERSON_CDATA.NIFNO" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H CH: NIF number"></ui-input>
+
+<ui-input bind="PERSON_CDATA.FIXKVNO" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="No field text"></ui-input>
+
+<ui-checkbox value.bind="PERSON_CDATA.VOLUNTEER" label="Indicates That Person Is Volunteer"></ui-checkbox>
+
+<ui-input bind="PERSON_CDATA.ZSR_NUM" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="No field text"></ui-input>
+
+<!-- Parameter: PERSON_IDATA structure: BAPI1309PERSON  Created Person -->
+
+<ui-combo bind="PERSON_IDATA.CLIENT" shlp.bind="{type: 'SH', id: 'H_T000'}" data-abap.bind="{type:'CLNT', length:'3'}"
+          label="Client"></ui-combo>
+
+<ui-combo bind="PERSON_IDATA.PERSON" shlp.bind="{type: 'CH', id: 'NGPA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NGP', length:'10'}"
+          label="IS-H: Person Number"></ui-combo>
+
+<ui-date date.bind="PERSON_IDATA.DOB"  label="IS-H: Birthdate"></ui-date>
+
+<ui-input bind="PERSON_IDATA.PHONE" data-abap.bind="{type:'CHAR', length:'16'}"
+          label="IS-H: Extension Number"></ui-input>
+
+<ui-checkbox value.bind="PERSON_IDATA.EMPL_IND" label="Is-H: Person is Employee"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_IDATA.HR_IND" label="IS-H: Personal Data Originates in HR System"></ui-checkbox>
+
+<ui-input bind="PERSON_IDATA.EX_PER_NO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="IS-H: External Personnel Number"></ui-input>
+
+<ui-checkbox value.bind="PERSON_IDATA.PHYS_IND" label="IS-H: Indicator that Person Is Physician"></ui-checkbox>
+
+<ui-input bind="PERSON_IDATA.PHYS_NO" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H: Identifier for a Physician"></ui-input>
+
+<ui-checkbox value.bind="PERSON_IDATA.NURSE_IND" label="IS-H: Indicator that Person is Nurse"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_IDATA.EXT_PHYS_IND" label="IS-H: Indicator that Person is External Physician"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_IDATA.ACCRED_IND" label="IS-H: Physician Has External Accreditation"></ui-checkbox>
+
+<ui-checkbox value.bind="PERSON_IDATA.ACCRED_ALLOW" label="IS-H: Indicator that physician has internal accreditation"></ui-checkbox>
+
+<ui-input bind="PERSON_IDATA.COMMENT_PER" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="IS-H: Comment on Person"></ui-input>
+
+<ui-date date.bind="PERSON_IDATA.BEGDATE"  label="IS-H: Valid-From Date of Record"></ui-date>
+
+<ui-date date.bind="PERSON_IDATA.ENDDATE"  label="IS-H: Valid-To Date of Record"></ui-date>
+
+<ui-checkbox value.bind="PERSON_IDATA.DELETION_IND" label="Deletion Flag/Indicator"></ui-checkbox>
+
+<ui-combo bind="PERSON_IDATA.SPECIALTY" shlp.bind="{type: 'SH', id: 'H_TNKFA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'4'}"
+          label="Specialty"></ui-combo>
+
+<ui-combo bind="PERSON_IDATA.SPEC_TYPE" shlp.bind="{type: 'FV', id: 'ISH_SPTYP'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'2'}"
+          label="IS-H: Specialist Type"></ui-combo>
+
+<ui-combo bind="PERSON_IDATA.RANK" shlp.bind="{type: 'CT', id: 'TN12R'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="IS-H: Rank"></ui-combo>
+
+<ui-date date.bind="PERSON_IDATA.RKDATE"  label="Start of Validity for Rank of a Person"></ui-date>
+
+<ui-combo bind="PERSON_IDATA.OLD_RANK" shlp.bind="{type: 'CT', id: 'TN12R'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="IS-H: Prior Rank"></ui-combo>
+
+<ui-input bind="PERSON_IDATA.NIFNO" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="IS-H CH: NIF number"></ui-input>
+
+<ui-input bind="PERSON_IDATA.FIXKVNO" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="No field text"></ui-input>
+
+<ui-checkbox value.bind="PERSON_IDATA.VOLUNTEER" label="Indicates That Person Is Volunteer"></ui-checkbox>
+
+<ui-input bind="PERSON_IDATA.ZSR_NUM" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="No field text"></ui-input>

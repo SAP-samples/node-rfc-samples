@@ -1,0 +1,13 @@
+<!-- SH H_T141 General Purchasing Status for Service : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.MMSTA" shlp.bind="{type: 'CT', id: 'T141'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Material status from MM/PP view"></ui-combo>
+<ui-input bind="searchParamLow.MTSTB" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="Description of material status from MM/PP view"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="MMSTA" data-abap.bind="{type:'CHAR', length:'2'}" label="Material status from MM/PP view"></ui-dg-column>
+   <ui-dg-column sortable field="MTSTB" data-abap.bind="{type:'CHAR', length:'25'}" label="Description of material status from MM/PP view"></ui-dg-column>
+</ui-datagrid>

@@ -1,0 +1,22 @@
+<!-- SH FSH_VMVL Outbound Deliveries Per Seasons : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.VBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}"
+          label="Delivery"></ui-input>
+<ui-input bind="searchParamLow.FSH_SEASON_YEAR" data-abap.bind="{type:'CHAR', alpha:'GJAHR', mid:'WMSAISJ', length:'4'}"
+          label="Season Year"></ui-input>
+<ui-input bind="searchParamLow.FSH_SEASON" data-abap.bind="{type:'CHAR', mid:'SAISO', length:'4'}"
+          label="Season"></ui-input>
+<ui-input bind="searchParamLow.FSH_COLLECTION" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Fashion Collection"></ui-input>
+<ui-input bind="searchParamLow.FSH_THEME" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Fashion Theme"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="FSH_SEASON_YEAR" data-abap.bind="{type:'CHAR', alpha:'GJAHR', mid:'WMSAISJ', length:'4'}" label="Season Year"></ui-dg-column>
+   <ui-dg-column sortable field="FSH_SEASON" data-abap.bind="{type:'CHAR', mid:'SAISO', length:'4'}" label="Season"></ui-dg-column>
+   <ui-dg-column sortable field="FSH_COLLECTION" data-abap.bind="{type:'CHAR', length:'2'}" label="Fashion Collection"></ui-dg-column>
+   <ui-dg-column sortable field="FSH_THEME" data-abap.bind="{type:'CHAR', length:'4'}" label="Fashion Theme"></ui-dg-column>
+   <ui-dg-column sortable field="VBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}" label="Delivery"></ui-dg-column>
+</ui-datagrid>

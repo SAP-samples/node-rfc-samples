@@ -1,0 +1,13 @@
+<!-- SH H_T025 Valuation Class : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.BKLAS" shlp.bind="{type: 'CT', id: 'T025'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Valuation Class"></ui-combo>
+<ui-input bind="searchParamLow.BKBEZ" data-abap.bind="{type:'CHAR', length:'25'}"
+          label="Description of valuation class"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="BKLAS" data-abap.bind="{type:'CHAR', length:'4'}" label="Valuation Class"></ui-dg-column>
+   <ui-dg-column sortable field="BKBEZ" data-abap.bind="{type:'CHAR', length:'25'}" label="Description of valuation class"></ui-dg-column>
+</ui-datagrid>

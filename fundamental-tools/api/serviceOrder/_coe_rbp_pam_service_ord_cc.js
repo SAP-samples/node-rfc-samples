@@ -1,7 +1,7 @@
 //
-// /COE/RBP_PAM_SERVICE_ORD_CC var: 1  struct: 0  table: 3  exception: 0
+// /COE/RBP_PAM_SERVICE_ORD_CC exception: 0  struct: 0  table: 3  var: 1
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore
@@ -9,13 +9,13 @@ const parameters = {
 
 // IMPORT PARAMETERS
 
-// IV_ORDERID       :           "", // CHAR (12) ALPHA=ALPHA no text (en) SU3=ANR
+// IV_ORDERID       :           "", // CHAR (12) ALPHA=ALPHA no text (undefined) SU3=ANR
 
 // EXPORT PARAMETERS
 
-// ET_COSTS_DETAILS :           [], // /COE/RBP_T_PAM_ORDER_COSTS no text (en)
-// ET_COSTS_SUM     :           [], // BAPI_ALM_ORDER_COSTS_SUM_ET no text (en)
-// ET_RETURN        :           [], // BAPIRETTAB no text (en)
+// ET_COSTS_DETAILS :           [], // /COE/RBP_T_PAM_ORDER_COSTS no text (undefined)
+// ET_COSTS_SUM     :           [], // BAPI_ALM_ORDER_COSTS_SUM_ET no text (undefined)
+// ET_RETURN        :           [], // BAPIRETTAB no text (undefined)
 };
 
 const result = await client.call("/COE/RBP_PAM_SERVICE_ORD_CC", parameters);

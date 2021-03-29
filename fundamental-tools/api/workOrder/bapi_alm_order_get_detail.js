@@ -1,7 +1,7 @@
 //
-// BAPI_ALM_ORDER_GET_DETAIL var: 1  struct: 3  table: 22  exception: 0
+// BAPI_ALM_ORDER_GET_DETAIL exception: 0  struct: 3  table: 22  var: 1
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore
@@ -13,7 +13,7 @@ NUMBER                      :           "", // CHAR (12) ALPHA=ALPHA Order Numbe
 
 // TABLE PARAMETERS
 
-RETURN                      :           [], // BAPIRET2 no text (en)
+RETURN                      :           [], // BAPIRET2 no text (undefined)
 // ET_COMPONENTS            :           [], // BAPI_ALM_ORDER_COMPONENT_E PM/CS BAPI Order Components
 // ET_COSTS_DETAILS         :           [], // BAPI_ALM_ORDER_COSTS_DETAIL_E ALM Order BAPIs: Structure for Order Costs Detail
 // ET_COSTS_SUM             :           [], // BAPI_ALM_ORDER_COSTS_SUM_E ALM Order BAPIs: Structure for Order Costs Sum
@@ -26,10 +26,10 @@ RETURN                      :           [], // BAPIRET2 no text (en)
 // ET_PRTS                  :           [], // BAPI_ALM_ORDER_PRT_E ALM Order BAPIs: Structure for Production Resources/Tools
 // ET_REFORDER_SERNO_OLIST  :           [], // BAPI_REFORDER_SERNO_OLIST BAPI: Structure for Serial Number Object List
 // ET_RELATIONS             :           [], // BAPI_ALM_ORDER_RELATION_EXPORT BAPI Structure for ALM Order Relationships
-// ET_SERVICECONTRACTLIMITS :           [], // BAPI_ALM_SRV_CONTRACT_LIMITS no text (en)
-// ET_SERVICELIMIT          :           [], // BAPI_ALM_SRV_LIMIT_DATA no text (en)
-// ET_SERVICELINES          :           [], // BAPI_ALM_SRV_SERVICE_LINE no text (en)
-// ET_SERVICEOUTLINE        :           [], // BAPI_ALM_SRV_OUTLINE no text (en)
+// ET_SERVICECONTRACTLIMITS :           [], // BAPI_ALM_SRV_CONTRACT_LIMITS no text (undefined)
+// ET_SERVICELIMIT          :           [], // BAPI_ALM_SRV_LIMIT_DATA no text (undefined)
+// ET_SERVICELINES          :           [], // BAPI_ALM_SRV_SERVICE_LINE no text (undefined)
+// ET_SERVICEOUTLINE        :           [], // BAPI_ALM_SRV_OUTLINE no text (undefined)
 // ET_SRULES                :           [], // BAPI_ALM_ORDER_SRULE_E Export Structure for PM/CS BAPIs Settlement Rule
 // ET_TEXT_LINES            :           [], // BAPI_ALM_TEXT_LINES Text Lines for ALM BAPIs
 // ET_TEXTS                 :           [], // BAPI_ALM_TEXT Text Header for ALM Order BAPIs

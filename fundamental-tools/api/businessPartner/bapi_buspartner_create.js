@@ -1,7 +1,7 @@
 //
-// BAPI_BUSPARTNER_CREATE var: 14  struct: 16  table: 25  exception: 0
+// BAPI_BUSPARTNER_CREATE exception: 0  struct: 16  table: 25  var: 14
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore

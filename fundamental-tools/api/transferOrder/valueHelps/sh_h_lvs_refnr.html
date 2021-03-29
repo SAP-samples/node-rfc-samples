@@ -1,0 +1,20 @@
+<!-- SH H_LVS_REFNR Group : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.LGNUM" shlp.bind="{type: 'SH', id: 'H_T300'}" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}"
+          label="Warehouse Number / Warehouse Complex"></ui-combo>
+<ui-combo bind="searchParamLow.REFNR" shlp.bind="{type: 'SH', id: 'H_LVS_REFNR'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'REFNR', length:'10'}"
+          label="Group"></ui-combo>
+<ui-checkbox value.bind="searchParamLow.RBTYP" label="Type of reference document for group"></ui-checkbox>
+<ui-input bind="searchParamLow.REFNT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Group Description"></ui-input>
+<ui-checkbox value.bind="searchParamLow.L2SKR" label="Relevance for 2-step picking"></ui-checkbox>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="LGNUM" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}" label="Warehouse Number / Warehouse Complex"></ui-dg-column>
+   <ui-dg-column sortable field="RBTYP" data-abap.bind="{type:'CHAR', length:'1'}" label="Type of reference document for group"></ui-dg-column>
+   <ui-dg-column sortable field="REFNT" data-abap.bind="{type:'CHAR', length:'40'}" label="Group Description"></ui-dg-column>
+   <ui-dg-column sortable field="REFNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'REFNR', length:'10'}" label="Group"></ui-dg-column>
+   <ui-dg-column sortable field="L2SKR" data-abap.bind="{type:'CHAR', length:'1'}" label="Relevance for 2-step picking"></ui-dg-column>
+</ui-datagrid>

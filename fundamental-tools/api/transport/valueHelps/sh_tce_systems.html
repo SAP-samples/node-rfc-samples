@@ -1,0 +1,13 @@
+<!-- SH TCE_SYSTEMS Active Systems : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.DDTEXT" data-abap.bind="{type:'CHAR', length:'60'}"
+          label="Explanatory Short Text"></ui-input>
+<ui-combo bind="searchParamLow.SYSNAME" shlp.bind="{type: 'SH', id: 'TCE_SYSTEMS'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Name of SAP System in (Active) Transport Configuration"></ui-combo>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SYSNAME" data-abap.bind="{type:'CHAR', length:'10'}" label="Name of SAP System in (Active) Transport Configuration"></ui-dg-column>
+   <ui-dg-column sortable field="DDTEXT" data-abap.bind="{type:'CHAR', length:'60'}" label="Explanatory Short Text"></ui-dg-column>
+</ui-datagrid>

@@ -1,0 +1,1707 @@
+<!--
+BAPI_ALM_ORDER_GET_DETAIL exception: 0  struct: 3  table: 22  var: 1
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-combo bind="NUMBER" shlp.bind="{type: 'CH', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRET2   -->
+
+<ui-datagrid data.bind="RETURN" title=""
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-dg-column>
+   <ui-dg-column sortable field="ID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'T100A'}" label="Message Class"></ui-dg-column>
+   <ui-dg-column sortable field="NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Message Number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}" label="Message Text"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_NO" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CH', id: 'BALHDR'}" label="Application log: log number"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_MSG_NO" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'BALM'}" label="Application log: Internal message serial number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}" label="Parameter Name"></ui-dg-column>
+   <ui-dg-column sortable field="ROW" data-abap.bind="{type:'INT4', length:'+10'}" label="Lines in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="FIELD" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD03L'}" label="Field in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="SYSTEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'TBDLS'}" label="Logical system from which message originates"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>
+
+<!-- Parameter: ET_COMPONENTS structure: BAPI_ALM_ORDER_COMPONENT_E  PM/CS BAPI Order Components -->
+
+<ui-datagrid data.bind="ET_COMPONENTS" title="PM/CS BAPI Order Components"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="RES_ITEM" data-abap.bind="{type:'NUMC', mid:'RPO', length:'4'}" label="Item Number of Reservation / Dependent Requirements"></ui-dg-column>
+   <ui-dg-column sortable field="RESERV_NO" data-abap.bind="{type:'NUMC', mid:'RES', length:'10'}" shlp.bind="{type: 'CT', id: 'RESB'}" label="Number of reservation/dependent requirements"></ui-dg-column>
+   <ui-dg-column sortable field="RES_TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Record type"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="ET_COMPONENTS.RES_ITEM" data-abap.bind="{type:'NUMC', mid:'RPO', length:'4'}"
+          label="Item Number of Reservation / Dependent Requirements"></ui-input>
+
+<ui-combo bind="ET_COMPONENTS.RESERV_NO" shlp.bind="{type: 'CT', id: 'RESB'}" data-abap.bind="{type:'NUMC', mid:'RES', length:'10'}"
+          label="Number of reservation/dependent requirements"></ui-combo>
+
+<ui-input bind="ET_COMPONENTS.RES_TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Record type"></ui-input>
+
+<!-- Parameter: ET_COSTS_DETAILS structure: BAPI_ALM_ORDER_COSTS_DETAIL_E  ALM Order BAPIs: Structure for Order Costs Detail -->
+
+<ui-datagrid data.bind="ET_COSTS_DETAILS" title="ALM Order BAPIs: Structure for Order Costs Detail"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="DEBIT_TYPE" data-abap.bind="{type:'NUMC', length:'1'}" shlp.bind="{type: 'FV', id: 'BP_INOUT'}" label="Debit type"></ui-dg-column>
+   <ui-dg-column sortable field="VALUE_CATEGORY" data-abap.bind="{type:'CHAR', length:'14'}" shlp.bind="{type: 'CT', id: 'TPIR2'}" label="Value category"></ui-dg-column>
+   <ui-dg-column sortable field="CALC_MOTIVE" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'TBMOT'}" label="Accounting Indicator"></ui-dg-column>
+   <ui-dg-column sortable field="BUDGET_TYPE" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'T022'}" label="Budget Type Budgeting/Planning"></ui-dg-column>
+   <ui-dg-column sortable field="COSTS_ACT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Maintenance Costs (Actual) by Value Category"></ui-dg-column>
+   <ui-dg-column sortable field="COSTS_PLAN" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Maintenance Costs (Planned) by Value Category"></ui-dg-column>
+   <ui-dg-column sortable field="COSTS_EST" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Maintenance Costs (Estimated) by Value Category"></ui-dg-column>
+   <ui-dg-column sortable field="REVENUES_ACT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Maintenance revenue (actual) by value category"></ui-dg-column>
+   <ui-dg-column sortable field="REVENUES_PLAN" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Maintenance revenue (planned) by value category"></ui-dg-column>
+   <ui-dg-column sortable field="REVENUES_EST" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Maintenance revenue (estimated) by value category"></ui-dg-column>
+   <ui-dg-column sortable field="SUM_TOTAL_ACT_BY_CAT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Sum total (actual) by value category"></ui-dg-column>
+   <ui-dg-column sortable field="SUM_TOTAL_PLAN_BY_CAT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Sum total (planned) by value category"></ui-dg-column>
+   <ui-dg-column sortable field="SUM_TOTAL_EST_BY_CAT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Sum total (estimated) by value category"></ui-dg-column>
+   <ui-dg-column sortable field="CURRENCY" data-abap.bind="{type:'CUKY', length:'5'}" shlp.bind="{type: 'CT', id: 'TCURC'}" label="Currency for diplaying PM order costs"></ui-dg-column>
+   <ui-dg-column sortable field="CURRENCY_ISO" data-abap.bind="{type:'CHAR', length:'3'}" label="ISO currency code"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ET_COSTS_DETAILS.DEBIT_TYPE" shlp.bind="{type: 'FV', id: 'BP_INOUT'}" data-abap.bind="{type:'NUMC', length:'1'}"
+          label="Debit type"></ui-combo>
+
+<ui-combo bind="ET_COSTS_DETAILS.VALUE_CATEGORY" shlp.bind="{type: 'CT', id: 'TPIR2'}" data-abap.bind="{type:'CHAR', length:'14'}"
+          label="Value category"></ui-combo>
+
+<ui-combo bind="ET_COSTS_DETAILS.CALC_MOTIVE" shlp.bind="{type: 'CT', id: 'TBMOT'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Accounting Indicator"></ui-combo>
+
+<ui-combo bind="ET_COSTS_DETAILS.BUDGET_TYPE" shlp.bind="{type: 'CT', id: 'T022'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Budget Type Budgeting/Planning"></ui-combo>
+
+<ui-input bind="ET_COSTS_DETAILS.COSTS_ACT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Maintenance Costs (Actual) by Value Category"></ui-input>
+
+<ui-input bind="ET_COSTS_DETAILS.COSTS_PLAN" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Maintenance Costs (Planned) by Value Category"></ui-input>
+
+<ui-input bind="ET_COSTS_DETAILS.COSTS_EST" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Maintenance Costs (Estimated) by Value Category"></ui-input>
+
+<ui-input bind="ET_COSTS_DETAILS.REVENUES_ACT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Maintenance revenue (actual) by value category"></ui-input>
+
+<ui-input bind="ET_COSTS_DETAILS.REVENUES_PLAN" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Maintenance revenue (planned) by value category"></ui-input>
+
+<ui-input bind="ET_COSTS_DETAILS.REVENUES_EST" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Maintenance revenue (estimated) by value category"></ui-input>
+
+<ui-input bind="ET_COSTS_DETAILS.SUM_TOTAL_ACT_BY_CAT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Sum total (actual) by value category"></ui-input>
+
+<ui-input bind="ET_COSTS_DETAILS.SUM_TOTAL_PLAN_BY_CAT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Sum total (planned) by value category"></ui-input>
+
+<ui-input bind="ET_COSTS_DETAILS.SUM_TOTAL_EST_BY_CAT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Sum total (estimated) by value category"></ui-input>
+
+<ui-combo bind="ET_COSTS_DETAILS.CURRENCY" shlp.bind="{type: 'CT', id: 'TCURC'}" data-abap.bind="{type:'CUKY', length:'5'}"
+          label="Currency for diplaying PM order costs"></ui-combo>
+
+<ui-input bind="ET_COSTS_DETAILS.CURRENCY_ISO" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO currency code"></ui-input>
+
+<!-- Parameter: ET_COSTS_SUM structure: BAPI_ALM_ORDER_COSTS_SUM_E  ALM Order BAPIs: Structure for Order Costs Sum -->
+
+<ui-datagrid data.bind="ET_COSTS_SUM" title="ALM Order BAPIs: Structure for Order Costs Sum"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TOTAL_COSTS_ACT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Total(actual) maintenance costs"></ui-dg-column>
+   <ui-dg-column sortable field="TOTAL_COSTS_PLAN" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Total plant maintenance costs (planned)"></ui-dg-column>
+   <ui-dg-column sortable field="TOTAL_COSTS_EST" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Total maintenance costs (estimated)"></ui-dg-column>
+   <ui-dg-column sortable field="TOTAL_SETTLEMENT_COSTS" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Total Settlement Costs (PMCO)"></ui-dg-column>
+   <ui-dg-column sortable field="TOTAL_REVENUES_ACT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Total plant maintenance revenues (actual)"></ui-dg-column>
+   <ui-dg-column sortable field="TOTAL_REVENUES_PLAN" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Total (planned) maintenance revenues"></ui-dg-column>
+   <ui-dg-column sortable field="TOTAL_REVENUES_EST" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Total maintenance revenue (estimated)"></ui-dg-column>
+   <ui-dg-column sortable field="TOTAL_SUM_ACT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Actual sum of maintenance order (costs - revenues)"></ui-dg-column>
+   <ui-dg-column sortable field="TOTAL_SUM_PLAN" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Plan sum of maintenance order (costs - revenues)"></ui-dg-column>
+   <ui-dg-column sortable field="TOTAL_SUM_EST" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Estimated total of maintenance order (costs - revenue)"></ui-dg-column>
+   <ui-dg-column sortable field="CURRENCY" data-abap.bind="{type:'CUKY', length:'5'}" shlp.bind="{type: 'CT', id: 'TCURC'}" label="Currency for diplaying PM order costs"></ui-dg-column>
+   <ui-dg-column sortable field="CURRENCY_ISO" data-abap.bind="{type:'CHAR', length:'3'}" label="ISO currency code"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="ET_COSTS_SUM.TOTAL_COSTS_ACT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Total(actual) maintenance costs"></ui-input>
+
+<ui-input bind="ET_COSTS_SUM.TOTAL_COSTS_PLAN" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Total plant maintenance costs (planned)"></ui-input>
+
+<ui-input bind="ET_COSTS_SUM.TOTAL_COSTS_EST" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Total maintenance costs (estimated)"></ui-input>
+
+<ui-input bind="ET_COSTS_SUM.TOTAL_SETTLEMENT_COSTS" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Total Settlement Costs (PMCO)"></ui-input>
+
+<ui-input bind="ET_COSTS_SUM.TOTAL_REVENUES_ACT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Total plant maintenance revenues (actual)"></ui-input>
+
+<ui-input bind="ET_COSTS_SUM.TOTAL_REVENUES_PLAN" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Total (planned) maintenance revenues"></ui-input>
+
+<ui-input bind="ET_COSTS_SUM.TOTAL_REVENUES_EST" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Total maintenance revenue (estimated)"></ui-input>
+
+<ui-input bind="ET_COSTS_SUM.TOTAL_SUM_ACT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Actual sum of maintenance order (costs - revenues)"></ui-input>
+
+<ui-input bind="ET_COSTS_SUM.TOTAL_SUM_PLAN" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Plan sum of maintenance order (costs - revenues)"></ui-input>
+
+<ui-input bind="ET_COSTS_SUM.TOTAL_SUM_EST" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Estimated total of maintenance order (costs - revenue)"></ui-input>
+
+<ui-combo bind="ET_COSTS_SUM.CURRENCY" shlp.bind="{type: 'CT', id: 'TCURC'}" data-abap.bind="{type:'CUKY', length:'5'}"
+          label="Currency for diplaying PM order costs"></ui-combo>
+
+<ui-input bind="ET_COSTS_SUM.CURRENCY_ISO" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO currency code"></ui-input>
+
+<!-- Parameter: ET_OLIST structure: BAPI_ALM_ORDER_OBJECTLIST  Export Structure BAPI PM/CS: Object List -->
+
+<ui-datagrid data.bind="ET_OLIST" title="Export Structure BAPI PM/CS: Object List"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="COUNTER" data-abap.bind="{type:'INT4', length:'10'}" label="Object list counters"></ui-dg-column>
+   <ui-dg-column sortable field="FUNCT_LOC" data-abap.bind="{type:'CHAR', alpha:'TPLNR', mid:'IFL', length:'30'}" shlp.bind="{type: 'SH', id: 'IFLM'}" label="Functional Location"></ui-dg-column>
+   <ui-dg-column sortable field="FUNCLOC_DISP" data-abap.bind="{type:'CHAR', length:'40'}" label="Functional Location Label"></ui-dg-column>
+   <ui-dg-column sortable field="EQUIPMENT" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}" shlp.bind="{type: 'SH', id: 'EQUI'}" label="Equipment Number"></ui-dg-column>
+   <ui-dg-column sortable field="NOTIF_NO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'IQM', length:'12'}" shlp.bind="{type: 'CT', id: 'QMEL'}" label="Notification No"></ui-dg-column>
+   <ui-dg-column sortable field="ASSEMBLY" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" shlp.bind="{type: 'CT', id: 'MARA'}" label="Assembly"></ui-dg-column>
+   <ui-dg-column sortable field="SORTFIELD" data-abap.bind="{type:'CHAR', length:'20'}" label="Object list sort field"></ui-dg-column>
+   <ui-dg-column sortable field="PROCESSING_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="Processing indicator"></ui-dg-column>
+   <ui-dg-column sortable field="SERIALNO" data-abap.bind="{type:'CHAR', alpha:'GERNR', mid:'SER', length:'18'}" label="Serial Number"></ui-dg-column>
+   <ui-dg-column sortable field="SERMAT" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" shlp.bind="{type: 'SH', id: 'S_MAT1'}" label="Material Number"></ui-dg-column>
+   <ui-dg-column sortable field="DESCRIPTN" data-abap.bind="{type:'CHAR', length:'40'}" label="Description of PM Assembly"></ui-dg-column>
+   <ui-dg-column sortable field="EQUIDESCR" data-abap.bind="{type:'CHAR', length:'40'}" label="Description of Technical Object"></ui-dg-column>
+   <ui-dg-column sortable field="FUNCLDESCR" data-abap.bind="{type:'CHAR', length:'40'}" label="Description of functional location"></ui-dg-column>
+   <ui-dg-column sortable field="MATL_DESC" data-abap.bind="{type:'CHAR', length:'40'}" label="Material description"></ui-dg-column>
+   <ui-dg-column sortable field="SHORT_TEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Short Text"></ui-dg-column>
+   <ui-dg-column sortable field="SERMAT_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}" label="Long Material Number (Future Development) for SERMA Field"></ui-dg-column>
+   <ui-dg-column sortable field="SERMAT_GUID" data-abap.bind="{type:'CHAR', length:'32'}" label="External GUID (Future Development) for SERMAT Field"></ui-dg-column>
+   <ui-dg-column sortable field="SERMAT_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}" label="Version Number (Future Development) for SERMAT Field"></ui-dg-column>
+   <ui-dg-column sortable field="ASSEMBLY_LONG" data-abap.bind="{type:'CHAR', mid:'MAT', length:'40'}" label="Assembly"></ui-dg-column>
+   <ui-dg-column sortable field="SERMAT_LONG" data-abap.bind="{type:'CHAR', length:'40'}" label="Material Number (40 Characters, needed f. technical reasons)"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="ET_OLIST.COUNTER" data-abap.bind="{type:'INT4', length:'10'}"
+          label="Object list counters"></ui-input>
+
+<ui-combo bind="ET_OLIST.FUNCT_LOC" shlp.bind="{type: 'SH', id: 'IFLM'}" data-abap.bind="{type:'CHAR', alpha:'TPLNR', mid:'IFL', length:'30'}"
+          label="Functional Location"></ui-combo>
+
+<ui-input bind="ET_OLIST.FUNCLOC_DISP" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Functional Location Label"></ui-input>
+
+<ui-combo bind="ET_OLIST.EQUIPMENT" shlp.bind="{type: 'SH', id: 'EQUI'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}"
+          label="Equipment Number"></ui-combo>
+
+<ui-combo bind="ET_OLIST.NOTIF_NO" shlp.bind="{type: 'CT', id: 'QMEL'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'IQM', length:'12'}"
+          label="Notification No"></ui-combo>
+
+<ui-combo bind="ET_OLIST.ASSEMBLY" shlp.bind="{type: 'CT', id: 'MARA'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Assembly"></ui-combo>
+
+<ui-input bind="ET_OLIST.SORTFIELD" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Object list sort field"></ui-input>
+
+<ui-input bind="ET_OLIST.PROCESSING_IND" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Processing indicator"></ui-input>
+
+<ui-input bind="ET_OLIST.SERIALNO" data-abap.bind="{type:'CHAR', alpha:'GERNR', mid:'SER', length:'18'}"
+          label="Serial Number"></ui-input>
+
+<ui-combo bind="ET_OLIST.SERMAT" shlp.bind="{type: 'SH', id: 'S_MAT1'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+
+<ui-input bind="ET_OLIST.DESCRIPTN" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Description of PM Assembly"></ui-input>
+
+<ui-input bind="ET_OLIST.EQUIDESCR" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Description of Technical Object"></ui-input>
+
+<ui-input bind="ET_OLIST.FUNCLDESCR" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Description of functional location"></ui-input>
+
+<ui-input bind="ET_OLIST.MATL_DESC" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material description"></ui-input>
+
+<ui-input bind="ET_OLIST.SHORT_TEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Short Text"></ui-input>
+
+<ui-input bind="ET_OLIST.SERMAT_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number (Future Development) for SERMA Field"></ui-input>
+
+<ui-input bind="ET_OLIST.SERMAT_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID (Future Development) for SERMAT Field"></ui-input>
+
+<ui-input bind="ET_OLIST.SERMAT_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number (Future Development) for SERMAT Field"></ui-input>
+
+<ui-input bind="ET_OLIST.ASSEMBLY_LONG" data-abap.bind="{type:'CHAR', mid:'MAT', length:'40'}"
+          label="Assembly"></ui-input>
+
+<ui-input bind="ET_OLIST.SERMAT_LONG" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material Number (40 Characters, needed f. technical reasons)"></ui-input>
+
+<!-- Parameter: ET_OPERATIONS structure: BAPI_ALM_ORDER_OPERATION_E  Export Structure for PM/CS BAPIs Operations -->
+
+<ui-datagrid data.bind="ET_OPERATIONS" title="Export Structure for PM/CS BAPIs Operations"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="SUB_ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}" label="Suboperation"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="ET_OPERATIONS.ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Activity Number"></ui-input>
+
+<ui-input bind="ET_OPERATIONS.SUB_ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Suboperation"></ui-input>
+
+<!-- Parameter: ET_OPROL structure: BAPI_ALM_OLIST_RELATION  BAPI Structure for OPROL - Relation Operation Object List -->
+
+<ui-datagrid data.bind="ET_OPROL" title="BAPI Structure for OPROL - Relation Operation Object List"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="SUB_ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}" label="Suboperation"></ui-dg-column>
+   <ui-dg-column sortable field="OBJECTLIST" data-abap.bind="{type:'INT4', length:'10'}" shlp.bind="{type: 'CT', id: 'SER00'}" label="Object list number"></ui-dg-column>
+   <ui-dg-column sortable field="COUNTER" data-abap.bind="{type:'INT4', length:'10'}" label="Object list counters"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="ET_OPROL.ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Activity Number"></ui-input>
+
+<ui-input bind="ET_OPROL.SUB_ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Suboperation"></ui-input>
+
+<ui-combo bind="ET_OPROL.OBJECTLIST" shlp.bind="{type: 'CT', id: 'SER00'}" data-abap.bind="{type:'INT4', length:'10'}"
+          label="Object list number"></ui-combo>
+
+<ui-input bind="ET_OPROL.COUNTER" data-abap.bind="{type:'INT4', length:'10'}"
+          label="Object list counters"></ui-input>
+
+<!-- Parameter: ET_PARTNER structure: BAPI_ALM_ORDER_PARTNER  ALM Order BAPIs: Partner Data -->
+
+<ui-datagrid data.bind="ET_PARTNER" title="ALM Order BAPIs: Partner Data"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="PARTN_ROLE" data-abap.bind="{type:'CHAR', alpha:'PARVW', mid:'PAR', length:'2'}" shlp.bind="{type: 'CT', id: 'TPAR'}" label="Partner Function"></ui-dg-column>
+   <ui-dg-column sortable field="PARTN_ROLE_OLD" data-abap.bind="{type:'CHAR', alpha:'PARVW', mid:'PAR', length:'2'}" shlp.bind="{type: 'CT', id: 'TPAR'}" label="Partner Function"></ui-dg-column>
+   <ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'12'}" label="Partner"></ui-dg-column>
+   <ui-dg-column sortable field="PARTNER_OLD" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'12'}" label="Partner"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ET_PARTNER.PARTN_ROLE" shlp.bind="{type: 'CT', id: 'TPAR'}" data-abap.bind="{type:'CHAR', alpha:'PARVW', mid:'PAR', length:'2'}"
+          label="Partner Function"></ui-combo>
+
+<ui-combo bind="ET_PARTNER.PARTN_ROLE_OLD" shlp.bind="{type: 'CT', id: 'TPAR'}" data-abap.bind="{type:'CHAR', alpha:'PARVW', mid:'PAR', length:'2'}"
+          label="Partner Function"></ui-combo>
+
+<ui-input bind="ET_PARTNER.PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'12'}"
+          label="Partner"></ui-input>
+
+<ui-input bind="ET_PARTNER.PARTNER_OLD" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'12'}"
+          label="Partner"></ui-input>
+
+<!-- Parameter: ET_PERMIT structure: BAPI_ALM_ORDER_PERMIT_READ  Permits -->
+
+<ui-datagrid data.bind="ET_PERMIT" title="Permits"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="PERMIT" data-abap.bind="{type:'CHAR', length:'10'}" shlp.bind="{type: 'CT', id: 'T357G'}" label="Permit Key"></ui-dg-column>
+   <ui-dg-column sortable field="RELEASE" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'G_ERROR'}" label="Indicator: Valid for Order Release"></ui-dg-column>
+   <ui-dg-column sortable field="COMPLETE" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'G_ERROR'}" label="Indicator: Valid for Order Completion"></ui-dg-column>
+   <ui-dg-column sortable field="PRINT" data-abap.bind="{type:'CHAR', length:'1'}" label="Printout of Permit Papers"></ui-dg-column>
+   <ui-dg-column sortable field="PROPOSE" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Permit Proposed During Processing"></ui-dg-column>
+   <ui-dg-column sortable field="NOT_RELEVANT" data-abap.bind="{type:'CHAR', length:'1'}" label="Relevance of Permit"></ui-dg-column>
+   <ui-dg-column sortable field="CREATED_ON" data-abap.bind="{type:'DATS'}" label="Date on Which Record Was Created"></ui-dg-column>
+   <ui-dg-column sortable field="CREATED_BY" data-abap.bind="{type:'CHAR', length:'12'}" label="Name of Person who Created the Object"></ui-dg-column>
+   <ui-dg-column sortable field="CHANGED_ON" data-abap.bind="{type:'DATS'}" label="Date of Last Change"></ui-dg-column>
+   <ui-dg-column sortable field="CHANGED_BY" data-abap.bind="{type:'CHAR', length:'12'}" label="Name of person who changed object"></ui-dg-column>
+   <ui-dg-column sortable field="ORIGIN" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'G_ORIGIN'}" label="Indicator: Permit Origin in Order"></ui-dg-column>
+   <ui-dg-column sortable field="CLASS_NUM" data-abap.bind="{type:'CHAR', mid:'KLA', length:'18'}" label="Class number"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ET_PERMIT.PERMIT" shlp.bind="{type: 'CT', id: 'T357G'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Permit Key"></ui-combo>
+
+<ui-combo bind="ET_PERMIT.RELEASE" shlp.bind="{type: 'FV', id: 'G_ERROR'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Indicator: Valid for Order Release"></ui-combo>
+
+<ui-combo bind="ET_PERMIT.COMPLETE" shlp.bind="{type: 'FV', id: 'G_ERROR'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Indicator: Valid for Order Completion"></ui-combo>
+
+<ui-checkbox value.bind="ET_PERMIT.PRINT" label="Printout of Permit Papers"></ui-checkbox>
+
+<ui-checkbox value.bind="ET_PERMIT.PROPOSE" label="Indicator: Permit Proposed During Processing"></ui-checkbox>
+
+<ui-checkbox value.bind="ET_PERMIT.NOT_RELEVANT" label="Relevance of Permit"></ui-checkbox>
+
+<ui-date date.bind="ET_PERMIT.CREATED_ON"  label="Date on Which Record Was Created"></ui-date>
+
+<ui-input bind="ET_PERMIT.CREATED_BY" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Name of Person who Created the Object"></ui-input>
+
+<ui-date date.bind="ET_PERMIT.CHANGED_ON"  label="Date of Last Change"></ui-date>
+
+<ui-input bind="ET_PERMIT.CHANGED_BY" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Name of person who changed object"></ui-input>
+
+<ui-combo bind="ET_PERMIT.ORIGIN" shlp.bind="{type: 'FV', id: 'G_ORIGIN'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Indicator: Permit Origin in Order"></ui-combo>
+
+<ui-input bind="ET_PERMIT.CLASS_NUM" data-abap.bind="{type:'CHAR', mid:'KLA', length:'18'}"
+          label="Class number"></ui-input>
+
+<!-- Parameter: ET_PERMIT_ISSUE structure: BAPI_ALM_ORDER_PER_ISSUE_R  Issued Permits -->
+
+<ui-datagrid data.bind="ET_PERMIT_ISSUE" title="Issued Permits"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="PERMIT" data-abap.bind="{type:'CHAR', length:'10'}" shlp.bind="{type: 'CT', id: 'T357G'}" label="Permit Key"></ui-dg-column>
+   <ui-dg-column sortable field="ISSUED_BY" data-abap.bind="{type:'CHAR', length:'12'}" label="Permit Issued By"></ui-dg-column>
+   <ui-dg-column sortable field="CREATED_BY" data-abap.bind="{type:'CHAR', length:'12'}" label="Entered By"></ui-dg-column>
+   <ui-dg-column sortable field="CREATED_ON" data-abap.bind="{type:'DATS'}" label="Created On"></ui-dg-column>
+   <ui-dg-column sortable field="CREATED_TIME" data-abap.bind="{type:'TIMS'}" label="Generation Time"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ET_PERMIT_ISSUE.PERMIT" shlp.bind="{type: 'CT', id: 'T357G'}" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Permit Key"></ui-combo>
+
+<ui-input bind="ET_PERMIT_ISSUE.ISSUED_BY" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Permit Issued By"></ui-input>
+
+<ui-input bind="ET_PERMIT_ISSUE.CREATED_BY" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Entered By"></ui-input>
+
+<ui-date date.bind="ET_PERMIT_ISSUE.CREATED_ON"  label="Created On"></ui-date>
+
+<ui-time time.bind="ET_PERMIT_ISSUE.CREATED_TIME"  label="Generation Time"></ui-time>
+
+<!-- Parameter: ET_PRTS structure: BAPI_ALM_ORDER_PRT_E  ALM Order BAPIs: Structure for Production Resources/Tools -->
+
+<ui-datagrid data.bind="ET_PRTS" title="ALM Order BAPIs: Structure for Production Resources/Tools"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="ITEM_NO_OF_PRODUCTION_RESOURCE" data-abap.bind="{type:'NUMC', length:'4'}" label="Item Number for Production Resource/Tool"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_PLANT" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" shlp.bind="{type: 'CT', id: 'T001W'}" label="Production Resources/Tools in Plant"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_CATEGORY" data-abap.bind="{type:'CHAR', alpha:'FHMAR', mid:'FHA', length:'1'}" shlp.bind="{type: 'CT', id: 'TCF02'}" label="Production resources/tools category"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_NUMBER" data-abap.bind="{type:'CHAR', length:'33'}" label="Production resource/tool number"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" shlp.bind="{type: 'SH', id: 'S_MAT1'}" label="Material Number"></ui-dg-column>
+   <ui-dg-column sortable field="MISCELLANEOUS" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'FHS', length:'18'}" shlp.bind="{type: 'SH', id: 'FHMS'}" label="Production resources and tools"></ui-dg-column>
+   <ui-dg-column sortable field="DOCUMENT_TYPE" data-abap.bind="{type:'CHAR', mid:'CV2', length:'3'}" shlp.bind="{type: 'CT', id: 'TDWA'}" label="Document Type"></ui-dg-column>
+   <ui-dg-column sortable field="DOCUMENT_NUMBER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'CV1', length:'25'}" shlp.bind="{type: 'CT', id: 'DRAW'}" label="Document number"></ui-dg-column>
+   <ui-dg-column sortable field="DOCUMENT_PART" data-abap.bind="{type:'CHAR', mid:'CV4', length:'3'}" label="Document part"></ui-dg-column>
+   <ui-dg-column sortable field="DOCUMENT_VERSION" data-abap.bind="{type:'CHAR', mid:'CV3', length:'2'}" label="Document version"></ui-dg-column>
+   <ui-dg-column sortable field="EQUIPMENT" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}" shlp.bind="{type: 'SH', id: 'EQUI'}" label="Equipment Number"></ui-dg-column>
+   <ui-dg-column sortable field="STD_TEXT_KEY" data-abap.bind="{type:'CHAR', length:'7'}" shlp.bind="{type: 'CT', id: 'T435'}" label="Standard text key for production resources/tools"></ui-dg-column>
+   <ui-dg-column sortable field="DESCRIPTION" data-abap.bind="{type:'CHAR', length:'40'}" label="First Line of Text for Production Resources/Tools"></ui-dg-column>
+   <ui-dg-column sortable field="OBJECT_TYPE_CIM_RESOURCE" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'FV', id: 'CR_OBJTY'}" label="Object types of the CIM resource"></ui-dg-column>
+   <ui-dg-column sortable field="OBJECT_ID_CIM_RESOURCE" data-abap.bind="{type:'NUMC', length:'8'}" shlp.bind="{type: 'CT', id: 'CRID'}" label="Object ID of the resource"></ui-dg-column>
+   <ui-dg-column sortable field="CTRL_KEY" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'TCF10'}" label="Control Key for Management of Production Resources/Tools"></ui-dg-column>
+   <ui-dg-column sortable field="CREATE_LOAD_RECS" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: Create load records for prod. resources/tools"></ui-dg-column>
+   <ui-dg-column sortable field="START_REF_DATE" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'TCA54'}" label="Reference Date for Start of Production Resource/Tool Usage"></ui-dg-column>
+   <ui-dg-column sortable field="START_OFFSET" data-abap.bind="{type:'QUAN', unit:'START_OFFSET_UNIT', length:'+5'}" label="Offset to start of production resource/tool usage"></ui-dg-column>
+   <ui-dg-column sortable field="START_OFFSET_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Offset unit for start of prod. resource/tool usage"></ui-dg-column>
+   <ui-dg-column sortable field="START_OFFSET_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="END_REF_DATE" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'TCA54'}" label="Reference date for end of production resource/tool usage"></ui-dg-column>
+   <ui-dg-column sortable field="END_OFFSET" data-abap.bind="{type:'QUAN', unit:'END_OFFSET_UNIT', length:'+5'}" label="Offset to finish of production resource/tool usage"></ui-dg-column>
+   <ui-dg-column sortable field="END_OFFSET_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Offset unit for end of production resource/tool usage"></ui-dg-column>
+   <ui-dg-column sortable field="END_OFFSET_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_MEASURE_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Unit for Quantity of Production Resources/Tools"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_MEASURE_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="STD_VALUE_FOR_PRT_QTY" data-abap.bind="{type:'QUAN', unit:'PRT_MEASURE_UNIT', length:'6.3'}" label="Standard Value for Quantity of Production Resources/Tools"></ui-dg-column>
+   <ui-dg-column sortable field="FORMULA_TOT_QTY" data-abap.bind="{type:'CHAR', length:'6'}" shlp.bind="{type: 'CT', id: 'TC25'}" label="Formula for calculating the total quantity of PRT"></ui-dg-column>
+   <ui-dg-column sortable field="STD_USAGE_VALUE_FOR_PRT" data-abap.bind="{type:'QUAN', unit:'PRT_USAGE_VALUE_UNIT', length:'6.3'}" label="Standard usage value for production resources/tools"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_USAGE_VALUE_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Usage value unit of the production resource/tool"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_USAGE_VALUE_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="FORMULA_TOT_USAGE" data-abap.bind="{type:'CHAR', length:'6'}" shlp.bind="{type: 'CT', id: 'TC25'}" label="Formula for calculating the total usage value of PRT"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_USAGE_QUANTITY_SUM" data-abap.bind="{type:'QUAN', unit:'PRT_USAGE_QUANTITY_SUM_UNIT', length:'6.3'}" label="Total Planned Quantity of Production Resource/Tool"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_USAGE_QUANTITY_SUM_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Unit for Quantity of Production Resources/Tools"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_USAGE_QUANTITY_SUM_UN_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_ACTUAL_USAGE_QUANTITY" data-abap.bind="{type:'QUAN', unit:'PRT_ACTUAL_USAGE_QUANTITY_UNIT', length:'6.3'}" label="Confirmed quantity of production resource/tool"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_ACTUAL_USAGE_QUANTITY_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Unit for Quantity of Production Resources/Tools"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_ACTUAL_USAGE_QUANTI_UN_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_REMAIN_USAGE_QUANTITY" data-abap.bind="{type:'QUAN', unit:'PRT_REMAIN_USAGE_QUANTITY_UNIT', length:'6.3'}" label="Remaining quantity of the production resource/tool"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_REMAIN_USAGE_QUANTITY_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Unit for Quantity of Production Resources/Tools"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_REMAIN_USAGE_QUANTI_UN_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_USAGE_VALUE_SUM" data-abap.bind="{type:'QUAN', unit:'PRT_USAGE_VALUE_SUM_UNIT', length:'6.3'}" label="Total planned usage value of production resource/tool"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_USAGE_VALUE_SUM_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Usage value unit of the production resource/tool"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_USAGE_VALUE_SUM_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_ACTUAL_USAGE_VALUE" data-abap.bind="{type:'QUAN', unit:'PRT_ACTUAL_USAGE_VALUE_UNIT', length:'6.3'}" label="Actual usage value for production resource/tool"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_ACTUAL_USAGE_VALUE_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Usage value unit of the production resource/tool"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_ACTUAL_USAGE_VALUE_UN_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_REMAIN_USAGE_VALUE" data-abap.bind="{type:'QUAN', unit:'PRT_REMAIN_USAGE_VALUE_UNIT', length:'6.3'}" label="Remaining usage value of the production resource/tool"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_REMAIN_USAGE_VALUE_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Usage value unit of the production resource/tool"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_REMAIN_USAGE_VALUE_UN_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_MEASUREMENT_POINT" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'IPT', length:'12'}" shlp.bind="{type: 'SH', id: 'IMPM'}" label="Measuring Point"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_MEASUREMENT_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Unit of Measurement"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_MEASUREMENT_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_EARLIEST_START_DATE" data-abap.bind="{type:'DATS'}" label="Earliest scheduled start (date) for PRT usage"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_EARLIEST_START_TIME" data-abap.bind="{type:'TIMS'}" label="Earliest scheduled start (time) for PRT usage"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_EARLIEST_FINISH_DATE" data-abap.bind="{type:'DATS'}" label="Earliest scheduled finish (date) of PRT usage"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_EARLIEST_FINISH_TIME" data-abap.bind="{type:'TIMS'}" label="Earliest scheduled end (time) of PRT usage"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_LATEST_START_DATE" data-abap.bind="{type:'DATS'}" label="Latest scheduled start (date) for PRT usage"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_LATEST_START_TIME" data-abap.bind="{type:'TIMS'}" label="Latest scheduled start (time) for PRT usage"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_LATEST_FINISH_DATE" data-abap.bind="{type:'DATS'}" label="Latest scheduled finish (date) of PRT usage"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_LATEST_FINISH_TIME" data-abap.bind="{type:'TIMS'}" label="Latest scheduled end (time) for PRT usage"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_ACTUAL_START_DATE" data-abap.bind="{type:'DATS'}" label="Actual start (date) of PRT usage"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_ACTUAL_START_TIME" data-abap.bind="{type:'TIMS'}" label="Actual start (time) of PRT usage"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_ACTUAL_FINISH_DATE" data-abap.bind="{type:'DATS'}" label="Actual finish (date) of PRT usage"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_ACTUAL_FINISH_TIME" data-abap.bind="{type:'TIMS'}" label="Actual finish (time) of PRT usage"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_STATUS" data-abap.bind="{type:'CHAR', length:'40'}" label="System Status"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}" label="Long Material Number for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}" label="External GUID for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}" label="Version Number for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="OBJECT_NO" data-abap.bind="{type:'CHAR', mid:'ONR', length:'22'}" shlp.bind="{type: 'CT', id: 'ONR00'}" label="Object number"></ui-dg-column>
+   <ui-dg-column sortable field="PRT_ITEM_COUNT" data-abap.bind="{type:'NUMC', length:'8'}" label="Item counter for production resources/tools"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}" label="Material Number (40 Characters, needed f. technical reasons)"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="ET_PRTS.ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Activity Number"></ui-input>
+
+<ui-input bind="ET_PRTS.ITEM_NO_OF_PRODUCTION_RESOURCE" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Item Number for Production Resource/Tool"></ui-input>
+
+<ui-combo bind="ET_PRTS.PRT_PLANT" shlp.bind="{type: 'CT', id: 'T001W'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Production Resources/Tools in Plant"></ui-combo>
+
+<ui-combo bind="ET_PRTS.PRT_CATEGORY" shlp.bind="{type: 'CT', id: 'TCF02'}" data-abap.bind="{type:'CHAR', alpha:'FHMAR', mid:'FHA', length:'1'}"
+          label="Production resources/tools category"></ui-combo>
+
+<ui-input bind="ET_PRTS.PRT_NUMBER" data-abap.bind="{type:'CHAR', length:'33'}"
+          label="Production resource/tool number"></ui-input>
+
+<ui-combo bind="ET_PRTS.MATERIAL" shlp.bind="{type: 'SH', id: 'S_MAT1'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+
+<ui-combo bind="ET_PRTS.MISCELLANEOUS" shlp.bind="{type: 'SH', id: 'FHMS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'FHS', length:'18'}"
+          label="Production resources and tools"></ui-combo>
+
+<ui-combo bind="ET_PRTS.DOCUMENT_TYPE" shlp.bind="{type: 'CT', id: 'TDWA'}" data-abap.bind="{type:'CHAR', mid:'CV2', length:'3'}"
+          label="Document Type"></ui-combo>
+
+<ui-combo bind="ET_PRTS.DOCUMENT_NUMBER" shlp.bind="{type: 'CT', id: 'DRAW'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'CV1', length:'25'}"
+          label="Document number"></ui-combo>
+
+<ui-input bind="ET_PRTS.DOCUMENT_PART" data-abap.bind="{type:'CHAR', mid:'CV4', length:'3'}"
+          label="Document part"></ui-input>
+
+<ui-input bind="ET_PRTS.DOCUMENT_VERSION" data-abap.bind="{type:'CHAR', mid:'CV3', length:'2'}"
+          label="Document version"></ui-input>
+
+<ui-combo bind="ET_PRTS.EQUIPMENT" shlp.bind="{type: 'SH', id: 'EQUI'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}"
+          label="Equipment Number"></ui-combo>
+
+<ui-combo bind="ET_PRTS.STD_TEXT_KEY" shlp.bind="{type: 'CT', id: 'T435'}" data-abap.bind="{type:'CHAR', length:'7'}"
+          label="Standard text key for production resources/tools"></ui-combo>
+
+<ui-input bind="ET_PRTS.DESCRIPTION" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="First Line of Text for Production Resources/Tools"></ui-input>
+
+<ui-combo bind="ET_PRTS.OBJECT_TYPE_CIM_RESOURCE" shlp.bind="{type: 'FV', id: 'CR_OBJTY'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Object types of the CIM resource"></ui-combo>
+
+<ui-combo bind="ET_PRTS.OBJECT_ID_CIM_RESOURCE" shlp.bind="{type: 'CT', id: 'CRID'}" data-abap.bind="{type:'NUMC', length:'8'}"
+          label="Object ID of the resource"></ui-combo>
+
+<ui-combo bind="ET_PRTS.CTRL_KEY" shlp.bind="{type: 'CT', id: 'TCF10'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Control Key for Management of Production Resources/Tools"></ui-combo>
+
+<ui-checkbox value.bind="ET_PRTS.CREATE_LOAD_RECS" label="Indicator: Create load records for prod. resources/tools"></ui-checkbox>
+
+<ui-combo bind="ET_PRTS.START_REF_DATE" shlp.bind="{type: 'CT', id: 'TCA54'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Reference Date for Start of Production Resource/Tool Usage"></ui-combo>
+
+<ui-input bind="ET_PRTS.START_OFFSET" data-abap.bind="{type:'QUAN', unit:'START_OFFSET_UNIT', length:'+5'}"
+          label="Offset to start of production resource/tool usage"></ui-input>
+
+<ui-combo bind="ET_PRTS.START_OFFSET_UNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Offset unit for start of prod. resource/tool usage"></ui-combo>
+
+<ui-combo bind="ET_PRTS.START_OFFSET_UNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-combo bind="ET_PRTS.END_REF_DATE" shlp.bind="{type: 'CT', id: 'TCA54'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Reference date for end of production resource/tool usage"></ui-combo>
+
+<ui-input bind="ET_PRTS.END_OFFSET" data-abap.bind="{type:'QUAN', unit:'END_OFFSET_UNIT', length:'+5'}"
+          label="Offset to finish of production resource/tool usage"></ui-input>
+
+<ui-combo bind="ET_PRTS.END_OFFSET_UNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Offset unit for end of production resource/tool usage"></ui-combo>
+
+<ui-combo bind="ET_PRTS.END_OFFSET_UNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-combo bind="ET_PRTS.PRT_MEASURE_UNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit for Quantity of Production Resources/Tools"></ui-combo>
+
+<ui-combo bind="ET_PRTS.PRT_MEASURE_UNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="ET_PRTS.STD_VALUE_FOR_PRT_QTY" data-abap.bind="{type:'QUAN', unit:'PRT_MEASURE_UNIT', length:'6.3'}"
+          label="Standard Value for Quantity of Production Resources/Tools"></ui-input>
+
+<ui-combo bind="ET_PRTS.FORMULA_TOT_QTY" shlp.bind="{type: 'CT', id: 'TC25'}" data-abap.bind="{type:'CHAR', length:'6'}"
+          label="Formula for calculating the total quantity of PRT"></ui-combo>
+
+<ui-input bind="ET_PRTS.STD_USAGE_VALUE_FOR_PRT" data-abap.bind="{type:'QUAN', unit:'PRT_USAGE_VALUE_UNIT', length:'6.3'}"
+          label="Standard usage value for production resources/tools"></ui-input>
+
+<ui-combo bind="ET_PRTS.PRT_USAGE_VALUE_UNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Usage value unit of the production resource/tool"></ui-combo>
+
+<ui-combo bind="ET_PRTS.PRT_USAGE_VALUE_UNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-combo bind="ET_PRTS.FORMULA_TOT_USAGE" shlp.bind="{type: 'CT', id: 'TC25'}" data-abap.bind="{type:'CHAR', length:'6'}"
+          label="Formula for calculating the total usage value of PRT"></ui-combo>
+
+<ui-input bind="ET_PRTS.PRT_USAGE_QUANTITY_SUM" data-abap.bind="{type:'QUAN', unit:'PRT_USAGE_QUANTITY_SUM_UNIT', length:'6.3'}"
+          label="Total Planned Quantity of Production Resource/Tool"></ui-input>
+
+<ui-combo bind="ET_PRTS.PRT_USAGE_QUANTITY_SUM_UNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit for Quantity of Production Resources/Tools"></ui-combo>
+
+<ui-combo bind="ET_PRTS.PRT_USAGE_QUANTITY_SUM_UN_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="ET_PRTS.PRT_ACTUAL_USAGE_QUANTITY" data-abap.bind="{type:'QUAN', unit:'PRT_ACTUAL_USAGE_QUANTITY_UNIT', length:'6.3'}"
+          label="Confirmed quantity of production resource/tool"></ui-input>
+
+<ui-combo bind="ET_PRTS.PRT_ACTUAL_USAGE_QUANTITY_UNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit for Quantity of Production Resources/Tools"></ui-combo>
+
+<ui-combo bind="ET_PRTS.PRT_ACTUAL_USAGE_QUANTI_UN_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="ET_PRTS.PRT_REMAIN_USAGE_QUANTITY" data-abap.bind="{type:'QUAN', unit:'PRT_REMAIN_USAGE_QUANTITY_UNIT', length:'6.3'}"
+          label="Remaining quantity of the production resource/tool"></ui-input>
+
+<ui-combo bind="ET_PRTS.PRT_REMAIN_USAGE_QUANTITY_UNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit for Quantity of Production Resources/Tools"></ui-combo>
+
+<ui-combo bind="ET_PRTS.PRT_REMAIN_USAGE_QUANTI_UN_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="ET_PRTS.PRT_USAGE_VALUE_SUM" data-abap.bind="{type:'QUAN', unit:'PRT_USAGE_VALUE_SUM_UNIT', length:'6.3'}"
+          label="Total planned usage value of production resource/tool"></ui-input>
+
+<ui-combo bind="ET_PRTS.PRT_USAGE_VALUE_SUM_UNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Usage value unit of the production resource/tool"></ui-combo>
+
+<ui-combo bind="ET_PRTS.PRT_USAGE_VALUE_SUM_UNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="ET_PRTS.PRT_ACTUAL_USAGE_VALUE" data-abap.bind="{type:'QUAN', unit:'PRT_ACTUAL_USAGE_VALUE_UNIT', length:'6.3'}"
+          label="Actual usage value for production resource/tool"></ui-input>
+
+<ui-combo bind="ET_PRTS.PRT_ACTUAL_USAGE_VALUE_UNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Usage value unit of the production resource/tool"></ui-combo>
+
+<ui-combo bind="ET_PRTS.PRT_ACTUAL_USAGE_VALUE_UN_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="ET_PRTS.PRT_REMAIN_USAGE_VALUE" data-abap.bind="{type:'QUAN', unit:'PRT_REMAIN_USAGE_VALUE_UNIT', length:'6.3'}"
+          label="Remaining usage value of the production resource/tool"></ui-input>
+
+<ui-combo bind="ET_PRTS.PRT_REMAIN_USAGE_VALUE_UNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Usage value unit of the production resource/tool"></ui-combo>
+
+<ui-combo bind="ET_PRTS.PRT_REMAIN_USAGE_VALUE_UN_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-combo bind="ET_PRTS.PRT_MEASUREMENT_POINT" shlp.bind="{type: 'SH', id: 'IMPM'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'IPT', length:'12'}"
+          label="Measuring Point"></ui-combo>
+
+<ui-combo bind="ET_PRTS.PRT_MEASUREMENT_UNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit of Measurement"></ui-combo>
+
+<ui-combo bind="ET_PRTS.PRT_MEASUREMENT_UNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-date date.bind="ET_PRTS.PRT_EARLIEST_START_DATE"  label="Earliest scheduled start (date) for PRT usage"></ui-date>
+
+<ui-time time.bind="ET_PRTS.PRT_EARLIEST_START_TIME"  label="Earliest scheduled start (time) for PRT usage"></ui-time>
+
+<ui-date date.bind="ET_PRTS.PRT_EARLIEST_FINISH_DATE"  label="Earliest scheduled finish (date) of PRT usage"></ui-date>
+
+<ui-time time.bind="ET_PRTS.PRT_EARLIEST_FINISH_TIME"  label="Earliest scheduled end (time) of PRT usage"></ui-time>
+
+<ui-date date.bind="ET_PRTS.PRT_LATEST_START_DATE"  label="Latest scheduled start (date) for PRT usage"></ui-date>
+
+<ui-time time.bind="ET_PRTS.PRT_LATEST_START_TIME"  label="Latest scheduled start (time) for PRT usage"></ui-time>
+
+<ui-date date.bind="ET_PRTS.PRT_LATEST_FINISH_DATE"  label="Latest scheduled finish (date) of PRT usage"></ui-date>
+
+<ui-time time.bind="ET_PRTS.PRT_LATEST_FINISH_TIME"  label="Latest scheduled end (time) for PRT usage"></ui-time>
+
+<ui-date date.bind="ET_PRTS.PRT_ACTUAL_START_DATE"  label="Actual start (date) of PRT usage"></ui-date>
+
+<ui-time time.bind="ET_PRTS.PRT_ACTUAL_START_TIME"  label="Actual start (time) of PRT usage"></ui-time>
+
+<ui-date date.bind="ET_PRTS.PRT_ACTUAL_FINISH_DATE"  label="Actual finish (date) of PRT usage"></ui-date>
+
+<ui-time time.bind="ET_PRTS.PRT_ACTUAL_FINISH_TIME"  label="Actual finish (time) of PRT usage"></ui-time>
+
+<ui-input bind="ET_PRTS.PRT_STATUS" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="System Status"></ui-input>
+
+<ui-input bind="ET_PRTS.MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for MATERIAL Field"></ui-input>
+
+<ui-input bind="ET_PRTS.MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for MATERIAL Field"></ui-input>
+
+<ui-input bind="ET_PRTS.MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for MATERIAL Field"></ui-input>
+
+<ui-combo bind="ET_PRTS.OBJECT_NO" shlp.bind="{type: 'CT', id: 'ONR00'}" data-abap.bind="{type:'CHAR', mid:'ONR', length:'22'}"
+          label="Object number"></ui-combo>
+
+<ui-input bind="ET_PRTS.PRT_ITEM_COUNT" data-abap.bind="{type:'NUMC', length:'8'}"
+          label="Item counter for production resources/tools"></ui-input>
+
+<ui-input bind="ET_PRTS.MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material Number (40 Characters, needed f. technical reasons)"></ui-input>
+
+<!-- Parameter: ET_REFORDER_SERNO_OLIST structure: BAPI_REFORDER_SERNO_OLIST  BAPI: Structure for Serial Number Object List -->
+
+<ui-datagrid data.bind="ET_REFORDER_SERNO_OLIST" title="BAPI: Structure for Serial Number Object List"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SERIALNO" data-abap.bind="{type:'CHAR', alpha:'GERNR', mid:'SER', length:'18'}" label="Serial Number"></ui-dg-column>
+   <ui-dg-column sortable field="EQUIPMENT" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}" shlp.bind="{type: 'SH', id: 'EQUI'}" label="Equipment Number"></ui-dg-column>
+   <ui-dg-column sortable field="UII" data-abap.bind="{type:'CHAR', mid:'UII', length:'72'}" shlp.bind="{type: 'SH', id: 'H_UII'}" label="Unique Item Identifier"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="ET_REFORDER_SERNO_OLIST.SERIALNO" data-abap.bind="{type:'CHAR', alpha:'GERNR', mid:'SER', length:'18'}"
+          label="Serial Number"></ui-input>
+
+<ui-combo bind="ET_REFORDER_SERNO_OLIST.EQUIPMENT" shlp.bind="{type: 'SH', id: 'EQUI'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}"
+          label="Equipment Number"></ui-combo>
+
+<ui-combo bind="ET_REFORDER_SERNO_OLIST.UII" shlp.bind="{type: 'SH', id: 'H_UII'}" data-abap.bind="{type:'CHAR', mid:'UII', length:'72'}"
+          label="Unique Item Identifier"></ui-combo>
+
+<!-- Parameter: ET_RELATIONS structure: BAPI_ALM_ORDER_RELATION_EXPORT  BAPI Structure for ALM Order Relationships -->
+
+<ui-datagrid data.bind="ET_RELATIONS" title="BAPI Structure for ALM Order Relationships"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ORDER_PREDECESSOR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" shlp.bind="{type: 'SH', id: 'ORDP'}" label="Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="OPERATION_PREDECESSOR" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="ORDER_SUCCESSOR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" shlp.bind="{type: 'SH', id: 'ORDP'}" label="Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="OPERATION_SUCCESSOR" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="RELATION_TYPE" data-abap.bind="{type:'CHAR', alpha:'AOBAR', length:'2'}" label="Type of relationship"></ui-dg-column>
+   <ui-dg-column sortable field="DURATION_RELATION_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T006'}" label="Unit for the time interval between relationships"></ui-dg-column>
+   <ui-dg-column sortable field="DURATION_RELATION" data-abap.bind="{type:'QUAN', unit:'DURATION_RELATION_UNIT', length:'+4.1'}" label="Time Interval Between Relationships"></ui-dg-column>
+   <ui-dg-column sortable field="DURATION_RELATION_ISOCODE_UNIT" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="FACTORY_CALENDAR" data-abap.bind="{type:'CHAR', mid:'FCI', length:'2'}" shlp.bind="{type: 'SH', id: 'H_TFACD'}" label="Factory Calendar"></ui-dg-column>
+   <ui-dg-column sortable field="PERCENT_OF_SUCCESSOR" data-abap.bind="{type:'NUMC', length:'3'}" label="% used to calc. time interval between predecessor/successor"></ui-dg-column>
+   <ui-dg-column sortable field="DURATION_KEY" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'AOB_PROVG'}" label="Key for defining time intervals in a relationship"></ui-dg-column>
+   <ui-dg-column sortable field="WORK_CNTR" data-abap.bind="{type:'CHAR', mid:'AGR', length:'8'}" label="Work center"></ui-dg-column>
+   <ui-dg-column sortable field="PLANT" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" shlp.bind="{type: 'SH', id: 'H_T001W'}" label="Plant"></ui-dg-column>
+   <ui-dg-column sortable field="DELETION_FLAG" data-abap.bind="{type:'CHAR', length:'1'}" label="Deletion flag"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ET_RELATIONS.ORDER_PREDECESSOR" shlp.bind="{type: 'SH', id: 'ORDP'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<ui-input bind="ET_RELATIONS.OPERATION_PREDECESSOR" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Activity Number"></ui-input>
+
+<ui-combo bind="ET_RELATIONS.ORDER_SUCCESSOR" shlp.bind="{type: 'SH', id: 'ORDP'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<ui-input bind="ET_RELATIONS.OPERATION_SUCCESSOR" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Activity Number"></ui-input>
+
+<ui-input bind="ET_RELATIONS.RELATION_TYPE" data-abap.bind="{type:'CHAR', alpha:'AOBAR', length:'2'}"
+          label="Type of relationship"></ui-input>
+
+<ui-combo bind="ET_RELATIONS.DURATION_RELATION_UNIT" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit for the time interval between relationships"></ui-combo>
+
+<ui-input bind="ET_RELATIONS.DURATION_RELATION" data-abap.bind="{type:'QUAN', unit:'DURATION_RELATION_UNIT', length:'+4.1'}"
+          label="Time Interval Between Relationships"></ui-input>
+
+<ui-combo bind="ET_RELATIONS.DURATION_RELATION_ISOCODE_UNIT" shlp.bind="{type: 'SH', id: 'H_T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-combo bind="ET_RELATIONS.FACTORY_CALENDAR" shlp.bind="{type: 'SH', id: 'H_TFACD'}" data-abap.bind="{type:'CHAR', mid:'FCI', length:'2'}"
+          label="Factory Calendar"></ui-combo>
+
+<ui-input bind="ET_RELATIONS.PERCENT_OF_SUCCESSOR" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="% used to calc. time interval between predecessor/successor"></ui-input>
+
+<ui-combo bind="ET_RELATIONS.DURATION_KEY" shlp.bind="{type: 'FV', id: 'AOB_PROVG'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Key for defining time intervals in a relationship"></ui-combo>
+
+<ui-input bind="ET_RELATIONS.WORK_CNTR" data-abap.bind="{type:'CHAR', mid:'AGR', length:'8'}"
+          label="Work center"></ui-input>
+
+<ui-combo bind="ET_RELATIONS.PLANT" shlp.bind="{type: 'SH', id: 'H_T001W'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+
+<ui-checkbox value.bind="ET_RELATIONS.DELETION_FLAG" label="Deletion flag"></ui-checkbox>
+
+<!-- Parameter: ET_SERVICECONTRACTLIMITS structure: BAPI_ALM_SRV_CONTRACT_LIMITS   -->
+
+<ui-datagrid data.bind="ET_SERVICECONTRACTLIMITS" title=""
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="CONTRACT" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}" shlp.bind="{type: 'CH', id: 'EKKO'}" label="Purchasing Document Number"></ui-dg-column>
+   <ui-dg-column sortable field="CONTRACT_ITEM" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}" shlp.bind="{type: 'CH', id: 'EKPO'}" label="Item Number of Purchasing Document"></ui-dg-column>
+   <ui-dg-column sortable field="LIMIT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'12.2'}" label="Contract Limit Value"></ui-dg-column>
+   <ui-dg-column sortable field="NO_LIMIT" data-abap.bind="{type:'CHAR', length:'1'}" label="No Limit"></ui-dg-column>
+   <ui-dg-column sortable field="TOTAL_VALUE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+12.2'}" label="Total Value of Unplanned Entered Services"></ui-dg-column>
+   <ui-dg-column sortable field="SHORT_TEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Short Text 1"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="ET_SERVICECONTRACTLIMITS.ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Activity Number"></ui-input>
+
+<ui-combo bind="ET_SERVICECONTRACTLIMITS.CONTRACT" shlp.bind="{type: 'CH', id: 'EKKO'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+          label="Purchasing Document Number"></ui-combo>
+
+<ui-combo bind="ET_SERVICECONTRACTLIMITS.CONTRACT_ITEM" shlp.bind="{type: 'CH', id: 'EKPO'}" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}"
+          label="Item Number of Purchasing Document"></ui-combo>
+
+<ui-input bind="ET_SERVICECONTRACTLIMITS.LIMIT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'12.2'}"
+          label="Contract Limit Value"></ui-input>
+
+<ui-input bind="ET_SERVICECONTRACTLIMITS.NO_LIMIT" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="No Limit"></ui-input>
+
+<ui-input bind="ET_SERVICECONTRACTLIMITS.TOTAL_VALUE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+12.2'}"
+          label="Total Value of Unplanned Entered Services"></ui-input>
+
+<ui-input bind="ET_SERVICECONTRACTLIMITS.SHORT_TEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Short Text 1"></ui-input>
+
+<!-- Parameter: ET_SERVICELIMIT structure: BAPI_ALM_SRV_LIMIT_DATA   -->
+
+<ui-datagrid data.bind="ET_SERVICELIMIT" title=""
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="OVERALL_LIMIT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'12.2'}" label="Overall Limit"></ui-dg-column>
+   <ui-dg-column sortable field="NO_LIMIT" data-abap.bind="{type:'CHAR', length:'1'}" label="No Limit"></ui-dg-column>
+   <ui-dg-column sortable field="EXP_VALUE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'12.2'}" label="Expected Value of Overall Limit"></ui-dg-column>
+   <ui-dg-column sortable field="TOTAL_VALUE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+12.2'}" label="Total Value of Unplanned Entered Services"></ui-dg-column>
+   <ui-dg-column sortable field="CON_PRICE_CHG" data-abap.bind="{type:'CHAR', length:'1'}" label="Price Change in Entry Sheet"></ui-dg-column>
+   <ui-dg-column sortable field="CON_PRICE_PERC" data-abap.bind="{type:'DEC', length:'+2.1'}" label="Percentage for price determination"></ui-dg-column>
+   <ui-dg-column sortable field="SSC_SRV_TYPE" data-abap.bind="{type:'CHAR', mid:'LBR', length:'3'}" label="Key to Service Type"></ui-dg-column>
+   <ui-dg-column sortable field="SSC_EDITION" data-abap.bind="{type:'NUMC', mid:'AGB', length:'4'}" label="Edition of Service Type"></ui-dg-column>
+   <ui-dg-column sortable field="SSC_LIMIT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'10.2'}" label="Value limits on service types"></ui-dg-column>
+   <ui-dg-column sortable field="SSC_NO_LIMIT" data-abap.bind="{type:'CHAR', length:'1'}" label="No limit on standard service type"></ui-dg-column>
+   <ui-dg-column sortable field="SSC_PRICE_PERC" data-abap.bind="{type:'DEC', length:'+2.1'}" label="Percentage for price determination"></ui-dg-column>
+   <ui-dg-column sortable field="SSC_TOTAL_VALUE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'10.2'}" label=""Actual" value on service type limit"></ui-dg-column>
+   <ui-dg-column sortable field="MSS_NUMBER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'MSP', length:'10'}" shlp.bind="{type: 'SH', id: 'SPEC'}" label="Number of a Set of Model Service Specifications"></ui-dg-column>
+   <ui-dg-column sortable field="MSS_LIMIT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'10.2'}" label="Limit on Model Service Specifications"></ui-dg-column>
+   <ui-dg-column sortable field="MSS_NO_LIMIT" data-abap.bind="{type:'CHAR', length:'1'}" label="No Limit on Model Specifications"></ui-dg-column>
+   <ui-dg-column sortable field="MSS_PRICE_CHG" data-abap.bind="{type:'CHAR', length:'1'}" label="Price Change in Entry Sheet"></ui-dg-column>
+   <ui-dg-column sortable field="MSS_PRICE_PERC" data-abap.bind="{type:'DEC', length:'+2.1'}" label="Percentage for Price Determination"></ui-dg-column>
+   <ui-dg-column sortable field="MSS_TOTAL_VALUE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'10.2'}" label=""Actual" Value on Model Specifications Limits"></ui-dg-column>
+   <ui-dg-column sortable field="OTHER_LIMIT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'12.2'}" label="Free limit"></ui-dg-column>
+   <ui-dg-column sortable field="OTHER_NO_LIMIT" data-abap.bind="{type:'CHAR', length:'1'}" label="No Limit"></ui-dg-column>
+   <ui-dg-column sortable field="OTHER_TOTAL_VALUE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+12.2'}" label="Actual value (from other sources)"></ui-dg-column>
+   <ui-dg-column sortable field="COST_ELEMENT" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KAT', length:'10'}" shlp.bind="{type: 'CT', id: 'CSKA'}" label="Cost Element"></ui-dg-column>
+   <ui-dg-column sortable field="TAX_CODE" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'T007A'}" label="Tax on sales/purchases code"></ui-dg-column>
+   <ui-dg-column sortable field="TAXJURCODE" data-abap.bind="{type:'CHAR', mid:'TXJ', length:'15'}" shlp.bind="{type: 'CT', id: 'TTXJ'}" label="Tax Jurisdiction"></ui-dg-column>
+   <ui-dg-column sortable field="NDI_TAX" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'12.2'}" label="Non-deductible input tax"></ui-dg-column>
+   <ui-dg-column sortable field="SPTEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Short description of model specifications"></ui-dg-column>
+   <ui-dg-column sortable field="LBTEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Short Text"></ui-dg-column>
+   <ui-dg-column sortable field="DISTRIB" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'VRTKZ'}" label="Distribution indicator for multiple account assignment"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="ET_SERVICELIMIT.ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Activity Number"></ui-input>
+
+<ui-input bind="ET_SERVICELIMIT.OVERALL_LIMIT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'12.2'}"
+          label="Overall Limit"></ui-input>
+
+<ui-input bind="ET_SERVICELIMIT.NO_LIMIT" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="No Limit"></ui-input>
+
+<ui-input bind="ET_SERVICELIMIT.EXP_VALUE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'12.2'}"
+          label="Expected Value of Overall Limit"></ui-input>
+
+<ui-input bind="ET_SERVICELIMIT.TOTAL_VALUE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+12.2'}"
+          label="Total Value of Unplanned Entered Services"></ui-input>
+
+<ui-checkbox value.bind="ET_SERVICELIMIT.CON_PRICE_CHG" label="Price Change in Entry Sheet"></ui-checkbox>
+
+<ui-input bind="ET_SERVICELIMIT.CON_PRICE_PERC" data-abap.bind="{type:'DEC', length:'+2.1'}"
+          label="Percentage for price determination"></ui-input>
+
+<ui-input bind="ET_SERVICELIMIT.SSC_SRV_TYPE" data-abap.bind="{type:'CHAR', mid:'LBR', length:'3'}"
+          label="Key to Service Type"></ui-input>
+
+<ui-input bind="ET_SERVICELIMIT.SSC_EDITION" data-abap.bind="{type:'NUMC', mid:'AGB', length:'4'}"
+          label="Edition of Service Type"></ui-input>
+
+<ui-input bind="ET_SERVICELIMIT.SSC_LIMIT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'10.2'}"
+          label="Value limits on service types"></ui-input>
+
+<ui-checkbox value.bind="ET_SERVICELIMIT.SSC_NO_LIMIT" label="No limit on standard service type"></ui-checkbox>
+
+<ui-input bind="ET_SERVICELIMIT.SSC_PRICE_PERC" data-abap.bind="{type:'DEC', length:'+2.1'}"
+          label="Percentage for price determination"></ui-input>
+
+<ui-input bind="ET_SERVICELIMIT.SSC_TOTAL_VALUE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'10.2'}"
+          label=""Actual" value on service type limit"></ui-input>
+
+<ui-combo bind="ET_SERVICELIMIT.MSS_NUMBER" shlp.bind="{type: 'SH', id: 'SPEC'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'MSP', length:'10'}"
+          label="Number of a Set of Model Service Specifications"></ui-combo>
+
+<ui-input bind="ET_SERVICELIMIT.MSS_LIMIT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'10.2'}"
+          label="Limit on Model Service Specifications"></ui-input>
+
+<ui-checkbox value.bind="ET_SERVICELIMIT.MSS_NO_LIMIT" label="No Limit on Model Specifications"></ui-checkbox>
+
+<ui-checkbox value.bind="ET_SERVICELIMIT.MSS_PRICE_CHG" label="Price Change in Entry Sheet"></ui-checkbox>
+
+<ui-input bind="ET_SERVICELIMIT.MSS_PRICE_PERC" data-abap.bind="{type:'DEC', length:'+2.1'}"
+          label="Percentage for Price Determination"></ui-input>
+
+<ui-input bind="ET_SERVICELIMIT.MSS_TOTAL_VALUE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'10.2'}"
+          label=""Actual" Value on Model Specifications Limits"></ui-input>
+
+<ui-input bind="ET_SERVICELIMIT.OTHER_LIMIT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'12.2'}"
+          label="Free limit"></ui-input>
+
+<ui-input bind="ET_SERVICELIMIT.OTHER_NO_LIMIT" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="No Limit"></ui-input>
+
+<ui-input bind="ET_SERVICELIMIT.OTHER_TOTAL_VALUE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+12.2'}"
+          label="Actual value (from other sources)"></ui-input>
+
+<ui-combo bind="ET_SERVICELIMIT.COST_ELEMENT" shlp.bind="{type: 'CT', id: 'CSKA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KAT', length:'10'}"
+          label="Cost Element"></ui-combo>
+
+<ui-combo bind="ET_SERVICELIMIT.TAX_CODE" shlp.bind="{type: 'CT', id: 'T007A'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Tax on sales/purchases code"></ui-combo>
+
+<ui-combo bind="ET_SERVICELIMIT.TAXJURCODE" shlp.bind="{type: 'CT', id: 'TTXJ'}" data-abap.bind="{type:'CHAR', mid:'TXJ', length:'15'}"
+          label="Tax Jurisdiction"></ui-combo>
+
+<ui-input bind="ET_SERVICELIMIT.NDI_TAX" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'12.2'}"
+          label="Non-deductible input tax"></ui-input>
+
+<ui-input bind="ET_SERVICELIMIT.SPTEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Short description of model specifications"></ui-input>
+
+<ui-input bind="ET_SERVICELIMIT.LBTEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Short Text"></ui-input>
+
+<ui-combo bind="ET_SERVICELIMIT.DISTRIB" shlp.bind="{type: 'FV', id: 'VRTKZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Distribution indicator for multiple account assignment"></ui-combo>
+
+<!-- Parameter: ET_SERVICELINES structure: BAPI_ALM_SRV_SERVICE_LINE   -->
+
+<ui-datagrid data.bind="ET_SERVICELINES" title=""
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="OUTLINE" data-abap.bind="{type:'NUMC', length:'10'}" label="Outline Number"></ui-dg-column>
+   <ui-dg-column sortable field="SRV_LINE" data-abap.bind="{type:'NUMC', length:'10'}" label="Line Number"></ui-dg-column>
+   <ui-dg-column sortable field="SERVICE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}" shlp.bind="{type: 'SH', id: 'ASMD'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="SHORT_TEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Short Text"></ui-dg-column>
+   <ui-dg-column sortable field="SSC_SRV_TYPE" data-abap.bind="{type:'CHAR', mid:'LBR', length:'3'}" label="Key to Service Type"></ui-dg-column>
+   <ui-dg-column sortable field="SSC_EDITION" data-abap.bind="{type:'NUMC', mid:'AGB', length:'4'}" label="Edition of Service Type"></ui-dg-column>
+   <ui-dg-column sortable field="SSC_ITEM" data-abap.bind="{type:'CHAR', length:'18'}" label="Standard Service Catalog Item"></ui-dg-column>
+   <ui-dg-column sortable field="EXT_SERVICE" data-abap.bind="{type:'CHAR', length:'18'}" label="Vendor's Service Number"></ui-dg-column>
+   <ui-dg-column sortable field="QUANTITY" data-abap.bind="{type:'QUAN', unit:'MEINS', length:'+10.3'}" label="Quantity with Sign"></ui-dg-column>
+   <ui-dg-column sortable field="UOM" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T006'}" label="Base Unit of Measure"></ui-dg-column>
+   <ui-dg-column sortable field="UOM_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="Base unit of measure in ISO code"></ui-dg-column>
+   <ui-dg-column sortable field="OVF_TOL" data-abap.bind="{type:'DEC', length:'2.1'}" label="Overfulfillment Tolerance"></ui-dg-column>
+   <ui-dg-column sortable field="OVF_UNLIM" data-abap.bind="{type:'CHAR', length:'1'}" label="Unlimited Overfulfillment"></ui-dg-column>
+   <ui-dg-column sortable field="UPDATE_COND" data-abap.bind="{type:'CHAR', length:'1'}" label="Update Conditions"></ui-dg-column>
+   <ui-dg-column sortable field="GROSS_PRICE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+10.2'}" label="Gross Price"></ui-dg-column>
+   <ui-dg-column sortable field="CURRENCY" data-abap.bind="{type:'CUKY', mid:'FWS', length:'5'}" shlp.bind="{type: 'CT', id: 'TCURC'}" label="Currency Key"></ui-dg-column>
+   <ui-dg-column sortable field="PRICE_UNIT" data-abap.bind="{type:'DEC', length:'5'}" label="Price unit"></ui-dg-column>
+   <ui-dg-column sortable field="DIST_IND_ACC" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'VRTKZ'}" label="Distribution indicator for multiple account assignment"></ui-dg-column>
+   <ui-dg-column sortable field="PART_INV_IND" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'TWRKZ'}" label="Partial invoice indicator"></ui-dg-column>
+   <ui-dg-column sortable field="WAGE_TYPE" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'T512W'}" label="Wage Type"></ui-dg-column>
+   <ui-dg-column sortable field="MATL_GROUP" data-abap.bind="{type:'CHAR', mid:'MKL', length:'9'}" shlp.bind="{type: 'SH', id: 'WBWG'}" label="Material Group"></ui-dg-column>
+   <ui-dg-column sortable field="USERF1_NUM" data-abap.bind="{type:'NUMC', length:'10'}" label="User-Defined Field"></ui-dg-column>
+   <ui-dg-column sortable field="USERF2_NUM" data-abap.bind="{type:'QUAN', unit:'MEINS', length:'10.3'}" label="User-Defined Field"></ui-dg-column>
+   <ui-dg-column sortable field="USERF1_TXT" data-abap.bind="{type:'CHAR', length:'40'}" label="User-Defined Field"></ui-dg-column>
+   <ui-dg-column sortable field="USERF2_TXT" data-abap.bind="{type:'CHAR', length:'10'}" label="User-Defined Field"></ui-dg-column>
+   <ui-dg-column sortable field="NET_PRICE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+10.2'}" label="Net Value of Item"></ui-dg-column>
+   <ui-dg-column sortable field="TAX_AMOUNT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'10.2'}" label="Tax base amount"></ui-dg-column>
+   <ui-dg-column sortable field="PRICE_CHG" data-abap.bind="{type:'CHAR', length:'1'}" label="Price Change in Entry Sheet"></ui-dg-column>
+   <ui-dg-column sortable field="TAX_CODE" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'T007A'}" label="Tax on sales/purchases code"></ui-dg-column>
+   <ui-dg-column sortable field="TAXJURCODE" data-abap.bind="{type:'CHAR', mid:'TXJ', length:'15'}" shlp.bind="{type: 'CT', id: 'TTXJ'}" label="Tax Jurisdiction"></ui-dg-column>
+   <ui-dg-column sortable field="NDI_TAX" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+10.2'}" label="Non-deductible input tax"></ui-dg-column>
+   <ui-dg-column sortable field="HR_PERS_NO" data-abap.bind="{type:'NUMC', mid:'PER', length:'8'}" label="Personnel Number"></ui-dg-column>
+   <ui-dg-column sortable field="HR_PERS_NO_EXT" data-abap.bind="{type:'CHAR', length:'40'}" label="External Personnel Number"></ui-dg-column>
+   <ui-dg-column sortable field="HR_DATE" data-abap.bind="{type:'DATS'}" label="Date"></ui-dg-column>
+   <ui-dg-column sortable field="HR_START_TIME" data-abap.bind="{type:'TIMS'}" label="Start Time"></ui-dg-column>
+   <ui-dg-column sortable field="HR_END_TIME" data-abap.bind="{type:'TIMS'}" label="End Time"></ui-dg-column>
+   <ui-dg-column sortable field="FORMULA" data-abap.bind="{type:'CHAR', length:'10'}" label="Formula Number"></ui-dg-column>
+   <ui-dg-column sortable field="FORM_VAL1" data-abap.bind="{type:'QUAN', unit:'MEINS', length:'10.3'}" label="Formula Value"></ui-dg-column>
+   <ui-dg-column sortable field="FORM_VAL2" data-abap.bind="{type:'QUAN', unit:'MEINS', length:'10.3'}" label="Formula Value"></ui-dg-column>
+   <ui-dg-column sortable field="FORM_VAL3" data-abap.bind="{type:'QUAN', unit:'MEINS', length:'10.3'}" label="Formula Value"></ui-dg-column>
+   <ui-dg-column sortable field="FORM_VAL4" data-abap.bind="{type:'QUAN', unit:'MEINS', length:'10.3'}" label="Formula Value"></ui-dg-column>
+   <ui-dg-column sortable field="FORM_VAL5" data-abap.bind="{type:'QUAN', unit:'MEINS', length:'10.3'}" label="Formula Value"></ui-dg-column>
+   <ui-dg-column sortable field="LINE_TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Line Type for Services"></ui-dg-column>
+   <ui-dg-column sortable field="LINE_CAT" data-abap.bind="{type:'CHAR', length:'1'}" label="Line Category of Service Line"></ui-dg-column>
+   <ui-dg-column sortable field="ALTERNATIVE" data-abap.bind="{type:'CHAR', length:'1'}" label="Alternatives Line Number"></ui-dg-column>
+   <ui-dg-column sortable field="ALT_SRV_LINE" data-abap.bind="{type:'NUMC', length:'10'}" label="Alternatives: Reference to basic item"></ui-dg-column>
+   <ui-dg-column sortable field="PER_SDATE" data-abap.bind="{type:'DATS'}" label="Period of Performance Start Date"></ui-dg-column>
+   <ui-dg-column sortable field="PER_EDATE" data-abap.bind="{type:'DATS'}" label="Period of Performance End Date"></ui-dg-column>
+   <ui-dg-column sortable field="EXTERNAL_ITEM_ID" data-abap.bind="{type:'CHAR', length:'40'}" label="SRM Reference Key"></ui-dg-column>
+   <ui-dg-column sortable field="SERVICE_ITEM_KEY" data-abap.bind="{type:'NUMC', length:'10'}" label="Item Key for eSOA Messages"></ui-dg-column>
+   <ui-dg-column sortable field="GL_ACCOUNT" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'SAK', length:'10'}" shlp.bind="{type: 'SH', id: 'C_SAKNR'}" label="G/L Account Number"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="ET_SERVICELINES.ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Activity Number"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.OUTLINE" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Outline Number"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.SRV_LINE" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Line Number"></ui-input>
+
+<ui-combo bind="ET_SERVICELINES.SERVICE" shlp.bind="{type: 'SH', id: 'ASMD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}"
+          label="Activity Number"></ui-combo>
+
+<ui-input bind="ET_SERVICELINES.SHORT_TEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Short Text"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.SSC_SRV_TYPE" data-abap.bind="{type:'CHAR', mid:'LBR', length:'3'}"
+          label="Key to Service Type"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.SSC_EDITION" data-abap.bind="{type:'NUMC', mid:'AGB', length:'4'}"
+          label="Edition of Service Type"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.SSC_ITEM" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="Standard Service Catalog Item"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.EXT_SERVICE" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="Vendor's Service Number"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.QUANTITY" data-abap.bind="{type:'QUAN', unit:'MEINS', length:'+10.3'}"
+          label="Quantity with Sign"></ui-input>
+
+<ui-combo bind="ET_SERVICELINES.UOM" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Base Unit of Measure"></ui-combo>
+
+<ui-combo bind="ET_SERVICELINES.UOM_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Base unit of measure in ISO code"></ui-combo>
+
+<ui-input bind="ET_SERVICELINES.OVF_TOL" data-abap.bind="{type:'DEC', length:'2.1'}"
+          label="Overfulfillment Tolerance"></ui-input>
+
+<ui-checkbox value.bind="ET_SERVICELINES.OVF_UNLIM" label="Unlimited Overfulfillment"></ui-checkbox>
+
+<ui-checkbox value.bind="ET_SERVICELINES.UPDATE_COND" label="Update Conditions"></ui-checkbox>
+
+<ui-input bind="ET_SERVICELINES.GROSS_PRICE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+10.2'}"
+          label="Gross Price"></ui-input>
+
+<ui-combo bind="ET_SERVICELINES.CURRENCY" shlp.bind="{type: 'CT', id: 'TCURC'}" data-abap.bind="{type:'CUKY', mid:'FWS', length:'5'}"
+          label="Currency Key"></ui-combo>
+
+<ui-input bind="ET_SERVICELINES.PRICE_UNIT" data-abap.bind="{type:'DEC', length:'5'}"
+          label="Price unit"></ui-input>
+
+<ui-combo bind="ET_SERVICELINES.DIST_IND_ACC" shlp.bind="{type: 'FV', id: 'VRTKZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Distribution indicator for multiple account assignment"></ui-combo>
+
+<ui-combo bind="ET_SERVICELINES.PART_INV_IND" shlp.bind="{type: 'FV', id: 'TWRKZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Partial invoice indicator"></ui-combo>
+
+<ui-combo bind="ET_SERVICELINES.WAGE_TYPE" shlp.bind="{type: 'CT', id: 'T512W'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Wage Type"></ui-combo>
+
+<ui-combo bind="ET_SERVICELINES.MATL_GROUP" shlp.bind="{type: 'SH', id: 'WBWG'}" data-abap.bind="{type:'CHAR', mid:'MKL', length:'9'}"
+          label="Material Group"></ui-combo>
+
+<ui-input bind="ET_SERVICELINES.USERF1_NUM" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="User-Defined Field"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.USERF2_NUM" data-abap.bind="{type:'QUAN', unit:'MEINS', length:'10.3'}"
+          label="User-Defined Field"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.USERF1_TXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="User-Defined Field"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.USERF2_TXT" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="User-Defined Field"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.NET_PRICE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+10.2'}"
+          label="Net Value of Item"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.TAX_AMOUNT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'10.2'}"
+          label="Tax base amount"></ui-input>
+
+<ui-checkbox value.bind="ET_SERVICELINES.PRICE_CHG" label="Price Change in Entry Sheet"></ui-checkbox>
+
+<ui-combo bind="ET_SERVICELINES.TAX_CODE" shlp.bind="{type: 'CT', id: 'T007A'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Tax on sales/purchases code"></ui-combo>
+
+<ui-combo bind="ET_SERVICELINES.TAXJURCODE" shlp.bind="{type: 'CT', id: 'TTXJ'}" data-abap.bind="{type:'CHAR', mid:'TXJ', length:'15'}"
+          label="Tax Jurisdiction"></ui-combo>
+
+<ui-input bind="ET_SERVICELINES.NDI_TAX" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+10.2'}"
+          label="Non-deductible input tax"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.HR_PERS_NO" data-abap.bind="{type:'NUMC', mid:'PER', length:'8'}"
+          label="Personnel Number"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.HR_PERS_NO_EXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="External Personnel Number"></ui-input>
+
+<ui-date date.bind="ET_SERVICELINES.HR_DATE"  label="Date"></ui-date>
+
+<ui-time time.bind="ET_SERVICELINES.HR_START_TIME"  label="Start Time"></ui-time>
+
+<ui-time time.bind="ET_SERVICELINES.HR_END_TIME"  label="End Time"></ui-time>
+
+<ui-input bind="ET_SERVICELINES.FORMULA" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Formula Number"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.FORM_VAL1" data-abap.bind="{type:'QUAN', unit:'MEINS', length:'10.3'}"
+          label="Formula Value"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.FORM_VAL2" data-abap.bind="{type:'QUAN', unit:'MEINS', length:'10.3'}"
+          label="Formula Value"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.FORM_VAL3" data-abap.bind="{type:'QUAN', unit:'MEINS', length:'10.3'}"
+          label="Formula Value"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.FORM_VAL4" data-abap.bind="{type:'QUAN', unit:'MEINS', length:'10.3'}"
+          label="Formula Value"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.FORM_VAL5" data-abap.bind="{type:'QUAN', unit:'MEINS', length:'10.3'}"
+          label="Formula Value"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.LINE_TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Line Type for Services"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.LINE_CAT" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Line Category of Service Line"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.ALTERNATIVE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Alternatives Line Number"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.ALT_SRV_LINE" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Alternatives: Reference to basic item"></ui-input>
+
+<ui-date date.bind="ET_SERVICELINES.PER_SDATE"  label="Period of Performance Start Date"></ui-date>
+
+<ui-date date.bind="ET_SERVICELINES.PER_EDATE"  label="Period of Performance End Date"></ui-date>
+
+<ui-input bind="ET_SERVICELINES.EXTERNAL_ITEM_ID" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="SRM Reference Key"></ui-input>
+
+<ui-input bind="ET_SERVICELINES.SERVICE_ITEM_KEY" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Item Key for eSOA Messages"></ui-input>
+
+<ui-combo bind="ET_SERVICELINES.GL_ACCOUNT" shlp.bind="{type: 'SH', id: 'C_SAKNR'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'SAK', length:'10'}"
+          label="G/L Account Number"></ui-combo>
+
+<!-- Parameter: ET_SERVICEOUTLINE structure: BAPI_ALM_SRV_OUTLINE   -->
+
+<ui-datagrid data.bind="ET_SERVICEOUTLINE" title=""
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="OUTLINE" data-abap.bind="{type:'NUMC', length:'10'}" label="Outline Number"></ui-dg-column>
+   <ui-dg-column sortable field="PARENT_OUTLINE" data-abap.bind="{type:'NUMC', length:'10'}" label="Parent's Outline Number"></ui-dg-column>
+   <ui-dg-column sortable field="OUTLINE_LEVEL_NAME" data-abap.bind="{type:'CHAR', length:'8'}" label="Outline Level"></ui-dg-column>
+   <ui-dg-column sortable field="SHORT_TEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Short Text"></ui-dg-column>
+   <ui-dg-column sortable field="FROM_LINE" data-abap.bind="{type:'CHAR', length:'6'}" label="Lower Limit"></ui-dg-column>
+   <ui-dg-column sortable field="TO_LINE" data-abap.bind="{type:'CHAR', length:'6'}" label="Upper Limit"></ui-dg-column>
+   <ui-dg-column sortable field="ACTUAL_PRICE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+10.2'}" label="Entered Value"></ui-dg-column>
+   <ui-dg-column sortable field="TOT_PRICE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+10.2'}" label="Net Value of Item"></ui-dg-column>
+   <ui-dg-column sortable field="EXTERNAL_ITEM_ID" data-abap.bind="{type:'CHAR', length:'40'}" label="SRM Reference Key"></ui-dg-column>
+   <ui-dg-column sortable field="SERVICE_ITEM_KEY" data-abap.bind="{type:'NUMC', length:'10'}" label="Item Key for eSOA Messages"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="ET_SERVICEOUTLINE.ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Activity Number"></ui-input>
+
+<ui-input bind="ET_SERVICEOUTLINE.OUTLINE" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Outline Number"></ui-input>
+
+<ui-input bind="ET_SERVICEOUTLINE.PARENT_OUTLINE" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Parent's Outline Number"></ui-input>
+
+<ui-input bind="ET_SERVICEOUTLINE.OUTLINE_LEVEL_NAME" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Outline Level"></ui-input>
+
+<ui-input bind="ET_SERVICEOUTLINE.SHORT_TEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Short Text"></ui-input>
+
+<ui-input bind="ET_SERVICEOUTLINE.FROM_LINE" data-abap.bind="{type:'CHAR', length:'6'}"
+          label="Lower Limit"></ui-input>
+
+<ui-input bind="ET_SERVICEOUTLINE.TO_LINE" data-abap.bind="{type:'CHAR', length:'6'}"
+          label="Upper Limit"></ui-input>
+
+<ui-input bind="ET_SERVICEOUTLINE.ACTUAL_PRICE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+10.2'}"
+          label="Entered Value"></ui-input>
+
+<ui-input bind="ET_SERVICEOUTLINE.TOT_PRICE" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+10.2'}"
+          label="Net Value of Item"></ui-input>
+
+<ui-input bind="ET_SERVICEOUTLINE.EXTERNAL_ITEM_ID" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="SRM Reference Key"></ui-input>
+
+<ui-input bind="ET_SERVICEOUTLINE.SERVICE_ITEM_KEY" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Item Key for eSOA Messages"></ui-input>
+
+<!-- Parameter: ET_SRULES structure: BAPI_ALM_ORDER_SRULE_E  Export Structure for PM/CS BAPIs Settlement Rule -->
+
+<ui-datagrid data.bind="ET_SRULES" title="Export Structure for PM/CS BAPIs Settlement Rule"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="OBJECT_NO" data-abap.bind="{type:'CHAR', mid:'ONR', length:'22'}" shlp.bind="{type: 'CT', id: 'ONR00'}" label="Object number"></ui-dg-column>
+   <ui-dg-column sortable field="DIST_RULE_GROUP" data-abap.bind="{type:'NUMC', length:'3'}" label="Distribution rule group"></ui-dg-column>
+   <ui-dg-column sortable field="DIST_RULE_SEQ_NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Sequence number of distribution rule"></ui-dg-column>
+   <ui-dg-column sortable field="SETTL_TYPE" data-abap.bind="{type:'CHAR', alpha:'PERBZ', length:'3'}" shlp.bind="{type: 'FV', id: 'PERBZ_LD'}" label="Settlement type"></ui-dg-column>
+   <ui-dg-column sortable field="SOURCE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}" shlp.bind="{type: 'CT', id: 'TSC0D'}" label="Source Assignment"></ui-dg-column>
+   <ui-dg-column sortable field="VALID_FROM_YEAR" data-abap.bind="{type:'NUMC', alpha:'GJAHR', length:'4'}" label="Valid-from year"></ui-dg-column>
+   <ui-dg-column sortable field="VALID_FROM_PER" data-abap.bind="{type:'NUMC', length:'3'}" label="Valid-from period"></ui-dg-column>
+   <ui-dg-column sortable field="VALID_TO_YEAR" data-abap.bind="{type:'NUMC', alpha:'GJAHR', length:'4'}" label="Valid-to year"></ui-dg-column>
+   <ui-dg-column sortable field="VALID_TO_PER" data-abap.bind="{type:'NUMC', length:'3'}" label="Valid to"></ui-dg-column>
+   <ui-dg-column sortable field="PERCENTAGE" data-abap.bind="{type:'DEC', length:'4.2'}" label="Settlement percentage rate"></ui-dg-column>
+   <ui-dg-column sortable field="EQUIV_NUMBER" data-abap.bind="{type:'DEC', length:'10'}" label="Equivalence number for order settlement"></ui-dg-column>
+   <ui-dg-column sortable field="BMENG" data-abap.bind="{type:'QUAN', unit:'BEINH', length:'+12.3'}" label="Quantity for settlement"></ui-dg-column>
+   <ui-dg-column sortable field="BEINH" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Unit of measure"></ui-dg-column>
+   <ui-dg-column sortable field="BEINH_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for unit of measurement"></ui-dg-column>
+   <ui-dg-column sortable field="AMOUNT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Amount for amount rule"></ui-dg-column>
+   <ui-dg-column sortable field="CURRENCY" data-abap.bind="{type:'CUKY', length:'5'}" shlp.bind="{type: 'CT', id: 'TCURC'}" label="Currency for the amount in the amount rule"></ui-dg-column>
+   <ui-dg-column sortable field="CURRENCY_ISO" data-abap.bind="{type:'CHAR', length:'3'}" label="ISO currency code"></ui-dg-column>
+   <ui-dg-column sortable field="BRTYP" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'2'}" shlp.bind="{type: 'FV', id: 'BRTYP'}" label="Amount rule type"></ui-dg-column>
+   <ui-dg-column sortable field="BREST" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}" label="Remaining Amount for Amount Settlement w. Amount Rule Cat."></ui-dg-column>
+   <ui-dg-column sortable field="FIRST_USED_YEAR" data-abap.bind="{type:'NUMC', alpha:'GJAHR', length:'4'}" label="Year first used"></ui-dg-column>
+   <ui-dg-column sortable field="FIRST_USED_PER" data-abap.bind="{type:'NUMC', length:'3'}" label="Period of first use"></ui-dg-column>
+   <ui-dg-column sortable field="LAST_USED_YEAR" data-abap.bind="{type:'NUMC', alpha:'GJAHR', length:'4'}" label="Year last used"></ui-dg-column>
+   <ui-dg-column sortable field="LAST_USED_PER" data-abap.bind="{type:'NUMC', length:'3'}" label="Period of last use"></ui-dg-column>
+   <ui-dg-column sortable field="ZINCL" data-abap.bind="{type:'CHAR', length:'1'}" label=""Including overheads" - indicator"></ui-dg-column>
+   <ui-dg-column sortable field="DFREG" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}" shlp.bind="{type: 'CT', id: 'TKB2A'}" label="Default Rule"></ui-dg-column>
+   <ui-dg-column sortable field="AVORG" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'TJ01'}" label="Settlement transaction"></ui-dg-column>
+   <ui-dg-column sortable field="VERSION" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KVS', length:'3'}" shlp.bind="{type: 'CT', id: 'TKVS'}" label="Version"></ui-dg-column>
+   <ui-dg-column sortable field="KONTY" data-abap.bind="{type:'CHAR', alpha:'OBART', length:'2'}" label="Account assignment category"></ui-dg-column>
+   <ui-dg-column sortable field="KOKRS" data-abap.bind="{type:'CHAR', mid:'CAC', length:'4'}" shlp.bind="{type: 'CT', id: 'TKA01'}" label="Controlling area of receiver"></ui-dg-column>
+   <ui-dg-column sortable field="PLANT" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" label="Plant"></ui-dg-column>
+   <ui-dg-column sortable field="BUS_AREA" data-abap.bind="{type:'CHAR', mid:'GSB', length:'4'}" shlp.bind="{type: 'CT', id: 'TGSB'}" label="Business Area"></ui-dg-column>
+   <ui-dg-column sortable field="COMP_CODE" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" shlp.bind="{type: 'SH', id: 'C_T001'}" label="Company Code"></ui-dg-column>
+   <ui-dg-column sortable field="GL_ACCOUNT" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'SAK', length:'10'}" shlp.bind="{type: 'SH', id: 'SAKO'}" label="G/L Account Number"></ui-dg-column>
+   <ui-dg-column sortable field="PROFIT_CTR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PRC', length:'10'}" shlp.bind="{type: 'SH', id: 'PRCTR_EMPTY'}" label="Profit Center"></ui-dg-column>
+   <ui-dg-column sortable field="COSTCENTER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KOS', length:'10'}" shlp.bind="{type: 'CT', id: 'CSKS'}" label="Receiver cost center"></ui-dg-column>
+   <ui-dg-column sortable field="ORDERID" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" shlp.bind="{type: 'CH', id: 'AUFK'}" label="Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="WBS_ELEMENT" data-abap.bind="{type:'CHAR', alpha:'ABPSN', mid:'PRO', length:'24'}" label="Work Breakdown Structure Element (WBS Element)"></ui-dg-column>
+   <ui-dg-column sortable field="ASSETMAINO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AN1', length:'12'}" label="Main Asset Number"></ui-dg-column>
+   <ui-dg-column sortable field="ASSETSUBNO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AN2', length:'4'}" label="Asset Subnumber"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" shlp.bind="{type: 'SH', id: 'S_MAT1'}" label="Material Number"></ui-dg-column>
+   <ui-dg-column sortable field="VAL_TYPE" data-abap.bind="{type:'CHAR', mid:'BWT', length:'10'}" shlp.bind="{type: 'CT', id: 'T149D'}" label="Valuation type"></ui-dg-column>
+   <ui-dg-column sortable field="NETWORK" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NET', length:'12'}" shlp.bind="{type: 'CH', id: 'AUFK'}" label="Network Number for Account Assignment"></ui-dg-column>
+   <ui-dg-column sortable field="ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="PROFIT_SEGM_NO" data-abap.bind="{type:'NUMC', length:'10'}" label="Profitability Segment Number (CO-PA)"></ui-dg-column>
+   <ui-dg-column sortable field="PASUBNR" data-abap.bind="{type:'NUMC', length:'4'}" label="Profitability Segment Changes (CO-PA)"></ui-dg-column>
+   <ui-dg-column sortable field="SALES_ORD" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}" shlp.bind="{type: 'CH', id: 'VBUK'}" label="Sales Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="S_ORD_ITEM" data-abap.bind="{type:'NUMC', mid:'KPO', length:'6'}" label="Item number in Sales Order"></ui-dg-column>
+   <ui-dg-column sortable field="REC_IND" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'2'}" shlp.bind="{type: 'CT', id: 'T8JJ'}" label="Recovery Indicator"></ui-dg-column>
+   <ui-dg-column sortable field="RIFIND" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'JV_RIFIND'}" label="Derivation Rule for Recovery Indicator in Settlement (JV)"></ui-dg-column>
+   <ui-dg-column sortable field="ORDER_ITNO" data-abap.bind="{type:'NUMC', length:'4'}" label="Order item number"></ui-dg-column>
+   <ui-dg-column sortable field="COSTOBJECT" data-abap.bind="{type:'CHAR', mid:'KTR', length:'12'}" shlp.bind="{type: 'CT', id: 'CKPH'}" label="Cost Object"></ui-dg-column>
+   <ui-dg-column sortable field="CO_BUSPROC" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KWP', length:'12'}" shlp.bind="{type: 'CT', id: 'CBPR'}" label="Business Process"></ui-dg-column>
+   <ui-dg-column sortable field="REC_OBJNR1" data-abap.bind="{type:'CHAR', length:'22'}" shlp.bind="{type: 'CT', id: 'ONR00'}" label="Object number for settlement receiver"></ui-dg-column>
+   <ui-dg-column sortable field="REC_OBJNR2" data-abap.bind="{type:'CHAR', length:'22'}" shlp.bind="{type: 'CT', id: 'ONR00'}" label="Object number for settlement receiver"></ui-dg-column>
+   <ui-dg-column sortable field="MRULE" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'SH', id: 'MRULE_EMPTY'}" label="Manipulation Rule"></ui-dg-column>
+   <ui-dg-column sortable field="EXTNR" data-abap.bind="{type:'NUMC', length:'3'}" label="Distribution Rule Number"></ui-dg-column>
+   <ui-dg-column sortable field="METH_TRACING_FACTOR" data-abap.bind="{type:'NUMC', length:'3'}" shlp.bind="{type: 'FV', id: 'CO_STRAT'}" label="Method for Determining the Tracing Factor for Settlement"></ui-dg-column>
+   <ui-dg-column sortable field="MOVEMENTTYPE" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'TABW'}" label="Asset Transaction Type"></ui-dg-column>
+   <ui-dg-column sortable field="SETTL_STRATEGY" data-abap.bind="{type:'CHAR', length:'3'}" label="Strategy for automatic generation of settlement rules"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}" label="Material Number (40 Characters, needed f. technical reasons)"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ET_SRULES.OBJECT_NO" shlp.bind="{type: 'CT', id: 'ONR00'}" data-abap.bind="{type:'CHAR', mid:'ONR', length:'22'}"
+          label="Object number"></ui-combo>
+
+<ui-input bind="ET_SRULES.DIST_RULE_GROUP" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Distribution rule group"></ui-input>
+
+<ui-input bind="ET_SRULES.DIST_RULE_SEQ_NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Sequence number of distribution rule"></ui-input>
+
+<ui-combo bind="ET_SRULES.SETTL_TYPE" shlp.bind="{type: 'FV', id: 'PERBZ_LD'}" data-abap.bind="{type:'CHAR', alpha:'PERBZ', length:'3'}"
+          label="Settlement type"></ui-combo>
+
+<ui-combo bind="ET_SRULES.SOURCE" shlp.bind="{type: 'CT', id: 'TSC0D'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="Source Assignment"></ui-combo>
+
+<ui-input bind="ET_SRULES.VALID_FROM_YEAR" data-abap.bind="{type:'NUMC', alpha:'GJAHR', length:'4'}"
+          label="Valid-from year"></ui-input>
+
+<ui-input bind="ET_SRULES.VALID_FROM_PER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Valid-from period"></ui-input>
+
+<ui-input bind="ET_SRULES.VALID_TO_YEAR" data-abap.bind="{type:'NUMC', alpha:'GJAHR', length:'4'}"
+          label="Valid-to year"></ui-input>
+
+<ui-input bind="ET_SRULES.VALID_TO_PER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Valid to"></ui-input>
+
+<ui-input bind="ET_SRULES.PERCENTAGE" data-abap.bind="{type:'DEC', length:'4.2'}"
+          label="Settlement percentage rate"></ui-input>
+
+<ui-input bind="ET_SRULES.EQUIV_NUMBER" data-abap.bind="{type:'DEC', length:'10'}"
+          label="Equivalence number for order settlement"></ui-input>
+
+<ui-input bind="ET_SRULES.BMENG" data-abap.bind="{type:'QUAN', unit:'BEINH', length:'+12.3'}"
+          label="Quantity for settlement"></ui-input>
+
+<ui-combo bind="ET_SRULES.BEINH" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit of measure"></ui-combo>
+
+<ui-combo bind="ET_SRULES.BEINH_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="ET_SRULES.AMOUNT" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Amount for amount rule"></ui-input>
+
+<ui-combo bind="ET_SRULES.CURRENCY" shlp.bind="{type: 'CT', id: 'TCURC'}" data-abap.bind="{type:'CUKY', length:'5'}"
+          label="Currency for the amount in the amount rule"></ui-combo>
+
+<ui-input bind="ET_SRULES.CURRENCY_ISO" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO currency code"></ui-input>
+
+<ui-combo bind="ET_SRULES.BRTYP" shlp.bind="{type: 'FV', id: 'BRTYP'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'2'}"
+          label="Amount rule type"></ui-combo>
+
+<ui-input bind="ET_SRULES.BREST" data-abap.bind="{type:'CURR', unit:'CURRENCY', length:'+14.2'}"
+          label="Remaining Amount for Amount Settlement w. Amount Rule Cat."></ui-input>
+
+<ui-input bind="ET_SRULES.FIRST_USED_YEAR" data-abap.bind="{type:'NUMC', alpha:'GJAHR', length:'4'}"
+          label="Year first used"></ui-input>
+
+<ui-input bind="ET_SRULES.FIRST_USED_PER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Period of first use"></ui-input>
+
+<ui-input bind="ET_SRULES.LAST_USED_YEAR" data-abap.bind="{type:'NUMC', alpha:'GJAHR', length:'4'}"
+          label="Year last used"></ui-input>
+
+<ui-input bind="ET_SRULES.LAST_USED_PER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Period of last use"></ui-input>
+
+<ui-checkbox value.bind="ET_SRULES.ZINCL" label=""Including overheads" - indicator"></ui-checkbox>
+
+<ui-combo bind="ET_SRULES.DFREG" shlp.bind="{type: 'CT', id: 'TKB2A'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'3'}"
+          label="Default Rule"></ui-combo>
+
+<ui-combo bind="ET_SRULES.AVORG" shlp.bind="{type: 'CT', id: 'TJ01'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Settlement transaction"></ui-combo>
+
+<ui-combo bind="ET_SRULES.VERSION" shlp.bind="{type: 'CT', id: 'TKVS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KVS', length:'3'}"
+          label="Version"></ui-combo>
+
+<ui-input bind="ET_SRULES.KONTY" data-abap.bind="{type:'CHAR', alpha:'OBART', length:'2'}"
+          label="Account assignment category"></ui-input>
+
+<ui-combo bind="ET_SRULES.KOKRS" shlp.bind="{type: 'CT', id: 'TKA01'}" data-abap.bind="{type:'CHAR', mid:'CAC', length:'4'}"
+          label="Controlling area of receiver"></ui-combo>
+
+<ui-combo bind="ET_SRULES.PLANT" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+
+<ui-combo bind="ET_SRULES.BUS_AREA" shlp.bind="{type: 'CT', id: 'TGSB'}" data-abap.bind="{type:'CHAR', mid:'GSB', length:'4'}"
+          label="Business Area"></ui-combo>
+
+<ui-combo bind="ET_SRULES.COMP_CODE" shlp.bind="{type: 'SH', id: 'C_T001'}" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}"
+          label="Company Code"></ui-combo>
+
+<ui-combo bind="ET_SRULES.GL_ACCOUNT" shlp.bind="{type: 'SH', id: 'SAKO'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'SAK', length:'10'}"
+          label="G/L Account Number"></ui-combo>
+
+<ui-combo bind="ET_SRULES.PROFIT_CTR" shlp.bind="{type: 'SH', id: 'PRCTR_EMPTY'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PRC', length:'10'}"
+          label="Profit Center"></ui-combo>
+
+<ui-combo bind="ET_SRULES.COSTCENTER" shlp.bind="{type: 'CT', id: 'CSKS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KOS', length:'10'}"
+          label="Receiver cost center"></ui-combo>
+
+<ui-combo bind="ET_SRULES.ORDERID" shlp.bind="{type: 'CH', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<ui-input bind="ET_SRULES.WBS_ELEMENT" data-abap.bind="{type:'CHAR', alpha:'ABPSN', mid:'PRO', length:'24'}"
+          label="Work Breakdown Structure Element (WBS Element)"></ui-input>
+
+<ui-input bind="ET_SRULES.ASSETMAINO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AN1', length:'12'}"
+          label="Main Asset Number"></ui-input>
+
+<ui-input bind="ET_SRULES.ASSETSUBNO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AN2', length:'4'}"
+          label="Asset Subnumber"></ui-input>
+
+<ui-combo bind="ET_SRULES.MATERIAL" shlp.bind="{type: 'SH', id: 'S_MAT1'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+
+<ui-combo bind="ET_SRULES.VAL_TYPE" shlp.bind="{type: 'CT', id: 'T149D'}" data-abap.bind="{type:'CHAR', mid:'BWT', length:'10'}"
+          label="Valuation type"></ui-combo>
+
+<ui-combo bind="ET_SRULES.NETWORK" shlp.bind="{type: 'CH', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'NET', length:'12'}"
+          label="Network Number for Account Assignment"></ui-combo>
+
+<ui-input bind="ET_SRULES.ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Activity Number"></ui-input>
+
+<ui-input bind="ET_SRULES.PROFIT_SEGM_NO" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Profitability Segment Number (CO-PA)"></ui-input>
+
+<ui-input bind="ET_SRULES.PASUBNR" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Profitability Segment Changes (CO-PA)"></ui-input>
+
+<ui-combo bind="ET_SRULES.SALES_ORD" shlp.bind="{type: 'CH', id: 'VBUK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}"
+          label="Sales Order Number"></ui-combo>
+
+<ui-input bind="ET_SRULES.S_ORD_ITEM" data-abap.bind="{type:'NUMC', mid:'KPO', length:'6'}"
+          label="Item number in Sales Order"></ui-input>
+
+<ui-combo bind="ET_SRULES.REC_IND" shlp.bind="{type: 'CT', id: 'T8JJ'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'2'}"
+          label="Recovery Indicator"></ui-combo>
+
+<ui-combo bind="ET_SRULES.RIFIND" shlp.bind="{type: 'FV', id: 'JV_RIFIND'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Derivation Rule for Recovery Indicator in Settlement (JV)"></ui-combo>
+
+<ui-input bind="ET_SRULES.ORDER_ITNO" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Order item number"></ui-input>
+
+<ui-combo bind="ET_SRULES.COSTOBJECT" shlp.bind="{type: 'CT', id: 'CKPH'}" data-abap.bind="{type:'CHAR', mid:'KTR', length:'12'}"
+          label="Cost Object"></ui-combo>
+
+<ui-combo bind="ET_SRULES.CO_BUSPROC" shlp.bind="{type: 'CT', id: 'CBPR'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KWP', length:'12'}"
+          label="Business Process"></ui-combo>
+
+<ui-combo bind="ET_SRULES.REC_OBJNR1" shlp.bind="{type: 'CT', id: 'ONR00'}" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Object number for settlement receiver"></ui-combo>
+
+<ui-combo bind="ET_SRULES.REC_OBJNR2" shlp.bind="{type: 'CT', id: 'ONR00'}" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Object number for settlement receiver"></ui-combo>
+
+<ui-combo bind="ET_SRULES.MRULE" shlp.bind="{type: 'SH', id: 'MRULE_EMPTY'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Manipulation Rule"></ui-combo>
+
+<ui-input bind="ET_SRULES.EXTNR" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Distribution Rule Number"></ui-input>
+
+<ui-combo bind="ET_SRULES.METH_TRACING_FACTOR" shlp.bind="{type: 'FV', id: 'CO_STRAT'}" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Method for Determining the Tracing Factor for Settlement"></ui-combo>
+
+<ui-combo bind="ET_SRULES.MOVEMENTTYPE" shlp.bind="{type: 'CT', id: 'TABW'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Asset Transaction Type"></ui-combo>
+
+<ui-input bind="ET_SRULES.SETTL_STRATEGY" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Strategy for automatic generation of settlement rules"></ui-input>
+
+<ui-input bind="ET_SRULES.MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material Number (40 Characters, needed f. technical reasons)"></ui-input>
+
+<!-- Parameter: ET_TEXT_LINES structure: BAPI_ALM_TEXT_LINES  Text Lines for ALM BAPIs -->
+
+<ui-datagrid data.bind="ET_TEXT_LINES" title="Text Lines for ALM BAPIs"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TDFORMAT" data-abap.bind="{type:'CHAR', length:'2'}" label="Tag column"></ui-dg-column>
+   <ui-dg-column sortable field="TDLINE" data-abap.bind="{type:'CHAR', length:'132'}" label="Text Line"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="ET_TEXT_LINES.TDFORMAT" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Tag column"></ui-input>
+
+<ui-input bind="ET_TEXT_LINES.TDLINE" data-abap.bind="{type:'CHAR', length:'132'}"
+          label="Text Line"></ui-input>
+
+<!-- Parameter: ET_TEXTS structure: BAPI_ALM_TEXT  Text Header for ALM Order BAPIs -->
+
+<ui-datagrid data.bind="ET_TEXTS" title="Text Header for ALM Order BAPIs"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ORDERID" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" shlp.bind="{type: 'CT', id: 'AUFK'}" label="Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="SUB_ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}" label="Suboperation"></ui-dg-column>
+   <ui-dg-column sortable field="RESERV_NO" data-abap.bind="{type:'NUMC', mid:'RES', length:'10'}" shlp.bind="{type: 'CT', id: 'RESB'}" label="Number of reservation/dependent requirements"></ui-dg-column>
+   <ui-dg-column sortable field="RES_ITEM" data-abap.bind="{type:'NUMC', mid:'RPO', length:'4'}" label="Item Number of Reservation / Dependent Requirements"></ui-dg-column>
+   <ui-dg-column sortable field="RES_TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Record type"></ui-dg-column>
+   <ui-dg-column sortable field="ITEM_NO_OF_PRODUCTION_RESOURCE" data-abap.bind="{type:'NUMC', length:'4'}" label="Item Number for Production Resource/Tool"></ui-dg-column>
+   <ui-dg-column sortable field="LANGU" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}" shlp.bind="{type: 'SH', id: 'H_T002'}" label="Language Key"></ui-dg-column>
+   <ui-dg-column sortable field="LANGU_ISO" data-abap.bind="{type:'CHAR', length:'2'}" label="2-Character SAP Language Code"></ui-dg-column>
+   <ui-dg-column sortable field="TEXTSTART" data-abap.bind="{type:'NUMC', length:'8'}" label="Cursor on the first line of a text"></ui-dg-column>
+   <ui-dg-column sortable field="TEXTEND" data-abap.bind="{type:'NUMC', length:'8'}" label="Cursor on the first line of a text"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ET_TEXTS.ORDERID" shlp.bind="{type: 'CT', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<ui-input bind="ET_TEXTS.ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'VGN', length:'4'}"
+          label="Activity Number"></ui-input>
+
+<ui-input bind="ET_TEXTS.SUB_ACTIVITY" data-abap.bind="{type:'CHAR', alpha:'NUMCV', length:'4'}"
+          label="Suboperation"></ui-input>
+
+<ui-combo bind="ET_TEXTS.RESERV_NO" shlp.bind="{type: 'CT', id: 'RESB'}" data-abap.bind="{type:'NUMC', mid:'RES', length:'10'}"
+          label="Number of reservation/dependent requirements"></ui-combo>
+
+<ui-input bind="ET_TEXTS.RES_ITEM" data-abap.bind="{type:'NUMC', mid:'RPO', length:'4'}"
+          label="Item Number of Reservation / Dependent Requirements"></ui-input>
+
+<ui-input bind="ET_TEXTS.RES_TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Record type"></ui-input>
+
+<ui-input bind="ET_TEXTS.ITEM_NO_OF_PRODUCTION_RESOURCE" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Item Number for Production Resource/Tool"></ui-input>
+
+<ui-combo bind="ET_TEXTS.LANGU" shlp.bind="{type: 'SH', id: 'H_T002'}" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+          label="Language Key"></ui-combo>
+
+<ui-input bind="ET_TEXTS.LANGU_ISO" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="2-Character SAP Language Code"></ui-input>
+
+<ui-input bind="ET_TEXTS.TEXTSTART" data-abap.bind="{type:'NUMC', length:'8'}"
+          label="Cursor on the first line of a text"></ui-input>
+
+<ui-input bind="ET_TEXTS.TEXTEND" data-abap.bind="{type:'NUMC', length:'8'}"
+          label="Cursor on the first line of a text"></ui-input>
+
+<!-- Parameter: EXTENSION_IN structure: BAPIPAREX  Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIONOUT -->
+
+<ui-datagrid data.bind="EXTENSION_IN" title="Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIONOUT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="STRUCTURE" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD02L'}" label="Structure name of  BAPI table extension"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="EXTENSION_IN.STRUCTURE" shlp.bind="{type: 'CT', id: 'DD02L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Structure name o API table extension"></ui-combo>
+
+<ui-input bind="EXTENSION_IN.VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_IN.VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_IN.VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_IN.VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<!-- Parameter: EXTENSION_OUT structure: BAPIPAREX  Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIONOUT -->
+
+<ui-datagrid data.bind="EXTENSION_OUT" title="Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIONOUT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="STRUCTURE" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD02L'}" label="Structure name of  BAPI table extension"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="EXTENSION_OUT.STRUCTURE" shlp.bind="{type: 'CT', id: 'DD02L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Structure name o API table extension"></ui-combo>
+
+<ui-input bind="EXTENSION_OUT.VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_OUT.VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_OUT.VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_OUT.VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: ES_HEADER structure: BAPI_ALM_ORDER_HEADER_E  Export Structure for ALM Order Header -->
+
+<ui-combo bind="ES_HEADER.ORDERID" shlp.bind="{type: 'CH', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<!-- Parameter: ES_REFORDER_ITEM structure: BAPI_REFORDER_ITEM  BAPI: Header Component for Refurbishment Order -->
+
+<ui-combo bind="ES_REFORDER_ITEM.ORDERID" shlp.bind="{type: 'CT', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<ui-input bind="ES_REFORDER_ITEM.REQUIREMENT_QUANTITY" data-abap.bind="{type:'QUAN', unit:'REQUIREMENT_QUANTITY_UNIT', length:'10.3'}"
+          label="Total order quantity"></ui-input>
+
+<ui-combo bind="ES_REFORDER_ITEM.REQUIREMENT_QUANTITY_UNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Common unit of measure for all order items"></ui-combo>
+
+<ui-combo bind="ES_REFORDER_ITEM.REQUIREMENT_QUANTITY_UNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-combo bind="ES_REFORDER_ITEM.PLANT_TO" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+
+<ui-combo bind="ES_REFORDER_ITEM.STGE_LOC_TO" shlp.bind="{type: 'CT', id: 'T001L'}" data-abap.bind="{type:'CHAR', mid:'LAG', length:'4'}"
+          label="Storage location"></ui-combo>
+
+<ui-combo bind="ES_REFORDER_ITEM.BATCH_TO" shlp.bind="{type: 'CT', id: 'MCH1'}" data-abap.bind="{type:'CHAR', mid:'CHA', length:'10'}"
+          label="Batch Number"></ui-combo>
+
+<ui-combo bind="ES_REFORDER_ITEM.VAL_TYPE_TO" shlp.bind="{type: 'CT', id: 'T149D'}" data-abap.bind="{type:'CHAR', mid:'BWT', length:'10'}"
+          label="Valuation type"></ui-combo>
+
+<ui-input bind="ES_REFORDER_ITEM.DELIVERED_QUANTITY" data-abap.bind="{type:'QUAN', unit:'REQUIREMENT_QUANTITY_UNIT', length:'10.3'}"
+          label="Quantity Delivered"></ui-input>
+
+<ui-combo bind="ES_REFORDER_ITEM.MATERIAL_TO" shlp.bind="{type: 'SH', id: 'S_MAT1'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+
+<ui-input bind="ES_REFORDER_ITEM.TRANSFER_STOCK_QUANTITY" data-abap.bind="{type:'QUAN', unit:'REQUIREMENT_QUANTITY_UNIT', length:'10.3'}"
+          label="Quantity Delivered"></ui-input>
+
+<ui-input bind="ES_REFORDER_ITEM.MATERIAL_TO_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for MATERIAL_TO Field"></ui-input>
+
+<ui-input bind="ES_REFORDER_ITEM.MATERIAL_TO_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for MATERIAL_TO Field"></ui-input>
+
+<ui-input bind="ES_REFORDER_ITEM.MATERIAL_TO_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for MATERIAL_TO Field"></ui-input>
+
+<ui-input bind="ES_REFORDER_ITEM.MATERIAL_TO_LONG" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material Number (40 Characters, needed f. technical reasons)"></ui-input>
+
+<!-- Parameter: ES_SRVDATA structure: BAPI_ALM_ORDER_SRVDAT_E  ALM Order BAPIs: Service-Specific Data, External Structure -->
+
+<ui-combo bind="ES_SRVDATA.OBJECT_NO" shlp.bind="{type: 'CT', id: 'ONR00'}" data-abap.bind="{type:'CHAR', mid:'ONR', length:'22'}"
+          label="Object number"></ui-combo>
+
+<ui-combo bind="ES_SRVDATA.SALESORG" shlp.bind="{type: 'SH', id: 'C_VKORG'}" data-abap.bind="{type:'CHAR', mid:'VKO', length:'4'}"
+          label="Sales Organization"></ui-combo>
+
+<ui-combo bind="ES_SRVDATA.DISTR_CHAN" shlp.bind="{type: 'SH', id: 'C_VTWEG'}" data-abap.bind="{type:'CHAR', mid:'VTW', length:'2'}"
+          label="Distribution Channel"></ui-combo>
+
+<ui-combo bind="ES_SRVDATA.DIVISION" shlp.bind="{type: 'SH', id: 'C_SPART'}" data-abap.bind="{type:'CHAR', mid:'SPA', length:'2'}"
+          label="Division"></ui-combo>
+
+<ui-combo bind="ES_SRVDATA.SALES_GRP" shlp.bind="{type: 'CT', id: 'TVKGR'}" data-abap.bind="{type:'CHAR', mid:'VKG', length:'3'}"
+          label="Sales group"></ui-combo>
+
+<ui-combo bind="ES_SRVDATA.SALES_OFF" shlp.bind="{type: 'CT', id: 'TVBUR'}" data-abap.bind="{type:'CHAR', mid:'VKB', length:'4'}"
+          label="Sales office"></ui-combo>
+
+<ui-input bind="ES_SRVDATA.PURCH_NO_C" data-abap.bind="{type:'CHAR', length:'35'}"
+          label="Customer purchase order number"></ui-input>
+
+<ui-date date.bind="ES_SRVDATA.PURCH_DATE"  label="Customer purchase order date"></ui-date>
+
+<ui-combo bind="ES_SRVDATA.MATERIAL" shlp.bind="{type: 'SH', id: 'MAT1'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Service product"></ui-combo>
+
+<ui-input bind="ES_SRVDATA.QUANTITY" data-abap.bind="{type:'QUAN', unit:'BASE_UOM', length:'10.3'}"
+          label="Service product quantity"></ui-input>
+
+<ui-combo bind="ES_SRVDATA.BASE_UOM" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Base Unit of Measure"></ui-combo>
+
+<ui-combo bind="ES_SRVDATA.BASE_UOM_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="ES_SRVDATA.CONFIGURATION" data-abap.bind="{type:'NUMC', length:'18'}"
+          label="Configuration"></ui-input>
+
+<ui-combo bind="ES_SRVDATA.DLI_PROFILE" shlp.bind="{type: 'SH', id: 'DIP_PROFILE'}" data-abap.bind="{type:'CHAR', mid:'AD0', length:'8'}"
+          label="Dynamic Item Processor Profile"></ui-combo>
+
+<ui-checkbox value.bind="ES_SRVDATA.BILLING_FORM" label="Billing form"></ui-checkbox>
+
+<ui-input bind="ES_SRVDATA.MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for MATERIAL Field"></ui-input>
+
+<ui-input bind="ES_SRVDATA.MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for MATERIAL Field"></ui-input>
+
+<ui-input bind="ES_SRVDATA.MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for MATERIAL Field"></ui-input>
+
+<ui-input bind="ES_SRVDATA.MATERIAL_LONG" data-abap.bind="{type:'CHAR', mid:'MAT', length:'40'}"
+          label="Service product"></ui-input>

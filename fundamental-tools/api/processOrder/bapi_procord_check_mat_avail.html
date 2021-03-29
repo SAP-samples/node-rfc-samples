@@ -1,0 +1,201 @@
+<!--
+BAPI_PROCORD_CHECK_MAT_AVAIL exception: 0  struct: 1  table: 3  var: 4
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-checkbox value.bind="FIX_PLANNED_ORDERS" label="Firm Planned Orders"></ui-checkbox>
+
+<ui-checkbox value.bind="RESET_AVAIL_DATA" label="Reset Availability Data"></ui-checkbox>
+
+<ui-combo bind="SCOPE_AVAIL" shlp.bind="{type: 'FV', id: 'AV_CHECK_O'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Execute availability check (session)"></ui-combo>
+
+<ui-input bind="WORK_PROCESS_GROUP" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Logon/Server Group Name"></ui-input>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: ORDERS structure: BAPI_ORDER_KEY  Order Numbers -->
+
+<ui-datagrid data.bind="ORDERS" title="Order Numbers"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ORDER_NUMBER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" shlp.bind="{type: 'CH', id: 'AUFK'}" label="Order Number"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ORDERS.ORDER_NUMBER" shlp.bind="{type: 'CH', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<!-- Parameter: APPLICATION_LOG structure: BAPI_ORDER_APPLICATION_LOG  ApplicationLog Handle -->
+
+<ui-datagrid data.bind="APPLICATION_LOG" title="ApplicationLog Handle"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="LOG_HANDLE" data-abap.bind="{type:'CHAR', length:'22'}" label="Application Log: Log Handle"></ui-dg-column>
+   <ui-dg-column sortable field="OBJECT" data-abap.bind="{type:'CHAR', mid:'BALOBJ', length:'20'}" shlp.bind="{type: 'CT', id: 'BALOBJ'}" label="Application log: Object name (Application code)"></ui-dg-column>
+   <ui-dg-column sortable field="SUBOBJECT" data-abap.bind="{type:'CHAR', mid:'BALSUBOBJ', length:'20'}" shlp.bind="{type: 'CT', id: 'BALSUB'}" label="Application Log: Subobject"></ui-dg-column>
+   <ui-dg-column sortable field="EXTNUMBER" data-abap.bind="{type:'CHAR', mid:'BALEXT', length:'100'}" label="Application Log: External ID"></ui-dg-column>
+   <ui-dg-column sortable field="PROBCLASS" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'BALPROBCL'}" label="Application Log: Log problem class"></ui-dg-column>
+   <ui-dg-column sortable field="MSG_CNT_A" data-abap.bind="{type:'INT4', length:'10'}" label="Application Log: Number of A messages"></ui-dg-column>
+   <ui-dg-column sortable field="MSG_CNT_E" data-abap.bind="{type:'INT4', length:'10'}" label="Application Log: Number of E messages"></ui-dg-column>
+   <ui-dg-column sortable field="MSG_CNT_W" data-abap.bind="{type:'INT4', length:'10'}" label="Application Log: Number of W messages"></ui-dg-column>
+   <ui-dg-column sortable field="MSG_CNT_I" data-abap.bind="{type:'INT4', length:'10'}" label="Application Log: Number of I messages"></ui-dg-column>
+   <ui-dg-column sortable field="MSG_CNT_S" data-abap.bind="{type:'INT4', length:'10'}" label="Application Log: Number of S messages"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_ON_DB" data-abap.bind="{type:'CHAR', length:'1'}" label="General Flag"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="APPLICATION_LOG.LOG_HANDLE" data-abap.bind="{type:'CHAR', length:'22'}"
+          label="Application Log: Log Handle"></ui-input>
+
+<ui-combo bind="APPLICATION_LOG.OBJECT" shlp.bind="{type: 'CT', id: 'BALOBJ'}" data-abap.bind="{type:'CHAR', mid:'BALOBJ', length:'20'}"
+          label="Application log: Object name (Application code)"></ui-combo>
+
+<ui-combo bind="APPLICATION_LOG.SUBOBJECT" shlp.bind="{type: 'CT', id: 'BALSUB'}" data-abap.bind="{type:'CHAR', mid:'BALSUBOBJ', length:'20'}"
+          label="Application Log: Subobject"></ui-combo>
+
+<ui-input bind="APPLICATION_LOG.EXTNUMBER" data-abap.bind="{type:'CHAR', mid:'BALEXT', length:'100'}"
+          label="Application Log: External ID"></ui-input>
+
+<ui-combo bind="APPLICATION_LOG.PROBCLASS" shlp.bind="{type: 'FV', id: 'BALPROBCL'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Application Log: Log problem class"></ui-combo>
+
+<ui-input bind="APPLICATION_LOG.MSG_CNT_A" data-abap.bind="{type:'INT4', length:'10'}"
+          label="Application Log: Number of A messages"></ui-input>
+
+<ui-input bind="APPLICATION_LOG.MSG_CNT_E" data-abap.bind="{type:'INT4', length:'10'}"
+          label="Application Log: Number of E messages"></ui-input>
+
+<ui-input bind="APPLICATION_LOG.MSG_CNT_W" data-abap.bind="{type:'INT4', length:'10'}"
+          label="Application Log: Number of W messages"></ui-input>
+
+<ui-input bind="APPLICATION_LOG.MSG_CNT_I" data-abap.bind="{type:'INT4', length:'10'}"
+          label="Application Log: Number of I messages"></ui-input>
+
+<ui-input bind="APPLICATION_LOG.MSG_CNT_S" data-abap.bind="{type:'INT4', length:'10'}"
+          label="Application Log: Number of S messages"></ui-input>
+
+<ui-checkbox value.bind="APPLICATION_LOG.LOG_ON_DB" label="General Flag"></ui-checkbox>
+
+<!-- Parameter: DETAIL_RETURN structure: BAPI_ORDER_RETURN  Return Structure for Order BAPIs -->
+
+<ui-datagrid data.bind="DETAIL_RETURN" title="Return Structure for Order BAPIs"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-dg-column>
+   <ui-dg-column sortable field="ID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'T100A'}" label="Message Class"></ui-dg-column>
+   <ui-dg-column sortable field="NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Message Number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}" label="Message Text"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_NO" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CH', id: 'BALHDR'}" label="Application log: log number"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_MSG_NO" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'BALM'}" label="Application log: Internal message serial number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}" label="Parameter Name"></ui-dg-column>
+   <ui-dg-column sortable field="ROW" data-abap.bind="{type:'INT4', length:'+10'}" label="Lines in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="FIELD" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD03L'}" label="Field in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="SYSTEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'TBDLS'}" label="Logical system from which message originates"></ui-dg-column>
+   <ui-dg-column sortable field="ORDER_NUMBER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" shlp.bind="{type: 'CT', id: 'AUFK'}" label="Order Number"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="DETAIL_RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="DETAIL_RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="DETAIL_RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="DETAIL_RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="DETAIL_RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="DETAIL_RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="DETAIL_RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="DETAIL_RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="DETAIL_RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="DETAIL_RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="DETAIL_RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="DETAIL_RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="DETAIL_RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="DETAIL_RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>
+
+<ui-combo bind="DETAIL_RETURN.ORDER_NUMBER" shlp.bind="{type: 'CT', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Parameters -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>

@@ -1,0 +1,208 @@
+<!--
+BAPI_SALESORDER_GETSTATUS exception: 0  struct: 1  table: 1  var: 1
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-combo bind="SALESDOCUMENT" shlp.bind="{type: 'CT', id: 'VBUK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}"
+          label="Sales and Distribution Document Number"></ui-combo>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: STATUSINFO structure: BAPISDSTAT  Status Information -->
+
+<ui-datagrid data.bind="STATUSINFO" title="Status Information"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="DOC_NUMBER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}" shlp.bind="{type: 'CH', id: 'VBUK'}" label="Sales Document"></ui-dg-column>
+   <ui-dg-column sortable field="DOC_DATE" data-abap.bind="{type:'DATS'}" label="Document Date (Date Received/Sent)"></ui-dg-column>
+   <ui-dg-column sortable field="PURCH_NO" data-abap.bind="{type:'CHAR', length:'20'}" label="Customer purchase order number"></ui-dg-column>
+   <ui-dg-column sortable field="PRC_STAT_H" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'STATV'}" label="Overall processing status of document"></ui-dg-column>
+   <ui-dg-column sortable field="DLV_STAT_H" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'STATV'}" label="Overall delivery status for all items"></ui-dg-column>
+   <ui-dg-column sortable field="REQ_DATE_H" data-abap.bind="{type:'DATS'}" label="Requested delivery date"></ui-dg-column>
+   <ui-dg-column sortable field="DLV_BLOCK" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'SH', id: 'H_TVLS'}" label="Delivery block (document header)"></ui-dg-column>
+   <ui-dg-column sortable field="ITM_NUMBER" data-abap.bind="{type:'NUMC', mid:'APO', length:'6'}" shlp.bind="{type: 'CH', id: 'VBUP'}" label="Sales Document Item"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" shlp.bind="{type: 'CT', id: 'MARA'}" label="Material Number"></ui-dg-column>
+   <ui-dg-column sortable field="SHORT_TEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Short text for sales order item"></ui-dg-column>
+   <ui-dg-column sortable field="REQ_DATE" data-abap.bind="{type:'DATS'}" label="Schedule line date"></ui-dg-column>
+   <ui-dg-column sortable field="REQ_QTY" data-abap.bind="{type:'QUAN', unit:'VRKME', length:'12.3'}" label="Cumulative order quantity in sales units"></ui-dg-column>
+   <ui-dg-column sortable field="CUM_CF_QTY" data-abap.bind="{type:'QUAN', unit:'VRKME', length:'12.3'}" label="Cumulative confirmed quantity in sales unit"></ui-dg-column>
+   <ui-dg-column sortable field="SALES_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T006'}" label="Sales unit"></ui-dg-column>
+   <ui-dg-column sortable field="NET_VALUE" data-abap.bind="{type:'CURR', unit:'WAERK', length:'+14.2'}" label="Net value of the order item in document currency"></ui-dg-column>
+   <ui-dg-column sortable field="CURRENCY" data-abap.bind="{type:'CUKY', mid:'FWS', length:'5'}" shlp.bind="{type: 'CT', id: 'TCURC'}" label="SD document currency"></ui-dg-column>
+   <ui-dg-column sortable field="NET_PRICE" data-abap.bind="{type:'CURR', unit:'WAERK', length:'+10.2'}" label="Net price"></ui-dg-column>
+   <ui-dg-column sortable field="COND_P_UNT" data-abap.bind="{type:'DEC', length:'5'}" label="Condition pricing unit"></ui-dg-column>
+   <ui-dg-column sortable field="COND_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T006'}" label="Condition unit"></ui-dg-column>
+   <ui-dg-column sortable field="DLV_STAT_I" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'STATV'}" label="Overall delivery status of the item"></ui-dg-column>
+   <ui-dg-column sortable field="DELIV_NUMB" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}" shlp.bind="{type: 'CH', id: 'VBUK'}" label="Delivery"></ui-dg-column>
+   <ui-dg-column sortable field="DELIV_ITEM" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'VBUP'}" label="Delivery Item"></ui-dg-column>
+   <ui-dg-column sortable field="DELIV_DATE" data-abap.bind="{type:'DATS'}" label="Delivery date"></ui-dg-column>
+   <ui-dg-column sortable field="DLV_QTY" data-abap.bind="{type:'QUAN', unit:'VRKME', length:'10.3'}" label="Actual quantity delivered (in sales units)"></ui-dg-column>
+   <ui-dg-column sortable field="REF_QTY" data-abap.bind="{type:'QUAN', unit:'VRKME', length:'12.3'}" label="Referenced quantity in base unit of measure"></ui-dg-column>
+   <ui-dg-column sortable field="S_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T006I'}" label="Sales unit in ISO code"></ui-dg-column>
+   <ui-dg-column sortable field="CD_UNT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'SH', id: 'H_T006I'}" label="Condition unit of measure in UoM"></ui-dg-column>
+   <ui-dg-column sortable field="CURR_ISO" data-abap.bind="{type:'CHAR', length:'3'}" label="ISO code currency"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}" label="Long Material Number for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}" label="External GUID for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}" label="Version Number for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="PO_ITM_NO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'6'}" label="Item Number of the Underlying Purchase Order"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_DATE" data-abap.bind="{type:'DATS'}" label="Date on Which Record Was Created"></ui-dg-column>
+   <ui-dg-column sortable field="CREATION_TIME" data-abap.bind="{type:'TIMS'}" label="Entry time"></ui-dg-column>
+   <ui-dg-column sortable field="S_UNIT_DLV" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Delivery unit"></ui-dg-column>
+   <ui-dg-column sortable field="DLV_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="Unit of measure for delivery unit in ISO code"></ui-dg-column>
+   <ui-dg-column sortable field="REA_FOR_RE" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'TVAG'}" label="Reason for rejection of quotations and sales orders"></ui-dg-column>
+   <ui-dg-column sortable field="PURCH_NO_C" data-abap.bind="{type:'CHAR', length:'35'}" label="Customer purchase order number"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}" label="Material Number (40 Characters, needed f. technical reasons)"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="STATUSINFO.DOC_NUMBER" shlp.bind="{type: 'CH', id: 'VBUK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}"
+          label="Sales Document"></ui-combo>
+
+<ui-date date.bind="STATUSINFO.DOC_DATE"  label="Document Date (Date Received/Sent)"></ui-date>
+
+<ui-input bind="STATUSINFO.PURCH_NO" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Customer purchase order number"></ui-input>
+
+<ui-combo bind="STATUSINFO.PRC_STAT_H" shlp.bind="{type: 'FV', id: 'STATV'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Overall processing status of document"></ui-combo>
+
+<ui-combo bind="STATUSINFO.DLV_STAT_H" shlp.bind="{type: 'FV', id: 'STATV'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Overall delivery status for all items"></ui-combo>
+
+<ui-date date.bind="STATUSINFO.REQ_DATE_H"  label="Requested delivery date"></ui-date>
+
+<ui-combo bind="STATUSINFO.DLV_BLOCK" shlp.bind="{type: 'SH', id: 'H_TVLS'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Delivery block (document header)"></ui-combo>
+
+<ui-combo bind="STATUSINFO.ITM_NUMBER" shlp.bind="{type: 'CH', id: 'VBUP'}" data-abap.bind="{type:'NUMC', mid:'APO', length:'6'}"
+          label="Sales Document Item"></ui-combo>
+
+<ui-combo bind="STATUSINFO.MATERIAL" shlp.bind="{type: 'CT', id: 'MARA'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+
+<ui-input bind="STATUSINFO.SHORT_TEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Short text for sales order item"></ui-input>
+
+<ui-date date.bind="STATUSINFO.REQ_DATE"  label="Schedule line date"></ui-date>
+
+<ui-input bind="STATUSINFO.REQ_QTY" data-abap.bind="{type:'QUAN', unit:'VRKME', length:'12.3'}"
+          label="Cumulative order quantity in sales units"></ui-input>
+
+<ui-input bind="STATUSINFO.CUM_CF_QTY" data-abap.bind="{type:'QUAN', unit:'VRKME', length:'12.3'}"
+          label="Cumulative confirmed quantity in sales unit"></ui-input>
+
+<ui-combo bind="STATUSINFO.SALES_UNIT" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Sales unit"></ui-combo>
+
+<ui-input bind="STATUSINFO.NET_VALUE" data-abap.bind="{type:'CURR', unit:'WAERK', length:'+14.2'}"
+          label="Net value of the order item in document currency"></ui-input>
+
+<ui-combo bind="STATUSINFO.CURRENCY" shlp.bind="{type: 'CT', id: 'TCURC'}" data-abap.bind="{type:'CUKY', mid:'FWS', length:'5'}"
+          label="SD document currency"></ui-combo>
+
+<ui-input bind="STATUSINFO.NET_PRICE" data-abap.bind="{type:'CURR', unit:'WAERK', length:'+10.2'}"
+          label="Net price"></ui-input>
+
+<ui-input bind="STATUSINFO.COND_P_UNT" data-abap.bind="{type:'DEC', length:'5'}"
+          label="Condition pricing unit"></ui-input>
+
+<ui-combo bind="STATUSINFO.COND_UNIT" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Condition unit"></ui-combo>
+
+<ui-combo bind="STATUSINFO.DLV_STAT_I" shlp.bind="{type: 'FV', id: 'STATV'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Overall delivery status of the item"></ui-combo>
+
+<ui-combo bind="STATUSINFO.DELIV_NUMB" shlp.bind="{type: 'CH', id: 'VBUK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}"
+          label="Delivery"></ui-combo>
+
+<ui-combo bind="STATUSINFO.DELIV_ITEM" shlp.bind="{type: 'CH', id: 'VBUP'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Delivery Item"></ui-combo>
+
+<ui-date date.bind="STATUSINFO.DELIV_DATE"  label="Delivery date"></ui-date>
+
+<ui-input bind="STATUSINFO.DLV_QTY" data-abap.bind="{type:'QUAN', unit:'VRKME', length:'10.3'}"
+          label="Actual quantity delivered (in sales units)"></ui-input>
+
+<ui-input bind="STATUSINFO.REF_QTY" data-abap.bind="{type:'QUAN', unit:'VRKME', length:'12.3'}"
+          label="Referenced quantity in base unit of measure"></ui-input>
+
+<ui-combo bind="STATUSINFO.S_UNIT_ISO" shlp.bind="{type: 'SH', id: 'H_T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Sales unit in ISO code"></ui-combo>
+
+<ui-combo bind="STATUSINFO.CD_UNT_ISO" shlp.bind="{type: 'SH', id: 'H_T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Condition unit of measure in UoM"></ui-combo>
+
+<ui-input bind="STATUSINFO.CURR_ISO" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code currency"></ui-input>
+
+<ui-input bind="STATUSINFO.MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for MATERIAL Field"></ui-input>
+
+<ui-input bind="STATUSINFO.MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for MATERIAL Field"></ui-input>
+
+<ui-input bind="STATUSINFO.MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for MATERIAL Field"></ui-input>
+
+<ui-input bind="STATUSINFO.PO_ITM_NO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'6'}"
+          label="Item Number of the Underlying Purchase Order"></ui-input>
+
+<ui-date date.bind="STATUSINFO.CREATION_DATE"  label="Date on Which Record Was Created"></ui-date>
+
+<ui-time time.bind="STATUSINFO.CREATION_TIME"  label="Entry time"></ui-time>
+
+<ui-combo bind="STATUSINFO.S_UNIT_DLV" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Delivery unit"></ui-combo>
+
+<ui-combo bind="STATUSINFO.DLV_UNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Unit of measure for delivery unit in ISO code"></ui-combo>
+
+<ui-combo bind="STATUSINFO.REA_FOR_RE" shlp.bind="{type: 'CT', id: 'TVAG'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Reason for rejection of quotations and sales orders"></ui-combo>
+
+<ui-input bind="STATUSINFO.PURCH_NO_C" data-abap.bind="{type:'CHAR', length:'35'}"
+          label="Customer purchase order number"></ui-input>
+
+<ui-input bind="STATUSINFO.MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material Number (40 Characters, needed f. technical reasons)"></ui-input>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRETURN  Error Text -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-input bind="RETURN.CODE" data-abap.bind="{type:'CHAR', length:'5'}"
+          label="Message code"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>

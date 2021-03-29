@@ -1,7 +1,7 @@
 //
-// BAPI_KANBAN_CHANGESTATUS1 var: 4  struct: 4  table: 1  exception: 0
+// BAPI_KANBAN_CHANGESTATUS1 exception: 0  struct: 4  table: 1  var: 4
 //
-// abap 2.2.0 at: 2021-03-29 14:41:07
+// abap 2.2.0 at: 2021-03-29 15:40:08
 //
 
 // prettier-ignore

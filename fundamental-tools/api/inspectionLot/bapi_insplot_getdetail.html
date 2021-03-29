@@ -1,0 +1,486 @@
+<!--
+BAPI_INSPLOT_GETDETAIL exception: 0  struct: 8  table: 3  var: 1
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-combo bind="NUMBER" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot"></ui-combo>
+
+<!-- Parameter: LANGUAGE structure: BAPI2045LA  Language Key (Non-ISO and ISO) -->
+
+<ui-combo bind="LANGUAGE.LANGU" shlp.bind="{type: 'SH', id: 'H_T002'}" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+          label="Language Key"></ui-combo>
+
+<ui-input bind="LANGUAGE.LANGU_ISO" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="2-Character SAP Language Code"></ui-input>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: MATERIAL_DOCUMENTS structure: BAPI2045MD  References Between Inspection Lots and Material Documents -->
+
+<ui-datagrid data.bind="MATERIAL_DOCUMENTS" title="References Between Inspection Lots and Material Documents"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="INSPLOT" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}" shlp.bind="{type: 'SH', id: 'QALS'}" label="Inspection Lot Number"></ui-dg-column>
+   <ui-dg-column sortable field="INT_COUNTER" data-abap.bind="{type:'NUMC', length:'6'}" label="Internal Counter for DB Objects"></ui-dg-column>
+   <ui-dg-column sortable field="REFERENCE_TYPE" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'FV', id: 'QAMBTYPE'}" label="Type of Reference Between Inspection Lot and Material Doc."></ui-dg-column>
+   <ui-dg-column sortable field="MAT_DOC" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'MBN', length:'10'}" label="Number of Material Document"></ui-dg-column>
+   <ui-dg-column sortable field="DOC_YEAR" data-abap.bind="{type:'NUMC', alpha:'GJAHR', mid:'MJA', length:'4'}" label="Material Document Year"></ui-dg-column>
+   <ui-dg-column sortable field="MATDOC_ITM" data-abap.bind="{type:'NUMC', mid:'POS', length:'4'}" label="Item in Material Document"></ui-dg-column>
+   <ui-dg-column sortable field="ENTRY_DATE" data-abap.bind="{type:'DATS'}" label="Day On Which Accounting Document Was Entered"></ui-dg-column>
+   <ui-dg-column sortable field="ENTRY_TIME" data-abap.bind="{type:'TIMS'}" label="Time of Entry"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="MATERIAL_DOCUMENTS.INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-input bind="MATERIAL_DOCUMENTS.INT_COUNTER" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Internal Counter for DB Objects"></ui-input>
+
+<ui-combo bind="MATERIAL_DOCUMENTS.REFERENCE_TYPE" shlp.bind="{type: 'FV', id: 'QAMBTYPE'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Type of Reference Between Inspection Lot and Material Doc."></ui-combo>
+
+<ui-input bind="MATERIAL_DOCUMENTS.MAT_DOC" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'MBN', length:'10'}"
+          label="Number of Material Document"></ui-input>
+
+<ui-input bind="MATERIAL_DOCUMENTS.DOC_YEAR" data-abap.bind="{type:'NUMC', alpha:'GJAHR', mid:'MJA', length:'4'}"
+          label="Material Document Year"></ui-input>
+
+<ui-input bind="MATERIAL_DOCUMENTS.MATDOC_ITM" data-abap.bind="{type:'NUMC', mid:'POS', length:'4'}"
+          label="Item in Material Document"></ui-input>
+
+<ui-date date.bind="MATERIAL_DOCUMENTS.ENTRY_DATE"  label="Day On Which Accounting Document Was Entered"></ui-date>
+
+<ui-time time.bind="MATERIAL_DOCUMENTS.ENTRY_TIME"  label="Time of Entry"></ui-time>
+
+<!-- Parameter: SYSTEM_STATUS structure: BAPI2045SS  Inspection Lot System Status -->
+
+<ui-datagrid data.bind="SYSTEM_STATUS" title="Inspection Lot System Status"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SYS_STATUS" data-abap.bind="{type:'CHAR', length:'5'}" shlp.bind="{type: 'SH', id: 'H_TJ02'}" label="System status"></ui-dg-column>
+   <ui-dg-column sortable field="SY_ST_TEXT" data-abap.bind="{type:'CHAR', length:'4'}" label="Individual status of an object (short form)"></ui-dg-column>
+   <ui-dg-column sortable field="SY_ST_DSCR" data-abap.bind="{type:'CHAR', length:'30'}" label="Object status"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="SYSTEM_STATUS.SYS_STATUS" shlp.bind="{type: 'SH', id: 'H_TJ02'}" data-abap.bind="{type:'CHAR', length:'5'}"
+          label="System status"></ui-combo>
+
+<ui-input bind="SYSTEM_STATUS.SY_ST_TEXT" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Individual status of an object (short form)"></ui-input>
+
+<ui-input bind="SYSTEM_STATUS.SY_ST_DSCR" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Object status"></ui-input>
+
+<!-- Parameter: USER_STATUS structure: BAPI2045US  User Status for the Inspection Lot -->
+
+<ui-datagrid data.bind="USER_STATUS" title="User Status for the Inspection Lot"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="STAT_PROF" data-abap.bind="{type:'CHAR', length:'8'}" shlp.bind="{type: 'SH', id: 'H_TJ20'}" label="Status Profile"></ui-dg-column>
+   <ui-dg-column sortable field="USR_STATUS" data-abap.bind="{type:'CHAR', length:'5'}" shlp.bind="{type: 'SH', id: 'H_TJ30'}" label="User Status"></ui-dg-column>
+   <ui-dg-column sortable field="US_ST_NUMB" data-abap.bind="{type:'NUMC', length:'2'}" label="Status Order Number"></ui-dg-column>
+   <ui-dg-column sortable field="US_ST_TEXT" data-abap.bind="{type:'CHAR', length:'4'}" label="Individual status of an object (short form)"></ui-dg-column>
+   <ui-dg-column sortable field="US_ST_DSCR" data-abap.bind="{type:'CHAR', length:'30'}" label="Object status"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="USER_STATUS.STAT_PROF" shlp.bind="{type: 'SH', id: 'H_TJ20'}" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Status Profile"></ui-combo>
+
+<ui-combo bind="USER_STATUS.USR_STATUS" shlp.bind="{type: 'SH', id: 'H_TJ30'}" data-abap.bind="{type:'CHAR', length:'5'}"
+          label="User Status"></ui-combo>
+
+<ui-input bind="USER_STATUS.US_ST_NUMB" data-abap.bind="{type:'NUMC', length:'2'}"
+          label="Status Order Number"></ui-input>
+
+<ui-input bind="USER_STATUS.US_ST_TEXT" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Individual status of an object (short form)"></ui-input>
+
+<ui-input bind="USER_STATUS.US_ST_DSCR" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Object status"></ui-input>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: ACCOUNTING_DATA structure: BAPI2045D_IL3  Account Assignment Data for Inspection Lot -->
+
+<ui-combo bind="ACCOUNTING_DATA.INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-checkbox value.bind="ACCOUNTING_DATA.IND_SPECIAL_QM_ORDER" label="Record Appraisal Costs in Individual QM Order"></ui-checkbox>
+
+<ui-combo bind="ACCOUNTING_DATA.QM_ORDERID" shlp.bind="{type: 'CH', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number for Recording Appraisal Costs"></ui-combo>
+
+<ui-combo bind="ACCOUNTING_DATA.BUS_AREA" shlp.bind="{type: 'SH', id: 'H_TGSB'}" data-abap.bind="{type:'CHAR', mid:'GSB', length:'4'}"
+          label="Business Area"></ui-combo>
+
+<ui-combo bind="ACCOUNTING_DATA.CO_AREA" shlp.bind="{type: 'SH', id: 'CSH_TKA01'}" data-abap.bind="{type:'CHAR', mid:'CAC', length:'4'}"
+          label="Controlling Area"></ui-combo>
+
+<ui-combo bind="ACCOUNTING_DATA.COMP_CODE" shlp.bind="{type: 'SH', id: 'C_T001'}" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}"
+          label="Company Code"></ui-combo>
+
+<ui-combo bind="ACCOUNTING_DATA.PROFIT_CTR" shlp.bind="{type: 'CT', id: 'CEPC'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PRC', length:'10'}"
+          label="Profit Center"></ui-combo>
+
+<ui-combo bind="ACCOUNTING_DATA.INSPLOT_ACCTNG_KEY" shlp.bind="{type: 'FV', id: 'QKZQALSKNT'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Account Assignment Key: Inspection Lot"></ui-combo>
+
+<ui-combo bind="ACCOUNTING_DATA.ORDERID" shlp.bind="{type: 'CH', id: 'AUFK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+          label="Order Number"></ui-combo>
+
+<ui-combo bind="ACCOUNTING_DATA.COSTCENTER" shlp.bind="{type: 'CT', id: 'CSKS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KOS', length:'10'}"
+          label="Cost Center"></ui-combo>
+
+<ui-combo bind="ACCOUNTING_DATA.ASSET_NO" shlp.bind="{type: 'CH', id: 'ANLH'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AN1', length:'12'}"
+          label="Main Asset Number"></ui-combo>
+
+<ui-combo bind="ACCOUNTING_DATA.SUB_NUMBER" shlp.bind="{type: 'CH', id: 'ANLA'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AN2', length:'4'}"
+          label="Asset Subnumber"></ui-combo>
+
+<ui-combo bind="ACCOUNTING_DATA.ACCTNG_WBS_ELEM" shlp.bind="{type: 'CH', id: 'PRPS'}" data-abap.bind="{type:'NUMC', alpha:'ABPSP', length:'8'}"
+          label="Work Breakdown Structure Element (WBS Element)"></ui-combo>
+
+<ui-input bind="ACCOUNTING_DATA.ACCTNG_WBS_ELEMENT_EXT" data-abap.bind="{type:'CHAR', alpha:'ABPSN', mid:'PRO', length:'24'}"
+          label="Work Breakdown Structure Element (WBS Element)"></ui-input>
+
+<ui-combo bind="ACCOUNTING_DATA.ACCTNG_SALES_ORD" shlp.bind="{type: 'CH', id: 'VBUK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}"
+          label="Sales Order Number"></ui-combo>
+
+<ui-input bind="ACCOUNTING_DATA.ACCTNG_S_ORD_ITEM" data-abap.bind="{type:'NUMC', mid:'KPO', length:'6'}"
+          label="Item number in Sales Order"></ui-input>
+
+<ui-input bind="ACCOUNTING_DATA.PROFIT_SEGM_NO" data-abap.bind="{type:'NUMC', length:'10'}"
+          label="Profitability Segment Number (CO-PA)"></ui-input>
+
+<!-- Parameter: CUSTOMER_INCLUDE_DATA structure: BAPI2045CI  Customer Fields for Include CI_QALS -->
+
+<ui-input bind="CUSTOMER_INCLUDE_DATA.DMY_UNUSED" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Field Not Used as of 3. ield Reserved for SAP"></ui-input>
+
+<!-- Parameter: GENERAL_DATA structure: BAPI2045D_IL0  General Data for Inspection Lot -->
+
+<ui-combo bind="GENERAL_DATA.INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-combo bind="GENERAL_DATA.MANUFACTURER" shlp.bind="{type: 'SH', id: 'KRED'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+          label="Number of Manufacturer"></ui-combo>
+
+<ui-combo bind="GENERAL_DATA.VERSION" shlp.bind="{type: 'SH', id: 'H_MKAL'}" data-abap.bind="{type:'CHAR', mid:'VER', length:'4'}"
+          label="Production Version"></ui-combo>
+
+<!-- Parameter: RETURN structure: BAPIRETURN1  Return Values -->
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<!-- Parameter: STOCK_DATA structure: BAPI2045D_IL2  Stock Data for Inspection Lot -->
+
+<ui-combo bind="STOCK_DATA.INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-input bind="STOCK_DATA.IND_GR_BLOCKED" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="GR blocked stock"></ui-input>
+
+<ui-checkbox value.bind="STOCK_DATA.IND_QUAL_INSPECTION" label="Quantity Is or Was in Inspection Stock"></ui-checkbox>
+
+<ui-combo bind="STOCK_DATA.MATERIAL" shlp.bind="{type: 'CT', id: 'MARA'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+
+<ui-checkbox value.bind="STOCK_DATA.IND_BATCH_MGNT" label="Batch management requirement indicator"></ui-checkbox>
+
+<ui-combo bind="STOCK_DATA.BATCH" shlp.bind="{type: 'CH', id: 'MCH1'}" data-abap.bind="{type:'CHAR', mid:'CHA', length:'10'}"
+          label="Batch Number"></ui-combo>
+
+<ui-combo bind="STOCK_DATA.BATCH_STGE_LOC" shlp.bind="{type: 'SH', id: 'H_T001L'}" data-abap.bind="{type:'CHAR', mid:'LAG', length:'4'}"
+          label="Storage location"></ui-combo>
+
+<ui-combo bind="STOCK_DATA.STOCK_PLANT" shlp.bind="{type: 'SH', id: 'H_T001W'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Plant Where Stock for Inspection Lot Is Held"></ui-combo>
+
+<ui-combo bind="STOCK_DATA.STOCK_STGE_LOC" shlp.bind="{type: 'SH', id: 'H_T001L'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Storage Location for Inspection Lot Stock"></ui-combo>
+
+<ui-combo bind="STOCK_DATA.SPEC_STOCK" shlp.bind="{type: 'SH', id: 'H_T148'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Special Stock Indicator"></ui-combo>
+
+<ui-combo bind="STOCK_DATA.VENDOR" shlp.bind="{type: 'SH', id: 'KRED'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+          label="Vendor's account number"></ui-combo>
+
+<ui-combo bind="STOCK_DATA.WBS_ELEM" shlp.bind="{type: 'CH', id: 'PRPS'}" data-abap.bind="{type:'NUMC', alpha:'ABPSP', length:'8'}"
+          label="Valuated Sales Order Stock WBS Element"></ui-combo>
+
+<ui-input bind="STOCK_DATA.WBS_ELEMENT_EXT" data-abap.bind="{type:'CHAR', alpha:'ABPSN', mid:'PRO', length:'24'}"
+          label="Work Breakdown Structure Element (WBS Element)"></ui-input>
+
+<ui-combo bind="STOCK_DATA.SALES_ORD" shlp.bind="{type: 'CH', id: 'VBUK'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}"
+          label="Sales order number of valuated sales order stock"></ui-combo>
+
+<ui-input bind="STOCK_DATA.S_ORD_ITEM" data-abap.bind="{type:'NUMC', mid:'KPO', length:'6'}"
+          label="Sales Order Item of Valuated Sales Order Stock"></ui-input>
+
+<ui-input bind="STOCK_DATA.INSPLOT_SIZE" data-abap.bind="{type:'QUAN', unit:'INSPLOT_BASE_UOM', length:'10.3'}"
+          label="Inspection Lot Quantity"></ui-input>
+
+<ui-combo bind="STOCK_DATA.INSPLOT_BASE_UOM" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Base Unit of Measure for Inspection Lot Quantity"></ui-combo>
+
+<ui-combo bind="STOCK_DATA.INSPLOT_BASE_UOM_ISO" shlp.bind="{type: 'SH', id: 'H_T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="STOCK_DATA.NO_OF_CONTAINERS" data-abap.bind="{type:'QUAN', unit:'INSPLOT_CONTAINER_UOM', length:'3.3'}"
+          label="QM - No. of Containers"></ui-input>
+
+<ui-combo bind="STOCK_DATA.INSPLOT_CONTAINER_UOM" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Lot Container"></ui-combo>
+
+<ui-combo bind="STOCK_DATA.INSPLOT_CONTAINER_UOM_ISO" shlp.bind="{type: 'SH', id: 'H_T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="STOCK_DATA.SAMPLE_SIZE" data-abap.bind="{type:'QUAN', unit:'INSPLOT_BASE_UOM', length:'10.3'}"
+          label="Sample Size"></ui-input>
+
+<ui-combo bind="STOCK_DATA.SAMPLE_BASE_UOM" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Base Unit of Measure for the Sample Unit"></ui-combo>
+
+<ui-combo bind="STOCK_DATA.SAMPLE_BASE_UOM_ISO" shlp.bind="{type: 'SH', id: 'H_T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="STOCK_DATA.SAMPLE_WHSE_SIZE" data-abap.bind="{type:'QUAN', unit:'INSPLOT_BASE_UOM', length:'10.3'}"
+          label="Sample in base unit of measure provided by WM"></ui-input>
+
+<ui-combo bind="STOCK_DATA.SAMPLE_WHSE_NO" shlp.bind="{type: 'SH', id: 'H_T300'}" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}"
+          label="Warehouse Number / Warehouse Complex"></ui-combo>
+
+<ui-combo bind="STOCK_DATA.SAMPLE_STGE_TYPE" shlp.bind="{type: 'SH', id: 'H_T301'}" data-abap.bind="{type:'CHAR', mid:'LGT', length:'3'}"
+          label="Storage Type"></ui-combo>
+
+<ui-combo bind="STOCK_DATA.SAMPLE_STGE_BIN" shlp.bind="{type: 'CH', id: 'LAGP'}" data-abap.bind="{type:'CHAR', mid:'LGP', length:'10'}"
+          label="Storage Bin"></ui-combo>
+
+<ui-combo bind="STOCK_DATA.QUANTITY_UOM" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Base Unit of Measure for Inspection Lot Quantity"></ui-combo>
+
+<ui-combo bind="STOCK_DATA.QUANTITY_UOM_ISO" shlp.bind="{type: 'SH', id: 'H_T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for unit of measurement"></ui-combo>
+
+<ui-input bind="STOCK_DATA.QUANTITY_AVAILABLE" data-abap.bind="{type:'QUAN', unit:'QUANTITY_UOM', length:'10.3'}"
+          label="Quantity Posted to Unrestricted-Use Stock"></ui-input>
+
+<ui-input bind="STOCK_DATA.QUANTITY_SCRAP" data-abap.bind="{type:'QUAN', unit:'QUANTITY_UOM', length:'10.3'}"
+          label="Quantity Posted to Scrap"></ui-input>
+
+<ui-input bind="STOCK_DATA.QUANTITY_SAMPLE" data-abap.bind="{type:'QUAN', unit:'QUANTITY_UOM', length:'10.3'}"
+          label="Quantity Posted to Sample"></ui-input>
+
+<ui-input bind="STOCK_DATA.QUANTITY_BLOCKED" data-abap.bind="{type:'QUAN', unit:'QUANTITY_UOM', length:'10.3'}"
+          label="Quantity Posted to Blocked Stock"></ui-input>
+
+<ui-input bind="STOCK_DATA.QUANTITY_RESERVES" data-abap.bind="{type:'QUAN', unit:'QUANTITY_UOM', length:'10.3'}"
+          label="Quantity Posted to Reserves"></ui-input>
+
+<ui-input bind="STOCK_DATA.QUANTITY_NEW_MATERIAL" data-abap.bind="{type:'QUAN', unit:'QUANTITY_UOM', length:'10.3'}"
+          label="Quantity Posted to Another Material"></ui-input>
+
+<ui-combo bind="STOCK_DATA.NEW_MATERIAL" shlp.bind="{type: 'CT', id: 'MARA'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number to Which the Quantity is Posted"></ui-combo>
+
+<ui-combo bind="STOCK_DATA.NEW_BATCH" shlp.bind="{type: 'CH', id: 'MCH1'}" data-abap.bind="{type:'CHAR', mid:'CHA', length:'10'}"
+          label="Batch to Which Goods Are Transferred"></ui-combo>
+
+<ui-input bind="STOCK_DATA.QUANTITY_RETURNED_TO_VENDOR" data-abap.bind="{type:'QUAN', unit:'QUANTITY_UOM', length:'10.3'}"
+          label="Quantity Returned to Vendor"></ui-input>
+
+<ui-input bind="STOCK_DATA.QUANTITY_OTHER" data-abap.bind="{type:'QUAN', unit:'QUANTITY_UOM', length:'10.3'}"
+          label="Other Quantity Posted from Inspection Lot Stock"></ui-input>
+
+<ui-input bind="STOCK_DATA.QUANTITY_TO_BE_POSTED" data-abap.bind="{type:'QUAN', unit:'QUANTITY_UOM', length:'10.3'}"
+          label="Quantity That Must Be Posted"></ui-input>
+
+<ui-input bind="STOCK_DATA.QUANTITY_ACTUAL" data-abap.bind="{type:'QUAN', unit:'QUANTITY_UOM', length:'10.3'}"
+          label="Actual Lot Quantity"></ui-input>
+
+<ui-checkbox value.bind="STOCK_DATA.IND_UD_LOGS" label="Logs Exist for Usage Decision"></ui-checkbox>
+
+<ui-input bind="STOCK_DATA.MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for MATERIAL Field"></ui-input>
+
+<ui-input bind="STOCK_DATA.MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for MATERIAL Field"></ui-input>
+
+<ui-input bind="STOCK_DATA.MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for MATERIAL Field"></ui-input>
+
+<ui-input bind="STOCK_DATA.NEW_MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for NEW_MATERIAL Field"></ui-input>
+
+<ui-input bind="STOCK_DATA.NEW_MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for NEW_MATERIAL Field"></ui-input>
+
+<ui-input bind="STOCK_DATA.NEW_MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for NEW_MATERIAL Field"></ui-input>
+
+<ui-input bind="STOCK_DATA.MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material Number (40 Characters, needed f. technical reasons)"></ui-input>
+
+<ui-input bind="STOCK_DATA.NEW_MATERIAL_LONG" data-abap.bind="{type:'CHAR', mid:'MAT', length:'40'}"
+          label="Material Number to Which the Quantity is Posted"></ui-input>
+
+<!-- Parameter: TASK_LIST_DATA structure: BAPI2045D_IL1  Task List Assignment for Inspection Lot -->
+
+<ui-combo bind="TASK_LIST_DATA.INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-checkbox value.bind="TASK_LIST_DATA.IND_TASK_LIST_REQUIRED" label="Inspection Plan Required"></ui-checkbox>
+
+<ui-checkbox value.bind="TASK_LIST_DATA.IND_SPEC_MATSPEC" label="Inspect with Material Specification"></ui-checkbox>
+
+<ui-checkbox value.bind="TASK_LIST_DATA.IND_SPEC_CONFIG" label="Inspection Specifications from Configuration"></ui-checkbox>
+
+<ui-checkbox value.bind="TASK_LIST_DATA.IND_SPEC_BATCH" label="Inspection Specifications from Batch Determination"></ui-checkbox>
+
+<ui-combo bind="TASK_LIST_DATA.TASK_LIST_TYPE" shlp.bind="{type: 'SH', id: 'H_TCA01'}" data-abap.bind="{type:'CHAR', mid:'PTY', length:'1'}"
+          label="Task List Type"></ui-combo>
+
+<ui-combo bind="TASK_LIST_DATA.TASK_LIST_NUMBER" shlp.bind="{type: 'SH', id: 'PLKS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PLN', length:'8'}"
+          label="Key for Task List Group"></ui-combo>
+
+<ui-combo bind="TASK_LIST_DATA.TASK_LIST_USAGE" shlp.bind="{type: 'SH', id: 'H_T411'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Task list usage"></ui-combo>
+
+<ui-input bind="TASK_LIST_DATA.TASK_LIST_COUNTER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PAL', length:'2'}"
+          label="Group Counter"></ui-input>
+
+<ui-date date.bind="TASK_LIST_DATA.TASK_LIST_VALID_FROM_DATE"  label="Valid-From Date"></ui-date>
+
+<ui-date date.bind="TASK_LIST_DATA.MAT_TL_ASSGNMT_VALID_FROM_DATE"  label="Valid-From Date"></ui-date>
+
+<ui-combo bind="TASK_LIST_DATA.SPEC_SEL_MATERIAL" shlp.bind="{type: 'CT', id: 'MARA'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+
+<ui-input bind="TASK_LIST_DATA.SPEC_SEL_REV_LEV" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'RVS', length:'2'}"
+          label="Revision level"></ui-input>
+
+<ui-combo bind="TASK_LIST_DATA.SPEC_SEL_PLANT" shlp.bind="{type: 'SH', id: 'H_T001W'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+
+<ui-combo bind="TASK_LIST_DATA.SPEC_SEL_VENDOR" shlp.bind="{type: 'SH', id: 'KRED'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+          label="Vendor's account number"></ui-combo>
+
+<ui-checkbox value.bind="TASK_LIST_DATA.IND_MATPARTNO_MGNT_ACTIVE" label="Manufacturer Part No. Processing Active"></ui-checkbox>
+
+<ui-combo bind="TASK_LIST_DATA.SPEC_SEL_MANUFACTURER" shlp.bind="{type: 'SH', id: 'KRED'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+          label="Number of Manufacturer"></ui-combo>
+
+<ui-combo bind="TASK_LIST_DATA.SPEC_SEL_CUSTOMER" shlp.bind="{type: 'SH', id: 'DEBI'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}"
+          label="Account number of customer"></ui-combo>
+
+<ui-combo bind="TASK_LIST_DATA.SPEC_SEL_TASK_LIST_USAGE" shlp.bind="{type: 'SH', id: 'H_T411'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Task list usage"></ui-combo>
+
+<ui-date date.bind="TASK_LIST_DATA.SPEC_SEL_TL_VALID_FROM_DATE"  label="Valid-From Date"></ui-date>
+
+<ui-input bind="TASK_LIST_DATA.SPEC_SEL_MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for SPEC_SEL_MATERIAL Field"></ui-input>
+
+<ui-input bind="TASK_LIST_DATA.SPEC_SEL_MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for SPEC_SEL_MATERIAL Field"></ui-input>
+
+<ui-input bind="TASK_LIST_DATA.SPEC_SEL_MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for SPEC_SEL_MA Field"></ui-input>
+
+<ui-input bind="TASK_LIST_DATA.SPEC_SEL_MATERIAL_LONG" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Material Number (40 Characters, needed f. technical reasons)"></ui-input>
+
+<!-- Parameter: USAGE_DECISION_DATA structure: BAPI2045D_IL4  Usage Decision for the Inspection Lot -->
+
+<ui-combo bind="USAGE_DECISION_DATA.INSPLOT" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-checkbox value.bind="USAGE_DECISION_DATA.IND_AUTOMATIC_UD" label="Automatic Usage Decision Planned"></ui-checkbox>
+
+<ui-checkbox value.bind="USAGE_DECISION_DATA.IND_DIG_SIGN_USAGE_DECISION" label="Digital Signature for Insp. Lot when Usage Decision Made"></ui-checkbox>
+
+<ui-combo bind="USAGE_DECISION_DATA.UD_MODE" shlp.bind="{type: 'FV', id: 'QMODUS_UD'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Usage Decision Mmode (UD Origin)"></ui-combo>
+
+<ui-combo bind="USAGE_DECISION_DATA.UD_CATALOG_TYPE" shlp.bind="{type: 'SH', id: 'H_TQ15'}" data-abap.bind="{type:'CHAR', mid:'QKT', length:'1'}"
+          label="Catalog"></ui-combo>
+
+<ui-combo bind="USAGE_DECISION_DATA.UD_PLANT" shlp.bind="{type: 'SH', id: 'H_T001W'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+
+<ui-combo bind="USAGE_DECISION_DATA.UD_SELECTED_SET" shlp.bind="{type: 'CH', id: 'QPAM'}" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Selected Set of the Usage Decision"></ui-combo>
+
+<ui-combo bind="USAGE_DECISION_DATA.UD_CODE_GROUP" shlp.bind="{type: 'CT', id: 'QPGR'}" data-abap.bind="{type:'CHAR', mid:'CGP', length:'8'}"
+          label="Code Group of the Usage Decision"></ui-combo>
+
+<ui-combo bind="USAGE_DECISION_DATA.UD_CODE" shlp.bind="{type: 'CT', id: 'QPCD'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Usage Decision Code"></ui-combo>
+
+<ui-combo bind="USAGE_DECISION_DATA.CODE_VALUATION" shlp.bind="{type: 'FV', id: 'QBEWERTUNG'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Code Valuation"></ui-combo>
+
+<ui-combo bind="USAGE_DECISION_DATA.DYN_MODIF_VALUATION" shlp.bind="{type: 'FV', id: 'QBEWERTUNG'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Dynamic Modif. Valuation According to Worst Case Principle"></ui-combo>
+
+<ui-combo bind="USAGE_DECISION_DATA.FOLLOW_UP_ACTION" shlp.bind="{type: 'SH', id: 'H_TQ07'}" data-abap.bind="{type:'CHAR', length:'8'}"
+          label="Follow-Up Action"></ui-combo>
+
+<ui-input bind="USAGE_DECISION_DATA.QUALITY_SCORE" data-abap.bind="{type:'DEC', length:'3'}"
+          label="Quality Score"></ui-input>
+
+<ui-checkbox value.bind="USAGE_DECISION_DATA.IND_UD_LONG_TEXT" label="Long Text for Usage Decision"></ui-checkbox>
+
+<ui-input bind="USAGE_DECISION_DATA.UD_RECORDED_BY_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Person who Made the Usage Decision"></ui-input>
+
+<ui-date date.bind="USAGE_DECISION_DATA.UD_RECORDED_ON_DATE"  label="Date of Code Used for Usage Decision"></ui-date>
+
+<ui-time time.bind="USAGE_DECISION_DATA.UD_RECORDED_AT_TIME"  label="Time when Usage Decision Was Recorded"></ui-time>
+
+<ui-input bind="USAGE_DECISION_DATA.UD_CHANGED_BY_USER" data-abap.bind="{type:'CHAR', length:'12'}"
+          label="Person who Changed the Usage Decision"></ui-input>
+
+<ui-date date.bind="USAGE_DECISION_DATA.UD_CHANGED_ON_DATE"  label="Change Date of Usage Decision"></ui-date>
+
+<ui-time time.bind="USAGE_DECISION_DATA.UD_CHANGED_AT_TIME"  label="Time when Usage Decision Changed"></ui-time>

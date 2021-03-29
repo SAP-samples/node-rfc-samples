@@ -1,0 +1,19 @@
+<!-- SH LAG1M Storage bins for material : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.MATNR" shlp.bind="{type: 'CT', id: 'MARA'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+<ui-combo bind="searchParamLow.LGNUM" shlp.bind="{type: 'SH', id: 'H_T300'}" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}"
+          label="Warehouse Number / Warehouse Complex"></ui-combo>
+<ui-combo bind="searchParamLow.LGTYP" shlp.bind="{type: 'SH', id: 'H_T301'}" data-abap.bind="{type:'CHAR', mid:'LGT', length:'3'}"
+          label="Storage Type"></ui-combo>
+<ui-combo bind="searchParamLow.LGPLA" shlp.bind="{type: 'SH', id: 'L_LAGP'}" data-abap.bind="{type:'CHAR', mid:'LGP', length:'10'}"
+          label="Storage Bin"></ui-combo>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="MATNR" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" label="Material Number"></ui-dg-column>
+   <ui-dg-column sortable field="LGNUM" data-abap.bind="{type:'CHAR', mid:'LGN', length:'3'}" label="Warehouse Number / Warehouse Complex"></ui-dg-column>
+   <ui-dg-column sortable field="LGTYP" data-abap.bind="{type:'CHAR', mid:'LGT', length:'3'}" label="Storage Type"></ui-dg-column>
+   <ui-dg-column sortable field="LGPLA" data-abap.bind="{type:'CHAR', mid:'LGP', length:'10'}" label="Storage Bin"></ui-dg-column>
+</ui-datagrid>

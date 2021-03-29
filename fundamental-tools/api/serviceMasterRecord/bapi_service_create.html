@@ -1,0 +1,339 @@
+<!--
+BAPI_SERVICE_CREATE exception: 0  struct: 4  table: 5  var: 3
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<!-- Parameter: IM_SERVICE_DATA structure: BAPISRV_ASMD  General Data for Service, Import -->
+
+<ui-combo bind="IM_SERVICE_DATA.SERVICE" shlp.bind="{type: 'CT', id: 'ASMD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}"
+          label="Activity Number"></ui-combo>
+
+<!-- Parameter: IM_SERVICE_DATAX structure: BAPISRV_ASMDX  Change Parameter for Service Data, Import -->
+
+<ui-combo bind="IM_SERVICE_DATAX.SERVICE" shlp.bind="{type: 'CT', id: 'ASMD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}"
+          label="Activity Number"></ui-combo>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.DEL_IND" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.MATL_GROUP" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.BASE_UOM" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.BASE_UOM_ISO" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.SERV_CAT" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.EAN_UPC" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.EAN_CAT" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.DIVISION" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.AUTH_GROUP" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.P_STATUS" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.VALID_FROM" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.VAL_CLASS" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.HIER_SERV" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.MASTER_LANGU" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.MASTER_LANGU_ISO" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.WAGETYPE" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.SERV_TYPE" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.EDITION" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.SSC_ITEM" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.TAX_IND" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.CONV_NUM" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.CONV_DEN" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.WORK_UOM" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.WORK_UOM_ISO" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.FORMULA" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.CHGTEXT" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.GRAPHIC_URL" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.CREATED_ON" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.CREATED_BY" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.CHANGED_ON" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="IM_SERVICE_DATAX.CHANGED_BY" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-input bind="NO_NUMBER_RANGE_CHECK" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Indicator to Circumvent the Number Range Check"></ui-input>
+
+<ui-input bind="TESTRUN" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Switch to Simulation Mode for Write BAPIs"></ui-input>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: EXTENSION_IN structure: BAPIPAREX  Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIONOUT -->
+
+<ui-datagrid data.bind="EXTENSION_IN" title="Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIONOUT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="STRUCTURE" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD02L'}" label="Structure name of  BAPI table extension"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="EXTENSION_IN.STRUCTURE" shlp.bind="{type: 'CT', id: 'DD02L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Structure name o API table extension"></ui-combo>
+
+<ui-input bind="EXTENSION_IN.VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_IN.VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_IN.VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_IN.VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<!-- Parameter: EXTENSION_OUT structure: BAPIPAREX  Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIONOUT -->
+
+<ui-datagrid data.bind="EXTENSION_OUT" title="Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIONOUT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="STRUCTURE" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD02L'}" label="Structure name of  BAPI table extension"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="EXTENSION_OUT.STRUCTURE" shlp.bind="{type: 'CT', id: 'DD02L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Structure name o API table extension"></ui-combo>
+
+<ui-input bind="EXTENSION_OUT.VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_OUT.VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_OUT.VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSION_OUT.VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Parameter(s) -->
+
+<ui-datagrid data.bind="RETURN" title="Return Parameter(s)"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-dg-column>
+   <ui-dg-column sortable field="ID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'T100A'}" label="Message Class"></ui-dg-column>
+   <ui-dg-column sortable field="NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Message Number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}" label="Message Text"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_NO" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CH', id: 'BALHDR'}" label="Application log: log number"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_MSG_NO" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'BALM'}" label="Application log: Internal message serial number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}" label="Parameter Name"></ui-dg-column>
+   <ui-dg-column sortable field="ROW" data-abap.bind="{type:'INT4', length:'+10'}" label="Lines in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="FIELD" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD03L'}" label="Field in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="SYSTEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'TBDLS'}" label="Logical system from which message originates"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>
+
+<!-- Parameter: SERVICE_DESCRIPTION structure: BAPISRV_ASMDT  Communication Structure Short Text: Service Master -->
+
+<ui-datagrid data.bind="SERVICE_DESCRIPTION" title="Communication Structure Short Text: Service Master"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="LANGUAGE" data-abap.bind="{type:'LANG', alpha:'ISOLA', length:'1'}" shlp.bind="{type: 'SH', id: 'H_T002'}" label="Language Key"></ui-dg-column>
+   <ui-dg-column sortable field="LANGUAGE_ISO" data-abap.bind="{type:'CHAR', length:'2'}" label="2-Character SAP Language Code"></ui-dg-column>
+   <ui-dg-column sortable field="SHORT_TEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Service Short Text"></ui-dg-column>
+   <ui-dg-column sortable field="CHANGE_ID" data-abap.bind="{type:'CHAR', length:'1'}" label="Control Selection of Text in Service Master"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="SERVICE_DESCRIPTION.LANGUAGE" shlp.bind="{type: 'SH', id: 'H_T002'}" data-abap.bind="{type:'LANG', alpha:'ISOLA', length:'1'}"
+          label="Language Key"></ui-combo>
+
+<ui-input bind="SERVICE_DESCRIPTION.LANGUAGE_ISO" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="2-Character SAP Language Code"></ui-input>
+
+<ui-input bind="SERVICE_DESCRIPTION.SHORT_TEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Service Short Text"></ui-input>
+
+<ui-input bind="SERVICE_DESCRIPTION.CHANGE_ID" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Control Selection of Text in Service Master"></ui-input>
+
+<!-- Parameter: SERVICE_LONG_TEXTS structure: BAPISRV_TEXT  Communication Structure Long Text: Service Master -->
+
+<ui-datagrid data.bind="SERVICE_LONG_TEXTS" title="Communication Structure Long Text: Service Master"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="LANGUAGE" data-abap.bind="{type:'LANG', alpha:'ISOLA', length:'1'}" shlp.bind="{type: 'SH', id: 'H_T002'}" label="Language Key"></ui-dg-column>
+   <ui-dg-column sortable field="LANGUAGE_ISO" data-abap.bind="{type:'CHAR', length:'2'}" label="2-Character SAP Language Code"></ui-dg-column>
+   <ui-dg-column sortable field="FORMAT" data-abap.bind="{type:'CHAR', length:'2'}" label="Tag column"></ui-dg-column>
+   <ui-dg-column sortable field="LINE" data-abap.bind="{type:'CHAR', length:'132'}" label="Text Line"></ui-dg-column>
+   <ui-dg-column sortable field="CHANGE_ID" data-abap.bind="{type:'CHAR', length:'1'}" label="Control Selection of Text in Service Master"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="SERVICE_LONG_TEXTS.LANGUAGE" shlp.bind="{type: 'SH', id: 'H_T002'}" data-abap.bind="{type:'LANG', alpha:'ISOLA', length:'1'}"
+          label="Language Key"></ui-combo>
+
+<ui-input bind="SERVICE_LONG_TEXTS.LANGUAGE_ISO" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="2-Character SAP Language Code"></ui-input>
+
+<ui-input bind="SERVICE_LONG_TEXTS.FORMAT" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Tag column"></ui-input>
+
+<ui-input bind="SERVICE_LONG_TEXTS.LINE" data-abap.bind="{type:'CHAR', length:'132'}"
+          label="Text Line"></ui-input>
+
+<ui-input bind="SERVICE_LONG_TEXTS.CHANGE_ID" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Control Selection of Text in Service Master"></ui-input>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<ui-combo bind="SERVICE" shlp.bind="{type: 'CT', id: 'ASMD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}"
+          label="Service Number"></ui-combo>
+
+<!-- Parameter: EX_SERVICE_DATA structure: BAPISRV_ASMD  General Data for Service, Export -->
+
+<ui-combo bind="EX_SERVICE_DATA.SERVICE" shlp.bind="{type: 'CT', id: 'ASMD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}"
+          label="Activity Number"></ui-combo>
+
+<!-- Parameter: EX_SERVICE_DATAX structure: BAPISRV_ASMDX  Change Parameter for Service Data, Export -->
+
+<ui-combo bind="EX_SERVICE_DATAX.SERVICE" shlp.bind="{type: 'CT', id: 'ASMD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}"
+          label="Activity Number"></ui-combo>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.DEL_IND" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.MATL_GROUP" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.BASE_UOM" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.BASE_UOM_ISO" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.SERV_CAT" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.EAN_UPC" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.EAN_CAT" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.DIVISION" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.AUTH_GROUP" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.P_STATUS" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.VALID_FROM" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.VAL_CLASS" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.HIER_SERV" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.MASTER_LANGU" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.MASTER_LANGU_ISO" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.WAGETYPE" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.SERV_TYPE" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.EDITION" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.SSC_ITEM" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.TAX_IND" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.CONV_NUM" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.CONV_DEN" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.WORK_UOM" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.WORK_UOM_ISO" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.FORMULA" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.CHGTEXT" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.GRAPHIC_URL" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.CREATED_ON" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.CREATED_BY" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.CHANGED_ON" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="EX_SERVICE_DATAX.CHANGED_BY" label="Updated information in related user data field"></ui-checkbox>

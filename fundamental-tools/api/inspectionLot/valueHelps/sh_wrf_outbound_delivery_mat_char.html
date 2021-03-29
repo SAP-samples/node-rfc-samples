@@ -1,0 +1,22 @@
+<!-- SH WRF_OUTBOUND_DELIVERY_MAT_CHAR Outbound Delivery by Material Characteristic Values : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-input bind="searchParamLow.VBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}"
+          label="Delivery"></ui-input>
+<ui-input bind="searchParamLow.MATNR" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-input>
+<ui-input bind="searchParamLow.WRF_CHARSTC1" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="Characteristic Value 1"></ui-input>
+<ui-input bind="searchParamLow.WRF_CHARSTC2" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="Characteristic Value 2"></ui-input>
+<ui-input bind="searchParamLow.WRF_CHARSTC3" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="Characteristic Value 3"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="VBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}" label="Delivery"></ui-dg-column>
+   <ui-dg-column sortable field="MATNR" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" label="Material Number"></ui-dg-column>
+   <ui-dg-column sortable field="WRF_CHARSTC1" data-abap.bind="{type:'CHAR', length:'18'}" label="Characteristic Value 1"></ui-dg-column>
+   <ui-dg-column sortable field="WRF_CHARSTC2" data-abap.bind="{type:'CHAR', length:'18'}" label="Characteristic Value 2"></ui-dg-column>
+   <ui-dg-column sortable field="WRF_CHARSTC3" data-abap.bind="{type:'CHAR', length:'18'}" label="Characteristic Value 3"></ui-dg-column>
+</ui-datagrid>

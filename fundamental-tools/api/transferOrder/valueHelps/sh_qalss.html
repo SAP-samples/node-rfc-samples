@@ -1,0 +1,16 @@
+<!-- SH QALSS Delivery : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.LS_VBELN" shlp.bind="{type: 'SH', id: 'VMVL'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}"
+          label="Delivery"></ui-combo>
+<ui-combo bind="searchParamLow.LS_POSNR" shlp.bind="{type: 'CH', id: 'VBUP'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Delivery Item"></ui-combo>
+<ui-combo bind="searchParamLow.PRUEFLOS" shlp.bind="{type: 'SH', id: 'QALS'}" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}"
+          label="Inspection Lot Number"></ui-combo>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="LS_VBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'VL', length:'10'}" label="Delivery"></ui-dg-column>
+   <ui-dg-column sortable field="LS_POSNR" data-abap.bind="{type:'NUMC', length:'6'}" label="Delivery Item"></ui-dg-column>
+   <ui-dg-column sortable field="PRUEFLOS" data-abap.bind="{type:'NUMC', mid:'QLS', length:'12'}" label="Inspection Lot Number"></ui-dg-column>
+</ui-datagrid>

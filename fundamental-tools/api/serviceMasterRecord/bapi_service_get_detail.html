@@ -1,0 +1,184 @@
+<!--
+BAPI_SERVICE_GET_DETAIL exception: 0  struct: 1  table: 2  var: 2
+
+abap 2.2.0 at: 2021-03-29 15:40:08
+-->
+
+<!--
+IMPORT PARAMETERS
+-->
+
+<ui-combo bind="SERVICENUMBER" shlp.bind="{type: 'CT', id: 'ASMD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}"
+          label="Service Master Record Number"></ui-combo>
+
+<ui-combo bind="SERVICETEXTS" shlp.bind="{type: 'FV', id: 'SELKZ'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Service Description"></ui-combo>
+
+
+<!--
+TABLE PARAMETERS
+-->
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Parameter -->
+
+<ui-datagrid data.bind="RETURN" title="Return Parameter"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-dg-column>
+   <ui-dg-column sortable field="ID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'T100A'}" label="Message Class"></ui-dg-column>
+   <ui-dg-column sortable field="NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Message Number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}" label="Message Text"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_NO" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CH', id: 'BALHDR'}" label="Application log: log number"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_MSG_NO" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'BALM'}" label="Application log: Internal message serial number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}" label="Parameter Name"></ui-dg-column>
+   <ui-dg-column sortable field="ROW" data-abap.bind="{type:'INT4', length:'+10'}" label="Lines in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="FIELD" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD03L'}" label="Field in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="SYSTEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'TBDLS'}" label="Logical system from which message originates"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>
+
+<!-- Parameter: SERVICETEXTLINES structure: BAPISRVTXT  Long Text of Service Master Record -->
+
+<ui-datagrid data.bind="SERVICETEXTLINES" title="Long Text of Service Master Record"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="SERVICE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}" shlp.bind="{type: 'SH', id: 'ASMD'}" label="Activity Number"></ui-dg-column>
+   <ui-dg-column sortable field="TEXT_ID" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'TTXID'}" label="Text ID"></ui-dg-column>
+   <ui-dg-column sortable field="FORMAT_COL" data-abap.bind="{type:'CHAR', length:'2'}" label="Tag column"></ui-dg-column>
+   <ui-dg-column sortable field="TEXT_LINE" data-abap.bind="{type:'CHAR', length:'132'}" label="Text Line"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="SERVICETEXTLINES.SERVICE" shlp.bind="{type: 'SH', id: 'ASMD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}"
+          label="Activity Number"></ui-combo>
+
+<ui-combo bind="SERVICETEXTLINES.TEXT_ID" shlp.bind="{type: 'CT', id: 'TTXID'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Text ID"></ui-combo>
+
+<ui-input bind="SERVICETEXTLINES.FORMAT_COL" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Tag column"></ui-input>
+
+<ui-input bind="SERVICETEXTLINES.TEXT_LINE" data-abap.bind="{type:'CHAR', length:'132'}"
+          label="Text Line"></ui-input>
+
+
+<!--
+EXPORT PARAMETERS
+-->
+
+<!-- Parameter: SERVICEGENERALDATA structure: BAPISRV  General Data on Service -->
+
+<ui-combo bind="SERVICEGENERALDATA.SERVICE" shlp.bind="{type: 'CT', id: 'ASMD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}"
+          label="Activity Number"></ui-combo>
+
+<ui-combo bind="SERVICEGENERALDATA.MATL_GROUP" shlp.bind="{type: 'SH', id: 'H_T023'}" data-abap.bind="{type:'CHAR', mid:'MKL', length:'9'}"
+          label="Material Group"></ui-combo>
+
+<ui-combo bind="SERVICEGENERALDATA.BASE_UOM" shlp.bind="{type: 'SH', id: 'H_T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Base Unit of Measure"></ui-combo>
+
+<ui-combo bind="SERVICEGENERALDATA.BASE_UOM_ISO" shlp.bind="{type: 'SH', id: 'H_T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Base unit of measure in ISO code"></ui-combo>
+
+<ui-combo bind="SERVICEGENERALDATA.SERV_CAT" shlp.bind="{type: 'CT', id: 'T362'}" data-abap.bind="{type:'CHAR', mid:'ASY', length:'4'}"
+          label="Service Category"></ui-combo>
+
+<ui-input bind="SERVICEGENERALDATA.EAN_UPC" data-abap.bind="{type:'CHAR', alpha:'EAN11', mid:'EAN', length:'18'}"
+          label="International Article Number (EAN/UPC)"></ui-input>
+
+<ui-combo bind="SERVICEGENERALDATA.EAN_CAT" shlp.bind="{type: 'SH', id: 'H_TNTP'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Category of International Article Number (EAN)"></ui-combo>
+
+<ui-combo bind="SERVICEGENERALDATA.DIVISION" shlp.bind="{type: 'SH', id: 'CSH_TSPA'}" data-abap.bind="{type:'CHAR', mid:'SPA', length:'2'}"
+          label="Division"></ui-combo>
+
+<ui-input bind="SERVICEGENERALDATA.AUTH_GROUP" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Authorization Group"></ui-input>
+
+<ui-combo bind="SERVICEGENERALDATA.P_STATUS" shlp.bind="{type: 'SH', id: 'H_T141'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="General Purchasing Status for Service"></ui-combo>
+
+<ui-date date.bind="SERVICEGENERALDATA.VALID_FROM"  label="Validity Date for "Purchasing" Status"></ui-date>
+
+<ui-combo bind="SERVICEGENERALDATA.VAL_CLASS" shlp.bind="{type: 'SH', id: 'H_T025'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Valuation Class"></ui-combo>
+
+<ui-combo bind="SERVICEGENERALDATA.HIER_SERV" shlp.bind="{type: 'SH', id: 'ASMD'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'18'}"
+          label="Hierarchy Service Number"></ui-combo>
+
+<ui-combo bind="SERVICEGENERALDATA.WAGETYPE" shlp.bind="{type: 'CT', id: 'T512W'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Wage Type"></ui-combo>
+
+<ui-combo bind="SERVICEGENERALDATA.SERV_TYPE" shlp.bind="{type: 'CH', id: 'ESLA'}" data-abap.bind="{type:'CHAR', mid:'LBR', length:'3'}"
+          label="Short Description of Service Type"></ui-combo>
+
+<ui-combo bind="SERVICEGENERALDATA.EDITION" shlp.bind="{type: 'CH', id: 'ESLA'}" data-abap.bind="{type:'NUMC', mid:'AGB', length:'4'}"
+          label="Edition of Service Type"></ui-combo>
+
+<ui-input bind="SERVICEGENERALDATA.SSC_ITEM" data-abap.bind="{type:'CHAR', length:'18'}"
+          label="Standard Service Catalog Item"></ui-input>
+
+<ui-combo bind="SERVICEGENERALDATA.TAX_IND" shlp.bind="{type: 'CT', id: 'TMKM1'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Tax Indicator for Service (Purchasing)"></ui-combo>
+
+<ui-input bind="SERVICEGENERALDATA.SHORT_TEXT" data-abap.bind="{type:'CHAR', length:'40'}"
+          label="Service Short Text"></ui-input>
+
+<ui-input bind="SERVICEGENERALDATA.CONV_NUM" data-abap.bind="{type:'DEC', length:'5'}"
+          label="Numerator for conversion of MEINS into IWEIN"></ui-input>
+
+<ui-input bind="SERVICEGENERALDATA.CONV_DEN" data-abap.bind="{type:'DEC', length:'5'}"
+          label="Denominator for Conversion (MEINS <-> IWEIN)"></ui-input>
+
+<ui-combo bind="SERVICEGENERALDATA.WORK_UOM" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Unit for Work"></ui-combo>
+
+<ui-combo bind="SERVICEGENERALDATA.WORK_UOM_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Unit of work in ISO code"></ui-combo>
+
+<ui-input bind="SERVICEGENERALDATA.FORMULA" data-abap.bind="{type:'CHAR', length:'10'}"
+          label="Formula Number"></ui-input>

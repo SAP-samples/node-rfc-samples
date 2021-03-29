@@ -1,0 +1,22 @@
+<!-- SH H_TVKBZ Sales office : abap 2.2.0 at: 2021-03-29 15:40:08 -->}
+
+<ui-combo bind="searchParamLow.VKORG" shlp.bind="{type: 'SH', id: 'H_TVKO'}" data-abap.bind="{type:'CHAR', mid:'VKO', length:'4'}"
+          label="Sales Organization"></ui-combo>
+<ui-combo bind="searchParamLow.VTWEG" shlp.bind="{type: 'SH', id: 'H_TVKOV'}" data-abap.bind="{type:'CHAR', mid:'VTW', length:'2'}"
+          label="Distribution Channel"></ui-combo>
+<ui-combo bind="searchParamLow.SPART" shlp.bind="{type: 'SH', id: 'H_TVKOS'}" data-abap.bind="{type:'CHAR', mid:'SPA', length:'2'}"
+          label="Division"></ui-combo>
+<ui-combo bind="searchParamLow.VKBUR" shlp.bind="{type: 'SH', id: 'H_TVBUR'}" data-abap.bind="{type:'CHAR', mid:'VKB', length:'4'}"
+          label="Sales office"></ui-combo>
+<ui-input bind="searchParamLow.BEZEI" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Description"></ui-input>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="VKORG" data-abap.bind="{type:'CHAR', mid:'VKO', length:'4'}" label="Sales Organization"></ui-dg-column>
+   <ui-dg-column sortable field="VTWEG" data-abap.bind="{type:'CHAR', mid:'VTW', length:'2'}" label="Distribution Channel"></ui-dg-column>
+   <ui-dg-column sortable field="SPART" data-abap.bind="{type:'CHAR', mid:'SPA', length:'2'}" label="Division"></ui-dg-column>
+   <ui-dg-column sortable field="VKBUR" data-abap.bind="{type:'CHAR', mid:'VKB', length:'4'}" label="Sales office"></ui-dg-column>
+   <ui-dg-column sortable field="BEZEI" data-abap.bind="{type:'CHAR', length:'20'}" label="Description"></ui-dg-column>
+</ui-datagrid>
