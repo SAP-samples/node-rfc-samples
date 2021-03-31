@@ -1,6 +1,6 @@
 # node-rfc samples  <!-- omit in toc -->
 
-[node-rfc](https://github.com/SAP/node-rfc) connects NodeJS applications with ABAP and HANA systems, via SAP NetWeaver Remote Function Call (RFC) protocol.
+[node-rfc](https://github.com/SAP/node-rfc) provides asynchronous, non-blocking [SAP NetWeaver RFC SDK](https://support.sap.com/en/product/connectors/nwrfcsdk.html) client bindings, connecting NodeJS applications with ABAP and HANA systems via SAP NetWeaver Remote Function Call (RFC) protocol.
 
 This repository provides small sets of configuration & code relating to various [node-rfc](https://github.com/SAP/node-rfc) usage scenarios:
 
