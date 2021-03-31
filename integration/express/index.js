@@ -5,7 +5,7 @@
 const express = require("express");
 const Pool = require("node-rfc").Pool;
 
-// Generic ABAP Value Help API used in prototyping system
+// Sales Order API
 const SalesOrderAPI = {
     getList: "BAPI_SALESORDER_GETLIST",
     get: "BAPISDORDER_GETDETAILEDLIST",
@@ -29,7 +29,6 @@ let pool, client;
 app.use(express.json());
 
 app.all("*", (req, res, next) => {
-  // cookie doesn't exist redirect to login
   if (client) {
     next();
   } else {
@@ -63,6 +62,7 @@ app.route("/login").all(async (req, res) => {
   }
 });
 
+// Sales Order
 app
   .route(/^\/salesorder\/(getlist|get|create|update|status)?\/?$/i)
   .all(async (req, res) => {
@@ -152,6 +152,7 @@ app.route("/logout").all(async (req, res) => {
   res.json("disconnected");
 });
 
+// Server
 app.listen(PORT, () =>
   console.log(
     "Sales Order API ready:",
