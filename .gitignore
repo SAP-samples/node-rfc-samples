@@ -16,7 +16,7 @@ dist
 # filetypes
 *.trc
 *.log
-*.ini
+# *.ini
 *.gz
 *.swp
 ~*

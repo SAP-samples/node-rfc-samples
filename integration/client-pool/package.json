@@ -1,0 +1,15 @@
+{
+  "name": "client-pool",
+  "version": "0.1.0",
+  "description": "Getting started with Client and Pool",
+  "scripts": {
+    "client": "node client",
+    "pool": "node pool"
+  },
+  "type": "module",
+  "author": "SAP",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "node-rfc": "^2.4.0"
+  }
+}

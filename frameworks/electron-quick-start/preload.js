@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2014 SAP SE Srdjan Boskovic <srdjan.boskovic@sap.com>
+//
+// SPDX-License-Identifier: Apache-2.0
+
 // All of the Node.js APIs are available in the preload process.
 // It has the same sandbox as a Chrome extension.
 const Client = require("node-rfc").Client;

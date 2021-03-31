@@ -1,0 +1,17 @@
+{
+  "name": "express-sales-order",
+  "version": "0.1.0",
+  "description": "express and Sales Order",
+  "scripts": {
+    "client": "node client",
+    "pool": "node pool"
+  },
+  "author": "SAP",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "node-rfc": "^2.4.0",
+    "uuid": "^8.3.2"
+  }
+}

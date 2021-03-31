@@ -1,7 +1,7 @@
 {
   "name": "nwjs-quick-start",
   "version": "0.1.0",
-  "description": "",
+  "description": "NW.js with node-rfc",
   "main": "index.html",
   "scripts": {
     "start": "nw .",

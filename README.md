@@ -1,12 +1,12 @@
 # node-rfc samples  <!-- omit in toc -->
 
-Using [node-rfc](https://github.com/SAP/node-rfc) package NodeJS applications can be integrated with ABAP and HANA systems via SAP NetWeaver Remote Function Call (RFC) protocol.
+[node-rfc](https://github.com/SAP/node-rfc) connects NodeJS applications with ABAP and HANA systems, via SAP NetWeaver Remote Function Call (RFC) protocol.
 
 This repository provides small sets of configuration & code relating to various [node-rfc](https://github.com/SAP/node-rfc) usage scenarios:
 
-- [NodeJS and ABAP/HANA systems](#nodejs-and-abap-hana-systems)
-- [ABAP and Electron, NW.js ...](#abap-and-other-platforms)
-- [Fiori applications](#fiori-applications)
+- [NodeJS and ABAP/HANA systems](#nodejs-and-abaphana-systems--)
+- [ABAP and Electron, NW.js ...](#abap-and-other-platforms--)
+- [Fiori applications](#fiori-applications--)
 
 ## NodeJS and ABAP/HANA systems  <!-- omit in toc -->
 
