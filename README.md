@@ -5,17 +5,21 @@
 This repository provides small sets of configuration & code relating to various [node-rfc](https://github.com/SAP/node-rfc) usage scenarios:
 
 - [NodeJS and ABAP/HANA systems](#nodejs-and-abaphana-systems--)
+
 - [ABAP and Electron, NW.js ...](#abap-and-other-platforms--)
+
 - [Fiori applications](#fiori-applications--)
 
 ## NodeJS and ABAP/HANA systems  <!-- omit in toc -->
 
 - [Getting started with Client and Pool](./integration/client-pool)
-- [Sales Order GetList with Express](./integration/express)
+
+- [Sales Order exposure via Express](./integration/express)
 
 ## ABAP and other platforms  <!-- omit in toc -->
 
 - [electron](./frameworks/electron-quick-start)
+
 - [NW.js](./frameworks/nwjs-quick-start)
 
 More info: https://github.com/SAP/node-rfc
@@ -23,7 +27,8 @@ More info: https://github.com/SAP/node-rfc
 ## Fiori applications  <!-- omit in toc -->
 
 - [Configuration](./fundamental-tools/config)
-- [api](./fundamental-tools/api)
+
+- [API](./fundamental-tools/api)
 
 More info: https://github.com/SAP/fundamental-tools
 
