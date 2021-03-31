@@ -14,8 +14,6 @@ This repository provides small sets of configuration & code relating to various 
 
 - [Getting started with Client and Pool](./integration/client-pool)
 
-- [Sales Order exposure via Express](./integration/express)
-
 ## ABAP and other platforms  <!-- omit in toc -->
 
 - [electron](./frameworks/electron-quick-start)
@@ -25,6 +23,8 @@ This repository provides small sets of configuration & code relating to various 
 More info: https://github.com/SAP/node-rfc
 
 ## Fiori applications  <!-- omit in toc -->
+
+- [Sales Order via Express](./integration/express)
 
 - [Configuration](./fundamental-tools/config)
 
