@@ -9,7 +9,10 @@
   "author": "SAP",
   "license": "Apache-2.0",
   "dependencies": {
+    "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
-    "node-rfc": "^2.4.0"
+    "express-session": "^1.17.1",
+    "node-rfc": "^2.4.0",
+    "uuid": "^8.3.2"
   }
 }

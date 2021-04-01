@@ -2,8 +2,11 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-const express = require("express");
-const Pool = require("node-rfc").Pool;
+const express = require("express"),
+  Pool = require("node-rfc").Pool,
+  cookieParser = require("cookie-parser"),
+  session = require("express-session"),
+  uuid = require("uuid");
 
 // Sales Order API
 const SalesOrderAPI = {
@@ -23,13 +26,22 @@ const SalesOrderAPI = {
 
 const PORT = 3000;
 const app = express();
-let pool, client;
 
-//app.use(express.json());
-app.use(express.json());
+const Connections = new Map();
+
+app.use(
+  express.json(),
+  cookieParser(),
+  session({
+    secret: uuid.v1(),
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
 app.all("*", (req, res, next) => {
-  if (client) {
+  if (Connections.has(req.sessionID)) {
+    req.client = Connections.get(req.sessionID).client;
     next();
   } else {
     if (req.url === "/login") {
@@ -51,12 +63,21 @@ app.route("/login").all(async (req, res) => {
         : { connectionParameters: { dest: "MME" } }
     );
     const username = req.body.username || defaults.username;
-    client = await pool.acquire();
+    const client = await pool.acquire();
     const user = await client.call("BAPI_USER_GET_DETAIL", {
       USERNAME: username,
     });
+    const result = {
+      user: username,
+      client: client,
+      status: "connected",
+    };
+    Connections.set(req.sessionID, result);
+    console.log(Connections);
 
-    res.json("connected");
+    //res.json(user.PARAMETER);
+    res.header("Content-Type", "application/json");
+    res.send(JSON.stringify(result, null, 4));
   } catch (ex) {
     res.json(ex.message);
   }
@@ -66,12 +87,12 @@ app.route("/login").all(async (req, res) => {
 app
   .route(/^\/salesorder\/(getlist|get|create|update|status)?\/?$/i)
   .all(async (req, res) => {
+    let select, result;
     try {
-      let selection, result;
       const path = req.path.toLowerCase().replace("/salesorder/", "");
       switch (path) {
-        case "getlist":
-          selection =
+        case "getlist": {
+          select =
             Object.keys(req.body).length > 0
               ? {
                   CUSTOMER_NUMBER: req.body.CUSTOMER_NUMBER,
@@ -82,10 +103,11 @@ app
                   SALES_ORGANIZATION: defaults.SALES_ORGANIZATION,
                 };
 
-          result = await client.call(SalesOrderAPI.getList, selection);
+          result = await req.client.call(SalesOrderAPI.getList, select);
           break;
+        }
 
-        case "get":
+        case "get": {
           const I_BAPI_VIEW = {
             HEADER: "X",
             ITEM: "X",
@@ -106,7 +128,7 @@ app
             INCOMP_LOG: "X",
           };
 
-          selection =
+          select =
             Object.keys(req.body).length > 0
               ? {
                   I_BAPI_VIEW: I_BAPI_VIEW,
@@ -116,26 +138,30 @@ app
                   I_BAPI_VIEW: I_BAPI_VIEW,
                   SALES_DOCUMENTS: [{ VBELN: defaults.VBELN }],
                 };
-          result = await client.call(SalesOrderAPI.get, selection);
+          result = await req.client.call(SalesOrderAPI.get, select);
           break;
-
-        case "create":
+        }
+        case "create": {
           result = "todo";
           break;
-        case "update":
+        }
+        case "update": {
           result = "todo";
           break;
-        case "status":
-          const selection = {
+        }
+        case "status": {
+          const select = {
             SALESDOCUMENT:
               Object.keys(req.body).length > 0
                 ? req.body.SALESDOCUMENT
                 : defaults.VBELN,
           };
-          result = await client.call(SalesOrderAPI.getStatus, selection);
+          result = await req.client.call(SalesOrderAPI.getStatus, select);
           break;
-        default:
+        }
+        default: {
           throw new Error(`Route not supported: ${req.path}`);
+        }
       }
       //res.json(result);
       res.header("Content-Type", "application/json");
@@ -148,8 +174,21 @@ app
 
 // Close the connection (optional)
 app.route("/logout").all(async (req, res) => {
-  if (pool && client.alive) await pool.release(client);
-  res.json("disconnected");
+  let result = "disconneted";
+  if (pool && req.client && req.client.alive) {
+    const C = Connections.get(req.sessionID);
+    result = {
+      user: C.user,
+      client: C.client.connectionHandle,
+      status: "disconnected",
+    };
+    await pool.release(req.client);
+    Connections.delete(req.sessionID);
+    console.log(Connections);
+  }
+  //res.json(result);
+  res.header("Content-Type", "application/json");
+  res.send(JSON.stringify(result, null, 4));
 });
 
 // Server
