@@ -1,10 +1,10 @@
-# NodeJS integration with ABAP/HANA systems via SAP NetWeaver RFC protocol <!-- omit in toc -->
+# NodeJS Integration with ABAP/HANA Systems via SAP NetWeaver RFC Protocol <!-- omit in toc -->
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/node-rfc-samples)](https://api.reuse.software/info/github.com/SAP-samples/node-rfc-samples)
 
-[node-rfc](https://github.com/SAP/node-rfc) provides asynchronous, non-blocking [SAP NetWeaver RFC SDK](https://support.sap.com/en/product/connectors/nwrfcsdk.html) client bindings, connecting NodeJS applications with ABAP and HANA systems via SAP NetWeaver Remote Function Call (RFC) protocol.
+[node-rfc](https://github.com/SAP/node-rfc) provides asynchronous, non-blocking [SAP NetWeaver RFC SDK](https://support.sap.com/en/product/connectors/nwrfcsdk.html) client bindings, connecting NodeJS applications with ABAP and SAP HANA systems via SAP NetWeaver Remote Function Call (RFC) protocol.
 
-This repository provides small sets of configuration & code relating to various [node-rfc](https://github.com/SAP/node-rfc) usage scenarios:
+This repository provides small sets of configuration and code relating to various [node-rfc](https://github.com/SAP/node-rfc) usage scenarios:
 
 - [NodeJS and ABAP/HANA systems](#nodejs-and-abaphana-systems--)
 
