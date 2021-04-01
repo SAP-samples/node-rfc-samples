@@ -2,7 +2,9 @@
 
 ```shell
 npm install
+
 node .
+
 # Sales Order API ready:
 # http://localhost:3000/login
 # http://localhost:3000/salesorder/getlist

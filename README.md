@@ -26,11 +26,11 @@ More info: https://github.com/SAP/node-rfc
 
 ## Fiori applications  <!-- omit in toc -->
 
-- [Sales Order via Express](./integration/express)
-
 - [Configuration](./fundamental-tools/config)
 
 - [API](./fundamental-tools/api)
+
+- [Sales Order via Express](./integration/express)
 
 More info: https://github.com/SAP/fundamental-tools
 
