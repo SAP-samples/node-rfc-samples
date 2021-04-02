@@ -3,7 +3,7 @@
 ```shell
 npm install
 
-node .
+node . # -d
 
 # Sales Order API ready:
 # http://localhost:3000/login

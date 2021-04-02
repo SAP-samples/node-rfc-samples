@@ -6,7 +6,13 @@ const express = require("express"),
   Pool = require("node-rfc").Pool,
   cookieParser = require("cookie-parser"),
   session = require("express-session"),
-  uuid = require("uuid");
+  uuid = require("uuid"),
+  log = require("loglevel");
+
+// trace the flow
+log.setDefaultLevel(
+  process.argv[2] === "-d" ? log.levels.DEBUG : log.levels.SILENT
+);
 
 // Sales Order API
 const SalesOrderAPI = {
@@ -24,10 +30,9 @@ const SalesOrderAPI = {
     VBELN: "0000000087",
   };
 
-const PORT = 3000;
-const app = express();
-
-const Connections = new Map();
+const PORT = 3000,
+  app = express(),
+  Connections = new Map();
 
 app.use(
   express.json(),
@@ -39,47 +44,67 @@ app.use(
   })
 );
 
+let pool;
+
+console.log(process.argv);
+
 app.all("*", (req, res, next) => {
-  if (Connections.has(req.sessionID)) {
-    req.client = Connections.get(req.sessionID).client;
+  if (req.cookies["user.session"]) {
+    log.debug(req.cookies);
+    log.debug(Connections);
+    req.rfcClient = Connections.get(req.cookies["user.session"]);
     next();
   } else {
     if (req.url === "/login") {
       next();
     } else {
       res.json("Do the login first");
+      // res.redirect("/login");
     }
-    //res.redirect("/login");
   }
 });
 
 // Authenticate and open client connection
 // Closed in /logout or automatically
 app.route("/login").all(async (req, res) => {
-  try {
-    pool = new Pool(
-      Object.keys(req.body) > 0
-        ? req.body
-        : { connectionParameters: { dest: "MME" } }
-    );
-    const username = req.body.username || defaults.username;
-    const client = await pool.acquire();
-    const user = await client.call("BAPI_USER_GET_DETAIL", {
-      USERNAME: username,
-    });
-    const result = {
-      user: username,
-      client: client,
-      status: "connected",
-    };
-    Connections.set(req.sessionID, result);
-    console.log(Connections);
+  const username = req.body.username || defaults.username;
+  if (req.rfcClient) {
+    res.json(`${username} already logged in`);
+  } else {
+    try {
+      if (!pool) {
+        pool = new Pool(
+          Object.keys(req.body) > 0
+            ? req.body
+            : { connectionParameters: { dest: "MME" } }
+        );
+      }
+      const rfcClient = await pool.acquire();
+      const user = await rfcClient.call("BAPI_USER_GET_DETAIL", {
+        USERNAME: username,
+      });
+      const userSession = `${username}:${req.sessionID}`,
+        result = {
+          userSession: userSession,
+          client: rfcClient.connectionHandle,
+          status: "connected",
+        };
+      Connections.set(userSession, rfcClient);
+      res.cookie("user.session", userSession, {
+        maxAge: 1000 * 60 * 15, // expires in 15 min
+        httpOnly: true,
+        signed: false,
+      });
 
-    //res.json(user.PARAMETER);
-    res.header("Content-Type", "application/json");
-    res.send(JSON.stringify(result, null, 4));
-  } catch (ex) {
-    res.json(ex.message);
+      log.debug(req.cookies);
+      log.debug(Connections);
+
+      //res.json(user.PARAMETER);
+      res.header("Content-Type", "application/json");
+      res.send(JSON.stringify(result, null, 4));
+    } catch (ex) {
+      res.json(ex.message);
+    }
   }
 });
 
@@ -103,7 +128,7 @@ app
                   SALES_ORGANIZATION: defaults.SALES_ORGANIZATION,
                 };
 
-          result = await req.client.call(SalesOrderAPI.getList, select);
+          result = await req.rfcClient.call(SalesOrderAPI.getList, select);
           break;
         }
 
@@ -138,7 +163,7 @@ app
                   I_BAPI_VIEW: I_BAPI_VIEW,
                   SALES_DOCUMENTS: [{ VBELN: defaults.VBELN }],
                 };
-          result = await req.client.call(SalesOrderAPI.get, select);
+          result = await req.rfcClient.call(SalesOrderAPI.get, select);
           break;
         }
         case "create": {
@@ -156,7 +181,7 @@ app
                 ? req.body.SALESDOCUMENT
                 : defaults.VBELN,
           };
-          result = await req.client.call(SalesOrderAPI.getStatus, select);
+          result = await req.rfcClient.call(SalesOrderAPI.getStatus, select);
           break;
         }
         default: {
@@ -167,7 +192,7 @@ app
       res.header("Content-Type", "application/json");
       res.send(JSON.stringify(result, null, 4));
     } catch (ex) {
-      console.log(ex);
+      log.info(ex);
       res.json(ex.message);
     }
   });
@@ -175,16 +200,18 @@ app
 // Close the connection (optional)
 app.route("/logout").all(async (req, res) => {
   let result = "disconneted";
-  if (pool && req.client && req.client.alive) {
+  if (pool && req.rfcClient && req.rfcClient.alive) {
     const C = Connections.get(req.sessionID);
     result = {
-      user: C.user,
-      client: C.client.connectionHandle,
+      userSession: req.cookies["user.session"],
+      client: req.rfcClient.connectionHandle,
       status: "disconnected",
     };
-    await pool.release(req.client);
-    Connections.delete(req.sessionID);
-    console.log(Connections);
+    await pool.release(req.rfcClient);
+    Connections.delete(req.cookies["user.session"]);
+    res.cookie("user.session", "", { expires: new Date(0) });
+    log.debug(req.cookies);
+    log.debug(Connections);
   }
   //res.json(result);
   res.header("Content-Type", "application/json");
