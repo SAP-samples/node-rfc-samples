@@ -1,0 +1,54 @@
+<!-- SH KREDW Vendors with Plant Reference : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Sort field">
+    <Input value={this.searchParamLow.SORTL}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Country Key">
+    <Input value={this.searchParamLow.LAND1}
+          data-abap="{type:'CHAR', length:'3'}"
+    />
+</FormItem>
+<FormItem label="Postal Code">
+    <Input value={this.searchParamLow.PSTLZ}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Search term for matchcode search">
+    <Input value={this.searchParamLow.MCOD3}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="Search term for matchcode search">
+    <Input value={this.searchParamLow.MCOD1}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="Plant (Own or External)">
+    <Input value={this.searchParamLow.WERKS}
+          data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Account Number of Vendor or Creditor">
+    <Input value={this.searchParamLow.LIFNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Authorization Group">
+    <Input value={this.searchParamLow.BEGRU}
+          data-abap="{type:'CHAR', length:'4'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="SORTL" data-abap.bind="{type:'CHAR', length:'10'}" label="Sort field"></ui-dg-column>
+<ui-dg-column sortable field="LAND1" data-abap.bind="{type:'CHAR', length:'3'}" label="Country Key"></ui-dg-column>
+<ui-dg-column sortable field="PSTLZ" data-abap.bind="{type:'CHAR', length:'10'}" label="Postal Code"></ui-dg-column>
+<ui-dg-column sortable field="MCOD3" data-abap.bind="{type:'CHAR', length:'25'}" label="Search term for matchcode search"></ui-dg-column>
+<ui-dg-column sortable field="MCOD1" data-abap.bind="{type:'CHAR', length:'25'}" label="Search term for matchcode search"></ui-dg-column>
+<ui-dg-column sortable field="WERKS" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" label="Plant (Own or External)"></ui-dg-column>
+<ui-dg-column sortable field="LIFNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}" label="Account Number of Vendor or Creditor"></ui-dg-column>
+</ui-datagrid>

@@ -1,0 +1,34 @@
+<!-- SH H_T685 Condition Type : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Usage of the condition table">
+    <ComboBox value={this.searchParamLow.KVEWE}
+        items="{type: 'SH', id: 'CSH_T681V'}"
+        data-abap="{type:'CHAR', mid:'KVW', length:'1'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Application">
+    <ComboBox value={this.searchParamLow.KAPPL}
+        items="{type: 'SH', id: 'H_T681Z'}"
+        data-abap="{type:'CHAR', mid:'KAP', length:'2'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Condition type">
+    <ComboBox value={this.searchParamLow.KSCHL}
+        items="{type: 'CT', id: 'T685'}"
+        data-abap="{type:'CHAR', mid:'VKS', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Name">
+    <Input value={this.searchParamLow.VTEXT}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="KVEWE" data-abap.bind="{type:'CHAR', mid:'KVW', length:'1'}" label="Usage of the condition table"></ui-dg-column>
+<ui-dg-column sortable field="KAPPL" data-abap.bind="{type:'CHAR', mid:'KAP', length:'2'}" label="Application"></ui-dg-column>
+<ui-dg-column sortable field="KSCHL" data-abap.bind="{type:'CHAR', mid:'VKS', length:'4'}" label="Condition type"></ui-dg-column>
+<ui-dg-column sortable field="VTEXT" data-abap.bind="{type:'CHAR', length:'20'}" label="Name"></ui-dg-column>
+</ui-datagrid>

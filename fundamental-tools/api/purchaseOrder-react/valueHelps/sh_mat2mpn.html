@@ -1,0 +1,62 @@
+<!-- SH MAT2MPN Search Help for Manufacturer Part Number with AMPL : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Number of firm's own (internal) inventory-managed material">
+    <ComboBox value={this.searchParamLow.MATNR_B}
+        items="{type: 'SH', id: 'MAT1_S_MPN'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Material number corresponding to manufacturer part number">
+    <ComboBox value={this.searchParamLow.MATNR_HTN}
+        items="{type: 'SH', id: 'MAT1_S_MPN'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'HTN', length:'18'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Manufacturer number">
+    <ComboBox value={this.searchParamLow.MFRNR}
+        items="{type: 'SH', id: 'KRED'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Plant">
+    <ComboBox value={this.searchParamLow.WERKS}
+        items="{type: 'SH', id: 'H_T001W'}"
+        data-abap="{type:'CHAR', mid:'WRK', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Date as of which the MPN materail may be procured">
+    <DatePicker value={this.searchParamLow.DATUV}/>
+</FormItem>
+<FormItem label="Date until which the MPN material may be procured">
+    <DatePicker value={this.searchParamLow.DATUB}/>
+</FormItem>
+<FormItem label="Revision level">
+    <Input value={this.searchParamLow.REVLV}
+          data-abap="{type:'CHAR', alpha:'NUMCV', mid:'RVS', length:'2'}"
+    />
+</FormItem>
+<FormItem label="Blocked manufacturer/part combinations">
+    <ComboBox value={this.searchParamLow.AMPSP}
+        items="{type: 'CT', id: 'TAMPSP'}"
+        data-abap="{type:'CHAR', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Manufacturer Part Number">
+    <Input value={this.searchParamLow.MFRPN}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="MATNR_B" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" label="Number of firm's own (internal) inventory-managed material"></ui-dg-column>
+<ui-dg-column sortable field="MATNR_HTN" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'HTN', length:'18'}" label="Material number corresponding to manufacturer part number"></ui-dg-column>
+<ui-dg-column sortable field="MFRPN" data-abap.bind="{type:'CHAR', length:'40'}" label="Manufacturer Part Number"></ui-dg-column>
+<ui-dg-column sortable field="MFRNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" label="Manufacturer number"></ui-dg-column>
+<ui-dg-column sortable field="WERKS" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" label="Plant"></ui-dg-column>
+<ui-dg-column sortable field="DATUV" data-abap.bind="{type:'DATS'}" label="Date as of which the MPN materail may be procured"></ui-dg-column>
+<ui-dg-column sortable field="DATUB" data-abap.bind="{type:'DATS'}" label="Date until which the MPN material may be procured"></ui-dg-column>
+<ui-dg-column sortable field="REVLV" data-abap.bind="{type:'CHAR', alpha:'NUMCV', mid:'RVS', length:'2'}" label="Revision level"></ui-dg-column>
+<ui-dg-column sortable field="AMPSP" data-abap.bind="{type:'CHAR', length:'4'}" label="Blocked manufacturer/part combinations"></ui-dg-column>
+</ui-datagrid>

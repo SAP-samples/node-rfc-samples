@@ -1,0 +1,19 @@
+<!-- SH H_TSAB Department number : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Department number">
+    <Input value={this.searchParamLow.ABTNR}
+          data-abap="{type:'CHAR', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Description">
+    <Input value={this.searchParamLow.VTEXT}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="ABTNR" data-abap.bind="{type:'CHAR', length:'4'}" label="Department number"></ui-dg-column>
+<ui-dg-column sortable field="VTEXT" data-abap.bind="{type:'CHAR', length:'20'}" label="Description"></ui-dg-column>
+</ui-datagrid>

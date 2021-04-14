@@ -1,0 +1,12 @@
+<!-- SH BU_NSO Search Help for Unsaved Objects : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Character 100">
+    <Input value={this.searchParamLow.FIELD1}
+          data-abap="{type:'CHAR', length:'100'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+</ui-datagrid>

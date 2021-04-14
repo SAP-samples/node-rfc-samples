@@ -1,0 +1,19 @@
+<!-- SH H_TCF12 Grouping key 1 for production resources/tools : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Grouping key 1 for production resources/tools">
+    <Input value={this.searchParamLow.FGRUA}
+          data-abap="{type:'CHAR', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Text for the production resources/tools group key">
+    <Input value={this.searchParamLow.FGRTXT}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="FGRUA" data-abap.bind="{type:'CHAR', length:'4'}" label="Grouping key 1 for production resources/tools"></ui-dg-column>
+<ui-dg-column sortable field="FGRTXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Text for the production resources/tools group key"></ui-dg-column>
+</ui-datagrid>

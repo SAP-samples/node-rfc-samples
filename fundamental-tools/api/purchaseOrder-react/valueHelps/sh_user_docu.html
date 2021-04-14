@@ -1,0 +1,25 @@
+<!-- SH USER_DOCU Users by Description : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="User Name in User Master Record">
+    <Input value={this.searchParamLow.BNAME}
+          data-abap="{type:'CHAR', mid:'XUS', length:'12'}"
+    />
+</FormItem>
+<FormItem label="User Responsible for Technical User Account">
+    <Input value={this.searchParamLow.RESPONSIBLE}
+          data-abap="{type:'CHAR', length:'12'}"
+    />
+</FormItem>
+<FormItem label="Description of the Technical User Account">
+    <Input value={this.searchParamLow.TECHDESC}
+          data-abap="{type:'CHAR', length:'80'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BNAME" data-abap.bind="{type:'CHAR', mid:'XUS', length:'12'}" label="User Name in User Master Record"></ui-dg-column>
+<ui-dg-column sortable field="RESPONSIBLE" data-abap.bind="{type:'CHAR', length:'12'}" label="User Responsible for Technical User Account"></ui-dg-column>
+<ui-dg-column sortable field="TECHDESC" data-abap.bind="{type:'CHAR', length:'80'}" label="Description of the Technical User Account"></ui-dg-column>
+</ui-datagrid>

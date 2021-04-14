@@ -1,0 +1,47 @@
+<!-- SH MAT1MPN Search Help for Manufacturer Part Number : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Material number corresponding to manufacturer part number">
+    <ComboBox value={this.searchParamLow.MATNR_HTN}
+        items="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'HTN', length:'18'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Material Description in Uppercase for Matchcodes">
+    <Input value={this.searchParamLow.TEXT_HTN}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Language Key">
+    <ComboBox value={this.searchParamLow.SPRAS}
+        items="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Manufacturer Part Number">
+    <Input value={this.searchParamLow.MFRPN}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Manufacturer number">
+    <ComboBox value={this.searchParamLow.MFRNR}
+        items="{type: 'SH', id: 'KRED'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Number of firm's own (internal) inventory-managed material">
+    <ComboBox value={this.searchParamLow.MATNR_B}
+        items="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}">
+    </ComboBox>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="MATNR_HTN" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'HTN', length:'18'}" label="Material number corresponding to manufacturer part number"></ui-dg-column>
+<ui-dg-column sortable field="TEXT_HTN" data-abap.bind="{type:'CHAR', length:'40'}" label="Material Description in Uppercase for Matchcodes"></ui-dg-column>
+<ui-dg-column sortable field="MATNR_B" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" label="Number of firm's own (internal) inventory-managed material"></ui-dg-column>
+<ui-dg-column sortable field="MFRPN" data-abap.bind="{type:'CHAR', length:'40'}" label="Manufacturer Part Number"></ui-dg-column>
+<ui-dg-column sortable field="MFRNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" label="Manufacturer number"></ui-dg-column>
+<ui-dg-column sortable field="SPRAS" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}" label="Language Key"></ui-dg-column>
+</ui-datagrid>

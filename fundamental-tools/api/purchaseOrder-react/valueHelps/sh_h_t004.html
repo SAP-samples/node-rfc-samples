@@ -1,0 +1,19 @@
+<!-- SH H_T004 Chart of Accounts : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Chart of Accounts">
+    <Input value={this.searchParamLow.KTOPL}
+          data-abap="{type:'CHAR', mid:'KPL', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Chart of accounts description">
+    <Input value={this.searchParamLow.KTPLT}
+          data-abap="{type:'CHAR', length:'50'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="KTOPL" data-abap.bind="{type:'CHAR', mid:'KPL', length:'4'}" label="Chart of Accounts"></ui-dg-column>
+<ui-dg-column sortable field="KTPLT" data-abap.bind="{type:'CHAR', length:'50'}" label="Chart of accounts description"></ui-dg-column>
+</ui-datagrid>

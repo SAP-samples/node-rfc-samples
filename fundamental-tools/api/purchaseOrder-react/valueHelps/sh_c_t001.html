@@ -1,0 +1,31 @@
+<!-- SH C_T001 Company Code : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Company Code">
+    <Input value={this.searchParamLow.BUKRS}
+          data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Name of Company Code or Company">
+    <Input value={this.searchParamLow.BUTXT}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="City">
+    <Input value={this.searchParamLow.ORT01}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="Currency Key">
+    <Input value={this.searchParamLow.WAERS}
+          data-abap="{type:'CUKY', mid:'FWS', length:'5'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="BUTXT" data-abap.bind="{type:'CHAR', length:'25'}" label="Name of Company Code or Company"></ui-dg-column>
+<ui-dg-column sortable field="ORT01" data-abap.bind="{type:'CHAR', length:'25'}" label="City"></ui-dg-column>
+<ui-dg-column sortable field="WAERS" data-abap.bind="{type:'CUKY', mid:'FWS', length:'5'}" label="Currency Key"></ui-dg-column>
+</ui-datagrid>

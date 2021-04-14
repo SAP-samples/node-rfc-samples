@@ -1,0 +1,25 @@
+<!-- SH H_T681Z Application : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Usage of the condition table">
+    <Input value={this.searchParamLow.KVEWE}
+          data-abap="{type:'CHAR', mid:'KVW', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Application">
+    <Input value={this.searchParamLow.KAPPL}
+          data-abap="{type:'CHAR', mid:'KAP', length:'2'}"
+    />
+</FormItem>
+<FormItem label="Description">
+    <Input value={this.searchParamLow.VTEXT}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="KVEWE" data-abap.bind="{type:'CHAR', mid:'KVW', length:'1'}" label="Usage of the condition table"></ui-dg-column>
+<ui-dg-column sortable field="KAPPL" data-abap.bind="{type:'CHAR', mid:'KAP', length:'2'}" label="Application"></ui-dg-column>
+<ui-dg-column sortable field="VTEXT" data-abap.bind="{type:'CHAR', length:'20'}" label="Description"></ui-dg-column>
+</ui-datagrid>

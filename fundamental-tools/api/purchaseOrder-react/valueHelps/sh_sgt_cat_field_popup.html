@@ -1,0 +1,61 @@
+<!-- SH SGT_CAT_FIELD_POPUP Requirement Segment : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Stock Segment">
+    <Input value={this.searchParamLow.VALUE}
+          data-abap="{type:'CHAR', mid:'SGT_S', length:'16'}"
+    />
+</FormItem>
+<FormItem label="Material Number">
+    <Input value={this.searchParamLow.MATNR}
+          data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Segmentation Strategy">
+    <Input value={this.searchParamLow.COVS}
+          data-abap="{type:'CHAR', mid:'SGT_E', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Segmentation Type">
+    <Input value={this.searchParamLow.APPL}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Application Relevance">
+    <Input value={this.searchParamLow.CFUN}
+          data-abap="{type:'CHAR', length:'3'}"
+    />
+</FormItem>
+<FormItem label="Flag (X or Blank)">
+    <Input value={this.searchParamLow.WITH_RULE_INPUT}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Plant">
+    <Input value={this.searchParamLow.OTHER_WERKS}
+          data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Segmentation Strategy">
+    <Input value={this.searchParamLow.OTHER_COVS}
+          data-abap="{type:'CHAR', mid:'SGT_E', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Segmentation Structure">
+    <Input value={this.searchParamLow.CSGR}
+          data-abap="{type:'CHAR', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Plant">
+    <ComboBox value={this.searchParamLow.WERKS}
+        items="{type: 'SH', id: 'H_T001W'}"
+        data-abap="{type:'CHAR', mid:'WRK', length:'4'}">
+    </ComboBox>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="WERKS" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" label="Plant"></ui-dg-column>
+<ui-dg-column sortable field="COVS" data-abap.bind="{type:'CHAR', mid:'SGT_E', length:'8'}" label="Segmentation Strategy"></ui-dg-column>
+<ui-dg-column sortable field="VALUE" data-abap.bind="{type:'CHAR', mid:'SGT_S', length:'16'}" label="Stock Segment"></ui-dg-column>
+</ui-datagrid>

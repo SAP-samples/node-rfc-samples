@@ -1,0 +1,31 @@
+<!-- SH H_T024 Purchasing group : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Purchasing group">
+    <Input value={this.searchParamLow.EKGRP}
+          data-abap="{type:'CHAR', mid:'EKG', length:'3'}"
+    />
+</FormItem>
+<FormItem label="Description of purchasing group">
+    <Input value={this.searchParamLow.EKNAM}
+          data-abap="{type:'CHAR', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Telephone number of purchasing group (buyer group)">
+    <Input value={this.searchParamLow.EKTEL}
+          data-abap="{type:'CHAR', length:'12'}"
+    />
+</FormItem>
+<FormItem label="Fax Number">
+    <Input value={this.searchParamLow.TELFX}
+          data-abap="{type:'CHAR', length:'31'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="EKGRP" data-abap.bind="{type:'CHAR', mid:'EKG', length:'3'}" label="Purchasing group"></ui-dg-column>
+<ui-dg-column sortable field="EKNAM" data-abap.bind="{type:'CHAR', length:'18'}" label="Description of purchasing group"></ui-dg-column>
+<ui-dg-column sortable field="EKTEL" data-abap.bind="{type:'CHAR', length:'12'}" label="Telephone number of purchasing group (buyer group)"></ui-dg-column>
+<ui-dg-column sortable field="TELFX" data-abap.bind="{type:'CHAR', length:'31'}" label="Fax Number"></ui-dg-column>
+</ui-datagrid>

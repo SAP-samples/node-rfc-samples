@@ -1,0 +1,61 @@
+<!-- SH FAA_SH_SES_QUICK Simple Search for Asset : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Input Field for Full Text Search">
+    <Input value={this.searchParamLow.S/RP/SEARCH_TERM}
+          data-abap="{type:'CHAR', length:'45'}"
+    />
+</FormItem>
+<FormItem label="Option Fuzzy Mode">
+    <Input value={this.searchParamLow.S/RP/MODE_FUZZY}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Business Object for Search Engine Service (SES)">
+    <Input value={this.searchParamLow.BUSINESS_OBJECT}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Type of Business Object">
+    <Input value={this.searchParamLow.OBJECT_TYPE}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Company Code">
+    <Input value={this.searchParamLow.BUKRS}
+          data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Asset Class">
+    <Input value={this.searchParamLow.ANLKL}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'ANK', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Asset description">
+    <Input value={this.searchParamLow.TXT50}
+          data-abap="{type:'CHAR', length:'50'}"
+    />
+</FormItem>
+<FormItem label="Main Asset Number">
+    <Input value={this.searchParamLow.ANLN1}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AN1', length:'12'}"
+    />
+</FormItem>
+<FormItem label="Asset Subnumber">
+    <Input value={this.searchParamLow.ANLN2}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AN2', length:'4'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="S/RP/SEARCH_TERM" data-abap.bind="{type:'CHAR', length:'45'}" label="Input Field for Full Text Search"></ui-dg-column>
+<ui-dg-column sortable field="S/RP/MODE_FUZZY" data-abap.bind="{type:'CHAR', length:'1'}" label="Option Fuzzy Mode"></ui-dg-column>
+<ui-dg-column sortable field="BUSINESS_OBJECT" data-abap.bind="{type:'CHAR', length:'10'}" label="Business Object for Search Engine Service (SES)"></ui-dg-column>
+<ui-dg-column sortable field="OBJECT_TYPE" data-abap.bind="{type:'CHAR', length:'10'}" label="Type of Business Object"></ui-dg-column>
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="ANLKL" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANK', length:'8'}" label="Asset Class"></ui-dg-column>
+<ui-dg-column sortable field="TXT50" data-abap.bind="{type:'CHAR', length:'50'}" label="Asset description"></ui-dg-column>
+<ui-dg-column sortable field="ANLN1" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AN1', length:'12'}" label="Main Asset Number"></ui-dg-column>
+<ui-dg-column sortable field="ANLN2" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AN2', length:'4'}" label="Asset Subnumber"></ui-dg-column>
+</ui-datagrid>

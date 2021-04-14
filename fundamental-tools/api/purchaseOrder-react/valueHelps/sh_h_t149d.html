@@ -1,0 +1,14 @@
+<!-- SH H_T149D Valuation type : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Valuation type">
+    <ComboBox value={this.searchParamLow.BWTAR}
+        items="{type: 'CT', id: 'T149D'}"
+        data-abap="{type:'CHAR', mid:'BWT', length:'10'}">
+    </ComboBox>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BWTAR" data-abap.bind="{type:'CHAR', mid:'BWT', length:'10'}" label="Valuation type"></ui-dg-column>
+</ui-datagrid>

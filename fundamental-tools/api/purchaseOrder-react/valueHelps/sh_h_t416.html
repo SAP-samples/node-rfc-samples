@@ -1,0 +1,55 @@
+<!-- SH H_T416 BOM Usage : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="BOM Usage">
+    <Input value={this.searchParamLow.STLAN}
+          data-abap="{type:'CHAR', mid:'CSV', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Indicator: item relevant to production">
+    <Input value={this.searchParamLow.PMPFE}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Indicator: item relevant to engineering">
+    <Input value={this.searchParamLow.PMPKO}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="BOM usage text">
+    <Input value={this.searchParamLow.ANTXT}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+<FormItem label="Indicator: item relevant to costing">
+    <Input value={this.searchParamLow.PMPKA}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Indicator: item relevant to sales & distribution (SD)">
+    <Input value={this.searchParamLow.PMPRV}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Indicator: item relevant to plant maintenance">
+    <Input value={this.searchParamLow.PMPIN}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Indicator: spare part">
+    <Input value={this.searchParamLow.PMPER}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="STLAN" data-abap.bind="{type:'CHAR', mid:'CSV', length:'1'}" label="BOM Usage"></ui-dg-column>
+<ui-dg-column sortable field="PMPFE" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: item relevant to production"></ui-dg-column>
+<ui-dg-column sortable field="PMPKO" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: item relevant to engineering"></ui-dg-column>
+<ui-dg-column sortable field="PMPIN" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: item relevant to plant maintenance"></ui-dg-column>
+<ui-dg-column sortable field="PMPER" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: spare part"></ui-dg-column>
+<ui-dg-column sortable field="PMPRV" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: item relevant to sales & distribution (SD)"></ui-dg-column>
+<ui-dg-column sortable field="PMPKA" data-abap.bind="{type:'CHAR', length:'1'}" label="Indicator: item relevant to costing"></ui-dg-column>
+<ui-dg-column sortable field="ANTXT" data-abap.bind="{type:'CHAR', length:'30'}" label="BOM usage text"></ui-dg-column>
+</ui-datagrid>

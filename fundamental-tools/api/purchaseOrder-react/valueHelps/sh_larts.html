@@ -1,0 +1,49 @@
+<!-- SH LARTS Activity type name : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Search term for matchcode use">
+    <Input value={this.searchParamLow.MCTXT}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Language Key">
+    <ComboBox value={this.searchParamLow.SPRAS}
+        items="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Controlling Area">
+    <ComboBox value={this.searchParamLow.KOKRS}
+        items="{type: 'SH', id: 'CSH_TKA01'}"
+        data-abap="{type:'CHAR', mid:'CAC', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Activity Type Category">
+    <ComboBox value={this.searchParamLow.LATYP}
+        items="{type: 'FV', id: 'LATYP'}"
+        data-abap="{type:'CHAR', length:'1'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Activity Type">
+    <ComboBox value={this.searchParamLow.LSTAR}
+        items="{type: 'SH', id: 'LART'}"
+        data-abap="{type:'CHAR', mid:'LAR', length:'6'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Valid-From Date">
+    <DatePicker value={this.searchParamLow.DATAB}/>
+</FormItem>
+<FormItem label="Valid To Date">
+    <DatePicker value={this.searchParamLow.DATBI}/>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="MCTXT" data-abap.bind="{type:'CHAR', length:'20'}" label="Search term for matchcode use"></ui-dg-column>
+<ui-dg-column sortable field="SPRAS" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}" label="Language Key"></ui-dg-column>
+<ui-dg-column sortable field="KOKRS" data-abap.bind="{type:'CHAR', mid:'CAC', length:'4'}" label="Controlling Area"></ui-dg-column>
+<ui-dg-column sortable field="LATYP" data-abap.bind="{type:'CHAR', length:'1'}" label="Activity Type Category"></ui-dg-column>
+<ui-dg-column sortable field="LSTAR" data-abap.bind="{type:'CHAR', mid:'LAR', length:'6'}" label="Activity Type"></ui-dg-column>
+<ui-dg-column sortable field="DATAB" data-abap.bind="{type:'DATS'}" label="Valid-From Date"></ui-dg-column>
+<ui-dg-column sortable field="DATBI" data-abap.bind="{type:'DATS'}" label="Valid To Date"></ui-dg-column>
+</ui-datagrid>

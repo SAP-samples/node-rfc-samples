@@ -1,0 +1,20 @@
+<!-- SH H_T149C Valuation Category : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Valuation Category">
+    <ComboBox value={this.searchParamLow.BWTTY}
+        items="{type: 'CT', id: 'T149C'}"
+        data-abap="{type:'CHAR', length:'1'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Description of valuation category">
+    <Input value={this.searchParamLow.BTBEZ}
+          data-abap="{type:'CHAR', length:'15'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BWTTY" data-abap.bind="{type:'CHAR', length:'1'}" label="Valuation Category"></ui-dg-column>
+<ui-dg-column sortable field="BTBEZ" data-abap.bind="{type:'CHAR', length:'15'}" label="Description of valuation category"></ui-dg-column>
+</ui-datagrid>

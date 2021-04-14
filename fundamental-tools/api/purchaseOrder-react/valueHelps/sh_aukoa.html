@@ -1,0 +1,31 @@
+<!-- SH AUKOA Networks with standard networks : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Standard network number">
+    <Input value={this.searchParamLow.PLNNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'PLN', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Alternative to a standard network">
+    <Input value={this.searchParamLow.PLNAL}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'PAL', length:'2'}"
+    />
+</FormItem>
+<FormItem label="Network number">
+    <Input value={this.searchParamLow.AUFNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+    />
+</FormItem>
+<FormItem label="Description">
+    <Input value={this.searchParamLow.KTEXT}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="PLNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PLN', length:'8'}" label="Standard network number"></ui-dg-column>
+<ui-dg-column sortable field="PLNAL" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PAL', length:'2'}" label="Alternative to a standard network"></ui-dg-column>
+<ui-dg-column sortable field="AUFNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" label="Network number"></ui-dg-column>
+<ui-dg-column sortable field="KTEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Description"></ui-dg-column>
+</ui-datagrid>

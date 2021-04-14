@@ -1,0 +1,57 @@
+<!-- SH MRAEA All collective lease-outs : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Company Code">
+    <Input value={this.searchParamLow.BUKRS}
+          data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Contract No. of Collective Lease-Outs">
+    <Input value={this.searchParamLow.E_SMIVE}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'MVE', length:'13'}"
+    />
+</FormItem>
+<FormItem label="Lease-Out Number">
+    <Input value={this.searchParamLow.SMIVE}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'MIV', length:'13'}"
+    />
+</FormItem>
+<FormItem label="Business Entity Number">
+    <Input value={this.searchParamLow.SWENR}
+          data-abap="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Number of Rental Unit">
+    <Input value={this.searchParamLow.SMENR}
+          data-abap="{type:'CHAR', alpha:'SMENR', mid:'MEH', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Rental start date">
+    <DatePicker value={this.searchParamLow.DMIBEG}/>
+</FormItem>
+<FormItem label="Rental end date">
+    <DatePicker value={this.searchParamLow.DMIEND}/>
+</FormItem>
+<FormItem label="External Real Estate contract type">
+    <Input value={this.searchParamLow.SMVART}
+          data-abap="{type:'CHAR', mid:'RECNTYPE', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Lease-Out Adjustment Type">
+    <Input value={this.searchParamLow.SMVANART}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="E_SMIVE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'MVE', length:'13'}" label="Contract No. of Collective Lease-Outs"></ui-dg-column>
+<ui-dg-column sortable field="SMIVE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'MIV', length:'13'}" label="Lease-Out Number"></ui-dg-column>
+<ui-dg-column sortable field="SWENR" data-abap.bind="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}" label="Business Entity Number"></ui-dg-column>
+<ui-dg-column sortable field="SMENR" data-abap.bind="{type:'CHAR', alpha:'SMENR', mid:'MEH', length:'8'}" label="Number of Rental Unit"></ui-dg-column>
+<ui-dg-column sortable field="DMIBEG" data-abap.bind="{type:'DATS'}" label="Rental start date"></ui-dg-column>
+<ui-dg-column sortable field="DMIEND" data-abap.bind="{type:'DATS'}" label="Rental end date"></ui-dg-column>
+<ui-dg-column sortable field="SMVART" data-abap.bind="{type:'CHAR', mid:'RECNTYPE', length:'4'}" label="External Real Estate contract type"></ui-dg-column>
+<ui-dg-column sortable field="SMVANART" data-abap.bind="{type:'CHAR', length:'1'}" label="Lease-Out Adjustment Type"></ui-dg-column>
+</ui-datagrid>

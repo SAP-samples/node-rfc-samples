@@ -1,0 +1,37 @@
+<!-- SH GMGRANT_GRANTTYPE Search grants with grant types : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Grant">
+    <Input value={this.searchParamLow.GRANT_NBR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'GM_GRANT_NBR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Grant Type">
+    <ComboBox value={this.searchParamLow.GRANT_TYPE}
+        items="{type: 'CT', id: 'GMGRTYPE'}"
+        data-abap="{type:'CHAR', mid:'GM_GRANT_TYPE', length:'2'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Company Code">
+    <Input value={this.searchParamLow.COMPANY_CODE}
+          data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Grant Sponsor">
+    <ComboBox value={this.searchParamLow.PARTNER}
+        items="{type: 'SH', id: 'BUPA'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BPA', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Outgoing Grant Indicator">
+    <CheckBox value={this.searchParamLow.OUTGOING}/>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="GRANT_NBR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'GM_GRANT_NBR', length:'20'}" label="Grant"></ui-dg-column>
+<ui-dg-column sortable field="GRANT_TYPE" data-abap.bind="{type:'CHAR', mid:'GM_GRANT_TYPE', length:'2'}" label="Grant Type"></ui-dg-column>
+<ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BPA', length:'10'}" label="Grant Sponsor"></ui-dg-column>
+<ui-dg-column sortable field="COMPANY_CODE" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="OUTGOING" data-abap.bind="{type:'CHAR', length:'1'}" label="Outgoing Grant Indicator"></ui-dg-column>
+</ui-datagrid>

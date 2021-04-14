@@ -1,0 +1,34 @@
+<!-- SH WBWGD Find by reference and value-only material : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Material Group">
+    <ComboBox value={this.searchParamLow.MATKL}
+        items="{type: 'SH', id: 'S_WBWG'}"
+        data-abap="{type:'CHAR', mid:'MKL', length:'9'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Material Group Description">
+    <Input value={this.searchParamLow.WGBEZ}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Material group reference material">
+    <ComboBox value={this.searchParamLow.WWGDA}
+        items="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Material group material">
+    <ComboBox value={this.searchParamLow.WWGPA}
+        items="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}">
+    </ComboBox>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="MATKL" data-abap.bind="{type:'CHAR', mid:'MKL', length:'9'}" label="Material Group"></ui-dg-column>
+<ui-dg-column sortable field="WGBEZ" data-abap.bind="{type:'CHAR', length:'20'}" label="Material Group Description"></ui-dg-column>
+<ui-dg-column sortable field="WWGDA" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" label="Material group reference material"></ui-dg-column>
+<ui-dg-column sortable field="WWGPA" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" label="Material group material"></ui-dg-column>
+</ui-datagrid>

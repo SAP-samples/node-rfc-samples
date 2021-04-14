@@ -1,0 +1,27 @@
+<!-- SH H_T157D Reason for Movement : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Movement type (inventory management)">
+    <ComboBox value={this.searchParamLow.BWART}
+        items="{type: 'SH', id: 'H_T156'}"
+        data-abap="{type:'CHAR', mid:'BWA', length:'3'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Reason for Movement">
+    <ComboBox value={this.searchParamLow.GRUND}
+        items="{type: 'CT', id: 'T157D'}"
+        data-abap="{type:'NUMC', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Text: Reason for Goods Movement">
+    <Input value={this.searchParamLow.GRTXT}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BWART" data-abap.bind="{type:'CHAR', mid:'BWA', length:'3'}" label="Movement type (inventory management)"></ui-dg-column>
+<ui-dg-column sortable field="GRUND" data-abap.bind="{type:'NUMC', length:'4'}" label="Reason for Movement"></ui-dg-column>
+<ui-dg-column sortable field="GRTXT" data-abap.bind="{type:'CHAR', length:'20'}" label="Text: Reason for Goods Movement"></ui-dg-column>
+</ui-datagrid>

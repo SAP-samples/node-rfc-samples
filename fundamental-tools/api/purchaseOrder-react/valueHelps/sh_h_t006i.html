@@ -1,0 +1,20 @@
+<!-- SH H_T006I Condition unit of measure in UoM : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="ISO code for unit of measurement">
+    <ComboBox value={this.searchParamLow.ISOCODE}
+        items="{type: 'CT', id: 'T006I'}"
+        data-abap="{type:'CHAR', length:'3'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="ISO codes for measurement unit names">
+    <Input value={this.searchParamLow.ISOTXT}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="ISOCODE" data-abap.bind="{type:'CHAR', length:'3'}" label="ISO code for unit of measurement"></ui-dg-column>
+<ui-dg-column sortable field="ISOTXT" data-abap.bind="{type:'CHAR', length:'25'}" label="ISO codes for measurement unit names"></ui-dg-column>
+</ui-datagrid>

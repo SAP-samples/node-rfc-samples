@@ -1,0 +1,121 @@
+<!-- SH EQUI_ES_ADVANCED_E Advanced Search for Equipment (Enterprise Search) : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Generic Search Term">
+    <Input value={this.searchParamLow.S/RP/SEARCH_TERM}
+          data-abap="{type:'CHAR', length:'45'}"
+    />
+</FormItem>
+<FormItem label="Fuzzy Mode">
+    <Input value={this.searchParamLow.S/RP/MODE_FUZZY}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Object Type">
+    <Input value={this.searchParamLow.OBJECT_TYPE_ID}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Request Type ID">
+    <Input value={this.searchParamLow.REQUEST}
+          data-abap="{type:'CHAR', length:'32'}"
+    />
+</FormItem>
+<FormItem label="Equipment Number">
+    <Input value={this.searchParamLow.EQUNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Description of Technical Object">
+    <Input value={this.searchParamLow.EQKTX}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Serial Number">
+    <Input value={this.searchParamLow.SERNR}
+          data-abap="{type:'CHAR', alpha:'GERNR', mid:'SER', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Material Number">
+    <Input value={this.searchParamLow.MATNR}
+          data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Equipment category">
+    <Input value={this.searchParamLow.EQTYP}
+          data-abap="{type:'CHAR', mid:'EQT', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Superordinate Equipment">
+    <Input value={this.searchParamLow.HEQUI}
+          data-abap="{type:'CHAR', alpha:'ALPHA', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Functional Location">
+    <Input value={this.searchParamLow.TPLNR}
+          data-abap="{type:'CHAR', alpha:'TPLNR', mid:'IFL', length:'30'}"
+    />
+</FormItem>
+<FormItem label="Manufacturer of asset">
+    <Input value={this.searchParamLow.HERST}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+<FormItem label="Manufacturer serial number">
+    <Input value={this.searchParamLow.SERGE}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+<FormItem label="Maintenance plant">
+    <Input value={this.searchParamLow.SWERK}
+          data-abap="{type:'CHAR', mid:'SWK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Asset location">
+    <Input value={this.searchParamLow.STORT}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Object ID of the Work Center">
+    <Input value={this.searchParamLow.GEWERK}
+          data-abap="{type:'NUMC', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Planner Group for Customer Service and Plant Maintenance">
+    <Input value={this.searchParamLow.INGRP}
+          data-abap="{type:'CHAR', mid:'IHG', length:'3'}"
+    />
+</FormItem>
+<FormItem label="Functional Location Label">
+    <Input value={this.searchParamLow.STRNO1}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Labeling system for functional locations">
+    <Input value={this.searchParamLow.ALKEY}
+          data-abap="{type:'CHAR', mid:'ILOM_ALKEY', length:'1'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="S/RP/SEARCH_TERM" data-abap.bind="{type:'CHAR', length:'45'}" label="Generic Search Term"></ui-dg-column>
+<ui-dg-column sortable field="S/RP/MODE_FUZZY" data-abap.bind="{type:'CHAR', length:'1'}" label="Fuzzy Mode"></ui-dg-column>
+<ui-dg-column sortable field="OBJECT_TYPE_ID" data-abap.bind="{type:'CHAR', length:'20'}" label="Object Type"></ui-dg-column>
+<ui-dg-column sortable field="REQUEST" data-abap.bind="{type:'CHAR', length:'32'}" label="Request Type ID"></ui-dg-column>
+<ui-dg-column sortable field="EQUNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}" label="Equipment Number"></ui-dg-column>
+<ui-dg-column sortable field="EQKTX" data-abap.bind="{type:'CHAR', length:'40'}" label="Description of Technical Object"></ui-dg-column>
+<ui-dg-column sortable field="SERNR" data-abap.bind="{type:'CHAR', alpha:'GERNR', mid:'SER', length:'18'}" label="Serial Number"></ui-dg-column>
+<ui-dg-column sortable field="MATNR" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" label="Material Number"></ui-dg-column>
+<ui-dg-column sortable field="EQTYP" data-abap.bind="{type:'CHAR', mid:'EQT', length:'1'}" label="Equipment category"></ui-dg-column>
+<ui-dg-column sortable field="HEQUI" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'18'}" label="Superordinate Equipment"></ui-dg-column>
+<ui-dg-column sortable field="TPLNR" data-abap.bind="{type:'CHAR', alpha:'TPLNR', mid:'IFL', length:'30'}" label="Functional Location"></ui-dg-column>
+<ui-dg-column sortable field="HERST" data-abap.bind="{type:'CHAR', length:'30'}" label="Manufacturer of asset"></ui-dg-column>
+<ui-dg-column sortable field="SERGE" data-abap.bind="{type:'CHAR', length:'30'}" label="Manufacturer serial number"></ui-dg-column>
+<ui-dg-column sortable field="SWERK" data-abap.bind="{type:'CHAR', mid:'SWK', length:'4'}" label="Maintenance plant"></ui-dg-column>
+<ui-dg-column sortable field="STORT" data-abap.bind="{type:'CHAR', length:'10'}" label="Asset location"></ui-dg-column>
+<ui-dg-column sortable field="GEWERK" data-abap.bind="{type:'NUMC', length:'8'}" label="Object ID of the Work Center"></ui-dg-column>
+<ui-dg-column sortable field="INGRP" data-abap.bind="{type:'CHAR', mid:'IHG', length:'3'}" label="Planner Group for Customer Service and Plant Maintenance"></ui-dg-column>
+<ui-dg-column sortable field="STRNO1" data-abap.bind="{type:'CHAR', length:'40'}" label="Functional Location Label"></ui-dg-column>
+<ui-dg-column sortable field="ALKEY" data-abap.bind="{type:'CHAR', mid:'ILOM_ALKEY', length:'1'}" label="Labeling system for functional locations"></ui-dg-column>
+</ui-datagrid>

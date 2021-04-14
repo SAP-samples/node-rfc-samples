@@ -1,0 +1,25 @@
+<!-- SH H_T161 Purchasing Document Type : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Purchasing document category">
+    <Input value={this.searchParamLow.BSTYP}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Purchasing Document Type">
+    <Input value={this.searchParamLow.BSART}
+          data-abap="{type:'CHAR', mid:'BSA', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Short Description of Purchasing Document Type">
+    <Input value={this.searchParamLow.BATXT}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BSTYP" data-abap.bind="{type:'CHAR', length:'1'}" label="Purchasing document category"></ui-dg-column>
+<ui-dg-column sortable field="BSART" data-abap.bind="{type:'CHAR', mid:'BSA', length:'4'}" label="Purchasing Document Type"></ui-dg-column>
+<ui-dg-column sortable field="BATXT" data-abap.bind="{type:'CHAR', length:'20'}" label="Short Description of Purchasing Document Type"></ui-dg-column>
+</ui-datagrid>

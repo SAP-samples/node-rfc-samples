@@ -1,0 +1,27 @@
+<!-- SH FM_DEBI_FMPSOIS Proceed Initially According to Customer Sub-Ledger Account : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Customer Number">
+    <ComboBox value={this.searchParamLow.KUNNR}
+        items="{type: 'SH', id: 'DEBI'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Subledger acct preprocessing procedure">
+    <Input value={this.searchParamLow.PSOIS}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Revnue Type">
+    <ComboBox value={this.searchParamLow.PSOEA}
+        items="{type: 'CT', id: 'PSO04'}"
+        data-abap="{type:'CHAR', length:'8'}">
+    </ComboBox>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="KUNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}" label="Customer Number"></ui-dg-column>
+<ui-dg-column sortable field="PSOEA" data-abap.bind="{type:'CHAR', length:'8'}" label="Revnue Type"></ui-dg-column>
+<ui-dg-column sortable field="PSOIS" data-abap.bind="{type:'CHAR', length:'20'}" label="Subledger acct preprocessing procedure"></ui-dg-column>
+</ui-datagrid>

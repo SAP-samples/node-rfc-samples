@@ -1,0 +1,66 @@
+<!-- SH SH_T001W_EXT Input Help for Plants for Cross-System Flow of Goods : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Search Term 2">
+    <Input value={this.searchParamLow.SORT2}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Search Term 1">
+    <Input value={this.searchParamLow.SORT1}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="City postal code">
+    <Input value={this.searchParamLow.POST_CODE1}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="City">
+    <Input value={this.searchParamLow.CITY1}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="City name in Uppercase for Search Help">
+    <Input value={this.searchParamLow.MC_CITY1}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="Name 2">
+    <Input value={this.searchParamLow.NAME2}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Name 1">
+    <Input value={this.searchParamLow.NAME1}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Name (Field NAME1) in Uppercase for Search Help">
+    <Input value={this.searchParamLow.MC_NAME1}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="Version ID for International Addresses">
+    <Input value={this.searchParamLow.NATION}
+          data-abap="{type:'CHAR', mid:'ADDRESS_NATION', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Plant for Cross-System Flows of Goods">
+    <Input value={this.searchParamLow.WERKS}
+          data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Logical system">
+    <Input value={this.searchParamLow.LOGSYS}
+          data-abap="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="WERKS" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" label="Plant for Cross-System Flows of Goods"></ui-dg-column>
+<ui-dg-column sortable field="NAME1" data-abap.bind="{type:'CHAR', length:'40'}" label="Name 1"></ui-dg-column>
+<ui-dg-column sortable field="POST_CODE1" data-abap.bind="{type:'CHAR', length:'10'}" label="City postal code"></ui-dg-column>
+<ui-dg-column sortable field="CITY1" data-abap.bind="{type:'CHAR', length:'40'}" label="City"></ui-dg-column>
+</ui-datagrid>

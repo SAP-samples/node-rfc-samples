@@ -1,0 +1,42 @@
+<!-- SH MEKKE Schedule Lines per Purchase Requisition : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Purchase requisition number">
+    <ComboBox value={this.searchParamLow.BANFN}
+        items="{type: 'SH', id: 'MBAN_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BAN', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Item number of purchase requisition">
+    <ComboBox value={this.searchParamLow.BNFPO}
+        items="{type: 'CH', id: 'EBAN'}"
+        data-abap="{type:'NUMC', mid:'BAP', length:'5'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Purchasing Document Number">
+    <ComboBox value={this.searchParamLow.EBELN}
+        items="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Item Number of Purchasing Document">
+    <ComboBox value={this.searchParamLow.EBELP}
+        items="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Delivery Schedule Line Counter">
+    <ComboBox value={this.searchParamLow.ETENR}
+        items="{type: 'CT', id: 'EKET'}"
+        data-abap="{type:'NUMC', length:'4'}">
+    </ComboBox>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BANFN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BAN', length:'10'}" label="Purchase requisition number"></ui-dg-column>
+<ui-dg-column sortable field="BNFPO" data-abap.bind="{type:'NUMC', mid:'BAP', length:'5'}" label="Item number of purchase requisition"></ui-dg-column>
+<ui-dg-column sortable field="EBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}" label="Purchasing Document Number"></ui-dg-column>
+<ui-dg-column sortable field="EBELP" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}" label="Item Number of Purchasing Document"></ui-dg-column>
+<ui-dg-column sortable field="ETENR" data-abap.bind="{type:'NUMC', length:'4'}" label="Delivery Schedule Line Counter"></ui-dg-column>
+</ui-datagrid>

@@ -1,0 +1,27 @@
+<!-- SH H_TTXJ Tax Jurisdiction : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Costing Sheet">
+    <ComboBox value={this.searchParamLow.KALSM}
+        items="{type: 'CT', id: 'TTXD'}"
+        data-abap="{type:'CHAR', length:'6'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Tax Jurisdiction">
+    <ComboBox value={this.searchParamLow.TXJCD}
+        items="{type: 'CT', id: 'TTXJ'}"
+        data-abap="{type:'CHAR', mid:'TXJ', length:'15'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Description">
+    <Input value={this.searchParamLow.TEXT1}
+          data-abap="{type:'CHAR', length:'50'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="KALSM" data-abap.bind="{type:'CHAR', length:'6'}" label="Costing Sheet"></ui-dg-column>
+<ui-dg-column sortable field="TXJCD" data-abap.bind="{type:'CHAR', mid:'TXJ', length:'15'}" label="Tax Jurisdiction"></ui-dg-column>
+<ui-dg-column sortable field="TEXT1" data-abap.bind="{type:'CHAR', length:'50'}" label="Description"></ui-dg-column>
+</ui-datagrid>

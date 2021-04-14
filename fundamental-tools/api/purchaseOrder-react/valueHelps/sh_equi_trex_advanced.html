@@ -1,0 +1,139 @@
+<!-- SH EQUI_TREX_ADVANCED Advanced Search for Equipment via Search Engine : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Valid To Date">
+    <DatePicker value={this.searchParamLow.VALIDUNTILDATE}/>
+</FormItem>
+<FormItem label="Valid-From Date">
+    <DatePicker value={this.searchParamLow.VALIDFROMDATE}/>
+</FormItem>
+<FormItem label="Valid-From Date">
+    <DatePicker value={this.searchParamLow.S/KD/DATE}/>
+</FormItem>
+<FormItem label="Maintenance Planning Plant">
+    <Input value={this.searchParamLow.PLANPLANT}
+          data-abap="{type:'CHAR', mid:'IWK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Planner Group for Customer Service and Plant Maintenance">
+    <Input value={this.searchParamLow.PLANGROUP}
+          data-abap="{type:'CHAR', mid:'IHG', length:'3'}"
+    />
+</FormItem>
+<FormItem label="Object ID of the Work Center">
+    <Input value={this.searchParamLow.WORK_CTR}
+          data-abap="{type:'NUMC', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Sort field">
+    <Input value={this.searchParamLow.SORTFIELD}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+<FormItem label="Location of maintenance object">
+    <Input value={this.searchParamLow.MAINTLOC}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Maintenance plant">
+    <Input value={this.searchParamLow.MAINTPLANT}
+          data-abap="{type:'CHAR', mid:'SWK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Manufacturer serial number">
+    <Input value={this.searchParamLow.MANSERNO}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+<FormItem label="Manufacturer of asset">
+    <Input value={this.searchParamLow.MANFACTURE}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+<FormItem label="Functional Location">
+    <Input value={this.searchParamLow.FUNCT_LOC}
+          data-abap="{type:'CHAR', alpha:'TPLNR', mid:'IFL', length:'30'}"
+    />
+</FormItem>
+<FormItem label="Superordinate Equipment">
+    <Input value={this.searchParamLow.POSEQUI}
+          data-abap="{type:'CHAR', alpha:'ALPHA', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Class number">
+    <Input value={this.searchParamLow.CLASS_NUM}
+          data-abap="{type:'CHAR', mid:'KLA', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Equipment category">
+    <Input value={this.searchParamLow.EQUICATGRY}
+          data-abap="{type:'CHAR', mid:'EQT', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Material Number">
+    <Input value={this.searchParamLow.MATERIAL}
+          data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Serial Number">
+    <Input value={this.searchParamLow.SERIALNO}
+          data-abap="{type:'CHAR', alpha:'GERNR', mid:'SER', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Description of Technical Object">
+    <Input value={this.searchParamLow.DESCRIPTION}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Equipment number">
+    <Input value={this.searchParamLow.EXTERNAL_KEY}
+          data-abap="{type:'CHAR', mid:'EQN', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Type of Business Object">
+    <Input value={this.searchParamLow.OBJECT_TYPE}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Business Object for Search Engine Service (SES)">
+    <Input value={this.searchParamLow.BUSINESS_OBJECT}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Option Fuzzy Mode">
+    <Input value={this.searchParamLow.S/RP/MODE_FUZZY}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Input Field for Full Text Search">
+    <Input value={this.searchParamLow.S/RP/SEARCH_TERM}
+          data-abap="{type:'CHAR', length:'45'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="VALIDUNTILDATE" data-abap.bind="{type:'DATS'}" label="Valid To Date"></ui-dg-column>
+<ui-dg-column sortable field="VALIDFROMDATE" data-abap.bind="{type:'DATS'}" label="Valid-From Date"></ui-dg-column>
+<ui-dg-column sortable field="S/KD/DATE" data-abap.bind="{type:'DATS'}" label="Valid-From Date"></ui-dg-column>
+<ui-dg-column sortable field="PLANPLANT" data-abap.bind="{type:'CHAR', mid:'IWK', length:'4'}" label="Maintenance Planning Plant"></ui-dg-column>
+<ui-dg-column sortable field="PLANGROUP" data-abap.bind="{type:'CHAR', mid:'IHG', length:'3'}" label="Planner Group for Customer Service and Plant Maintenance"></ui-dg-column>
+<ui-dg-column sortable field="WORK_CTR" data-abap.bind="{type:'NUMC', length:'8'}" label="Object ID of the Work Center"></ui-dg-column>
+<ui-dg-column sortable field="SORTFIELD" data-abap.bind="{type:'CHAR', length:'30'}" label="Sort field"></ui-dg-column>
+<ui-dg-column sortable field="MAINTLOC" data-abap.bind="{type:'CHAR', length:'10'}" label="Location of maintenance object"></ui-dg-column>
+<ui-dg-column sortable field="MAINTPLANT" data-abap.bind="{type:'CHAR', mid:'SWK', length:'4'}" label="Maintenance plant"></ui-dg-column>
+<ui-dg-column sortable field="MANSERNO" data-abap.bind="{type:'CHAR', length:'30'}" label="Manufacturer serial number"></ui-dg-column>
+<ui-dg-column sortable field="MANFACTURE" data-abap.bind="{type:'CHAR', length:'30'}" label="Manufacturer of asset"></ui-dg-column>
+<ui-dg-column sortable field="FUNCT_LOC" data-abap.bind="{type:'CHAR', alpha:'TPLNR', mid:'IFL', length:'30'}" label="Functional Location"></ui-dg-column>
+<ui-dg-column sortable field="POSEQUI" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'18'}" label="Superordinate Equipment"></ui-dg-column>
+<ui-dg-column sortable field="CLASS_NUM" data-abap.bind="{type:'CHAR', mid:'KLA', length:'18'}" label="Class number"></ui-dg-column>
+<ui-dg-column sortable field="EQUICATGRY" data-abap.bind="{type:'CHAR', mid:'EQT', length:'1'}" label="Equipment category"></ui-dg-column>
+<ui-dg-column sortable field="MATERIAL" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" label="Material Number"></ui-dg-column>
+<ui-dg-column sortable field="SERIALNO" data-abap.bind="{type:'CHAR', alpha:'GERNR', mid:'SER', length:'18'}" label="Serial Number"></ui-dg-column>
+<ui-dg-column sortable field="DESCRIPTION" data-abap.bind="{type:'CHAR', length:'40'}" label="Description of Technical Object"></ui-dg-column>
+<ui-dg-column sortable field="EXTERNAL_KEY" data-abap.bind="{type:'CHAR', mid:'EQN', length:'18'}" label="Equipment number"></ui-dg-column>
+<ui-dg-column sortable field="OBJECT_TYPE" data-abap.bind="{type:'CHAR', length:'10'}" label="Type of Business Object"></ui-dg-column>
+<ui-dg-column sortable field="BUSINESS_OBJECT" data-abap.bind="{type:'CHAR', length:'10'}" label="Business Object for Search Engine Service (SES)"></ui-dg-column>
+<ui-dg-column sortable field="S/RP/MODE_FUZZY" data-abap.bind="{type:'CHAR', length:'1'}" label="Option Fuzzy Mode"></ui-dg-column>
+<ui-dg-column sortable field="S/RP/SEARCH_TERM" data-abap.bind="{type:'CHAR', length:'45'}" label="Input Field for Full Text Search"></ui-dg-column>
+</ui-datagrid>

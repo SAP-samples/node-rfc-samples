@@ -1,0 +1,19 @@
+<!-- SH WRF_MATNR_CHAR3 Characteristic Value for Second Size for Variants : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Characteristic Value (Seasonal Procurement)">
+    <Input value={this.searchParamLow.ATWRT}
+          data-abap="{type:'CHAR', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Characteristic value description">
+    <Input value={this.searchParamLow.ATWTB}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="ATWRT" data-abap.bind="{type:'CHAR', length:'18'}" label="Characteristic Value (Seasonal Procurement)"></ui-dg-column>
+<ui-dg-column sortable field="ATWTB" data-abap.bind="{type:'CHAR', length:'30'}" label="Characteristic value description"></ui-dg-column>
+</ui-datagrid>

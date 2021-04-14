@@ -1,0 +1,26 @@
+<!-- SH SPECS By Search Term : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Number of a Set of Model Service Specifications">
+    <ComboBox value={this.searchParamLow.SPEC_NO}
+        items="{type: 'SH', id: 'SPEC'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'MSP', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Search term">
+    <Input value={this.searchParamLow.SORT1}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Short description of model specifications">
+    <Input value={this.searchParamLow.TXZ01}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="SPEC_NO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'MSP', length:'10'}" label="Number of a Set of Model Service Specifications"></ui-dg-column>
+<ui-dg-column sortable field="SORT1" data-abap.bind="{type:'CHAR', length:'20'}" label="Search term"></ui-dg-column>
+<ui-dg-column sortable field="TXZ01" data-abap.bind="{type:'CHAR', length:'40'}" label="Short description of model specifications"></ui-dg-column>
+</ui-datagrid>

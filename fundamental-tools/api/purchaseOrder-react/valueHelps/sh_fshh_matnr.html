@@ -1,0 +1,75 @@
+<!-- SH FSHH_MATNR Material with Fashion Fields : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Material Number">
+    <ComboBox value={this.searchParamLow.MATNR}
+        items="{type: 'SH', id: 'MAT1'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Material Description in Uppercase for Matchcodes">
+    <Input value={this.searchParamLow.MAKTG}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Language Key">
+    <ComboBox value={this.searchParamLow.SPRAS}
+        items="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Fashion Information Field: 1">
+    <ComboBox value={this.searchParamLow.FSH_MG_AT1}
+        items="{type: 'SH', id: 'FSHH_MG_ATTRIBUTE1'}"
+        data-abap="{type:'CHAR', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Fashion Information Field: 2">
+    <ComboBox value={this.searchParamLow.FSH_MG_AT2}
+        items="{type: 'SH', id: 'FSHH_MG_ATTRIBUTE2'}"
+        data-abap="{type:'CHAR', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Fashion Information Field: 3">
+    <ComboBox value={this.searchParamLow.FSH_MG_AT3}
+        items="{type: 'SH', id: 'FSHH_MG_ATTRIBUTE3'}"
+        data-abap="{type:'CHAR', length:'6'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Season Year">
+    <ComboBox value={this.searchParamLow.FSH_SEASON_YEAR}
+        items="{type: 'CT', id: 'FSH_SEASONS'}"
+        data-abap="{type:'CHAR', alpha:'GJAHR', mid:'WMSAISJ', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Season">
+    <ComboBox value={this.searchParamLow.FSH_SEASON}
+        items="{type: 'CT', id: 'FSH_SEASONS'}"
+        data-abap="{type:'CHAR', mid:'SAISO', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Fashion Collection">
+    <ComboBox value={this.searchParamLow.FSH_COLLECTION}
+        items="{type: 'CT', id: 'FSH_COLLECTIONS'}"
+        data-abap="{type:'CHAR', length:'2'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Fashion Theme">
+    <ComboBox value={this.searchParamLow.FSH_THEME}
+        items="{type: 'CT', id: 'FSH_THEMES'}"
+        data-abap="{type:'CHAR', length:'4'}">
+    </ComboBox>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="MATNR" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" label="Material Number"></ui-dg-column>
+<ui-dg-column sortable field="MAKTG" data-abap.bind="{type:'CHAR', length:'40'}" label="Material Description in Uppercase for Matchcodes"></ui-dg-column>
+<ui-dg-column sortable field="FSH_MG_AT1" data-abap.bind="{type:'CHAR', length:'10'}" label="Fashion Information Field: 1"></ui-dg-column>
+<ui-dg-column sortable field="FSH_MG_AT2" data-abap.bind="{type:'CHAR', length:'10'}" label="Fashion Information Field: 2"></ui-dg-column>
+<ui-dg-column sortable field="FSH_MG_AT3" data-abap.bind="{type:'CHAR', length:'6'}" label="Fashion Information Field: 3"></ui-dg-column>
+<ui-dg-column sortable field="FSH_SEASON_YEAR" data-abap.bind="{type:'CHAR', alpha:'GJAHR', mid:'WMSAISJ', length:'4'}" label="Season Year"></ui-dg-column>
+<ui-dg-column sortable field="FSH_SEASON" data-abap.bind="{type:'CHAR', mid:'SAISO', length:'4'}" label="Season"></ui-dg-column>
+<ui-dg-column sortable field="FSH_COLLECTION" data-abap.bind="{type:'CHAR', length:'2'}" label="Fashion Collection"></ui-dg-column>
+<ui-dg-column sortable field="FSH_THEME" data-abap.bind="{type:'CHAR', length:'4'}" label="Fashion Theme"></ui-dg-column>
+</ui-datagrid>

@@ -1,0 +1,37 @@
+<!-- SH EQUIA Equipment by asset number : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Main Asset Number">
+    <Input value={this.searchParamLow.ANLNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AN1', length:'12'}"
+    />
+</FormItem>
+<FormItem label="Asset Subnumber">
+    <Input value={this.searchParamLow.ANLUN}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AN2', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Company Code">
+    <Input value={this.searchParamLow.BUKRS}
+          data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Equipment Number">
+    <Input value={this.searchParamLow.EQUNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Equipment description in capital letters">
+    <Input value={this.searchParamLow.EQKTU}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="ANLNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AN1', length:'12'}" label="Main Asset Number"></ui-dg-column>
+<ui-dg-column sortable field="ANLUN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AN2', length:'4'}" label="Asset Subnumber"></ui-dg-column>
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="EQUNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}" label="Equipment Number"></ui-dg-column>
+<ui-dg-column sortable field="EQKTU" data-abap.bind="{type:'CHAR', length:'40'}" label="Equipment description in capital letters"></ui-dg-column>
+</ui-datagrid>

@@ -1,0 +1,67 @@
+<!-- SH MAT1_TREX_SIMPLE Quick Search for Material Using Search Engine : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Input Field for Full Text Search">
+    <Input value={this.searchParamLow.S/RP/SEARCH_TERM}
+          data-abap="{type:'CHAR', length:'45'}"
+    />
+</FormItem>
+<FormItem label="Option Fuzzy Mode">
+    <Input value={this.searchParamLow.S/RP/MODE_FUZZY}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Business Object for Search Engine Service (SES)">
+    <Input value={this.searchParamLow.BUSINESS_OBJECT}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Type of Business Object">
+    <Input value={this.searchParamLow.OBJECT_TYPE}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Material Number">
+    <Input value={this.searchParamLow.OBJECT_ID}
+          data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Material type">
+    <Input value={this.searchParamLow.MATL_TYPE}
+          data-abap="{type:'CHAR', mid:'MTA', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Material Category">
+    <Input value={this.searchParamLow.MATL_CAT}
+          data-abap="{type:'CHAR', mid:'MTY', length:'2'}"
+    />
+</FormItem>
+<FormItem label="Material description">
+    <Input value={this.searchParamLow.DESCRIPTION}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Product hierarchy">
+    <Input value={this.searchParamLow.PROD_HIER}
+          data-abap="{type:'CHAR', mid:'VPR', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Material Group">
+    <Input value={this.searchParamLow.MATL_GROUP}
+          data-abap="{type:'CHAR', mid:'MKL', length:'9'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="S/RP/SEARCH_TERM" data-abap.bind="{type:'CHAR', length:'45'}" label="Input Field for Full Text Search"></ui-dg-column>
+<ui-dg-column sortable field="S/RP/MODE_FUZZY" data-abap.bind="{type:'CHAR', length:'1'}" label="Option Fuzzy Mode"></ui-dg-column>
+<ui-dg-column sortable field="BUSINESS_OBJECT" data-abap.bind="{type:'CHAR', length:'10'}" label="Business Object for Search Engine Service (SES)"></ui-dg-column>
+<ui-dg-column sortable field="OBJECT_TYPE" data-abap.bind="{type:'CHAR', length:'10'}" label="Type of Business Object"></ui-dg-column>
+<ui-dg-column sortable field="OBJECT_ID" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" label="Material Number"></ui-dg-column>
+<ui-dg-column sortable field="MATL_TYPE" data-abap.bind="{type:'CHAR', mid:'MTA', length:'4'}" label="Material type"></ui-dg-column>
+<ui-dg-column sortable field="MATL_CAT" data-abap.bind="{type:'CHAR', mid:'MTY', length:'2'}" label="Material Category"></ui-dg-column>
+<ui-dg-column sortable field="DESCRIPTION" data-abap.bind="{type:'CHAR', length:'40'}" label="Material description"></ui-dg-column>
+<ui-dg-column sortable field="PROD_HIER" data-abap.bind="{type:'CHAR', mid:'VPR', length:'18'}" label="Product hierarchy"></ui-dg-column>
+<ui-dg-column sortable field="MATL_GROUP" data-abap.bind="{type:'CHAR', mid:'MKL', length:'9'}" label="Material Group"></ui-dg-column>
+</ui-datagrid>

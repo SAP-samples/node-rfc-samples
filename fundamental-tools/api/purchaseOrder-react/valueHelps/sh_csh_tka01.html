@@ -1,0 +1,43 @@
+<!-- SH CSH_TKA01 Controlling Area : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Controlling Area">
+    <Input value={this.searchParamLow.KOKRS}
+          data-abap="{type:'CHAR', mid:'CAC', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Name of the controlling area">
+    <Input value={this.searchParamLow.BEZEI}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="Currency Key">
+    <Input value={this.searchParamLow.WAERS}
+          data-abap="{type:'CUKY', mid:'FWS', length:'5'}"
+    />
+</FormItem>
+<FormItem label="Chart of Accounts">
+    <Input value={this.searchParamLow.KTOPL}
+          data-abap="{type:'CHAR', mid:'KPL', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Fiscal Year Variant">
+    <Input value={this.searchParamLow.LMONA}
+          data-abap="{type:'CHAR', length:'2'}"
+    />
+</FormItem>
+<FormItem label="Standard Hierarchy for Cost Centers">
+    <Input value={this.searchParamLow.KHINR}
+          data-abap="{type:'CHAR', length:'12'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="KOKRS" data-abap.bind="{type:'CHAR', mid:'CAC', length:'4'}" label="Controlling Area"></ui-dg-column>
+<ui-dg-column sortable field="BEZEI" data-abap.bind="{type:'CHAR', length:'25'}" label="Name of the controlling area"></ui-dg-column>
+<ui-dg-column sortable field="WAERS" data-abap.bind="{type:'CUKY', mid:'FWS', length:'5'}" label="Currency Key"></ui-dg-column>
+<ui-dg-column sortable field="KTOPL" data-abap.bind="{type:'CHAR', mid:'KPL', length:'4'}" label="Chart of Accounts"></ui-dg-column>
+<ui-dg-column sortable field="LMONA" data-abap.bind="{type:'CHAR', length:'2'}" label="Fiscal Year Variant"></ui-dg-column>
+<ui-dg-column sortable field="KHINR" data-abap.bind="{type:'CHAR', length:'12'}" label="Standard Hierarchy for Cost Centers"></ui-dg-column>
+</ui-datagrid>

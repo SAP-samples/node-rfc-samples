@@ -1,0 +1,56 @@
+<!-- SH MRTAM Selection via master tenant : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Company Code">
+    <Input value={this.searchParamLow.BUKRS}
+          data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Lease-Out Number">
+    <Input value={this.searchParamLow.SMIVE}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'MIV', length:'13'}"
+    />
+</FormItem>
+<FormItem label="Service Charge Collector Number">
+    <Input value={this.searchParamLow.OBJNR}
+          data-abap="{type:'CHAR', length:'22'}"
+    />
+</FormItem>
+<FormItem label="Name 1 (surname for persons, else company name)">
+    <Input value={this.searchParamLow.NAME1}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Name 2 (Continuation of NAME 1)">
+    <Input value={this.searchParamLow.NAME2}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Field NAME1 in Upper Case">
+    <Input value={this.searchParamLow.MC_NAME1}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="Field NAME2 in Upper Case">
+    <Input value={this.searchParamLow.MC_NAME2}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="Date of Birth of Business Partner">
+    <DatePicker value={this.searchParamLow.BIRTH_DATE}/>
+</FormItem>
+<FormItem label="Customer number main contract partner">
+    <Input value={this.searchParamLow.KUNNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="SMIVE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'MIV', length:'13'}" label="Lease-Out Number"></ui-dg-column>
+<ui-dg-column sortable field="NAME1" data-abap.bind="{type:'CHAR', length:'40'}" label="Name 1 (surname for persons, else company name)"></ui-dg-column>
+<ui-dg-column sortable field="NAME2" data-abap.bind="{type:'CHAR', length:'40'}" label="Name 2 (Continuation of NAME 1)"></ui-dg-column>
+<ui-dg-column sortable field="BIRTH_DATE" data-abap.bind="{type:'DATS'}" label="Date of Birth of Business Partner"></ui-dg-column>
+<ui-dg-column sortable field="KUNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" label="Customer number main contract partner"></ui-dg-column>
+</ui-datagrid>

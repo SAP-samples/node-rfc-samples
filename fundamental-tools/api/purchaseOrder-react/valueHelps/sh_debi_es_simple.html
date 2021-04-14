@@ -1,0 +1,79 @@
+<!-- SH DEBI_ES_SIMPLE Simple Search for Customers using Search Engine : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Generic Search Term">
+    <Input value={this.searchParamLow.S/RP/SEARCH_TERM}
+          data-abap="{type:'CHAR', length:'45'}"
+    />
+</FormItem>
+<FormItem label="Fuzzy Mode">
+    <Input value={this.searchParamLow.S/RP/MODE_FUZZY}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Object Type">
+    <Input value={this.searchParamLow.OBJECT_TYPE_ID}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Request Type ID">
+    <Input value={this.searchParamLow.REQUEST}
+          data-abap="{type:'CHAR', length:'32'}"
+    />
+</FormItem>
+<FormItem label="Customer Number">
+    <Input value={this.searchParamLow.KUNNR_EXT}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Name 1">
+    <Input value={this.searchParamLow.CUSTOMER_NAME1}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Name 2">
+    <Input value={this.searchParamLow.NAME2}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Country Key">
+    <Input value={this.searchParamLow.COUNTRY}
+          data-abap="{type:'CHAR', mid:'LND', length:'3'}"
+    />
+</FormItem>
+<FormItem label="City">
+    <Input value={this.searchParamLow.CITY1}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="City postal code">
+    <Input value={this.searchParamLow.POST_CODE1}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Street">
+    <Input value={this.searchParamLow.STREET}
+          data-abap="{type:'CHAR', length:'60'}"
+    />
+</FormItem>
+<FormItem label="House Number">
+    <Input value={this.searchParamLow.HOUSE_NUM1}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="S/RP/SEARCH_TERM" data-abap.bind="{type:'CHAR', length:'45'}" label="Generic Search Term"></ui-dg-column>
+<ui-dg-column sortable field="S/RP/MODE_FUZZY" data-abap.bind="{type:'CHAR', length:'1'}" label="Fuzzy Mode"></ui-dg-column>
+<ui-dg-column sortable field="OBJECT_TYPE_ID" data-abap.bind="{type:'CHAR', length:'20'}" label="Object Type"></ui-dg-column>
+<ui-dg-column sortable field="REQUEST" data-abap.bind="{type:'CHAR', length:'32'}" label="Request Type ID"></ui-dg-column>
+<ui-dg-column sortable field="KUNNR_EXT" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}" label="Customer Number"></ui-dg-column>
+<ui-dg-column sortable field="CUSTOMER_NAME1" data-abap.bind="{type:'CHAR', length:'40'}" label="Name 1"></ui-dg-column>
+<ui-dg-column sortable field="NAME2" data-abap.bind="{type:'CHAR', length:'40'}" label="Name 2"></ui-dg-column>
+<ui-dg-column sortable field="COUNTRY" data-abap.bind="{type:'CHAR', mid:'LND', length:'3'}" label="Country Key"></ui-dg-column>
+<ui-dg-column sortable field="CITY1" data-abap.bind="{type:'CHAR', length:'40'}" label="City"></ui-dg-column>
+<ui-dg-column sortable field="POST_CODE1" data-abap.bind="{type:'CHAR', length:'10'}" label="City postal code"></ui-dg-column>
+<ui-dg-column sortable field="STREET" data-abap.bind="{type:'CHAR', length:'60'}" label="Street"></ui-dg-column>
+<ui-dg-column sortable field="HOUSE_NUM1" data-abap.bind="{type:'CHAR', length:'10'}" label="House Number"></ui-dg-column>
+</ui-datagrid>

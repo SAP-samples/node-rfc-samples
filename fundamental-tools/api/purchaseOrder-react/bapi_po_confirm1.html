@@ -1,0 +1,908 @@
+<!-- BAPI_PO_CONFIRM1 exception: 0  struct: 3  table: 9  var: 2
+
+abap 2.2.0 at: 2021-04-14 18:31:25 -->
+
+<!-- IMPORT PARAMETERS -->
+
+<FormItem label="Purchasing Document Number">
+    <ComboBox value={this.PURCHASEORDER}
+        items="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Switch to Simulation Mode for Write BAPIs">
+    <Input value={this.TESTRUN}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+
+<!-- Parameter: HEADER structure: BAPIMECONFHEADER  Header Data Confirmation for BAPI -->
+
+<FormItem label="Purchasing Document Number">
+    <ComboBox value={this.HEADER.DOC_NUMBER}
+        items="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}">
+    </ComboBox>
+</FormItem>
+
+<!-- Parameter: HEADERX structure: BAPIMECONFHEADERX  Change Parameter Header Data Confirmation BAPI -->
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.HEADERX.DOC_NUMBER}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.HEADERX.DOC_TYPE}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.HEADERX.VENDOR}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.HEADERX.CURRENCY}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.HEADERX.CURRENCY_ISO}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.HEADERX.LANGU}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.HEADERX.LANGU_ISO}/>
+</FormItem>
+
+<!-- TABLE PARAMETERS -->
+
+<!-- Parameter: ITEM structure: BAPIMECONFITEM  Confirmation Item Data -->
+
+<ui-datagrid data.bind="ITEM" title="Confirmation Item Data"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="ITEM_NO" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}" shlp.bind="{type: 'CT', id: 'EKPO'}" label="Item Number of Purchasing Document"></ui-dg-column>
+<ui-dg-column sortable field="MATERIAL" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" shlp.bind="{type: 'SH', id: 'S_MAT1'}" label="Material Number"></ui-dg-column>
+<ui-dg-column sortable field="MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}" label="Long Material Number for MATERIAL Field"></ui-dg-column>
+<ui-dg-column sortable field="MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}" label="External GUID for MATERIAL Field"></ui-dg-column>
+<ui-dg-column sortable field="MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}" label="Version Number for MATERIAL Field"></ui-dg-column>
+<ui-dg-column sortable field="EMATERIAL" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" shlp.bind="{type: 'CT', id: 'MARA'}" label="Material number"></ui-dg-column>
+<ui-dg-column sortable field="INT_ARTICLE_NUM" data-abap.bind="{type:'CHAR', alpha:'EAN11', mid:'EAN', length:'18'}" label="International Article Number (EAN/UPC)"></ui-dg-column>
+<ui-dg-column sortable field="VEND_MAT" data-abap.bind="{type:'CHAR', length:'35'}" label="Material Number Used by Vendor"></ui-dg-column>
+<ui-dg-column sortable field="PLANT" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" label="Plant"></ui-dg-column>
+<ui-dg-column sortable field="STGE_LOC" data-abap.bind="{type:'CHAR', mid:'LAG', length:'4'}" shlp.bind="{type: 'CT', id: 'T001L'}" label="Storage location"></ui-dg-column>
+<ui-dg-column sortable field="QUANTITY" data-abap.bind="{type:'QUAN', unit:'PO_UNIT', length:'10.3'}" label="Purchase Order Quantity"></ui-dg-column>
+<ui-dg-column sortable field="PO_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Order unit"></ui-dg-column>
+<ui-dg-column sortable field="PO_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="Order unit in ISO code"></ui-dg-column>
+<ui-dg-column sortable field="ORDERPR_UN" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Order Price Unit (Purchasing)"></ui-dg-column>
+<ui-dg-column sortable field="ORDERPR_UN_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for purchase order price unit"></ui-dg-column>
+<ui-dg-column sortable field="PRICE_UNIT" data-abap.bind="{type:'DEC', length:'5'}" label="Price unit"></ui-dg-column>
+<ui-dg-column sortable field="NET_PRICE" data-abap.bind="{type:'DEC', length:'27.9'}" label="Currency amount for BAPIS (with 9 decimal places)"></ui-dg-column>
+<ui-dg-column sortable field="ACKN_REQD" data-abap.bind="{type:'CHAR', length:'1'}" label="Order Acknowledgment Requirement"></ui-dg-column>
+<ui-dg-column sortable field="ACKNOWL_NO" data-abap.bind="{type:'CHAR', length:'20'}" label="Order Acknowledgment Number"></ui-dg-column>
+<ui-dg-column sortable field="SHIPPING" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'T027A'}" label="Shipping Instructions"></ui-dg-column>
+<ui-dg-column sortable field="CONFIRMED_AS_ORDERED" data-abap.bind="{type:'CHAR', length:'1'}" label="Confirmed as Ordered"></ui-dg-column>
+<ui-dg-column sortable field="CANCELED" data-abap.bind="{type:'CHAR', length:'1'}" label="Rejection Indicator"></ui-dg-column>
+<ui-dg-column sortable field="EMATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}" label="Long Material Number for MATERIAL Field"></ui-dg-column>
+<ui-dg-column sortable field="EMATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}" label="External GUID for MATERIAL Field"></ui-dg-column>
+<ui-dg-column sortable field="EMATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}" label="Version Number for MATERIAL Field"></ui-dg-column>
+</ui-datagrid>
+
+<FormItem label="Item Number of Purchasing Document">
+    <ComboBox value={this.ITEM.ITEM_NO}
+        items="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Material Number">
+    <ComboBox value={this.ITEM.MATERIAL}
+        items="{type: 'SH', id: 'S_MAT1'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Long Material Number for MATERIAL Field">
+    <Input value={this.ITEM.MATERIAL_EXTERNAL}
+          data-abap="{type:'CHAR', alpha:'MATNL', length:'40'}"
+    />
+</FormItem>
+
+<FormItem label="External GUID for MATERIAL Field">
+    <Input value={this.ITEM.MATERIAL_GUID}
+          data-abap="{type:'CHAR', length:'32'}"
+    />
+</FormItem>
+
+<FormItem label="Version Number for MATERIAL Field">
+    <Input value={this.ITEM.MATERIAL_VERSION}
+          data-abap="{type:'CHAR', alpha:'MATNW', length:'10'}"
+    />
+</FormItem>
+
+<FormItem label="Material number">
+    <ComboBox value={this.ITEM.EMATERIAL}
+        items="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="International Article Number (EAN/UPC)">
+    <Input value={this.ITEM.INT_ARTICLE_NUM}
+          data-abap="{type:'CHAR', alpha:'EAN11', mid:'EAN', length:'18'}"
+    />
+</FormItem>
+
+<FormItem label="Material Number Used by Vendor">
+    <Input value={this.ITEM.VEND_MAT}
+          data-abap="{type:'CHAR', length:'35'}"
+    />
+</FormItem>
+
+<FormItem label="Plant">
+    <ComboBox value={this.ITEM.PLANT}
+        items="{type: 'SH', id: 'H_T001W_C'}"
+        data-abap="{type:'CHAR', mid:'WRK', length:'4'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Storage location">
+    <ComboBox value={this.ITEM.STGE_LOC}
+        items="{type: 'CT', id: 'T001L'}"
+        data-abap="{type:'CHAR', mid:'LAG', length:'4'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Purchase Order Quantity">
+    <Input value={this.ITEM.QUANTITY}
+          data-abap="{type:'QUAN', unit:'PO_UNIT', length:'10.3'}"
+    />
+</FormItem>
+
+<FormItem label="Order unit">
+    <ComboBox value={this.ITEM.PO_UNIT}
+        items="{type: 'CT', id: 'T006'}"
+        data-abap="{type:'UNIT', alpha:'CUNIT', length:'3'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Order unit in ISO code">
+    <ComboBox value={this.ITEM.PO_UNIT_ISO}
+        items="{type: 'CT', id: 'T006I'}"
+        data-abap="{type:'CHAR', length:'3'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Order Price Unit (Purchasing)">
+    <ComboBox value={this.ITEM.ORDERPR_UN}
+        items="{type: 'CT', id: 'T006'}"
+        data-abap="{type:'UNIT', alpha:'CUNIT', length:'3'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="ISO code for purchase order price unit">
+    <ComboBox value={this.ITEM.ORDERPR_UN_ISO}
+        items="{type: 'CT', id: 'T006I'}"
+        data-abap="{type:'CHAR', length:'3'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Price unit">
+    <Input value={this.ITEM.PRICE_UNIT}
+          data-abap="{type:'DEC', length:'5'}"
+    />
+</FormItem>
+
+<FormItem label="Currency amount for BAPIS (with 9 decimal places)">
+    <Input value={this.ITEM.NET_PRICE}
+          data-abap="{type:'DEC', length:'27.9'}"
+    />
+</FormItem>
+
+<FormItem label="Order Acknowledgment Requirement">
+    <CheckBox value={this.ITEM.ACKN_REQD}/>
+</FormItem>
+
+<FormItem label="Order Acknowledgment Number">
+    <Input value={this.ITEM.ACKNOWL_NO}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+
+<FormItem label="Shipping Instructions">
+    <ComboBox value={this.ITEM.SHIPPING}
+        items="{type: 'CT', id: 'T027A'}"
+        data-abap="{type:'CHAR', length:'2'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Confirmed as Ordered">
+    <CheckBox value={this.ITEM.CONFIRMED_AS_ORDERED}/>
+</FormItem>
+
+<FormItem label="Rejection Indicator">
+    <CheckBox value={this.ITEM.CANCELED}/>
+</FormItem>
+
+<FormItem label="Long Material Number for MATERIAL Field">
+    <Input value={this.ITEM.EMATERIAL_EXTERNAL}
+          data-abap="{type:'CHAR', alpha:'MATNL', length:'40'}"
+    />
+</FormItem>
+
+<FormItem label="External GUID for MATERIAL Field">
+    <Input value={this.ITEM.EMATERIAL_GUID}
+          data-abap="{type:'CHAR', length:'32'}"
+    />
+</FormItem>
+
+<FormItem label="Version Number for MATERIAL Field">
+    <Input value={this.ITEM.EMATERIAL_VERSION}
+          data-abap="{type:'CHAR', alpha:'MATNW', length:'10'}"
+    />
+</FormItem>
+
+<!-- Parameter: CONFIRMATION structure: BAPIMECONFDETAIL  MM-PUR: Confirmation Details -->
+
+<ui-datagrid data.bind="CONFIRMATION" title="MM-PUR: Confirmation Details"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="ITEM_NO" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}" shlp.bind="{type: 'CT', id: 'EKPO'}" label="Item Number of Purchasing Document"></ui-dg-column>
+<ui-dg-column sortable field="CONF_SER" data-abap.bind="{type:'NUMC', length:'4'}" label="Sequential Number of Vendor Confirmation"></ui-dg-column>
+<ui-dg-column sortable field="DELETE_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="Asset class marked for deletion"></ui-dg-column>
+<ui-dg-column sortable field="CONF_CATEGORY" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'T163E'}" label="Confirmation Category"></ui-dg-column>
+<ui-dg-column sortable field="DELIV_DATE_TYP" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'CT', id: 'TPRG'}" label="Date category of delivery date in vendor confirmation"></ui-dg-column>
+<ui-dg-column sortable field="DELIV_DATE" data-abap.bind="{type:'DATS'}" label="Delivery Date of Vendor Confirmation"></ui-dg-column>
+<ui-dg-column sortable field="DELIV_TIME" data-abap.bind="{type:'TIMS'}" label="Delivery Date Time-Spot in Vendor Confirmation"></ui-dg-column>
+<ui-dg-column sortable field="QUANTITY" data-abap.bind="{type:'QUAN', unit:'PO_UNIT', length:'10.3'}" label="Quantity as Per Vendor Confirmation"></ui-dg-column>
+<ui-dg-column sortable field="REFERENCE" data-abap.bind="{type:'CHAR', length:'35'}" label="Reference Document Number (for Dependencies see Long Text)"></ui-dg-column>
+<ui-dg-column sortable field="BATCH" data-abap.bind="{type:'CHAR', mid:'CHA', length:'10'}" shlp.bind="{type: 'CT', id: 'MCH1'}" label="Batch Number"></ui-dg-column>
+<ui-dg-column sortable field="CREAT_DATE" data-abap.bind="{type:'DATS'}" label="Creation Date of Confirmation"></ui-dg-column>
+<ui-dg-column sortable field="CREAT_TIME" data-abap.bind="{type:'TIMS'}" label="Time at Which Vendor Confirmation was Created"></ui-dg-column>
+<ui-dg-column sortable field="MPN" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'HTN', length:'18'}" shlp.bind="{type: 'CT', id: 'MARA'}" label="Material number corresponding to manufacturer part number"></ui-dg-column>
+<ui-dg-column sortable field="HANDOVERDATE" data-abap.bind="{type:'DATS'}" label="Handover Date at the Handover Location"></ui-dg-column>
+<ui-dg-column sortable field="HANDOVERTIME" data-abap.bind="{type:'TIMS'}" label="Handover time at the handover location"></ui-dg-column>
+<ui-dg-column sortable field="MPN_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}" label="Long Material Number for MATERIAL Field"></ui-dg-column>
+<ui-dg-column sortable field="MPN_GUID" data-abap.bind="{type:'CHAR', length:'32'}" label="External GUID for MATERIAL Field"></ui-dg-column>
+<ui-dg-column sortable field="MPN_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}" label="Version Number for MATERIAL Field"></ui-dg-column>
+</ui-datagrid>
+
+<FormItem label="Item Number of Purchasing Document">
+    <ComboBox value={this.CONFIRMATION.ITEM_NO}
+        items="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Sequential Number of Vendor Confirmation">
+    <Input value={this.CONFIRMATION.CONF_SER}
+          data-abap="{type:'NUMC', length:'4'}"
+    />
+</FormItem>
+
+<FormItem label="Asset class marked for deletion">
+    <CheckBox value={this.CONFIRMATION.DELETE_IND}/>
+</FormItem>
+
+<FormItem label="Confirmation Category">
+    <ComboBox value={this.CONFIRMATION.CONF_CATEGORY}
+        items="{type: 'CT', id: 'T163E'}"
+        data-abap="{type:'CHAR', length:'2'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Date category of delivery date in vendor confirmation">
+    <ComboBox value={this.CONFIRMATION.DELIV_DATE_TYP}
+        items="{type: 'CT', id: 'TPRG'}"
+        data-abap="{type:'CHAR', length:'1'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Delivery Date of Vendor Confirmation">
+    <DatePicker value={this.CONFIRMATION.DELIV_DATE}/>
+</FormItem>
+
+<FormItem label="Delivery Date Time-Spot in Vendor Confirmation">
+    <TimePicker value={this.CONFIRMATION.DELIV_TIME}/>
+</FormItem>
+
+<FormItem label="Quantity as Per Vendor Confirmation">
+    <Input value={this.CONFIRMATION.QUANTITY}
+          data-abap="{type:'QUAN', unit:'PO_UNIT', length:'10.3'}"
+    />
+</FormItem>
+
+<FormItem label="Reference Document Number (for Dependencies see Long Text)">
+    <Input value={this.CONFIRMATION.REFERENCE}
+          data-abap="{type:'CHAR', length:'35'}"
+    />
+</FormItem>
+
+<FormItem label="Batch Number">
+    <ComboBox value={this.CONFIRMATION.BATCH}
+        items="{type: 'CT', id: 'MCH1'}"
+        data-abap="{type:'CHAR', mid:'CHA', length:'10'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Creation Date of Confirmation">
+    <DatePicker value={this.CONFIRMATION.CREAT_DATE}/>
+</FormItem>
+
+<FormItem label="Time at Which Vendor Confirmation was Created">
+    <TimePicker value={this.CONFIRMATION.CREAT_TIME}/>
+</FormItem>
+
+<FormItem label="Material number corresponding to manufacturer part number">
+    <ComboBox value={this.CONFIRMATION.MPN}
+        items="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'HTN', length:'18'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Handover Date at the Handover Location">
+    <DatePicker value={this.CONFIRMATION.HANDOVERDATE}/>
+</FormItem>
+
+<FormItem label="Handover time at the handover location">
+    <TimePicker value={this.CONFIRMATION.HANDOVERTIME}/>
+</FormItem>
+
+<FormItem label="Long Material Number for MATERIAL Field">
+    <Input value={this.CONFIRMATION.MPN_EXTERNAL}
+          data-abap="{type:'CHAR', alpha:'MATNL', length:'40'}"
+    />
+</FormItem>
+
+<FormItem label="External GUID for MATERIAL Field">
+    <Input value={this.CONFIRMATION.MPN_GUID}
+          data-abap="{type:'CHAR', length:'32'}"
+    />
+</FormItem>
+
+<FormItem label="Version Number for MATERIAL Field">
+    <Input value={this.CONFIRMATION.MPN_VERSION}
+          data-abap="{type:'CHAR', alpha:'MATNW', length:'10'}"
+    />
+</FormItem>
+
+<!-- Parameter: CONFIRMATIONX structure: BAPIMECONFDETAILX  Table Type for Change Parameter Confirmation Details -->
+
+<ui-datagrid data.bind="CONFIRMATIONX" title="Table Type for Change Parameter Confirmation Details"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="ITEM_NO" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}" shlp.bind="{type: 'CT', id: 'EKPO'}" label="Item Number of Purchasing Document"></ui-dg-column>
+<ui-dg-column sortable field="CONF_SER" data-abap.bind="{type:'NUMC', length:'4'}" label="Sequential Number of Vendor Confirmation"></ui-dg-column>
+<ui-dg-column sortable field="ITEM_NOX" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="CONF_SERX" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="DELETE_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="CONF_CATEGORY" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="DELIV_DATE_TYP" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="DELIV_DATE" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="DELIV_TIME" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="QUANTITY" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="REFERENCE" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="BATCH" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="CREAT_DATE" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="CREAT_TIME" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="MPN" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="HANDOVERDATE" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="HANDOVERTIME" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="MPN_EXTERNAL" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="MPN_GUID" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="MPN_VERSION" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+</ui-datagrid>
+
+<FormItem label="Item Number of Purchasing Document">
+    <ComboBox value={this.CONFIRMATIONX.ITEM_NO}
+        items="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Sequential Number of Vendor Confirmation">
+    <Input value={this.CONFIRMATIONX.CONF_SER}
+          data-abap="{type:'NUMC', length:'4'}"
+    />
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.ITEM_NOX}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.CONF_SERX}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.DELETE_IND}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.CONF_CATEGORY}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.DELIV_DATE_TYP}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.DELIV_DATE}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.DELIV_TIME}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.QUANTITY}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.REFERENCE}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.BATCH}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.CREAT_DATE}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.CREAT_TIME}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.MPN}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.HANDOVERDATE}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.HANDOVERTIME}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.MPN_EXTERNAL}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.MPN_GUID}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.CONFIRMATIONX.MPN_VERSION}/>
+</FormItem>
+
+<!-- Parameter: EXTENSIONIN structure: BAPIPAREX  Table Type for BAPIPAREX -->
+
+<ui-datagrid data.bind="EXTENSIONIN" title="Table Type for BAPIPAREX"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="STRUCTURE" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD02L'}" label="Structure name of  BAPI table extension"></ui-dg-column>
+<ui-dg-column sortable field="VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+<ui-dg-column sortable field="VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+<ui-dg-column sortable field="VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+<ui-dg-column sortable field="VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+</ui-datagrid>
+
+<FormItem label="Structure name o API table extension">
+    <ComboBox value={this.EXTENSIONIN.STRUCTURE}
+        items="{type: 'CT', id: 'DD02L'}"
+        data-abap="{type:'CHAR', length:'30'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Data part of BAPI extension parameter">
+    <Input value={this.EXTENSIONIN.VALUEPART1}
+          data-abap="{type:'CHAR', length:'240'}"
+    />
+</FormItem>
+
+<FormItem label="Data part of BAPI extension parameter">
+    <Input value={this.EXTENSIONIN.VALUEPART2}
+          data-abap="{type:'CHAR', length:'240'}"
+    />
+</FormItem>
+
+<FormItem label="Data part of BAPI extension parameter">
+    <Input value={this.EXTENSIONIN.VALUEPART3}
+          data-abap="{type:'CHAR', length:'240'}"
+    />
+</FormItem>
+
+<FormItem label="Data part of BAPI extension parameter">
+    <Input value={this.EXTENSIONIN.VALUEPART4}
+          data-abap="{type:'CHAR', length:'240'}"
+    />
+</FormItem>
+
+<!-- Parameter: EXTENSIONOUT structure: BAPIPAREX  Table Type for BAPIPAREX -->
+
+<ui-datagrid data.bind="EXTENSIONOUT" title="Table Type for BAPIPAREX"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="STRUCTURE" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD02L'}" label="Structure name of  BAPI table extension"></ui-dg-column>
+<ui-dg-column sortable field="VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+<ui-dg-column sortable field="VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+<ui-dg-column sortable field="VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+<ui-dg-column sortable field="VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+</ui-datagrid>
+
+<FormItem label="Structure name o API table extension">
+    <ComboBox value={this.EXTENSIONOUT.STRUCTURE}
+        items="{type: 'CT', id: 'DD02L'}"
+        data-abap="{type:'CHAR', length:'30'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Data part of BAPI extension parameter">
+    <Input value={this.EXTENSIONOUT.VALUEPART1}
+          data-abap="{type:'CHAR', length:'240'}"
+    />
+</FormItem>
+
+<FormItem label="Data part of BAPI extension parameter">
+    <Input value={this.EXTENSIONOUT.VALUEPART2}
+          data-abap="{type:'CHAR', length:'240'}"
+    />
+</FormItem>
+
+<FormItem label="Data part of BAPI extension parameter">
+    <Input value={this.EXTENSIONOUT.VALUEPART3}
+          data-abap="{type:'CHAR', length:'240'}"
+    />
+</FormItem>
+
+<FormItem label="Data part of BAPI extension parameter">
+    <Input value={this.EXTENSIONOUT.VALUEPART4}
+          data-abap="{type:'CHAR', length:'240'}"
+    />
+</FormItem>
+
+<!-- Parameter: HEADER_TEXT structure: BAPIMECONFTEXT  Header Text - Confirmation -->
+
+<ui-datagrid data.bind="HEADER_TEXT" title="Header Text - Confirmation"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="TEXT_ID" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'TTXID'}" label="Text ID"></ui-dg-column>
+<ui-dg-column sortable field="DELETE_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="Deletion indicator in purchasing document"></ui-dg-column>
+<ui-dg-column sortable field="TEXT_FORM" data-abap.bind="{type:'CHAR', length:'2'}" label="Tag column"></ui-dg-column>
+<ui-dg-column sortable field="TEXT_LINE" data-abap.bind="{type:'CHAR', length:'132'}" label="Text Line"></ui-dg-column>
+</ui-datagrid>
+
+<FormItem label="Text ID">
+    <ComboBox value={this.HEADER_TEXT.TEXT_ID}
+        items="{type: 'CT', id: 'TTXID'}"
+        data-abap="{type:'CHAR', length:'4'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Deletion indicator in purchasing document">
+    <Input value={this.HEADER_TEXT.DELETE_IND}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+
+<FormItem label="Tag column">
+    <Input value={this.HEADER_TEXT.TEXT_FORM}
+          data-abap="{type:'CHAR', length:'2'}"
+    />
+</FormItem>
+
+<FormItem label="Text Line">
+    <Input value={this.HEADER_TEXT.TEXT_LINE}
+          data-abap="{type:'CHAR', length:'132'}"
+    />
+</FormItem>
+
+<!-- Parameter: ITEM_TEXT structure: BAPIMECONFITEMTEXT  Text Data - Confirmation -->
+
+<ui-datagrid data.bind="ITEM_TEXT" title="Text Data - Confirmation"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="ITEM_NO" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}" shlp.bind="{type: 'CT', id: 'EKPO'}" label="Item Number of Purchasing Document"></ui-dg-column>
+<ui-dg-column sortable field="DELETE_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="Deletion indicator in purchasing document"></ui-dg-column>
+<ui-dg-column sortable field="TEXT_ID" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'TTXID'}" label="Text ID"></ui-dg-column>
+<ui-dg-column sortable field="TEXT_FORM" data-abap.bind="{type:'CHAR', length:'2'}" label="Tag column"></ui-dg-column>
+<ui-dg-column sortable field="TEXT_LINE" data-abap.bind="{type:'CHAR', length:'132'}" label="Text Line"></ui-dg-column>
+</ui-datagrid>
+
+<FormItem label="Item Number of Purchasing Document">
+    <ComboBox value={this.ITEM_TEXT.ITEM_NO}
+        items="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Deletion indicator in purchasing document">
+    <Input value={this.ITEM_TEXT.DELETE_IND}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+
+<FormItem label="Text ID">
+    <ComboBox value={this.ITEM_TEXT.TEXT_ID}
+        items="{type: 'CT', id: 'TTXID'}"
+        data-abap="{type:'CHAR', length:'4'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Tag column">
+    <Input value={this.ITEM_TEXT.TEXT_FORM}
+          data-abap="{type:'CHAR', length:'2'}"
+    />
+</FormItem>
+
+<FormItem label="Text Line">
+    <Input value={this.ITEM_TEXT.TEXT_LINE}
+          data-abap="{type:'CHAR', length:'132'}"
+    />
+</FormItem>
+
+<!-- Parameter: ITEMX structure: BAPIMECONFITEMX  Table Type for Change Parameter of Item Data -->
+
+<ui-datagrid data.bind="ITEMX" title="Table Type for Change Parameter of Item Data"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="ITEM_NO" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}" shlp.bind="{type: 'CT', id: 'EKPO'}" label="Item Number of Purchasing Document"></ui-dg-column>
+<ui-dg-column sortable field="ITEM_NOX" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="MATERIAL" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="MATERIAL_VERSION" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="EMATERIAL" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="INT_ARTICLE_NUM" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="VEND_MAT" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="PLANT" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="STGE_LOC" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="QUANTITY" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="PO_UNIT" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="PO_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="ORDERPR_UN" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="ORDERPR_UN_ISO" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="PRICE_UNIT" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="NET_PRICE" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="ACKN_REQD" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="ACKNOWL_NO" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="SHIPPING" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="CONFIRMED_AS_ORDERED" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="CANCELED" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="EMATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="EMATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+<ui-dg-column sortable field="EMATERIAL_VERSION" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+</ui-datagrid>
+
+<FormItem label="Item Number of Purchasing Document">
+    <ComboBox value={this.ITEMX.ITEM_NO}
+        items="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.ITEM_NOX}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.MATERIAL}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.MATERIAL_EXTERNAL}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.MATERIAL_GUID}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.MATERIAL_VERSION}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.EMATERIAL}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.INT_ARTICLE_NUM}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.VEND_MAT}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.PLANT}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.STGE_LOC}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.QUANTITY}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.PO_UNIT}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.PO_UNIT_ISO}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.ORDERPR_UN}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.ORDERPR_UN_ISO}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.PRICE_UNIT}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.NET_PRICE}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.ACKN_REQD}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.ACKNOWL_NO}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.SHIPPING}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.CONFIRMED_AS_ORDERED}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.CANCELED}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.EMATERIAL_EXTERNAL}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.EMATERIAL_GUID}/>
+</FormItem>
+
+<FormItem label="Updated information in related user data field">
+    <CheckBox value={this.ITEMX.EMATERIAL_VERSION}/>
+</FormItem>
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Parameter(s) -->
+
+<ui-datagrid data.bind="RETURN" title="Return Parameter(s)"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-dg-column>
+<ui-dg-column sortable field="ID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'T100A'}" label="Message Class"></ui-dg-column>
+<ui-dg-column sortable field="NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Message Number"></ui-dg-column>
+<ui-dg-column sortable field="MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}" label="Message Text"></ui-dg-column>
+<ui-dg-column sortable field="LOG_NO" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CH', id: 'BALHDR'}" label="Application log: log number"></ui-dg-column>
+<ui-dg-column sortable field="LOG_MSG_NO" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'BALM'}" label="Application log: Internal message serial number"></ui-dg-column>
+<ui-dg-column sortable field="MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+<ui-dg-column sortable field="MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+<ui-dg-column sortable field="MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+<ui-dg-column sortable field="MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+<ui-dg-column sortable field="PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}" label="Parameter Name"></ui-dg-column>
+<ui-dg-column sortable field="ROW" data-abap.bind="{type:'INT4', length:'+10'}" label="Lines in parameter"></ui-dg-column>
+<ui-dg-column sortable field="FIELD" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD03L'}" label="Field in parameter"></ui-dg-column>
+<ui-dg-column sortable field="SYSTEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'TBDLS'}" label="Logical system from which message originates"></ui-dg-column>
+</ui-datagrid>
+
+<FormItem label="Message type: S Success, E Error, W Warning, I Info, A Abort">
+    <Input value={this.RETURN.TYPE}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+
+<FormItem label="Message Class">
+    <ComboBox value={this.RETURN.ID}
+        items="{type: 'CT', id: 'T100A'}"
+        data-abap="{type:'CHAR', length:'20'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Message Number">
+    <Input value={this.RETURN.NUMBER}
+          data-abap="{type:'NUMC', length:'3'}"
+    />
+</FormItem>
+
+<FormItem label="Message Text">
+    <Input value={this.RETURN.MESSAGE}
+          data-abap="{type:'CHAR', length:'220'}"
+    />
+</FormItem>
+
+<FormItem label="Application log: log number">
+    <ComboBox value={this.RETURN.LOG_NO}
+        items="{type: 'CH', id: 'BALHDR'}"
+        data-abap="{type:'CHAR', length:'20'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Application log: Internal message serial number">
+    <ComboBox value={this.RETURN.LOG_MSG_NO}
+        items="{type: 'CH', id: 'BALM'}"
+        data-abap="{type:'NUMC', length:'6'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Message Variable">
+    <Input value={this.RETURN.MESSAGE_V1}
+          data-abap="{type:'CHAR', length:'50'}"
+    />
+</FormItem>
+
+<FormItem label="Message Variable">
+    <Input value={this.RETURN.MESSAGE_V2}
+          data-abap="{type:'CHAR', length:'50'}"
+    />
+</FormItem>
+
+<FormItem label="Message Variable">
+    <Input value={this.RETURN.MESSAGE_V3}
+          data-abap="{type:'CHAR', length:'50'}"
+    />
+</FormItem>
+
+<FormItem label="Message Variable">
+    <Input value={this.RETURN.MESSAGE_V4}
+          data-abap="{type:'CHAR', length:'50'}"
+    />
+</FormItem>
+
+<FormItem label="Parameter Name">
+    <Input value={this.RETURN.PARAMETER}
+          data-abap="{type:'CHAR', length:'32'}"
+    />
+</FormItem>
+
+<FormItem label="Lines in parameter">
+    <Input value={this.RETURN.ROW}
+          data-abap="{type:'INT4', length:'+10'}"
+    />
+</FormItem>
+
+<FormItem label="Field in parameter">
+    <ComboBox value={this.RETURN.FIELD}
+        items="{type: 'CT', id: 'DD03L'}"
+        data-abap="{type:'CHAR', length:'30'}">
+    </ComboBox>
+</FormItem>
+
+<FormItem label="Logical system from which message originates">
+    <ComboBox value={this.RETURN.SYSTEM}
+        items="{type: 'CT', id: 'TBDLS'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', length:'10'}">
+    </ComboBox>
+</FormItem>
+
+<!-- EXPORT PARAMETERS -->
+
+<!-- Parameter: EXP_HEADER structure: BAPIMECONFHEADER  Header Data Confirmation for BAPI -->
+
+<FormItem label="Purchasing Document Number">
+    <ComboBox value={this.EXP_HEADER.DOC_NUMBER}
+        items="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}">
+    </ComboBox>
+</FormItem>

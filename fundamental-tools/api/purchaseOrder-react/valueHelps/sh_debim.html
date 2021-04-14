@@ -1,0 +1,93 @@
+<!-- SH DEBIM Customers With Lease-Out : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Business Partner Role Category">
+    <ComboBox value={this.searchParamLow.ROLETYP}
+        items="{type: 'SH', id: 'H_TPZ3'}"
+        data-abap="{type:'CHAR', mid:'BPR', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Customer Number">
+    <ComboBox value={this.searchParamLow.KUNNR}
+        items="{type: 'SH', id: 'DEBI'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Name 1 (surname for persons, else company name)">
+    <Input value={this.searchParamLow.NAME1}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Name 2 (Continuation of NAME 1)">
+    <Input value={this.searchParamLow.NAME2}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Company Code">
+    <ComboBox value={this.searchParamLow.BUKRS}
+        items="{type: 'SH', id: 'C_T001'}"
+        data-abap="{type:'CHAR', mid:'BUK', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Lease-Out Number">
+    <ComboBox value={this.searchParamLow.SMIVE}
+        items="{type: 'SH', id: 'MRTA'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'MIV', length:'13'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Business Entity Number">
+    <ComboBox value={this.searchParamLow.SWENR}
+        items="{type: 'SH', id: 'MCWE'}"
+        data-abap="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Number of Rental Unit">
+    <ComboBox value={this.searchParamLow.SMENR}
+        items="{type: 'SH', id: 'MCME'}"
+        data-abap="{type:'CHAR', alpha:'SMENR', mid:'MEH', length:'8'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Rental start date">
+    <DatePicker value={this.searchParamLow.DMIBEG}/>
+</FormItem>
+<FormItem label="Rental end date">
+    <DatePicker value={this.searchParamLow.DMIEND}/>
+</FormItem>
+<FormItem label="External Real Estate contract type">
+    <ComboBox value={this.searchParamLow.SMVART}
+        items="{type: 'SH', id: 'RECNTYPE'}"
+        data-abap="{type:'CHAR', mid:'RECNTYPE', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Contract Notice Per">
+    <DatePicker value={this.searchParamLow.DKUEZU}/>
+</FormItem>
+<FormItem label="Contract No. of Collective Lease-Outs">
+    <ComboBox value={this.searchParamLow.E_SMIVE}
+        items="{type: 'SH', id: 'MRAE'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'MVE', length:'13'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Bank procedure account number">
+    <Input value={this.searchParamLow.KONTOBV}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="SMIVE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'MIV', length:'13'}" label="Lease-Out Number"></ui-dg-column>
+<ui-dg-column sortable field="KONTOBV" data-abap.bind="{type:'CHAR', length:'10'}" label="Bank procedure account number"></ui-dg-column>
+<ui-dg-column sortable field="E_SMIVE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'MVE', length:'13'}" label="Contract No. of Collective Lease-Outs"></ui-dg-column>
+<ui-dg-column sortable field="SWENR" data-abap.bind="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}" label="Business Entity Number"></ui-dg-column>
+<ui-dg-column sortable field="SMENR" data-abap.bind="{type:'CHAR', alpha:'SMENR', mid:'MEH', length:'8'}" label="Number of Rental Unit"></ui-dg-column>
+<ui-dg-column sortable field="SMVART" data-abap.bind="{type:'CHAR', mid:'RECNTYPE', length:'4'}" label="External Real Estate contract type"></ui-dg-column>
+<ui-dg-column sortable field="DMIBEG" data-abap.bind="{type:'DATS'}" label="Rental start date"></ui-dg-column>
+<ui-dg-column sortable field="DMIEND" data-abap.bind="{type:'DATS'}" label="Rental end date"></ui-dg-column>
+<ui-dg-column sortable field="DKUEZU" data-abap.bind="{type:'DATS'}" label="Contract Notice Per"></ui-dg-column>
+<ui-dg-column sortable field="KUNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}" label="Customer Number"></ui-dg-column>
+<ui-dg-column sortable field="ROLETYP" data-abap.bind="{type:'CHAR', mid:'BPR', length:'4'}" label="Business Partner Role Category"></ui-dg-column>
+<ui-dg-column sortable field="NAME1" data-abap.bind="{type:'CHAR', length:'40'}" label="Name 1 (surname for persons, else company name)"></ui-dg-column>
+<ui-dg-column sortable field="NAME2" data-abap.bind="{type:'CHAR', length:'40'}" label="Name 2 (Continuation of NAME 1)"></ui-dg-column>
+</ui-datagrid>

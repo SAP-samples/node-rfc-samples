@@ -1,0 +1,67 @@
+<!-- SH MCWEE Selection via address : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Company Code">
+    <Input value={this.searchParamLow.BUKRS}
+          data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Business Entity Number">
+    <Input value={this.searchParamLow.SWENR}
+          data-abap="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Country Key">
+    <Input value={this.searchParamLow.LAND1}
+          data-abap="{type:'CHAR', mid:'LND', length:'3'}"
+    />
+</FormItem>
+<FormItem label="Postal Code">
+    <Input value={this.searchParamLow.PSTLZ}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="City">
+    <Input value={this.searchParamLow.ORT01}
+          data-abap="{type:'CHAR', length:'35'}"
+    />
+</FormItem>
+<FormItem label="IS-IS: City 1 in upper case characters for matchcode search">
+    <Input value={this.searchParamLow.ORT01_MC}
+          data-abap="{type:'CHAR', length:'16'}"
+    />
+</FormItem>
+<FormItem label="Street and House Number">
+    <Input value={this.searchParamLow.STRAS}
+          data-abap="{type:'CHAR', length:'35'}"
+    />
+</FormItem>
+<FormItem label="IS-IS: Street in upper case characters for matchcode search">
+    <Input value={this.searchParamLow.STRAS_MC}
+          data-abap="{type:'CHAR', length:'16'}"
+    />
+</FormItem>
+<FormItem label="Region (State, Province, County)">
+    <Input value={this.searchParamLow.REGIO}
+          data-abap="{type:'CHAR', length:'3'}"
+    />
+</FormItem>
+<FormItem label="Object number">
+    <Input value={this.searchParamLow.OBJNR}
+          data-abap="{type:'CHAR', mid:'ONR', length:'22'}"
+    />
+</FormItem>
+<FormItem label="Internal Key for Real Estate Object">
+    <Input value={this.searchParamLow.IMKEY}
+          data-abap="{type:'CHAR', alpha:'IMKEY', length:'8'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="SWENR" data-abap.bind="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}" label="Business Entity Number"></ui-dg-column>
+<ui-dg-column sortable field="PSTLZ" data-abap.bind="{type:'CHAR', length:'10'}" label="Postal Code"></ui-dg-column>
+<ui-dg-column sortable field="ORT01" data-abap.bind="{type:'CHAR', length:'35'}" label="City"></ui-dg-column>
+<ui-dg-column sortable field="STRAS" data-abap.bind="{type:'CHAR', length:'35'}" label="Street and House Number"></ui-dg-column>
+</ui-datagrid>

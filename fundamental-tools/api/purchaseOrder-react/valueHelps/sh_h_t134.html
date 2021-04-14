@@ -1,0 +1,19 @@
+<!-- SH H_T134 Material type : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Material type">
+    <Input value={this.searchParamLow.MTART}
+          data-abap="{type:'CHAR', mid:'MTA', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Description of material type">
+    <Input value={this.searchParamLow.MTBEZ}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="MTART" data-abap.bind="{type:'CHAR', mid:'MTA', length:'4'}" label="Material type"></ui-dg-column>
+<ui-dg-column sortable field="MTBEZ" data-abap.bind="{type:'CHAR', length:'25'}" label="Description of material type"></ui-dg-column>
+</ui-datagrid>

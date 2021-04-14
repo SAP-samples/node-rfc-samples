@@ -1,0 +1,25 @@
+<!-- SH H_T8JV Joint venture : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Company Code">
+    <Input value={this.searchParamLow.BUKRS}
+          data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Joint venture">
+    <Input value={this.searchParamLow.VNAME}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'JVV', length:'6'}"
+    />
+</FormItem>
+<FormItem label="Joint Venture Description">
+    <Input value={this.searchParamLow.VTEXT}
+          data-abap="{type:'CHAR', length:'35'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="VNAME" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'JVV', length:'6'}" label="Joint venture"></ui-dg-column>
+<ui-dg-column sortable field="VTEXT" data-abap.bind="{type:'CHAR', length:'35'}" label="Joint Venture Description"></ui-dg-column>
+</ui-datagrid>

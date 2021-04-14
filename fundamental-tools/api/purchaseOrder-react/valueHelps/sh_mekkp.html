@@ -1,0 +1,53 @@
+<!-- SH MEKKP Purchasing Documents per Project : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Data element matchcode entry (F4 help)">
+    <Input value={this.searchParamLow.POSID}
+          data-abap="{type:'CHAR', alpha:'PMACO', length:'24'}"
+    />
+</FormItem>
+<FormItem label="Work Breakdown Structure Element (WBS Element)">
+    <ComboBox value={this.searchParamLow.PS_PSP_PNR}
+        items="{type: 'CH', id: 'PRPS'}"
+        data-abap="{type:'NUMC', alpha:'ABPSP', length:'8'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Purchasing Document Category">
+    <ComboBox value={this.searchParamLow.BSTYP}
+        items="{type: 'FV', id: 'EBSTYP'}"
+        data-abap="{type:'CHAR', length:'1'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Purchasing organization">
+    <ComboBox value={this.searchParamLow.EKORG}
+        items="{type: 'SH', id: 'H_T024E'}"
+        data-abap="{type:'CHAR', mid:'EKO', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Purchasing Document Number">
+    <ComboBox value={this.searchParamLow.EBELN}
+        items="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Item Number of Purchasing Document">
+    <ComboBox value={this.searchParamLow.EBELP}
+        items="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Sequential Number of Account Assignment">
+    <Input value={this.searchParamLow.ZEKKN}
+          data-abap="{type:'NUMC', length:'2'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="POSID" data-abap.bind="{type:'CHAR', alpha:'PMACO', length:'24'}" label="Data element matchcode entry (F4 help)"></ui-dg-column>
+<ui-dg-column sortable field="BSTYP" data-abap.bind="{type:'CHAR', length:'1'}" label="Purchasing Document Category"></ui-dg-column>
+<ui-dg-column sortable field="EKORG" data-abap.bind="{type:'CHAR', mid:'EKO', length:'4'}" label="Purchasing organization"></ui-dg-column>
+<ui-dg-column sortable field="EBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}" label="Purchasing Document Number"></ui-dg-column>
+<ui-dg-column sortable field="EBELP" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}" label="Item Number of Purchasing Document"></ui-dg-column>
+<ui-dg-column sortable field="ZEKKN" data-abap.bind="{type:'NUMC', length:'2'}" label="Sequential Number of Account Assignment"></ui-dg-column>
+</ui-datagrid>

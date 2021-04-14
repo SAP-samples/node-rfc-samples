@@ -1,0 +1,27 @@
+<!-- SH MEKKS Purchasing Documents per Collective Number : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Collective Number">
+    <Input value={this.searchParamLow.SUBMI}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Purchasing organization">
+    <ComboBox value={this.searchParamLow.EKORG}
+        items="{type: 'SH', id: 'H_T024E'}"
+        data-abap="{type:'CHAR', mid:'EKO', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Purchasing Document Number">
+    <ComboBox value={this.searchParamLow.EBELN}
+        items="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}">
+    </ComboBox>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="SUBMI" data-abap.bind="{type:'CHAR', length:'10'}" label="Collective Number"></ui-dg-column>
+<ui-dg-column sortable field="EKORG" data-abap.bind="{type:'CHAR', mid:'EKO', length:'4'}" label="Purchasing organization"></ui-dg-column>
+<ui-dg-column sortable field="EBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}" label="Purchasing Document Number"></ui-dg-column>
+</ui-datagrid>

@@ -1,0 +1,79 @@
+<!-- SH EQUIR Address selection (service) : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Equipment Number">
+    <Input value={this.searchParamLow.EQUNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Name 1">
+    <Input value={this.searchParamLow.NAME1}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="City">
+    <Input value={this.searchParamLow.CITY1}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="City postal code">
+    <Input value={this.searchParamLow.POST_CODE1}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Street">
+    <Input value={this.searchParamLow.STREET}
+          data-abap="{type:'CHAR', length:'60'}"
+    />
+</FormItem>
+<FormItem label="House Number">
+    <Input value={this.searchParamLow.HOUSE_NUM1}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Search Term 1">
+    <Input value={this.searchParamLow.SORT1}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Search Term 2">
+    <Input value={this.searchParamLow.SORT2}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Name (Field NAME1) in Uppercase for Search Help">
+    <Input value={this.searchParamLow.MC_NAME1}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="City name in Uppercase for Search Help">
+    <Input value={this.searchParamLow.MC_CITY1}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="Street Name in Uppercase for Search Help">
+    <Input value={this.searchParamLow.MC_STREET}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="Language Key">
+    <Input value={this.searchParamLow.SPRAS}
+          data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Description of Technical Object">
+    <Input value={this.searchParamLow.EQKTX}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="EQUNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}" label="Equipment Number"></ui-dg-column>
+<ui-dg-column sortable field="EQKTX" data-abap.bind="{type:'CHAR', length:'40'}" label="Description of Technical Object"></ui-dg-column>
+<ui-dg-column sortable field="NAME1" data-abap.bind="{type:'CHAR', length:'40'}" label="Name 1"></ui-dg-column>
+<ui-dg-column sortable field="POST_CODE1" data-abap.bind="{type:'CHAR', length:'10'}" label="City postal code"></ui-dg-column>
+<ui-dg-column sortable field="CITY1" data-abap.bind="{type:'CHAR', length:'40'}" label="City"></ui-dg-column>
+<ui-dg-column sortable field="STREET" data-abap.bind="{type:'CHAR', length:'60'}" label="Street"></ui-dg-column>
+<ui-dg-column sortable field="HOUSE_NUM1" data-abap.bind="{type:'CHAR', length:'10'}" label="House Number"></ui-dg-column>
+</ui-datagrid>

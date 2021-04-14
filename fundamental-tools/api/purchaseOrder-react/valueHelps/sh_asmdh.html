@@ -1,0 +1,41 @@
+<!-- SH ASMDH Service by Hierarchy and Wage Type : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Hierarchy Service Number">
+    <ComboBox value={this.searchParamLow.LSTHI}
+        items="{type: 'SH', id: 'ASMD'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', length:'18'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Wage Type">
+    <ComboBox value={this.searchParamLow.LGART}
+        items="{type: 'CT', id: 'T512W'}"
+        data-abap="{type:'CHAR', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Activity Number">
+    <ComboBox value={this.searchParamLow.ASNUM}
+        items="{type: 'CT', id: 'ASMD'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Service Short Text">
+    <Input value={this.searchParamLow.ASKTX}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Language Key">
+    <ComboBox value={this.searchParamLow.SPRAS}
+        items="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}">
+    </ComboBox>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="LSTHI" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'18'}" label="Hierarchy Service Number"></ui-dg-column>
+<ui-dg-column sortable field="LGART" data-abap.bind="{type:'CHAR', length:'4'}" label="Wage Type"></ui-dg-column>
+<ui-dg-column sortable field="ASNUM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}" label="Activity Number"></ui-dg-column>
+<ui-dg-column sortable field="ASKTX" data-abap.bind="{type:'CHAR', length:'40'}" label="Service Short Text"></ui-dg-column>
+<ui-dg-column sortable field="SPRAS" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}" label="Language Key"></ui-dg-column>
+</ui-datagrid>

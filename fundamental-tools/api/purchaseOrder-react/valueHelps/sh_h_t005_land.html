@@ -1,0 +1,25 @@
+<!-- SH H_T005_LAND Country Key : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Country Key">
+    <Input value={this.searchParamLow.LAND1}
+          data-abap="{type:'CHAR', mid:'LND', length:'3'}"
+    />
+</FormItem>
+<FormItem label="Country Name">
+    <Input value={this.searchParamLow.LANDX}
+          data-abap="{type:'CHAR', length:'15'}"
+    />
+</FormItem>
+<FormItem label="Nationality">
+    <Input value={this.searchParamLow.NATIO}
+          data-abap="{type:'CHAR', length:'15'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="LAND1" data-abap.bind="{type:'CHAR', mid:'LND', length:'3'}" label="Country Key"></ui-dg-column>
+<ui-dg-column sortable field="LANDX" data-abap.bind="{type:'CHAR', length:'15'}" label="Country Name"></ui-dg-column>
+<ui-dg-column sortable field="NATIO" data-abap.bind="{type:'CHAR', length:'15'}" label="Nationality"></ui-dg-column>
+</ui-datagrid>

@@ -1,0 +1,126 @@
+<!-- SH RECNCND Contracts by Partner with Address : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Description">
+    <Input value={this.searchParamLow.XROLE}
+          data-abap="{type:'CHAR', length:'50'}"
+    />
+</FormItem>
+<FormItem label="Language Key">
+    <Input value={this.searchParamLow.SPRAS}
+          data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Company Code">
+    <Input value={this.searchParamLow.BUKRS}
+          data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Contract Type">
+    <Input value={this.searchParamLow.RECNTYPE}
+          data-abap="{type:'CHAR', mid:'RECNTYPE', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Contract Number">
+    <Input value={this.searchParamLow.RECNNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}"
+    />
+</FormItem>
+<FormItem label="Object Number">
+    <Input value={this.searchParamLow.OBJNR}
+          data-abap="{type:'CHAR', mid:'ONR', length:'22'}"
+    />
+</FormItem>
+<FormItem label="Business Partner Number">
+    <Input value={this.searchParamLow.PARTNER}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BPA', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Business Partner: Role">
+    <Input value={this.searchParamLow.ROLE}
+          data-abap="{type:'CHAR', length:'6'}"
+    />
+</FormItem>
+<FormItem label="Last name of business partner (person)">
+    <Input value={this.searchParamLow.NAME_LAST}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="First name of business partner (person)">
+    <Input value={this.searchParamLow.NAME_FIRST}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Search Help Field 1 (Name 1/Last Name)">
+    <Input value={this.searchParamLow.MC_NAME1}
+          data-abap="{type:'CHAR', length:'35'}"
+    />
+</FormItem>
+<FormItem label="Search Help Field 2 (Name 2/First Name)">
+    <Input value={this.searchParamLow.MC_NAME2}
+          data-abap="{type:'CHAR', length:'35'}"
+    />
+</FormItem>
+<FormItem label="Name 1 of organization">
+    <Input value={this.searchParamLow.NAME_ORG1}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Name 1 (group)">
+    <Input value={this.searchParamLow.NAME_GRP1}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="City name in Uppercase for Search Help">
+    <Input value={this.searchParamLow.MC_CITY1}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="City postal code">
+    <Input value={this.searchParamLow.POST_CODE1}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Street Name in Uppercase for Search Help">
+    <Input value={this.searchParamLow.MC_STREET}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="House Number">
+    <Input value={this.searchParamLow.HOUSE_NUM1}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Country Key">
+    <Input value={this.searchParamLow.COUNTRY}
+          data-abap="{type:'CHAR', mid:'LND', length:'3'}"
+    />
+</FormItem>
+<FormItem label="Business Entity That Belongs to Contract">
+    <Input value={this.searchParamLow.BENOCN}
+          data-abap="{type:'CHAR', alpha:'SWENR', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Internal Key of Real Estate Object (FI)">
+    <Input value={this.searchParamLow.IMKEY}
+          data-abap="{type:'CHAR', alpha:'IMKEY', length:'8'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="RECNTYPE" data-abap.bind="{type:'CHAR', mid:'RECNTYPE', length:'4'}" label="Contract Type"></ui-dg-column>
+<ui-dg-column sortable field="RECNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}" label="Contract Number"></ui-dg-column>
+<ui-dg-column sortable field="BENOCN" data-abap.bind="{type:'CHAR', alpha:'SWENR', length:'8'}" label="Business Entity That Belongs to Contract"></ui-dg-column>
+<ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BPA', length:'10'}" label="Business Partner Number"></ui-dg-column>
+<ui-dg-column sortable field="MC_NAME1" data-abap.bind="{type:'CHAR', length:'35'}" label="Search Help Field 1 (Name 1/Last Name)"></ui-dg-column>
+<ui-dg-column sortable field="MC_NAME2" data-abap.bind="{type:'CHAR', length:'35'}" label="Search Help Field 2 (Name 2/First Name)"></ui-dg-column>
+<ui-dg-column sortable field="MC_CITY1" data-abap.bind="{type:'CHAR', length:'25'}" label="City name in Uppercase for Search Help"></ui-dg-column>
+<ui-dg-column sortable field="POST_CODE1" data-abap.bind="{type:'CHAR', length:'10'}" label="City postal code"></ui-dg-column>
+<ui-dg-column sortable field="MC_STREET" data-abap.bind="{type:'CHAR', length:'25'}" label="Street Name in Uppercase for Search Help"></ui-dg-column>
+<ui-dg-column sortable field="HOUSE_NUM1" data-abap.bind="{type:'CHAR', length:'10'}" label="House Number"></ui-dg-column>
+<ui-dg-column sortable field="COUNTRY" data-abap.bind="{type:'CHAR', mid:'LND', length:'3'}" label="Country Key"></ui-dg-column>
+<ui-dg-column sortable field="ROLE" data-abap.bind="{type:'CHAR', length:'6'}" label="Business Partner: Role"></ui-dg-column>
+<ui-dg-column sortable field="XROLE" data-abap.bind="{type:'CHAR', length:'50'}" label="Description"></ui-dg-column>
+</ui-datagrid>

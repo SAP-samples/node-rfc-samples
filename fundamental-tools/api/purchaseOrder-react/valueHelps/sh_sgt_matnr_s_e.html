@@ -1,0 +1,33 @@
+<!-- SH SGT_MATNR_S_E Material with Segmentation : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Material Number">
+    <Input value={this.searchParamLow.MATNR}
+          data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Material Description in Uppercase for Matchcodes">
+    <Input value={this.searchParamLow.MAKTG}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Segmentation Structure">
+    <ComboBox value={this.searchParamLow.SGT_CSGR}
+        items="{type: 'SH', id: 'SGT_CSGR'}"
+        data-abap="{type:'CHAR', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Segmentation Strategy">
+    <ComboBox value={this.searchParamLow.SGT_COVSA}
+        items="{type: 'CT', id: 'SGT_COVS_T'}"
+        data-abap="{type:'CHAR', mid:'SGT_E', length:'8'}">
+    </ComboBox>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="MATNR" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" label="Material Number"></ui-dg-column>
+<ui-dg-column sortable field="MAKTG" data-abap.bind="{type:'CHAR', length:'40'}" label="Material Description in Uppercase for Matchcodes"></ui-dg-column>
+<ui-dg-column sortable field="SGT_CSGR" data-abap.bind="{type:'CHAR', length:'4'}" label="Segmentation Structure"></ui-dg-column>
+<ui-dg-column sortable field="SGT_COVSA" data-abap.bind="{type:'CHAR', mid:'SGT_E', length:'8'}" label="Segmentation Strategy"></ui-dg-column>
+</ui-datagrid>

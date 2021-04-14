@@ -1,0 +1,117 @@
+<!-- SH BU_ADR Partner by Address (Mass Search) : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Selection Date for Search Helps">
+    <DatePicker value={this.searchParamLow.VALDT}/>
+</FormItem>
+<FormItem label="Business Partner Number">
+    <Input value={this.searchParamLow.PARTNER}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BPA', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Search Help Field 1 (Name 1/Last Name)">
+    <Input value={this.searchParamLow.MC_NAME1}
+          data-abap="{type:'CHAR', length:'35'}"
+    />
+</FormItem>
+<FormItem label="Search Help Field 2 (Name 2/First Name)">
+    <Input value={this.searchParamLow.MC_NAME2}
+          data-abap="{type:'CHAR', length:'35'}"
+    />
+</FormItem>
+<FormItem label="Search term 1 for business partner">
+    <Input value={this.searchParamLow.BU_SORT1}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Search term 2 for business partner">
+    <Input value={this.searchParamLow.BU_SORT2}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Date of Birth of Business Partner">
+    <DatePicker value={this.searchParamLow.BIRTHDT}/>
+</FormItem>
+<FormItem label="Authorization Group">
+    <Input value={this.searchParamLow.AUGRP}
+          data-abap="{type:'CHAR', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Central Archiving Flag">
+    <Input value={this.searchParamLow.XDELE}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Central Block for Business Partner">
+    <Input value={this.searchParamLow.XBLCK}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Business Partner Category">
+    <Input value={this.searchParamLow.TYPE}
+          data-abap="{type:'CHAR', mid:'BPY', length:'1'}"
+    />
+</FormItem>
+<FormItem label="City name in Uppercase for Search Help">
+    <Input value={this.searchParamLow.MC_CITY1}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="City postal code">
+    <Input value={this.searchParamLow.POST_CODE1}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Street Name in Uppercase for Search Help">
+    <Input value={this.searchParamLow.MC_STREET}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="House Number">
+    <Input value={this.searchParamLow.HOUSE_NUM1}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Country Key">
+    <Input value={this.searchParamLow.COUNTRY}
+          data-abap="{type:'CHAR', mid:'LND', length:'3'}"
+    />
+</FormItem>
+<FormItem label="Region (State, Province, County)">
+    <Input value={this.searchParamLow.REGION}
+          data-abap="{type:'CHAR', length:'3'}"
+    />
+</FormItem>
+<FormItem label="County name in upper case for search help">
+    <Input value={this.searchParamLow.MC_COUNTY}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="Township name in upper case for search help">
+    <Input value={this.searchParamLow.MC_TOWNSHIP}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="VALDT" data-abap.bind="{type:'DATS'}" label="Selection Date for Search Helps"></ui-dg-column>
+<ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BPA', length:'10'}" label="Business Partner Number"></ui-dg-column>
+<ui-dg-column sortable field="MC_NAME1" data-abap.bind="{type:'CHAR', length:'35'}" label="Search Help Field 1 (Name 1/Last Name)"></ui-dg-column>
+<ui-dg-column sortable field="MC_NAME2" data-abap.bind="{type:'CHAR', length:'35'}" label="Search Help Field 2 (Name 2/First Name)"></ui-dg-column>
+<ui-dg-column sortable field="BU_SORT1" data-abap.bind="{type:'CHAR', length:'20'}" label="Search term 1 for business partner"></ui-dg-column>
+<ui-dg-column sortable field="BU_SORT2" data-abap.bind="{type:'CHAR', length:'20'}" label="Search term 2 for business partner"></ui-dg-column>
+<ui-dg-column sortable field="BIRTHDT" data-abap.bind="{type:'DATS'}" label="Date of Birth of Business Partner"></ui-dg-column>
+<ui-dg-column sortable field="AUGRP" data-abap.bind="{type:'CHAR', length:'4'}" label="Authorization Group"></ui-dg-column>
+<ui-dg-column sortable field="XDELE" data-abap.bind="{type:'CHAR', length:'1'}" label="Central Archiving Flag"></ui-dg-column>
+<ui-dg-column sortable field="XBLCK" data-abap.bind="{type:'CHAR', length:'1'}" label="Central Block for Business Partner"></ui-dg-column>
+<ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', mid:'BPY', length:'1'}" label="Business Partner Category"></ui-dg-column>
+<ui-dg-column sortable field="MC_CITY1" data-abap.bind="{type:'CHAR', length:'25'}" label="City name in Uppercase for Search Help"></ui-dg-column>
+<ui-dg-column sortable field="POST_CODE1" data-abap.bind="{type:'CHAR', length:'10'}" label="City postal code"></ui-dg-column>
+<ui-dg-column sortable field="MC_STREET" data-abap.bind="{type:'CHAR', length:'25'}" label="Street Name in Uppercase for Search Help"></ui-dg-column>
+<ui-dg-column sortable field="HOUSE_NUM1" data-abap.bind="{type:'CHAR', length:'10'}" label="House Number"></ui-dg-column>
+<ui-dg-column sortable field="COUNTRY" data-abap.bind="{type:'CHAR', mid:'LND', length:'3'}" label="Country Key"></ui-dg-column>
+<ui-dg-column sortable field="REGION" data-abap.bind="{type:'CHAR', length:'3'}" label="Region (State, Province, County)"></ui-dg-column>
+<ui-dg-column sortable field="MC_COUNTY" data-abap.bind="{type:'CHAR', length:'25'}" label="County name in upper case for search help"></ui-dg-column>
+<ui-dg-column sortable field="MC_TOWNSHIP" data-abap.bind="{type:'CHAR', length:'25'}" label="Township name in upper case for search help"></ui-dg-column>
+</ui-datagrid>

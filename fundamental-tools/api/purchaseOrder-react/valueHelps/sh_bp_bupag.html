@@ -1,0 +1,13 @@
+<!-- SH BP_BUPAG Partners by Different Attributes : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Business Partner Number">
+    <Input value={this.searchParamLow.PARTNER}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BPA', length:'10'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BPA', length:'10'}" label="Business Partner Number"></ui-dg-column>
+</ui-datagrid>

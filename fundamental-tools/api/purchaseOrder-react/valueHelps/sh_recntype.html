@@ -1,0 +1,29 @@
+<!-- SH RECNTYPE External Real Estate contract type : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Description of type of RE contract type">
+    <Input value={this.searchParamLow.RECNTYPETXT}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+<FormItem label="External Real Estate contract type">
+    <Input value={this.searchParamLow.RECNTYPE}
+          data-abap="{type:'CHAR', mid:'RECNTYPE', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Indicator for "general contract" contract type">
+    <Input value={this.searchParamLow.RECNNEWTYPE}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Language Key">
+    <Input value={this.searchParamLow.SPRAS}
+          data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="RECNTYPE" data-abap.bind="{type:'CHAR', mid:'RECNTYPE', length:'4'}" label="External Real Estate contract type"></ui-dg-column>
+<ui-dg-column sortable field="RECNTYPETXT" data-abap.bind="{type:'CHAR', length:'30'}" label="Description of type of RE contract type"></ui-dg-column>
+</ui-datagrid>

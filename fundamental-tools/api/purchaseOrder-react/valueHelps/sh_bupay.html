@@ -1,0 +1,12 @@
+<!-- SH BUPAY Partners by Address (Rough Search) : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Business Partner Number">
+    <Input value={this.searchParamLow.PARTNER}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BPA', length:'10'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+</ui-datagrid>

@@ -1,0 +1,34 @@
+<!-- SH MAT1E Competitive product by competitor : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Competitor">
+    <ComboBox value={this.searchParamLow.KUNNR}
+        items="{type: 'CH', id: 'V_KNA1WETT'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Material Description in Uppercase for Matchcodes">
+    <Input value={this.searchParamLow.MAKTG}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Language Key">
+    <ComboBox value={this.searchParamLow.SPRAS}
+        items="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Material Number">
+    <ComboBox value={this.searchParamLow.MATNR}
+        items="{type: 'SH', id: 'MAT1'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}">
+    </ComboBox>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="KUNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}" label="Competitor"></ui-dg-column>
+<ui-dg-column sortable field="MAKTG" data-abap.bind="{type:'CHAR', length:'40'}" label="Material Description in Uppercase for Matchcodes"></ui-dg-column>
+<ui-dg-column sortable field="SPRAS" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}" label="Language Key"></ui-dg-column>
+<ui-dg-column sortable field="MATNR" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" label="Material Number"></ui-dg-column>
+</ui-datagrid>

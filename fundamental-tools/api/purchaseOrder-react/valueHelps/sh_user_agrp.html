@@ -1,0 +1,27 @@
+<!-- SH USER_AGRP Users by Roles : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Role Name">
+    <Input value={this.searchParamLow.AGR_NAME}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+<FormItem label="User Name in User Master Record">
+    <Input value={this.searchParamLow.UNAME}
+          data-abap="{type:'CHAR', mid:'XUS', length:'12'}"
+    />
+</FormItem>
+<FormItem label="Date of validity">
+    <DatePicker value={this.searchParamLow.FROM_DAT}/>
+</FormItem>
+<FormItem label="Date of validity">
+    <DatePicker value={this.searchParamLow.TO_DAT}/>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="AGR_NAME" data-abap.bind="{type:'CHAR', length:'30'}" label="Role Name"></ui-dg-column>
+<ui-dg-column sortable field="FROM_DAT" data-abap.bind="{type:'DATS'}" label="Date of validity"></ui-dg-column>
+<ui-dg-column sortable field="TO_DAT" data-abap.bind="{type:'DATS'}" label="Date of validity"></ui-dg-column>
+<ui-dg-column sortable field="UNAME" data-abap.bind="{type:'CHAR', mid:'XUS', length:'12'}" label="User Name in User Master Record"></ui-dg-column>
+</ui-datagrid>

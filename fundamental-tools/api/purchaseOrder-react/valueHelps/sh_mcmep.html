@@ -1,0 +1,58 @@
+<!-- SH MCMEP Rental Units for Functional Location : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Language Key">
+    <Input value={this.searchParamLow.SPRAS}
+          data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Functional Location">
+    <Input value={this.searchParamLow.TPLNR}
+          data-abap="{type:'CHAR', alpha:'TPLNR', mid:'IFL', length:'30'}"
+    />
+</FormItem>
+<FormItem label="Description of functional location">
+    <Input value={this.searchParamLow.PLTXT}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Company Code">
+    <Input value={this.searchParamLow.BUKRS}
+          data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Business Entity Number">
+    <Input value={this.searchParamLow.SWENR}
+          data-abap="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Number of Rental Unit">
+    <Input value={this.searchParamLow.SMENR}
+          data-abap="{type:'CHAR', alpha:'SMENR', mid:'MEH', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Text for rental unit">
+    <Input value={this.searchParamLow.XMETXT}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+<FormItem label="Object number">
+    <Input value={this.searchParamLow.OBJNR}
+          data-abap="{type:'CHAR', mid:'ONR', length:'22'}"
+    />
+</FormItem>
+<FormItem label="Internal Key for Real Estate Object">
+    <Input value={this.searchParamLow.IMKEY}
+          data-abap="{type:'CHAR', alpha:'IMKEY', length:'8'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="SWENR" data-abap.bind="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}" label="Business Entity Number"></ui-dg-column>
+<ui-dg-column sortable field="SMENR" data-abap.bind="{type:'CHAR', alpha:'SMENR', mid:'MEH', length:'8'}" label="Number of Rental Unit"></ui-dg-column>
+<ui-dg-column sortable field="XMETXT" data-abap.bind="{type:'CHAR', length:'30'}" label="Text for rental unit"></ui-dg-column>
+<ui-dg-column sortable field="TPLNR" data-abap.bind="{type:'CHAR', alpha:'TPLNR', mid:'IFL', length:'30'}" label="Functional Location"></ui-dg-column>
+<ui-dg-column sortable field="PLTXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Description of functional location"></ui-dg-column>
+</ui-datagrid>

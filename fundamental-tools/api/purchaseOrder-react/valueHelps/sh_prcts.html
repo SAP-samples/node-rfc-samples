@@ -1,0 +1,38 @@
+<!-- SH PRCTS Profit center name : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Search term for matchcode search">
+    <Input value={this.searchParamLow.MCTXT}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Language Key">
+    <ComboBox value={this.searchParamLow.SPRAS}
+        items="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Controlling Area">
+    <ComboBox value={this.searchParamLow.KOKRS}
+        items="{type: 'SH', id: 'CSH_TKA01'}"
+        data-abap="{type:'CHAR', mid:'CAC', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Profit Center">
+    <ComboBox value={this.searchParamLow.PRCTR}
+        items="{type: 'SH', id: 'PRCTR_EMPTY'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'PRC', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Valid To Date">
+    <DatePicker value={this.searchParamLow.DATBI}/>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="MCTXT" data-abap.bind="{type:'CHAR', length:'20'}" label="Search term for matchcode search"></ui-dg-column>
+<ui-dg-column sortable field="SPRAS" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}" label="Language Key"></ui-dg-column>
+<ui-dg-column sortable field="KOKRS" data-abap.bind="{type:'CHAR', mid:'CAC', length:'4'}" label="Controlling Area"></ui-dg-column>
+<ui-dg-column sortable field="PRCTR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'PRC', length:'10'}" label="Profit Center"></ui-dg-column>
+<ui-dg-column sortable field="DATBI" data-abap.bind="{type:'DATS'}" label="Valid To Date"></ui-dg-column>
+</ui-datagrid>

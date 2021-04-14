@@ -1,0 +1,54 @@
+<!-- SH H_UII Unique Item Identifier : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Equipment Number">
+    <ComboBox value={this.searchParamLow.EQUNR}
+        items="{type: 'SH', id: 'EQUI'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Equipment description in capital letters">
+    <Input value={this.searchParamLow.EQKTU}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Material Number">
+    <ComboBox value={this.searchParamLow.MATNR}
+        items="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Serial Number">
+    <Input value={this.searchParamLow.SERNR}
+          data-abap="{type:'CHAR', alpha:'GERNR', mid:'SER', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Unique Item Identifier">
+    <ComboBox value={this.searchParamLow.UII}
+        items="{type: 'SH', id: 'H_UII'}"
+        data-abap="{type:'CHAR', mid:'UII', length:'72'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Structure Type of UII">
+    <ComboBox value={this.searchParamLow.IUID_TYPE}
+        items="{type: 'CT', id: 'TIUID_TYPE'}"
+        data-abap="{type:'CHAR', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Plant Responsible for UII">
+    <ComboBox value={this.searchParamLow.UII_PLANT}
+        items="{type: 'SH', id: 'H_T001W_C'}"
+        data-abap="{type:'CHAR', mid:'WRK', length:'4'}">
+    </ComboBox>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="UII" data-abap.bind="{type:'CHAR', mid:'UII', length:'72'}" label="Unique Item Identifier"></ui-dg-column>
+<ui-dg-column sortable field="MATNR" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" label="Material Number"></ui-dg-column>
+<ui-dg-column sortable field="SERNR" data-abap.bind="{type:'CHAR', alpha:'GERNR', mid:'SER', length:'18'}" label="Serial Number"></ui-dg-column>
+<ui-dg-column sortable field="EQUNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}" label="Equipment Number"></ui-dg-column>
+<ui-dg-column sortable field="EQKTU" data-abap.bind="{type:'CHAR', length:'40'}" label="Equipment description in capital letters"></ui-dg-column>
+<ui-dg-column sortable field="IUID_TYPE" data-abap.bind="{type:'CHAR', length:'10'}" label="Structure Type of UII"></ui-dg-column>
+<ui-dg-column sortable field="UII_PLANT" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" label="Plant Responsible for UII"></ui-dg-column>
+</ui-datagrid>

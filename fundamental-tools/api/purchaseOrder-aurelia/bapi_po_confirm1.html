@@ -1,0 +1,539 @@
+<!-- BAPI_PO_CONFIRM1 exception: 0  struct: 3  table: 9  var: 2
+
+abap 2.2.0 at: 2021-04-14 18:32:56 -->
+
+<!-- IMPORT PARAMETERS -->
+
+<ui-combo bind="PURCHASEORDER" shlp.bind="{type: 'SH', id: 'MEKK_C'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+          label="Purchasing Document Number"></ui-combo>
+
+<ui-input bind="TESTRUN" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Switch to Simulation Mode for Write BAPIs"></ui-input>
+
+<!-- Parameter: HEADER structure: BAPIMECONFHEADER  Header Data Confirmation for BAPI -->
+
+<ui-combo bind="HEADER.DOC_NUMBER" shlp.bind="{type: 'SH', id: 'MEKK_C'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+          label="Purchasing Document Number"></ui-combo>
+
+<!-- Parameter: HEADERX structure: BAPIMECONFHEADERX  Change Parameter Header Data Confirmation BAPI -->
+
+<ui-checkbox value.bind="HEADERX.DOC_NUMBER" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="HEADERX.DOC_TYPE" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="HEADERX.VENDOR" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="HEADERX.CURRENCY" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="HEADERX.CURRENCY_ISO" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="HEADERX.LANGU" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="HEADERX.LANGU_ISO" label="Updated information in related user data field"></ui-checkbox>
+
+<!-- TABLE PARAMETERS -->
+
+<!-- Parameter: ITEM structure: BAPIMECONFITEM  Confirmation Item Data -->
+
+<ui-datagrid data.bind="ITEM" title="Confirmation Item Data"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ITEM_NO" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}" shlp.bind="{type: 'CT', id: 'EKPO'}" label="Item Number of Purchasing Document"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" shlp.bind="{type: 'SH', id: 'S_MAT1'}" label="Material Number"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}" label="Long Material Number for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}" label="External GUID for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}" label="Version Number for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="EMATERIAL" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" shlp.bind="{type: 'CT', id: 'MARA'}" label="Material number"></ui-dg-column>
+   <ui-dg-column sortable field="INT_ARTICLE_NUM" data-abap.bind="{type:'CHAR', alpha:'EAN11', mid:'EAN', length:'18'}" label="International Article Number (EAN/UPC)"></ui-dg-column>
+   <ui-dg-column sortable field="VEND_MAT" data-abap.bind="{type:'CHAR', length:'35'}" label="Material Number Used by Vendor"></ui-dg-column>
+   <ui-dg-column sortable field="PLANT" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" label="Plant"></ui-dg-column>
+   <ui-dg-column sortable field="STGE_LOC" data-abap.bind="{type:'CHAR', mid:'LAG', length:'4'}" shlp.bind="{type: 'CT', id: 'T001L'}" label="Storage location"></ui-dg-column>
+   <ui-dg-column sortable field="QUANTITY" data-abap.bind="{type:'QUAN', unit:'PO_UNIT', length:'10.3'}" label="Purchase Order Quantity"></ui-dg-column>
+   <ui-dg-column sortable field="PO_UNIT" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Order unit"></ui-dg-column>
+   <ui-dg-column sortable field="PO_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="Order unit in ISO code"></ui-dg-column>
+   <ui-dg-column sortable field="ORDERPR_UN" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" shlp.bind="{type: 'CT', id: 'T006'}" label="Order Price Unit (Purchasing)"></ui-dg-column>
+   <ui-dg-column sortable field="ORDERPR_UN_ISO" data-abap.bind="{type:'CHAR', length:'3'}" shlp.bind="{type: 'CT', id: 'T006I'}" label="ISO code for purchase order price unit"></ui-dg-column>
+   <ui-dg-column sortable field="PRICE_UNIT" data-abap.bind="{type:'DEC', length:'5'}" label="Price unit"></ui-dg-column>
+   <ui-dg-column sortable field="NET_PRICE" data-abap.bind="{type:'DEC', length:'27.9'}" label="Currency amount for BAPIS (with 9 decimal places)"></ui-dg-column>
+   <ui-dg-column sortable field="ACKN_REQD" data-abap.bind="{type:'CHAR', length:'1'}" label="Order Acknowledgment Requirement"></ui-dg-column>
+   <ui-dg-column sortable field="ACKNOWL_NO" data-abap.bind="{type:'CHAR', length:'20'}" label="Order Acknowledgment Number"></ui-dg-column>
+   <ui-dg-column sortable field="SHIPPING" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'T027A'}" label="Shipping Instructions"></ui-dg-column>
+   <ui-dg-column sortable field="CONFIRMED_AS_ORDERED" data-abap.bind="{type:'CHAR', length:'1'}" label="Confirmed as Ordered"></ui-dg-column>
+   <ui-dg-column sortable field="CANCELED" data-abap.bind="{type:'CHAR', length:'1'}" label="Rejection Indicator"></ui-dg-column>
+   <ui-dg-column sortable field="EMATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}" label="Long Material Number for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="EMATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}" label="External GUID for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="EMATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}" label="Version Number for MATERIAL Field"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ITEM.ITEM_NO" shlp.bind="{type: 'CT', id: 'EKPO'}" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}"
+          label="Item Number of Purchasing Document"></ui-combo>
+
+<ui-combo bind="ITEM.MATERIAL" shlp.bind="{type: 'SH', id: 'S_MAT1'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material Number"></ui-combo>
+
+<ui-input bind="ITEM.MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for MATERIAL Field"></ui-input>
+
+<ui-input bind="ITEM.MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for MATERIAL Field"></ui-input>
+
+<ui-input bind="ITEM.MATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for MATERIAL Field"></ui-input>
+
+<ui-combo bind="ITEM.EMATERIAL" shlp.bind="{type: 'CT', id: 'MARA'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+          label="Material number"></ui-combo>
+
+<ui-input bind="ITEM.INT_ARTICLE_NUM" data-abap.bind="{type:'CHAR', alpha:'EAN11', mid:'EAN', length:'18'}"
+          label="International Article Number (EAN/UPC)"></ui-input>
+
+<ui-input bind="ITEM.VEND_MAT" data-abap.bind="{type:'CHAR', length:'35'}"
+          label="Material Number Used by Vendor"></ui-input>
+
+<ui-combo bind="ITEM.PLANT" shlp.bind="{type: 'SH', id: 'H_T001W_C'}" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}"
+          label="Plant"></ui-combo>
+
+<ui-combo bind="ITEM.STGE_LOC" shlp.bind="{type: 'CT', id: 'T001L'}" data-abap.bind="{type:'CHAR', mid:'LAG', length:'4'}"
+          label="Storage location"></ui-combo>
+
+<ui-input bind="ITEM.QUANTITY" data-abap.bind="{type:'QUAN', unit:'PO_UNIT', length:'10.3'}"
+          label="Purchase Order Quantity"></ui-input>
+
+<ui-combo bind="ITEM.PO_UNIT" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Order unit"></ui-combo>
+
+<ui-combo bind="ITEM.PO_UNIT_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="Order unit in ISO code"></ui-combo>
+
+<ui-combo bind="ITEM.ORDERPR_UN" shlp.bind="{type: 'CT', id: 'T006'}" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+          label="Order Price Unit (Purchasing)"></ui-combo>
+
+<ui-combo bind="ITEM.ORDERPR_UN_ISO" shlp.bind="{type: 'CT', id: 'T006I'}" data-abap.bind="{type:'CHAR', length:'3'}"
+          label="ISO code for purchase order price unit"></ui-combo>
+
+<ui-input bind="ITEM.PRICE_UNIT" data-abap.bind="{type:'DEC', length:'5'}"
+          label="Price unit"></ui-input>
+
+<ui-input bind="ITEM.NET_PRICE" data-abap.bind="{type:'DEC', length:'27.9'}"
+          label="Currency amount for BAPIS (with 9 decimal places)"></ui-input>
+
+<ui-checkbox value.bind="ITEM.ACKN_REQD" label="Order Acknowledgment Requirement"></ui-checkbox>
+
+<ui-input bind="ITEM.ACKNOWL_NO" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Order Acknowledgment Number"></ui-input>
+
+<ui-combo bind="ITEM.SHIPPING" shlp.bind="{type: 'CT', id: 'T027A'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Shipping Instructions"></ui-combo>
+
+<ui-checkbox value.bind="ITEM.CONFIRMED_AS_ORDERED" label="Confirmed as Ordered"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEM.CANCELED" label="Rejection Indicator"></ui-checkbox>
+
+<ui-input bind="ITEM.EMATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for MATERIAL Field"></ui-input>
+
+<ui-input bind="ITEM.EMATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for MATERIAL Field"></ui-input>
+
+<ui-input bind="ITEM.EMATERIAL_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for MATERIAL Field"></ui-input>
+
+<!-- Parameter: CONFIRMATION structure: BAPIMECONFDETAIL  MM-PUR: Confirmation Details -->
+
+<ui-datagrid data.bind="CONFIRMATION" title="MM-PUR: Confirmation Details"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ITEM_NO" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}" shlp.bind="{type: 'CT', id: 'EKPO'}" label="Item Number of Purchasing Document"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_SER" data-abap.bind="{type:'NUMC', length:'4'}" label="Sequential Number of Vendor Confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="DELETE_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="Asset class marked for deletion"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_CATEGORY" data-abap.bind="{type:'CHAR', length:'2'}" shlp.bind="{type: 'CT', id: 'T163E'}" label="Confirmation Category"></ui-dg-column>
+   <ui-dg-column sortable field="DELIV_DATE_TYP" data-abap.bind="{type:'CHAR', length:'1'}" shlp.bind="{type: 'CT', id: 'TPRG'}" label="Date category of delivery date in vendor confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="DELIV_DATE" data-abap.bind="{type:'DATS'}" label="Delivery Date of Vendor Confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="DELIV_TIME" data-abap.bind="{type:'TIMS'}" label="Delivery Date Time-Spot in Vendor Confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="QUANTITY" data-abap.bind="{type:'QUAN', unit:'PO_UNIT', length:'10.3'}" label="Quantity as Per Vendor Confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="REFERENCE" data-abap.bind="{type:'CHAR', length:'35'}" label="Reference Document Number (for Dependencies see Long Text)"></ui-dg-column>
+   <ui-dg-column sortable field="BATCH" data-abap.bind="{type:'CHAR', mid:'CHA', length:'10'}" shlp.bind="{type: 'CT', id: 'MCH1'}" label="Batch Number"></ui-dg-column>
+   <ui-dg-column sortable field="CREAT_DATE" data-abap.bind="{type:'DATS'}" label="Creation Date of Confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="CREAT_TIME" data-abap.bind="{type:'TIMS'}" label="Time at Which Vendor Confirmation was Created"></ui-dg-column>
+   <ui-dg-column sortable field="MPN" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'HTN', length:'18'}" shlp.bind="{type: 'CT', id: 'MARA'}" label="Material number corresponding to manufacturer part number"></ui-dg-column>
+   <ui-dg-column sortable field="HANDOVERDATE" data-abap.bind="{type:'DATS'}" label="Handover Date at the Handover Location"></ui-dg-column>
+   <ui-dg-column sortable field="HANDOVERTIME" data-abap.bind="{type:'TIMS'}" label="Handover time at the handover location"></ui-dg-column>
+   <ui-dg-column sortable field="MPN_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}" label="Long Material Number for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="MPN_GUID" data-abap.bind="{type:'CHAR', length:'32'}" label="External GUID for MATERIAL Field"></ui-dg-column>
+   <ui-dg-column sortable field="MPN_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}" label="Version Number for MATERIAL Field"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="CONFIRMATION.ITEM_NO" shlp.bind="{type: 'CT', id: 'EKPO'}" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}"
+          label="Item Number of Purchasing Document"></ui-combo>
+
+<ui-input bind="CONFIRMATION.CONF_SER" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Sequential Number of Vendor Confirmation"></ui-input>
+
+<ui-checkbox value.bind="CONFIRMATION.DELETE_IND" label="Asset class marked for deletion"></ui-checkbox>
+
+<ui-combo bind="CONFIRMATION.CONF_CATEGORY" shlp.bind="{type: 'CT', id: 'T163E'}" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Confirmation Category"></ui-combo>
+
+<ui-combo bind="CONFIRMATION.DELIV_DATE_TYP" shlp.bind="{type: 'CT', id: 'TPRG'}" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Date category of delivery date in vendor confirmation"></ui-combo>
+
+<ui-date date.bind="CONFIRMATION.DELIV_DATE"  label="Delivery Date of Vendor Confirmation"></ui-date>
+
+<ui-time time.bind="CONFIRMATION.DELIV_TIME"  label="Delivery Date Time-Spot in Vendor Confirmation"></ui-time>
+
+<ui-input bind="CONFIRMATION.QUANTITY" data-abap.bind="{type:'QUAN', unit:'PO_UNIT', length:'10.3'}"
+          label="Quantity as Per Vendor Confirmation"></ui-input>
+
+<ui-input bind="CONFIRMATION.REFERENCE" data-abap.bind="{type:'CHAR', length:'35'}"
+          label="Reference Document Number (for Dependencies see Long Text)"></ui-input>
+
+<ui-combo bind="CONFIRMATION.BATCH" shlp.bind="{type: 'CT', id: 'MCH1'}" data-abap.bind="{type:'CHAR', mid:'CHA', length:'10'}"
+          label="Batch Number"></ui-combo>
+
+<ui-date date.bind="CONFIRMATION.CREAT_DATE"  label="Creation Date of Confirmation"></ui-date>
+
+<ui-time time.bind="CONFIRMATION.CREAT_TIME"  label="Time at Which Vendor Confirmation was Created"></ui-time>
+
+<ui-combo bind="CONFIRMATION.MPN" shlp.bind="{type: 'CT', id: 'MARA'}" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'HTN', length:'18'}"
+          label="Material number corresponding to manufacturer part number"></ui-combo>
+
+<ui-date date.bind="CONFIRMATION.HANDOVERDATE"  label="Handover Date at the Handover Location"></ui-date>
+
+<ui-time time.bind="CONFIRMATION.HANDOVERTIME"  label="Handover time at the handover location"></ui-time>
+
+<ui-input bind="CONFIRMATION.MPN_EXTERNAL" data-abap.bind="{type:'CHAR', alpha:'MATNL', length:'40'}"
+          label="Long Material Number for MATERIAL Field"></ui-input>
+
+<ui-input bind="CONFIRMATION.MPN_GUID" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="External GUID for MATERIAL Field"></ui-input>
+
+<ui-input bind="CONFIRMATION.MPN_VERSION" data-abap.bind="{type:'CHAR', alpha:'MATNW', length:'10'}"
+          label="Version Number for MATERIAL Field"></ui-input>
+
+<!-- Parameter: CONFIRMATIONX structure: BAPIMECONFDETAILX  Table Type for Change Parameter Confirmation Details -->
+
+<ui-datagrid data.bind="CONFIRMATIONX" title="Table Type for Change Parameter Confirmation Details"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ITEM_NO" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}" shlp.bind="{type: 'CT', id: 'EKPO'}" label="Item Number of Purchasing Document"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_SER" data-abap.bind="{type:'NUMC', length:'4'}" label="Sequential Number of Vendor Confirmation"></ui-dg-column>
+   <ui-dg-column sortable field="ITEM_NOX" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_SERX" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="DELETE_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="CONF_CATEGORY" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="DELIV_DATE_TYP" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="DELIV_DATE" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="DELIV_TIME" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="QUANTITY" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="REFERENCE" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="BATCH" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="CREAT_DATE" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="CREAT_TIME" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="MPN" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="HANDOVERDATE" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="HANDOVERTIME" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="MPN_EXTERNAL" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="MPN_GUID" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="MPN_VERSION" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="CONFIRMATIONX.ITEM_NO" shlp.bind="{type: 'CT', id: 'EKPO'}" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}"
+          label="Item Number of Purchasing Document"></ui-combo>
+
+<ui-input bind="CONFIRMATIONX.CONF_SER" data-abap.bind="{type:'NUMC', length:'4'}"
+          label="Sequential Number of Vendor Confirmation"></ui-input>
+
+<ui-checkbox value.bind="CONFIRMATIONX.ITEM_NOX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CONFIRMATIONX.CONF_SERX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CONFIRMATIONX.DELETE_IND" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CONFIRMATIONX.CONF_CATEGORY" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CONFIRMATIONX.DELIV_DATE_TYP" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CONFIRMATIONX.DELIV_DATE" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CONFIRMATIONX.DELIV_TIME" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CONFIRMATIONX.QUANTITY" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CONFIRMATIONX.REFERENCE" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CONFIRMATIONX.BATCH" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CONFIRMATIONX.CREAT_DATE" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CONFIRMATIONX.CREAT_TIME" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CONFIRMATIONX.MPN" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CONFIRMATIONX.HANDOVERDATE" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CONFIRMATIONX.HANDOVERTIME" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CONFIRMATIONX.MPN_EXTERNAL" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CONFIRMATIONX.MPN_GUID" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="CONFIRMATIONX.MPN_VERSION" label="Updated information in related user data field"></ui-checkbox>
+
+<!-- Parameter: EXTENSIONIN structure: BAPIPAREX  Table Type for BAPIPAREX -->
+
+<ui-datagrid data.bind="EXTENSIONIN" title="Table Type for BAPIPAREX"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="STRUCTURE" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD02L'}" label="Structure name of  BAPI table extension"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="EXTENSIONIN.STRUCTURE" shlp.bind="{type: 'CT', id: 'DD02L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Structure name o API table extension"></ui-combo>
+
+<ui-input bind="EXTENSIONIN.VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSIONIN.VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSIONIN.VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSIONIN.VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<!-- Parameter: EXTENSIONOUT structure: BAPIPAREX  Table Type for BAPIPAREX -->
+
+<ui-datagrid data.bind="EXTENSIONOUT" title="Table Type for BAPIPAREX"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="STRUCTURE" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD02L'}" label="Structure name of  BAPI table extension"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+   <ui-dg-column sortable field="VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}" label="Data part of BAPI extension parameter"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="EXTENSIONOUT.STRUCTURE" shlp.bind="{type: 'CT', id: 'DD02L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Structure name o API table extension"></ui-combo>
+
+<ui-input bind="EXTENSIONOUT.VALUEPART1" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSIONOUT.VALUEPART2" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSIONOUT.VALUEPART3" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<ui-input bind="EXTENSIONOUT.VALUEPART4" data-abap.bind="{type:'CHAR', length:'240'}"
+          label="Data part of BAPI extension parameter"></ui-input>
+
+<!-- Parameter: HEADER_TEXT structure: BAPIMECONFTEXT  Header Text - Confirmation -->
+
+<ui-datagrid data.bind="HEADER_TEXT" title="Header Text - Confirmation"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TEXT_ID" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'TTXID'}" label="Text ID"></ui-dg-column>
+   <ui-dg-column sortable field="DELETE_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="Deletion indicator in purchasing document"></ui-dg-column>
+   <ui-dg-column sortable field="TEXT_FORM" data-abap.bind="{type:'CHAR', length:'2'}" label="Tag column"></ui-dg-column>
+   <ui-dg-column sortable field="TEXT_LINE" data-abap.bind="{type:'CHAR', length:'132'}" label="Text Line"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="HEADER_TEXT.TEXT_ID" shlp.bind="{type: 'CT', id: 'TTXID'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Text ID"></ui-combo>
+
+<ui-input bind="HEADER_TEXT.DELETE_IND" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Deletion indicator in purchasing document"></ui-input>
+
+<ui-input bind="HEADER_TEXT.TEXT_FORM" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Tag column"></ui-input>
+
+<ui-input bind="HEADER_TEXT.TEXT_LINE" data-abap.bind="{type:'CHAR', length:'132'}"
+          label="Text Line"></ui-input>
+
+<!-- Parameter: ITEM_TEXT structure: BAPIMECONFITEMTEXT  Text Data - Confirmation -->
+
+<ui-datagrid data.bind="ITEM_TEXT" title="Text Data - Confirmation"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ITEM_NO" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}" shlp.bind="{type: 'CT', id: 'EKPO'}" label="Item Number of Purchasing Document"></ui-dg-column>
+   <ui-dg-column sortable field="DELETE_IND" data-abap.bind="{type:'CHAR', length:'1'}" label="Deletion indicator in purchasing document"></ui-dg-column>
+   <ui-dg-column sortable field="TEXT_ID" data-abap.bind="{type:'CHAR', length:'4'}" shlp.bind="{type: 'CT', id: 'TTXID'}" label="Text ID"></ui-dg-column>
+   <ui-dg-column sortable field="TEXT_FORM" data-abap.bind="{type:'CHAR', length:'2'}" label="Tag column"></ui-dg-column>
+   <ui-dg-column sortable field="TEXT_LINE" data-abap.bind="{type:'CHAR', length:'132'}" label="Text Line"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ITEM_TEXT.ITEM_NO" shlp.bind="{type: 'CT', id: 'EKPO'}" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}"
+          label="Item Number of Purchasing Document"></ui-combo>
+
+<ui-input bind="ITEM_TEXT.DELETE_IND" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Deletion indicator in purchasing document"></ui-input>
+
+<ui-combo bind="ITEM_TEXT.TEXT_ID" shlp.bind="{type: 'CT', id: 'TTXID'}" data-abap.bind="{type:'CHAR', length:'4'}"
+          label="Text ID"></ui-combo>
+
+<ui-input bind="ITEM_TEXT.TEXT_FORM" data-abap.bind="{type:'CHAR', length:'2'}"
+          label="Tag column"></ui-input>
+
+<ui-input bind="ITEM_TEXT.TEXT_LINE" data-abap.bind="{type:'CHAR', length:'132'}"
+          label="Text Line"></ui-input>
+
+<!-- Parameter: ITEMX structure: BAPIMECONFITEMX  Table Type for Change Parameter of Item Data -->
+
+<ui-datagrid data.bind="ITEMX" title="Table Type for Change Parameter of Item Data"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="ITEM_NO" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}" shlp.bind="{type: 'CT', id: 'EKPO'}" label="Item Number of Purchasing Document"></ui-dg-column>
+   <ui-dg-column sortable field="ITEM_NOX" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="MATERIAL_VERSION" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="EMATERIAL" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="INT_ARTICLE_NUM" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="VEND_MAT" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="PLANT" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="STGE_LOC" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="QUANTITY" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="PO_UNIT" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="PO_UNIT_ISO" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="ORDERPR_UN" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="ORDERPR_UN_ISO" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="PRICE_UNIT" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="NET_PRICE" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="ACKN_REQD" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="ACKNOWL_NO" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="SHIPPING" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="CONFIRMED_AS_ORDERED" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="CANCELED" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="EMATERIAL_EXTERNAL" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="EMATERIAL_GUID" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+   <ui-dg-column sortable field="EMATERIAL_VERSION" data-abap.bind="{type:'CHAR', length:'1'}" label="Updated information in related user data field"></ui-dg-column>
+</ui-datagrid>
+
+<ui-combo bind="ITEMX.ITEM_NO" shlp.bind="{type: 'CT', id: 'EKPO'}" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}"
+          label="Item Number of Purchasing Document"></ui-combo>
+
+<ui-checkbox value.bind="ITEMX.ITEM_NOX" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.MATERIAL" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.MATERIAL_EXTERNAL" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.MATERIAL_GUID" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.MATERIAL_VERSION" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.EMATERIAL" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.INT_ARTICLE_NUM" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.VEND_MAT" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.PLANT" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.STGE_LOC" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.QUANTITY" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.PO_UNIT" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.PO_UNIT_ISO" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.ORDERPR_UN" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.ORDERPR_UN_ISO" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.PRICE_UNIT" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.NET_PRICE" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.ACKN_REQD" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.ACKNOWL_NO" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.SHIPPING" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.CONFIRMED_AS_ORDERED" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.CANCELED" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.EMATERIAL_EXTERNAL" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.EMATERIAL_GUID" label="Updated information in related user data field"></ui-checkbox>
+
+<ui-checkbox value.bind="ITEMX.EMATERIAL_VERSION" label="Updated information in related user data field"></ui-checkbox>
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Parameter(s) -->
+
+<ui-datagrid data.bind="RETURN" title="Return Parameter(s)"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+   <ui-dg-column sortable field="TYPE" data-abap.bind="{type:'CHAR', length:'1'}" label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-dg-column>
+   <ui-dg-column sortable field="ID" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CT', id: 'T100A'}" label="Message Class"></ui-dg-column>
+   <ui-dg-column sortable field="NUMBER" data-abap.bind="{type:'NUMC', length:'3'}" label="Message Number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}" label="Message Text"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_NO" data-abap.bind="{type:'CHAR', length:'20'}" shlp.bind="{type: 'CH', id: 'BALHDR'}" label="Application log: log number"></ui-dg-column>
+   <ui-dg-column sortable field="LOG_MSG_NO" data-abap.bind="{type:'NUMC', length:'6'}" shlp.bind="{type: 'CH', id: 'BALM'}" label="Application log: Internal message serial number"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}" label="Message Variable"></ui-dg-column>
+   <ui-dg-column sortable field="PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}" label="Parameter Name"></ui-dg-column>
+   <ui-dg-column sortable field="ROW" data-abap.bind="{type:'INT4', length:'+10'}" label="Lines in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="FIELD" data-abap.bind="{type:'CHAR', length:'30'}" shlp.bind="{type: 'CT', id: 'DD03L'}" label="Field in parameter"></ui-dg-column>
+   <ui-dg-column sortable field="SYSTEM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" shlp.bind="{type: 'CT', id: 'TBDLS'}" label="Logical system from which message originates"></ui-dg-column>
+</ui-datagrid>
+
+<ui-input bind="RETURN.TYPE" data-abap.bind="{type:'CHAR', length:'1'}"
+          label="Message type: S Success, E Error, W Warning, I Info, A Abort"></ui-input>
+
+<ui-combo bind="RETURN.ID" shlp.bind="{type: 'CT', id: 'T100A'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Message Class"></ui-combo>
+
+<ui-input bind="RETURN.NUMBER" data-abap.bind="{type:'NUMC', length:'3'}"
+          label="Message Number"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE" data-abap.bind="{type:'CHAR', length:'220'}"
+          label="Message Text"></ui-input>
+
+<ui-combo bind="RETURN.LOG_NO" shlp.bind="{type: 'CH', id: 'BALHDR'}" data-abap.bind="{type:'CHAR', length:'20'}"
+          label="Application log: log number"></ui-combo>
+
+<ui-combo bind="RETURN.LOG_MSG_NO" shlp.bind="{type: 'CH', id: 'BALM'}" data-abap.bind="{type:'NUMC', length:'6'}"
+          label="Application log: Internal message serial number"></ui-combo>
+
+<ui-input bind="RETURN.MESSAGE_V1" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V2" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V3" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.MESSAGE_V4" data-abap.bind="{type:'CHAR', length:'50'}"
+          label="Message Variable"></ui-input>
+
+<ui-input bind="RETURN.PARAMETER" data-abap.bind="{type:'CHAR', length:'32'}"
+          label="Parameter Name"></ui-input>
+
+<ui-input bind="RETURN.ROW" data-abap.bind="{type:'INT4', length:'+10'}"
+          label="Lines in parameter"></ui-input>
+
+<ui-combo bind="RETURN.FIELD" shlp.bind="{type: 'CT', id: 'DD03L'}" data-abap.bind="{type:'CHAR', length:'30'}"
+          label="Field in parameter"></ui-combo>
+
+<ui-combo bind="RETURN.SYSTEM" shlp.bind="{type: 'CT', id: 'TBDLS'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+          label="Logical system from which message originates"></ui-combo>
+
+<!-- EXPORT PARAMETERS -->
+
+<!-- Parameter: EXP_HEADER structure: BAPIMECONFHEADER  Header Data Confirmation for BAPI -->
+
+<ui-combo bind="EXP_HEADER.DOC_NUMBER" shlp.bind="{type: 'SH', id: 'MEKK_C'}" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+          label="Purchasing Document Number"></ui-combo>

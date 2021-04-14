@@ -1,0 +1,17 @@
+<!-- SH EQUIN Equipment by equipment list (service) : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Equipment Number">
+    <Input value={this.searchParamLow.EQUNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Selection Function Triggered by Matchcode">
+    <Input value={this.searchParamLow.FUNCNAME}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+</ui-datagrid>

@@ -1,0 +1,27 @@
+<!-- SH H_TPRG Date category of delivery date in vendor confirmation : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Language Key">
+    <ComboBox value={this.searchParamLow.SPRAS}
+        items="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="External date type">
+    <ComboBox value={this.searchParamLow.PRGBZ}
+        items="{type: 'CT', id: 'TPRG'}"
+        data-abap="{type:'CHAR', length:'1'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Description of date type">
+    <Input value={this.searchParamLow.PRGTX}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="SPRAS" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}" label="Language Key"></ui-dg-column>
+<ui-dg-column sortable field="PRGBZ" data-abap.bind="{type:'CHAR', length:'1'}" label="External date type"></ui-dg-column>
+<ui-dg-column sortable field="PRGTX" data-abap.bind="{type:'CHAR', length:'20'}" label="Description of date type"></ui-dg-column>
+</ui-datagrid>

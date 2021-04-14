@@ -1,0 +1,79 @@
+<!-- SH USER_ADDR Users by Address Data : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="User Name in User Master Record">
+    <Input value={this.searchParamLow.BNAME}
+          data-abap="{type:'CHAR', mid:'XUS', length:'12'}"
+    />
+</FormItem>
+<FormItem label="First Telephone No.: Extension">
+    <Input value={this.searchParamLow.TEL_EXTENS}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Cost center">
+    <Input value={this.searchParamLow.KOSTL}
+          data-abap="{type:'CHAR', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Building (number or code)">
+    <Input value={this.searchParamLow.BUILDING}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Room or Appartment Number">
+    <Input value={this.searchParamLow.ROOMNUMBER}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Department">
+    <Input value={this.searchParamLow.DEPARTMENT}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Internal Mail Postal Code">
+    <Input value={this.searchParamLow.INHOUSE_ML}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="First Name in Uppercase for Search Help">
+    <Input value={this.searchParamLow.MC_NAMEFIR}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="Last Name in Uppercase for Search Help">
+    <Input value={this.searchParamLow.MC_NAMELAS}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="Name (Field NAME1) in Uppercase for Search Help">
+    <Input value={this.searchParamLow.MC_NAME1}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="City name in Uppercase for Search Help">
+    <Input value={this.searchParamLow.MC_CITY1}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="Company address, cross-system key">
+    <Input value={this.searchParamLow.COMPANY}
+          data-abap="{type:'CHAR', length:'42'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BNAME" data-abap.bind="{type:'CHAR', mid:'XUS', length:'12'}" label="User Name in User Master Record"></ui-dg-column>
+<ui-dg-column sortable field="BUILDING" data-abap.bind="{type:'CHAR', length:'10'}" label="Building (number or code)"></ui-dg-column>
+<ui-dg-column sortable field="COMPANY" data-abap.bind="{type:'CHAR', length:'42'}" label="Company address, cross-system key"></ui-dg-column>
+<ui-dg-column sortable field="DEPARTMENT" data-abap.bind="{type:'CHAR', length:'40'}" label="Department"></ui-dg-column>
+<ui-dg-column sortable field="INHOUSE_ML" data-abap.bind="{type:'CHAR', length:'10'}" label="Internal Mail Postal Code"></ui-dg-column>
+<ui-dg-column sortable field="KOSTL" data-abap.bind="{type:'CHAR', length:'8'}" label="Cost center"></ui-dg-column>
+<ui-dg-column sortable field="MC_CITY1" data-abap.bind="{type:'CHAR', length:'25'}" label="City name in Uppercase for Search Help"></ui-dg-column>
+<ui-dg-column sortable field="MC_NAME1" data-abap.bind="{type:'CHAR', length:'25'}" label="Name (Field NAME1) in Uppercase for Search Help"></ui-dg-column>
+<ui-dg-column sortable field="MC_NAMEFIR" data-abap.bind="{type:'CHAR', length:'25'}" label="First Name in Uppercase for Search Help"></ui-dg-column>
+<ui-dg-column sortable field="MC_NAMELAS" data-abap.bind="{type:'CHAR', length:'25'}" label="Last Name in Uppercase for Search Help"></ui-dg-column>
+<ui-dg-column sortable field="ROOMNUMBER" data-abap.bind="{type:'CHAR', length:'10'}" label="Room or Appartment Number"></ui-dg-column>
+<ui-dg-column sortable field="TEL_EXTENS" data-abap.bind="{type:'CHAR', length:'10'}" label="First Telephone No.: Extension"></ui-dg-column>
+</ui-datagrid>

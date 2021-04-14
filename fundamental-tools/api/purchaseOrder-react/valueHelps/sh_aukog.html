@@ -1,0 +1,30 @@
+<!-- SH AUKOG Networks created from original network (milestone function) : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Order Number">
+    <Input value={this.searchParamLow.AUFNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+    />
+</FormItem>
+<FormItem label="Order category">
+    <Input value={this.searchParamLow.AUTYP}
+          data-abap="{type:'NUMC', length:'2'}"
+    />
+</FormItem>
+<FormItem label="Description">
+    <Input value={this.searchParamLow.KTEXT}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Number of the original network">
+    <Input value={this.searchParamLow.MAUFNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', length:'12'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="MAUFNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'12'}" label="Number of the original network"></ui-dg-column>
+<ui-dg-column sortable field="KTEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Description"></ui-dg-column>
+<ui-dg-column sortable field="AUFNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" label="Order Number"></ui-dg-column>
+</ui-datagrid>

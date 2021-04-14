@@ -1,0 +1,32 @@
+<!-- SH VTTZZ Address time zone : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Time Zone">
+    <ComboBox value={this.searchParamLow.TZONE}
+        items="{type: 'CT', id: 'TTZZ'}"
+        data-abap="{type:'CHAR', length:'6'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Time Zone Text">
+    <Input value={this.searchParamLow.DESCRIPT}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+<FormItem label="Name of Time Zone Rule (Difference from UTC)">
+    <Input value={this.searchParamLow.TZONERULE}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Daylight Saving Time Rule">
+    <Input value={this.searchParamLow.DSTRULE}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="TZONE" data-abap.bind="{type:'CHAR', length:'6'}" label="Time Zone"></ui-dg-column>
+<ui-dg-column sortable field="DESCRIPT" data-abap.bind="{type:'CHAR', length:'30'}" label="Time Zone Text"></ui-dg-column>
+<ui-dg-column sortable field="TZONERULE" data-abap.bind="{type:'CHAR', length:'20'}" label="Name of Time Zone Rule (Difference from UTC)"></ui-dg-column>
+<ui-dg-column sortable field="DSTRULE" data-abap.bind="{type:'CHAR', length:'20'}" label="Daylight Saving Time Rule"></ui-dg-column>
+</ui-datagrid>

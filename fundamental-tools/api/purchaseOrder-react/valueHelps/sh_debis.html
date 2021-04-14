@@ -1,0 +1,85 @@
+<!-- SH DEBIS Customers per sales group : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Sales Organization">
+    <ComboBox value={this.searchParamLow.VKORG}
+        items="{type: 'SH', id: 'H_TVKO'}"
+        data-abap="{type:'CHAR', mid:'VKO', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Sort field">
+    <Input value={this.searchParamLow.SORTL}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Country Key">
+    <ComboBox value={this.searchParamLow.LAND1}
+        items="{type: 'CT', id: 'T005'}"
+        data-abap="{type:'CHAR', length:'3'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Postal Code">
+    <Input value={this.searchParamLow.PSTLZ}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Search term for matchcode search">
+    <Input value={this.searchParamLow.MCOD3}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="Search term for matchcode search">
+    <Input value={this.searchParamLow.MCOD1}
+          data-abap="{type:'CHAR', length:'25'}"
+    />
+</FormItem>
+<FormItem label="Customer Number">
+    <ComboBox value={this.searchParamLow.KUNNR}
+        items="{type: 'SH', id: 'DEBI'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Distribution Channel">
+    <ComboBox value={this.searchParamLow.VTWEG}
+        items="{type: 'SH', id: 'CSH_TVTW'}"
+        data-abap="{type:'CHAR', mid:'VTW', length:'2'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Division">
+    <ComboBox value={this.searchParamLow.SPART}
+        items="{type: 'SH', id: 'CSH_TSPA'}"
+        data-abap="{type:'CHAR', mid:'SPA', length:'2'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Sales office">
+    <ComboBox value={this.searchParamLow.VKBUR}
+        items="{type: 'SH', id: 'H_TVBUR'}"
+        data-abap="{type:'CHAR', mid:'VKB', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Sales group">
+    <ComboBox value={this.searchParamLow.VKGRP}
+        items="{type: 'SH', id: 'H_TVBVK'}"
+        data-abap="{type:'CHAR', mid:'VKG', length:'3'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Authorization Group">
+    <Input value={this.searchParamLow.BEGRU}
+          data-abap="{type:'CHAR', length:'4'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="VKORG" data-abap.bind="{type:'CHAR', mid:'VKO', length:'4'}" label="Sales Organization"></ui-dg-column>
+<ui-dg-column sortable field="SORTL" data-abap.bind="{type:'CHAR', length:'10'}" label="Sort field"></ui-dg-column>
+<ui-dg-column sortable field="LAND1" data-abap.bind="{type:'CHAR', length:'3'}" label="Country Key"></ui-dg-column>
+<ui-dg-column sortable field="PSTLZ" data-abap.bind="{type:'CHAR', length:'10'}" label="Postal Code"></ui-dg-column>
+<ui-dg-column sortable field="MCOD3" data-abap.bind="{type:'CHAR', length:'25'}" label="Search term for matchcode search"></ui-dg-column>
+<ui-dg-column sortable field="MCOD1" data-abap.bind="{type:'CHAR', length:'25'}" label="Search term for matchcode search"></ui-dg-column>
+<ui-dg-column sortable field="KUNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}" label="Customer Number"></ui-dg-column>
+<ui-dg-column sortable field="VTWEG" data-abap.bind="{type:'CHAR', mid:'VTW', length:'2'}" label="Distribution Channel"></ui-dg-column>
+<ui-dg-column sortable field="SPART" data-abap.bind="{type:'CHAR', mid:'SPA', length:'2'}" label="Division"></ui-dg-column>
+<ui-dg-column sortable field="VKBUR" data-abap.bind="{type:'CHAR', mid:'VKB', length:'4'}" label="Sales office"></ui-dg-column>
+<ui-dg-column sortable field="VKGRP" data-abap.bind="{type:'CHAR', mid:'VKG', length:'3'}" label="Sales group"></ui-dg-column>
+</ui-datagrid>

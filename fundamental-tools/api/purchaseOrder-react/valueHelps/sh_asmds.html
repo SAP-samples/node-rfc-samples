@@ -1,0 +1,46 @@
+<!-- SH ASMDS Standard Service Catalog : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Short Description of Service Type">
+    <ComboBox value={this.searchParamLow.LBNUM}
+        items="{type: 'SH', id: 'SRV_SERVICETYPE'}"
+        data-abap="{type:'CHAR', mid:'LBR', length:'3'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Edition of Service Type">
+    <Input value={this.searchParamLow.AUSGB}
+          data-abap="{type:'NUMC', mid:'AGB', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Standard Service Catalog Item">
+    <Input value={this.searchParamLow.STLVPOS}
+          data-abap="{type:'CHAR', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Activity Number">
+    <ComboBox value={this.searchParamLow.ASNUM}
+        items="{type: 'CT', id: 'ASMD'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Service Short Text">
+    <Input value={this.searchParamLow.ASKTX}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Language Key">
+    <ComboBox value={this.searchParamLow.SPRAS}
+        items="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}">
+    </ComboBox>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="LBNUM" data-abap.bind="{type:'CHAR', mid:'LBR', length:'3'}" label="Short Description of Service Type"></ui-dg-column>
+<ui-dg-column sortable field="AUSGB" data-abap.bind="{type:'NUMC', mid:'AGB', length:'4'}" label="Edition of Service Type"></ui-dg-column>
+<ui-dg-column sortable field="STLVPOS" data-abap.bind="{type:'CHAR', length:'18'}" label="Standard Service Catalog Item"></ui-dg-column>
+<ui-dg-column sortable field="ASNUM" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}" label="Activity Number"></ui-dg-column>
+<ui-dg-column sortable field="ASKTX" data-abap.bind="{type:'CHAR', length:'40'}" label="Service Short Text"></ui-dg-column>
+<ui-dg-column sortable field="SPRAS" data-abap.bind="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}" label="Language Key"></ui-dg-column>
+</ui-datagrid>

@@ -1,0 +1,13 @@
+<!-- SH DEBIY Customers by Address Attributes (Fuzzy Search) : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Customer Number">
+    <Input value={this.searchParamLow.KUNNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="KUNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}" label="Customer Number"></ui-dg-column>
+</ui-datagrid>

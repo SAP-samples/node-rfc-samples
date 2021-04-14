@@ -1,0 +1,89 @@
+<!-- SH RECNCNI Contracts by Resubmit Date : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Resubmission Date">
+    <DatePicker value={this.searchParamLow.RSDATE}/>
+</FormItem>
+<FormItem label="Person Responsible">
+    <Input value={this.searchParamLow.RESPONSIBLE}
+          data-abap="{type:'CHAR', length:'12'}"
+    />
+</FormItem>
+<FormItem label="Resubmission Reason">
+    <Input value={this.searchParamLow.RSREASON}
+          data-abap="{type:'CHAR', alpha:'ALPHA', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Resubmission Rule">
+    <Input value={this.searchParamLow.RSRULE}
+          data-abap="{type:'CHAR', alpha:'ALPHA', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Resubmission Date Processed">
+    <Input value={this.searchParamLow.RSDONE}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Start of Memo for Reminder Date">
+    <Input value={this.searchParamLow.RSINFO}
+          data-abap="{type:'CHAR', length:'60'}"
+    />
+</FormItem>
+<FormItem label="Company Code">
+    <Input value={this.searchParamLow.BUKRS}
+          data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Contract Type">
+    <Input value={this.searchParamLow.RECNTYPE}
+          data-abap="{type:'CHAR', mid:'RECNTYPE', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Contract Number">
+    <Input value={this.searchParamLow.RECNNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}"
+    />
+</FormItem>
+<FormItem label="Date of contract start">
+    <DatePicker value={this.searchParamLow.RECNBEG}/>
+</FormItem>
+<FormItem label="Term End Date">
+    <DatePicker value={this.searchParamLow.RECNENDABS}/>
+</FormItem>
+<FormItem label="Contract name">
+    <Input value={this.searchParamLow.RECNTXT}
+          data-abap="{type:'CHAR', length:'80'}"
+    />
+</FormItem>
+<FormItem label="Business Entity That Belongs to Contract">
+    <Input value={this.searchParamLow.BENOCN}
+          data-abap="{type:'CHAR', alpha:'SWENR', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Object Number">
+    <Input value={this.searchParamLow.OBJNR}
+          data-abap="{type:'CHAR', mid:'ONR', length:'22'}"
+    />
+</FormItem>
+<FormItem label="Internal Key of Real Estate Object (FI)">
+    <Input value={this.searchParamLow.IMKEY}
+          data-abap="{type:'CHAR', alpha:'IMKEY', length:'8'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="RECNTYPE" data-abap.bind="{type:'CHAR', mid:'RECNTYPE', length:'4'}" label="Contract Type"></ui-dg-column>
+<ui-dg-column sortable field="RECNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}" label="Contract Number"></ui-dg-column>
+<ui-dg-column sortable field="RECNBEG" data-abap.bind="{type:'DATS'}" label="Date of contract start"></ui-dg-column>
+<ui-dg-column sortable field="RECNENDABS" data-abap.bind="{type:'DATS', alpha:'REDAT'}" label="Term End Date"></ui-dg-column>
+<ui-dg-column sortable field="BENOCN" data-abap.bind="{type:'CHAR', alpha:'SWENR', length:'8'}" label="Business Entity That Belongs to Contract"></ui-dg-column>
+<ui-dg-column sortable field="RECNTXT" data-abap.bind="{type:'CHAR', length:'80'}" label="Contract name"></ui-dg-column>
+<ui-dg-column sortable field="RSDATE" data-abap.bind="{type:'DATS'}" label="Resubmission Date"></ui-dg-column>
+<ui-dg-column sortable field="RESPONSIBLE" data-abap.bind="{type:'CHAR', length:'12'}" label="Person Responsible"></ui-dg-column>
+<ui-dg-column sortable field="RSREASON" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'4'}" label="Resubmission Reason"></ui-dg-column>
+<ui-dg-column sortable field="RSRULE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'4'}" label="Resubmission Rule"></ui-dg-column>
+<ui-dg-column sortable field="RSDONE" data-abap.bind="{type:'CHAR', length:'1'}" label="Resubmission Date Processed"></ui-dg-column>
+<ui-dg-column sortable field="RSINFO" data-abap.bind="{type:'CHAR', length:'60'}" label="Start of Memo for Reminder Date"></ui-dg-column>
+</ui-datagrid>

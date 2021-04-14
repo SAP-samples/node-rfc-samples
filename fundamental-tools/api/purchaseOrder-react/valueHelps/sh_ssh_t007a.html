@@ -1,0 +1,27 @@
+<!-- SH SSH_T007A Tax on sales/purchases code : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Procedure (Pricing, Output Control, Acct. Det., Costing,...)">
+    <ComboBox value={this.searchParamLow.KALSM}
+        items="{type: 'CT', id: 'T683'}"
+        data-abap="{type:'CHAR', length:'6'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Tax on sales/purchases code">
+    <ComboBox value={this.searchParamLow.MWSKZ}
+        items="{type: 'CT', id: 'T007A'}"
+        data-abap="{type:'CHAR', length:'2'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Name for value-added tax">
+    <Input value={this.searchParamLow.TEXT1}
+          data-abap="{type:'CHAR', length:'50'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="KALSM" data-abap.bind="{type:'CHAR', length:'6'}" label="Procedure (Pricing, Output Control, Acct. Det., Costing,...)"></ui-dg-column>
+<ui-dg-column sortable field="MWSKZ" data-abap.bind="{type:'CHAR', length:'2'}" label="Tax on sales/purchases code"></ui-dg-column>
+<ui-dg-column sortable field="TEXT1" data-abap.bind="{type:'CHAR', length:'50'}" label="Name for value-added tax"></ui-dg-column>
+</ui-datagrid>

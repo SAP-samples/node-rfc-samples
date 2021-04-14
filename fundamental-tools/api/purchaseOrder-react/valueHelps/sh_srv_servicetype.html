@@ -1,0 +1,25 @@
+<!-- SH SRV_SERVICETYPE Short Description of Service Type : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Key to Service Type">
+    <Input value={this.searchParamLow.LBNUM}
+          data-abap="{type:'CHAR', mid:'LBR', length:'3'}"
+    />
+</FormItem>
+<FormItem label="Edition of Service Type">
+    <Input value={this.searchParamLow.AUSGB}
+          data-abap="{type:'NUMC', mid:'AGB', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Short Text">
+    <Input value={this.searchParamLow.LBKTX}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="LBNUM" data-abap.bind="{type:'CHAR', mid:'LBR', length:'3'}" label="Key to Service Type"></ui-dg-column>
+<ui-dg-column sortable field="AUSGB" data-abap.bind="{type:'NUMC', mid:'AGB', length:'4'}" label="Edition of Service Type"></ui-dg-column>
+<ui-dg-column sortable field="LBKTX" data-abap.bind="{type:'CHAR', length:'40'}" label="Short Text"></ui-dg-column>
+</ui-datagrid>

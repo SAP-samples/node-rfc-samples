@@ -1,0 +1,25 @@
+<!-- SH H_TVBVK Sales group : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Sales office">
+    <Input value={this.searchParamLow.VKBUR}
+          data-abap="{type:'CHAR', mid:'VKB', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Sales group">
+    <Input value={this.searchParamLow.VKGRP}
+          data-abap="{type:'CHAR', mid:'VKG', length:'3'}"
+    />
+</FormItem>
+<FormItem label="Description">
+    <Input value={this.searchParamLow.BEZEI}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="VKBUR" data-abap.bind="{type:'CHAR', mid:'VKB', length:'4'}" label="Sales office"></ui-dg-column>
+<ui-dg-column sortable field="VKGRP" data-abap.bind="{type:'CHAR', mid:'VKG', length:'3'}" label="Sales group"></ui-dg-column>
+<ui-dg-column sortable field="BEZEI" data-abap.bind="{type:'CHAR', length:'20'}" label="Description"></ui-dg-column>
+</ui-datagrid>

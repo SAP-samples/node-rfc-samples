@@ -1,0 +1,43 @@
+<!-- SH MBANV Purchase Requisitions per Sales Document : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Sales and Distribution Document Number">
+    <Input value={this.searchParamLow.VBELN}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Sales Document Item">
+    <Input value={this.searchParamLow.VBELP}
+          data-abap="{type:'NUMC', mid:'APO', length:'6'}"
+    />
+</FormItem>
+<FormItem label="Schedule line">
+    <Input value={this.searchParamLow.VETEN}
+          data-abap="{type:'NUMC', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Purchase requisition number">
+    <Input value={this.searchParamLow.BANFN}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BAN', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Item number of purchase requisition">
+    <Input value={this.searchParamLow.BNFPO}
+          data-abap="{type:'NUMC', mid:'BAP', length:'5'}"
+    />
+</FormItem>
+<FormItem label="Serial number for PReq account assignment segment">
+    <Input value={this.searchParamLow.ZEBKN}
+          data-abap="{type:'NUMC', length:'2'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="VBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}" label="Sales and Distribution Document Number"></ui-dg-column>
+<ui-dg-column sortable field="VBELP" data-abap.bind="{type:'NUMC', mid:'APO', length:'6'}" label="Sales Document Item"></ui-dg-column>
+<ui-dg-column sortable field="VETEN" data-abap.bind="{type:'NUMC', length:'4'}" label="Schedule line"></ui-dg-column>
+<ui-dg-column sortable field="BANFN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BAN', length:'10'}" label="Purchase requisition number"></ui-dg-column>
+<ui-dg-column sortable field="BNFPO" data-abap.bind="{type:'NUMC', mid:'BAP', length:'5'}" label="Item number of purchase requisition"></ui-dg-column>
+<ui-dg-column sortable field="ZEBKN" data-abap.bind="{type:'NUMC', length:'2'}" label="Serial number for PReq account assignment segment"></ui-dg-column>
+</ui-datagrid>

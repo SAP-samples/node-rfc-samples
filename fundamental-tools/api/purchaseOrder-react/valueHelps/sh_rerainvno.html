@@ -1,0 +1,57 @@
+<!-- SH RERAINVNO Invoice Number : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Company Code">
+    <Input value={this.searchParamLow.BUKRS}
+          data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Invoice Number">
+    <Input value={this.searchParamLow.INVNO}
+          data-abap="{type:'NUMC', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Fiscal Year">
+    <Input value={this.searchParamLow.FISC_YEAR}
+          data-abap="{type:'NUMC', alpha:'GJAHR', mid:'GJR', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Invoicing Run ID">
+    <Input value={this.searchParamLow.PROCESSID}
+          data-abap="{type:'CHAR', length:'16'}"
+    />
+</FormItem>
+<FormItem label="Business Partner Number">
+    <Input value={this.searchParamLow.PARTNER}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BPA', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Invoice Reversed?">
+    <Input value={this.searchParamLow.FLG_REVERSAL}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Entered by">
+    <Input value={this.searchParamLow.RERF}
+          data-abap="{type:'CHAR', length:'12'}"
+    />
+</FormItem>
+<FormItem label="First Entered on">
+    <DatePicker value={this.searchParamLow.DERF}/>
+</FormItem>
+<FormItem label="Time of Initial Entry">
+    <TimePicker value={this.searchParamLow.TERF}/>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="INVNO" data-abap.bind="{type:'NUMC', length:'10'}" label="Invoice Number"></ui-dg-column>
+<ui-dg-column sortable field="FISC_YEAR" data-abap.bind="{type:'NUMC', alpha:'GJAHR', mid:'GJR', length:'4'}" label="Fiscal Year"></ui-dg-column>
+<ui-dg-column sortable field="PROCESSID" data-abap.bind="{type:'CHAR', length:'16'}" label="Invoicing Run ID"></ui-dg-column>
+<ui-dg-column sortable field="PARTNER" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BPA', length:'10'}" label="Business Partner Number"></ui-dg-column>
+<ui-dg-column sortable field="FLG_REVERSAL" data-abap.bind="{type:'CHAR', length:'1'}" label="Invoice Reversed?"></ui-dg-column>
+<ui-dg-column sortable field="RERF" data-abap.bind="{type:'CHAR', length:'12'}" label="Entered by"></ui-dg-column>
+<ui-dg-column sortable field="DERF" data-abap.bind="{type:'DATS'}" label="First Entered on"></ui-dg-column>
+<ui-dg-column sortable field="TERF" data-abap.bind="{type:'TIMS'}" label="Time of Initial Entry"></ui-dg-column>
+</ui-datagrid>

@@ -1,0 +1,25 @@
+<!-- SH AUKOD Networks by sales order : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Sales Order Number">
+    <Input value={this.searchParamLow.KDAUF}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Sales Order Item">
+    <Input value={this.searchParamLow.KDPOS}
+          data-abap="{type:'NUMC', mid:'AUP', length:'6'}"
+    />
+</FormItem>
+<FormItem label="Network number">
+    <Input value={this.searchParamLow.AUFNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="KDAUF" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}" label="Sales Order Number"></ui-dg-column>
+<ui-dg-column sortable field="KDPOS" data-abap.bind="{type:'NUMC', mid:'AUP', length:'6'}" label="Sales Order Item"></ui-dg-column>
+<ui-dg-column sortable field="AUFNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}" label="Network number"></ui-dg-column>
+</ui-datagrid>

@@ -1,0 +1,36 @@
+<!-- SH MBANP Purchase Requisitions for Project : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Data element matchcode entry (F4 help)">
+    <Input value={this.searchParamLow.POSID}
+          data-abap="{type:'CHAR', alpha:'PMACO', length:'24'}"
+    />
+</FormItem>
+<FormItem label="Purchase requisition number">
+    <Input value={this.searchParamLow.BANFN}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BAN', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Item number of purchase requisition">
+    <Input value={this.searchParamLow.BNFPO}
+          data-abap="{type:'NUMC', mid:'BAP', length:'5'}"
+    />
+</FormItem>
+<FormItem label="Serial number for PReq account assignment segment">
+    <Input value={this.searchParamLow.ZEBKN}
+          data-abap="{type:'NUMC', length:'2'}"
+    />
+</FormItem>
+<FormItem label="Work Breakdown Structure Element (WBS Element)">
+    <Input value={this.searchParamLow.PS_PSP_PNR}
+          data-abap="{type:'NUMC', alpha:'ABPSP', length:'8'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="POSID" data-abap.bind="{type:'CHAR', alpha:'PMACO', length:'24'}" label="Data element matchcode entry (F4 help)"></ui-dg-column>
+<ui-dg-column sortable field="BANFN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BAN', length:'10'}" label="Purchase requisition number"></ui-dg-column>
+<ui-dg-column sortable field="BNFPO" data-abap.bind="{type:'NUMC', mid:'BAP', length:'5'}" label="Item number of purchase requisition"></ui-dg-column>
+<ui-dg-column sortable field="ZEBKN" data-abap.bind="{type:'NUMC', length:'2'}" label="Serial number for PReq account assignment segment"></ui-dg-column>
+</ui-datagrid>

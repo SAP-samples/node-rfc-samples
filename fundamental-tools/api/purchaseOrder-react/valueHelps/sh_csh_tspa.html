@@ -1,0 +1,19 @@
+<!-- SH CSH_TSPA Division : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Division">
+    <Input value={this.searchParamLow.SPART}
+          data-abap="{type:'CHAR', mid:'SPA', length:'2'}"
+    />
+</FormItem>
+<FormItem label="Name">
+    <Input value={this.searchParamLow.VTEXT}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="SPART" data-abap.bind="{type:'CHAR', mid:'SPA', length:'2'}" label="Division"></ui-dg-column>
+<ui-dg-column sortable field="VTEXT" data-abap.bind="{type:'CHAR', length:'20'}" label="Name"></ui-dg-column>
+</ui-datagrid>

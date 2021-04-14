@@ -1,0 +1,87 @@
+<!-- SH RECNCNK Contracts by Adjustment Rules : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Term Number">
+    <Input value={this.searchParamLow.TERMNO}
+          data-abap="{type:'CHAR', alpha:'ALPHA', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Adjustment Rule">
+    <Input value={this.searchParamLow.ADJMRULE}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'REAJADJMRULE', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Valid-From Date of Term">
+    <DatePicker value={this.searchParamLow.VALIDFROM}/>
+</FormItem>
+<FormItem label="Valid-To Date of Term">
+    <DatePicker value={this.searchParamLow.VALIDTO}/>
+</FormItem>
+<FormItem label="Company Code">
+    <Input value={this.searchParamLow.BUKRS}
+          data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Contract Type">
+    <Input value={this.searchParamLow.RECNTYPE}
+          data-abap="{type:'CHAR', mid:'RECNTYPE', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Contract Number">
+    <Input value={this.searchParamLow.RECNNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}"
+    />
+</FormItem>
+<FormItem label="Date of contract start">
+    <DatePicker value={this.searchParamLow.RECNBEG}/>
+</FormItem>
+<FormItem label="Term End Date">
+    <DatePicker value={this.searchParamLow.RECNENDABS}/>
+</FormItem>
+<FormItem label="Contract name">
+    <Input value={this.searchParamLow.RECNTXT}
+          data-abap="{type:'CHAR', length:'80'}"
+    />
+</FormItem>
+<FormItem label="Person Responsible">
+    <Input value={this.searchParamLow.RESPONSIBLE}
+          data-abap="{type:'CHAR', length:'12'}"
+    />
+</FormItem>
+<FormItem label="Authorization Group">
+    <Input value={this.searchParamLow.AUTHGRP}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Business Entity That Belongs to Contract">
+    <Input value={this.searchParamLow.BENOCN}
+          data-abap="{type:'CHAR', alpha:'SWENR', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Object Number">
+    <Input value={this.searchParamLow.OBJNR}
+          data-abap="{type:'CHAR', mid:'ONR', length:'22'}"
+    />
+</FormItem>
+<FormItem label="Internal Key of Real Estate Object (FI)">
+    <Input value={this.searchParamLow.IMKEY}
+          data-abap="{type:'CHAR', alpha:'IMKEY', length:'8'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="RECNTYPE" data-abap.bind="{type:'CHAR', mid:'RECNTYPE', length:'4'}" label="Contract Type"></ui-dg-column>
+<ui-dg-column sortable field="RECNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}" label="Contract Number"></ui-dg-column>
+<ui-dg-column sortable field="RECNBEG" data-abap.bind="{type:'DATS'}" label="Date of contract start"></ui-dg-column>
+<ui-dg-column sortable field="RECNENDABS" data-abap.bind="{type:'DATS', alpha:'REDAT'}" label="Term End Date"></ui-dg-column>
+<ui-dg-column sortable field="BENOCN" data-abap.bind="{type:'CHAR', alpha:'SWENR', length:'8'}" label="Business Entity That Belongs to Contract"></ui-dg-column>
+<ui-dg-column sortable field="RECNTXT" data-abap.bind="{type:'CHAR', length:'80'}" label="Contract name"></ui-dg-column>
+<ui-dg-column sortable field="RESPONSIBLE" data-abap.bind="{type:'CHAR', length:'12'}" label="Person Responsible"></ui-dg-column>
+<ui-dg-column sortable field="AUTHGRP" data-abap.bind="{type:'CHAR', length:'40'}" label="Authorization Group"></ui-dg-column>
+<ui-dg-column sortable field="ADJMRULE" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'REAJADJMRULE', length:'10'}" label="Adjustment Rule"></ui-dg-column>
+<ui-dg-column sortable field="TERMNO" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'4'}" label="Term Number"></ui-dg-column>
+<ui-dg-column sortable field="VALIDFROM" data-abap.bind="{type:'DATS'}" label="Valid-From Date of Term"></ui-dg-column>
+<ui-dg-column sortable field="VALIDTO" data-abap.bind="{type:'DATS', alpha:'REDAT'}" label="Valid-To Date of Term"></ui-dg-column>
+</ui-datagrid>

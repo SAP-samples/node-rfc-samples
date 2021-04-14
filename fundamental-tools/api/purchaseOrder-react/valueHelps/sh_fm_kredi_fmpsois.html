@@ -1,0 +1,25 @@
+<!-- SH FM_KREDI_FMPSOIS Proceed Initially According to Creditor Sub-Ledger Account : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Account Number of Vendor or Creditor">
+    <Input value={this.searchParamLow.LIFNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Subledger acct preprocessing procedure">
+    <Input value={this.searchParamLow.PSOIS}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Revnue Type">
+    <Input value={this.searchParamLow.PSOEA}
+          data-abap="{type:'CHAR', length:'8'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="LIFNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}" label="Account Number of Vendor or Creditor"></ui-dg-column>
+<ui-dg-column sortable field="PSOEA" data-abap.bind="{type:'CHAR', length:'8'}" label="Revnue Type"></ui-dg-column>
+<ui-dg-column sortable field="PSOIS" data-abap.bind="{type:'CHAR', length:'20'}" label="Subledger acct preprocessing procedure"></ui-dg-column>
+</ui-datagrid>

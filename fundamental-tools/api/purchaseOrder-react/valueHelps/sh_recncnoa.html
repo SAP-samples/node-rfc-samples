@@ -1,0 +1,123 @@
+<!-- SH RECNCNOA Contracts Using Assignments : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Complete Object ID with Search Help by Assignment">
+    <Input value={this.searchParamLow.IDENTTRG}
+          data-abap="{type:'CHAR', length:'50'}"
+    />
+</FormItem>
+<FormItem label="Object Type">
+    <Input value={this.searchParamLow.OBJTYPESRC}
+          data-abap="{type:'CHAR', length:'2'}"
+    />
+</FormItem>
+<FormItem label="Object Number">
+    <Input value={this.searchParamLow.OBJNRTRG}
+          data-abap="{type:'CHAR', mid:'ONR', length:'22'}"
+    />
+</FormItem>
+<FormItem label="Company Code">
+    <Input value={this.searchParamLow.BUKRS}
+          data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Contract Type">
+    <Input value={this.searchParamLow.RECNTYPE}
+          data-abap="{type:'CHAR', mid:'RECNTYPE', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Contract Number">
+    <Input value={this.searchParamLow.RECNNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}"
+    />
+</FormItem>
+<FormItem label="Date of contract start">
+    <DatePicker value={this.searchParamLow.RECNBEG}/>
+</FormItem>
+<FormItem label="Term End Date">
+    <DatePicker value={this.searchParamLow.RECNENDABS}/>
+</FormItem>
+<FormItem label="Contract name">
+    <Input value={this.searchParamLow.RECNTXT}
+          data-abap="{type:'CHAR', length:'80'}"
+    />
+</FormItem>
+<FormItem label="Industry">
+    <Input value={this.searchParamLow.INDUSTRY}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Relevant to Sales">
+    <Input value={this.searchParamLow.SRRELEVANT}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Contract Notice Per">
+    <DatePicker value={this.searchParamLow.RECNNOTPER}/>
+</FormItem>
+<FormItem label="Reason for Notice">
+    <Input value={this.searchParamLow.RECNNOTREASON}
+          data-abap="{type:'NUMC', length:'2'}"
+    />
+</FormItem>
+<FormItem label="Person Responsible">
+    <Input value={this.searchParamLow.RESPONSIBLE}
+          data-abap="{type:'CHAR', length:'12'}"
+    />
+</FormItem>
+<FormItem label="Authorization Group">
+    <Input value={this.searchParamLow.AUTHGRP}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Company code of main contract">
+    <Input value={this.searchParamLow.RECNBUKRSCOLLECT}
+          data-abap="{type:'CHAR', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Number of Real Estate Main Contract">
+    <Input value={this.searchParamLow.RECNNRCOLLECT}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}"
+    />
+</FormItem>
+<FormItem label="Number of old contract">
+    <Input value={this.searchParamLow.RECNTXTOLD}
+          data-abap="{type:'CHAR', alpha:'ALPHA', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Business Entity That Belongs to Contract">
+    <Input value={this.searchParamLow.BENOCN}
+          data-abap="{type:'CHAR', alpha:'SWENR', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Object Number">
+    <Input value={this.searchParamLow.OBJNR}
+          data-abap="{type:'CHAR', mid:'ONR', length:'22'}"
+    />
+</FormItem>
+<FormItem label="Internal Key of Real Estate Object (FI)">
+    <Input value={this.searchParamLow.IMKEY}
+          data-abap="{type:'CHAR', alpha:'IMKEY', length:'8'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="IDENTTRG" data-abap.bind="{type:'CHAR', length:'50'}" label="Complete Object ID with Search Help by Assignment"></ui-dg-column>
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="RECNTYPE" data-abap.bind="{type:'CHAR', mid:'RECNTYPE', length:'4'}" label="Contract Type"></ui-dg-column>
+<ui-dg-column sortable field="RECNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}" label="Contract Number"></ui-dg-column>
+<ui-dg-column sortable field="RECNBEG" data-abap.bind="{type:'DATS'}" label="Date of contract start"></ui-dg-column>
+<ui-dg-column sortable field="RECNENDABS" data-abap.bind="{type:'DATS', alpha:'REDAT'}" label="Term End Date"></ui-dg-column>
+<ui-dg-column sortable field="BENOCN" data-abap.bind="{type:'CHAR', alpha:'SWENR', length:'8'}" label="Business Entity That Belongs to Contract"></ui-dg-column>
+<ui-dg-column sortable field="RECNTXT" data-abap.bind="{type:'CHAR', length:'80'}" label="Contract name"></ui-dg-column>
+<ui-dg-column sortable field="INDUSTRY" data-abap.bind="{type:'CHAR', length:'10'}" label="Industry"></ui-dg-column>
+<ui-dg-column sortable field="SRRELEVANT" data-abap.bind="{type:'CHAR', length:'1'}" label="Relevant to Sales"></ui-dg-column>
+<ui-dg-column sortable field="RECNNOTPER" data-abap.bind="{type:'DATS'}" label="Contract Notice Per"></ui-dg-column>
+<ui-dg-column sortable field="RECNNOTREASON" data-abap.bind="{type:'NUMC', length:'2'}" label="Reason for Notice"></ui-dg-column>
+<ui-dg-column sortable field="RESPONSIBLE" data-abap.bind="{type:'CHAR', length:'12'}" label="Person Responsible"></ui-dg-column>
+<ui-dg-column sortable field="AUTHGRP" data-abap.bind="{type:'CHAR', length:'40'}" label="Authorization Group"></ui-dg-column>
+<ui-dg-column sortable field="RECNBUKRSCOLLECT" data-abap.bind="{type:'CHAR', length:'4'}" label="Company code of main contract"></ui-dg-column>
+<ui-dg-column sortable field="RECNNRCOLLECT" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}" label="Number of Real Estate Main Contract"></ui-dg-column>
+<ui-dg-column sortable field="RECNTXTOLD" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'20'}" label="Number of old contract"></ui-dg-column>
+</ui-datagrid>

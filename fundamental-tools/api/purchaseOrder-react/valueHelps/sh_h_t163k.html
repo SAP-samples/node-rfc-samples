@@ -1,0 +1,20 @@
+<!-- SH H_T163K Account assignment category : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Account assignment category">
+    <ComboBox value={this.searchParamLow.KNTTP}
+        items="{type: 'CT', id: 'T163K'}"
+        data-abap="{type:'CHAR', mid:'KNT', length:'1'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Account Assignment Category Description">
+    <Input value={this.searchParamLow.KNTTX}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="KNTTP" data-abap.bind="{type:'CHAR', mid:'KNT', length:'1'}" label="Account assignment category"></ui-dg-column>
+<ui-dg-column sortable field="KNTTX" data-abap.bind="{type:'CHAR', length:'20'}" label="Account Assignment Category Description"></ui-dg-column>
+</ui-datagrid>

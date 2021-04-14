@@ -1,0 +1,91 @@
+<!-- SH RECNCNSE1 Simple Search for Contract : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Input Field for Full Text Search">
+    <Input value={this.searchParamLow.S/RP/SEARCH_TERM}
+          data-abap="{type:'CHAR', length:'45'}"
+    />
+</FormItem>
+<FormItem label="Option Fuzzy Mode">
+    <Input value={this.searchParamLow.S/RP/MODE_FUZZY}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Business Object for Search Engine Service (SES)">
+    <Input value={this.searchParamLow.BUSINESS_OBJECT}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Type of Business Object">
+    <Input value={this.searchParamLow.OBJECT_TYPE}
+          data-abap="{type:'CHAR', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Company Code">
+    <Input value={this.searchParamLow.BUKRS}
+          data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Contract Number">
+    <Input value={this.searchParamLow.EXTERNAL_KEY}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}"
+    />
+</FormItem>
+<FormItem label="Contract name">
+    <Input value={this.searchParamLow.RECNTXT}
+          data-abap="{type:'CHAR', length:'80'}"
+    />
+</FormItem>
+<FormItem label="Description">
+    <Input value={this.searchParamLow.XINDUSTRY}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Search Help Field 1 (Name 1/Last Name)">
+    <Input value={this.searchParamLow.MC_NAME1}
+          data-abap="{type:'CHAR', length:'35'}"
+    />
+</FormItem>
+<FormItem label="Search Help Field 2 (Name 2/First Name)">
+    <Input value={this.searchParamLow.MC_NAME2}
+          data-abap="{type:'CHAR', length:'35'}"
+    />
+</FormItem>
+<FormItem label="BP Role Description">
+    <Input value={this.searchParamLow.RLTXT}
+          data-abap="{type:'CHAR', length:'50'}"
+    />
+</FormItem>
+<FormItem label="City">
+    <Input value={this.searchParamLow.CITY1}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Street">
+    <Input value={this.searchParamLow.STREET}
+          data-abap="{type:'CHAR', length:'60'}"
+    />
+</FormItem>
+<FormItem label="Object Number">
+    <Input value={this.searchParamLow.OBJECT_ID}
+          data-abap="{type:'CHAR', mid:'ONR', length:'22'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="S/RP/SEARCH_TERM" data-abap.bind="{type:'CHAR', length:'45'}" label="Input Field for Full Text Search"></ui-dg-column>
+<ui-dg-column sortable field="S/RP/MODE_FUZZY" data-abap.bind="{type:'CHAR', length:'1'}" label="Option Fuzzy Mode"></ui-dg-column>
+<ui-dg-column sortable field="BUSINESS_OBJECT" data-abap.bind="{type:'CHAR', length:'10'}" label="Business Object for Search Engine Service (SES)"></ui-dg-column>
+<ui-dg-column sortable field="OBJECT_TYPE" data-abap.bind="{type:'CHAR', length:'10'}" label="Type of Business Object"></ui-dg-column>
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="EXTERNAL_KEY" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}" label="Contract Number"></ui-dg-column>
+<ui-dg-column sortable field="RECNTXT" data-abap.bind="{type:'CHAR', length:'80'}" label="Contract name"></ui-dg-column>
+<ui-dg-column sortable field="XINDUSTRY" data-abap.bind="{type:'CHAR', length:'20'}" label="Description"></ui-dg-column>
+<ui-dg-column sortable field="MC_NAME1" data-abap.bind="{type:'CHAR', length:'35'}" label="Search Help Field 1 (Name 1/Last Name)"></ui-dg-column>
+<ui-dg-column sortable field="MC_NAME2" data-abap.bind="{type:'CHAR', length:'35'}" label="Search Help Field 2 (Name 2/First Name)"></ui-dg-column>
+<ui-dg-column sortable field="RLTXT" data-abap.bind="{type:'CHAR', length:'50'}" label="BP Role Description"></ui-dg-column>
+<ui-dg-column sortable field="CITY1" data-abap.bind="{type:'CHAR', length:'40'}" label="City"></ui-dg-column>
+<ui-dg-column sortable field="STREET" data-abap.bind="{type:'CHAR', length:'60'}" label="Street"></ui-dg-column>
+<ui-dg-column sortable field="OBJECT_ID" data-abap.bind="{type:'CHAR', mid:'ONR', length:'22'}" label="Object Number"></ui-dg-column>
+</ui-datagrid>

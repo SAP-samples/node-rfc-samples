@@ -1,0 +1,52 @@
+<!-- SH EQUIZ Equipment by Fleet Identification Data : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Identification number for fleet object">
+    <Input value={this.searchParamLow.FLEET_NUM}
+          data-abap="{type:'CHAR', length:'18'}"
+    />
+</FormItem>
+<FormItem label="License plate number">
+    <Input value={this.searchParamLow.LICENSE_NUM}
+          data-abap="{type:'CHAR', length:'15'}"
+    />
+</FormItem>
+<FormItem label="Validity end date">
+    <DatePicker value={this.searchParamLow.EXPIRY_DATE}/>
+</FormItem>
+<FormItem label="Manufacturer Vehicle Identification Number for Fleet Object">
+    <Input value={this.searchParamLow.FLEET_VIN}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+<FormItem label="Chassis number">
+    <Input value={this.searchParamLow.CHASSIS_NUM}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+<FormItem label="Equipment Number">
+    <Input value={this.searchParamLow.EQUNR}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Equipment description in capital letters">
+    <Input value={this.searchParamLow.EQKTU}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Language Key">
+    <Input value={this.searchParamLow.SPRAS}
+          data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="FLEET_NUM" data-abap.bind="{type:'CHAR', length:'18'}" label="Identification number for fleet object"></ui-dg-column>
+<ui-dg-column sortable field="LICENSE_NUM" data-abap.bind="{type:'CHAR', length:'15'}" label="License plate number"></ui-dg-column>
+<ui-dg-column sortable field="EXPIRY_DATE" data-abap.bind="{type:'DATS'}" label="Validity end date"></ui-dg-column>
+<ui-dg-column sortable field="FLEET_VIN" data-abap.bind="{type:'CHAR', length:'30'}" label="Manufacturer Vehicle Identification Number for Fleet Object"></ui-dg-column>
+<ui-dg-column sortable field="CHASSIS_NUM" data-abap.bind="{type:'CHAR', length:'30'}" label="Chassis number"></ui-dg-column>
+<ui-dg-column sortable field="EQUNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}" label="Equipment Number"></ui-dg-column>
+<ui-dg-column sortable field="EQKTU" data-abap.bind="{type:'CHAR', length:'40'}" label="Equipment description in capital letters"></ui-dg-column>
+</ui-datagrid>

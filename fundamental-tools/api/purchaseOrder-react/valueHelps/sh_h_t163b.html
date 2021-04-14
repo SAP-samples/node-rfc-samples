@@ -1,0 +1,20 @@
+<!-- SH H_T163B Purchase Order History Category : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Purchase Order History Category">
+    <ComboBox value={this.searchParamLow.BEWTP}
+        items="{type: 'CT', id: 'T163B'}"
+        data-abap="{type:'CHAR', length:'1'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Short Text for Purchase Order History Category">
+    <Input value={this.searchParamLow.BEWTK}
+          data-abap="{type:'CHAR', length:'4'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BEWTP" data-abap.bind="{type:'CHAR', length:'1'}" label="Purchase Order History Category"></ui-dg-column>
+<ui-dg-column sortable field="BEWTK" data-abap.bind="{type:'CHAR', length:'4'}" label="Short Text for Purchase Order History Category"></ui-dg-column>
+</ui-datagrid>

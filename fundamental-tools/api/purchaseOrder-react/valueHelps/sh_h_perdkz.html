@@ -1,0 +1,30 @@
+<!-- SH H_PERDKZ Period Indicator for Shelf Life Expiration Date : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Period Indicator for Shelf Life Expiration Date">
+    <ComboBox value={this.searchParamLow.IPRKZ}
+        items="{type: 'SH', id: 'H_PERDKZ'}"
+        data-abap="{type:'CHAR', alpha:'PERKZ', length:'1'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="SLED Period indicator active">
+    <Input value={this.searchParamLow.IPRKZ_ACT}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Period indicator">
+    <Input value={this.searchParamLow.EPRKZ}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Description of date type">
+    <Input value={this.searchParamLow.PRTXT}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="EPRKZ" data-abap.bind="{type:'CHAR', length:'1'}" label="Period indicator"></ui-dg-column>
+<ui-dg-column sortable field="PRTXT" data-abap.bind="{type:'CHAR', length:'20'}" label="Description of date type"></ui-dg-column>
+</ui-datagrid>

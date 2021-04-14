@@ -1,0 +1,25 @@
+<!-- SH H_T023 Material Group : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Material Group">
+    <Input value={this.searchParamLow.MATKL}
+          data-abap="{type:'CHAR', mid:'MKL', length:'9'}"
+    />
+</FormItem>
+<FormItem label="Material Group Description">
+    <Input value={this.searchParamLow.WGBEZ}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Long text describing the material group">
+    <Input value={this.searchParamLow.WGBEZ60}
+          data-abap="{type:'CHAR', length:'60'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="MATKL" data-abap.bind="{type:'CHAR', mid:'MKL', length:'9'}" label="Material Group"></ui-dg-column>
+<ui-dg-column sortable field="WGBEZ" data-abap.bind="{type:'CHAR', length:'20'}" label="Material Group Description"></ui-dg-column>
+<ui-dg-column sortable field="WGBEZ60" data-abap.bind="{type:'CHAR', length:'60'}" label="Long text describing the material group"></ui-dg-column>
+</ui-datagrid>

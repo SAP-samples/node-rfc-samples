@@ -1,0 +1,63 @@
+<!-- SH MCMED Rental units in a business entity : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Company Code">
+    <Input value={this.searchParamLow.BUKRS}
+          data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Business Entity Number">
+    <Input value={this.searchParamLow.SWENR}
+          data-abap="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Number of Rental Unit">
+    <Input value={this.searchParamLow.SMENR}
+          data-abap="{type:'CHAR', alpha:'SMENR', mid:'MEH', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Business entity identification">
+    <Input value={this.searchParamLow.XWETEXT}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+<FormItem label="Rental unit external usage type">
+    <Input value={this.searchParamLow.SNUNR}
+          data-abap="{type:'NUMC', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Number of rental unit in existing real estate system">
+    <Input value={this.searchParamLow.SALTNR}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Date of initial usage">
+    <DatePicker value={this.searchParamLow.DBEZU}/>
+</FormItem>
+<FormItem label="Text for rental unit">
+    <Input value={this.searchParamLow.XMETXT}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+<FormItem label="Service Charge Collector Number">
+    <Input value={this.searchParamLow.OBJNR}
+          data-abap="{type:'CHAR', length:'22'}"
+    />
+</FormItem>
+<FormItem label="Internal Key for Real Estate Object">
+    <Input value={this.searchParamLow.IMKEY}
+          data-abap="{type:'CHAR', alpha:'IMKEY', length:'8'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="SWENR" data-abap.bind="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}" label="Business Entity Number"></ui-dg-column>
+<ui-dg-column sortable field="SMENR" data-abap.bind="{type:'CHAR', alpha:'SMENR', mid:'MEH', length:'8'}" label="Number of Rental Unit"></ui-dg-column>
+<ui-dg-column sortable field="SNUNR" data-abap.bind="{type:'NUMC', length:'4'}" label="Rental unit external usage type"></ui-dg-column>
+<ui-dg-column sortable field="XWETEXT" data-abap.bind="{type:'CHAR', length:'30'}" label="Business entity identification"></ui-dg-column>
+<ui-dg-column sortable field="SALTNR" data-abap.bind="{type:'CHAR', length:'20'}" label="Number of rental unit in existing real estate system"></ui-dg-column>
+<ui-dg-column sortable field="DBEZU" data-abap.bind="{type:'DATS'}" label="Date of initial usage"></ui-dg-column>
+<ui-dg-column sortable field="XMETXT" data-abap.bind="{type:'CHAR', length:'30'}" label="Text for rental unit"></ui-dg-column>
+</ui-datagrid>

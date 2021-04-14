@@ -1,0 +1,178 @@
+<!-- SH MMBSI_MEKK_DBSH_CC_E Search Help for Central Contracts : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Release Quantity">
+    <Input value={this.searchParamLow.MMBSI_MENGE}
+          data-abap="{type:'QUAN', unit:'!notfound', length:'+10.3'}"
+    />
+</FormItem>
+<FormItem label="Release Value">
+    <Input value={this.searchParamLow.MMBSI_NETWR}
+          data-abap="{type:'CURR', unit:'!notfound', length:'+14.2'}"
+    />
+</FormItem>
+<FormItem label="Purchasing Document Number">
+    <ComboBox value={this.searchParamLow.EBELN}
+        items="{type: 'CH', id: 'EKKO'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Item Number of Purchasing Document">
+    <ComboBox value={this.searchParamLow.EBELP}
+        items="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Short Text">
+    <Input value={this.searchParamLow.TXZ01}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Material Number">
+    <ComboBox value={this.searchParamLow.MATNR}
+        items="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Target Quantity">
+    <Input value={this.searchParamLow.KTMNG}
+          data-abap="{type:'QUAN', unit:'MEINS', length:'10.3'}"
+    />
+</FormItem>
+<FormItem label="Target Value for Header Area per Distribution">
+    <Input value={this.searchParamLow.KTWRT}
+          data-abap="{type:'CURR', unit:'WAERS', length:'14.2'}"
+    />
+</FormItem>
+<FormItem label="Base Unit of Measure">
+    <ComboBox value={this.searchParamLow.MEINS}
+        items="{type: 'CT', id: 'T006'}"
+        data-abap="{type:'UNIT', alpha:'CUNIT', length:'3'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Net Price in Purchasing Document (in Document Currency)">
+    <Input value={this.searchParamLow.NETPR}
+          data-abap="{type:'CURR', unit:'WAERS', length:'10.2'}"
+    />
+</FormItem>
+<FormItem label="Central Contract">
+    <ComboBox value={this.searchParamLow.SRM_CONTRACT_ID}
+        items="{type: 'SH', id: 'MMBSI_MEKK_CC'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Central Contract Item Number">
+    <Input value={this.searchParamLow.SRM_CONTRACT_ITM}
+          data-abap="{type:'NUMC', length:'10'}"
+    />
+</FormItem>
+<FormItem label="Company Code">
+    <ComboBox value={this.searchParamLow.BUKRS}
+        items="{type: 'SH', id: 'C_T001'}"
+        data-abap="{type:'CHAR', mid:'BUK', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Purchasing Document Category">
+    <ComboBox value={this.searchParamLow.BSTYP}
+        items="{type: 'FV', id: 'EBSTYP'}"
+        data-abap="{type:'CHAR', length:'1'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Status of Purchasing Document">
+    <ComboBox value={this.searchParamLow.STATU}
+        items="{type: 'FV', id: 'ESTAK'}"
+        data-abap="{type:'CHAR', length:'1'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Account Number of Vendor or Creditor">
+    <ComboBox value={this.searchParamLow.LIFNR}
+        items="{type: 'SH', id: 'KRED'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Terms of Payment Key">
+    <Input value={this.searchParamLow.ZTERM}
+          data-abap="{type:'CHAR', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Purchasing organization">
+    <ComboBox value={this.searchParamLow.EKORG}
+        items="{type: 'CT', id: 'T024E'}"
+        data-abap="{type:'CHAR', mid:'EKO', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Currency Key">
+    <ComboBox value={this.searchParamLow.WAERS}
+        items="{type: 'CT', id: 'TCURC'}"
+        data-abap="{type:'CUKY', mid:'FWS', length:'5'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Start of Validity Period">
+    <DatePicker value={this.searchParamLow.KDATB}/>
+</FormItem>
+<FormItem label="End of Validity Period">
+    <DatePicker value={this.searchParamLow.KDATE}/>
+</FormItem>
+<FormItem label="Part of a Contract Hierarchy">
+    <CheckBox value={this.searchParamLow.HIERARCHY_EXISTS}/>
+</FormItem>
+<FormItem label="Threshold Value for Exchange Rates Exists">
+    <CheckBox value={this.searchParamLow.THRESHOLD_EXISTS}/>
+</FormItem>
+<FormItem label="Contract Name">
+    <Input value={this.searchParamLow.DESCRIPTION}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Date of Last Change">
+    <DatePicker value={this.searchParamLow.AEDAT}/>
+</FormItem>
+<FormItem label="Release Date of Contract">
+    <DatePicker value={this.searchParamLow.RELEASE_DATE}/>
+</FormItem>
+<FormItem label="Plant">
+    <ComboBox value={this.searchParamLow.WERKS}
+        items="{type: 'CT', id: 'T001W'}"
+        data-abap="{type:'CHAR', mid:'WRK', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Deletion indicator in purchasing document">
+    <Input value={this.searchParamLow.LOEKZ}
+          data-abap="{type:'CHAR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Item category in purchasing document">
+    <ComboBox value={this.searchParamLow.PSTYP}
+        items="{type: 'CT', id: 'T163'}"
+        data-abap="{type:'CHAR', length:'1'}">
+    </ComboBox>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="SRM_CONTRACT_ID" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'10'}" label="Central Contract"></ui-dg-column>
+<ui-dg-column sortable field="SRM_CONTRACT_ITM" data-abap.bind="{type:'NUMC', length:'10'}" label="Central Contract Item Number"></ui-dg-column>
+<ui-dg-column sortable field="EBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}" label="Purchasing Document Number"></ui-dg-column>
+<ui-dg-column sortable field="EBELP" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}" label="Item Number of Purchasing Document"></ui-dg-column>
+<ui-dg-column sortable field="DESCRIPTION" data-abap.bind="{type:'CHAR', length:'40'}" label="Contract Name"></ui-dg-column>
+<ui-dg-column sortable field="KDATB" data-abap.bind="{type:'DATS'}" label="Start of Validity Period"></ui-dg-column>
+<ui-dg-column sortable field="KDATE" data-abap.bind="{type:'DATS'}" label="End of Validity Period"></ui-dg-column>
+<ui-dg-column sortable field="MATNR" data-abap.bind="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}" label="Material Number"></ui-dg-column>
+<ui-dg-column sortable field="TXZ01" data-abap.bind="{type:'CHAR', length:'40'}" label="Short Text"></ui-dg-column>
+<ui-dg-column sortable field="WERKS" data-abap.bind="{type:'CHAR', mid:'WRK', length:'4'}" label="Plant"></ui-dg-column>
+<ui-dg-column sortable field="LOEKZ" data-abap.bind="{type:'CHAR', length:'1'}" label="Deletion indicator in purchasing document"></ui-dg-column>
+<ui-dg-column sortable field="LIFNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}" label="Account Number of Vendor or Creditor"></ui-dg-column>
+<ui-dg-column sortable field="EKORG" data-abap.bind="{type:'CHAR', mid:'EKO', length:'4'}" label="Purchasing organization"></ui-dg-column>
+<ui-dg-column sortable field="HIERARCHY_EXISTS" data-abap.bind="{type:'CHAR', length:'1'}" label="Part of a Contract Hierarchy"></ui-dg-column>
+<ui-dg-column sortable field="THRESHOLD_EXISTS" data-abap.bind="{type:'CHAR', length:'1'}" label="Threshold Value for Exchange Rates Exists"></ui-dg-column>
+<ui-dg-column sortable field="KTWRT" data-abap.bind="{type:'CURR', unit:'WAERS', length:'14.2'}" label="Target Value for Header Area per Distribution"></ui-dg-column>
+<ui-dg-column sortable field="MMBSI_NETWR" data-abap.bind="{type:'CURR', unit:'!notfound', length:'+14.2'}" label="Release Value"></ui-dg-column>
+<ui-dg-column sortable field="NETPR" data-abap.bind="{type:'CURR', unit:'WAERS', length:'10.2'}" label="Net Price in Purchasing Document (in Document Currency)"></ui-dg-column>
+<ui-dg-column sortable field="WAERS" data-abap.bind="{type:'CUKY', mid:'FWS', length:'5'}" label="Currency Key"></ui-dg-column>
+<ui-dg-column sortable field="ZTERM" data-abap.bind="{type:'CHAR', length:'4'}" label="Terms of Payment Key"></ui-dg-column>
+<ui-dg-column sortable field="KTMNG" data-abap.bind="{type:'QUAN', unit:'MEINS', length:'10.3'}" label="Target Quantity"></ui-dg-column>
+<ui-dg-column sortable field="MMBSI_MENGE" data-abap.bind="{type:'QUAN', unit:'!notfound', length:'+10.3'}" label="Release Quantity"></ui-dg-column>
+<ui-dg-column sortable field="MEINS" data-abap.bind="{type:'UNIT', alpha:'CUNIT', length:'3'}" label="Base Unit of Measure"></ui-dg-column>
+<ui-dg-column sortable field="AEDAT" data-abap.bind="{type:'DATS'}" label="Date of Last Change"></ui-dg-column>
+<ui-dg-column sortable field="RELEASE_DATE" data-abap.bind="{type:'DATS'}" label="Release Date of Contract"></ui-dg-column>
+</ui-datagrid>

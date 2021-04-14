@@ -1,0 +1,80 @@
+<!-- SH MCMES Rental Units with Separate Ownership : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Company Code">
+    <Input value={this.searchParamLow.BUKRS}
+          data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Business Entity Number">
+    <Input value={this.searchParamLow.SWENR}
+          data-abap="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Number of Rental Unit">
+    <Input value={this.searchParamLow.SMENR}
+          data-abap="{type:'CHAR', alpha:'SMENR', mid:'MEH', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Building Number">
+    <Input value={this.searchParamLow.SGENR}
+          data-abap="{type:'CHAR', alpha:'SGENR', mid:'GEB', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Land Number for BE">
+    <Input value={this.searchParamLow.SGRNR}
+          data-abap="{type:'CHAR', alpha:'SGRNR', mid:'GRS', length:'8'}"
+    />
+</FormItem>
+<FormItem label="Number of rental unit in existing real estate system">
+    <Input value={this.searchParamLow.SALTNR}
+          data-abap="{type:'CHAR', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Date of initial usage">
+    <DatePicker value={this.searchParamLow.DBEZU}/>
+</FormItem>
+<FormItem label="Short name of floor">
+    <Input value={this.searchParamLow.XSTOCKK}
+          data-abap="{type:'CHAR', alpha:'ALPHA', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Location on Floor">
+    <Input value={this.searchParamLow.RLGESCH}
+          data-abap="{type:'CHAR', alpha:'ALPHA', length:'2'}"
+    />
+</FormItem>
+<FormItem label="Language Key">
+    <Input value={this.searchParamLow.SPRAS}
+          data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+    />
+</FormItem>
+<FormItem label="Text for rental unit">
+    <Input value={this.searchParamLow.XMETXT}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+<FormItem label="Service Charge Collector Number">
+    <Input value={this.searchParamLow.OBJNR}
+          data-abap="{type:'CHAR', length:'22'}"
+    />
+</FormItem>
+<FormItem label="Internal Key for Real Estate Object">
+    <Input value={this.searchParamLow.IMKEY}
+          data-abap="{type:'CHAR', alpha:'IMKEY', length:'8'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="SWENR" data-abap.bind="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}" label="Business Entity Number"></ui-dg-column>
+<ui-dg-column sortable field="SMENR" data-abap.bind="{type:'CHAR', alpha:'SMENR', mid:'MEH', length:'8'}" label="Number of Rental Unit"></ui-dg-column>
+<ui-dg-column sortable field="SGENR" data-abap.bind="{type:'CHAR', alpha:'SGENR', mid:'GEB', length:'8'}" label="Building Number"></ui-dg-column>
+<ui-dg-column sortable field="SGRNR" data-abap.bind="{type:'CHAR', alpha:'SGRNR', mid:'GRS', length:'8'}" label="Land Number for BE"></ui-dg-column>
+<ui-dg-column sortable field="SALTNR" data-abap.bind="{type:'CHAR', length:'20'}" label="Number of rental unit in existing real estate system"></ui-dg-column>
+<ui-dg-column sortable field="DBEZU" data-abap.bind="{type:'DATS'}" label="Date of initial usage"></ui-dg-column>
+<ui-dg-column sortable field="XSTOCKK" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'4'}" label="Short name of floor"></ui-dg-column>
+<ui-dg-column sortable field="RLGESCH" data-abap.bind="{type:'CHAR', alpha:'ALPHA', length:'2'}" label="Location on Floor"></ui-dg-column>
+<ui-dg-column sortable field="XMETXT" data-abap.bind="{type:'CHAR', length:'30'}" label="Text for rental unit"></ui-dg-column>
+</ui-datagrid>

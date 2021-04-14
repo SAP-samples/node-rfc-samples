@@ -1,0 +1,25 @@
+<!-- SH H_TJ02 Lifecycle Status : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="System status">
+    <Input value={this.searchParamLow.ISTAT}
+          data-abap="{type:'CHAR', length:'5'}"
+    />
+</FormItem>
+<FormItem label="Individual status of an object (short form)">
+    <Input value={this.searchParamLow.TXT04}
+          data-abap="{type:'CHAR', length:'4'}"
+    />
+</FormItem>
+<FormItem label="Object status">
+    <Input value={this.searchParamLow.TXT30}
+          data-abap="{type:'CHAR', length:'30'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="ISTAT" data-abap.bind="{type:'CHAR', length:'5'}" label="System status"></ui-dg-column>
+<ui-dg-column sortable field="TXT04" data-abap.bind="{type:'CHAR', length:'4'}" label="Individual status of an object (short form)"></ui-dg-column>
+<ui-dg-column sortable field="TXT30" data-abap.bind="{type:'CHAR', length:'30'}" label="Object status"></ui-dg-column>
+</ui-datagrid>

@@ -1,0 +1,21 @@
+<!-- SH GMGRANT_COMPANY_CODE Grant lookup by company code : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Grant">
+    <ComboBox value={this.searchParamLow.GRANT_NBR}
+        items="{type: 'SH', id: 'GRANTS_GENERIC'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'GM_GRANT_NBR', length:'20'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Company Code">
+    <ComboBox value={this.searchParamLow.COMPANY_CODE}
+        items="{type: 'SH', id: 'C_T001'}"
+        data-abap="{type:'CHAR', mid:'BUK', length:'4'}">
+    </ComboBox>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="GRANT_NBR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'GM_GRANT_NBR', length:'20'}" label="Grant"></ui-dg-column>
+<ui-dg-column sortable field="COMPANY_CODE" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+</ui-datagrid>

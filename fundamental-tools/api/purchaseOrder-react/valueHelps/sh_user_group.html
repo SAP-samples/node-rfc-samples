@@ -1,0 +1,19 @@
+<!-- SH USER_GROUP Users by User Groups (General) : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="User Name in User Master Record">
+    <Input value={this.searchParamLow.BNAME}
+          data-abap="{type:'CHAR', mid:'XUS', length:'12'}"
+    />
+</FormItem>
+<FormItem label="User group in user master maintenance">
+    <Input value={this.searchParamLow.USERGROUP}
+          data-abap="{type:'CHAR', mid:'XUG', length:'12'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="BNAME" data-abap.bind="{type:'CHAR', mid:'XUS', length:'12'}" label="User Name in User Master Record"></ui-dg-column>
+<ui-dg-column sortable field="USERGROUP" data-abap.bind="{type:'CHAR', mid:'XUG', length:'12'}" label="User group in user master maintenance"></ui-dg-column>
+</ui-datagrid>

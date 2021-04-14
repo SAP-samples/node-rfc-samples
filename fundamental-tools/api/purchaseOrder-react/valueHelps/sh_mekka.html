@@ -1,0 +1,62 @@
+<!-- SH MEKKA Purchasing Documents per Asset : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Main Asset Number">
+    <ComboBox value={this.searchParamLow.ANLN1}
+        items="{type: 'SH', id: 'AANL'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AN1', length:'12'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Asset Subnumber">
+    <ComboBox value={this.searchParamLow.ANLN2}
+        items="{type: 'SH', id: 'AANL'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AN2', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Company Code">
+    <ComboBox value={this.searchParamLow.BUKRS}
+        items="{type: 'SH', id: 'C_T001'}"
+        data-abap="{type:'CHAR', mid:'BUK', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Purchasing Document Category">
+    <ComboBox value={this.searchParamLow.BSTYP}
+        items="{type: 'FV', id: 'EBSTYP'}"
+        data-abap="{type:'CHAR', length:'1'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Purchasing organization">
+    <ComboBox value={this.searchParamLow.EKORG}
+        items="{type: 'SH', id: 'H_T024E'}"
+        data-abap="{type:'CHAR', mid:'EKO', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Purchasing Document Number">
+    <ComboBox value={this.searchParamLow.EBELN}
+        items="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Item Number of Purchasing Document">
+    <ComboBox value={this.searchParamLow.EBELP}
+        items="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Sequential Number of Account Assignment">
+    <Input value={this.searchParamLow.ZEKKN}
+          data-abap="{type:'NUMC', length:'2'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="ANLN1" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AN1', length:'12'}" label="Main Asset Number"></ui-dg-column>
+<ui-dg-column sortable field="ANLN2" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'AN2', length:'4'}" label="Asset Subnumber"></ui-dg-column>
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="BSTYP" data-abap.bind="{type:'CHAR', length:'1'}" label="Purchasing Document Category"></ui-dg-column>
+<ui-dg-column sortable field="EKORG" data-abap.bind="{type:'CHAR', mid:'EKO', length:'4'}" label="Purchasing organization"></ui-dg-column>
+<ui-dg-column sortable field="EBELN" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}" label="Purchasing Document Number"></ui-dg-column>
+<ui-dg-column sortable field="EBELP" data-abap.bind="{type:'NUMC', mid:'BSP', length:'5'}" label="Item Number of Purchasing Document"></ui-dg-column>
+<ui-dg-column sortable field="ZEKKN" data-abap.bind="{type:'NUMC', length:'2'}" label="Sequential Number of Account Assignment"></ui-dg-column>
+</ui-datagrid>

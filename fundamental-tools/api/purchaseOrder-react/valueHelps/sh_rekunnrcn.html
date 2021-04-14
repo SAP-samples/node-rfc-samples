@@ -1,0 +1,104 @@
+<!-- SH REKUNNRCN Customer By Real Estate Contract : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Contract Number">
+    <ComboBox value={this.searchParamLow.RECNNR}
+        items="{type: 'SH', id: 'RECNCN'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Company Code">
+    <ComboBox value={this.searchParamLow.BUKRS}
+        items="{type: 'SH', id: 'C_T001'}"
+        data-abap="{type:'CHAR', mid:'BUK', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Customer Number">
+    <ComboBox value={this.searchParamLow.KUNNR}
+        items="{type: 'SH', id: 'C_KUNNR'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Contract Type">
+    <ComboBox value={this.searchParamLow.RECNTYPE}
+        items="{type: 'SH', id: 'RECNCONTRACTTYPE'}"
+        data-abap="{type:'CHAR', mid:'RECNTYPE', length:'4'}">
+    </ComboBox>
+</FormItem>
+<FormItem label="Date of contract start">
+    <DatePicker value={this.searchParamLow.RECNBEG}/>
+</FormItem>
+<FormItem label="Term End Date">
+    <DatePicker value={this.searchParamLow.RECNENDABS}/>
+</FormItem>
+<FormItem label="Contract Notice Per">
+    <DatePicker value={this.searchParamLow.RECNNOTPER}/>
+</FormItem>
+<FormItem label="Number of old contract">
+    <Input value={this.searchParamLow.RECNTXTOLD}
+          data-abap="{type:'CHAR', alpha:'ALPHA', length:'20'}"
+    />
+</FormItem>
+<FormItem label="Number of Real Estate Main Contract">
+    <Input value={this.searchParamLow.RECNNRCOLLECT}
+          data-abap="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}"
+    />
+</FormItem>
+<FormItem label="Contract name">
+    <Input value={this.searchParamLow.RECNTXT}
+          data-abap="{type:'CHAR', length:'80'}"
+    />
+</FormItem>
+<FormItem label="Name 1 of organization">
+    <Input value={this.searchParamLow.NAME_ORG1}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Name 2 of organization">
+    <Input value={this.searchParamLow.NAME_ORG2}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Last name of business partner (person)">
+    <Input value={this.searchParamLow.NAME_LAST}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="First name of business partner (person)">
+    <Input value={this.searchParamLow.NAME_FIRST}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Search Help Field 1 (Name 1/Last Name)">
+    <Input value={this.searchParamLow.MC_NAME1}
+          data-abap="{type:'CHAR', length:'35'}"
+    />
+</FormItem>
+<FormItem label="Search Help Field 2 (Name 2/First Name)">
+    <Input value={this.searchParamLow.MC_NAME2}
+          data-abap="{type:'CHAR', length:'35'}"
+    />
+</FormItem>
+<FormItem label="Business Partner: Role">
+    <ComboBox value={this.searchParamLow.ROLE}
+        items="{type: 'CT', id: 'TB003'}"
+        data-abap="{type:'CHAR', length:'6'}">
+    </ComboBox>
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="KUNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}" label="Customer Number"></ui-dg-column>
+<ui-dg-column sortable field="BUKRS" data-abap.bind="{type:'CHAR', mid:'BUK', length:'4'}" label="Company Code"></ui-dg-column>
+<ui-dg-column sortable field="RECNNR" data-abap.bind="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}" label="Contract Number"></ui-dg-column>
+<ui-dg-column sortable field="RECNTYPE" data-abap.bind="{type:'CHAR', mid:'RECNTYPE', length:'4'}" label="Contract Type"></ui-dg-column>
+<ui-dg-column sortable field="RECNBEG" data-abap.bind="{type:'DATS'}" label="Date of contract start"></ui-dg-column>
+<ui-dg-column sortable field="RECNENDABS" data-abap.bind="{type:'DATS', alpha:'REDAT'}" label="Term End Date"></ui-dg-column>
+<ui-dg-column sortable field="RECNNOTPER" data-abap.bind="{type:'DATS'}" label="Contract Notice Per"></ui-dg-column>
+<ui-dg-column sortable field="MC_NAME1" data-abap.bind="{type:'CHAR', length:'35'}" label="Search Help Field 1 (Name 1/Last Name)"></ui-dg-column>
+<ui-dg-column sortable field="RECNTXT" data-abap.bind="{type:'CHAR', length:'80'}" label="Contract name"></ui-dg-column>
+<ui-dg-column sortable field="NAME_LAST" data-abap.bind="{type:'CHAR', length:'40'}" label="Last name of business partner (person)"></ui-dg-column>
+<ui-dg-column sortable field="NAME_FIRST" data-abap.bind="{type:'CHAR', length:'40'}" label="First name of business partner (person)"></ui-dg-column>
+<ui-dg-column sortable field="NAME_ORG1" data-abap.bind="{type:'CHAR', length:'40'}" label="Name 1 of organization"></ui-dg-column>
+<ui-dg-column sortable field="NAME_ORG2" data-abap.bind="{type:'CHAR', length:'40'}" label="Name 2 of organization"></ui-dg-column>
+</ui-datagrid>

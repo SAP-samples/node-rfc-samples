@@ -1,0 +1,25 @@
+<!-- SH PRODH Product hierarchy : abap 2.2.0 at: 2021-04-14 18:31:25 -->}
+
+<FormItem label="Product hierarchy">
+    <Input value={this.searchParamLow.PRODH}
+          data-abap="{type:'CHAR', mid:'VPR', length:'18'}"
+    />
+</FormItem>
+<FormItem label="Description">
+    <Input value={this.searchParamLow.VTEXT}
+          data-abap="{type:'CHAR', length:'40'}"
+    />
+</FormItem>
+<FormItem label="Number of the level in the product hierarchy">
+    <Input value={this.searchParamLow.STUFE}
+          data-abap="{type:'NUMC', length:'1'}"
+    />
+</FormItem>
+
+<ui-datagrid data.bind="searchParamLow" title="field.FIELDTEXT"
+             data-summary="false" default-sort=""
+             selectable rowselect.trigger="object.selectObject($event.detail)">
+<ui-dg-column sortable field="PRODH" data-abap.bind="{type:'CHAR', mid:'VPR', length:'18'}" label="Product hierarchy"></ui-dg-column>
+<ui-dg-column sortable field="VTEXT" data-abap.bind="{type:'CHAR', length:'40'}" label="Description"></ui-dg-column>
+<ui-dg-column sortable field="STUFE" data-abap.bind="{type:'NUMC', length:'1'}" label="Number of the level in the product hierarchy"></ui-dg-column>
+</ui-datagrid>
