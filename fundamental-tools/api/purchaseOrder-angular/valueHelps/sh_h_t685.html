@@ -1,0 +1,55 @@
+<!-- SH H_T685 Condition Type : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Usage of the condition table</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.KVEWE"
+        [dropdownValues]="{type: 'SH', id: 'CSH_T681V'}"
+        data-abap="{type:'CHAR', mid:'KVW', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Application</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.KAPPL"
+        [dropdownValues]="{type: 'SH', id: 'H_T681Z'}"
+        data-abap="{type:'CHAR', mid:'KAP', length:'2'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Condition type</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.KSCHL"
+        [dropdownValues]="{type: 'CT', id: 'T685'}"
+        data-abap="{type:'CHAR', mid:'VKS', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.VTEXT"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Usage of the condition table</th>
+      <th fd-table-cell>Application</th>
+      <th fd-table-cell>Condition type</th>
+      <th fd-table-cell>Name</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ KVEWE }}</td>
+       <td fd-table-cell>{{ KAPPL }}</td>
+       <td fd-table-cell>{{ KSCHL }}</td>
+       <td fd-table-cell>{{ VTEXT }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,55 @@
+<!-- SH PLKSA Task list selection : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Task List Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PLNTY"
+            data-abap="{type:'CHAR', mid:'PTY', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Key for Task List Group</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PLNNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'PLN', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Group Counter</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PLNAL"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'PAL', length:'2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Valid-From Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.DATUV"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Task list description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KTEXT"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Task List Type</th>
+      <th fd-table-cell>Key for Task List Group</th>
+      <th fd-table-cell>Group Counter</th>
+      <th fd-table-cell>Valid-From Date</th>
+      <th fd-table-cell>Task list description</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ PLNTY }}</td>
+       <td fd-table-cell>{{ PLNNR }}</td>
+       <td fd-table-cell>{{ PLNAL }}</td>
+       <td fd-table-cell>{{ DATUV }}</td>
+       <td fd-table-cell>{{ KTEXT }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,88 @@
+<!-- SH AANLC Cost center : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS3"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Cost Center</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KOSTL"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KOS', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.WERKS"
+            data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Area</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.GSBER"
+            data-abap="{type:'CHAR', mid:'GSB', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search term for matchcode search</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MCOA1"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Date for beginning of validity</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.ADATU"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Date validity ends</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.BDATUZ"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Main Asset Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ANLN1"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AN1', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Asset Subnumber</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ANLN2"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AN2', length:'4'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Cost Center</th>
+      <th fd-table-cell>Plant</th>
+      <th fd-table-cell>Business Area</th>
+      <th fd-table-cell>Search term for matchcode search</th>
+      <th fd-table-cell>Date for beginning of validity</th>
+      <th fd-table-cell>Date validity ends</th>
+      <th fd-table-cell>Main Asset Number</th>
+      <th fd-table-cell>Asset Subnumber</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BUKRS3 }}</td>
+       <td fd-table-cell>{{ KOSTL }}</td>
+       <td fd-table-cell>{{ WERKS }}</td>
+       <td fd-table-cell>{{ GSBER }}</td>
+       <td fd-table-cell>{{ MCOA1 }}</td>
+       <td fd-table-cell>{{ ADATU }}</td>
+       <td fd-table-cell>{{ BDATUZ }}</td>
+       <td fd-table-cell>{{ ANLN1 }}</td>
+       <td fd-table-cell>{{ ANLN2 }}</td>
+    </tr>
+  </tbody>
+</table>

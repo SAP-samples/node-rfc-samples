@@ -1,0 +1,76 @@
+<!-- SH PLKSN Routings : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Key for Task List Group</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PLNNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'PLN', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Group Counter</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PLNAL"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'PAL', length:'2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.WERKS"
+            data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Task list description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KTEXT"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Task list usage</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.VERWE"
+            data-abap="{type:'CHAR', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Responsible planner group/department</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.VAGRP"
+            data-abap="{type:'CHAR', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Status</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.STATU"
+            data-abap="{type:'CHAR', length:'3'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Key for Task List Group</th>
+      <th fd-table-cell>Group Counter</th>
+      <th fd-table-cell>Plant</th>
+      <th fd-table-cell>Task list description</th>
+      <th fd-table-cell>Task list usage</th>
+      <th fd-table-cell>Responsible planner group/department</th>
+      <th fd-table-cell>Status</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ PLNNR }}</td>
+       <td fd-table-cell>{{ PLNAL }}</td>
+       <td fd-table-cell>{{ WERKS }}</td>
+       <td fd-table-cell>{{ KTEXT }}</td>
+       <td fd-table-cell>{{ VERWE }}</td>
+       <td fd-table-cell>{{ VAGRP }}</td>
+       <td fd-table-cell>{{ STATU }}</td>
+    </tr>
+  </tbody>
+</table>

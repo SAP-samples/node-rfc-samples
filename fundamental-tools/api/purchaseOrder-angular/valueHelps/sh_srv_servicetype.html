@@ -1,0 +1,40 @@
+<!-- SH SRV_SERVICETYPE Short Description of Service Type : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Key to Service Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LBNUM"
+            data-abap="{type:'CHAR', mid:'LBR', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Edition of Service Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.AUSGB"
+            data-abap="{type:'NUMC', mid:'AGB', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Short Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LBKTX"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Key to Service Type</th>
+      <th fd-table-cell>Edition of Service Type</th>
+      <th fd-table-cell>Short Text</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ LBNUM }}</td>
+       <td fd-table-cell>{{ AUSGB }}</td>
+       <td fd-table-cell>{{ LBKTX }}</td>
+    </tr>
+  </tbody>
+</table>

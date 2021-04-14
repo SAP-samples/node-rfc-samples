@@ -1,0 +1,33 @@
+<!-- SH SPECT Find by Description : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Number of a Set of Model Service Specifications</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SPEC_NO"
+        [dropdownValues]="{type: 'SH', id: 'SPEC'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'MSP', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Short description of model specifications</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TXZ01"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Number of a Set of Model Service Specifications</th>
+      <th fd-table-cell>Short description of model specifications</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ SPEC_NO }}</td>
+       <td fd-table-cell>{{ TXZ01 }}</td>
+    </tr>
+  </tbody>
+</table>

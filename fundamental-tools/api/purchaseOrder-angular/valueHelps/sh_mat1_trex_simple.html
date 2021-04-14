@@ -1,0 +1,103 @@
+<!-- SH MAT1_TREX_SIMPLE Quick Search for Material Using Search Engine : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Input Field for Full Text Search</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/SEARCH_TERM"
+            data-abap="{type:'CHAR', length:'45'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Option Fuzzy Mode</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/MODE_FUZZY"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Object for Search Engine Service (SES)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUSINESS_OBJECT"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Type of Business Object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJECT_TYPE"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJECT_ID"
+            data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MATL_TYPE"
+            data-abap="{type:'CHAR', mid:'MTA', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MATL_CAT"
+            data-abap="{type:'CHAR', mid:'MTY', length:'2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.DESCRIPTION"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Product hierarchy</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PROD_HIER"
+            data-abap="{type:'CHAR', mid:'VPR', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Group</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MATL_GROUP"
+            data-abap="{type:'CHAR', mid:'MKL', length:'9'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Input Field for Full Text Search</th>
+      <th fd-table-cell>Option Fuzzy Mode</th>
+      <th fd-table-cell>Business Object for Search Engine Service (SES)</th>
+      <th fd-table-cell>Type of Business Object</th>
+      <th fd-table-cell>Material Number</th>
+      <th fd-table-cell>Material type</th>
+      <th fd-table-cell>Material Category</th>
+      <th fd-table-cell>Material description</th>
+      <th fd-table-cell>Product hierarchy</th>
+      <th fd-table-cell>Material Group</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ S/RP/SEARCH_TERM }}</td>
+       <td fd-table-cell>{{ S/RP/MODE_FUZZY }}</td>
+       <td fd-table-cell>{{ BUSINESS_OBJECT }}</td>
+       <td fd-table-cell>{{ OBJECT_TYPE }}</td>
+       <td fd-table-cell>{{ OBJECT_ID }}</td>
+       <td fd-table-cell>{{ MATL_TYPE }}</td>
+       <td fd-table-cell>{{ MATL_CAT }}</td>
+       <td fd-table-cell>{{ DESCRIPTION }}</td>
+       <td fd-table-cell>{{ PROD_HIER }}</td>
+       <td fd-table-cell>{{ MATL_GROUP }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,80 @@
+<!-- SH EQUIZ Equipment by Fleet Identification Data : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Identification number for fleet object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.FLEET_NUM"
+            data-abap="{type:'CHAR', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>License plate number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LICENSE_NUM"
+            data-abap="{type:'CHAR', length:'15'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Validity end date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.EXPIRY_DATE"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Manufacturer Vehicle Identification Number for Fleet Object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.FLEET_VIN"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Chassis number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.CHASSIS_NUM"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Equipment Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EQUNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Equipment description in capital letters</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EQKTU"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SPRAS"
+            data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Identification number for fleet object</th>
+      <th fd-table-cell>License plate number</th>
+      <th fd-table-cell>Validity end date</th>
+      <th fd-table-cell>Manufacturer Vehicle Identification Number for Fleet Object</th>
+      <th fd-table-cell>Chassis number</th>
+      <th fd-table-cell>Equipment Number</th>
+      <th fd-table-cell>Equipment description in capital letters</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ FLEET_NUM }}</td>
+       <td fd-table-cell>{{ LICENSE_NUM }}</td>
+       <td fd-table-cell>{{ EXPIRY_DATE }}</td>
+       <td fd-table-cell>{{ FLEET_VIN }}</td>
+       <td fd-table-cell>{{ CHASSIS_NUM }}</td>
+       <td fd-table-cell>{{ EQUNR }}</td>
+       <td fd-table-cell>{{ EQKTU }}</td>
+    </tr>
+  </tbody>
+</table>

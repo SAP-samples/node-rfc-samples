@@ -1,0 +1,40 @@
+<!-- SH H_TJ02 Lifecycle Status : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>System status</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ISTAT"
+            data-abap="{type:'CHAR', length:'5'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Individual status of an object (short form)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TXT04"
+            data-abap="{type:'CHAR', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Object status</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TXT30"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>System status</th>
+      <th fd-table-cell>Individual status of an object (short form)</th>
+      <th fd-table-cell>Object status</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ ISTAT }}</td>
+       <td fd-table-cell>{{ TXT04 }}</td>
+       <td fd-table-cell>{{ TXT30 }}</td>
+    </tr>
+  </tbody>
+</table>

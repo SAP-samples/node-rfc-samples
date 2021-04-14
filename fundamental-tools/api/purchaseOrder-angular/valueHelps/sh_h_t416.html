@@ -1,0 +1,85 @@
+<!-- SH H_T416 BOM Usage : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>BOM Usage</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.STLAN"
+            data-abap="{type:'CHAR', mid:'CSV', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Indicator: item relevant to production</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PMPFE"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Indicator: item relevant to engineering</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PMPKO"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>BOM usage text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ANTXT"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Indicator: item relevant to costing</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PMPKA"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Indicator: item relevant to sales & distribution (SD)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PMPRV"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Indicator: item relevant to plant maintenance</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PMPIN"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Indicator: spare part</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PMPER"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>BOM Usage</th>
+      <th fd-table-cell>Indicator: item relevant to production</th>
+      <th fd-table-cell>Indicator: item relevant to engineering</th>
+      <th fd-table-cell>Indicator: item relevant to plant maintenance</th>
+      <th fd-table-cell>Indicator: spare part</th>
+      <th fd-table-cell>Indicator: item relevant to sales & distribution (SD)</th>
+      <th fd-table-cell>Indicator: item relevant to costing</th>
+      <th fd-table-cell>BOM usage text</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ STLAN }}</td>
+       <td fd-table-cell>{{ PMPFE }}</td>
+       <td fd-table-cell>{{ PMPKO }}</td>
+       <td fd-table-cell>{{ PMPIN }}</td>
+       <td fd-table-cell>{{ PMPER }}</td>
+       <td fd-table-cell>{{ PMPRV }}</td>
+       <td fd-table-cell>{{ PMPKA }}</td>
+       <td fd-table-cell>{{ ANTXT }}</td>
+    </tr>
+  </tbody>
+</table>

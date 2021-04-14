@@ -1,0 +1,67 @@
+<!-- SH MEINM Info Records per Material : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MATNR"
+            data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Vendor's account number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LIFNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Number of purchasing info record</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.INFNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'INF', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing info record category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ESOKZ"
+            data-abap="{type:'CHAR', mid:'ESO', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing organization</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EKORG"
+            data-abap="{type:'CHAR', mid:'EKO', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.WERKS"
+            data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Material Number</th>
+      <th fd-table-cell>Vendor's account number</th>
+      <th fd-table-cell>Number of purchasing info record</th>
+      <th fd-table-cell>Purchasing info record category</th>
+      <th fd-table-cell>Purchasing organization</th>
+      <th fd-table-cell>Plant</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ MATNR }}</td>
+       <td fd-table-cell>{{ LIFNR }}</td>
+       <td fd-table-cell>{{ INFNR }}</td>
+       <td fd-table-cell>{{ ESOKZ }}</td>
+       <td fd-table-cell>{{ EKORG }}</td>
+       <td fd-table-cell>{{ WERKS }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,118 @@
+<!-- SH BP_ERP_TREX_SIMPLE Quick Search for Business Partner Using Search Engine : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Input Field for Full Text Search</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/SEARCH_TERM"
+            data-abap="{type:'CHAR', length:'45'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Option Fuzzy Mode</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/MODE_FUZZY"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Object for Search Engine Service (SES)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUSINESS_OBJECT"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Type of Business Object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJECT_TYPE"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Partner Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EXTERNAL_KEY"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BPA', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.CITY"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City postal code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.POSTL_COD1"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Street</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.STREET"
+            data-abap="{type:'CHAR', length:'60'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>House Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.HOUSE_NO"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Date of Birth of Business Partner</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.BIRTHDATE"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME"
+            data-abap="{type:'CHAR', length:'80'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>BP Role</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PARTNERROLE"
+            data-abap="{type:'CHAR', length:'6'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Input Field for Full Text Search</th>
+      <th fd-table-cell>Option Fuzzy Mode</th>
+      <th fd-table-cell>Business Object for Search Engine Service (SES)</th>
+      <th fd-table-cell>Type of Business Object</th>
+      <th fd-table-cell>Business Partner Number</th>
+      <th fd-table-cell>City</th>
+      <th fd-table-cell>City postal code</th>
+      <th fd-table-cell>Street</th>
+      <th fd-table-cell>House Number</th>
+      <th fd-table-cell>Date of Birth of Business Partner</th>
+      <th fd-table-cell>Name</th>
+      <th fd-table-cell>BP Role</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ S/RP/SEARCH_TERM }}</td>
+       <td fd-table-cell>{{ S/RP/MODE_FUZZY }}</td>
+       <td fd-table-cell>{{ BUSINESS_OBJECT }}</td>
+       <td fd-table-cell>{{ OBJECT_TYPE }}</td>
+       <td fd-table-cell>{{ EXTERNAL_KEY }}</td>
+       <td fd-table-cell>{{ CITY }}</td>
+       <td fd-table-cell>{{ POSTL_COD1 }}</td>
+       <td fd-table-cell>{{ STREET }}</td>
+       <td fd-table-cell>{{ HOUSE_NO }}</td>
+       <td fd-table-cell>{{ BIRTHDATE }}</td>
+       <td fd-table-cell>{{ NAME }}</td>
+       <td fd-table-cell>{{ PARTNERROLE }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,66 @@
+<!-- SH MEKKI Contracts for Services : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.WERKS"
+        [dropdownValues]="{type: 'SH', id: 'H_T001W'}"
+        data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Group</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MATKL"
+        [dropdownValues]="{type: 'SH', id: 'H_T023'}"
+        data-abap="{type:'CHAR', mid:'MKL', length:'9'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing organization</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EKORG"
+        [dropdownValues]="{type: 'SH', id: 'H_T024E'}"
+        data-abap="{type:'CHAR', mid:'EKO', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EBELN"
+        [dropdownValues]="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Short Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TXZ01"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Plant</th>
+      <th fd-table-cell>Material Group</th>
+      <th fd-table-cell>Purchasing organization</th>
+      <th fd-table-cell>Purchasing Document Number</th>
+      <th fd-table-cell>Short Text</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ WERKS }}</td>
+       <td fd-table-cell>{{ MATKL }}</td>
+       <td fd-table-cell>{{ EKORG }}</td>
+       <td fd-table-cell>{{ EBELN }}</td>
+       <td fd-table-cell>{{ TXZ01 }}</td>
+    </tr>
+  </tbody>
+</table>

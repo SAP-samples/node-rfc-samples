@@ -1,0 +1,40 @@
+<!-- SH USER_DOCU Users by Description : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>User Name in User Master Record</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BNAME"
+            data-abap="{type:'CHAR', mid:'XUS', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>User Responsible for Technical User Account</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RESPONSIBLE"
+            data-abap="{type:'CHAR', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Description of the Technical User Account</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TECHDESC"
+            data-abap="{type:'CHAR', length:'80'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>User Name in User Master Record</th>
+      <th fd-table-cell>User Responsible for Technical User Account</th>
+      <th fd-table-cell>Description of the Technical User Account</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BNAME }}</td>
+       <td fd-table-cell>{{ RESPONSIBLE }}</td>
+       <td fd-table-cell>{{ TECHDESC }}</td>
+    </tr>
+  </tbody>
+</table>

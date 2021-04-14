@@ -1,0 +1,31 @@
+<!-- SH H_TPZ3 Business Partner Role Category : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Business Partner Role Category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ROLETYP"
+            data-abap="{type:'CHAR', mid:'BPR', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name of Role Category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.XROLETYP"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Business Partner Role Category</th>
+      <th fd-table-cell>Name of Role Category</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ ROLETYP }}</td>
+       <td fd-table-cell>{{ XROLETYP }}</td>
+    </tr>
+  </tbody>
+</table>

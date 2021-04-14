@@ -1,0 +1,71 @@
+<!-- SH GL_ACCT_CA_FLAGS G/L account with delete/lock flag in chart of accounts : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Chart of Accounts</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.KTOPL"
+        [dropdownValues]="{type: 'SH', id: 'H_T004'}"
+        data-abap="{type:'CHAR', mid:'KPL', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>G/L Account Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SAKNR"
+        [dropdownValues]="{type: 'SH', id: 'SAKO'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'SAK', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>G/L account number, significant length</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SAKAN"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>G/L Account Long Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TXT50"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+<div fd-form-item>
+    <fd-checkbox label="Indicator: Account marked for deletion?" [(ngModel)]="searchParamLow.XLOEV"></fd-checkbox>
+</div>
+<div fd-form-item>
+    <fd-checkbox label="Indicator: account is blocked for creation ?" [(ngModel)]="searchParamLow.XSPEA"></fd-checkbox>
+</div>
+<div fd-form-item>
+    <fd-checkbox label="Indicator: Is account blocked for posting?" [(ngModel)]="searchParamLow.XSPEB"></fd-checkbox>
+</div>
+<div fd-form-item>
+    <fd-checkbox label="Indicator: account blocked for planning ?" [(ngModel)]="searchParamLow.XSPEP"></fd-checkbox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>G/L Account Long Text</th>
+      <th fd-table-cell>Chart of Accounts</th>
+      <th fd-table-cell>Indicator: Account marked for deletion?</th>
+      <th fd-table-cell>Indicator: Is account blocked for posting?</th>
+      <th fd-table-cell>Indicator: account is blocked for creation ?</th>
+      <th fd-table-cell>Indicator: account blocked for planning ?</th>
+      <th fd-table-cell>G/L Account Number</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ TXT50 }}</td>
+       <td fd-table-cell>{{ KTOPL }}</td>
+       <td fd-table-cell>{{ XLOEV }}</td>
+       <td fd-table-cell>{{ XSPEB }}</td>
+       <td fd-table-cell>{{ XSPEA }}</td>
+       <td fd-table-cell>{{ XSPEP }}</td>
+       <td fd-table-cell>{{ SAKNR }}</td>
+    </tr>
+  </tbody>
+</table>

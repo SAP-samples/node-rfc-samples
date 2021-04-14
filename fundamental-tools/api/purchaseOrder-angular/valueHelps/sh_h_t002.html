@@ -1,0 +1,31 @@
+<!-- SH H_T002 Language Key : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SPRAS"
+            data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name of Language</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SPTXT"
+            data-abap="{type:'CHAR', mid:'DSB', length:'16'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Language Key</th>
+      <th fd-table-cell>Name of Language</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ SPRAS }}</td>
+       <td fd-table-cell>{{ SPTXT }}</td>
+    </tr>
+  </tbody>
+</table>

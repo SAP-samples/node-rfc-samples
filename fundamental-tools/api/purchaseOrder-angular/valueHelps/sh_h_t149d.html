@@ -1,0 +1,24 @@
+<!-- SH H_T149D Valuation type : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Valuation type</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BWTAR"
+        [dropdownValues]="{type: 'CT', id: 'T149D'}"
+        data-abap="{type:'CHAR', mid:'BWT', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Valuation type</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BWTAR }}</td>
+    </tr>
+  </tbody>
+</table>

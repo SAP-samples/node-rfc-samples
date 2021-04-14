@@ -1,0 +1,85 @@
+<!-- SH GL_ACCT_CC_FLAGS G/L account with delete/lock flag in company code : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>G/L account number, significant length</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SAKAN"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>G/L Account Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SAKNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'SAK', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Indicator: Account marked for deletion?</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.XLOEV_KTP"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Indicator: Account marked for deletion?</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.XLOEV"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Indicator: Is account blocked for posting?</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.XSPEB_KTP"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Indicator: Is account blocked for posting?</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.XSPEB"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>G/L Account Long Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TXT50"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>G/L account number, significant length</th>
+      <th fd-table-cell>G/L Account Number</th>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Indicator: Account marked for deletion?</th>
+      <th fd-table-cell>Indicator: Account marked for deletion?</th>
+      <th fd-table-cell>Indicator: Is account blocked for posting?</th>
+      <th fd-table-cell>Indicator: Is account blocked for posting?</th>
+      <th fd-table-cell>G/L Account Long Text</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ SAKAN }}</td>
+       <td fd-table-cell>{{ SAKNR }}</td>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ XLOEV_KTP }}</td>
+       <td fd-table-cell>{{ XLOEV }}</td>
+       <td fd-table-cell>{{ XSPEB_KTP }}</td>
+       <td fd-table-cell>{{ XSPEB }}</td>
+       <td fd-table-cell>{{ TXT50 }}</td>
+    </tr>
+  </tbody>
+</table>

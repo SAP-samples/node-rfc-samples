@@ -1,0 +1,49 @@
+<!-- SH H_T006 Unit of Measure for Display : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>External Unit of Measurement in Commercial Format (3-Char.)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MSEH3"
+            data-abap="{type:'CHAR', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Unit of Measurement</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MSEHI"
+            data-abap="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Unit of Measurement Text (Maximum 30 Characters)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MSEHL"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Dimension text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TXDIM"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>External Unit of Measurement in Commercial Format (3-Char.)</th>
+      <th fd-table-cell>Unit of Measurement</th>
+      <th fd-table-cell>Unit of Measurement Text (Maximum 30 Characters)</th>
+      <th fd-table-cell>Dimension text</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ MSEH3 }}</td>
+       <td fd-table-cell>{{ MSEHI }}</td>
+       <td fd-table-cell>{{ MSEHL }}</td>
+       <td fd-table-cell>{{ TXDIM }}</td>
+    </tr>
+  </tbody>
+</table>

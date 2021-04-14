@@ -1,0 +1,31 @@
+<!-- SH H_TCF12 Grouping key 1 for production resources/tools : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Grouping key 1 for production resources/tools</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.FGRUA"
+            data-abap="{type:'CHAR', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Text for the production resources/tools group key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.FGRTXT"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Grouping key 1 for production resources/tools</th>
+      <th fd-table-cell>Text for the production resources/tools group key</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ FGRUA }}</td>
+       <td fd-table-cell>{{ FGRTXT }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,136 @@
+<!-- SH KREDX Vendors by Address Attributes : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Account Number of Vendor or Creditor</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LIFNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name 1</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.CITY1"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Street</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.STREET"
+            data-abap="{type:'CHAR', length:'60'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name (Field NAME1) in Uppercase for Search Help</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_NAME"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search Term 1</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SORT1"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search Term 2</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SORT2"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City name in Uppercase for Search Help</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_CITY1"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City postal code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.POST_CODE1"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>PO Box Postal Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.POST_CODE2"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Street Name in Uppercase for Search Help</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_STREET"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>House Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.HOUSE_NUM1"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Country Key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.COUNTRY"
+            data-abap="{type:'CHAR', mid:'LND', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Region (State, Province, County)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.REGION"
+            data-abap="{type:'CHAR', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>PO Box</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PO_BOX"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Account Number of Vendor or Creditor</th>
+      <th fd-table-cell>Name 1</th>
+      <th fd-table-cell>Street</th>
+      <th fd-table-cell>House Number</th>
+      <th fd-table-cell>City postal code</th>
+      <th fd-table-cell>City</th>
+      <th fd-table-cell>Search Term 1</th>
+      <th fd-table-cell>Search Term 2</th>
+      <th fd-table-cell>Country Key</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ LIFNR }}</td>
+       <td fd-table-cell>{{ NAME }}</td>
+       <td fd-table-cell>{{ STREET }}</td>
+       <td fd-table-cell>{{ HOUSE_NUM1 }}</td>
+       <td fd-table-cell>{{ POST_CODE1 }}</td>
+       <td fd-table-cell>{{ CITY1 }}</td>
+       <td fd-table-cell>{{ SORT1 }}</td>
+       <td fd-table-cell>{{ SORT2 }}</td>
+       <td fd-table-cell>{{ COUNTRY }}</td>
+    </tr>
+  </tbody>
+</table>

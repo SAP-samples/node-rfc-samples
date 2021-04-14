@@ -1,0 +1,40 @@
+<!-- SH H_T005_LAND Country Key : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Country Key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LAND1"
+            data-abap="{type:'CHAR', mid:'LND', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Country Name</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LANDX"
+            data-abap="{type:'CHAR', length:'15'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Nationality</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NATIO"
+            data-abap="{type:'CHAR', length:'15'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Country Key</th>
+      <th fd-table-cell>Country Name</th>
+      <th fd-table-cell>Nationality</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ LAND1 }}</td>
+       <td fd-table-cell>{{ LANDX }}</td>
+       <td fd-table-cell>{{ NATIO }}</td>
+    </tr>
+  </tbody>
+</table>

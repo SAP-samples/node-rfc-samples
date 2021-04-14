@@ -1,0 +1,44 @@
+<!-- SH MEKKS Purchasing Documents per Collective Number : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Collective Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SUBMI"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing organization</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EKORG"
+        [dropdownValues]="{type: 'SH', id: 'H_T024E'}"
+        data-abap="{type:'CHAR', mid:'EKO', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EBELN"
+        [dropdownValues]="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Collective Number</th>
+      <th fd-table-cell>Purchasing organization</th>
+      <th fd-table-cell>Purchasing Document Number</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ SUBMI }}</td>
+       <td fd-table-cell>{{ EKORG }}</td>
+       <td fd-table-cell>{{ EBELN }}</td>
+    </tr>
+  </tbody>
+</table>

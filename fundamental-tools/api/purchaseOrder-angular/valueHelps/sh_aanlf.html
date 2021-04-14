@@ -1,0 +1,67 @@
+<!-- SH AANLF Fund, Functional Area : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Main Asset Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ANLN1"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AN1', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Asset Subnumber</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ANLN2"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AN2', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Fund</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.GEBER"
+            data-abap="{type:'CHAR', mid:'FIC', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Functional Area</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.FKBER"
+            data-abap="{type:'CHAR', mid:'FBE', length:'16'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Grant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.GRANT_NBR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'GM_GRANT_NBR', length:'20'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Main Asset Number</th>
+      <th fd-table-cell>Asset Subnumber</th>
+      <th fd-table-cell>Fund</th>
+      <th fd-table-cell>Functional Area</th>
+      <th fd-table-cell>Grant</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ ANLN1 }}</td>
+       <td fd-table-cell>{{ ANLN2 }}</td>
+       <td fd-table-cell>{{ GEBER }}</td>
+       <td fd-table-cell>{{ FKBER }}</td>
+       <td fd-table-cell>{{ GRANT_NBR }}</td>
+    </tr>
+  </tbody>
+</table>

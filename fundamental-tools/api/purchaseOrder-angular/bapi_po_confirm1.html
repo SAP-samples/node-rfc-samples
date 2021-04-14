@@ -1,0 +1,1266 @@
+<!-- BAPI_PO_CONFIRM1 exception: 0  struct: 3  table: 9  var: 2
+
+abap 2.2.0 at: 2021-04-14 18:36:59 -->
+
+<!-- IMPORT PARAMETERS -->
+
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Number</label>
+    <fd-combobox
+        [(ngModel)]="PURCHASEORDER"
+        [dropdownValues]="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Switch to Simulation Mode for Write BAPIs</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="TESTRUN"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+
+<!-- Parameter: HEADER structure: BAPIMECONFHEADER  Header Data Confirmation for BAPI -->
+
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Number</label>
+    <fd-combobox
+        [(ngModel)]="HEADER.DOC_NUMBER"
+        [dropdownValues]="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<!-- Parameter: HEADERX structure: BAPIMECONFHEADERX  Change Parameter Header Data Confirmation BAPI -->
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="HEADERX.DOC_NUMBER"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="HEADERX.DOC_TYPE"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="HEADERX.VENDOR"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="HEADERX.CURRENCY"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="HEADERX.CURRENCY_ISO"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="HEADERX.LANGU"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="HEADERX.LANGU_ISO"></fd-checkbox>
+</div>
+
+<!-- TABLE PARAMETERS -->
+
+<!-- Parameter: ITEM structure: BAPIMECONFITEM  Confirmation Item Data -->
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Item Number of Purchasing Document</th>
+      <th fd-table-cell>Material Number</th>
+      <th fd-table-cell>Long Material Number for MATERIAL Field</th>
+      <th fd-table-cell>External GUID for MATERIAL Field</th>
+      <th fd-table-cell>Version Number for MATERIAL Field</th>
+      <th fd-table-cell>Material number</th>
+      <th fd-table-cell>International Article Number (EAN/UPC)</th>
+      <th fd-table-cell>Material Number Used by Vendor</th>
+      <th fd-table-cell>Plant</th>
+      <th fd-table-cell>Storage location</th>
+      <th fd-table-cell>Purchase Order Quantity</th>
+      <th fd-table-cell>Order unit</th>
+      <th fd-table-cell>Order unit in ISO code</th>
+      <th fd-table-cell>Order Price Unit (Purchasing)</th>
+      <th fd-table-cell>ISO code for purchase order price unit</th>
+      <th fd-table-cell>Price unit</th>
+      <th fd-table-cell>Currency amount for BAPIS (with 9 decimal places)</th>
+      <th fd-table-cell>Order Acknowledgment Requirement</th>
+      <th fd-table-cell>Order Acknowledgment Number</th>
+      <th fd-table-cell>Shipping Instructions</th>
+      <th fd-table-cell>Confirmed as Ordered</th>
+      <th fd-table-cell>Rejection Indicator</th>
+      <th fd-table-cell>Long Material Number for MATERIAL Field</th>
+      <th fd-table-cell>External GUID for MATERIAL Field</th>
+      <th fd-table-cell>Version Number for MATERIAL Field</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of ITEM" fd-table-row>
+       <td fd-table-cell>{{ ITEM_NO }}</td>
+       <td fd-table-cell>{{ MATERIAL }}</td>
+       <td fd-table-cell>{{ MATERIAL_EXTERNAL }}</td>
+       <td fd-table-cell>{{ MATERIAL_GUID }}</td>
+       <td fd-table-cell>{{ MATERIAL_VERSION }}</td>
+       <td fd-table-cell>{{ EMATERIAL }}</td>
+       <td fd-table-cell>{{ INT_ARTICLE_NUM }}</td>
+       <td fd-table-cell>{{ VEND_MAT }}</td>
+       <td fd-table-cell>{{ PLANT }}</td>
+       <td fd-table-cell>{{ STGE_LOC }}</td>
+       <td fd-table-cell>{{ QUANTITY }}</td>
+       <td fd-table-cell>{{ PO_UNIT }}</td>
+       <td fd-table-cell>{{ PO_UNIT_ISO }}</td>
+       <td fd-table-cell>{{ ORDERPR_UN }}</td>
+       <td fd-table-cell>{{ ORDERPR_UN_ISO }}</td>
+       <td fd-table-cell>{{ PRICE_UNIT }}</td>
+       <td fd-table-cell>{{ NET_PRICE }}</td>
+       <td fd-table-cell>{{ ACKN_REQD }}</td>
+       <td fd-table-cell>{{ ACKNOWL_NO }}</td>
+       <td fd-table-cell>{{ SHIPPING }}</td>
+       <td fd-table-cell>{{ CONFIRMED_AS_ORDERED }}</td>
+       <td fd-table-cell>{{ CANCELED }}</td>
+       <td fd-table-cell>{{ EMATERIAL_EXTERNAL }}</td>
+       <td fd-table-cell>{{ EMATERIAL_GUID }}</td>
+       <td fd-table-cell>{{ EMATERIAL_VERSION }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div fd-form-item>
+    <label fd-form-label>Item Number of Purchasing Document</label>
+    <fd-combobox
+        [(ngModel)]="ITEM.ITEM_NO"
+        [dropdownValues]="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+    <fd-combobox
+        [(ngModel)]="ITEM.MATERIAL"
+        [dropdownValues]="{type: 'SH', id: 'S_MAT1'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Long Material Number for MATERIAL Field</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="ITEM.MATERIAL_EXTERNAL"
+            data-abap="{type:'CHAR', alpha:'MATNL', length:'40'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>External GUID for MATERIAL Field</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="ITEM.MATERIAL_GUID"
+            data-abap="{type:'CHAR', length:'32'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Version Number for MATERIAL Field</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="ITEM.MATERIAL_VERSION"
+            data-abap="{type:'CHAR', alpha:'MATNW', length:'10'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material number</label>
+    <fd-combobox
+        [(ngModel)]="ITEM.EMATERIAL"
+        [dropdownValues]="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>International Article Number (EAN/UPC)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="ITEM.INT_ARTICLE_NUM"
+            data-abap="{type:'CHAR', alpha:'EAN11', mid:'EAN', length:'18'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material Number Used by Vendor</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="ITEM.VEND_MAT"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+    <fd-combobox
+        [(ngModel)]="ITEM.PLANT"
+        [dropdownValues]="{type: 'SH', id: 'H_T001W_C'}"
+        data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Storage location</label>
+    <fd-combobox
+        [(ngModel)]="ITEM.STGE_LOC"
+        [dropdownValues]="{type: 'CT', id: 'T001L'}"
+        data-abap="{type:'CHAR', mid:'LAG', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Purchase Order Quantity</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="ITEM.QUANTITY"
+            data-abap="{type:'QUAN', unit:'PO_UNIT', length:'10.3'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Order unit</label>
+    <fd-combobox
+        [(ngModel)]="ITEM.PO_UNIT"
+        [dropdownValues]="{type: 'CT', id: 'T006'}"
+        data-abap="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Order unit in ISO code</label>
+    <fd-combobox
+        [(ngModel)]="ITEM.PO_UNIT_ISO"
+        [dropdownValues]="{type: 'CT', id: 'T006I'}"
+        data-abap="{type:'CHAR', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Order Price Unit (Purchasing)</label>
+    <fd-combobox
+        [(ngModel)]="ITEM.ORDERPR_UN"
+        [dropdownValues]="{type: 'CT', id: 'T006'}"
+        data-abap="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>ISO code for purchase order price unit</label>
+    <fd-combobox
+        [(ngModel)]="ITEM.ORDERPR_UN_ISO"
+        [dropdownValues]="{type: 'CT', id: 'T006I'}"
+        data-abap="{type:'CHAR', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Price unit</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="ITEM.PRICE_UNIT"
+            data-abap="{type:'DEC', length:'5'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Currency amount for BAPIS (with 9 decimal places)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="ITEM.NET_PRICE"
+            data-abap="{type:'DEC', length:'27.9'}"
+        />
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Order Acknowledgment Requirement" [(ngModel)]="ITEM.ACKN_REQD"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Order Acknowledgment Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="ITEM.ACKNOWL_NO"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Shipping Instructions</label>
+    <fd-combobox
+        [(ngModel)]="ITEM.SHIPPING"
+        [dropdownValues]="{type: 'CT', id: 'T027A'}"
+        data-abap="{type:'CHAR', length:'2'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Confirmed as Ordered" [(ngModel)]="ITEM.CONFIRMED_AS_ORDERED"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Rejection Indicator" [(ngModel)]="ITEM.CANCELED"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Long Material Number for MATERIAL Field</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="ITEM.EMATERIAL_EXTERNAL"
+            data-abap="{type:'CHAR', alpha:'MATNL', length:'40'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>External GUID for MATERIAL Field</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="ITEM.EMATERIAL_GUID"
+            data-abap="{type:'CHAR', length:'32'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Version Number for MATERIAL Field</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="ITEM.EMATERIAL_VERSION"
+            data-abap="{type:'CHAR', alpha:'MATNW', length:'10'}"
+        />
+</div>
+
+<!-- Parameter: CONFIRMATION structure: BAPIMECONFDETAIL  MM-PUR: Confirmation Details -->
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Item Number of Purchasing Document</th>
+      <th fd-table-cell>Sequential Number of Vendor Confirmation</th>
+      <th fd-table-cell>Asset class marked for deletion</th>
+      <th fd-table-cell>Confirmation Category</th>
+      <th fd-table-cell>Date category of delivery date in vendor confirmation</th>
+      <th fd-table-cell>Delivery Date of Vendor Confirmation</th>
+      <th fd-table-cell>Delivery Date Time-Spot in Vendor Confirmation</th>
+      <th fd-table-cell>Quantity as Per Vendor Confirmation</th>
+      <th fd-table-cell>Reference Document Number (for Dependencies see Long Text)</th>
+      <th fd-table-cell>Batch Number</th>
+      <th fd-table-cell>Creation Date of Confirmation</th>
+      <th fd-table-cell>Time at Which Vendor Confirmation was Created</th>
+      <th fd-table-cell>Material number corresponding to manufacturer part number</th>
+      <th fd-table-cell>Handover Date at the Handover Location</th>
+      <th fd-table-cell>Handover time at the handover location</th>
+      <th fd-table-cell>Long Material Number for MATERIAL Field</th>
+      <th fd-table-cell>External GUID for MATERIAL Field</th>
+      <th fd-table-cell>Version Number for MATERIAL Field</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of CONFIRMATION" fd-table-row>
+       <td fd-table-cell>{{ ITEM_NO }}</td>
+       <td fd-table-cell>{{ CONF_SER }}</td>
+       <td fd-table-cell>{{ DELETE_IND }}</td>
+       <td fd-table-cell>{{ CONF_CATEGORY }}</td>
+       <td fd-table-cell>{{ DELIV_DATE_TYP }}</td>
+       <td fd-table-cell>{{ DELIV_DATE }}</td>
+       <td fd-table-cell>{{ DELIV_TIME }}</td>
+       <td fd-table-cell>{{ QUANTITY }}</td>
+       <td fd-table-cell>{{ REFERENCE }}</td>
+       <td fd-table-cell>{{ BATCH }}</td>
+       <td fd-table-cell>{{ CREAT_DATE }}</td>
+       <td fd-table-cell>{{ CREAT_TIME }}</td>
+       <td fd-table-cell>{{ MPN }}</td>
+       <td fd-table-cell>{{ HANDOVERDATE }}</td>
+       <td fd-table-cell>{{ HANDOVERTIME }}</td>
+       <td fd-table-cell>{{ MPN_EXTERNAL }}</td>
+       <td fd-table-cell>{{ MPN_GUID }}</td>
+       <td fd-table-cell>{{ MPN_VERSION }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div fd-form-item>
+    <label fd-form-label>Item Number of Purchasing Document</label>
+    <fd-combobox
+        [(ngModel)]="CONFIRMATION.ITEM_NO"
+        [dropdownValues]="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Sequential Number of Vendor Confirmation</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="CONFIRMATION.CONF_SER"
+            data-abap="{type:'NUMC', length:'4'}"
+        />
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Asset class marked for deletion" [(ngModel)]="CONFIRMATION.DELETE_IND"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Confirmation Category</label>
+    <fd-combobox
+        [(ngModel)]="CONFIRMATION.CONF_CATEGORY"
+        [dropdownValues]="{type: 'CT', id: 'T163E'}"
+        data-abap="{type:'CHAR', length:'2'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Date category of delivery date in vendor confirmation</label>
+    <fd-combobox
+        [(ngModel)]="CONFIRMATION.DELIV_DATE_TYP"
+        [dropdownValues]="{type: 'CT', id: 'TPRG'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Delivery Date of Vendor Confirmation</label>
+    <fd-date-picker [type]="single" [(ngModel)]="CONFIRMATION.DELIV_DATE"></fd-date-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Delivery Date Time-Spot in Vendor Confirmation</label>
+    <fd-time-picker [(ngModel)]="CONFIRMATION.DELIV_TIME"></fd-time-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Quantity as Per Vendor Confirmation</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="CONFIRMATION.QUANTITY"
+            data-abap="{type:'QUAN', unit:'PO_UNIT', length:'10.3'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Reference Document Number (for Dependencies see Long Text)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="CONFIRMATION.REFERENCE"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Batch Number</label>
+    <fd-combobox
+        [(ngModel)]="CONFIRMATION.BATCH"
+        [dropdownValues]="{type: 'CT', id: 'MCH1'}"
+        data-abap="{type:'CHAR', mid:'CHA', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Creation Date of Confirmation</label>
+    <fd-date-picker [type]="single" [(ngModel)]="CONFIRMATION.CREAT_DATE"></fd-date-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Time at Which Vendor Confirmation was Created</label>
+    <fd-time-picker [(ngModel)]="CONFIRMATION.CREAT_TIME"></fd-time-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material number corresponding to manufacturer part number</label>
+    <fd-combobox
+        [(ngModel)]="CONFIRMATION.MPN"
+        [dropdownValues]="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'HTN', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Handover Date at the Handover Location</label>
+    <fd-date-picker [type]="single" [(ngModel)]="CONFIRMATION.HANDOVERDATE"></fd-date-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Handover time at the handover location</label>
+    <fd-time-picker [(ngModel)]="CONFIRMATION.HANDOVERTIME"></fd-time-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Long Material Number for MATERIAL Field</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="CONFIRMATION.MPN_EXTERNAL"
+            data-abap="{type:'CHAR', alpha:'MATNL', length:'40'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>External GUID for MATERIAL Field</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="CONFIRMATION.MPN_GUID"
+            data-abap="{type:'CHAR', length:'32'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Version Number for MATERIAL Field</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="CONFIRMATION.MPN_VERSION"
+            data-abap="{type:'CHAR', alpha:'MATNW', length:'10'}"
+        />
+</div>
+
+<!-- Parameter: CONFIRMATIONX structure: BAPIMECONFDETAILX  Table Type for Change Parameter Confirmation Details -->
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Item Number of Purchasing Document</th>
+      <th fd-table-cell>Sequential Number of Vendor Confirmation</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of CONFIRMATIONX" fd-table-row>
+       <td fd-table-cell>{{ ITEM_NO }}</td>
+       <td fd-table-cell>{{ CONF_SER }}</td>
+       <td fd-table-cell>{{ ITEM_NOX }}</td>
+       <td fd-table-cell>{{ CONF_SERX }}</td>
+       <td fd-table-cell>{{ DELETE_IND }}</td>
+       <td fd-table-cell>{{ CONF_CATEGORY }}</td>
+       <td fd-table-cell>{{ DELIV_DATE_TYP }}</td>
+       <td fd-table-cell>{{ DELIV_DATE }}</td>
+       <td fd-table-cell>{{ DELIV_TIME }}</td>
+       <td fd-table-cell>{{ QUANTITY }}</td>
+       <td fd-table-cell>{{ REFERENCE }}</td>
+       <td fd-table-cell>{{ BATCH }}</td>
+       <td fd-table-cell>{{ CREAT_DATE }}</td>
+       <td fd-table-cell>{{ CREAT_TIME }}</td>
+       <td fd-table-cell>{{ MPN }}</td>
+       <td fd-table-cell>{{ HANDOVERDATE }}</td>
+       <td fd-table-cell>{{ HANDOVERTIME }}</td>
+       <td fd-table-cell>{{ MPN_EXTERNAL }}</td>
+       <td fd-table-cell>{{ MPN_GUID }}</td>
+       <td fd-table-cell>{{ MPN_VERSION }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div fd-form-item>
+    <label fd-form-label>Item Number of Purchasing Document</label>
+    <fd-combobox
+        [(ngModel)]="CONFIRMATIONX.ITEM_NO"
+        [dropdownValues]="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Sequential Number of Vendor Confirmation</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="CONFIRMATIONX.CONF_SER"
+            data-abap="{type:'NUMC', length:'4'}"
+        />
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.ITEM_NOX"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.CONF_SERX"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.DELETE_IND"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.CONF_CATEGORY"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.DELIV_DATE_TYP"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.DELIV_DATE"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.DELIV_TIME"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.QUANTITY"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.REFERENCE"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.BATCH"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.CREAT_DATE"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.CREAT_TIME"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.MPN"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.HANDOVERDATE"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.HANDOVERTIME"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.MPN_EXTERNAL"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.MPN_GUID"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="CONFIRMATIONX.MPN_VERSION"></fd-checkbox>
+</div>
+
+<!-- Parameter: EXTENSIONIN structure: BAPIPAREX  Table Type for BAPIPAREX -->
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Structure name of  BAPI table extension</th>
+      <th fd-table-cell>Data part of BAPI extension parameter</th>
+      <th fd-table-cell>Data part of BAPI extension parameter</th>
+      <th fd-table-cell>Data part of BAPI extension parameter</th>
+      <th fd-table-cell>Data part of BAPI extension parameter</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of EXTENSIONIN" fd-table-row>
+       <td fd-table-cell>{{ STRUCTURE }}</td>
+       <td fd-table-cell>{{ VALUEPART1 }}</td>
+       <td fd-table-cell>{{ VALUEPART2 }}</td>
+       <td fd-table-cell>{{ VALUEPART3 }}</td>
+       <td fd-table-cell>{{ VALUEPART4 }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div fd-form-item>
+    <label fd-form-label>Structure name o API table extension</label>
+    <fd-combobox
+        [(ngModel)]="EXTENSIONIN.STRUCTURE"
+        [dropdownValues]="{type: 'CT', id: 'DD02L'}"
+        data-abap="{type:'CHAR', length:'30'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Data part of BAPI extension parameter</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="EXTENSIONIN.VALUEPART1"
+            data-abap="{type:'CHAR', length:'240'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Data part of BAPI extension parameter</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="EXTENSIONIN.VALUEPART2"
+            data-abap="{type:'CHAR', length:'240'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Data part of BAPI extension parameter</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="EXTENSIONIN.VALUEPART3"
+            data-abap="{type:'CHAR', length:'240'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Data part of BAPI extension parameter</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="EXTENSIONIN.VALUEPART4"
+            data-abap="{type:'CHAR', length:'240'}"
+        />
+</div>
+
+<!-- Parameter: EXTENSIONOUT structure: BAPIPAREX  Table Type for BAPIPAREX -->
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Structure name of  BAPI table extension</th>
+      <th fd-table-cell>Data part of BAPI extension parameter</th>
+      <th fd-table-cell>Data part of BAPI extension parameter</th>
+      <th fd-table-cell>Data part of BAPI extension parameter</th>
+      <th fd-table-cell>Data part of BAPI extension parameter</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of EXTENSIONOUT" fd-table-row>
+       <td fd-table-cell>{{ STRUCTURE }}</td>
+       <td fd-table-cell>{{ VALUEPART1 }}</td>
+       <td fd-table-cell>{{ VALUEPART2 }}</td>
+       <td fd-table-cell>{{ VALUEPART3 }}</td>
+       <td fd-table-cell>{{ VALUEPART4 }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div fd-form-item>
+    <label fd-form-label>Structure name o API table extension</label>
+    <fd-combobox
+        [(ngModel)]="EXTENSIONOUT.STRUCTURE"
+        [dropdownValues]="{type: 'CT', id: 'DD02L'}"
+        data-abap="{type:'CHAR', length:'30'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Data part of BAPI extension parameter</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="EXTENSIONOUT.VALUEPART1"
+            data-abap="{type:'CHAR', length:'240'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Data part of BAPI extension parameter</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="EXTENSIONOUT.VALUEPART2"
+            data-abap="{type:'CHAR', length:'240'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Data part of BAPI extension parameter</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="EXTENSIONOUT.VALUEPART3"
+            data-abap="{type:'CHAR', length:'240'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Data part of BAPI extension parameter</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="EXTENSIONOUT.VALUEPART4"
+            data-abap="{type:'CHAR', length:'240'}"
+        />
+</div>
+
+<!-- Parameter: HEADER_TEXT structure: BAPIMECONFTEXT  Header Text - Confirmation -->
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Text ID</th>
+      <th fd-table-cell>Deletion indicator in purchasing document</th>
+      <th fd-table-cell>Tag column</th>
+      <th fd-table-cell>Text Line</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of HEADER_TEXT" fd-table-row>
+       <td fd-table-cell>{{ TEXT_ID }}</td>
+       <td fd-table-cell>{{ DELETE_IND }}</td>
+       <td fd-table-cell>{{ TEXT_FORM }}</td>
+       <td fd-table-cell>{{ TEXT_LINE }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div fd-form-item>
+    <label fd-form-label>Text ID</label>
+    <fd-combobox
+        [(ngModel)]="HEADER_TEXT.TEXT_ID"
+        [dropdownValues]="{type: 'CT', id: 'TTXID'}"
+        data-abap="{type:'CHAR', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Deletion indicator in purchasing document</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="HEADER_TEXT.DELETE_IND"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Tag column</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="HEADER_TEXT.TEXT_FORM"
+            data-abap="{type:'CHAR', length:'2'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Text Line</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="HEADER_TEXT.TEXT_LINE"
+            data-abap="{type:'CHAR', length:'132'}"
+        />
+</div>
+
+<!-- Parameter: ITEM_TEXT structure: BAPIMECONFITEMTEXT  Text Data - Confirmation -->
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Item Number of Purchasing Document</th>
+      <th fd-table-cell>Deletion indicator in purchasing document</th>
+      <th fd-table-cell>Text ID</th>
+      <th fd-table-cell>Tag column</th>
+      <th fd-table-cell>Text Line</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of ITEM_TEXT" fd-table-row>
+       <td fd-table-cell>{{ ITEM_NO }}</td>
+       <td fd-table-cell>{{ DELETE_IND }}</td>
+       <td fd-table-cell>{{ TEXT_ID }}</td>
+       <td fd-table-cell>{{ TEXT_FORM }}</td>
+       <td fd-table-cell>{{ TEXT_LINE }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div fd-form-item>
+    <label fd-form-label>Item Number of Purchasing Document</label>
+    <fd-combobox
+        [(ngModel)]="ITEM_TEXT.ITEM_NO"
+        [dropdownValues]="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Deletion indicator in purchasing document</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="ITEM_TEXT.DELETE_IND"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Text ID</label>
+    <fd-combobox
+        [(ngModel)]="ITEM_TEXT.TEXT_ID"
+        [dropdownValues]="{type: 'CT', id: 'TTXID'}"
+        data-abap="{type:'CHAR', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Tag column</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="ITEM_TEXT.TEXT_FORM"
+            data-abap="{type:'CHAR', length:'2'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Text Line</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="ITEM_TEXT.TEXT_LINE"
+            data-abap="{type:'CHAR', length:'132'}"
+        />
+</div>
+
+<!-- Parameter: ITEMX structure: BAPIMECONFITEMX  Table Type for Change Parameter of Item Data -->
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Item Number of Purchasing Document</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+      <th fd-table-cell>Updated information in related user data field</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of ITEMX" fd-table-row>
+       <td fd-table-cell>{{ ITEM_NO }}</td>
+       <td fd-table-cell>{{ ITEM_NOX }}</td>
+       <td fd-table-cell>{{ MATERIAL }}</td>
+       <td fd-table-cell>{{ MATERIAL_EXTERNAL }}</td>
+       <td fd-table-cell>{{ MATERIAL_GUID }}</td>
+       <td fd-table-cell>{{ MATERIAL_VERSION }}</td>
+       <td fd-table-cell>{{ EMATERIAL }}</td>
+       <td fd-table-cell>{{ INT_ARTICLE_NUM }}</td>
+       <td fd-table-cell>{{ VEND_MAT }}</td>
+       <td fd-table-cell>{{ PLANT }}</td>
+       <td fd-table-cell>{{ STGE_LOC }}</td>
+       <td fd-table-cell>{{ QUANTITY }}</td>
+       <td fd-table-cell>{{ PO_UNIT }}</td>
+       <td fd-table-cell>{{ PO_UNIT_ISO }}</td>
+       <td fd-table-cell>{{ ORDERPR_UN }}</td>
+       <td fd-table-cell>{{ ORDERPR_UN_ISO }}</td>
+       <td fd-table-cell>{{ PRICE_UNIT }}</td>
+       <td fd-table-cell>{{ NET_PRICE }}</td>
+       <td fd-table-cell>{{ ACKN_REQD }}</td>
+       <td fd-table-cell>{{ ACKNOWL_NO }}</td>
+       <td fd-table-cell>{{ SHIPPING }}</td>
+       <td fd-table-cell>{{ CONFIRMED_AS_ORDERED }}</td>
+       <td fd-table-cell>{{ CANCELED }}</td>
+       <td fd-table-cell>{{ EMATERIAL_EXTERNAL }}</td>
+       <td fd-table-cell>{{ EMATERIAL_GUID }}</td>
+       <td fd-table-cell>{{ EMATERIAL_VERSION }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div fd-form-item>
+    <label fd-form-label>Item Number of Purchasing Document</label>
+    <fd-combobox
+        [(ngModel)]="ITEMX.ITEM_NO"
+        [dropdownValues]="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.ITEM_NOX"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.MATERIAL"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.MATERIAL_EXTERNAL"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.MATERIAL_GUID"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.MATERIAL_VERSION"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.EMATERIAL"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.INT_ARTICLE_NUM"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.VEND_MAT"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.PLANT"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.STGE_LOC"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.QUANTITY"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.PO_UNIT"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.PO_UNIT_ISO"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.ORDERPR_UN"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.ORDERPR_UN_ISO"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.PRICE_UNIT"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.NET_PRICE"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.ACKN_REQD"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.ACKNOWL_NO"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.SHIPPING"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.CONFIRMED_AS_ORDERED"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.CANCELED"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.EMATERIAL_EXTERNAL"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.EMATERIAL_GUID"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Updated information in related user data field" [(ngModel)]="ITEMX.EMATERIAL_VERSION"></fd-checkbox>
+</div>
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Parameter(s) -->
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Message type: S Success, E Error, W Warning, I Info, A Abort</th>
+      <th fd-table-cell>Message Class</th>
+      <th fd-table-cell>Message Number</th>
+      <th fd-table-cell>Message Text</th>
+      <th fd-table-cell>Application log: log number</th>
+      <th fd-table-cell>Application log: Internal message serial number</th>
+      <th fd-table-cell>Message Variable</th>
+      <th fd-table-cell>Message Variable</th>
+      <th fd-table-cell>Message Variable</th>
+      <th fd-table-cell>Message Variable</th>
+      <th fd-table-cell>Parameter Name</th>
+      <th fd-table-cell>Lines in parameter</th>
+      <th fd-table-cell>Field in parameter</th>
+      <th fd-table-cell>Logical system from which message originates</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of RETURN" fd-table-row>
+       <td fd-table-cell>{{ TYPE }}</td>
+       <td fd-table-cell>{{ ID }}</td>
+       <td fd-table-cell>{{ NUMBER }}</td>
+       <td fd-table-cell>{{ MESSAGE }}</td>
+       <td fd-table-cell>{{ LOG_NO }}</td>
+       <td fd-table-cell>{{ LOG_MSG_NO }}</td>
+       <td fd-table-cell>{{ MESSAGE_V1 }}</td>
+       <td fd-table-cell>{{ MESSAGE_V2 }}</td>
+       <td fd-table-cell>{{ MESSAGE_V3 }}</td>
+       <td fd-table-cell>{{ MESSAGE_V4 }}</td>
+       <td fd-table-cell>{{ PARAMETER }}</td>
+       <td fd-table-cell>{{ ROW }}</td>
+       <td fd-table-cell>{{ FIELD }}</td>
+       <td fd-table-cell>{{ SYSTEM }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div fd-form-item>
+    <label fd-form-label>Message type: S Success, E Error, W Warning, I Info, A Abort</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.TYPE"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Class</label>
+    <fd-combobox
+        [(ngModel)]="RETURN.ID"
+        [dropdownValues]="{type: 'CT', id: 'T100A'}"
+        data-abap="{type:'CHAR', length:'20'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.NUMBER"
+            data-abap="{type:'NUMC', length:'3'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE"
+            data-abap="{type:'CHAR', length:'220'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Application log: log number</label>
+    <fd-combobox
+        [(ngModel)]="RETURN.LOG_NO"
+        [dropdownValues]="{type: 'CH', id: 'BALHDR'}"
+        data-abap="{type:'CHAR', length:'20'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Application log: Internal message serial number</label>
+    <fd-combobox
+        [(ngModel)]="RETURN.LOG_MSG_NO"
+        [dropdownValues]="{type: 'CH', id: 'BALM'}"
+        data-abap="{type:'NUMC', length:'6'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Variable</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE_V1"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Variable</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE_V2"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Variable</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE_V3"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Variable</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE_V4"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Parameter Name</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.PARAMETER"
+            data-abap="{type:'CHAR', length:'32'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Lines in parameter</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.ROW"
+            data-abap="{type:'INT4', length:'+10'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Field in parameter</label>
+    <fd-combobox
+        [(ngModel)]="RETURN.FIELD"
+        [dropdownValues]="{type: 'CT', id: 'DD03L'}"
+        data-abap="{type:'CHAR', length:'30'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Logical system from which message originates</label>
+    <fd-combobox
+        [(ngModel)]="RETURN.SYSTEM"
+        [dropdownValues]="{type: 'CT', id: 'TBDLS'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<!-- EXPORT PARAMETERS -->
+
+<!-- Parameter: EXP_HEADER structure: BAPIMECONFHEADER  Header Data Confirmation for BAPI -->
+
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Number</label>
+    <fd-combobox
+        [(ngModel)]="EXP_HEADER.DOC_NUMBER"
+        [dropdownValues]="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+    >
+    </fd-combobox>
+</div>

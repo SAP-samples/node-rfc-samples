@@ -1,0 +1,100 @@
+<!-- SH MCWEE Selection via address : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Entity Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SWENR"
+            data-abap="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Country Key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LAND1"
+            data-abap="{type:'CHAR', mid:'LND', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Postal Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PSTLZ"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ORT01"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>IS-IS: City 1 in upper case characters for matchcode search</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ORT01_MC"
+            data-abap="{type:'CHAR', length:'16'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Street and House Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.STRAS"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>IS-IS: Street in upper case characters for matchcode search</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.STRAS_MC"
+            data-abap="{type:'CHAR', length:'16'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Region (State, Province, County)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.REGIO"
+            data-abap="{type:'CHAR', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Object number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJNR"
+            data-abap="{type:'CHAR', mid:'ONR', length:'22'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Internal Key for Real Estate Object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.IMKEY"
+            data-abap="{type:'CHAR', alpha:'IMKEY', length:'8'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Business Entity Number</th>
+      <th fd-table-cell>Postal Code</th>
+      <th fd-table-cell>City</th>
+      <th fd-table-cell>Street and House Number</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ SWENR }}</td>
+       <td fd-table-cell>{{ PSTLZ }}</td>
+       <td fd-table-cell>{{ ORT01 }}</td>
+       <td fd-table-cell>{{ STRAS }}</td>
+    </tr>
+  </tbody>
+</table>

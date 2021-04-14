@@ -1,0 +1,44 @@
+<!-- SH H_T157D Reason for Movement : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Movement type (inventory management)</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BWART"
+        [dropdownValues]="{type: 'SH', id: 'H_T156'}"
+        data-abap="{type:'CHAR', mid:'BWA', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Reason for Movement</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.GRUND"
+        [dropdownValues]="{type: 'CT', id: 'T157D'}"
+        data-abap="{type:'NUMC', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Text: Reason for Goods Movement</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.GRTXT"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Movement type (inventory management)</th>
+      <th fd-table-cell>Reason for Movement</th>
+      <th fd-table-cell>Text: Reason for Goods Movement</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BWART }}</td>
+       <td fd-table-cell>{{ GRUND }}</td>
+       <td fd-table-cell>{{ GRTXT }}</td>
+    </tr>
+  </tbody>
+</table>

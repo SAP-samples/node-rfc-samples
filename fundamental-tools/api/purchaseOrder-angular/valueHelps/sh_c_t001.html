@@ -1,0 +1,49 @@
+<!-- SH C_T001 Company Code : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name of Company Code or Company</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUTXT"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ORT01"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Currency Key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.WAERS"
+            data-abap="{type:'CUKY', mid:'FWS', length:'5'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Name of Company Code or Company</th>
+      <th fd-table-cell>City</th>
+      <th fd-table-cell>Currency Key</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ BUTXT }}</td>
+       <td fd-table-cell>{{ ORT01 }}</td>
+       <td fd-table-cell>{{ WAERS }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,38 @@
+<!-- SH SGT_CSGR Segmentation Structure : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Segmentation Structure</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SGT_CSGR"
+            data-abap="{type:'CHAR', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Segmentation Short Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SGT_EXPL"
+            data-abap="{type:'CHAR', length:'60'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Identifier: Plant Independent</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SGT_PLANT"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Segmentation Structure</th>
+      <th fd-table-cell>Segmentation Short Text</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ SGT_CSGR }}</td>
+       <td fd-table-cell>{{ SGT_EXPL }}</td>
+    </tr>
+  </tbody>
+</table>

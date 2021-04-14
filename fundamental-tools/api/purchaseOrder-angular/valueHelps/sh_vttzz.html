@@ -1,0 +1,51 @@
+<!-- SH VTTZZ Address time zone : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Time Zone</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.TZONE"
+        [dropdownValues]="{type: 'CT', id: 'TTZZ'}"
+        data-abap="{type:'CHAR', length:'6'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Time Zone Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.DESCRIPT"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name of Time Zone Rule (Difference from UTC)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TZONERULE"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Daylight Saving Time Rule</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.DSTRULE"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Time Zone</th>
+      <th fd-table-cell>Time Zone Text</th>
+      <th fd-table-cell>Name of Time Zone Rule (Difference from UTC)</th>
+      <th fd-table-cell>Daylight Saving Time Rule</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ TZONE }}</td>
+       <td fd-table-cell>{{ DESCRIPT }}</td>
+       <td fd-table-cell>{{ TZONERULE }}</td>
+       <td fd-table-cell>{{ DSTRULE }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,154 @@
+<!-- SH MBAN_TREX_SIMPLE Simple Search for Purchase Requisitions via Search Engine : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Input Field for Full Text Search</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/SEARCH_TERM"
+            data-abap="{type:'CHAR', length:'45'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Option Fuzzy Mode</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/MODE_FUZZY"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Object for Search Engine Service (SES)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUSINESS_OBJECT"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Type of Business Object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJECT_TYPE"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchase requisition number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EXTERNAL_KEY"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BAN', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing document category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BSTYP"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchase Requisition Document Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BSART"
+            data-abap="{type:'CHAR', mid:'BBA', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing organization</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EKORG"
+            data-abap="{type:'CHAR', mid:'EKO', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Requisition (request) date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.BADAT"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name of requisitioner/requester</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.AFNAM"
+            data-abap="{type:'CHAR', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing group</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EKGRP"
+            data-abap="{type:'CHAR', mid:'EKG', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.WERKS"
+            data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MATNR"
+            data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Group</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MATKL"
+            data-abap="{type:'CHAR', mid:'MKL', length:'9'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Short Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TXZ01"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Account assignment category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KNTTP"
+            data-abap="{type:'CHAR', mid:'KNT', length:'1'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Input Field for Full Text Search</th>
+      <th fd-table-cell>Option Fuzzy Mode</th>
+      <th fd-table-cell>Business Object for Search Engine Service (SES)</th>
+      <th fd-table-cell>Type of Business Object</th>
+      <th fd-table-cell>Purchase requisition number</th>
+      <th fd-table-cell>Purchasing document category</th>
+      <th fd-table-cell>Purchase Requisition Document Type</th>
+      <th fd-table-cell>Purchasing organization</th>
+      <th fd-table-cell>Requisition (request) date</th>
+      <th fd-table-cell>Name of requisitioner/requester</th>
+      <th fd-table-cell>Purchasing group</th>
+      <th fd-table-cell>Plant</th>
+      <th fd-table-cell>Material Number</th>
+      <th fd-table-cell>Material Group</th>
+      <th fd-table-cell>Short Text</th>
+      <th fd-table-cell>Account assignment category</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ S/RP/SEARCH_TERM }}</td>
+       <td fd-table-cell>{{ S/RP/MODE_FUZZY }}</td>
+       <td fd-table-cell>{{ BUSINESS_OBJECT }}</td>
+       <td fd-table-cell>{{ OBJECT_TYPE }}</td>
+       <td fd-table-cell>{{ EXTERNAL_KEY }}</td>
+       <td fd-table-cell>{{ BSTYP }}</td>
+       <td fd-table-cell>{{ BSART }}</td>
+       <td fd-table-cell>{{ EKORG }}</td>
+       <td fd-table-cell>{{ BADAT }}</td>
+       <td fd-table-cell>{{ AFNAM }}</td>
+       <td fd-table-cell>{{ EKGRP }}</td>
+       <td fd-table-cell>{{ WERKS }}</td>
+       <td fd-table-cell>{{ MATNR }}</td>
+       <td fd-table-cell>{{ MATKL }}</td>
+       <td fd-table-cell>{{ TXZ01 }}</td>
+       <td fd-table-cell>{{ KNTTP }}</td>
+    </tr>
+  </tbody>
+</table>

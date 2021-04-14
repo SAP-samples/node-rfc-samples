@@ -1,0 +1,33 @@
+<!-- SH H_T163B Purchase Order History Category : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Purchase Order History Category</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BEWTP"
+        [dropdownValues]="{type: 'CT', id: 'T163B'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Short Text for Purchase Order History Category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BEWTK"
+            data-abap="{type:'CHAR', length:'4'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Purchase Order History Category</th>
+      <th fd-table-cell>Short Text for Purchase Order History Category</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BEWTP }}</td>
+       <td fd-table-cell>{{ BEWTK }}</td>
+    </tr>
+  </tbody>
+</table>

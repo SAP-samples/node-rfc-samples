@@ -1,0 +1,41 @@
+<!-- SH MEKKT Contracts per Agreement Date : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Purchasing document category</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BSTYP"
+        [dropdownValues]="{type: 'FV', id: 'BSTYP'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.BEDAT"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EBELN"
+        [dropdownValues]="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Purchasing document category</th>
+      <th fd-table-cell>Purchasing Document Date</th>
+      <th fd-table-cell>Purchasing Document Number</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BSTYP }}</td>
+       <td fd-table-cell>{{ BEDAT }}</td>
+       <td fd-table-cell>{{ EBELN }}</td>
+    </tr>
+  </tbody>
+</table>

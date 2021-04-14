@@ -1,0 +1,44 @@
+<!-- SH FM_DEBI_FMPSOIS Proceed Initially According to Customer Sub-Ledger Account : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Customer Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.KUNNR"
+        [dropdownValues]="{type: 'SH', id: 'DEBI'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Subledger acct preprocessing procedure</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PSOIS"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Revnue Type</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.PSOEA"
+        [dropdownValues]="{type: 'CT', id: 'PSO04'}"
+        data-abap="{type:'CHAR', length:'8'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Customer Number</th>
+      <th fd-table-cell>Revnue Type</th>
+      <th fd-table-cell>Subledger acct preprocessing procedure</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ KUNNR }}</td>
+       <td fd-table-cell>{{ PSOEA }}</td>
+       <td fd-table-cell>{{ PSOIS }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,53 @@
+<!-- SH DEBIP Customers by personnel number : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Personnel Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PERNR"
+            data-abap="{type:'NUMC', mid:'PER', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search term for matchcode search</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MCOD1"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Customer Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.KUNNR"
+        [dropdownValues]="{type: 'SH', id: 'DEBI'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BUKRS"
+        [dropdownValues]="{type: 'SH', id: 'C_T001'}"
+        data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Personnel Number</th>
+      <th fd-table-cell>Search term for matchcode search</th>
+      <th fd-table-cell>Customer Number</th>
+      <th fd-table-cell>Company Code</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ PERNR }}</td>
+       <td fd-table-cell>{{ MCOD1 }}</td>
+       <td fd-table-cell>{{ KUNNR }}</td>
+       <td fd-table-cell>{{ BUKRS }}</td>
+    </tr>
+  </tbody>
+</table>

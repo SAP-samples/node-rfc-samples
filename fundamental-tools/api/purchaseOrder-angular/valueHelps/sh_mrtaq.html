@@ -1,0 +1,145 @@
+<!-- SH MRTAQ Selection via any partner with address : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Internal Real Estate Master Data Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.INTRENO"
+            data-abap="{type:'CHAR', length:'13'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Lease-Out Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SMIVE"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'MIV', length:'13'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Service Charge Collector Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJNR"
+            data-abap="{type:'CHAR', length:'22'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Partner Role Category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ROLETYP"
+            data-abap="{type:'CHAR', mid:'BPR', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name 1 (surname for persons, else company name)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME1"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name 2 (Continuation of NAME 1)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME2"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Field NAME1 in Upper Case</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_NAME1"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Field NAME2 in Upper Case</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_NAME2"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Country Key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LAND1"
+            data-abap="{type:'CHAR', mid:'LND', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Postal Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PSTLZ"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ORT01"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>IS-IS: City 1 in upper case characters for matchcode search</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ORT01_MC"
+            data-abap="{type:'CHAR', length:'16'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Street and House Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.STRAS"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>IS-IS: Street in upper case characters for matchcode search</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.STRAS_MC"
+            data-abap="{type:'CHAR', length:'16'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Region (State, Province, County)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.REGIO"
+            data-abap="{type:'CHAR', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Date of Birth of Business Partner</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.BIRTH_DATE"></fd-date-picker>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Lease-Out Number</th>
+      <th fd-table-cell>Name 1 (surname for persons, else company name)</th>
+      <th fd-table-cell>Name 2 (Continuation of NAME 1)</th>
+      <th fd-table-cell>Postal Code</th>
+      <th fd-table-cell>City</th>
+      <th fd-table-cell>Street and House Number</th>
+      <th fd-table-cell>Date of Birth of Business Partner</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ SMIVE }}</td>
+       <td fd-table-cell>{{ NAME1 }}</td>
+       <td fd-table-cell>{{ NAME2 }}</td>
+       <td fd-table-cell>{{ PSTLZ }}</td>
+       <td fd-table-cell>{{ ORT01 }}</td>
+       <td fd-table-cell>{{ STRAS }}</td>
+       <td fd-table-cell>{{ BIRTH_DATE }}</td>
+    </tr>
+  </tbody>
+</table>

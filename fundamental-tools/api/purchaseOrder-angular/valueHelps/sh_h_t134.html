@@ -1,0 +1,31 @@
+<!-- SH H_T134 Material type : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Material type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MTART"
+            data-abap="{type:'CHAR', mid:'MTA', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Description of material type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MTBEZ"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Material type</th>
+      <th fd-table-cell>Description of material type</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ MTART }}</td>
+       <td fd-table-cell>{{ MTBEZ }}</td>
+    </tr>
+  </tbody>
+</table>

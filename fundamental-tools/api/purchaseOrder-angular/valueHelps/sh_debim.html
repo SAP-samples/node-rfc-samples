@@ -1,0 +1,146 @@
+<!-- SH DEBIM Customers With Lease-Out : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Business Partner Role Category</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.ROLETYP"
+        [dropdownValues]="{type: 'SH', id: 'H_TPZ3'}"
+        data-abap="{type:'CHAR', mid:'BPR', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Customer Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.KUNNR"
+        [dropdownValues]="{type: 'SH', id: 'DEBI'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name 1 (surname for persons, else company name)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME1"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name 2 (Continuation of NAME 1)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME2"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BUKRS"
+        [dropdownValues]="{type: 'SH', id: 'C_T001'}"
+        data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Lease-Out Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SMIVE"
+        [dropdownValues]="{type: 'SH', id: 'MRTA'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'MIV', length:'13'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Entity Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SWENR"
+        [dropdownValues]="{type: 'SH', id: 'MCWE'}"
+        data-abap="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Number of Rental Unit</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SMENR"
+        [dropdownValues]="{type: 'SH', id: 'MCME'}"
+        data-abap="{type:'CHAR', alpha:'SMENR', mid:'MEH', length:'8'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Rental start date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.DMIBEG"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Rental end date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.DMIEND"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>External Real Estate contract type</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SMVART"
+        [dropdownValues]="{type: 'SH', id: 'RECNTYPE'}"
+        data-abap="{type:'CHAR', mid:'RECNTYPE', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract Notice Per</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.DKUEZU"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract No. of Collective Lease-Outs</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.E_SMIVE"
+        [dropdownValues]="{type: 'SH', id: 'MRAE'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'MVE', length:'13'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Bank procedure account number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KONTOBV"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Lease-Out Number</th>
+      <th fd-table-cell>Bank procedure account number</th>
+      <th fd-table-cell>Contract No. of Collective Lease-Outs</th>
+      <th fd-table-cell>Business Entity Number</th>
+      <th fd-table-cell>Number of Rental Unit</th>
+      <th fd-table-cell>External Real Estate contract type</th>
+      <th fd-table-cell>Rental start date</th>
+      <th fd-table-cell>Rental end date</th>
+      <th fd-table-cell>Contract Notice Per</th>
+      <th fd-table-cell>Customer Number</th>
+      <th fd-table-cell>Business Partner Role Category</th>
+      <th fd-table-cell>Name 1 (surname for persons, else company name)</th>
+      <th fd-table-cell>Name 2 (Continuation of NAME 1)</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ SMIVE }}</td>
+       <td fd-table-cell>{{ KONTOBV }}</td>
+       <td fd-table-cell>{{ E_SMIVE }}</td>
+       <td fd-table-cell>{{ SWENR }}</td>
+       <td fd-table-cell>{{ SMENR }}</td>
+       <td fd-table-cell>{{ SMVART }}</td>
+       <td fd-table-cell>{{ DMIBEG }}</td>
+       <td fd-table-cell>{{ DMIEND }}</td>
+       <td fd-table-cell>{{ DKUEZU }}</td>
+       <td fd-table-cell>{{ KUNNR }}</td>
+       <td fd-table-cell>{{ ROLETYP }}</td>
+       <td fd-table-cell>{{ NAME1 }}</td>
+       <td fd-table-cell>{{ NAME2 }}</td>
+    </tr>
+  </tbody>
+</table>

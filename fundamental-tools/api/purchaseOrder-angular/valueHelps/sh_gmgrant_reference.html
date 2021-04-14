@@ -1,0 +1,78 @@
+<!-- SH GMGRANT_REFERENCE Search grants with reference number : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Grant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.GRANT_NBR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'GM_GRANT_NBR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Shorter description of the grant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SHORT_DESC"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Alternate Grant Identifier</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.INT_REFERENCE"
+            data-abap="{type:'CHAR', length:'24'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Descriptive Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.DESCRIPTION"
+            data-abap="{type:'CHAR', length:'80'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Alternate Grant Identifier</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EXT_REFERENCE"
+            data-abap="{type:'CHAR', length:'24'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.COMPANY_CODE"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Number in Catalog of Federal Domestic Assistance</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.CFDA"
+        [dropdownValues]="{type: 'CT', id: 'GMCFDA'}"
+        data-abap="{type:'CHAR', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Grant</th>
+      <th fd-table-cell>Alternate Grant Identifier</th>
+      <th fd-table-cell>Alternate Grant Identifier</th>
+      <th fd-table-cell>Number in Catalog of Federal Domestic Assistance</th>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Shorter description of the grant</th>
+      <th fd-table-cell>Descriptive Text</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ GRANT_NBR }}</td>
+       <td fd-table-cell>{{ INT_REFERENCE }}</td>
+       <td fd-table-cell>{{ EXT_REFERENCE }}</td>
+       <td fd-table-cell>{{ CFDA }}</td>
+       <td fd-table-cell>{{ COMPANY_CODE }}</td>
+       <td fd-table-cell>{{ SHORT_DESC }}</td>
+       <td fd-table-cell>{{ DESCRIPTION }}</td>
+    </tr>
+  </tbody>
+</table>

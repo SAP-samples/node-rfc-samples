@@ -1,0 +1,142 @@
+<!-- SH RELIFNRCN Vendor by Real Estate Contract : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Contract Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Account Number of Vendor or Creditor</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LIFNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNTYPE"
+            data-abap="{type:'CHAR', mid:'RECNTYPE', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Date of contract start</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.RECNBEG"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Term End Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.RECNENDABS"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract Notice Per</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.RECNNOTPER"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Number of old contract</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNTXTOLD"
+            data-abap="{type:'CHAR', alpha:'ALPHA', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Number of Real Estate Main Contract</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNNRCOLLECT"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract name</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNTXT"
+            data-abap="{type:'CHAR', length:'80'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name 1 of organization</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME_ORG1"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name 2 of organization</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME_ORG2"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Last name of business partner (person)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME_LAST"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>First name of business partner (person)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME_FIRST"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search Help Field 1 (Name 1/Last Name)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_NAME1"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search Help Field 2 (Name 2/First Name)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_NAME2"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Account Number of Vendor or Creditor</th>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Contract Number</th>
+      <th fd-table-cell>Contract Type</th>
+      <th fd-table-cell>Date of contract start</th>
+      <th fd-table-cell>Term End Date</th>
+      <th fd-table-cell>Contract Notice Per</th>
+      <th fd-table-cell>Search Help Field 1 (Name 1/Last Name)</th>
+      <th fd-table-cell>Contract name</th>
+      <th fd-table-cell>Last name of business partner (person)</th>
+      <th fd-table-cell>First name of business partner (person)</th>
+      <th fd-table-cell>Name 1 of organization</th>
+      <th fd-table-cell>Name 2 of organization</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ LIFNR }}</td>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ RECNNR }}</td>
+       <td fd-table-cell>{{ RECNTYPE }}</td>
+       <td fd-table-cell>{{ RECNBEG }}</td>
+       <td fd-table-cell>{{ RECNENDABS }}</td>
+       <td fd-table-cell>{{ RECNNOTPER }}</td>
+       <td fd-table-cell>{{ MC_NAME1 }}</td>
+       <td fd-table-cell>{{ RECNTXT }}</td>
+       <td fd-table-cell>{{ NAME_LAST }}</td>
+       <td fd-table-cell>{{ NAME_FIRST }}</td>
+       <td fd-table-cell>{{ NAME_ORG1 }}</td>
+       <td fd-table-cell>{{ NAME_ORG2 }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,56 @@
+<!-- SH BUHI_TREE_SEARCH_TERM3 Partner in Group Hierarchy : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Business Partner Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PARTNER"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BPA', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Hierarchy Tree ID</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SEARCH_TERM"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LANGUAGE"
+            data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Description of Hierarchy Tree</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.DESCRIPTION"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Description of Hierarchy Category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.DESCRIPTION2"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Hierarchy Tree ID</th>
+      <th fd-table-cell>Description of Hierarchy Tree</th>
+      <th fd-table-cell>Language Key</th>
+      <th fd-table-cell>Description of Hierarchy Category</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ SEARCH_TERM }}</td>
+       <td fd-table-cell>{{ DESCRIPTION }}</td>
+       <td fd-table-cell>{{ LANGUAGE }}</td>
+       <td fd-table-cell>{{ DESCRIPTION2 }}</td>
+    </tr>
+  </tbody>
+</table>

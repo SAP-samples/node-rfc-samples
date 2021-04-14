@@ -1,0 +1,79 @@
+<!-- SH MEKKM Purchasing Documents for Material : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Material number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MATNR"
+        [dropdownValues]="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.WERKS"
+        [dropdownValues]="{type: 'SH', id: 'H_T001W'}"
+        data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Category</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BSTYP"
+        [dropdownValues]="{type: 'FV', id: 'EBSTYP'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Order Type (Purchasing)</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BSART"
+        [dropdownValues]="{type: 'SH', id: 'H_T161'}"
+        data-abap="{type:'CHAR', mid:'BSA', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EBELN"
+        [dropdownValues]="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Item Number of Purchasing Document</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EBELP"
+        [dropdownValues]="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Material number</th>
+      <th fd-table-cell>Plant</th>
+      <th fd-table-cell>Purchasing Document Category</th>
+      <th fd-table-cell>Order Type (Purchasing)</th>
+      <th fd-table-cell>Purchasing Document Number</th>
+      <th fd-table-cell>Item Number of Purchasing Document</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ MATNR }}</td>
+       <td fd-table-cell>{{ WERKS }}</td>
+       <td fd-table-cell>{{ BSTYP }}</td>
+       <td fd-table-cell>{{ BSART }}</td>
+       <td fd-table-cell>{{ EBELN }}</td>
+       <td fd-table-cell>{{ EBELP }}</td>
+    </tr>
+  </tbody>
+</table>

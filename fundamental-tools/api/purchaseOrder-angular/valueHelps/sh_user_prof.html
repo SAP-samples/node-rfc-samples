@@ -1,0 +1,31 @@
+<!-- SH USER_PROF Users by Profiles : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>User Name in User Master Record</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BNAME"
+            data-abap="{type:'CHAR', mid:'XUS', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Profile name</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PROFILE"
+            data-abap="{type:'CHAR', mid:'XUP', length:'12'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>User Name in User Master Record</th>
+      <th fd-table-cell>Profile name</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BNAME }}</td>
+       <td fd-table-cell>{{ PROFILE }}</td>
+    </tr>
+  </tbody>
+</table>

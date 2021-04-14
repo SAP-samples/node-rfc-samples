@@ -1,0 +1,31 @@
+<!-- SH H_TCLA Class Type : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Class Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KLART"
+            data-abap="{type:'CHAR', mid:'KAR', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Text describing class type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ARTXT"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Class Type</th>
+      <th fd-table-cell>Text describing class type</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ KLART }}</td>
+       <td fd-table-cell>{{ ARTXT }}</td>
+    </tr>
+  </tbody>
+</table>

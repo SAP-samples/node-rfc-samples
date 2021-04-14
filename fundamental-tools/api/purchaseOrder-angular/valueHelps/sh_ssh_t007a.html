@@ -1,0 +1,44 @@
+<!-- SH SSH_T007A Tax on sales/purchases code : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Procedure (Pricing, Output Control, Acct. Det., Costing,...)</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.KALSM"
+        [dropdownValues]="{type: 'CT', id: 'T683'}"
+        data-abap="{type:'CHAR', length:'6'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Tax on sales/purchases code</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MWSKZ"
+        [dropdownValues]="{type: 'CT', id: 'T007A'}"
+        data-abap="{type:'CHAR', length:'2'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name for value-added tax</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TEXT1"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Procedure (Pricing, Output Control, Acct. Det., Costing,...)</th>
+      <th fd-table-cell>Tax on sales/purchases code</th>
+      <th fd-table-cell>Name for value-added tax</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ KALSM }}</td>
+       <td fd-table-cell>{{ MWSKZ }}</td>
+       <td fd-table-cell>{{ TEXT1 }}</td>
+    </tr>
+  </tbody>
+</table>

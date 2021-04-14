@@ -1,0 +1,91 @@
+<!-- SH DEBIK Customers per account group : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Customer Account Group</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.KTOKD"
+        [dropdownValues]="{type: 'SH', id: 'H_T077D'}"
+        data-abap="{type:'CHAR', mid:'KGD', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Sort field</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SORTL"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Country Key</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.LAND1"
+        [dropdownValues]="{type: 'CT', id: 'T005'}"
+        data-abap="{type:'CHAR', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Postal Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PSTLZ"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search term for matchcode search</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MCOD3"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search term for matchcode search</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MCOD1"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Customer Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.KUNNR"
+        [dropdownValues]="{type: 'SH', id: 'DEBI'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Authorization Group</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BEGRU"
+        [dropdownValues]="{type: 'CT', id: 'TBRG'}"
+        data-abap="{type:'CHAR', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Customer Account Group</th>
+      <th fd-table-cell>Sort field</th>
+      <th fd-table-cell>Country Key</th>
+      <th fd-table-cell>Postal Code</th>
+      <th fd-table-cell>Search term for matchcode search</th>
+      <th fd-table-cell>Search term for matchcode search</th>
+      <th fd-table-cell>Customer Number</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ KTOKD }}</td>
+       <td fd-table-cell>{{ SORTL }}</td>
+       <td fd-table-cell>{{ LAND1 }}</td>
+       <td fd-table-cell>{{ PSTLZ }}</td>
+       <td fd-table-cell>{{ MCOD3 }}</td>
+       <td fd-table-cell>{{ MCOD1 }}</td>
+       <td fd-table-cell>{{ KUNNR }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,67 @@
+<!-- SH CSH_TKA01 Controlling Area : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Controlling Area</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KOKRS"
+            data-abap="{type:'CHAR', mid:'CAC', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name of the controlling area</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BEZEI"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Currency Key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.WAERS"
+            data-abap="{type:'CUKY', mid:'FWS', length:'5'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Chart of Accounts</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KTOPL"
+            data-abap="{type:'CHAR', mid:'KPL', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Fiscal Year Variant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LMONA"
+            data-abap="{type:'CHAR', length:'2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Standard Hierarchy for Cost Centers</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KHINR"
+            data-abap="{type:'CHAR', length:'12'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Controlling Area</th>
+      <th fd-table-cell>Name of the controlling area</th>
+      <th fd-table-cell>Currency Key</th>
+      <th fd-table-cell>Chart of Accounts</th>
+      <th fd-table-cell>Fiscal Year Variant</th>
+      <th fd-table-cell>Standard Hierarchy for Cost Centers</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ KOKRS }}</td>
+       <td fd-table-cell>{{ BEZEI }}</td>
+       <td fd-table-cell>{{ WAERS }}</td>
+       <td fd-table-cell>{{ KTOPL }}</td>
+       <td fd-table-cell>{{ LMONA }}</td>
+       <td fd-table-cell>{{ KHINR }}</td>
+    </tr>
+  </tbody>
+</table>

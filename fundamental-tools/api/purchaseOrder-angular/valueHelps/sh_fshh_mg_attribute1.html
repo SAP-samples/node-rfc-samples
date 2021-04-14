@@ -1,0 +1,31 @@
+<!-- SH FSHH_MG_ATTRIBUTE1 Fashion Information Field: 1 : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Fashion Information Field: 1</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ATTRIBUTE_1"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Fashion Information Field: Description for field 1</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ATTRIBUTE1_TEXT"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Fashion Information Field: 1</th>
+      <th fd-table-cell>Fashion Information Field: Description for field 1</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ ATTRIBUTE_1 }}</td>
+       <td fd-table-cell>{{ ATTRIBUTE1_TEXT }}</td>
+    </tr>
+  </tbody>
+</table>

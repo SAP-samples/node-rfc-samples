@@ -1,0 +1,53 @@
+<!-- SH MAT1A Material by old material number : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Old material number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BISMT"
+            data-abap="{type:'CHAR', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Description in Uppercase for Matchcodes</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MAKTG"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SPRAS"
+        [dropdownValues]="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MATNR"
+        [dropdownValues]="{type: 'SH', id: 'MAT1'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Old material number</th>
+      <th fd-table-cell>Material Description in Uppercase for Matchcodes</th>
+      <th fd-table-cell>Language Key</th>
+      <th fd-table-cell>Material Number</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BISMT }}</td>
+       <td fd-table-cell>{{ MAKTG }}</td>
+       <td fd-table-cell>{{ SPRAS }}</td>
+       <td fd-table-cell>{{ MATNR }}</td>
+    </tr>
+  </tbody>
+</table>

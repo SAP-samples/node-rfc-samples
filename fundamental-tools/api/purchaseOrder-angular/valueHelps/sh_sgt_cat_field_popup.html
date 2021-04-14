@@ -1,0 +1,91 @@
+<!-- SH SGT_CAT_FIELD_POPUP Requirement Segment : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Stock Segment</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.VALUE"
+            data-abap="{type:'CHAR', mid:'SGT_S', length:'16'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MATNR"
+            data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Segmentation Strategy</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.COVS"
+            data-abap="{type:'CHAR', mid:'SGT_E', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Segmentation Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.APPL"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Application Relevance</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.CFUN"
+            data-abap="{type:'CHAR', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Flag (X or Blank)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.WITH_RULE_INPUT"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OTHER_WERKS"
+            data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Segmentation Strategy</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OTHER_COVS"
+            data-abap="{type:'CHAR', mid:'SGT_E', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Segmentation Structure</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.CSGR"
+            data-abap="{type:'CHAR', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.WERKS"
+        [dropdownValues]="{type: 'SH', id: 'H_T001W'}"
+        data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Plant</th>
+      <th fd-table-cell>Segmentation Strategy</th>
+      <th fd-table-cell>Stock Segment</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ WERKS }}</td>
+       <td fd-table-cell>{{ COVS }}</td>
+       <td fd-table-cell>{{ VALUE }}</td>
+    </tr>
+  </tbody>
+</table>

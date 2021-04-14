@@ -1,0 +1,121 @@
+<!-- SH KRED_ES_ADVANCED Advanced Search for Vendor using Search Engine : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Generic Search Term</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/SEARCH_TERM"
+            data-abap="{type:'CHAR', length:'45'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Fuzzy Mode</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/MODE_FUZZY"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Object Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJECT_TYPE_ID"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Request Type ID</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.REQUEST"
+            data-abap="{type:'CHAR', length:'32'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Account Number of Vendor or Creditor</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LIFNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name 1</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME1"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name 2</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME2"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Country Key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.COUNTRY"
+            data-abap="{type:'CHAR', mid:'LND', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.CITY1"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City postal code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.POST_CODE1"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Street</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.STREET"
+            data-abap="{type:'CHAR', length:'60'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>House Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.HOUSE_NUM1"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Generic Search Term</th>
+      <th fd-table-cell>Fuzzy Mode</th>
+      <th fd-table-cell>Object Type</th>
+      <th fd-table-cell>Request Type ID</th>
+      <th fd-table-cell>Account Number of Vendor or Creditor</th>
+      <th fd-table-cell>Name 1</th>
+      <th fd-table-cell>Name 2</th>
+      <th fd-table-cell>Country Key</th>
+      <th fd-table-cell>City</th>
+      <th fd-table-cell>City postal code</th>
+      <th fd-table-cell>Street</th>
+      <th fd-table-cell>House Number</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ S/RP/SEARCH_TERM }}</td>
+       <td fd-table-cell>{{ S/RP/MODE_FUZZY }}</td>
+       <td fd-table-cell>{{ OBJECT_TYPE_ID }}</td>
+       <td fd-table-cell>{{ REQUEST }}</td>
+       <td fd-table-cell>{{ LIFNR }}</td>
+       <td fd-table-cell>{{ NAME1 }}</td>
+       <td fd-table-cell>{{ NAME2 }}</td>
+       <td fd-table-cell>{{ COUNTRY }}</td>
+       <td fd-table-cell>{{ CITY1 }}</td>
+       <td fd-table-cell>{{ POST_CODE1 }}</td>
+       <td fd-table-cell>{{ STREET }}</td>
+       <td fd-table-cell>{{ HOUSE_NUM1 }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,77 @@
+<!-- SH MEKKG Purchasing Documents per Order : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Order Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.AUFNR"
+        [dropdownValues]="{type: 'CH', id: 'AUFK'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Category</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BSTYP"
+        [dropdownValues]="{type: 'FV', id: 'EBSTYP'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing organization</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EKORG"
+        [dropdownValues]="{type: 'SH', id: 'H_T024E'}"
+        data-abap="{type:'CHAR', mid:'EKO', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EBELN"
+        [dropdownValues]="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Item Number of Purchasing Document</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EBELP"
+        [dropdownValues]="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Sequential Number of Account Assignment</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ZEKKN"
+            data-abap="{type:'NUMC', length:'2'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Order Number</th>
+      <th fd-table-cell>Purchasing Document Category</th>
+      <th fd-table-cell>Purchasing organization</th>
+      <th fd-table-cell>Purchasing Document Number</th>
+      <th fd-table-cell>Item Number of Purchasing Document</th>
+      <th fd-table-cell>Sequential Number of Account Assignment</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ AUFNR }}</td>
+       <td fd-table-cell>{{ BSTYP }}</td>
+       <td fd-table-cell>{{ EKORG }}</td>
+       <td fd-table-cell>{{ EBELN }}</td>
+       <td fd-table-cell>{{ EBELP }}</td>
+       <td fd-table-cell>{{ ZEKKN }}</td>
+    </tr>
+  </tbody>
+</table>

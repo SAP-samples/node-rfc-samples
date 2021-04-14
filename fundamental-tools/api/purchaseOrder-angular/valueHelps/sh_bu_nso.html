@@ -1,0 +1,20 @@
+<!-- SH BU_NSO Search Help for Unsaved Objects : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Character 100</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.FIELD1"
+            data-abap="{type:'CHAR', length:'100'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+    </tr>
+  </tbody>
+</table>

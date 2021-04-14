@@ -1,0 +1,86 @@
+<!-- SH H_UII Unique Item Identifier : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Equipment Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EQUNR"
+        [dropdownValues]="{type: 'SH', id: 'EQUI'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Equipment description in capital letters</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EQKTU"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MATNR"
+        [dropdownValues]="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Serial Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SERNR"
+            data-abap="{type:'CHAR', alpha:'GERNR', mid:'SER', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Unique Item Identifier</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.UII"
+        [dropdownValues]="{type: 'SH', id: 'H_UII'}"
+        data-abap="{type:'CHAR', mid:'UII', length:'72'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Structure Type of UII</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.IUID_TYPE"
+        [dropdownValues]="{type: 'CT', id: 'TIUID_TYPE'}"
+        data-abap="{type:'CHAR', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Plant Responsible for UII</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.UII_PLANT"
+        [dropdownValues]="{type: 'SH', id: 'H_T001W_C'}"
+        data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Unique Item Identifier</th>
+      <th fd-table-cell>Material Number</th>
+      <th fd-table-cell>Serial Number</th>
+      <th fd-table-cell>Equipment Number</th>
+      <th fd-table-cell>Equipment description in capital letters</th>
+      <th fd-table-cell>Structure Type of UII</th>
+      <th fd-table-cell>Plant Responsible for UII</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ UII }}</td>
+       <td fd-table-cell>{{ MATNR }}</td>
+       <td fd-table-cell>{{ SERNR }}</td>
+       <td fd-table-cell>{{ EQUNR }}</td>
+       <td fd-table-cell>{{ EQKTU }}</td>
+       <td fd-table-cell>{{ IUID_TYPE }}</td>
+       <td fd-table-cell>{{ UII_PLANT }}</td>
+    </tr>
+  </tbody>
+</table>

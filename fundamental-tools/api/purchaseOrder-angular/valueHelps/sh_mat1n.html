@@ -1,0 +1,69 @@
+<!-- SH MAT1N Material by EAN (International Article Number) : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>International Article Number (EAN/UPC)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EAN11"
+            data-abap="{type:'CHAR', alpha:'EAN11', mid:'EAN', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MATNR"
+        [dropdownValues]="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Description in Uppercase for Matchcodes</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MAKTG"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SPRAS"
+        [dropdownValues]="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Unit of Measure for Display</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MEINH"
+        [dropdownValues]="{type: 'SH', id: 'H_T006'}"
+        data-abap="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <fd-checkbox label="Indicator: Main EAN" [(ngModel)]="searchParamLow.HPEAN"></fd-checkbox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>International Article Number (EAN/UPC)</th>
+      <th fd-table-cell>Material Number</th>
+      <th fd-table-cell>Material Description in Uppercase for Matchcodes</th>
+      <th fd-table-cell>Language Key</th>
+      <th fd-table-cell>Unit of Measure for Display</th>
+      <th fd-table-cell>Indicator: Main EAN</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ EAN11 }}</td>
+       <td fd-table-cell>{{ MATNR }}</td>
+       <td fd-table-cell>{{ MAKTG }}</td>
+       <td fd-table-cell>{{ SPRAS }}</td>
+       <td fd-table-cell>{{ MEINH }}</td>
+       <td fd-table-cell>{{ HPEAN }}</td>
+    </tr>
+  </tbody>
+</table>

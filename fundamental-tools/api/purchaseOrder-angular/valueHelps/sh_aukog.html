@@ -1,0 +1,47 @@
+<!-- SH AUKOG Networks created from original network (milestone function) : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Order Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.AUFNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Order category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.AUTYP"
+            data-abap="{type:'NUMC', length:'2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KTEXT"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Number of the original network</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MAUFNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', length:'12'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Number of the original network</th>
+      <th fd-table-cell>Description</th>
+      <th fd-table-cell>Order Number</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ MAUFNR }}</td>
+       <td fd-table-cell>{{ KTEXT }}</td>
+       <td fd-table-cell>{{ AUFNR }}</td>
+    </tr>
+  </tbody>
+</table>

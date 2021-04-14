@@ -1,0 +1,33 @@
+<!-- SH H_T149C Valuation Category : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Valuation Category</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BWTTY"
+        [dropdownValues]="{type: 'CT', id: 'T149C'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Description of valuation category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BTBEZ"
+            data-abap="{type:'CHAR', length:'15'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Valuation Category</th>
+      <th fd-table-cell>Description of valuation category</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BWTTY }}</td>
+       <td fd-table-cell>{{ BTBEZ }}</td>
+    </tr>
+  </tbody>
+</table>

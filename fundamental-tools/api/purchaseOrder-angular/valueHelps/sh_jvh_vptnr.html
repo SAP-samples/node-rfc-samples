@@ -1,0 +1,57 @@
+<!-- SH JVH_VPTNR JV partner in coding block : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BUKRS"
+        [dropdownValues]="{type: 'SH', id: 'C_T001'}"
+        data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Joint venture</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.VNAME"
+        [dropdownValues]="{type: 'SH', id: 'H_T8JV'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'JVV', length:'6'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Equity group</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EGRUP"
+        [dropdownValues]="{type: 'SH', id: 'H_T8JF'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'GJE', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>JV partner</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.PARTN"
+        [dropdownValues]="{type: 'SH', id: 'H_T8JO'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>JV partner</th>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Joint venture</th>
+      <th fd-table-cell>Equity group</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ PARTN }}</td>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ VNAME }}</td>
+       <td fd-table-cell>{{ EGRUP }}</td>
+    </tr>
+  </tbody>
+</table>

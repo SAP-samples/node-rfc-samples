@@ -1,0 +1,139 @@
+<!-- SH RECNCNSE1 Simple Search for Contract : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Input Field for Full Text Search</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/SEARCH_TERM"
+            data-abap="{type:'CHAR', length:'45'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Option Fuzzy Mode</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/MODE_FUZZY"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Object for Search Engine Service (SES)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUSINESS_OBJECT"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Type of Business Object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJECT_TYPE"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EXTERNAL_KEY"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract name</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNTXT"
+            data-abap="{type:'CHAR', length:'80'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.XINDUSTRY"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search Help Field 1 (Name 1/Last Name)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_NAME1"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search Help Field 2 (Name 2/First Name)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_NAME2"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>BP Role Description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RLTXT"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.CITY1"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Street</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.STREET"
+            data-abap="{type:'CHAR', length:'60'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Object Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJECT_ID"
+            data-abap="{type:'CHAR', mid:'ONR', length:'22'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Input Field for Full Text Search</th>
+      <th fd-table-cell>Option Fuzzy Mode</th>
+      <th fd-table-cell>Business Object for Search Engine Service (SES)</th>
+      <th fd-table-cell>Type of Business Object</th>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Contract Number</th>
+      <th fd-table-cell>Contract name</th>
+      <th fd-table-cell>Description</th>
+      <th fd-table-cell>Search Help Field 1 (Name 1/Last Name)</th>
+      <th fd-table-cell>Search Help Field 2 (Name 2/First Name)</th>
+      <th fd-table-cell>BP Role Description</th>
+      <th fd-table-cell>City</th>
+      <th fd-table-cell>Street</th>
+      <th fd-table-cell>Object Number</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ S/RP/SEARCH_TERM }}</td>
+       <td fd-table-cell>{{ S/RP/MODE_FUZZY }}</td>
+       <td fd-table-cell>{{ BUSINESS_OBJECT }}</td>
+       <td fd-table-cell>{{ OBJECT_TYPE }}</td>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ EXTERNAL_KEY }}</td>
+       <td fd-table-cell>{{ RECNTXT }}</td>
+       <td fd-table-cell>{{ XINDUSTRY }}</td>
+       <td fd-table-cell>{{ MC_NAME1 }}</td>
+       <td fd-table-cell>{{ MC_NAME2 }}</td>
+       <td fd-table-cell>{{ RLTXT }}</td>
+       <td fd-table-cell>{{ CITY1 }}</td>
+       <td fd-table-cell>{{ STREET }}</td>
+       <td fd-table-cell>{{ OBJECT_ID }}</td>
+    </tr>
+  </tbody>
+</table>

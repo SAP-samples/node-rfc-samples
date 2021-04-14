@@ -1,0 +1,58 @@
+<!-- SH EQUIA Equipment by asset number : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Main Asset Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ANLNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AN1', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Asset Subnumber</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ANLUN"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AN2', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Equipment Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EQUNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Equipment description in capital letters</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EQKTU"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Main Asset Number</th>
+      <th fd-table-cell>Asset Subnumber</th>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Equipment Number</th>
+      <th fd-table-cell>Equipment description in capital letters</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ ANLNR }}</td>
+       <td fd-table-cell>{{ ANLUN }}</td>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ EQUNR }}</td>
+       <td fd-table-cell>{{ EQKTU }}</td>
+    </tr>
+  </tbody>
+</table>

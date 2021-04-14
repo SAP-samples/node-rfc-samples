@@ -1,0 +1,27 @@
+<!-- SH EQUIM Equipment by serial number list : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Equipment Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EQUNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Selection Function Triggered by Matchcode</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.FUNCNAME"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+    </tr>
+  </tbody>
+</table>

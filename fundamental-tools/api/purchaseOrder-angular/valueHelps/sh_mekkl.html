@@ -1,0 +1,85 @@
+<!-- SH MEKKL Purchasing Documents per Vendor : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Vendor's account number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.LIFNR"
+        [dropdownValues]="{type: 'SH', id: 'KRED'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing organization</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EKORG"
+        [dropdownValues]="{type: 'SH', id: 'H_T024E'}"
+        data-abap="{type:'CHAR', mid:'EKO', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing group</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EKGRP"
+        [dropdownValues]="{type: 'SH', id: 'H_T024'}"
+        data-abap="{type:'CHAR', mid:'EKG', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.BEDAT"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Category</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BSTYP"
+        [dropdownValues]="{type: 'FV', id: 'EBSTYP'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Order Type (Purchasing)</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BSART"
+        [dropdownValues]="{type: 'SH', id: 'H_T161'}"
+        data-abap="{type:'CHAR', mid:'BSA', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EBELN"
+        [dropdownValues]="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Vendor's account number</th>
+      <th fd-table-cell>Purchasing organization</th>
+      <th fd-table-cell>Purchasing group</th>
+      <th fd-table-cell>Purchasing Document Date</th>
+      <th fd-table-cell>Purchasing Document Category</th>
+      <th fd-table-cell>Order Type (Purchasing)</th>
+      <th fd-table-cell>Purchasing Document Number</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ LIFNR }}</td>
+       <td fd-table-cell>{{ EKORG }}</td>
+       <td fd-table-cell>{{ EKGRP }}</td>
+       <td fd-table-cell>{{ BEDAT }}</td>
+       <td fd-table-cell>{{ BSTYP }}</td>
+       <td fd-table-cell>{{ BSART }}</td>
+       <td fd-table-cell>{{ EBELN }}</td>
+    </tr>
+  </tbody>
+</table>

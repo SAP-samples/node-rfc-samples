@@ -1,0 +1,33 @@
+<!-- SH C_VKORG Sales Organization : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Sales Organization</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.VKORG"
+        [dropdownValues]="{type: 'SH', id: 'C_VKORG'}"
+        data-abap="{type:'CHAR', mid:'VKO', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.VTEXT"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Sales Organization</th>
+      <th fd-table-cell>Name</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ VKORG }}</td>
+       <td fd-table-cell>{{ VTEXT }}</td>
+    </tr>
+  </tbody>
+</table>

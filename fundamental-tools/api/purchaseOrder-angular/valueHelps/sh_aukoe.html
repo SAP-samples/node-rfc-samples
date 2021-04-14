@@ -1,0 +1,58 @@
+<!-- SH AUKOE Networks by MRP controller : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>MRP controller for the order</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.DISPO"
+            data-abap="{type:'CHAR', mid:'DGR', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.WERKS"
+            data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KTEXT"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Network type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.AUART"
+            data-abap="{type:'CHAR', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Network number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.AUFNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>MRP controller for the order</th>
+      <th fd-table-cell>Plant</th>
+      <th fd-table-cell>Description</th>
+      <th fd-table-cell>Network type</th>
+      <th fd-table-cell>Network number</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ DISPO }}</td>
+       <td fd-table-cell>{{ WERKS }}</td>
+       <td fd-table-cell>{{ KTEXT }}</td>
+       <td fd-table-cell>{{ AUART }}</td>
+       <td fd-table-cell>{{ AUFNR }}</td>
+    </tr>
+  </tbody>
+</table>

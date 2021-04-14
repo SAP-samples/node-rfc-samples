@@ -1,0 +1,73 @@
+<!-- SH ASMDS Standard Service Catalog : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Short Description of Service Type</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.LBNUM"
+        [dropdownValues]="{type: 'SH', id: 'SRV_SERVICETYPE'}"
+        data-abap="{type:'CHAR', mid:'LBR', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Edition of Service Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.AUSGB"
+            data-abap="{type:'NUMC', mid:'AGB', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Standard Service Catalog Item</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.STLVPOS"
+            data-abap="{type:'CHAR', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Activity Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.ASNUM"
+        [dropdownValues]="{type: 'CT', id: 'ASMD'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Service Short Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ASKTX"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SPRAS"
+        [dropdownValues]="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Short Description of Service Type</th>
+      <th fd-table-cell>Edition of Service Type</th>
+      <th fd-table-cell>Standard Service Catalog Item</th>
+      <th fd-table-cell>Activity Number</th>
+      <th fd-table-cell>Service Short Text</th>
+      <th fd-table-cell>Language Key</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ LBNUM }}</td>
+       <td fd-table-cell>{{ AUSGB }}</td>
+       <td fd-table-cell>{{ STLVPOS }}</td>
+       <td fd-table-cell>{{ ASNUM }}</td>
+       <td fd-table-cell>{{ ASKTX }}</td>
+       <td fd-table-cell>{{ SPRAS }}</td>
+    </tr>
+  </tbody>
+</table>

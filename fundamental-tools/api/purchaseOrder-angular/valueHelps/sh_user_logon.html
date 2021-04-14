@@ -1,0 +1,61 @@
+<!-- SH USER_LOGON Users by Logon Data : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>User Name in User Master Record</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BNAME"
+            data-abap="{type:'CHAR', mid:'XUS', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>User valid from</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.GLTGV"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>User valid to</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.GLTGB"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>User Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.USTYP"
+            data-abap="{type:'CHAR', alpha:'USTYP', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>User group in user master maintenance</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.CLASS"
+            data-abap="{type:'CHAR', mid:'XUG', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Account ID</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ACCNT"
+            data-abap="{type:'CHAR', length:'12'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Account ID</th>
+      <th fd-table-cell>User Name in User Master Record</th>
+      <th fd-table-cell>User group in user master maintenance</th>
+      <th fd-table-cell>User valid to</th>
+      <th fd-table-cell>User valid from</th>
+      <th fd-table-cell>User Type</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ ACCNT }}</td>
+       <td fd-table-cell>{{ BNAME }}</td>
+       <td fd-table-cell>{{ CLASS }}</td>
+       <td fd-table-cell>{{ GLTGB }}</td>
+       <td fd-table-cell>{{ GLTGV }}</td>
+       <td fd-table-cell>{{ USTYP }}</td>
+    </tr>
+  </tbody>
+</table>

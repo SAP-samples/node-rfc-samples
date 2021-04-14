@@ -1,0 +1,31 @@
+<!-- SH H_TCA01 Task List Type : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Task List Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PLNTY"
+            data-abap="{type:'CHAR', mid:'PTY', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Desccription of the task list type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TXT"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Task List Type</th>
+      <th fd-table-cell>Desccription of the task list type</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ PLNTY }}</td>
+       <td fd-table-cell>{{ TXT }}</td>
+    </tr>
+  </tbody>
+</table>

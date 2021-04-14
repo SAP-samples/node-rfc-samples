@@ -1,0 +1,105 @@
+<!-- SH H_T001W_C Plant : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Search Term 2</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SORT2"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search Term 1</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SORT1"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City postal code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.POST_CODE1"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.CITY1"
+        [dropdownValues]="{type: 'SH', id: 'CLCITYNAME'}"
+        data-abap="{type:'CHAR', length:'40'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>City name in Uppercase for Search Help</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_CITY1"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name 2</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME2"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name 1</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME1"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name (Field NAME1) in Uppercase for Search Help</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_NAME1"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Version ID for International Addresses</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.NATION"
+        [dropdownValues]="{type: 'CT', id: 'TSADV'}"
+        data-abap="{type:'CHAR', mid:'ADDRESS_NATION', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.WERKS"
+        [dropdownValues]="{type: 'SH', id: 'H_T001W_C'}"
+        data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Plant</th>
+      <th fd-table-cell>Search Term 2</th>
+      <th fd-table-cell>Search Term 1</th>
+      <th fd-table-cell>City postal code</th>
+      <th fd-table-cell>City</th>
+      <th fd-table-cell>Name 2</th>
+      <th fd-table-cell>Name 1</th>
+      <th fd-table-cell>Version ID for International Addresses</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ WERKS }}</td>
+       <td fd-table-cell>{{ SORT2 }}</td>
+       <td fd-table-cell>{{ SORT1 }}</td>
+       <td fd-table-cell>{{ POST_CODE1 }}</td>
+       <td fd-table-cell>{{ CITY1 }}</td>
+       <td fd-table-cell>{{ NAME2 }}</td>
+       <td fd-table-cell>{{ NAME1 }}</td>
+       <td fd-table-cell>{{ NATION }}</td>
+    </tr>
+  </tbody>
+</table>

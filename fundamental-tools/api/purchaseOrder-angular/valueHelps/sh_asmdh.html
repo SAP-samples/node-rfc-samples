@@ -1,0 +1,66 @@
+<!-- SH ASMDH Service by Hierarchy and Wage Type : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Hierarchy Service Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.LSTHI"
+        [dropdownValues]="{type: 'SH', id: 'ASMD'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Wage Type</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.LGART"
+        [dropdownValues]="{type: 'CT', id: 'T512W'}"
+        data-abap="{type:'CHAR', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Activity Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.ASNUM"
+        [dropdownValues]="{type: 'CT', id: 'ASMD'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Service Short Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ASKTX"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SPRAS"
+        [dropdownValues]="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Hierarchy Service Number</th>
+      <th fd-table-cell>Wage Type</th>
+      <th fd-table-cell>Activity Number</th>
+      <th fd-table-cell>Service Short Text</th>
+      <th fd-table-cell>Language Key</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ LSTHI }}</td>
+       <td fd-table-cell>{{ LGART }}</td>
+       <td fd-table-cell>{{ ASNUM }}</td>
+       <td fd-table-cell>{{ ASKTX }}</td>
+       <td fd-table-cell>{{ SPRAS }}</td>
+    </tr>
+  </tbody>
+</table>

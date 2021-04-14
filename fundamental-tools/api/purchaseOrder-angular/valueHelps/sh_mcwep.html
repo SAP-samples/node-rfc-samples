@@ -1,0 +1,72 @@
+<!-- SH MCWEP Selection via Functional Location : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SPRAS"
+            data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Functional Location</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TPLNR"
+            data-abap="{type:'CHAR', alpha:'TPLNR', mid:'IFL', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Description of functional location</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PLTXT"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Entity Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SWENR"
+            data-abap="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business entity identification</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.XWETEXT"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Object number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJNR"
+            data-abap="{type:'CHAR', mid:'ONR', length:'22'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Business Entity Number</th>
+      <th fd-table-cell>Business entity identification</th>
+      <th fd-table-cell>Functional Location</th>
+      <th fd-table-cell>Description of functional location</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ SWENR }}</td>
+       <td fd-table-cell>{{ XWETEXT }}</td>
+       <td fd-table-cell>{{ TPLNR }}</td>
+       <td fd-table-cell>{{ PLTXT }}</td>
+    </tr>
+  </tbody>
+</table>

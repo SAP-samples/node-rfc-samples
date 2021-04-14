@@ -1,0 +1,184 @@
+<!-- SH EQUI_ES_ADVANCED_E Advanced Search for Equipment (Enterprise Search) : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Generic Search Term</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/SEARCH_TERM"
+            data-abap="{type:'CHAR', length:'45'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Fuzzy Mode</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/MODE_FUZZY"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Object Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJECT_TYPE_ID"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Request Type ID</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.REQUEST"
+            data-abap="{type:'CHAR', length:'32'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Equipment Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EQUNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Description of Technical Object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EQKTX"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Serial Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SERNR"
+            data-abap="{type:'CHAR', alpha:'GERNR', mid:'SER', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MATNR"
+            data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Equipment category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EQTYP"
+            data-abap="{type:'CHAR', mid:'EQT', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Superordinate Equipment</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.HEQUI"
+            data-abap="{type:'CHAR', alpha:'ALPHA', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Functional Location</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TPLNR"
+            data-abap="{type:'CHAR', alpha:'TPLNR', mid:'IFL', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Manufacturer of asset</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.HERST"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Manufacturer serial number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SERGE"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Maintenance plant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SWERK"
+            data-abap="{type:'CHAR', mid:'SWK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Asset location</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.STORT"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Object ID of the Work Center</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.GEWERK"
+            data-abap="{type:'NUMC', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Planner Group for Customer Service and Plant Maintenance</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.INGRP"
+            data-abap="{type:'CHAR', mid:'IHG', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Functional Location Label</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.STRNO1"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Labeling system for functional locations</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ALKEY"
+            data-abap="{type:'CHAR', mid:'ILOM_ALKEY', length:'1'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Generic Search Term</th>
+      <th fd-table-cell>Fuzzy Mode</th>
+      <th fd-table-cell>Object Type</th>
+      <th fd-table-cell>Request Type ID</th>
+      <th fd-table-cell>Equipment Number</th>
+      <th fd-table-cell>Description of Technical Object</th>
+      <th fd-table-cell>Serial Number</th>
+      <th fd-table-cell>Material Number</th>
+      <th fd-table-cell>Equipment category</th>
+      <th fd-table-cell>Superordinate Equipment</th>
+      <th fd-table-cell>Functional Location</th>
+      <th fd-table-cell>Manufacturer of asset</th>
+      <th fd-table-cell>Manufacturer serial number</th>
+      <th fd-table-cell>Maintenance plant</th>
+      <th fd-table-cell>Asset location</th>
+      <th fd-table-cell>Object ID of the Work Center</th>
+      <th fd-table-cell>Planner Group for Customer Service and Plant Maintenance</th>
+      <th fd-table-cell>Functional Location Label</th>
+      <th fd-table-cell>Labeling system for functional locations</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ S/RP/SEARCH_TERM }}</td>
+       <td fd-table-cell>{{ S/RP/MODE_FUZZY }}</td>
+       <td fd-table-cell>{{ OBJECT_TYPE_ID }}</td>
+       <td fd-table-cell>{{ REQUEST }}</td>
+       <td fd-table-cell>{{ EQUNR }}</td>
+       <td fd-table-cell>{{ EQKTX }}</td>
+       <td fd-table-cell>{{ SERNR }}</td>
+       <td fd-table-cell>{{ MATNR }}</td>
+       <td fd-table-cell>{{ EQTYP }}</td>
+       <td fd-table-cell>{{ HEQUI }}</td>
+       <td fd-table-cell>{{ TPLNR }}</td>
+       <td fd-table-cell>{{ HERST }}</td>
+       <td fd-table-cell>{{ SERGE }}</td>
+       <td fd-table-cell>{{ SWERK }}</td>
+       <td fd-table-cell>{{ STORT }}</td>
+       <td fd-table-cell>{{ GEWERK }}</td>
+       <td fd-table-cell>{{ INGRP }}</td>
+       <td fd-table-cell>{{ STRNO1 }}</td>
+       <td fd-table-cell>{{ ALKEY }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,33 @@
+<!-- SH H_T148 Special Stock Indicator : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Special Stock Indicator</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SOBKZ"
+        [dropdownValues]="{type: 'CT', id: 'T148'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Description of special stock</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SOTXT"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Special Stock Indicator</th>
+      <th fd-table-cell>Description of special stock</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ SOBKZ }}</td>
+       <td fd-table-cell>{{ SOTXT }}</td>
+    </tr>
+  </tbody>
+</table>

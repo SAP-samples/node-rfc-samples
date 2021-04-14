@@ -1,0 +1,40 @@
+<!-- SH H_T681Z Application : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Usage of the condition table</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KVEWE"
+            data-abap="{type:'CHAR', mid:'KVW', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Application</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KAPPL"
+            data-abap="{type:'CHAR', mid:'KAP', length:'2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.VTEXT"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Usage of the condition table</th>
+      <th fd-table-cell>Application</th>
+      <th fd-table-cell>Description</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ KVEWE }}</td>
+       <td fd-table-cell>{{ KAPPL }}</td>
+       <td fd-table-cell>{{ VTEXT }}</td>
+    </tr>
+  </tbody>
+</table>

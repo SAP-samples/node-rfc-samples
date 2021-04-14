@@ -1,0 +1,49 @@
+<!-- SH AUKOA Networks with standard networks : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Standard network number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PLNNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'PLN', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Alternative to a standard network</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PLNAL"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'PAL', length:'2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Network number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.AUFNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KTEXT"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Standard network number</th>
+      <th fd-table-cell>Alternative to a standard network</th>
+      <th fd-table-cell>Network number</th>
+      <th fd-table-cell>Description</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ PLNNR }}</td>
+       <td fd-table-cell>{{ PLNAL }}</td>
+       <td fd-table-cell>{{ AUFNR }}</td>
+       <td fd-table-cell>{{ KTEXT }}</td>
+    </tr>
+  </tbody>
+</table>

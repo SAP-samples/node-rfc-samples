@@ -1,0 +1,53 @@
+<!-- SH SGT_MATNR_S_E Material with Segmentation : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MATNR"
+            data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Description in Uppercase for Matchcodes</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MAKTG"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Segmentation Structure</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SGT_CSGR"
+        [dropdownValues]="{type: 'SH', id: 'SGT_CSGR'}"
+        data-abap="{type:'CHAR', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Segmentation Strategy</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SGT_COVSA"
+        [dropdownValues]="{type: 'CT', id: 'SGT_COVS_T'}"
+        data-abap="{type:'CHAR', mid:'SGT_E', length:'8'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Material Number</th>
+      <th fd-table-cell>Material Description in Uppercase for Matchcodes</th>
+      <th fd-table-cell>Segmentation Structure</th>
+      <th fd-table-cell>Segmentation Strategy</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ MATNR }}</td>
+       <td fd-table-cell>{{ MAKTG }}</td>
+       <td fd-table-cell>{{ SGT_CSGR }}</td>
+       <td fd-table-cell>{{ SGT_COVSA }}</td>
+    </tr>
+  </tbody>
+</table>

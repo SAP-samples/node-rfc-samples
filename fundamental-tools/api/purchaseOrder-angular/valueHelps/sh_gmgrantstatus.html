@@ -1,0 +1,78 @@
+<!-- SH GMGRANTSTATUS Search grants by status : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Grant</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.GRANT_NBR"
+        [dropdownValues]="{type: 'SH', id: 'GRANTS_GENERIC'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'GM_GRANT_NBR', length:'20'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Grant Type</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.GRANT_TYPE"
+        [dropdownValues]="{type: 'CT', id: 'GMGRTYPE'}"
+        data-abap="{type:'CHAR', mid:'GM_GRANT_TYPE', length:'2'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Lifecycle Status</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.LIFECYCLE_STATUS"
+        [dropdownValues]="{type: 'SH', id: 'H_TJ02'}"
+        data-abap="{type:'CHAR', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Object status</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TXT30"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>User Status</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.USER_STATUS"
+        [dropdownValues]="{type: 'CT', id: 'TJ30'}"
+        data-abap="{type:'CHAR', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Shorter description of the grant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SHORT_DESC"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <fd-checkbox label="Outgoing Grant Indicator" [(ngModel)]="searchParamLow.OUTGOING"></fd-checkbox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Grant</th>
+      <th fd-table-cell>Shorter description of the grant</th>
+      <th fd-table-cell>Object status</th>
+      <th fd-table-cell>Grant Type</th>
+      <th fd-table-cell>User Status</th>
+      <th fd-table-cell>Outgoing Grant Indicator</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ GRANT_NBR }}</td>
+       <td fd-table-cell>{{ SHORT_DESC }}</td>
+       <td fd-table-cell>{{ TXT30 }}</td>
+       <td fd-table-cell>{{ GRANT_TYPE }}</td>
+       <td fd-table-cell>{{ USER_STATUS }}</td>
+       <td fd-table-cell>{{ OUTGOING }}</td>
+    </tr>
+  </tbody>
+</table>

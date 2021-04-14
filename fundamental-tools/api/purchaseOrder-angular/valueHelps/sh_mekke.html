@@ -1,0 +1,68 @@
+<!-- SH MEKKE Schedule Lines per Purchase Requisition : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Purchase requisition number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BANFN"
+        [dropdownValues]="{type: 'SH', id: 'MBAN_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BAN', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Item number of purchase requisition</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BNFPO"
+        [dropdownValues]="{type: 'CH', id: 'EBAN'}"
+        data-abap="{type:'NUMC', mid:'BAP', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EBELN"
+        [dropdownValues]="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Item Number of Purchasing Document</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EBELP"
+        [dropdownValues]="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Delivery Schedule Line Counter</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.ETENR"
+        [dropdownValues]="{type: 'CT', id: 'EKET'}"
+        data-abap="{type:'NUMC', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Purchase requisition number</th>
+      <th fd-table-cell>Item number of purchase requisition</th>
+      <th fd-table-cell>Purchasing Document Number</th>
+      <th fd-table-cell>Item Number of Purchasing Document</th>
+      <th fd-table-cell>Delivery Schedule Line Counter</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BANFN }}</td>
+       <td fd-table-cell>{{ BNFPO }}</td>
+       <td fd-table-cell>{{ EBELN }}</td>
+       <td fd-table-cell>{{ EBELP }}</td>
+       <td fd-table-cell>{{ ETENR }}</td>
+    </tr>
+  </tbody>
+</table>

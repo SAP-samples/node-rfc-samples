@@ -1,0 +1,33 @@
+<!-- SH H_TINC Incoterms (Part 1) : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Incoterms (Part 1)</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.INCO1"
+        [dropdownValues]="{type: 'CT', id: 'TINC'}"
+        data-abap="{type:'CHAR', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BEZEI"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Incoterms (Part 1)</th>
+      <th fd-table-cell>Description</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ INCO1 }}</td>
+       <td fd-table-cell>{{ BEZEI }}</td>
+    </tr>
+  </tbody>
+</table>

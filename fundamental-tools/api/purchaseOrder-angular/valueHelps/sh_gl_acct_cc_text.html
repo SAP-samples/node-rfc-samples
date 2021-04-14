@@ -1,0 +1,67 @@
+<!-- SH GL_ACCT_CC_TEXT G/L account description in company code : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Search Term for Matchcode Search</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MCODF"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SPRAS"
+        [dropdownValues]="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BUKRS"
+        [dropdownValues]="{type: 'SH', id: 'C_T001'}"
+        data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>G/L Account Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SAKNR"
+        [dropdownValues]="{type: 'SH', id: 'C_SAKNR'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'SAK', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>G/L account number, significant length</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SAKAN"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>G/L Account Long Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TXT50"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>G/L Account Long Text</th>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>G/L Account Number</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ TXT50 }}</td>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ SAKNR }}</td>
+    </tr>
+  </tbody>
+</table>

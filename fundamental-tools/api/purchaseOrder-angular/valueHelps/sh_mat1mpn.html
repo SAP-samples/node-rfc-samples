@@ -1,0 +1,75 @@
+<!-- SH MAT1MPN Search Help for Manufacturer Part Number : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Material number corresponding to manufacturer part number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MATNR_HTN"
+        [dropdownValues]="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'HTN', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Description in Uppercase for Matchcodes</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TEXT_HTN"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SPRAS"
+        [dropdownValues]="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Manufacturer Part Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MFRPN"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Manufacturer number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MFRNR"
+        [dropdownValues]="{type: 'SH', id: 'KRED'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Number of firm's own (internal) inventory-managed material</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MATNR_B"
+        [dropdownValues]="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Material number corresponding to manufacturer part number</th>
+      <th fd-table-cell>Material Description in Uppercase for Matchcodes</th>
+      <th fd-table-cell>Number of firm's own (internal) inventory-managed material</th>
+      <th fd-table-cell>Manufacturer Part Number</th>
+      <th fd-table-cell>Manufacturer number</th>
+      <th fd-table-cell>Language Key</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ MATNR_HTN }}</td>
+       <td fd-table-cell>{{ TEXT_HTN }}</td>
+       <td fd-table-cell>{{ MATNR_B }}</td>
+       <td fd-table-cell>{{ MFRPN }}</td>
+       <td fd-table-cell>{{ MFRNR }}</td>
+       <td fd-table-cell>{{ SPRAS }}</td>
+    </tr>
+  </tbody>
+</table>

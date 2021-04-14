@@ -1,0 +1,88 @@
+<!-- SH RERAINVNO Invoice Number : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Invoice Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.INVNO"
+            data-abap="{type:'NUMC', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Fiscal Year</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.FISC_YEAR"
+            data-abap="{type:'NUMC', alpha:'GJAHR', mid:'GJR', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Invoicing Run ID</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PROCESSID"
+            data-abap="{type:'CHAR', length:'16'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Partner Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PARTNER"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BPA', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Invoice Reversed?</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.FLG_REVERSAL"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Entered by</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RERF"
+            data-abap="{type:'CHAR', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>First Entered on</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.DERF"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Time of Initial Entry</label>
+    <fd-time-picker [(ngModel)]="searchParamLow.TERF"></fd-time-picker>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Invoice Number</th>
+      <th fd-table-cell>Fiscal Year</th>
+      <th fd-table-cell>Invoicing Run ID</th>
+      <th fd-table-cell>Business Partner Number</th>
+      <th fd-table-cell>Invoice Reversed?</th>
+      <th fd-table-cell>Entered by</th>
+      <th fd-table-cell>First Entered on</th>
+      <th fd-table-cell>Time of Initial Entry</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ INVNO }}</td>
+       <td fd-table-cell>{{ FISC_YEAR }}</td>
+       <td fd-table-cell>{{ PROCESSID }}</td>
+       <td fd-table-cell>{{ PARTNER }}</td>
+       <td fd-table-cell>{{ FLG_REVERSAL }}</td>
+       <td fd-table-cell>{{ RERF }}</td>
+       <td fd-table-cell>{{ DERF }}</td>
+       <td fd-table-cell>{{ TERF }}</td>
+    </tr>
+  </tbody>
+</table>

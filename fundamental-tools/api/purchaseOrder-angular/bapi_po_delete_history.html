@@ -1,0 +1,748 @@
+<!-- BAPI_PO_DELETE_HISTORY exception: 0  struct: 0  table: 3  var: 1
+
+abap 2.2.0 at: 2021-04-14 18:36:59 -->
+
+<!-- IMPORT PARAMETERS -->
+
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Number</label>
+    <fd-combobox
+        [(ngModel)]="PURCHASEORDER"
+        [dropdownValues]="{type: 'CH', id: 'EKKO'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<!-- TABLE PARAMETERS -->
+
+<!-- Parameter: POITEMHISTORY structure: BAPIEKBE  Transfer Structure for PO History -->
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Item Number of Purchasing Document</th>
+      <th fd-table-cell>Sequential Number of Account Assignment</th>
+      <th fd-table-cell>Transaction/event type, purchase order history</th>
+      <th fd-table-cell>Material Document Year</th>
+      <th fd-table-cell>Number of Material Document</th>
+      <th fd-table-cell>Item in Material Document</th>
+      <th fd-table-cell>Purchase Order History Category</th>
+      <th fd-table-cell>Movement type (inventory management)</th>
+      <th fd-table-cell>Posting Date in the Document</th>
+      <th fd-table-cell>Quantity</th>
+      <th fd-table-cell>Amount in local currency</th>
+      <th fd-table-cell>Amount in document currency</th>
+      <th fd-table-cell>Currency Key</th>
+      <th fd-table-cell>GR/IR account clearing value in local currency</th>
+      <th fd-table-cell>Goods Receipt Blocked Stock in Order Unit</th>
+      <th fd-table-cell>Quantity in GR blocked stock in order price unit</th>
+      <th fd-table-cell>Debit/Credit Indicator</th>
+      <th fd-table-cell>Valuation type</th>
+      <th fd-table-cell>"Delivery Completed" Indicator</th>
+      <th fd-table-cell>Reference Document Number</th>
+      <th fd-table-cell>Fiscal Year of a Reference Document</th>
+      <th fd-table-cell>Document No. of a Reference Document</th>
+      <th fd-table-cell>Item of a Reference Document</th>
+      <th fd-table-cell>Reason for Movement</th>
+      <th fd-table-cell>Day On Which Accounting Document Was Entered</th>
+      <th fd-table-cell>Time of Entry</th>
+      <th fd-table-cell>Entered invoice value in local currency</th>
+      <th fd-table-cell>Entered invoice value in foreign currency</th>
+      <th fd-table-cell>Material Number</th>
+      <th fd-table-cell>Plant</th>
+      <th fd-table-cell>Sequential Number of Vendor Confirmation</th>
+      <th fd-table-cell>Number of the document condition</th>
+      <th fd-table-cell>Tax on sales/purchases code</th>
+      <th fd-table-cell>Quantity in Unit of Measure from Delivery Note</th>
+      <th fd-table-cell>Unit of Measure From Delivery Note</th>
+      <th fd-table-cell>Material number</th>
+      <th fd-table-cell>Local currency key</th>
+      <th fd-table-cell>Batch Number</th>
+      <th fd-table-cell>Document Date in Document</th>
+      <th fd-table-cell>ISO Currency Code</th>
+      <th fd-table-cell>ISO code for local currency</th>
+      <th fd-table-cell>ISO code for unit of measure of delivery note</th>
+      <th fd-table-cell>Long Material Number for MATERIAL Field</th>
+      <th fd-table-cell>External GUID for MATERIAL Field</th>
+      <th fd-table-cell>Version Number for MATERIAL Field</th>
+      <th fd-table-cell>Long Material Number for PUR_MAT Field</th>
+      <th fd-table-cell>External GUID for PUR_MAT Field</th>
+      <th fd-table-cell>Version Number for PUR_MAT Field</th>
+      <th fd-table-cell>Reference Document Number (for Dependencies see Long Text)</th>
+      <th fd-table-cell>Stock Segment</th>
+      <th fd-table-cell>Material Number (40 Characters, needed f. technical reasons)</th>
+      <th fd-table-cell>Material Number (40 Characters, Technical Requirement)</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of POITEMHISTORY" fd-table-row>
+       <td fd-table-cell>{{ PO_ITEM }}</td>
+       <td fd-table-cell>{{ SERIAL_NO }}</td>
+       <td fd-table-cell>{{ PROCESS_ID }}</td>
+       <td fd-table-cell>{{ DOC_YEAR }}</td>
+       <td fd-table-cell>{{ MAT_DOC }}</td>
+       <td fd-table-cell>{{ MATDOC_ITM }}</td>
+       <td fd-table-cell>{{ HIST_TYPE }}</td>
+       <td fd-table-cell>{{ MOVE_TYPE }}</td>
+       <td fd-table-cell>{{ PSTNG_DATE }}</td>
+       <td fd-table-cell>{{ QUANTITY }}</td>
+       <td fd-table-cell>{{ VAL_LOCCUR }}</td>
+       <td fd-table-cell>{{ VAL_FORCUR }}</td>
+       <td fd-table-cell>{{ CURRENCY }}</td>
+       <td fd-table-cell>{{ CL_VAL_LOC }}</td>
+       <td fd-table-cell>{{ BLOCKED_QY }}</td>
+       <td fd-table-cell>{{ BL_QTY }}</td>
+       <td fd-table-cell>{{ DB_CR_IND }}</td>
+       <td fd-table-cell>{{ VAL_TYPE }}</td>
+       <td fd-table-cell>{{ NO_MORE_GR }}</td>
+       <td fd-table-cell>{{ REF_DOC_NO }}</td>
+       <td fd-table-cell>{{ REF_DOC_YR }}</td>
+       <td fd-table-cell>{{ REF_DOC }}</td>
+       <td fd-table-cell>{{ REF_DOC_IT }}</td>
+       <td fd-table-cell>{{ MOVE_REAS }}</td>
+       <td fd-table-cell>{{ ENTRY_DATE }}</td>
+       <td fd-table-cell>{{ ENTRY_TIME }}</td>
+       <td fd-table-cell>{{ IVVAL_LOC }}</td>
+       <td fd-table-cell>{{ IVVAL_FOR }}</td>
+       <td fd-table-cell>{{ MATERIAL }}</td>
+       <td fd-table-cell>{{ PLANT }}</td>
+       <td fd-table-cell>{{ CONF_SER }}</td>
+       <td fd-table-cell>{{ CONDITION }}</td>
+       <td fd-table-cell>{{ TAX_CODE }}</td>
+       <td fd-table-cell>{{ DELIV_QTY }}</td>
+       <td fd-table-cell>{{ DELIV_UNIT }}</td>
+       <td fd-table-cell>{{ PUR_MAT }}</td>
+       <td fd-table-cell>{{ LOC_CURR }}</td>
+       <td fd-table-cell>{{ BATCH }}</td>
+       <td fd-table-cell>{{ DOC_DATE }}</td>
+       <td fd-table-cell>{{ CURRENCY_ISO }}</td>
+       <td fd-table-cell>{{ LOC_CURR_ISO }}</td>
+       <td fd-table-cell>{{ DELIV_UNIT_ISO }}</td>
+       <td fd-table-cell>{{ MATERIAL_EXTERNAL }}</td>
+       <td fd-table-cell>{{ MATERIAL_GUID }}</td>
+       <td fd-table-cell>{{ MATERIAL_VERSION }}</td>
+       <td fd-table-cell>{{ PUR_MAT_EXTERNAL }}</td>
+       <td fd-table-cell>{{ PUR_MAT_GUID }}</td>
+       <td fd-table-cell>{{ PUR_MAT_VERSION }}</td>
+       <td fd-table-cell>{{ REF_DOC_NO_LONG }}</td>
+       <td fd-table-cell>{{ STK_SEGMENT }}</td>
+       <td fd-table-cell>{{ MATERIAL_LONG }}</td>
+       <td fd-table-cell>{{ PUR_MAT_LONG }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div fd-form-item>
+    <label fd-form-label>Item Number of Purchasing Document</label>
+    <fd-combobox
+        [(ngModel)]="POITEMHISTORY.PO_ITEM"
+        [dropdownValues]="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Sequential Number of Account Assignment</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.SERIAL_NO"
+            data-abap="{type:'NUMC', length:'2'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Transaction/event type, purchase order history</label>
+    <fd-combobox
+        [(ngModel)]="POITEMHISTORY.PROCESS_ID"
+        [dropdownValues]="{type: 'FV', id: 'VGABE'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material Document Year</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.DOC_YEAR"
+            data-abap="{type:'NUMC', alpha:'GJAHR', mid:'MJA', length:'4'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Number of Material Document</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.MAT_DOC"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'MBN', length:'10'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Item in Material Document</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.MATDOC_ITM"
+            data-abap="{type:'NUMC', mid:'POS', length:'4'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Purchase Order History Category</label>
+    <fd-combobox
+        [(ngModel)]="POITEMHISTORY.HIST_TYPE"
+        [dropdownValues]="{type: 'SH', id: 'H_T163B'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Movement type (inventory management)</label>
+    <fd-combobox
+        [(ngModel)]="POITEMHISTORY.MOVE_TYPE"
+        [dropdownValues]="{type: 'SH', id: 'H_T156'}"
+        data-abap="{type:'CHAR', mid:'BWA', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Posting Date in the Document</label>
+    <fd-date-picker [type]="single" [(ngModel)]="POITEMHISTORY.PSTNG_DATE"></fd-date-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Quantity</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.QUANTITY"
+            data-abap="{type:'QUAN', unit:'UNIT', length:'10.3'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Amount in local currency</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.VAL_LOCCUR"
+            data-abap="{type:'DEC', length:'22.4'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Amount in document currency</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.VAL_FORCUR"
+            data-abap="{type:'DEC', length:'22.4'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Currency Key</label>
+    <fd-combobox
+        [(ngModel)]="POITEMHISTORY.CURRENCY"
+        [dropdownValues]="{type: 'CT', id: 'TCURC'}"
+        data-abap="{type:'CUKY', mid:'FWS', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>GR/IR account clearing value in local currency</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.CL_VAL_LOC"
+            data-abap="{type:'DEC', length:'22.4'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Goods Receipt Blocked Stock in Order Unit</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.BLOCKED_QY"
+            data-abap="{type:'QUAN', unit:'UNIT', length:'10.3'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Quantity in GR blocked stock in order price unit</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.BL_QTY"
+            data-abap="{type:'QUAN', unit:'ORDERPR_UN', length:'10.3'}"
+        />
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Debit/Credit Indicator" [(ngModel)]="POITEMHISTORY.DB_CR_IND"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Valuation type</label>
+    <fd-combobox
+        [(ngModel)]="POITEMHISTORY.VAL_TYPE"
+        [dropdownValues]="{type: 'SH', id: 'H_T149D'}"
+        data-abap="{type:'CHAR', mid:'BWT', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label=""Delivery Completed" Indicator" [(ngModel)]="POITEMHISTORY.NO_MORE_GR"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Reference Document Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.REF_DOC_NO"
+            data-abap="{type:'CHAR', length:'16'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Fiscal Year of a Reference Document</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.REF_DOC_YR"
+            data-abap="{type:'NUMC', alpha:'GJAHR', length:'4'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Document No. of a Reference Document</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.REF_DOC"
+            data-abap="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Item of a Reference Document</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.REF_DOC_IT"
+            data-abap="{type:'NUMC', length:'4'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Reason for Movement</label>
+    <fd-combobox
+        [(ngModel)]="POITEMHISTORY.MOVE_REAS"
+        [dropdownValues]="{type: 'SH', id: 'H_T157D'}"
+        data-abap="{type:'NUMC', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Day On Which Accounting Document Was Entered</label>
+    <fd-date-picker [type]="single" [(ngModel)]="POITEMHISTORY.ENTRY_DATE"></fd-date-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Time of Entry</label>
+    <fd-time-picker [(ngModel)]="POITEMHISTORY.ENTRY_TIME"></fd-time-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Entered invoice value in local currency</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.IVVAL_LOC"
+            data-abap="{type:'DEC', length:'22.4'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Entered invoice value in foreign currency</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.IVVAL_FOR"
+            data-abap="{type:'DEC', length:'22.4'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+    <fd-combobox
+        [(ngModel)]="POITEMHISTORY.MATERIAL"
+        [dropdownValues]="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+    <fd-combobox
+        [(ngModel)]="POITEMHISTORY.PLANT"
+        [dropdownValues]="{type: 'SH', id: 'H_T001W'}"
+        data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Sequential Number of Vendor Confirmation</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.CONF_SER"
+            data-abap="{type:'NUMC', length:'4'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Number of the document condition</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.CONDITION"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Tax on sales/purchases code</label>
+    <fd-combobox
+        [(ngModel)]="POITEMHISTORY.TAX_CODE"
+        [dropdownValues]="{type: 'CT', id: 'T007A'}"
+        data-abap="{type:'CHAR', length:'2'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Quantity in Unit of Measure from Delivery Note</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.DELIV_QTY"
+            data-abap="{type:'QUAN', unit:'DELIV_UNIT', length:'10.3'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Unit of Measure From Delivery Note</label>
+    <fd-combobox
+        [(ngModel)]="POITEMHISTORY.DELIV_UNIT"
+        [dropdownValues]="{type: 'SH', id: 'H_T006'}"
+        data-abap="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material number</label>
+    <fd-combobox
+        [(ngModel)]="POITEMHISTORY.PUR_MAT"
+        [dropdownValues]="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Local currency key</label>
+    <fd-combobox
+        [(ngModel)]="POITEMHISTORY.LOC_CURR"
+        [dropdownValues]="{type: 'CT', id: 'TCURC'}"
+        data-abap="{type:'CUKY', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Batch Number</label>
+    <fd-combobox
+        [(ngModel)]="POITEMHISTORY.BATCH"
+        [dropdownValues]="{type: 'CT', id: 'MCH1'}"
+        data-abap="{type:'CHAR', mid:'CHA', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Document Date in Document</label>
+    <fd-date-picker [type]="single" [(ngModel)]="POITEMHISTORY.DOC_DATE"></fd-date-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>ISO Currency Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.CURRENCY_ISO"
+            data-abap="{type:'CHAR', length:'3'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>ISO code for local currency</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.LOC_CURR_ISO"
+            data-abap="{type:'CHAR', length:'3'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>ISO code for unit of measure of delivery note</label>
+    <fd-combobox
+        [(ngModel)]="POITEMHISTORY.DELIV_UNIT_ISO"
+        [dropdownValues]="{type: 'SH', id: 'H_T006I'}"
+        data-abap="{type:'CHAR', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Long Material Number for MATERIAL Field</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.MATERIAL_EXTERNAL"
+            data-abap="{type:'CHAR', alpha:'MATNL', length:'40'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>External GUID for MATERIAL Field</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.MATERIAL_GUID"
+            data-abap="{type:'CHAR', length:'32'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Version Number for MATERIAL Field</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.MATERIAL_VERSION"
+            data-abap="{type:'CHAR', alpha:'MATNW', length:'10'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Long Material Number for PUR_MAT Field</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.PUR_MAT_EXTERNAL"
+            data-abap="{type:'CHAR', alpha:'MATNL', length:'40'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>External GUID for PUR_MAT Field</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.PUR_MAT_GUID"
+            data-abap="{type:'CHAR', length:'32'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Version Number for PUR_MAT Field</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.PUR_MAT_VERSION"
+            data-abap="{type:'CHAR', alpha:'MATNW', length:'10'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Reference Document Number (for Dependencies see Long Text)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.REF_DOC_NO_LONG"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Stock Segment</label>
+    <fd-combobox
+        [(ngModel)]="POITEMHISTORY.STK_SEGMENT"
+        [dropdownValues]="{type: 'SH', id: 'SGT_CAT_FIELD_POPUP'}"
+        data-abap="{type:'CHAR', mid:'SGT_S', length:'16'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material Number (40 Characters, needed f. technical reasons)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.MATERIAL_LONG"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material Number (40 Characters, Technical Requirement)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="POITEMHISTORY.PUR_MAT_LONG"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<!-- Parameter: RETURN structure: BAPIRET2  Return Parameter -->
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Message type: S Success, E Error, W Warning, I Info, A Abort</th>
+      <th fd-table-cell>Message Class</th>
+      <th fd-table-cell>Message Number</th>
+      <th fd-table-cell>Message Text</th>
+      <th fd-table-cell>Application log: log number</th>
+      <th fd-table-cell>Application log: Internal message serial number</th>
+      <th fd-table-cell>Message Variable</th>
+      <th fd-table-cell>Message Variable</th>
+      <th fd-table-cell>Message Variable</th>
+      <th fd-table-cell>Message Variable</th>
+      <th fd-table-cell>Parameter Name</th>
+      <th fd-table-cell>Lines in parameter</th>
+      <th fd-table-cell>Field in parameter</th>
+      <th fd-table-cell>Logical system from which message originates</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of RETURN" fd-table-row>
+       <td fd-table-cell>{{ TYPE }}</td>
+       <td fd-table-cell>{{ ID }}</td>
+       <td fd-table-cell>{{ NUMBER }}</td>
+       <td fd-table-cell>{{ MESSAGE }}</td>
+       <td fd-table-cell>{{ LOG_NO }}</td>
+       <td fd-table-cell>{{ LOG_MSG_NO }}</td>
+       <td fd-table-cell>{{ MESSAGE_V1 }}</td>
+       <td fd-table-cell>{{ MESSAGE_V2 }}</td>
+       <td fd-table-cell>{{ MESSAGE_V3 }}</td>
+       <td fd-table-cell>{{ MESSAGE_V4 }}</td>
+       <td fd-table-cell>{{ PARAMETER }}</td>
+       <td fd-table-cell>{{ ROW }}</td>
+       <td fd-table-cell>{{ FIELD }}</td>
+       <td fd-table-cell>{{ SYSTEM }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div fd-form-item>
+    <label fd-form-label>Message type: S Success, E Error, W Warning, I Info, A Abort</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.TYPE"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Class</label>
+    <fd-combobox
+        [(ngModel)]="RETURN.ID"
+        [dropdownValues]="{type: 'CT', id: 'T100A'}"
+        data-abap="{type:'CHAR', length:'20'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.NUMBER"
+            data-abap="{type:'NUMC', length:'3'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE"
+            data-abap="{type:'CHAR', length:'220'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Application log: log number</label>
+    <fd-combobox
+        [(ngModel)]="RETURN.LOG_NO"
+        [dropdownValues]="{type: 'CH', id: 'BALHDR'}"
+        data-abap="{type:'CHAR', length:'20'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Application log: Internal message serial number</label>
+    <fd-combobox
+        [(ngModel)]="RETURN.LOG_MSG_NO"
+        [dropdownValues]="{type: 'CH', id: 'BALM'}"
+        data-abap="{type:'NUMC', length:'6'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Variable</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE_V1"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Variable</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE_V2"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Variable</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE_V3"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Variable</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE_V4"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Parameter Name</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.PARAMETER"
+            data-abap="{type:'CHAR', length:'32'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Lines in parameter</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.ROW"
+            data-abap="{type:'INT4', length:'+10'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Field in parameter</label>
+    <fd-combobox
+        [(ngModel)]="RETURN.FIELD"
+        [dropdownValues]="{type: 'CT', id: 'DD03L'}"
+        data-abap="{type:'CHAR', length:'30'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Logical system from which message originates</label>
+    <fd-combobox
+        [(ngModel)]="RETURN.SYSTEM"
+        [dropdownValues]="{type: 'CT', id: 'TBDLS'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<!-- Parameter: TOKENREFERENCE structure: CSL_TR_EXS  CSL: Data Element CSL_TR_EXT as Structure (BAPI Tab.Arg.) -->
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>CSL: CSL-External Representation of a Token Reference</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of TOKENREFERENCE" fd-table-row>
+       <td fd-table-cell>{{ TR_EXT }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div fd-form-item>
+    <label fd-form-label>CSL: CSL-External Representation of a Token Reference</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="TOKENREFERENCE.TR_EXT"
+            data-abap="{type:'CHAR', length:'255'}"
+        />
+</div>

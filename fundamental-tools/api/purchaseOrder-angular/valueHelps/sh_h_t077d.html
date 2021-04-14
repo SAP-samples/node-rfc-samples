@@ -1,0 +1,49 @@
+<!-- SH H_T077D Customer Account Group : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Customer Account Group</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KTOKD"
+            data-abap="{type:'CHAR', mid:'KGD', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Account Group Name</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TXT30"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Number range</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NUMKR"
+            data-abap="{type:'CHAR', length:'2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Indicator: Account group for one-time accounts?</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.XCPDS"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Customer Account Group</th>
+      <th fd-table-cell>Number range</th>
+      <th fd-table-cell>Indicator: Account group for one-time accounts?</th>
+      <th fd-table-cell>Account Group Name</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ KTOKD }}</td>
+       <td fd-table-cell>{{ NUMKR }}</td>
+       <td fd-table-cell>{{ XCPDS }}</td>
+       <td fd-table-cell>{{ TXT30 }}</td>
+    </tr>
+  </tbody>
+</table>

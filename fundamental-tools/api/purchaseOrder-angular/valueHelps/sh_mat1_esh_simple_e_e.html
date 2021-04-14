@@ -1,0 +1,76 @@
+<!-- SH MAT1_ESH_SIMPLE_E_E Simple Search Help for Material (via Enterprise Search) : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Generic Search Term</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/SEARCH_TERM"
+            data-abap="{type:'CHAR', length:'45'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Option Fuzzy Mode</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/MODE_FUZZY"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Object Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJECT_TYPE_ID"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Request Type ID</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.REQUEST"
+            data-abap="{type:'CHAR', length:'32'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MATNR"
+            data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>External Long Material Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MATNR_EXT"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MAKTX"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Generic Search Term</th>
+      <th fd-table-cell>Option Fuzzy Mode</th>
+      <th fd-table-cell>Object Type</th>
+      <th fd-table-cell>Request Type ID</th>
+      <th fd-table-cell>Material Number</th>
+      <th fd-table-cell>External Long Material Number</th>
+      <th fd-table-cell>Material description</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ S/RP/SEARCH_TERM }}</td>
+       <td fd-table-cell>{{ S/RP/MODE_FUZZY }}</td>
+       <td fd-table-cell>{{ OBJECT_TYPE_ID }}</td>
+       <td fd-table-cell>{{ REQUEST }}</td>
+       <td fd-table-cell>{{ MATNR }}</td>
+       <td fd-table-cell>{{ MATNR_EXT }}</td>
+       <td fd-table-cell>{{ MAKTX }}</td>
+    </tr>
+  </tbody>
+</table>

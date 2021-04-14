@@ -1,0 +1,47 @@
+<!-- SH GL_ACCT_CA_NO G/L account no. in chart of accounts : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Chart of Accounts</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KTOPL"
+            data-abap="{type:'CHAR', mid:'KPL', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>G/L Account Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SAKNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'SAK', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>G/L account number, significant length</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SAKAN"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>G/L Account Long Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TXT50"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>G/L Account Number</th>
+      <th fd-table-cell>Chart of Accounts</th>
+      <th fd-table-cell>G/L Account Long Text</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ SAKNR }}</td>
+       <td fd-table-cell>{{ KTOPL }}</td>
+       <td fd-table-cell>{{ TXT50 }}</td>
+    </tr>
+  </tbody>
+</table>

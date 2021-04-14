@@ -1,0 +1,82 @@
+<!-- SH PLKSB Master Recipe : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Recipe group key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PLNNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'PLN', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Recipe</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PLNAL"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'PAL', length:'2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.WERKS"
+            data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Valid-From Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.DATUV"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Recipe description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KTEXT"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Recipe usage</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.VERWE"
+            data-abap="{type:'CHAR', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Responsible planner group/department</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.VAGRP"
+            data-abap="{type:'CHAR', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Recipe status</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.STATU"
+            data-abap="{type:'CHAR', length:'3'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Recipe group key</th>
+      <th fd-table-cell>Recipe</th>
+      <th fd-table-cell>Plant</th>
+      <th fd-table-cell>Valid-From Date</th>
+      <th fd-table-cell>Recipe description</th>
+      <th fd-table-cell>Recipe usage</th>
+      <th fd-table-cell>Responsible planner group/department</th>
+      <th fd-table-cell>Recipe status</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ PLNNR }}</td>
+       <td fd-table-cell>{{ PLNAL }}</td>
+       <td fd-table-cell>{{ WERKS }}</td>
+       <td fd-table-cell>{{ DATUV }}</td>
+       <td fd-table-cell>{{ KTEXT }}</td>
+       <td fd-table-cell>{{ VERWE }}</td>
+       <td fd-table-cell>{{ VAGRP }}</td>
+       <td fd-table-cell>{{ STATU }}</td>
+    </tr>
+  </tbody>
+</table>

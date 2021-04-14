@@ -1,0 +1,67 @@
+<!-- SH AANLM Investment Orders : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Investment Order</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EAUFN"
+            data-abap="{type:'CHAR', alpha:'ALPHA', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Asset Class</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ANLKL"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'ANK', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search term for matchcode search</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MCOA1"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Main Asset Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ANLN1"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AN1', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Asset Subnumber</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ANLN2"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AN2', length:'4'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Investment Order</th>
+      <th fd-table-cell>Asset Class</th>
+      <th fd-table-cell>Search term for matchcode search</th>
+      <th fd-table-cell>Main Asset Number</th>
+      <th fd-table-cell>Asset Subnumber</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ EAUFN }}</td>
+       <td fd-table-cell>{{ ANLKL }}</td>
+       <td fd-table-cell>{{ MCOA1 }}</td>
+       <td fd-table-cell>{{ ANLN1 }}</td>
+       <td fd-table-cell>{{ ANLN2 }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,44 @@
+<!-- SH H_TTXJ Tax Jurisdiction : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Costing Sheet</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.KALSM"
+        [dropdownValues]="{type: 'CT', id: 'TTXD'}"
+        data-abap="{type:'CHAR', length:'6'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Tax Jurisdiction</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.TXJCD"
+        [dropdownValues]="{type: 'CT', id: 'TTXJ'}"
+        data-abap="{type:'CHAR', mid:'TXJ', length:'15'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TEXT1"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Costing Sheet</th>
+      <th fd-table-cell>Tax Jurisdiction</th>
+      <th fd-table-cell>Description</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ KALSM }}</td>
+       <td fd-table-cell>{{ TXJCD }}</td>
+       <td fd-table-cell>{{ TEXT1 }}</td>
+    </tr>
+  </tbody>
+</table>

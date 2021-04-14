@@ -1,0 +1,40 @@
+<!-- SH H_T161 Purchasing Document Type : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Purchasing document category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BSTYP"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BSART"
+            data-abap="{type:'CHAR', mid:'BSA', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Short Description of Purchasing Document Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BATXT"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Purchasing document category</th>
+      <th fd-table-cell>Purchasing Document Type</th>
+      <th fd-table-cell>Short Description of Purchasing Document Type</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BSTYP }}</td>
+       <td fd-table-cell>{{ BSART }}</td>
+       <td fd-table-cell>{{ BATXT }}</td>
+    </tr>
+  </tbody>
+</table>

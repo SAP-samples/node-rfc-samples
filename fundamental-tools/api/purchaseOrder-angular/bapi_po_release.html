@@ -1,0 +1,182 @@
+<!-- BAPI_PO_RELEASE exception: 6  struct: 0  table: 1  var: 7
+
+abap 2.2.0 at: 2021-04-14 18:36:59 -->
+
+<!-- IMPORT PARAMETERS -->
+
+<div fd-form-item>
+    <label fd-form-label>Release Code</label>
+    <fd-combobox
+        [(ngModel)]="PO_REL_CODE"
+        [dropdownValues]="{type: 'CT', id: 'T16FC'}"
+        data-abap="{type:'CHAR', mid:'FAB', length:'2'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Purchase Order Number</label>
+    <fd-combobox
+        [(ngModel)]="PURCHASEORDER"
+        [dropdownValues]="{type: 'SH', id: 'MEKK_C'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Commit Work Yes/No</label>
+    <fd-combobox
+        [(ngModel)]="NO_COMMIT"
+        [dropdownValues]="{type: 'FV', id: 'SELKZ'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Set Exceptions and Issue Error Messages</label>
+    <fd-combobox
+        [(ngModel)]="USE_EXCEPTIONS"
+        [dropdownValues]="{type: 'FV', id: 'SELKZ'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<!-- TABLE PARAMETERS -->
+
+<!-- Parameter: RETURN structure: BAPIRETURN  Return Messages -->
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Message type: S Success, E Error, W Warning, I Info, A Abort</th>
+      <th fd-table-cell>Message code</th>
+      <th fd-table-cell>Message Text</th>
+      <th fd-table-cell>Application log: log number</th>
+      <th fd-table-cell>Application log: Internal message serial number</th>
+      <th fd-table-cell>Message Variable</th>
+      <th fd-table-cell>Message Variable</th>
+      <th fd-table-cell>Message Variable</th>
+      <th fd-table-cell>Message Variable</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of RETURN" fd-table-row>
+       <td fd-table-cell>{{ TYPE }}</td>
+       <td fd-table-cell>{{ CODE }}</td>
+       <td fd-table-cell>{{ MESSAGE }}</td>
+       <td fd-table-cell>{{ LOG_NO }}</td>
+       <td fd-table-cell>{{ LOG_MSG_NO }}</td>
+       <td fd-table-cell>{{ MESSAGE_V1 }}</td>
+       <td fd-table-cell>{{ MESSAGE_V2 }}</td>
+       <td fd-table-cell>{{ MESSAGE_V3 }}</td>
+       <td fd-table-cell>{{ MESSAGE_V4 }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div fd-form-item>
+    <label fd-form-label>Message type: S Success, E Error, W Warning, I Info, A Abort</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.TYPE"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.CODE"
+            data-abap="{type:'CHAR', length:'5'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE"
+            data-abap="{type:'CHAR', length:'220'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Application log: log number</label>
+    <fd-combobox
+        [(ngModel)]="RETURN.LOG_NO"
+        [dropdownValues]="{type: 'CH', id: 'BALHDR'}"
+        data-abap="{type:'CHAR', length:'20'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Application log: Internal message serial number</label>
+    <fd-combobox
+        [(ngModel)]="RETURN.LOG_MSG_NO"
+        [dropdownValues]="{type: 'CH', id: 'BALM'}"
+        data-abap="{type:'NUMC', length:'6'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Variable</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE_V1"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Variable</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE_V2"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Variable</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE_V3"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Variable</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE_V4"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<!-- EXPORT PARAMETERS -->
+
+<div fd-form-item>
+    <label fd-form-label>New Release Indicator</label>
+    <fd-combobox
+        [(ngModel)]="REL_INDICATOR_NEW"
+        [dropdownValues]="{type: 'CT', id: 'T16FB'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>New Release Status</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="REL_STATUS_NEW"
+            data-abap="{type:'CHAR', length:'8'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Return Value, Return Value After ABAP Statements</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RET_CODE"
+            data-abap="{type:'INT4', length:'+10'}"
+        />
+</div>

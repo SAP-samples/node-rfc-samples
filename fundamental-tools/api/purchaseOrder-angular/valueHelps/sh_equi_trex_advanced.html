@@ -1,0 +1,211 @@
+<!-- SH EQUI_TREX_ADVANCED Advanced Search for Equipment via Search Engine : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Valid To Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.VALIDUNTILDATE"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Valid-From Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.VALIDFROMDATE"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Valid-From Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.S/KD/DATE"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Maintenance Planning Plant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PLANPLANT"
+            data-abap="{type:'CHAR', mid:'IWK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Planner Group for Customer Service and Plant Maintenance</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PLANGROUP"
+            data-abap="{type:'CHAR', mid:'IHG', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Object ID of the Work Center</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.WORK_CTR"
+            data-abap="{type:'NUMC', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Sort field</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SORTFIELD"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Location of maintenance object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MAINTLOC"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Maintenance plant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MAINTPLANT"
+            data-abap="{type:'CHAR', mid:'SWK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Manufacturer serial number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MANSERNO"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Manufacturer of asset</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MANFACTURE"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Functional Location</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.FUNCT_LOC"
+            data-abap="{type:'CHAR', alpha:'TPLNR', mid:'IFL', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Superordinate Equipment</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.POSEQUI"
+            data-abap="{type:'CHAR', alpha:'ALPHA', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Class number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.CLASS_NUM"
+            data-abap="{type:'CHAR', mid:'KLA', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Equipment category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EQUICATGRY"
+            data-abap="{type:'CHAR', mid:'EQT', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MATERIAL"
+            data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Serial Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SERIALNO"
+            data-abap="{type:'CHAR', alpha:'GERNR', mid:'SER', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Description of Technical Object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.DESCRIPTION"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Equipment number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EXTERNAL_KEY"
+            data-abap="{type:'CHAR', mid:'EQN', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Type of Business Object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJECT_TYPE"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Object for Search Engine Service (SES)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUSINESS_OBJECT"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Option Fuzzy Mode</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/MODE_FUZZY"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Input Field for Full Text Search</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/SEARCH_TERM"
+            data-abap="{type:'CHAR', length:'45'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Valid To Date</th>
+      <th fd-table-cell>Valid-From Date</th>
+      <th fd-table-cell>Valid-From Date</th>
+      <th fd-table-cell>Maintenance Planning Plant</th>
+      <th fd-table-cell>Planner Group for Customer Service and Plant Maintenance</th>
+      <th fd-table-cell>Object ID of the Work Center</th>
+      <th fd-table-cell>Sort field</th>
+      <th fd-table-cell>Location of maintenance object</th>
+      <th fd-table-cell>Maintenance plant</th>
+      <th fd-table-cell>Manufacturer serial number</th>
+      <th fd-table-cell>Manufacturer of asset</th>
+      <th fd-table-cell>Functional Location</th>
+      <th fd-table-cell>Superordinate Equipment</th>
+      <th fd-table-cell>Class number</th>
+      <th fd-table-cell>Equipment category</th>
+      <th fd-table-cell>Material Number</th>
+      <th fd-table-cell>Serial Number</th>
+      <th fd-table-cell>Description of Technical Object</th>
+      <th fd-table-cell>Equipment number</th>
+      <th fd-table-cell>Type of Business Object</th>
+      <th fd-table-cell>Business Object for Search Engine Service (SES)</th>
+      <th fd-table-cell>Option Fuzzy Mode</th>
+      <th fd-table-cell>Input Field for Full Text Search</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ VALIDUNTILDATE }}</td>
+       <td fd-table-cell>{{ VALIDFROMDATE }}</td>
+       <td fd-table-cell>{{ S/KD/DATE }}</td>
+       <td fd-table-cell>{{ PLANPLANT }}</td>
+       <td fd-table-cell>{{ PLANGROUP }}</td>
+       <td fd-table-cell>{{ WORK_CTR }}</td>
+       <td fd-table-cell>{{ SORTFIELD }}</td>
+       <td fd-table-cell>{{ MAINTLOC }}</td>
+       <td fd-table-cell>{{ MAINTPLANT }}</td>
+       <td fd-table-cell>{{ MANSERNO }}</td>
+       <td fd-table-cell>{{ MANFACTURE }}</td>
+       <td fd-table-cell>{{ FUNCT_LOC }}</td>
+       <td fd-table-cell>{{ POSEQUI }}</td>
+       <td fd-table-cell>{{ CLASS_NUM }}</td>
+       <td fd-table-cell>{{ EQUICATGRY }}</td>
+       <td fd-table-cell>{{ MATERIAL }}</td>
+       <td fd-table-cell>{{ SERIALNO }}</td>
+       <td fd-table-cell>{{ DESCRIPTION }}</td>
+       <td fd-table-cell>{{ EXTERNAL_KEY }}</td>
+       <td fd-table-cell>{{ OBJECT_TYPE }}</td>
+       <td fd-table-cell>{{ BUSINESS_OBJECT }}</td>
+       <td fd-table-cell>{{ S/RP/MODE_FUZZY }}</td>
+       <td fd-table-cell>{{ S/RP/SEARCH_TERM }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,33 @@
+<!-- SH H_T163 Item category in purchasing document : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Item category in purchasing document</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.PSTYP"
+        [dropdownValues]="{type: 'CT', id: 'T163'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Text for Item Category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PTEXT"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Item category in purchasing document</th>
+      <th fd-table-cell>Text for Item Category</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ PSTYP }}</td>
+       <td fd-table-cell>{{ PTEXT }}</td>
+    </tr>
+  </tbody>
+</table>

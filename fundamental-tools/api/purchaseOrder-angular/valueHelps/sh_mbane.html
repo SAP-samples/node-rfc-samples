@@ -1,0 +1,76 @@
+<!-- SH MBANE Purchase Requisitions per Purchasing Group : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Purchasing group</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EKGRP"
+            data-abap="{type:'CHAR', mid:'EKG', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing organization</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EKORG"
+            data-abap="{type:'CHAR', mid:'EKO', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Fixed vendor</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.FLIEF"
+            data-abap="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Number of principal purchase agreement</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KONNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KTR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Item number of principal purchase agreement</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KTPNR"
+            data-abap="{type:'NUMC', length:'5'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchase requisition number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BANFN"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BAN', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Item number of purchase requisition</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BNFPO"
+            data-abap="{type:'NUMC', mid:'BAP', length:'5'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Purchasing group</th>
+      <th fd-table-cell>Purchasing organization</th>
+      <th fd-table-cell>Fixed vendor</th>
+      <th fd-table-cell>Number of principal purchase agreement</th>
+      <th fd-table-cell>Item number of principal purchase agreement</th>
+      <th fd-table-cell>Purchase requisition number</th>
+      <th fd-table-cell>Item number of purchase requisition</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ EKGRP }}</td>
+       <td fd-table-cell>{{ EKORG }}</td>
+       <td fd-table-cell>{{ FLIEF }}</td>
+       <td fd-table-cell>{{ KONNR }}</td>
+       <td fd-table-cell>{{ KTPNR }}</td>
+       <td fd-table-cell>{{ BANFN }}</td>
+       <td fd-table-cell>{{ BNFPO }}</td>
+    </tr>
+  </tbody>
+</table>

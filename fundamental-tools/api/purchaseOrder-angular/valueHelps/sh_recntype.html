@@ -1,0 +1,45 @@
+<!-- SH RECNTYPE External Real Estate contract type : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Description of type of RE contract type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNTYPETXT"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>External Real Estate contract type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNTYPE"
+            data-abap="{type:'CHAR', mid:'RECNTYPE', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Indicator for "general contract" contract type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNNEWTYPE"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SPRAS"
+            data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>External Real Estate contract type</th>
+      <th fd-table-cell>Description of type of RE contract type</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ RECNTYPE }}</td>
+       <td fd-table-cell>{{ RECNTYPETXT }}</td>
+    </tr>
+  </tbody>
+</table>

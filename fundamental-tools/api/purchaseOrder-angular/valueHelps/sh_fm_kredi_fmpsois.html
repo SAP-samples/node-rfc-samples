@@ -1,0 +1,40 @@
+<!-- SH FM_KREDI_FMPSOIS Proceed Initially According to Creditor Sub-Ledger Account : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Account Number of Vendor or Creditor</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LIFNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Subledger acct preprocessing procedure</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PSOIS"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Revnue Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PSOEA"
+            data-abap="{type:'CHAR', length:'8'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Account Number of Vendor or Creditor</th>
+      <th fd-table-cell>Revnue Type</th>
+      <th fd-table-cell>Subledger acct preprocessing procedure</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ LIFNR }}</td>
+       <td fd-table-cell>{{ PSOEA }}</td>
+       <td fd-table-cell>{{ PSOIS }}</td>
+    </tr>
+  </tbody>
+</table>

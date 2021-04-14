@@ -1,0 +1,34 @@
+<!-- SH MRTAE Collective Lease-Out Selection : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Lease-Out Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SMIVE"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'MIV', length:'13'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Function name</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.FUNCNAME"
+            data-abap="{type:'CHAR', mid:'LIB', length:'30'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+    </tr>
+  </tbody>
+</table>

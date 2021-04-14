@@ -1,0 +1,49 @@
+<!-- SH H_T8JO JV partner : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>JV partner</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PARTN"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Intercompany code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.INTCOCD"
+            data-abap="{type:'CHAR', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name of employee responsible</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PERSON"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>JV partner</th>
+      <th fd-table-cell>Intercompany code</th>
+      <th fd-table-cell>Name of employee responsible</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ PARTN }}</td>
+       <td fd-table-cell>{{ INTCOCD }}</td>
+       <td fd-table-cell>{{ PERSON }}</td>
+    </tr>
+  </tbody>
+</table>

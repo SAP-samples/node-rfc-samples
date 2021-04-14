@@ -1,0 +1,105 @@
+<!-- SH MCMEB Rental units by building : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Entity Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SWENR"
+            data-abap="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Number of Rental Unit</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SMENR"
+            data-abap="{type:'CHAR', alpha:'SMENR', mid:'MEH', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Building Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SGENR"
+            data-abap="{type:'CHAR', alpha:'SGENR', mid:'GEB', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Building text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.XGETXT"
+            data-abap="{type:'CHAR', length:'60'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Rental unit external usage type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SNUNR"
+            data-abap="{type:'NUMC', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Number of rental unit in existing real estate system</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SALTNR"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Date of initial usage</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.DBEZU"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Text for rental unit</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.XMETXT"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Service Charge Collector Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJNR"
+            data-abap="{type:'CHAR', length:'22'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Internal Key for Real Estate Object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.IMKEY"
+            data-abap="{type:'CHAR', alpha:'IMKEY', length:'8'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Business Entity Number</th>
+      <th fd-table-cell>Number of Rental Unit</th>
+      <th fd-table-cell>Rental unit external usage type</th>
+      <th fd-table-cell>Building Number</th>
+      <th fd-table-cell>Building text</th>
+      <th fd-table-cell>Number of rental unit in existing real estate system</th>
+      <th fd-table-cell>Date of initial usage</th>
+      <th fd-table-cell>Text for rental unit</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ SWENR }}</td>
+       <td fd-table-cell>{{ SMENR }}</td>
+       <td fd-table-cell>{{ SNUNR }}</td>
+       <td fd-table-cell>{{ SGENR }}</td>
+       <td fd-table-cell>{{ XGETXT }}</td>
+       <td fd-table-cell>{{ SALTNR }}</td>
+       <td fd-table-cell>{{ DBEZU }}</td>
+       <td fd-table-cell>{{ XMETXT }}</td>
+    </tr>
+  </tbody>
+</table>

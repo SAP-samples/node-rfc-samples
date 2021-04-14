@@ -1,0 +1,53 @@
+<!-- SH WBWGA Find by descriptions : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SPRAS"
+        [dropdownValues]="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Group</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MATKL"
+        [dropdownValues]="{type: 'SH', id: 'H_T023'}"
+        data-abap="{type:'CHAR', mid:'MKL', length:'9'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Group Description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.WGBEZ"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Long text describing the material group</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.WGBEZ60"
+            data-abap="{type:'CHAR', length:'60'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Material Group</th>
+      <th fd-table-cell>Material Group Description</th>
+      <th fd-table-cell>Long text describing the material group</th>
+      <th fd-table-cell>Language Key</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ MATKL }}</td>
+       <td fd-table-cell>{{ WGBEZ }}</td>
+       <td fd-table-cell>{{ WGBEZ60 }}</td>
+       <td fd-table-cell>{{ SPRAS }}</td>
+    </tr>
+  </tbody>
+</table>

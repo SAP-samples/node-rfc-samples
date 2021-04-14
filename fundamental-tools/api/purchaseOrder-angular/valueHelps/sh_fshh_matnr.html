@@ -1,0 +1,119 @@
+<!-- SH FSHH_MATNR Material with Fashion Fields : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MATNR"
+        [dropdownValues]="{type: 'SH', id: 'MAT1'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Description in Uppercase for Matchcodes</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MAKTG"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SPRAS"
+        [dropdownValues]="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Fashion Information Field: 1</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.FSH_MG_AT1"
+        [dropdownValues]="{type: 'SH', id: 'FSHH_MG_ATTRIBUTE1'}"
+        data-abap="{type:'CHAR', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Fashion Information Field: 2</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.FSH_MG_AT2"
+        [dropdownValues]="{type: 'SH', id: 'FSHH_MG_ATTRIBUTE2'}"
+        data-abap="{type:'CHAR', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Fashion Information Field: 3</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.FSH_MG_AT3"
+        [dropdownValues]="{type: 'SH', id: 'FSHH_MG_ATTRIBUTE3'}"
+        data-abap="{type:'CHAR', length:'6'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Season Year</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.FSH_SEASON_YEAR"
+        [dropdownValues]="{type: 'CT', id: 'FSH_SEASONS'}"
+        data-abap="{type:'CHAR', alpha:'GJAHR', mid:'WMSAISJ', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Season</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.FSH_SEASON"
+        [dropdownValues]="{type: 'CT', id: 'FSH_SEASONS'}"
+        data-abap="{type:'CHAR', mid:'SAISO', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Fashion Collection</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.FSH_COLLECTION"
+        [dropdownValues]="{type: 'CT', id: 'FSH_COLLECTIONS'}"
+        data-abap="{type:'CHAR', length:'2'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Fashion Theme</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.FSH_THEME"
+        [dropdownValues]="{type: 'CT', id: 'FSH_THEMES'}"
+        data-abap="{type:'CHAR', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Material Number</th>
+      <th fd-table-cell>Material Description in Uppercase for Matchcodes</th>
+      <th fd-table-cell>Fashion Information Field: 1</th>
+      <th fd-table-cell>Fashion Information Field: 2</th>
+      <th fd-table-cell>Fashion Information Field: 3</th>
+      <th fd-table-cell>Season Year</th>
+      <th fd-table-cell>Season</th>
+      <th fd-table-cell>Fashion Collection</th>
+      <th fd-table-cell>Fashion Theme</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ MATNR }}</td>
+       <td fd-table-cell>{{ MAKTG }}</td>
+       <td fd-table-cell>{{ FSH_MG_AT1 }}</td>
+       <td fd-table-cell>{{ FSH_MG_AT2 }}</td>
+       <td fd-table-cell>{{ FSH_MG_AT3 }}</td>
+       <td fd-table-cell>{{ FSH_SEASON_YEAR }}</td>
+       <td fd-table-cell>{{ FSH_SEASON }}</td>
+       <td fd-table-cell>{{ FSH_COLLECTION }}</td>
+       <td fd-table-cell>{{ FSH_THEME }}</td>
+    </tr>
+  </tbody>
+</table>

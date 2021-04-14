@@ -1,0 +1,159 @@
+<!-- SH RECNCNE Contracts by Rental Object : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Date from when assignment is valid</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.VALIDFROM"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company Code of RE Object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRSRO"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Entity Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SWENR"
+            data-abap="{type:'CHAR', alpha:'SWENR', mid:'REBDBENO', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Number of Land</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SGRNR"
+            data-abap="{type:'CHAR', alpha:'SGRNR', mid:'REBDPRNO', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Number of Building</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SGENR"
+            data-abap="{type:'CHAR', alpha:'SGENR', mid:'REBDBUNO', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Number of Rental Object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SMENR"
+            data-abap="{type:'CHAR', alpha:'SMENR', mid:'REBDRONO', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Rental Object Name</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.XMETXT"
+            data-abap="{type:'CHAR', length:'60'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Rental Object Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ROTYPE"
+            data-abap="{type:'CHAR', mid:'REBDROTYPE', length:'2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Usage Type of Rental Object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SNUNR"
+            data-abap="{type:'NUMC', mid:'REBDUSAGETYPE', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Date up to when the assignment is valid</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.VALIDTO"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNTYPE"
+            data-abap="{type:'CHAR', mid:'RECNTYPE', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Date of contract start</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.RECNBEG"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Term End Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.RECNENDABS"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract name</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNTXT"
+            data-abap="{type:'CHAR', length:'80'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Object Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJNR"
+            data-abap="{type:'CHAR', mid:'ONR', length:'22'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Internal Key of Real Estate Object (FI)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.IMKEY"
+            data-abap="{type:'CHAR', alpha:'IMKEY', length:'8'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Contract Type</th>
+      <th fd-table-cell>Contract Number</th>
+      <th fd-table-cell>Date of contract start</th>
+      <th fd-table-cell>Term End Date</th>
+      <th fd-table-cell>Contract name</th>
+      <th fd-table-cell>Company Code of RE Object</th>
+      <th fd-table-cell>Business Entity Number</th>
+      <th fd-table-cell>Number of Land</th>
+      <th fd-table-cell>Number of Building</th>
+      <th fd-table-cell>Number of Rental Object</th>
+      <th fd-table-cell>Rental Object Type</th>
+      <th fd-table-cell>Usage Type of Rental Object</th>
+      <th fd-table-cell>Rental Object Name</th>
+      <th fd-table-cell>Date from when assignment is valid</th>
+      <th fd-table-cell>Date up to when the assignment is valid</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ RECNTYPE }}</td>
+       <td fd-table-cell>{{ RECNNR }}</td>
+       <td fd-table-cell>{{ RECNBEG }}</td>
+       <td fd-table-cell>{{ RECNENDABS }}</td>
+       <td fd-table-cell>{{ RECNTXT }}</td>
+       <td fd-table-cell>{{ BUKRSRO }}</td>
+       <td fd-table-cell>{{ SWENR }}</td>
+       <td fd-table-cell>{{ SGRNR }}</td>
+       <td fd-table-cell>{{ SGENR }}</td>
+       <td fd-table-cell>{{ SMENR }}</td>
+       <td fd-table-cell>{{ ROTYPE }}</td>
+       <td fd-table-cell>{{ SNUNR }}</td>
+       <td fd-table-cell>{{ XMETXT }}</td>
+       <td fd-table-cell>{{ VALIDFROM }}</td>
+       <td fd-table-cell>{{ VALIDTO }}</td>
+    </tr>
+  </tbody>
+</table>

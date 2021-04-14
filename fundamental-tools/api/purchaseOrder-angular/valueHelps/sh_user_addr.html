@@ -1,0 +1,121 @@
+<!-- SH USER_ADDR Users by Address Data : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>User Name in User Master Record</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BNAME"
+            data-abap="{type:'CHAR', mid:'XUS', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>First Telephone No.: Extension</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TEL_EXTENS"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Cost center</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KOSTL"
+            data-abap="{type:'CHAR', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Building (number or code)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUILDING"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Room or Appartment Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ROOMNUMBER"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Department</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.DEPARTMENT"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Internal Mail Postal Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.INHOUSE_ML"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>First Name in Uppercase for Search Help</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_NAMEFIR"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Last Name in Uppercase for Search Help</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_NAMELAS"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name (Field NAME1) in Uppercase for Search Help</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_NAME1"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City name in Uppercase for Search Help</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_CITY1"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company address, cross-system key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.COMPANY"
+            data-abap="{type:'CHAR', length:'42'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>User Name in User Master Record</th>
+      <th fd-table-cell>Building (number or code)</th>
+      <th fd-table-cell>Company address, cross-system key</th>
+      <th fd-table-cell>Department</th>
+      <th fd-table-cell>Internal Mail Postal Code</th>
+      <th fd-table-cell>Cost center</th>
+      <th fd-table-cell>City name in Uppercase for Search Help</th>
+      <th fd-table-cell>Name (Field NAME1) in Uppercase for Search Help</th>
+      <th fd-table-cell>First Name in Uppercase for Search Help</th>
+      <th fd-table-cell>Last Name in Uppercase for Search Help</th>
+      <th fd-table-cell>Room or Appartment Number</th>
+      <th fd-table-cell>First Telephone No.: Extension</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BNAME }}</td>
+       <td fd-table-cell>{{ BUILDING }}</td>
+       <td fd-table-cell>{{ COMPANY }}</td>
+       <td fd-table-cell>{{ DEPARTMENT }}</td>
+       <td fd-table-cell>{{ INHOUSE_ML }}</td>
+       <td fd-table-cell>{{ KOSTL }}</td>
+       <td fd-table-cell>{{ MC_CITY1 }}</td>
+       <td fd-table-cell>{{ MC_NAME1 }}</td>
+       <td fd-table-cell>{{ MC_NAMEFIR }}</td>
+       <td fd-table-cell>{{ MC_NAMELAS }}</td>
+       <td fd-table-cell>{{ ROOMNUMBER }}</td>
+       <td fd-table-cell>{{ TEL_EXTENS }}</td>
+    </tr>
+  </tbody>
+</table>

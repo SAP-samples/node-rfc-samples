@@ -1,0 +1,33 @@
+<!-- SH H_T163K Account assignment category : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Account assignment category</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.KNTTP"
+        [dropdownValues]="{type: 'CT', id: 'T163K'}"
+        data-abap="{type:'CHAR', mid:'KNT', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Account Assignment Category Description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KNTTX"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Account assignment category</th>
+      <th fd-table-cell>Account Assignment Category Description</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ KNTTP }}</td>
+       <td fd-table-cell>{{ KNTTX }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,154 @@
+<!-- SH MEKK_ESO_ADVANCED_E Advanced Search for Purchasing Documents via Enterpr. Search : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Generic Search Term</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/SEARCH_TERM"
+            data-abap="{type:'CHAR', length:'45'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Fuzzy Mode</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/MODE_FUZZY"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Object Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJECT_TYPE_ID"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Request Type ID</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.REQUEST"
+            data-abap="{type:'CHAR', length:'32'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EBELN"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BSTYP"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BSART"
+            data-abap="{type:'CHAR', mid:'BSA', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing organization</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EKORG"
+            data-abap="{type:'CHAR', mid:'EKO', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Vendor's account number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LIFNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.BEDAT"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Group</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EKGRP"
+            data-abap="{type:'CHAR', mid:'EKG', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.WERKS"
+            data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MATNR"
+            data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Group</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MATKL"
+            data-abap="{type:'CHAR', mid:'MKL', length:'9'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Short Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TXZ01"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Account assignment category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KNTTP"
+            data-abap="{type:'CHAR', mid:'KNT', length:'1'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Generic Search Term</th>
+      <th fd-table-cell>Fuzzy Mode</th>
+      <th fd-table-cell>Object Type</th>
+      <th fd-table-cell>Request Type ID</th>
+      <th fd-table-cell>Purchasing Document Number</th>
+      <th fd-table-cell>Purchasing Document Category</th>
+      <th fd-table-cell>Purchasing Document Type</th>
+      <th fd-table-cell>Purchasing organization</th>
+      <th fd-table-cell>Vendor's account number</th>
+      <th fd-table-cell>Purchasing Document Date</th>
+      <th fd-table-cell>Purchasing Group</th>
+      <th fd-table-cell>Plant</th>
+      <th fd-table-cell>Material Number</th>
+      <th fd-table-cell>Material Group</th>
+      <th fd-table-cell>Short Text</th>
+      <th fd-table-cell>Account assignment category</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ S/RP/SEARCH_TERM }}</td>
+       <td fd-table-cell>{{ S/RP/MODE_FUZZY }}</td>
+       <td fd-table-cell>{{ OBJECT_TYPE_ID }}</td>
+       <td fd-table-cell>{{ REQUEST }}</td>
+       <td fd-table-cell>{{ EBELN }}</td>
+       <td fd-table-cell>{{ BSTYP }}</td>
+       <td fd-table-cell>{{ BSART }}</td>
+       <td fd-table-cell>{{ EKORG }}</td>
+       <td fd-table-cell>{{ LIFNR }}</td>
+       <td fd-table-cell>{{ BEDAT }}</td>
+       <td fd-table-cell>{{ EKGRP }}</td>
+       <td fd-table-cell>{{ WERKS }}</td>
+       <td fd-table-cell>{{ MATNR }}</td>
+       <td fd-table-cell>{{ MATKL }}</td>
+       <td fd-table-cell>{{ TXZ01 }}</td>
+       <td fd-table-cell>{{ KNTTP }}</td>
+    </tr>
+  </tbody>
+</table>

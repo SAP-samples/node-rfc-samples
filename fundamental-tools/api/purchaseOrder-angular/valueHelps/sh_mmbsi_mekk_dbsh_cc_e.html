@@ -1,0 +1,272 @@
+<!-- SH MMBSI_MEKK_DBSH_CC_E Search Help for Central Contracts : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Release Quantity</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MMBSI_MENGE"
+            data-abap="{type:'QUAN', unit:'!notfound', length:'+10.3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Release Value</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MMBSI_NETWR"
+            data-abap="{type:'CURR', unit:'!notfound', length:'+14.2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EBELN"
+        [dropdownValues]="{type: 'CH', id: 'EKKO'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Item Number of Purchasing Document</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EBELP"
+        [dropdownValues]="{type: 'CT', id: 'EKPO'}"
+        data-abap="{type:'NUMC', mid:'BSP', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Short Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TXZ01"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MATNR"
+        [dropdownValues]="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Target Quantity</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KTMNG"
+            data-abap="{type:'QUAN', unit:'MEINS', length:'10.3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Target Value for Header Area per Distribution</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KTWRT"
+            data-abap="{type:'CURR', unit:'WAERS', length:'14.2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Base Unit of Measure</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MEINS"
+        [dropdownValues]="{type: 'CT', id: 'T006'}"
+        data-abap="{type:'UNIT', alpha:'CUNIT', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Net Price in Purchasing Document (in Document Currency)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NETPR"
+            data-abap="{type:'CURR', unit:'WAERS', length:'10.2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Central Contract</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SRM_CONTRACT_ID"
+        [dropdownValues]="{type: 'SH', id: 'MMBSI_MEKK_CC'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Central Contract Item Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SRM_CONTRACT_ITM"
+            data-abap="{type:'NUMC', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BUKRS"
+        [dropdownValues]="{type: 'SH', id: 'C_T001'}"
+        data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Category</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.BSTYP"
+        [dropdownValues]="{type: 'FV', id: 'EBSTYP'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Status of Purchasing Document</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.STATU"
+        [dropdownValues]="{type: 'FV', id: 'ESTAK'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Account Number of Vendor or Creditor</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.LIFNR"
+        [dropdownValues]="{type: 'SH', id: 'KRED'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Terms of Payment Key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ZTERM"
+            data-abap="{type:'CHAR', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchasing organization</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.EKORG"
+        [dropdownValues]="{type: 'CT', id: 'T024E'}"
+        data-abap="{type:'CHAR', mid:'EKO', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Currency Key</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.WAERS"
+        [dropdownValues]="{type: 'CT', id: 'TCURC'}"
+        data-abap="{type:'CUKY', mid:'FWS', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Start of Validity Period</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.KDATB"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>End of Validity Period</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.KDATE"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <fd-checkbox label="Part of a Contract Hierarchy" [(ngModel)]="searchParamLow.HIERARCHY_EXISTS"></fd-checkbox>
+</div>
+<div fd-form-item>
+    <fd-checkbox label="Threshold Value for Exchange Rates Exists" [(ngModel)]="searchParamLow.THRESHOLD_EXISTS"></fd-checkbox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract Name</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.DESCRIPTION"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Date of Last Change</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.AEDAT"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Release Date of Contract</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.RELEASE_DATE"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.WERKS"
+        [dropdownValues]="{type: 'CT', id: 'T001W'}"
+        data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Deletion indicator in purchasing document</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LOEKZ"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Item category in purchasing document</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.PSTYP"
+        [dropdownValues]="{type: 'CT', id: 'T163'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Central Contract</th>
+      <th fd-table-cell>Central Contract Item Number</th>
+      <th fd-table-cell>Purchasing Document Number</th>
+      <th fd-table-cell>Item Number of Purchasing Document</th>
+      <th fd-table-cell>Contract Name</th>
+      <th fd-table-cell>Start of Validity Period</th>
+      <th fd-table-cell>End of Validity Period</th>
+      <th fd-table-cell>Material Number</th>
+      <th fd-table-cell>Short Text</th>
+      <th fd-table-cell>Plant</th>
+      <th fd-table-cell>Deletion indicator in purchasing document</th>
+      <th fd-table-cell>Account Number of Vendor or Creditor</th>
+      <th fd-table-cell>Purchasing organization</th>
+      <th fd-table-cell>Part of a Contract Hierarchy</th>
+      <th fd-table-cell>Threshold Value for Exchange Rates Exists</th>
+      <th fd-table-cell>Target Value for Header Area per Distribution</th>
+      <th fd-table-cell>Release Value</th>
+      <th fd-table-cell>Net Price in Purchasing Document (in Document Currency)</th>
+      <th fd-table-cell>Currency Key</th>
+      <th fd-table-cell>Terms of Payment Key</th>
+      <th fd-table-cell>Target Quantity</th>
+      <th fd-table-cell>Release Quantity</th>
+      <th fd-table-cell>Base Unit of Measure</th>
+      <th fd-table-cell>Date of Last Change</th>
+      <th fd-table-cell>Release Date of Contract</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ SRM_CONTRACT_ID }}</td>
+       <td fd-table-cell>{{ SRM_CONTRACT_ITM }}</td>
+       <td fd-table-cell>{{ EBELN }}</td>
+       <td fd-table-cell>{{ EBELP }}</td>
+       <td fd-table-cell>{{ DESCRIPTION }}</td>
+       <td fd-table-cell>{{ KDATB }}</td>
+       <td fd-table-cell>{{ KDATE }}</td>
+       <td fd-table-cell>{{ MATNR }}</td>
+       <td fd-table-cell>{{ TXZ01 }}</td>
+       <td fd-table-cell>{{ WERKS }}</td>
+       <td fd-table-cell>{{ LOEKZ }}</td>
+       <td fd-table-cell>{{ LIFNR }}</td>
+       <td fd-table-cell>{{ EKORG }}</td>
+       <td fd-table-cell>{{ HIERARCHY_EXISTS }}</td>
+       <td fd-table-cell>{{ THRESHOLD_EXISTS }}</td>
+       <td fd-table-cell>{{ KTWRT }}</td>
+       <td fd-table-cell>{{ MMBSI_NETWR }}</td>
+       <td fd-table-cell>{{ NETPR }}</td>
+       <td fd-table-cell>{{ WAERS }}</td>
+       <td fd-table-cell>{{ ZTERM }}</td>
+       <td fd-table-cell>{{ KTMNG }}</td>
+       <td fd-table-cell>{{ MMBSI_MENGE }}</td>
+       <td fd-table-cell>{{ MEINS }}</td>
+       <td fd-table-cell>{{ AEDAT }}</td>
+       <td fd-table-cell>{{ RELEASE_DATE }}</td>
+    </tr>
+  </tbody>
+</table>

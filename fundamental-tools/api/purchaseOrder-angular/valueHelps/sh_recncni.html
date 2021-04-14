@@ -1,0 +1,135 @@
+<!-- SH RECNCNI Contracts by Resubmit Date : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Resubmission Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.RSDATE"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Person Responsible</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RESPONSIBLE"
+            data-abap="{type:'CHAR', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Resubmission Reason</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RSREASON"
+            data-abap="{type:'CHAR', alpha:'ALPHA', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Resubmission Rule</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RSRULE"
+            data-abap="{type:'CHAR', alpha:'ALPHA', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Resubmission Date Processed</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RSDONE"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Start of Memo for Reminder Date</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RSINFO"
+            data-abap="{type:'CHAR', length:'60'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNTYPE"
+            data-abap="{type:'CHAR', mid:'RECNTYPE', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Date of contract start</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.RECNBEG"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Term End Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.RECNENDABS"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract name</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNTXT"
+            data-abap="{type:'CHAR', length:'80'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Entity That Belongs to Contract</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BENOCN"
+            data-abap="{type:'CHAR', alpha:'SWENR', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Object Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJNR"
+            data-abap="{type:'CHAR', mid:'ONR', length:'22'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Internal Key of Real Estate Object (FI)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.IMKEY"
+            data-abap="{type:'CHAR', alpha:'IMKEY', length:'8'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Contract Type</th>
+      <th fd-table-cell>Contract Number</th>
+      <th fd-table-cell>Date of contract start</th>
+      <th fd-table-cell>Term End Date</th>
+      <th fd-table-cell>Business Entity That Belongs to Contract</th>
+      <th fd-table-cell>Contract name</th>
+      <th fd-table-cell>Resubmission Date</th>
+      <th fd-table-cell>Person Responsible</th>
+      <th fd-table-cell>Resubmission Reason</th>
+      <th fd-table-cell>Resubmission Rule</th>
+      <th fd-table-cell>Resubmission Date Processed</th>
+      <th fd-table-cell>Start of Memo for Reminder Date</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ RECNTYPE }}</td>
+       <td fd-table-cell>{{ RECNNR }}</td>
+       <td fd-table-cell>{{ RECNBEG }}</td>
+       <td fd-table-cell>{{ RECNENDABS }}</td>
+       <td fd-table-cell>{{ BENOCN }}</td>
+       <td fd-table-cell>{{ RECNTXT }}</td>
+       <td fd-table-cell>{{ RSDATE }}</td>
+       <td fd-table-cell>{{ RESPONSIBLE }}</td>
+       <td fd-table-cell>{{ RSREASON }}</td>
+       <td fd-table-cell>{{ RSRULE }}</td>
+       <td fd-table-cell>{{ RSDONE }}</td>
+       <td fd-table-cell>{{ RSINFO }}</td>
+    </tr>
+  </tbody>
+</table>

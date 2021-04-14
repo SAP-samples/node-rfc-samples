@@ -1,0 +1,43 @@
+<!-- SH USER_AGRP Users by Roles : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Role Name</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.AGR_NAME"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>User Name in User Master Record</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.UNAME"
+            data-abap="{type:'CHAR', mid:'XUS', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Date of validity</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.FROM_DAT"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Date of validity</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.TO_DAT"></fd-date-picker>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Role Name</th>
+      <th fd-table-cell>Date of validity</th>
+      <th fd-table-cell>Date of validity</th>
+      <th fd-table-cell>User Name in User Master Record</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ AGR_NAME }}</td>
+       <td fd-table-cell>{{ FROM_DAT }}</td>
+       <td fd-table-cell>{{ TO_DAT }}</td>
+       <td fd-table-cell>{{ UNAME }}</td>
+    </tr>
+  </tbody>
+</table>

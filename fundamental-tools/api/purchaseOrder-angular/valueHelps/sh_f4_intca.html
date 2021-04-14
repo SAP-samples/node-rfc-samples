@@ -1,0 +1,44 @@
+<!-- SH F4_INTCA Country ISO code : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Country Key</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.LAND1"
+        [dropdownValues]="{type: 'SH', id: 'H_T005_LAND'}"
+        data-abap="{type:'CHAR', mid:'LND', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Country Name</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LANDX"
+            data-abap="{type:'CHAR', length:'15'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Country ISO code</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.INTCA"
+        [dropdownValues]="{type: 'SH', id: 'F4_INTCA'}"
+        data-abap="{type:'CHAR', length:'2'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Country ISO code</th>
+      <th fd-table-cell>Country Key</th>
+      <th fd-table-cell>Country Name</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ INTCA }}</td>
+       <td fd-table-cell>{{ LAND1 }}</td>
+       <td fd-table-cell>{{ LANDX }}</td>
+    </tr>
+  </tbody>
+</table>

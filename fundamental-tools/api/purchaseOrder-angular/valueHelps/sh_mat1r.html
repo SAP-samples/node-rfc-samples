@@ -1,0 +1,92 @@
+<!-- SH MAT1R Material by task list : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Material Description in Uppercase for Matchcodes</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MAKTG"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SPRAS"
+        [dropdownValues]="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MATNR"
+        [dropdownValues]="{type: 'SH', id: 'MAT1'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MAPL_WERKS"
+        [dropdownValues]="{type: 'SH', id: 'H_T001W'}"
+        data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Task List Type</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.PLNTY"
+        [dropdownValues]="{type: 'SH', id: 'H_TCA01'}"
+        data-abap="{type:'CHAR', mid:'PTY', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Key for Task List Group</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.PLNNR"
+        [dropdownValues]="{type: 'SH', id: 'PLKS'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'PLN', length:'8'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Group Counter</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PLNAL"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'PAL', length:'2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Valid-From Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.DATUV"></fd-date-picker>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Material Description in Uppercase for Matchcodes</th>
+      <th fd-table-cell>Language Key</th>
+      <th fd-table-cell>Material Number</th>
+      <th fd-table-cell>Plant</th>
+      <th fd-table-cell>Task List Type</th>
+      <th fd-table-cell>Key for Task List Group</th>
+      <th fd-table-cell>Group Counter</th>
+      <th fd-table-cell>Valid-From Date</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ MAKTG }}</td>
+       <td fd-table-cell>{{ SPRAS }}</td>
+       <td fd-table-cell>{{ MATNR }}</td>
+       <td fd-table-cell>{{ MAPL_WERKS }}</td>
+       <td fd-table-cell>{{ PLNTY }}</td>
+       <td fd-table-cell>{{ PLNNR }}</td>
+       <td fd-table-cell>{{ PLNAL }}</td>
+       <td fd-table-cell>{{ DATUV }}</td>
+    </tr>
+  </tbody>
+</table>

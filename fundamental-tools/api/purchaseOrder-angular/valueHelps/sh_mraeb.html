@@ -1,0 +1,94 @@
+<!-- SH MRAEB Collective lease-outs with active lease-outs : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract No. of Collective Lease-Outs</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.E_SMIVE"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'MVE', length:'13'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Lease-Out Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SMIVE"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'MIV', length:'13'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Entity Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SWENR"
+            data-abap="{type:'CHAR', alpha:'SWENR', mid:'WEH', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Number of Rental Unit</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SMENR"
+            data-abap="{type:'CHAR', alpha:'SMENR', mid:'MEH', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Rental start date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.DMIBEG"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Rental end date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.DMIEND"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>External Real Estate contract type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SMVART"
+            data-abap="{type:'CHAR', mid:'RECNTYPE', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Lease-Out Adjustment Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SMVANART"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract Notice Per</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.DKUEZU"></fd-date-picker>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Contract No. of Collective Lease-Outs</th>
+      <th fd-table-cell>Lease-Out Number</th>
+      <th fd-table-cell>Business Entity Number</th>
+      <th fd-table-cell>Number of Rental Unit</th>
+      <th fd-table-cell>Rental start date</th>
+      <th fd-table-cell>Rental end date</th>
+      <th fd-table-cell>External Real Estate contract type</th>
+      <th fd-table-cell>Lease-Out Adjustment Type</th>
+      <th fd-table-cell>Contract Notice Per</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ E_SMIVE }}</td>
+       <td fd-table-cell>{{ SMIVE }}</td>
+       <td fd-table-cell>{{ SWENR }}</td>
+       <td fd-table-cell>{{ SMENR }}</td>
+       <td fd-table-cell>{{ DMIBEG }}</td>
+       <td fd-table-cell>{{ DMIEND }}</td>
+       <td fd-table-cell>{{ SMVART }}</td>
+       <td fd-table-cell>{{ SMVANART }}</td>
+       <td fd-table-cell>{{ DKUEZU }}</td>
+    </tr>
+  </tbody>
+</table>

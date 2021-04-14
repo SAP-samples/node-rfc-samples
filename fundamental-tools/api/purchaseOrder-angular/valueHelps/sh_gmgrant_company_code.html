@@ -1,0 +1,35 @@
+<!-- SH GMGRANT_COMPANY_CODE Grant lookup by company code : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Grant</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.GRANT_NBR"
+        [dropdownValues]="{type: 'SH', id: 'GRANTS_GENERIC'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'GM_GRANT_NBR', length:'20'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.COMPANY_CODE"
+        [dropdownValues]="{type: 'SH', id: 'C_T001'}"
+        data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Grant</th>
+      <th fd-table-cell>Company Code</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ GRANT_NBR }}</td>
+       <td fd-table-cell>{{ COMPANY_CODE }}</td>
+    </tr>
+  </tbody>
+</table>

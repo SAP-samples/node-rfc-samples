@@ -1,0 +1,112 @@
+<!-- SH PSM_GRANT_TREX_ADV Advanced Search for Grant : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Input Field for Full Text Search</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/SEARCH_TERM"
+            data-abap="{type:'CHAR', length:'45'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Object for Search Engine Service (SES)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUSINESS_OBJECT"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Type of Business Object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJECT_TYPE"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Grant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EXTERNAL_KEY"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'GM_GRANT_NBR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Grant Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.GRANT_TYPE"
+            data-abap="{type:'CHAR', mid:'GM_GRANT_TYPE', length:'2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.COMPANY_CODE"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Valid-from Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.VALIDFROM_DATE"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Valid-to Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.VALIDUNTIL_DATE"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Key date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.S/KD/_DATE"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Shorter description of the grant</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SHORT_DESC"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Descriptive Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.DESCRIPTION"
+            data-abap="{type:'CHAR', length:'80'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Option Fuzzy Mode</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/MODE_FUZZY"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Input Field for Full Text Search</th>
+      <th fd-table-cell>Business Object for Search Engine Service (SES)</th>
+      <th fd-table-cell>Type of Business Object</th>
+      <th fd-table-cell>Grant</th>
+      <th fd-table-cell>Grant Type</th>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Valid-from Date</th>
+      <th fd-table-cell>Valid-to Date</th>
+      <th fd-table-cell>Key date</th>
+      <th fd-table-cell>Shorter description of the grant</th>
+      <th fd-table-cell>Descriptive Text</th>
+      <th fd-table-cell>Option Fuzzy Mode</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ S/RP/SEARCH_TERM }}</td>
+       <td fd-table-cell>{{ BUSINESS_OBJECT }}</td>
+       <td fd-table-cell>{{ OBJECT_TYPE }}</td>
+       <td fd-table-cell>{{ EXTERNAL_KEY }}</td>
+       <td fd-table-cell>{{ GRANT_TYPE }}</td>
+       <td fd-table-cell>{{ COMPANY_CODE }}</td>
+       <td fd-table-cell>{{ VALIDFROM_DATE }}</td>
+       <td fd-table-cell>{{ VALIDUNTIL_DATE }}</td>
+       <td fd-table-cell>{{ S/KD/_DATE }}</td>
+       <td fd-table-cell>{{ SHORT_DESC }}</td>
+       <td fd-table-cell>{{ DESCRIPTION }}</td>
+       <td fd-table-cell>{{ S/RP/MODE_FUZZY }}</td>
+    </tr>
+  </tbody>
+</table>

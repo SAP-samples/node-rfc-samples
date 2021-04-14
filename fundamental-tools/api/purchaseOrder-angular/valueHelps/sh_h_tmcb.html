@@ -1,0 +1,33 @@
+<!-- SH H_TMCB Update group for statistics update : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Update group for statistics update</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.STAFO"
+        [dropdownValues]="{type: 'CT', id: 'TMCB'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'MCF', length:'6'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Description of rule</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BEZEI"
+            data-abap="{type:'CHAR', length:'60'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Update group for statistics update</th>
+      <th fd-table-cell>Description of rule</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ STAFO }}</td>
+       <td fd-table-cell>{{ BEZEI }}</td>
+    </tr>
+  </tbody>
+</table>

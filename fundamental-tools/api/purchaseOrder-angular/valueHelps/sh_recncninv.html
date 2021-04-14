@@ -1,0 +1,92 @@
+<!-- SH RECNCNINV Contracts for Invoice Numbers : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Invoice Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.INVNO"
+            data-abap="{type:'NUMC', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Fiscal Year</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.FISC_YEAR"
+            data-abap="{type:'NUMC', alpha:'GJAHR', mid:'GJR', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Partner Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PARTNER"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BPA', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name 1</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME1"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ORT01"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Customer Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.CUSTOMER"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Object Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJNR"
+            data-abap="{type:'CHAR', mid:'ONR', length:'22'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Invoice Number</th>
+      <th fd-table-cell>Fiscal Year</th>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Contract Number</th>
+      <th fd-table-cell>Name 1</th>
+      <th fd-table-cell>City</th>
+      <th fd-table-cell>Customer Number</th>
+      <th fd-table-cell>Business Partner Number</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ INVNO }}</td>
+       <td fd-table-cell>{{ FISC_YEAR }}</td>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ RECNNR }}</td>
+       <td fd-table-cell>{{ NAME1 }}</td>
+       <td fd-table-cell>{{ ORT01 }}</td>
+       <td fd-table-cell>{{ CUSTOMER }}</td>
+       <td fd-table-cell>{{ PARTNER }}</td>
+    </tr>
+  </tbody>
+</table>

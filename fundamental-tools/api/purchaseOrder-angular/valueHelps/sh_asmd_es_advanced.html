@@ -1,0 +1,121 @@
+<!-- SH ASMD_ES_ADVANCED Advanced Search for Service Master using Search Engine : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Generic Search Term</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/SEARCH_TERM"
+            data-abap="{type:'CHAR', length:'45'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Fuzzy Mode</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.S/RP/MODE_FUZZY"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Object Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJECT_TYPE_ID"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Request Type ID</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.REQUEST"
+            data-abap="{type:'CHAR', length:'32'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Activity Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ASNUM"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'ASN', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name of Person who Created the Object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ERNAM"
+            data-abap="{type:'CHAR', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Division</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SPART"
+            data-abap="{type:'CHAR', mid:'SPA', length:'2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Group</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MATKL"
+            data-abap="{type:'CHAR', mid:'MKL', length:'9'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Service Category</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ASTYP"
+            data-abap="{type:'CHAR', mid:'ASY', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Wage type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LGART"
+            data-abap="{type:'CHAR', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Edition of Service Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.AUSGB"
+            data-abap="{type:'NUMC', mid:'AGB', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Short Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.LBKTX"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Generic Search Term</th>
+      <th fd-table-cell>Fuzzy Mode</th>
+      <th fd-table-cell>Object Type</th>
+      <th fd-table-cell>Request Type ID</th>
+      <th fd-table-cell>Activity Number</th>
+      <th fd-table-cell>Name of Person who Created the Object</th>
+      <th fd-table-cell>Division</th>
+      <th fd-table-cell>Material Group</th>
+      <th fd-table-cell>Service Category</th>
+      <th fd-table-cell>Wage type</th>
+      <th fd-table-cell>Edition of Service Type</th>
+      <th fd-table-cell>Short Text</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ S/RP/SEARCH_TERM }}</td>
+       <td fd-table-cell>{{ S/RP/MODE_FUZZY }}</td>
+       <td fd-table-cell>{{ OBJECT_TYPE_ID }}</td>
+       <td fd-table-cell>{{ REQUEST }}</td>
+       <td fd-table-cell>{{ ASNUM }}</td>
+       <td fd-table-cell>{{ ERNAM }}</td>
+       <td fd-table-cell>{{ SPART }}</td>
+       <td fd-table-cell>{{ MATKL }}</td>
+       <td fd-table-cell>{{ ASTYP }}</td>
+       <td fd-table-cell>{{ LGART }}</td>
+       <td fd-table-cell>{{ AUSGB }}</td>
+       <td fd-table-cell>{{ LBKTX }}</td>
+    </tr>
+  </tbody>
+</table>

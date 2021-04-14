@@ -1,0 +1,67 @@
+<!-- SH MBANV Purchase Requisitions per Sales Document : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Sales and Distribution Document Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.VBELN"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Sales Document Item</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.VBELP"
+            data-abap="{type:'NUMC', mid:'APO', length:'6'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Schedule line</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.VETEN"
+            data-abap="{type:'NUMC', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchase requisition number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BANFN"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BAN', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Item number of purchase requisition</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BNFPO"
+            data-abap="{type:'NUMC', mid:'BAP', length:'5'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Serial number for PReq account assignment segment</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ZEBKN"
+            data-abap="{type:'NUMC', length:'2'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Sales and Distribution Document Number</th>
+      <th fd-table-cell>Sales Document Item</th>
+      <th fd-table-cell>Schedule line</th>
+      <th fd-table-cell>Purchase requisition number</th>
+      <th fd-table-cell>Item number of purchase requisition</th>
+      <th fd-table-cell>Serial number for PReq account assignment segment</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ VBELN }}</td>
+       <td fd-table-cell>{{ VBELP }}</td>
+       <td fd-table-cell>{{ VETEN }}</td>
+       <td fd-table-cell>{{ BANFN }}</td>
+       <td fd-table-cell>{{ BNFPO }}</td>
+       <td fd-table-cell>{{ ZEBKN }}</td>
+    </tr>
+  </tbody>
+</table>

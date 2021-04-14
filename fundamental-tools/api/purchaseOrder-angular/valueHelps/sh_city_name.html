@@ -1,0 +1,86 @@
+<!-- SH CITY_NAME PO Box city : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.LANGU"
+        [dropdownValues]="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Country Key</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.COUNTRY"
+        [dropdownValues]="{type: 'CT', id: 'T005'}"
+        data-abap="{type:'CHAR', mid:'LND', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>City Code for City/Street File</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.CITY_CODE"
+        [dropdownValues]="{type: 'SH', id: 'CITYA'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'ORT', length:'12'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Region (State, Province, County)</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.REGION"
+        [dropdownValues]="{type: 'CT', id: 'T005S'}"
+        data-abap="{type:'CHAR', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>City</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.CITY_NAME"
+        [dropdownValues]="{type: 'SH', id: 'CLCITYNAME'}"
+        data-abap="{type:'CHAR', length:'40'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>City name in Uppercase for Search Help</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_CITY"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City name extension</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.CITY_EXT"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>City name in Uppercase for Search Help</th>
+      <th fd-table-cell>City name extension</th>
+      <th fd-table-cell>Region (State, Province, County)</th>
+      <th fd-table-cell>Country Key</th>
+      <th fd-table-cell>City Code for City/Street File</th>
+      <th fd-table-cell>City</th>
+      <th fd-table-cell>Language Key</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ MC_CITY }}</td>
+       <td fd-table-cell>{{ CITY_EXT }}</td>
+       <td fd-table-cell>{{ REGION }}</td>
+       <td fd-table-cell>{{ COUNTRY }}</td>
+       <td fd-table-cell>{{ CITY_CODE }}</td>
+       <td fd-table-cell>{{ CITY_NAME }}</td>
+       <td fd-table-cell>{{ LANGU }}</td>
+    </tr>
+  </tbody>
+</table>

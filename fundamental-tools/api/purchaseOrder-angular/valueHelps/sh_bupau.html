@@ -1,0 +1,67 @@
+<!-- SH BUPAU Partner According to User : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>User Name in User Master Record</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.USER"
+            data-abap="{type:'CHAR', mid:'XUS', length:'12'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search Help Field 1 (Name 1/Last Name)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_NAME1"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search Help Field 2 (Name 2/First Name)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_NAME2"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search term 1 for business partner</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BU_SORT1"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search term 2 for business partner</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BU_SORT2"
+            data-abap="{type:'CHAR', length:'20'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Partner Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PARTNER"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BPA', length:'10'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>User Name in User Master Record</th>
+      <th fd-table-cell>Search Help Field 1 (Name 1/Last Name)</th>
+      <th fd-table-cell>Search Help Field 2 (Name 2/First Name)</th>
+      <th fd-table-cell>Search term 1 for business partner</th>
+      <th fd-table-cell>Search term 2 for business partner</th>
+      <th fd-table-cell>Business Partner Number</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ USER }}</td>
+       <td fd-table-cell>{{ MC_NAME1 }}</td>
+       <td fd-table-cell>{{ MC_NAME2 }}</td>
+       <td fd-table-cell>{{ BU_SORT1 }}</td>
+       <td fd-table-cell>{{ BU_SORT2 }}</td>
+       <td fd-table-cell>{{ PARTNER }}</td>
+    </tr>
+  </tbody>
+</table>

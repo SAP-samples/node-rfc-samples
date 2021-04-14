@@ -1,0 +1,57 @@
+<!-- SH CPRTA District code for City and Street file : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>District</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.CITY_PART"
+        [dropdownValues]="{type: 'SH', id: 'CITY_PART'}"
+        data-abap="{type:'CHAR', length:'40'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Country Key</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.COUNTRY"
+        [dropdownValues]="{type: 'CT', id: 'T005'}"
+        data-abap="{type:'CHAR', mid:'LND', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>City Code for City/Street File</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.CITY_CODE"
+        [dropdownValues]="{type: 'SH', id: 'CITYA'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'ORT', length:'12'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>District code for city and street file</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.CITYP_CODE"
+        [dropdownValues]="{type: 'SH', id: 'CPRTA'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', length:'8'}"
+    >
+    </fd-combobox>
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>District</th>
+      <th fd-table-cell>Country Key</th>
+      <th fd-table-cell>City Code for City/Street File</th>
+      <th fd-table-cell>District code for city and street file</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ CITY_PART }}</td>
+       <td fd-table-cell>{{ COUNTRY }}</td>
+       <td fd-table-cell>{{ CITY_CODE }}</td>
+       <td fd-table-cell>{{ CITYP_CODE }}</td>
+    </tr>
+  </tbody>
+</table>

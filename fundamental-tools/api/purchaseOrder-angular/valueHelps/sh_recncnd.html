@@ -1,0 +1,188 @@
+<!-- SH RECNCND Contracts by Partner with Address : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.XROLE"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SPRAS"
+            data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BUKRS"
+            data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract Type</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNTYPE"
+            data-abap="{type:'CHAR', mid:'RECNTYPE', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Contract Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.RECNNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'RECNNR', length:'13'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Object Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.OBJNR"
+            data-abap="{type:'CHAR', mid:'ONR', length:'22'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Partner Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.PARTNER"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BPA', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Partner: Role</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ROLE"
+            data-abap="{type:'CHAR', length:'6'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Last name of business partner (person)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME_LAST"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>First name of business partner (person)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME_FIRST"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search Help Field 1 (Name 1/Last Name)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_NAME1"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Search Help Field 2 (Name 2/First Name)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_NAME2"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name 1 of organization</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME_ORG1"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Name 1 (group)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.NAME_GRP1"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City name in Uppercase for Search Help</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_CITY1"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>City postal code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.POST_CODE1"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Street Name in Uppercase for Search Help</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MC_STREET"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>House Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.HOUSE_NUM1"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Country Key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.COUNTRY"
+            data-abap="{type:'CHAR', mid:'LND', length:'3'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Business Entity That Belongs to Contract</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BENOCN"
+            data-abap="{type:'CHAR', alpha:'SWENR', length:'8'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Internal Key of Real Estate Object (FI)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.IMKEY"
+            data-abap="{type:'CHAR', alpha:'IMKEY', length:'8'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Contract Type</th>
+      <th fd-table-cell>Contract Number</th>
+      <th fd-table-cell>Business Entity That Belongs to Contract</th>
+      <th fd-table-cell>Business Partner Number</th>
+      <th fd-table-cell>Search Help Field 1 (Name 1/Last Name)</th>
+      <th fd-table-cell>Search Help Field 2 (Name 2/First Name)</th>
+      <th fd-table-cell>City name in Uppercase for Search Help</th>
+      <th fd-table-cell>City postal code</th>
+      <th fd-table-cell>Street Name in Uppercase for Search Help</th>
+      <th fd-table-cell>House Number</th>
+      <th fd-table-cell>Country Key</th>
+      <th fd-table-cell>Business Partner: Role</th>
+      <th fd-table-cell>Description</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ BUKRS }}</td>
+       <td fd-table-cell>{{ RECNTYPE }}</td>
+       <td fd-table-cell>{{ RECNNR }}</td>
+       <td fd-table-cell>{{ BENOCN }}</td>
+       <td fd-table-cell>{{ PARTNER }}</td>
+       <td fd-table-cell>{{ MC_NAME1 }}</td>
+       <td fd-table-cell>{{ MC_NAME2 }}</td>
+       <td fd-table-cell>{{ MC_CITY1 }}</td>
+       <td fd-table-cell>{{ POST_CODE1 }}</td>
+       <td fd-table-cell>{{ MC_STREET }}</td>
+       <td fd-table-cell>{{ HOUSE_NUM1 }}</td>
+       <td fd-table-cell>{{ COUNTRY }}</td>
+       <td fd-table-cell>{{ ROLE }}</td>
+       <td fd-table-cell>{{ XROLE }}</td>
+    </tr>
+  </tbody>
+</table>

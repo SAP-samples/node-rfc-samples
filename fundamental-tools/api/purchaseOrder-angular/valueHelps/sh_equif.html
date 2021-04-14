@@ -1,0 +1,49 @@
+<!-- SH EQUIF Equipment by technical ID number : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Technical identification number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.TIDNR"
+            data-abap="{type:'CHAR', length:'25'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Equipment Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EQUNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'EQN', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Equipment description in capital letters</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.EQKTU"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.SPRAS"
+            data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Technical identification number</th>
+      <th fd-table-cell>Equipment Number</th>
+      <th fd-table-cell>Equipment description in capital letters</th>
+      <th fd-table-cell>Language Key</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ TIDNR }}</td>
+       <td fd-table-cell>{{ EQUNR }}</td>
+       <td fd-table-cell>{{ EQKTU }}</td>
+       <td fd-table-cell>{{ SPRAS }}</td>
+    </tr>
+  </tbody>
+</table>

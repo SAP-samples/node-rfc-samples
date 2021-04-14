@@ -1,0 +1,98 @@
+<!-- SH MAT2MPN Search Help for Manufacturer Part Number with AMPL : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Number of firm's own (internal) inventory-managed material</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MATNR_B"
+        [dropdownValues]="{type: 'SH', id: 'MAT1_S_MPN'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material number corresponding to manufacturer part number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MATNR_HTN"
+        [dropdownValues]="{type: 'SH', id: 'MAT1_S_MPN'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'HTN', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Manufacturer number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.MFRNR"
+        [dropdownValues]="{type: 'SH', id: 'KRED'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.WERKS"
+        [dropdownValues]="{type: 'SH', id: 'H_T001W'}"
+        data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Date as of which the MPN materail may be procured</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.DATUV"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Date until which the MPN material may be procured</label>
+    <fd-date-picker [type]="single" [(ngModel)]="searchParamLow.DATUB"></fd-date-picker>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Revision level</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.REVLV"
+            data-abap="{type:'CHAR', alpha:'NUMCV', mid:'RVS', length:'2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Blocked manufacturer/part combinations</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.AMPSP"
+        [dropdownValues]="{type: 'CT', id: 'TAMPSP'}"
+        data-abap="{type:'CHAR', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Manufacturer Part Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.MFRPN"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Number of firm's own (internal) inventory-managed material</th>
+      <th fd-table-cell>Material number corresponding to manufacturer part number</th>
+      <th fd-table-cell>Manufacturer Part Number</th>
+      <th fd-table-cell>Manufacturer number</th>
+      <th fd-table-cell>Plant</th>
+      <th fd-table-cell>Date as of which the MPN materail may be procured</th>
+      <th fd-table-cell>Date until which the MPN material may be procured</th>
+      <th fd-table-cell>Revision level</th>
+      <th fd-table-cell>Blocked manufacturer/part combinations</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ MATNR_B }}</td>
+       <td fd-table-cell>{{ MATNR_HTN }}</td>
+       <td fd-table-cell>{{ MFRPN }}</td>
+       <td fd-table-cell>{{ MFRNR }}</td>
+       <td fd-table-cell>{{ WERKS }}</td>
+       <td fd-table-cell>{{ DATUV }}</td>
+       <td fd-table-cell>{{ DATUB }}</td>
+       <td fd-table-cell>{{ REVLV }}</td>
+       <td fd-table-cell>{{ AMPSP }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,58 @@
+<!-- SH MBANK Purchase Requisitions per Cost Center : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Cost Center</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KOSTL"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KOS', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Controlling Area</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KOKRS"
+            data-abap="{type:'CHAR', mid:'CAC', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Purchase requisition number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BANFN"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BAN', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Item number of purchase requisition</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.BNFPO"
+            data-abap="{type:'NUMC', mid:'BAP', length:'5'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Serial number for PReq account assignment segment</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.ZEBKN"
+            data-abap="{type:'NUMC', length:'2'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Cost Center</th>
+      <th fd-table-cell>Controlling Area</th>
+      <th fd-table-cell>Purchase requisition number</th>
+      <th fd-table-cell>Item number of purchase requisition</th>
+      <th fd-table-cell>Serial number for PReq account assignment segment</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ KOSTL }}</td>
+       <td fd-table-cell>{{ KOKRS }}</td>
+       <td fd-table-cell>{{ BANFN }}</td>
+       <td fd-table-cell>{{ BNFPO }}</td>
+       <td fd-table-cell>{{ ZEBKN }}</td>
+    </tr>
+  </tbody>
+</table>

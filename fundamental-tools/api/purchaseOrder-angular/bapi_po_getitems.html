@@ -1,0 +1,1090 @@
+<!-- BAPI_PO_GETITEMS exception: 0  struct: 2  table: 3  var: 22
+
+abap 2.2.0 at: 2021-04-14 18:36:59 -->
+
+<!-- IMPORT PARAMETERS -->
+
+<div fd-form-item>
+    <label fd-form-label>Account Assignment Category</label>
+    <fd-combobox
+        [(ngModel)]="ACCTASSCAT"
+        [dropdownValues]="{type: 'SH', id: 'H_T163K'}"
+        data-abap="{type:'CHAR', mid:'KNT', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Creator</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="CREATED_BY"
+            data-abap="{type:'CHAR', length:'12'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Including Deleted Items</label>
+    <fd-combobox
+        [(ngModel)]="DELETED_ITEMS"
+        [dropdownValues]="{type: 'FV', id: 'SELKZ'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>As of PO Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="DOC_DATE"></fd-date-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Order Type</label>
+    <fd-combobox
+        [(ngModel)]="DOC_TYPE"
+        [dropdownValues]="{type: 'SH', id: 'H_T161'}"
+        data-abap="{type:'CHAR', mid:'BSA', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Item Category</label>
+    <fd-combobox
+        [(ngModel)]="ITEM_CAT"
+        [dropdownValues]="{type: 'SH', id: 'H_T163'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Items with Still-Open Goods Receipt Only</label>
+    <fd-combobox
+        [(ngModel)]="ITEMS_OPEN_FOR_RECEIPT"
+        [dropdownValues]="{type: 'FV', id: 'SELKZ'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material Group</label>
+    <fd-combobox
+        [(ngModel)]="MAT_GRP"
+        [dropdownValues]="{type: 'SH', id: 'H_T023'}"
+        data-abap="{type:'CHAR', mid:'MKL', length:'9'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material</label>
+    <fd-combobox
+        [(ngModel)]="MATERIAL"
+        [dropdownValues]="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material Number (40 Characters, Necessary for Technical Reasons)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="MATERIAL_LONG"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Plant</label>
+    <fd-combobox
+        [(ngModel)]="PLANT"
+        [dropdownValues]="{type: 'SH', id: 'H_T001W'}"
+        data-abap="{type:'CHAR', mid:'WRK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label></label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PREQ_NAME"
+            data-abap="{type:'CHAR', length:'12'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Purchasing Group</label>
+    <fd-combobox
+        [(ngModel)]="PUR_GROUP"
+        [dropdownValues]="{type: 'SH', id: 'H_T024'}"
+        data-abap="{type:'CHAR', mid:'EKG', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material Number</label>
+    <fd-combobox
+        [(ngModel)]="PUR_MAT"
+        [dropdownValues]="{type: 'CT', id: 'MARA'}"
+        data-abap="{type:'CHAR', alpha:'MATN1', mid:'MAT', length:'18'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material Number (40 Characters, Technical Requirement)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PUR_MAT_LONG"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Purchasing Organization</label>
+    <fd-combobox
+        [(ngModel)]="PURCH_ORG"
+        [dropdownValues]="{type: 'SH', id: 'H_T024E'}"
+        data-abap="{type:'CHAR', mid:'EKO', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Purchase Order Number</label>
+    <fd-combobox
+        [(ngModel)]="PURCHASEORDER"
+        [dropdownValues]="{type: 'CH', id: 'EKKO'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Short Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="SHORT_TEXT"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Supplying Plant</label>
+    <fd-combobox
+        [(ngModel)]="SUPPL_PLANT"
+        [dropdownValues]="{type: 'SH', id: 'H_T001W'}"
+        data-abap="{type:'CHAR', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Requirement Tracking Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="TRACKINGNO"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Vendor</label>
+    <fd-combobox
+        [(ngModel)]="VENDOR"
+        [dropdownValues]="{type: 'SH', id: 'KRED'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Also Provide Header Data</label>
+    <fd-combobox
+        [(ngModel)]="WITH_PO_HEADERS"
+        [dropdownValues]="{type: 'FV', id: 'SELKZ'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<!-- Parameter: MATERIAL_EVG structure: BAPIMGVMATNR  Long Material Number -->
+
+<div fd-form-item>
+    <label fd-form-label>External Long Material Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="MATERIAL_EVG.MATERIAL_EXT"
+            data-abap="{type:'CHAR', alpha:'MATNL', length:'40'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material Version Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="MATERIAL_EVG.MATERIAL_VERS"
+            data-abap="{type:'CHAR', alpha:'MATNW', mid:'MATVERS', length:'10'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material number (external GUID)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="MATERIAL_EVG.MATERIAL_GUID"
+            data-abap="{type:'CHAR', length:'32'}"
+        />
+</div>
+
+<!-- Parameter: PUR_MAT_EVG structure: BAPIMGVMATNR  Long Material Number -->
+
+<div fd-form-item>
+    <label fd-form-label>External Long Material Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PUR_MAT_EVG.MATERIAL_EXT"
+            data-abap="{type:'CHAR', alpha:'MATNL', length:'40'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material Version Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PUR_MAT_EVG.MATERIAL_VERS"
+            data-abap="{type:'CHAR', alpha:'MATNW', mid:'MATVERS', length:'10'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Material number (external GUID)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PUR_MAT_EVG.MATERIAL_GUID"
+            data-abap="{type:'CHAR', length:'32'}"
+        />
+</div>
+
+<!-- TABLE PARAMETERS -->
+
+<!-- Parameter: PO_ITEMS structure: BAPIEKPOC  Table of Items -->
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Name of requisitioner/requester</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of PO_ITEMS" fd-table-row>
+       <td fd-table-cell>{{ PREQ_NAME }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div fd-form-item>
+    <label fd-form-label>Name of requisitioner/requester</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_ITEMS.PREQ_NAME"
+            data-abap="{type:'CHAR', length:'12'}"
+        />
+</div>
+
+<!-- Parameter: PO_HEADERS structure: BAPIEKKOL  Table of PO Header Data -->
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Purchasing Document Number</th>
+      <th fd-table-cell>Company Code</th>
+      <th fd-table-cell>Purchasing Document Category</th>
+      <th fd-table-cell>Purchasing Document Type</th>
+      <th fd-table-cell>Control indicator for purchasing document type</th>
+      <th fd-table-cell>Deletion indicator in purchasing document</th>
+      <th fd-table-cell>Status of Purchasing Document</th>
+      <th fd-table-cell>Date on Which Record Was Created</th>
+      <th fd-table-cell>Name of Person who Created the Object</th>
+      <th fd-table-cell>Item Number Interval</th>
+      <th fd-table-cell>Last Item Number</th>
+      <th fd-table-cell>Vendor's account number</th>
+      <th fd-table-cell>Language Key</th>
+      <th fd-table-cell>Terms of Payment Key</th>
+      <th fd-table-cell>Cash discount days 1</th>
+      <th fd-table-cell>Cash discount days 2</th>
+      <th fd-table-cell>Cash discount days 3</th>
+      <th fd-table-cell>Cash discount percentage 1</th>
+      <th fd-table-cell>Cash Discount Percentage 2</th>
+      <th fd-table-cell>Purchasing organization</th>
+      <th fd-table-cell>Purchasing Group</th>
+      <th fd-table-cell>Currency Key</th>
+      <th fd-table-cell>Direct Quoted Exchange Rate</th>
+      <th fd-table-cell>Indicator: Fixing of Exchange Rate</th>
+      <th fd-table-cell>Purchasing Document Date</th>
+      <th fd-table-cell>Start of Validity Period</th>
+      <th fd-table-cell>End of Validity Period</th>
+      <th fd-table-cell>Closing Date for Applications</th>
+      <th fd-table-cell>Deadline for Submission of Bid/Quotation</th>
+      <th fd-table-cell>Binding Period for Quotation</th>
+      <th fd-table-cell>Warranty Date</th>
+      <th fd-table-cell>Bid invitation number</th>
+      <th fd-table-cell>Quotation Number</th>
+      <th fd-table-cell>Quotation Submission Date</th>
+      <th fd-table-cell>Your Reference</th>
+      <th fd-table-cell>Responsible Salesperson at Vendor's Office</th>
+      <th fd-table-cell>Vendor's Telephone Number</th>
+      <th fd-table-cell>Supplying Vendor</th>
+      <th fd-table-cell>Customer Number</th>
+      <th fd-table-cell>Number of principal purchase agreement</th>
+      <th fd-table-cell>Reason for rejection of quotations and sales orders</th>
+      <th fd-table-cell>Complete Delivery Stipulated for Each Purchase Order</th>
+      <th fd-table-cell>Indicator: Goods Receipt Message</th>
+      <th fd-table-cell>Supplying (issuing) plant in case of stock transport order</th>
+      <th fd-table-cell>Field not used</th>
+      <th fd-table-cell>Incoterms (Part 1)</th>
+      <th fd-table-cell>Incoterms (Part 2)</th>
+      <th fd-table-cell>Cumulative Planned Value</th>
+      <th fd-table-cell>Collective Number</th>
+      <th fd-table-cell>Number of the document condition</th>
+      <th fd-table-cell>Procedure (Pricing, Output Control, Acct. Det., Costing,...)</th>
+      <th fd-table-cell>Update group for statistics update</th>
+      <th fd-table-cell>Different Invoicing Party</th>
+      <th fd-table-cell>Number of foreign trade data in MM and SD documents</th>
+      <th fd-table-cell>Our Reference</th>
+      <th fd-table-cell>Logical System</th>
+      <th fd-table-cell>Item Number Interval for Subitems</th>
+      <th fd-table-cell>Document with time-dependent conditions</th>
+      <th fd-table-cell>Release group</th>
+      <th fd-table-cell>Release Strategy</th>
+      <th fd-table-cell>Release Indicator: Purchasing Document</th>
+      <th fd-table-cell>Release State</th>
+      <th fd-table-cell>Release Not Yet Completely Effected</th>
+      <th fd-table-cell>Country for Tax Return</th>
+      <th fd-table-cell>Indicator for scheduling agreement release documentation</th>
+      <th fd-table-cell>Name 1</th>
+      <th fd-table-cell>ISO Currency Code</th>
+      <th fd-table-cell>Indirect Quoted Exchange Rate</th>
+      <th fd-table-cell>Purchase order not yet complete</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of PO_HEADERS" fd-table-row>
+       <td fd-table-cell>{{ PO_NUMBER }}</td>
+       <td fd-table-cell>{{ CO_CODE }}</td>
+       <td fd-table-cell>{{ DOC_CAT }}</td>
+       <td fd-table-cell>{{ DOC_TYPE }}</td>
+       <td fd-table-cell>{{ CNTRL_IND }}</td>
+       <td fd-table-cell>{{ DELETE_IND }}</td>
+       <td fd-table-cell>{{ STATUS }}</td>
+       <td fd-table-cell>{{ CREATED_ON }}</td>
+       <td fd-table-cell>{{ CREATED_BY }}</td>
+       <td fd-table-cell>{{ ITEM_INTVL }}</td>
+       <td fd-table-cell>{{ LAST_ITEM }}</td>
+       <td fd-table-cell>{{ VENDOR }}</td>
+       <td fd-table-cell>{{ LANGUAGE }}</td>
+       <td fd-table-cell>{{ PMNTTRMS }}</td>
+       <td fd-table-cell>{{ DSCNT1_TO }}</td>
+       <td fd-table-cell>{{ DSCNT2_TO }}</td>
+       <td fd-table-cell>{{ DSCNT3_TO }}</td>
+       <td fd-table-cell>{{ CASH_DISC1 }}</td>
+       <td fd-table-cell>{{ CASH_DISC2 }}</td>
+       <td fd-table-cell>{{ PURCH_ORG }}</td>
+       <td fd-table-cell>{{ PUR_GROUP }}</td>
+       <td fd-table-cell>{{ CURRENCY }}</td>
+       <td fd-table-cell>{{ EXCH_RATE }}</td>
+       <td fd-table-cell>{{ EX_RATE_FX }}</td>
+       <td fd-table-cell>{{ DOC_DATE }}</td>
+       <td fd-table-cell>{{ VPER_START }}</td>
+       <td fd-table-cell>{{ VPER_END }}</td>
+       <td fd-table-cell>{{ APPLIC_BY }}</td>
+       <td fd-table-cell>{{ QUOT_DEAD }}</td>
+       <td fd-table-cell>{{ BINDG_PER }}</td>
+       <td fd-table-cell>{{ WARRANTY }}</td>
+       <td fd-table-cell>{{ BIDINV_NO }}</td>
+       <td fd-table-cell>{{ QUOTATION }}</td>
+       <td fd-table-cell>{{ QUOT_DATE }}</td>
+       <td fd-table-cell>{{ REF_1 }}</td>
+       <td fd-table-cell>{{ SALES_PERS }}</td>
+       <td fd-table-cell>{{ TELEPHONE }}</td>
+       <td fd-table-cell>{{ SUPPL_VEND }}</td>
+       <td fd-table-cell>{{ CUSTOMER }}</td>
+       <td fd-table-cell>{{ AGREEMENT }}</td>
+       <td fd-table-cell>{{ REJ_REASON }}</td>
+       <td fd-table-cell>{{ COMPL_DLV }}</td>
+       <td fd-table-cell>{{ GR_MESSAGE }}</td>
+       <td fd-table-cell>{{ SUPPL_PLNT }}</td>
+       <td fd-table-cell>{{ RCVG_VEND }}</td>
+       <td fd-table-cell>{{ INCOTERMS1 }}</td>
+       <td fd-table-cell>{{ INCOTERMS2 }}</td>
+       <td fd-table-cell>{{ TARGET_VAL }}</td>
+       <td fd-table-cell>{{ COLL_NO }}</td>
+       <td fd-table-cell>{{ DOC_COND }}</td>
+       <td fd-table-cell>{{ PROCEDURE }}</td>
+       <td fd-table-cell>{{ UPDATE_GRP }}</td>
+       <td fd-table-cell>{{ DIFF_INV }}</td>
+       <td fd-table-cell>{{ EXPORT_NO }}</td>
+       <td fd-table-cell>{{ OUR_REF }}</td>
+       <td fd-table-cell>{{ LOGSYSTEM }}</td>
+       <td fd-table-cell>{{ SUBITEMINT }}</td>
+       <td fd-table-cell>{{ MAST_COND }}</td>
+       <td fd-table-cell>{{ REL_GROUP }}</td>
+       <td fd-table-cell>{{ REL_STRAT }}</td>
+       <td fd-table-cell>{{ REL_IND }}</td>
+       <td fd-table-cell>{{ REL_STATUS }}</td>
+       <td fd-table-cell>{{ SUBJ_TO_R }}</td>
+       <td fd-table-cell>{{ TAXR_CNTRY }}</td>
+       <td fd-table-cell>{{ SCHED_IND }}</td>
+       <td fd-table-cell>{{ VEND_NAME }}</td>
+       <td fd-table-cell>{{ CURRENCY_ISO }}</td>
+       <td fd-table-cell>{{ EXCH_RATE_CM }}</td>
+       <td fd-table-cell>{{ HOLD }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Number</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.PO_NUMBER"
+        [dropdownValues]="{type: 'CH', id: 'EKKO'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Company Code</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.CO_CODE"
+        [dropdownValues]="{type: 'SH', id: 'C_T001'}"
+        data-abap="{type:'CHAR', mid:'BUK', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Category</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.DOC_CAT"
+        [dropdownValues]="{type: 'FV', id: 'EBSTYP'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Type</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.DOC_TYPE"
+        [dropdownValues]="{type: 'SH', id: 'H_T161'}"
+        data-abap="{type:'CHAR', mid:'BSA', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Control indicator for purchasing document type" [(ngModel)]="PO_HEADERS.CNTRL_IND"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Deletion indicator in purchasing document</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.DELETE_IND"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Status of Purchasing Document</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.STATUS"
+        [dropdownValues]="{type: 'FV', id: 'ESTAK'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Date on Which Record Was Created</label>
+    <fd-date-picker [type]="single" [(ngModel)]="PO_HEADERS.CREATED_ON"></fd-date-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Name of Person who Created the Object</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.CREATED_BY"
+            data-abap="{type:'CHAR', length:'12'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Item Number Interval</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.ITEM_INTVL"
+            data-abap="{type:'NUMC', length:'5'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Last Item Number</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.LAST_ITEM"
+        [dropdownValues]="{type: 'CH', id: 'EKPO'}"
+        data-abap="{type:'NUMC', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Vendor's account number</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.VENDOR"
+        [dropdownValues]="{type: 'SH', id: 'KRED'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.LANGUAGE"
+        [dropdownValues]="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Terms of Payment Key</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.PMNTTRMS"
+            data-abap="{type:'CHAR', length:'4'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Cash discount days 1</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.DSCNT1_TO"
+            data-abap="{type:'DEC', length:'3'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Cash discount days 2</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.DSCNT2_TO"
+            data-abap="{type:'DEC', length:'3'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Cash discount days 3</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.DSCNT3_TO"
+            data-abap="{type:'DEC', length:'3'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Cash discount percentage 1</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.CASH_DISC1"
+            data-abap="{type:'DEC', length:'4.3'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Cash Discount Percentage 2</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.CASH_DISC2"
+            data-abap="{type:'DEC', length:'4.3'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Purchasing organization</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.PURCH_ORG"
+        [dropdownValues]="{type: 'SH', id: 'H_T024E'}"
+        data-abap="{type:'CHAR', mid:'EKO', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Purchasing Group</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.PUR_GROUP"
+        [dropdownValues]="{type: 'SH', id: 'H_T024'}"
+        data-abap="{type:'CHAR', mid:'EKG', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Currency Key</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.CURRENCY"
+        [dropdownValues]="{type: 'CT', id: 'TCURC'}"
+        data-abap="{type:'CUKY', mid:'FWS', length:'5'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Direct Quoted Exchange Rate</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.EXCH_RATE"
+            data-abap="{type:'DEC', length:'8.5'}"
+        />
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Indicator: Fixing of Exchange Rate" [(ngModel)]="PO_HEADERS.EX_RATE_FX"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Purchasing Document Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="PO_HEADERS.DOC_DATE"></fd-date-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Start of Validity Period</label>
+    <fd-date-picker [type]="single" [(ngModel)]="PO_HEADERS.VPER_START"></fd-date-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>End of Validity Period</label>
+    <fd-date-picker [type]="single" [(ngModel)]="PO_HEADERS.VPER_END"></fd-date-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Closing Date for Applications</label>
+    <fd-date-picker [type]="single" [(ngModel)]="PO_HEADERS.APPLIC_BY"></fd-date-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Deadline for Submission of Bid/Quotation</label>
+    <fd-date-picker [type]="single" [(ngModel)]="PO_HEADERS.QUOT_DEAD"></fd-date-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Binding Period for Quotation</label>
+    <fd-date-picker [type]="single" [(ngModel)]="PO_HEADERS.BINDG_PER"></fd-date-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Warranty Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="PO_HEADERS.WARRANTY"></fd-date-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Bid invitation number</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.BIDINV_NO"
+        [dropdownValues]="{type: 'CH', id: 'EKKO'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'BES', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Quotation Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.QUOTATION"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Quotation Submission Date</label>
+    <fd-date-picker [type]="single" [(ngModel)]="PO_HEADERS.QUOT_DATE"></fd-date-picker>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Your Reference</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.REF_1"
+            data-abap="{type:'CHAR', length:'12'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Responsible Salesperson at Vendor's Office</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.SALES_PERS"
+            data-abap="{type:'CHAR', length:'30'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Vendor's Telephone Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.TELEPHONE"
+            data-abap="{type:'CHAR', length:'16'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Supplying Vendor</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.SUPPL_VEND"
+        [dropdownValues]="{type: 'SH', id: 'KRED'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'LLI', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Customer Number</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.CUSTOMER"
+        [dropdownValues]="{type: 'SH', id: 'DEBI'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KUN', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Number of principal purchase agreement</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.AGREEMENT"
+        [dropdownValues]="{type: 'CH', id: 'EKKO'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'KTR', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Reason for rejection of quotations and sales orders</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.REJ_REASON"
+            data-abap="{type:'CHAR', length:'2'}"
+        />
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Complete Delivery Stipulated for Each Purchase Order" [(ngModel)]="PO_HEADERS.COMPL_DLV"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Indicator: Goods Receipt Message" [(ngModel)]="PO_HEADERS.GR_MESSAGE"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Supplying (issuing) plant in case of stock transport order</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.SUPPL_PLNT"
+        [dropdownValues]="{type: 'SH', id: 'H_T001W'}"
+        data-abap="{type:'CHAR', length:'4'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Field not used</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.RCVG_VEND"
+        [dropdownValues]="{type: 'SH', id: 'KRED'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'LIF', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Incoterms (Part 1)</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.INCOTERMS1"
+        [dropdownValues]="{type: 'SH', id: 'H_TINC'}"
+        data-abap="{type:'CHAR', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Incoterms (Part 2)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.INCOTERMS2"
+            data-abap="{type:'CHAR', length:'28'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Cumulative Planned Value</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.TARGET_VAL"
+            data-abap="{type:'DEC', length:'22.4'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Collective Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.COLL_NO"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Number of the document condition</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.DOC_COND"
+            data-abap="{type:'CHAR', length:'10'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Procedure (Pricing, Output Control, Acct. Det., Costing,...)</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.PROCEDURE"
+        [dropdownValues]="{type: 'CT', id: 'T683'}"
+        data-abap="{type:'CHAR', length:'6'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Update group for statistics update</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.UPDATE_GRP"
+        [dropdownValues]="{type: 'SH', id: 'H_TMCB'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'MCF', length:'6'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Different Invoicing Party</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.DIFF_INV"
+        [dropdownValues]="{type: 'SH', id: 'KRED'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', mid:'LRE', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Number of foreign trade data in MM and SD documents</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.EXPORT_NO"
+        [dropdownValues]="{type: 'CH', id: 'EIKP'}"
+        data-abap="{type:'CHAR', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Our Reference</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.OUR_REF"
+            data-abap="{type:'CHAR', length:'12'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Logical System</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.LOGSYSTEM"
+        [dropdownValues]="{type: 'CT', id: 'TBDLS'}"
+        data-abap="{type:'CHAR', alpha:'ALPHA', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Item Number Interval for Subitems</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.SUBITEMINT"
+            data-abap="{type:'NUMC', length:'5'}"
+        />
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Document with time-dependent conditions" [(ngModel)]="PO_HEADERS.MAST_COND"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Release group</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.REL_GROUP"
+        [dropdownValues]="{type: 'CT', id: 'T16FG'}"
+        data-abap="{type:'CHAR', length:'2'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Release Strategy</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.REL_STRAT"
+        [dropdownValues]="{type: 'CT', id: 'T16FS'}"
+        data-abap="{type:'CHAR', length:'2'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Release Indicator: Purchasing Document</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.REL_IND"
+        [dropdownValues]="{type: 'CT', id: 'T16FB'}"
+        data-abap="{type:'CHAR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Release State</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.REL_STATUS"
+            data-abap="{type:'CHAR', length:'8'}"
+        />
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Release Not Yet Completely Effected" [(ngModel)]="PO_HEADERS.SUBJ_TO_R"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Country for Tax Return</label>
+    <fd-combobox
+        [(ngModel)]="PO_HEADERS.TAXR_CNTRY"
+        [dropdownValues]="{type: 'CT', id: 'T005'}"
+        data-abap="{type:'CHAR', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Indicator for scheduling agreement release documentation" [(ngModel)]="PO_HEADERS.SCHED_IND"></fd-checkbox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Name 1</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.VEND_NAME"
+            data-abap="{type:'CHAR', length:'35'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>ISO Currency Code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.CURRENCY_ISO"
+            data-abap="{type:'CHAR', length:'3'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Indirect Quoted Exchange Rate</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="PO_HEADERS.EXCH_RATE_CM"
+            data-abap="{type:'DEC', length:'8.5'}"
+        />
+</div>
+
+<div fd-form-item>
+    <fd-checkbox label="Purchase order not yet complete" [(ngModel)]="PO_HEADERS.HOLD"></fd-checkbox>
+</div>
+
+<!-- Parameter: RETURN structure: BAPIRETURN  Return Messages -->
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Message type: S Success, E Error, W Warning, I Info, A Abort</th>
+      <th fd-table-cell>Message code</th>
+      <th fd-table-cell>Message Text</th>
+      <th fd-table-cell>Application log: log number</th>
+      <th fd-table-cell>Application log: Internal message serial number</th>
+      <th fd-table-cell>Message Variable</th>
+      <th fd-table-cell>Message Variable</th>
+      <th fd-table-cell>Message Variable</th>
+      <th fd-table-cell>Message Variable</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of RETURN" fd-table-row>
+       <td fd-table-cell>{{ TYPE }}</td>
+       <td fd-table-cell>{{ CODE }}</td>
+       <td fd-table-cell>{{ MESSAGE }}</td>
+       <td fd-table-cell>{{ LOG_NO }}</td>
+       <td fd-table-cell>{{ LOG_MSG_NO }}</td>
+       <td fd-table-cell>{{ MESSAGE_V1 }}</td>
+       <td fd-table-cell>{{ MESSAGE_V2 }}</td>
+       <td fd-table-cell>{{ MESSAGE_V3 }}</td>
+       <td fd-table-cell>{{ MESSAGE_V4 }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div fd-form-item>
+    <label fd-form-label>Message type: S Success, E Error, W Warning, I Info, A Abort</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.TYPE"
+            data-abap="{type:'CHAR', length:'1'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message code</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.CODE"
+            data-abap="{type:'CHAR', length:'5'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Text</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE"
+            data-abap="{type:'CHAR', length:'220'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Application log: log number</label>
+    <fd-combobox
+        [(ngModel)]="RETURN.LOG_NO"
+        [dropdownValues]="{type: 'CH', id: 'BALHDR'}"
+        data-abap="{type:'CHAR', length:'20'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Application log: Internal message serial number</label>
+    <fd-combobox
+        [(ngModel)]="RETURN.LOG_MSG_NO"
+        [dropdownValues]="{type: 'CH', id: 'BALM'}"
+        data-abap="{type:'NUMC', length:'6'}"
+    >
+    </fd-combobox>
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Variable</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE_V1"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Variable</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE_V2"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Variable</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE_V3"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<div fd-form-item>
+    <label fd-form-label>Message Variable</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="RETURN.MESSAGE_V4"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>

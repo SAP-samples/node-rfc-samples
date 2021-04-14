@@ -1,0 +1,31 @@
+<!-- SH H_T004 Chart of Accounts : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Chart of Accounts</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KTOPL"
+            data-abap="{type:'CHAR', mid:'KPL', length:'4'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Chart of accounts description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KTPLT"
+            data-abap="{type:'CHAR', length:'50'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Chart of Accounts</th>
+      <th fd-table-cell>Chart of accounts description</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ KTOPL }}</td>
+       <td fd-table-cell>{{ KTPLT }}</td>
+    </tr>
+  </tbody>
+</table>

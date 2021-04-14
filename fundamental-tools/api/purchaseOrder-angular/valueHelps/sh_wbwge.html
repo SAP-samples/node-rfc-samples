@@ -1,0 +1,74 @@
+<!-- SH WBWGE Find via keywords : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Internal Class Number</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.CLINT"
+        [dropdownValues]="{type: 'CT', id: 'KLAH'}"
+        data-abap="{type:'NUMC', length:'10'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Language Key</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.SPRAS"
+        [dropdownValues]="{type: 'SH', id: 'H_T002'}"
+        data-abap="{type:'LANG', alpha:'ISOLA', mid:'SPR', length:'1'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Item Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KLPOS"
+            data-abap="{type:'NUMC', length:'2'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Class Type</label>
+    <fd-combobox
+        [(ngModel)]="searchParamLow.KLART"
+        [dropdownValues]="{type: 'SH', id: 'H_TCLA'}"
+        data-abap="{type:'CHAR', mid:'KAR', length:'3'}"
+    >
+    </fd-combobox>
+</div>
+<div fd-form-item>
+    <label fd-form-label>Material Group</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.CLASS"
+            data-abap="{type:'CHAR', mid:'MKL', length:'18'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Class Description</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KSCHL"
+            data-abap="{type:'CHAR', mid:'KBZ', length:'40'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Keyword (Uppercase for Matchcode)</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KSCHG"
+            data-abap="{type:'CHAR', length:'40'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Material Group</th>
+      <th fd-table-cell>Class Description</th>
+      <th fd-table-cell>Language Key</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ CLASS }}</td>
+       <td fd-table-cell>{{ KSCHL }}</td>
+       <td fd-table-cell>{{ SPRAS }}</td>
+    </tr>
+  </tbody>
+</table>

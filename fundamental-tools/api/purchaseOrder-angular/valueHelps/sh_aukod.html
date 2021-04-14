@@ -1,0 +1,40 @@
+<!-- SH AUKOD Networks by sales order : abap 2.2.0 at: 2021-04-14 18:36:59 -->}
+
+<div fd-form-item>
+    <label fd-form-label>Sales Order Number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KDAUF"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'AUN', length:'10'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Sales Order Item</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.KDPOS"
+            data-abap="{type:'NUMC', mid:'AUP', length:'6'}"
+        />
+</div>
+<div fd-form-item>
+    <label fd-form-label>Network number</label>
+        <input fd-input fd-form-control
+            [(ngModel)]="searchParamLow.AUFNR"
+            data-abap="{type:'CHAR', alpha:'ALPHA', mid:'ANR', length:'12'}"
+        />
+</div>
+
+<table fd-table>
+  <thead fd-table-header>
+    <tr fd-table-row>
+      <th fd-table-cell>Sales Order Number</th>
+      <th fd-table-cell>Sales Order Item</th>
+      <th fd-table-cell>Network number</th>
+    </tr>
+  </thead>
+  <tbody fd-table-body>
+    <tr *ngFor="let row of searchParamLow" fd-table-row>
+       <td fd-table-cell>{{ KDAUF }}</td>
+       <td fd-table-cell>{{ KDPOS }}</td>
+       <td fd-table-cell>{{ AUFNR }}</td>
+    </tr>
+  </tbody>
+</table>
