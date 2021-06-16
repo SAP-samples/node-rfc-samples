@@ -20,7 +20,6 @@ client.open((err) => {
     {
       SECONDS: WAIT,
     },
-    // { timeout: TIMEOUT } // overrides client timeout
     (err, res) => {
       if (err) {
         console.error("err", err, client.alive, client.connectionHandle);
@@ -36,5 +35,6 @@ client.open((err) => {
         console.log("done", res);
       }
     }
+    // { timeout: TIMEOUT } // overrides client timeout
   );
 });
