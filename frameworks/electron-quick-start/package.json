@@ -4,7 +4,8 @@
   "description": "Electron with node-rfc",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "rebuild": "electron-rebuild -f -w node-rfc"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,7 +18,10 @@
   "author": "SAP",
   "license": "Apache-2.0",
   "dependencies": {
-    "electron": "^10.4.2",
-    "node-rfc": "^2.4.0"
+    "electron": "latest",
+    "node-rfc": "^3.0.0-rc.2"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^3.2.13"
   }
 }
