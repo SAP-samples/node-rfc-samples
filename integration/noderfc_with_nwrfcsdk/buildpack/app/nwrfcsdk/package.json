@@ -1,0 +1,10 @@
+{
+  "name": "nwrfcsdk",
+  "version": "1.0.0",
+  "description": "SAP NW RFC SDK",
+  "files": [
+    "nwrfcsdk"
+  ],
+  "author": "",
+  "license": "SAP Developer License"
+}

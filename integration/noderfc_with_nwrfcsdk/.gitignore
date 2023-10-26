@@ -1,1 +1,2 @@
-buildpack/app/nwrfcsdk
+buildpack/app/nwrfcsdk/lib
+buildpack/app/nwrfcsdk/include
