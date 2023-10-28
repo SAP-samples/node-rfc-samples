@@ -8,6 +8,7 @@
   "main": "index.js",
   "scripts": {
     "start:btp": "node index.js",
+    "setnwrfcenv": "export SAPNWRFC_HOME=`pwd`/nwrfcsdk && export LD_LIBRARY_PATH=$SAPNWRFC_HOME/lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

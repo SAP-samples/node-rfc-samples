@@ -6,7 +6,9 @@
 
 {
     'variables': {
-        # 'nwrfcsdk_dir': '<!(echo $SAPNWRFC_HOME)',
+        # required for initial build from source
+        #'nwrfcsdk_dir': '<!(echo $SAPNWRFC_HOME)',
+        # required for BTP deployment, can be set after build
         'nwrfcsdk_dir': '/tmp/app/node_modules/nwrfcsdk',
         'nwrfcsdk_include_dir': "<(nwrfcsdk_dir)/include",
         'nwrfcsdk_lib_dir': "<(nwrfcsdk_dir)/lib",
