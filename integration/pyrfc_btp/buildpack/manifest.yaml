@@ -1,0 +1,14 @@
+---
+applications:
+  - name: pyrfcapp
+    stack: cflinuxfs4
+    env:
+      SAPNWRFC_HOME: /home/vcap/app/nwrfcsdk
+      LD_LIBRARY_PATH: /home/vcap/app/nwrfcsdk/lib
+    path: app
+    memory: 128M
+    command: python serve.py
+    buildpacks:
+      - https://github.com/cloudfoundry/python-buildpack.git
+    routes:
+      - route: pyrfcapp.cfapps.eu10.hana.ondemand.com
