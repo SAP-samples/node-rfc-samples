@@ -1,3 +1,5 @@
+buildpack/app/nwrfcsdk/bin
+buildpack/app/nwrfcsdk/demo
+buildpack/app/nwrfcsdk/doc
 buildpack/app/nwrfcsdk/include
 buildpack/app/nwrfcsdk/lib
-
