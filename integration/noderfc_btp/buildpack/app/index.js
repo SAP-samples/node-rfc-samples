@@ -40,7 +40,7 @@ app.get(["", "/"], function (req, res) {
   res.send(environment());
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3100;
 const server = app.listen(port, async function (port) {
   try {
     const host = server.address().address;
