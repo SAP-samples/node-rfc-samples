@@ -1,3 +1,0 @@
-*:src/cpp/ext/*
-unusedFunction:src/cpp/*
-missingIncludeSystem:src/cpp/*

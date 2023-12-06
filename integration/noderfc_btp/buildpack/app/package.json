@@ -11,13 +11,9 @@
     "dev": "export SAPNWRFC_HOME=`pwd`/nwrfcsdk && export LD_LIBRARY_PATH=$SAPNWRFC_HOME/lib && node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "files": [
-    "node-rfc",
-    "nwrfcsdk"
-  ],
   "dependencies": {
     "express": "^4.18.2",
-    "node-rfc": "file:node-rfc"
+    "node-rfc": "^3.3.1"
   },
   "engines": {
     "node": "18.18.2",
