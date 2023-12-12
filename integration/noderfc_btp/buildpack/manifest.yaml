@@ -3,8 +3,8 @@ applications:
   - name: rfcapp
     stack: cflinuxfs4
     env:
-      SAPNWRFC_HOME_CLOUD: /tmp/app/node_modules/nwrfcsdk
-      LD_LIBRARY_PATH: /home/vcap/app/node_modules/nwrfcsdk/lib
+      SAPNWRFC_HOME_CLOUD: /tmp/app/nwrfcsdk
+      LD_LIBRARY_PATH: /home/vcap/app/nwrfcsdk/lib
     path: app
     memory: 128M
     command: npm run start:btp
